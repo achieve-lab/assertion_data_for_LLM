@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"1388:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f13eb411e50>",
+		def_var="['crc16_err']",
+		fillcolor=deepskyblue,
+		label="1388:AS
+crc16_err = data_done & (crc16_sum != 16'h800d);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['data_done', 'crc16_sum']"];
+}

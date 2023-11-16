@@ -1,0 +1,111 @@
+strict digraph "" {
+	"[1]wr_last"	 [complexity=8,
+		importance=0.871691425076,
+		rank=0.108961428135];
+	"[1]next_state"	 [complexity=7,
+		importance=0.427212730386,
+		rank=0.0610303900552];
+	"[1]wr_last" -> "[1]next_state";
+	"[1]mreq"	 [complexity=8,
+		importance=0.0769576105084,
+		rank=0.00961970131356];
+	mack_r	 [complexity=5,
+		importance=0.0567237256945,
+		rank=0.0113447451389];
+	"[1]mreq" -> mack_r;
+	"[1]rst"	 [complexity=6,
+		importance=0.755645270125,
+		rank=0.125940878354];
+	state	 [complexity=5,
+		importance=0.373537530191,
+		rank=0.0747075060382];
+	"[1]rst" -> state;
+	"[1]rd_next"	 [complexity=9,
+		importance=0.435782940129,
+		rank=0.048420326681];
+	"[1]rd_next" -> "[1]next_state";
+	"[1]send_zero_length_r"	 [complexity=10,
+		importance=0.440067966977,
+		rank=0.0440067966977];
+	"[1]send_zero_length_r" -> "[1]next_state";
+	"[1]mack_r"	 [complexity=11,
+		importance=1.73182297512,
+		rank=0.157438452283];
+	"[1]mack_r" -> "[1]mreq";
+	"[1]mack_r" -> "[1]next_state";
+	"[1]mreq_d"	 [complexity=12,
+		importance=0.0904753978156,
+		rank=0.00753961648464];
+	"[1]mack_r" -> "[1]mreq_d";
+	"[1]adr_cb"	 [complexity=11,
+		importance=0.451659257886,
+		rank=0.0410599325351];
+	"[1]adrb_is_3"	 [complexity=9,
+		importance=0.436618543391,
+		rank=0.0485131714879];
+	"[1]adr_cb" -> "[1]adrb_is_3";
+	abort	 [complexity=5,
+		importance=0.0423218818645,
+		rank=0.00846437637289];
+	mreq_d	 [complexity=4,
+		importance=0.0337516721212,
+		rank=0.00843791803029];
+	abort -> mreq_d;
+	mreq	 [complexity=0,
+		importance=0.020233884814,
+		rank=0.0];
+	"[1]abort"	 [complexity=19,
+		importance=6.41676116554,
+		rank=0.33772427187];
+	"[1]abort" -> "[1]next_state";
+	"[1]abort" -> "[1]mreq_d";
+	mreq_d -> mreq;
+	"[1]mack"	 [complexity=8,
+		importance=0.0652939354378,
+		rank=0.00816174192973];
+	"[1]mack" -> mack_r;
+	"[1]wr_done"	 [complexity=8,
+		importance=0.441139274116,
+		rank=0.0551424092645];
+	"[1]wr_done" -> "[1]next_state";
+	"[1]tx_dma_en_r"	 [complexity=10,
+		importance=0.437211282412,
+		rank=0.0437211282412];
+	"[1]tx_dma_en_r" -> "[1]next_state";
+	"[1]rx_dma_en_r"	 [complexity=9,
+		importance=0.440067966977,
+		rank=0.0488964407752];
+	"[1]rx_dma_en_r" -> "[1]next_state";
+	mack_r -> mreq;
+	mack_r -> mreq_d;
+	state -> mreq_d;
+	"[1]word_done"	 [complexity=7,
+		importance=0.0491101870122,
+		rank=0.00701574100175];
+	word_done_r	 [complexity=4,
+		importance=0.0360232527943,
+		rank=0.00900581319857];
+	"[1]word_done" -> word_done_r;
+	"[1]next_state" -> state;
+	"[1]sizd_is_zero"	 [complexity=9,
+		importance=0.865044142478,
+		rank=0.0961160158309];
+	"[1]sizd_is_zero" -> "[1]next_state";
+	word_done_r -> mreq;
+	"[1]state"	 [complexity=10,
+		importance=7.29863722554,
+		rank=0.729863722554];
+	"[1]state" -> "[1]next_state";
+	"[1]state" -> "[1]mreq_d";
+	"[1]mreq_d" -> "[1]mreq";
+	"[1]word_done_r"	 [complexity=12,
+		importance=0.0927469784888,
+		rank=0.00772891487406];
+	"[1]word_done_r" -> "[1]mreq";
+	"[1]word_done_r" -> word_done_r;
+	"[1]rx_data_done_r2"	 [complexity=8,
+		importance=0.437925488604,
+		rank=0.0547406860755];
+	"[1]rx_data_done_r2" -> "[1]next_state";
+	"[1]adrb_is_3" -> "[1]next_state";
+}

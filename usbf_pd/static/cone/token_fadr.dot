@@ -1,0 +1,70 @@
+strict digraph "" {
+	"[1]state"	 [complexity=4,
+		importance=0.070652255477,
+		rank=0.0176630638692];
+	"[1]token_le_1"	 [complexity=3,
+		importance=0.0408471264318,
+		rank=0.0136157088106];
+	"[1]state" -> "[1]token_le_1";
+	"[1]pid_PING"	 [complexity=13,
+		importance=0.082539554295,
+		rank=0.00634919648423];
+	"[1]pid_TOKEN"	 [complexity=7,
+		importance=0.0731652196044,
+		rank=0.0104521742292];
+	"[1]pid_PING" -> "[1]pid_TOKEN";
+	"[1]rx_err"	 [complexity=9,
+		importance=0.09057635712,
+		rank=0.01006403968];
+	"[1]rx_err" -> "[1]token_le_1";
+	"[1]pid_IN"	 [complexity=13,
+		importance=0.082539554295,
+		rank=0.00634919648423];
+	"[1]pid_IN" -> "[1]pid_TOKEN";
+	"[1]rx_active"	 [complexity=7,
+		importance=0.0497292306882,
+		rank=0.0071041758126];
+	"[1]rx_active" -> "[1]token_le_1";
+	"[1]pid"	 [complexity=7,
+		importance=0.067942186176,
+		rank=0.00970602659657];
+	"[1]pid" -> "[1]pid_PING";
+	"[1]pid" -> "[1]pid_IN";
+	"[1]pid_OUT"	 [complexity=13,
+		importance=0.082539554295,
+		rank=0.00634919648423];
+	"[1]pid" -> "[1]pid_OUT";
+	"[1]pid_ACK"	 [complexity=5,
+		importance=0.0502214611223,
+		rank=0.0100442922245];
+	"[1]pid" -> "[1]pid_ACK";
+	"[1]pid_SETUP"	 [complexity=13,
+		importance=0.082539554295,
+		rank=0.00634919648423];
+	"[1]pid" -> "[1]pid_SETUP";
+	"[1]pid_SOF"	 [complexity=13,
+		importance=0.082539554295,
+		rank=0.00634919648423];
+	"[1]pid" -> "[1]pid_SOF";
+	"[1]pid_OUT" -> "[1]pid_TOKEN";
+	"[1]rx_valid"	 [complexity=7,
+		importance=0.0497292306882,
+		rank=0.0071041758126];
+	"[1]rx_valid" -> "[1]token_le_1";
+	token0	 [complexity=2,
+		importance=0.027857849679,
+		rank=0.0139289248395];
+	"[1]token_le_1" -> token0;
+	"[1]rx_data"	 [complexity=4,
+		importance=0.0367399539355,
+		rank=0.00918498848387];
+	"[1]rx_data" -> token0;
+	"[1]pid_TOKEN" -> "[1]token_le_1";
+	token_fadr	 [complexity=0,
+		importance=0.0115929736478,
+		rank=0.0];
+	token0 -> token_fadr;
+	"[1]pid_ACK" -> "[1]token_le_1";
+	"[1]pid_SETUP" -> "[1]pid_TOKEN";
+	"[1]pid_SOF" -> "[1]pid_TOKEN";
+}

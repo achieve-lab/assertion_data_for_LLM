@@ -1,0 +1,154 @@
+strict digraph "" {
+	rx_err	 [complexity=5,
+		importance=0.0356289186704,
+		rank=0.00712578373409];
+	data_done	 [complexity=3,
+		importance=0.026746814414,
+		rank=0.00891560480466];
+	rx_err -> data_done;
+	"[1]rx_err"	 [complexity=17,
+		importance=0.250290949953,
+		rank=0.0147229970561];
+	"[1]data_valid_d"	 [complexity=4,
+		importance=0.0603522114241,
+		rank=0.015088052856];
+	"[1]rx_err" -> "[1]data_valid_d";
+	"[1]next_state"	 [complexity=6,
+		importance=0.0966232229884,
+		rank=0.0161038704981];
+	"[1]rx_err" -> "[1]next_state";
+	"[1]rst"	 [complexity=5,
+		importance=0.121985991175,
+		rank=0.024397198235];
+	state	 [complexity=4,
+		importance=0.0565519434592,
+		rank=0.0141379858648];
+	"[1]rst" -> state;
+	"[1]rx_active_r"	 [complexity=7,
+		importance=0.108932300145,
+		rank=0.0155617571636];
+	"[1]crc16_clr"	 [complexity=4,
+		importance=0.0998970556777,
+		rank=0.0249742639194];
+	"[1]rx_active_r" -> "[1]crc16_clr";
+	"[1]pid_IN"	 [complexity=14,
+		importance=0.102044639287,
+		rank=0.00728890280624];
+	"[1]pid_TOKEN"	 [complexity=8,
+		importance=0.0926703045968,
+		rank=0.0115837880746];
+	"[1]pid_IN" -> "[1]pid_TOKEN";
+	"[1]u1.crc_in"	 [complexity=105,
+		importance=3.30407530405,
+		rank=0.0314673838481];
+	"[1]u1.crc_out"	 [complexity=5,
+		importance=0.0843227122134,
+		rank=0.0168645424427];
+	"[1]u1.crc_in" -> "[1]u1.crc_out";
+	"[1]pid_DATA1"	 [complexity=13,
+		importance=0.0973574415041,
+		rank=0.00748903396185];
+	"[1]pid_DATA"	 [complexity=8,
+		importance=0.0879831068135,
+		rank=0.0109978883517];
+	"[1]pid_DATA1" -> "[1]pid_DATA";
+	"[1]pid_DATA0"	 [complexity=13,
+		importance=0.0973574415041,
+		rank=0.00748903396185];
+	"[1]pid_DATA0" -> "[1]pid_DATA";
+	"[1]pid_DATA2"	 [complexity=13,
+		importance=0.0973574415041,
+		rank=0.00748903396185];
+	"[1]pid_DATA2" -> "[1]pid_DATA";
+	crc16_sum	 [complexity=3,
+		importance=0.0431720870989,
+		rank=0.0143906956996];
+	"[1]crc16_clr" -> crc16_sum;
+	"[1]u1.din"	 [complexity=95,
+		importance=2.6237743961,
+		rank=0.0276186778537];
+	"[1]u1.din" -> "[1]u1.crc_out";
+	"[1]pid"	 [complexity=8,
+		importance=0.0874472711683,
+		rank=0.010930908896];
+	"[1]pid" -> "[1]pid_IN";
+	"[1]pid" -> "[1]pid_DATA1";
+	"[1]pid" -> "[1]pid_DATA0";
+	"[1]pid" -> "[1]pid_DATA2";
+	"[1]pid_OUT"	 [complexity=14,
+		importance=0.102044639287,
+		rank=0.00728890280624];
+	"[1]pid" -> "[1]pid_OUT";
+	"[1]pid_MDATA"	 [complexity=13,
+		importance=0.0973574415041,
+		rank=0.00748903396185];
+	"[1]pid" -> "[1]pid_MDATA";
+	"[1]pid_PING"	 [complexity=14,
+		importance=0.102044639287,
+		rank=0.00728890280624];
+	"[1]pid" -> "[1]pid_PING";
+	"[1]pid_SOF"	 [complexity=14,
+		importance=0.102044639287,
+		rank=0.00728890280624];
+	"[1]pid" -> "[1]pid_SOF";
+	"[1]pid_ACK"	 [complexity=6,
+		importance=0.0697265461147,
+		rank=0.0116210910191];
+	"[1]pid" -> "[1]pid_ACK";
+	"[1]pid_SETUP"	 [complexity=14,
+		importance=0.102044639287,
+		rank=0.00728890280624];
+	"[1]pid" -> "[1]pid_SETUP";
+	"[1]rx_data"	 [complexity=95,
+		importance=2.63265650035,
+		rank=0.0277121736879];
+	"[1]rx_data" -> "[1]u1.din";
+	"[1]pid_OUT" -> "[1]pid_TOKEN";
+	"[1]crc16_out"	 [complexity=5,
+		importance=0.0628116163081,
+		rank=0.0125623232616];
+	"[1]crc16_out" -> crc16_sum;
+	"[1]pid_TOKEN" -> "[1]data_valid_d";
+	"[1]pid_TOKEN" -> "[1]next_state";
+	crc16_err	 [complexity=0,
+		importance=0.0167403188305,
+		rank=0.0];
+	state -> data_done;
+	"[1]u1.crc_out" -> "[1]crc16_out";
+	"[1]crc16_sum"	 [complexity=105,
+		importance=3.33050707232,
+		rank=0.0317191149745];
+	"[1]crc16_sum" -> "[1]u1.crc_in";
+	"[1]data_valid_d" -> crc16_sum;
+	"[1]pid_DATA" -> "[1]data_valid_d";
+	"[1]pid_DATA" -> "[1]next_state";
+	"[1]next_state" -> state;
+	rx_active	 [complexity=5,
+		importance=0.0356289186704,
+		rank=0.00712578373409];
+	rx_active -> data_done;
+	"[1]pid_MDATA" -> "[1]pid_DATA";
+	crc16_sum -> crc16_err;
+	"[1]state"	 [complexity=5,
+		importance=0.150509551893,
+		rank=0.0301019103787];
+	"[1]state" -> "[1]data_valid_d";
+	"[1]state" -> "[1]next_state";
+	"[1]rx_active"	 [complexity=7,
+		importance=0.108779159934,
+		rank=0.0155398799906];
+	"[1]rx_active" -> "[1]crc16_clr";
+	"[1]rx_active" -> "[1]data_valid_d";
+	"[1]rx_active" -> "[1]next_state";
+	"[1]rx_valid"	 [complexity=15,
+		importance=0.189938738529,
+		rank=0.0126625825686];
+	"[1]rx_valid" -> "[1]data_valid_d";
+	"[1]rx_valid" -> "[1]next_state";
+	"[1]pid_PING" -> "[1]pid_TOKEN";
+	data_done -> crc16_err;
+	"[1]pid_SOF" -> "[1]pid_TOKEN";
+	"[1]pid_ACK" -> "[1]data_valid_d";
+	"[1]pid_ACK" -> "[1]next_state";
+	"[1]pid_SETUP" -> "[1]pid_TOKEN";
+}

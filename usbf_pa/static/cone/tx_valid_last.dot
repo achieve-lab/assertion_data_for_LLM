@@ -1,0 +1,49 @@
+strict digraph "" {
+	"[1]state"	 [complexity=9,
+		importance=0.846466447333,
+		rank=0.0940518274814];
+	"[1]next_state"	 [complexity=6,
+		importance=0.116972491348,
+		rank=0.0194954152247];
+	"[1]state" -> "[1]next_state";
+	last	 [complexity=3,
+		importance=0.0318604083423,
+		rank=0.0106201361141];
+	tx_valid_last	 [complexity=0,
+		importance=0.0166841017124,
+		rank=0.0];
+	last -> tx_valid_last;
+	"[1]rst"	 [complexity=5,
+		importance=0.195970675472,
+		rank=0.0391941350943];
+	state	 [complexity=4,
+		importance=0.0913798245779,
+		rank=0.0228449561445];
+	"[1]rst" -> state;
+	"[1]next_state" -> state;
+	send_token	 [complexity=3,
+		importance=0.0298951280283,
+		rank=0.00996504267609];
+	send_token -> tx_valid_last;
+	"[1]send_data"	 [complexity=12,
+		importance=0.48110099171,
+		rank=0.0400917493091];
+	"[1]send_data" -> "[1]next_state";
+	state -> last;
+	"[1]send_zero_length_r"	 [complexity=8,
+		importance=0.253761587631,
+		rank=0.0317201984539];
+	"[1]send_zero_length_r" -> "[1]next_state";
+	tx_ready	 [complexity=5,
+		importance=0.0769318430004,
+		rank=0.0153863686001];
+	tx_ready -> last;
+	"[1]tx_valid_r"	 [complexity=9,
+		importance=0.142753080226,
+		rank=0.0158614533585];
+	"[1]tx_valid_r" -> "[1]next_state";
+	"[1]tx_ready"	 [complexity=11,
+		importance=0.364128500361,
+		rank=0.0331025909419];
+	"[1]tx_ready" -> "[1]next_state";
+}

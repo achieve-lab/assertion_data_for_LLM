@@ -1,0 +1,11 @@
+[1]state	[1]next_state
+last	tx_valid_last
+[1]rst	state
+[1]next_state	state
+send_token	tx_valid_last
+[1]send_data	[1]next_state
+state	last
+[1]send_zero_length_r	[1]next_state
+tx_ready	last
+[1]tx_valid_r	[1]next_state
+[1]tx_ready	[1]next_state

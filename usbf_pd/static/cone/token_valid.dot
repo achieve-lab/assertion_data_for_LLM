@@ -1,0 +1,33 @@
+strict digraph "" {
+	"[1]state"	 [complexity=6,
+		importance=0.078860831838,
+		rank=0.013143471973];
+	"[1]got_pid_ack"	 [complexity=5,
+		importance=0.0490557027928,
+		rank=0.00981114055856];
+	"[1]state" -> "[1]got_pid_ack";
+	"[1]rx_err"	 [complexity=7,
+		importance=0.0579378070493,
+		rank=0.00827682957847];
+	"[1]rx_err" -> "[1]got_pid_ack";
+	token_valid_str1	 [complexity=2,
+		importance=0.0386164476975,
+		rank=0.0193082238487];
+	"[1]got_pid_ack" -> token_valid_str1;
+	token_valid	 [complexity=0,
+		importance=0.0187936262914,
+		rank=0.0];
+	"[1]token_valid_r1"	 [complexity=5,
+		importance=0.0500585698355,
+		rank=0.0100117139671];
+	"[1]token_valid_r1" -> token_valid_str1;
+	"[1]pid"	 [complexity=9,
+		importance=0.076150762537,
+		rank=0.00846119583745];
+	"[1]pid_ACK"	 [complexity=7,
+		importance=0.0584300374834,
+		rank=0.00834714821191];
+	"[1]pid" -> "[1]pid_ACK";
+	token_valid_str1 -> token_valid;
+	"[1]pid_ACK" -> "[1]got_pid_ack";
+}

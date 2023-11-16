@@ -1,0 +1,96 @@
+strict digraph "" {
+	"[1]rx_dma_en_r"	 [complexity=7,
+		importance=1.11645766173,
+		rank=0.159493951675];
+	adr_cb	 [complexity=5,
+		importance=0.551801212568,
+		rank=0.110360242514];
+	"[1]rx_dma_en_r" -> adr_cb;
+	"[1]adr_cw"	 [complexity=12,
+		importance=0.183116494729,
+		rank=0.0152597078941];
+	"[1]fill_buf0"	 [complexity=9,
+		importance=0.15496902589,
+		rank=0.0172187806544];
+	"[1]adr_cw" -> "[1]fill_buf0";
+	"[1]fill_buf1"	 [complexity=9,
+		importance=0.15496902589,
+		rank=0.0172187806544];
+	"[1]adr_cw" -> "[1]fill_buf1";
+	"[1]rst"	 [complexity=6,
+		importance=1.66397384745,
+		rank=0.277328974574];
+	"[1]rst" -> adr_cb;
+	"[1]rd_next"	 [complexity=11,
+		importance=1.15354523288,
+		rank=0.104867748444];
+	"[1]adr_incb"	 [complexity=8,
+		importance=1.14497502314,
+		rank=0.143121877892];
+	"[1]rd_next" -> "[1]adr_incb";
+	adr_incb	 [complexity=2,
+		importance=0.547205420205,
+		rank=0.273602710103];
+	adrb_next	 [complexity=1,
+		importance=0.268380249036,
+		rank=0.268380249036];
+	adr_incb -> adrb_next;
+	"[1]mack_r"	 [complexity=12,
+		importance=0.177941079463,
+		rank=0.0148284232886];
+	"[1]mack_r" -> "[1]fill_buf0";
+	"[1]mack_r" -> "[1]fill_buf1";
+	rd_buf0	 [complexity=8,
+		importance=0.142626792299,
+		rank=0.0178283490374];
+	"[1]fill_buf0" -> rd_buf0;
+	"[1]adr_cb"	 [complexity=11,
+		importance=1.1495708155,
+		rank=0.104506437773];
+	"[1]adrb_next"	 [complexity=7,
+		importance=0.567265050502,
+		rank=0.0810378643575];
+	"[1]adr_cb" -> "[1]adrb_next";
+	tx_data_st	 [complexity=0,
+		importance=0.0316145513877,
+		rank=0.0];
+	adrb_next -> tx_data_st;
+	"[1]tx_dma_en_r"	 [complexity=7,
+		importance=1.11360097716,
+		rank=0.15908585388];
+	"[1]tx_dma_en_r" -> adr_cb;
+	"[1]mdin"	 [complexity=10,
+		importance=0.151197002043,
+		rank=0.0151197002043];
+	rd_buf1	 [complexity=8,
+		importance=0.142626792299,
+		rank=0.0178283490374];
+	"[1]mdin" -> rd_buf1;
+	"[1]mdin" -> rd_buf0;
+	rd_next	 [complexity=5,
+		importance=0.555775629948,
+		rank=0.11115512599];
+	rd_next -> adr_incb;
+	rx_data_valid_r	 [complexity=5,
+		importance=0.560060656796,
+		rank=0.112012131359];
+	rx_data_valid_r -> adr_incb;
+	adr_cb -> adrb_next;
+	"[1]rx_data_valid_r"	 [complexity=11,
+		importance=1.15783025973,
+		rank=0.105257296339];
+	"[1]rx_data_valid_r" -> "[1]adr_incb";
+	rd_buf1 -> tx_data_st;
+	rd_buf0 -> tx_data_st;
+	"[1]rx_data_valid"	 [complexity=7,
+		importance=0.568630866539,
+		rank=0.0812329809341];
+	"[1]rx_data_valid" -> rx_data_valid_r;
+	"[1]adr"	 [complexity=7,
+		importance=0.560371422311,
+		rank=0.0800530603301];
+	"[1]adr" -> adr_cb;
+	"[1]fill_buf1" -> rd_buf1;
+	"[1]adrb_next" -> adr_cb;
+	"[1]adr_incb" -> "[1]adrb_next";
+}

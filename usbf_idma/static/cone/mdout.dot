@@ -1,0 +1,17 @@
+strict digraph "" {
+	"[1]dtmp_r"	 [complexity=4,
+		importance=0.0764998461445,
+		rank=0.0191249615361];
+	dout_r	 [complexity=2,
+		importance=0.0478340093412,
+		rank=0.0239170046706];
+	"[1]dtmp_r" -> dout_r;
+	mdout	 [complexity=0,
+		importance=0.02165858736,
+		rank=0.0];
+	dout_r -> mdout;
+	"[1]word_done"	 [complexity=3,
+		importance=0.0609209435591,
+		rank=0.0203069811864];
+	"[1]word_done" -> dout_r;
+}
