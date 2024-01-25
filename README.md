@@ -9,21 +9,21 @@
 There are four design modules that we will discuss here a) arb2, b) usbf_idma, c) usbf_pa, and d) usbf_pd.
 The directory structure looks like the following:
 
-    arb2/ [root directory / design directory]
+    design/ [root directory / design directory]
     ├── pic [Directory containing different pictorial resentation for different outputs]
-    │   ├── gnt1 [Output of the design (in this case arb2 design)]
-    │   └── gnt2 [Output of the design (in this case arb2 design)]
+    │   ├── out1 [Output of the design]
+    │   └── out2 [Output of the design]
     ├── preprocessed_code [Contains the Verilog code of the design]
     ├── static [Contains the hardware design source analysis results]
     │   ├── cdfg [Contains Control-Data Flow graph of a design]
-    │   │   └── arb2
+    │   │   └── design
     │   ├── cone [Contains cone of influence per output of a design]
-    │   ├── def
-    │   ├── dep
-    │   ├── path
-    │   ├── use
-    │   └── var_dep_graph
-    ├── tracedata
+    │   ├── def [Contains the definition chain of a design]
+    │   ├── dep [Contains the dependency information among design variables of a design]
+    │   ├── path [Contains different desin paths of a design as a concatenation of nodes in CDFG]
+    │   ├── use [Contains the use chain of a design]
+    │   └── var_dep_graph [Contains the variable dependency graph of a design]
+    ├── tracedata [Contains the execution 
     └── verif
         └── prism
             ├── gnt1
@@ -51,5 +51,5 @@ arb2/
         └── gnt2
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3MDkxNzU3MSwxODQ1NjIyNTU0XX0=
+eyJoaXN0b3J5IjpbLTM3NzY3NTUyMiwxODQ1NjIyNTU0XX0=
 -->
