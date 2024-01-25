@@ -28,8 +28,9 @@ There are four design modules that we will discuss here a) arb2, b) usbf_idma, c
             ├── gnt1
             └── gnt2
 
- The primary directories that are of interest in each of these designs are 
+ The primary directories that are of interest in each of these designs are `preprocessed_code` and `verif`.
+ 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDc5MDI2NzY5LC0xODU3OTU3NiwxODQ1Nj
-IyNTU0XX0=
+eyJoaXN0b3J5IjpbLTQ3MDUwNzM0NywtMTg1Nzk1NzYsMTg0NT
+YyMjU1NF19
 -->
