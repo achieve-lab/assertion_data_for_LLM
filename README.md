@@ -5,8 +5,8 @@
  3. Using LLMs to Facilitate Formal Verification of RTL [Link to Paper](https://browse.arxiv.org/pdf/2309.09437.pdf)
  4. LLM-assisted Generation of Hardware Assertions [Link to Paper](https://arxiv.org/pdf/2306.14027.pdf)
 
-# H
+## How to navigate the repository?
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTExNDY3OTAzXX0=
+eyJoaXN0b3J5IjpbMTg0NTYyMjU1NF19
 -->
