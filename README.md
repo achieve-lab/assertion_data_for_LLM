@@ -8,7 +8,26 @@
 ## How to navigate the repository?
 There are four design modules that we will discuss here a) arb2, b) usbf_idma, c) usbf_pa, and d) usbf_pd.
 The directory structure looks like the following:
+arb2/ [**root directory / design directory**]
+├── pic [**Directory containing different pictorial resentation for different outputs**]
+│   ├── gnt1 [**output of **]
+│   └── gnt2
+├── preprocessed_code
+├── static
+│   ├── cdfg
+│   │   └── arb2
+│   ├── cone
+│   ├── def
+│   ├── dep
+│   ├── path
+│   ├── use
+│   └── var_dep_graph
+├── tracedata
+└── verif
+    └── prism
+        ├── gnt1
+        └── gnt2
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjMxOTUzMjI3LDE4NDU2MjI1NTRdfQ==
+eyJoaXN0b3J5IjpbLTE3MzA3Mzg5NCwxODQ1NjIyNTU0XX0=
 -->
