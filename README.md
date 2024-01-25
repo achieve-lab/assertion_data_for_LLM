@@ -28,8 +28,8 @@ There are four design modules that we will discuss here a) arb2, b) usbf_idma, c
             ├── gnt1
             └── gnt2
 
-
-
+ The primary directories that are of interest in each of these designs are 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTc5NTc2LDE4NDU2MjI1NTRdfQ==
+eyJoaXN0b3J5IjpbNDc5MDI2NzY5LC0xODU3OTU3NiwxODQ1Nj
+IyNTU0XX0=
 -->
