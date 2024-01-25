@@ -6,7 +6,9 @@
  4. LLM-assisted Generation of Hardware Assertions [Link to Paper](https://arxiv.org/pdf/2306.14027.pdf)
 
 ## How to navigate the repository?
+There are four design modules that we will discuss here a) arb2, b) usbf_idma, c) usbf_pa, and d) usbf_pd.
+The directory structure looks like the following:
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg0NTYyMjU1NF19
+eyJoaXN0b3J5IjpbNjMxOTUzMjI3LDE4NDU2MjI1NTRdfQ==
 -->
