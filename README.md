@@ -6,8 +6,7 @@
  4. LLM-assisted Generation of Hardware Assertions [Link to Paper](https://arxiv.org/pdf/2306.14027.pdf)
 
 ## How to navigate the repository?
-There are four design modules that we will discuss here a) arb2, b) usbf_idma, c) usbf_pa, and d) usbf_pd.
-The directory structure looks like the following:
+There are four design modules that we will discuss here a) arb2, b) usbf_idma, c) usbf_pa, and d) usbf_pd. The directory structure fora **design** looks like the following:
 
     design/ [root directory / design directory]
     ├── pic [Directory containing different pictorial resentation for different outputs]
@@ -23,33 +22,14 @@ The directory structure looks like the following:
     │   ├── path [Contains different desin paths of a design as a concatenation of nodes in CDFG]
     │   ├── use [Contains the use chain of a design]
     │   └── var_dep_graph [Contains the variable dependency graph of a design]
-    ├── tracedata [Contains the execution 
-    └── verif
+    ├── tracedata [Contains the execution trace data of a design]
+    └── verif [Contains the assertions for a design and other associated information]
         └── prism
             ├── gnt1
             └── gnt2
 
 
-arb2/ 
-├── pic 
-│   ├── gnt1 [**Output of the design (in this case arb2 design)**]
-│   └── gnt2 [**Output of the design (in this case arb2 design)**]
-├── preprocessed_code [**Contains the Verilog code of the design**]
-├── static [**Con**]
-│   ├── cdfg
-│   │   └── arb2
-│   ├── cone
-│   ├── def
-│   ├── dep
-│   ├── path
-│   ├── use
-│   └── var_dep_graph
-├── tracedata
-└── verif
-    └── prism
-        ├── gnt1
-        └── gnt2
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3NzY3NTUyMiwxODQ1NjIyNTU0XX0=
+eyJoaXN0b3J5IjpbLTE4NTc5NTc2LDE4NDU2MjI1NTRdfQ==
 -->
