@@ -38,9 +38,10 @@ There are four design modules that we will discuss here a) arb2, b) usbf_idma, c
        - `->` and `=>` represents implication operator.
        - `#` represents a temporal/cycle operator.
        - `==` represents equality checking operator.
-- Another important question **How do we use LLM to mine massive dataset to infer properties/assertion?** Ideally, the semantics understood at the first point should be able to guide such mining. However, how we embed such domain knowledge in LLM?
+       
+- Another important question **How do we use LLM to mine massive dataset to infer properties/assertion?** Ideally, the semantics understood at the first point should be able to guide such mining. However, **how we embed such domain knowledge in LLM?**
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5NDgzMjY2OCw2Njg3ODE2MzcsLTIwNz
+eyJoaXN0b3J5IjpbMTU0MDIxODE5Miw2Njg3ODE2MzcsLTIwNz
 Q1OTc2NDMsLTE4NTc5NTc2LDE4NDU2MjI1NTRdfQ==
 -->
