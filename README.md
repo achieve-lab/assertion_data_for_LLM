@@ -31,9 +31,9 @@ There are four design modules that we will discuss here a) arb2, b) usbf_idma, c
  The primary directories that are of interest in each of these designs are `preprocessed_code` and `verif`.
  
 
- - The `preprocessed_code` has the design source code. We want to use large-language models (LLMs) to understand the syntax and semantics of the source code. Now syntax is relatively easy to understand, however, semantics is different. A corresponding *proxy task* 
+ - The `preprocessed_code` has the design source code. We want to use large-language models (LLMs) to understand the syntax and semantics of the source code. Now syntax is relatively easy to understand, however, semantics is different. A corresponding *proxy task* is 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzQ1OTc2NDMsLTE4NTc5NTc2LDE4ND
-U2MjI1NTRdfQ==
+eyJoaXN0b3J5IjpbLTEzNjYzNDQyMTksLTIwNzQ1OTc2NDMsLT
+E4NTc5NTc2LDE4NDU2MjI1NTRdfQ==
 -->
