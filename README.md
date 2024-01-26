@@ -1,9 +1,12 @@
-## Previous Works!
+## Recent Works!
 
  1. VerilogEval: Evaluating Large Language Models for Verilog Code Generation [Link to Paper](https://arxiv.org/pdf/2309.07544.pdf)
  2. Can Large Language Models Reason about Program Invariants? [Link to Paper](https://openreview.net/pdf?id=mXv2aVqUGG)
  3. Using LLMs to Facilitate Formal Verification of RTL [Link to Paper](https://browse.arxiv.org/pdf/2309.09437.pdf)
  4. LLM-assisted Generation of Hardware Assertions [Link to Paper](https://arxiv.org/pdf/2306.14027.pdf)
+
+## My prior work for Assertion Generation.
+Its called [GoldMine](http://goldmine.csl.illinois.edu/).
 
 ## How to navigate the repository?
 There are four design modules that we will discuss here a) arb2, b) usbf_idma, c) usbf_pa, and d) usbf_pd. The directory structure fora **design** looks like the following:
@@ -42,6 +45,6 @@ There are four design modules that we will discuss here a) arb2, b) usbf_idma, c
 - Another important question **How do we use LLM to mine massive dataset to infer properties/assertion?** Ideally, the semantics understood at the first point should be able to guide such mining. However, **how we embed such domain knowledge in LLM?**
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0MDIxODE5Miw2Njg3ODE2MzcsLTIwNz
-Q1OTc2NDMsLTE4NTc5NTc2LDE4NDU2MjI1NTRdfQ==
+eyJoaXN0b3J5IjpbNTgzMDc0OTM0LDY2ODc4MTYzNywtMjA3ND
+U5NzY0MywtMTg1Nzk1NzYsMTg0NTYyMjU1NF19
 -->
