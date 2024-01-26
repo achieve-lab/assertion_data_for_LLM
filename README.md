@@ -31,9 +31,9 @@ There are four design modules that we will discuss here a) arb2, b) usbf_idma, c
  The primary directories that are of interest in each of these designs are `preprocessed_code` and `verif`.
  
 
- - The `preprocessed_code` has the design source code. We want to use large-language models (LLMs) to understand the syntax and semantics of the source code. Now syntax is relatively easy to understand, however, semantics is different. A corresponding *proxy task* is 
+ - The `preprocessed_code` has the design source code. We want to use large-language models (LLMs) to understand the syntax and semantics of the source code. Now syntax is relatively easy to understand, however, semantics is different. A corresponding *proxy task* to understand the semantic of the program is to understand different abstract representation of the hardware design code, *e.g.,* Control-Data Flow Graph (CDFG), Variable Dependency Graph (VDG), 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjYzNDQyMTksLTIwNzQ1OTc2NDMsLT
-E4NTc5NTc2LDE4NDU2MjI1NTRdfQ==
+eyJoaXN0b3J5IjpbNjY4NzgxNjM3LC0yMDc0NTk3NjQzLC0xOD
+U3OTU3NiwxODQ1NjIyNTU0XX0=
 -->
