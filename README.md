@@ -31,9 +31,9 @@ There are four design modules that we will discuss here a) arb2, b) usbf_idma, c
  The primary directories that are of interest in each of these designs are `preprocessed_code` and `verif`.
  
 
- - The `preprocessed_code` has the design source code. We want to use large-language models (LLMs) to understand the syntax and semantics of the source code. Now syntax is relatively easy to understand, however, semantics is different. A corresponding *proxy task* to understand the semantic of the program is to understand different abstract representation of the hardware design code, *e.g.,* Control-Data Flow Graph (CDFG), Variable Dependency Graph (VDG), Cone of Influence (COI). However, the question is **How can we use a Large Language Model to understand the semantic using these proxy artifacts?** It is imperative to understand both syntax and semantics for the model to perform well.
+ - The `preprocessed_code` has the design source code. We want to use large-language models (LLMs) to understand the syntax and semantics of the source code. Now syntax is relatively easy to understand, however, semantics is different. A corresponding *proxy task* to understand the semantic of the program is to understand different abstract representation of the hardware design code, *e.g.,* Control-Data Flow Graph (CDFG), Variable Dependency Graph (VDG), Cone of Influence (COI). Each of these CDFG [], VDG, and COI can be representted as a directed graph.However, the question is **How can we use a Large Language Model to understand the semantic using these proxy artifacts?** It is imperative to understand both syntax and semantics for the model to perform well.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNDY1NjQyNzcsNjY4NzgxNjM3LC0yMD
-c0NTk3NjQzLC0xODU3OTU3NiwxODQ1NjIyNTU0XX0=
+eyJoaXN0b3J5IjpbMTEyNDA3MDEyNCw2Njg3ODE2MzcsLTIwNz
+Q1OTc2NDMsLTE4NTc5NTc2LDE4NDU2MjI1NTRdfQ==
 -->
