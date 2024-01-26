@@ -33,8 +33,11 @@ There are four design modules that we will discuss here a) arb2, b) usbf_idma, c
 
  - The `preprocessed_code` has the design source code. We want to use large-language models (LLMs) to understand the syntax and semantics of the source code. Now syntax is relatively easy to understand, however, semantics is different. A corresponding *proxy task* to understand the semantic of the program is to understand different abstract representation of the hardware design code, *e.g.,* Control-Data Flow Graph (CDFG), Variable Dependency Graph (VDG), Cone of Influence (COI). Each of these CDFG ([CDFG](arb2/static/cdfg/arb2/arb2.pdf)), VDG ([VDG](arb2/static/var_dep_graph/arb2.pdf)), and COI ([COI](arb2/static/cone/gnt1.pdf)) can be representted as a directed graph.However, the question is **How can we use a Large Language Model to understand the semantic using these proxy artifacts?** It is imperative to understand both syntax and semantics for the model to perform well.
 
-- All the assertions are available in the `verif` folder (please see the directory tree above to locate one such folder). 
+ - All the assertions are available in the `verif` folder (please see the directory tree above to locate one such folder). An example assertion file `arb2` is available [here](arb2/verif/prism/gnt2/gnt2.gold). Each assertion is named as `a1`, `a2`, ...., etc.
+
+ - List item
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2Mjg2MTc3OSw2Njg3ODE2MzcsLTIwNz
+eyJoaXN0b3J5IjpbMTE0NzcyMDUzNiw2Njg3ODE2MzcsLTIwNz
 Q1OTc2NDMsLTE4NTc5NTc2LDE4NDU2MjI1NTRdfQ==
 -->
