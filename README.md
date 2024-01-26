@@ -16,7 +16,7 @@ There are four design modules that we will discuss here a) arb2, b) usbf_idma, c
     ├── static [Contains the hardware design source analysis results]
     │   ├── cdfg [Contains Control-Data Flow graph of a design]
     │   │   └── design
-    │   ├── cone [Contains cone of influence per output of a design]
+    │   ├── cone [Contains cone of influence (COI) per output of a design]
     │   ├── def [Contains the definition chain of a design]
     │   ├── dep [Contains the dependency information among design variables of a design]
     │   ├── path [Contains different desin paths of a design as a concatenation of nodes in CDFG]
@@ -31,9 +31,9 @@ There are four design modules that we will discuss here a) arb2, b) usbf_idma, c
  The primary directories that are of interest in each of these designs are `preprocessed_code` and `verif`.
  
 
- - The `preprocessed_code` has the design source code. We want to use large-language models (LLMs) to understand the syntax and semantics of the source code. Now syntax is relatively easy to understand, however, semantics is different. A corresponding *proxy task* to understand the semantic of the program is to understand different abstract representation of the hardware design code, *e.g.,* Control-Data Flow Graph (CDFG), Variable Dependency Graph (VDG), Cone of 
+ - The `preprocessed_code` has the design source code. We want to use large-language models (LLMs) to understand the syntax and semantics of the source code. Now syntax is relatively easy to understand, however, semantics is different. A corresponding *proxy task* to understand the semantic of the program is to understand different abstract representation of the hardware design code, *e.g.,* Control-Data Flow Graph (CDFG), Variable Dependency Graph (VDG), Cone of Influence (COI). However, the question is **How can we use a Large Language Model to understand the semantic using these proxy artifacts?** It is imperative to understand both syntax and semantics for the model to perform well.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3MzkzMDI0Nyw2Njg3ODE2MzcsLTIwNz
-Q1OTc2NDMsLTE4NTc5NTc2LDE4NDU2MjI1NTRdfQ==
+eyJoaXN0b3J5IjpbLTIwNDY1NjQyNzcsNjY4NzgxNjM3LC0yMD
+c0NTk3NjQzLC0xODU3OTU3NiwxODQ1NjIyNTU0XX0=
 -->
