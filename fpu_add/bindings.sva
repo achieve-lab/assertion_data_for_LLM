@@ -1,0 +1,38 @@
+bind fpu_add i_fpu_add v_fpu_add(
+
+           .clk(clk),
+           .rst(rst),
+           .enable(enable),
+     .opa(opa), .opb(opb),
+          .sign(sign),
+    .sum_2(sum_2),
+    .exponent_2(exponent_2),
+
+    .exponent_a(exponent_a),
+    .exponent_b(exponent_b),
+    .mantissa_a(mantissa_a),
+    .mantissa_b(mantissa_b),
+   .expa_gt_expb(expa_gt_expb),
+    .exponent_small(exponent_small),
+    .exponent_large(exponent_large),
+    .mantissa_small(mantissa_small),
+    .mantissa_large(mantissa_large),
+   .small_is_denorm(small_is_denorm),
+   .large_is_denorm(large_is_denorm),
+   .large_norm_small_denorm(large_norm_small_denorm),
+   .exponent_diff(exponent_diff),
+    .large_add(large_add),
+    .small_add(small_add),
+    .small_shift(small_shift),
+   .small_shift_nonzero(small_shift_nonzero),
+    .small_is_nonzero(small_is_nonzero), 
+   .small_fraction_enable(small_fraction_enable),  
+    .small_shift_2(small_shift_2), 
+    .small_shift_3(small_shift_3),
+    .sum(sum),
+   .sum_overflow(sum_overflow), 
+    .exponent(exponent),
+   .sum_leading_one(sum_leading_one), 
+   .denorm_to_norm(denorm_to_norm)
+
+);

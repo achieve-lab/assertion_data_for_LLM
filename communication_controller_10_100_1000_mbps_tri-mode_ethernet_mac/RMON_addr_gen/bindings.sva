@@ -1,0 +1,25 @@
+bind RMON_addr_gen
+ i_RMON_addr_gen v_RMON_addr_gen(
+.Pkt_err_type_rmon(Pkt_err_type_rmon),
+.Clk(Clk),
+.Reg_data(Reg_data),
+.Reg_apply(Reg_apply),
+.PktErrTypeReg(PktErrTypeReg),
+.Pkt_length_rmon(Pkt_length_rmon),
+.Apply_rmon(Apply_rmon),
+.Pkt_type_rmon(Pkt_type_rmon),
+.Apply_rmon_pulse(Apply_rmon_pulse),
+.Apply_rmon_dl1(Apply_rmon_dl1),
+.Reg_next(Reg_next),
+.CurrentState(CurrentState),
+.NextState(NextState),
+.Reg_drop_apply(Reg_drop_apply),
+.Pkt_length_rmon_dl1(Pkt_length_rmon_dl1),
+.PktTypeReg(PktTypeReg),
+.Pkt_type_rmon_dl1(Pkt_type_rmon_dl1),
+.Reset(Reset),
+.Reg_addr(Reg_addr),
+.Apply_rmon_dl2(Apply_rmon_dl2),
+.Pkt_err_type_rmon_dl1(Pkt_err_type_rmon_dl1),
+.PktLengthReg(PktLengthReg)
+);

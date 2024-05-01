@@ -1,0 +1,11 @@
+bind eth_crc
+ i_eth_crc v_eth_crc(
+.Crc(Crc),
+.Initialize(Initialize),
+.Enable(Enable),
+.CrcNext(CrcNext),
+.CrcError(CrcError),
+.Clk(Clk),
+.Reset(Reset),
+.Data(Data)
+);

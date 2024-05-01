@@ -1,0 +1,124 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.9.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-04-28 18:53:50 CDT
+# hostname  : pal-achieve-07.(none)
+# pid       : 157531
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:41421' '-nowindow' '-style' 'windows' '-data' 'AAABDHicZY7PCgFxFIW/IZMs5BGsFU8wa9shZSthRJqZMJQNj+pNxjdCTc7td/+ce+7pFwDRvSxL3mjeTCExY+OH4PlpooA6qrlRZ6aPWoXW9/grCX1dhqRkLNhSsJMZyCw5GBlX+cL9yZwbGUfObFjLx8xUt1Unbi72ff86Ye5upUNqTXRMvBp5tdIROupzXTL2Tr0/ZYUXw6sgSA==' '-proj' '/home/vpulav2/Work/Jasper/can_fifo/can_fifo/sessionLogs/session_0' '-init' '-hidden' '/home/vpulav2/Work/Jasper/can_fifo/can_fifo/.tmp/.initCmds.tcl' 'FPV_can_fifo.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /home/vpulav2/Work/Jasper/can_fifo/can_fifo/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/can_fifo.v
+[-- (VERI-1482)] Analyzing Verilog file './/can_fifo.v'
+[INFO (VERI-1328)] .//can_fifo.v(147): analyzing included file './/can_defines.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top can_fifo
+INFO (ISW003): Top module name is "can_fifo".
+[INFO (VERI-9030)] .//bindings.sva(12): undeclared symbol 'mbist_so_o' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(13): undeclared symbol 'mbist_s_0' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(20): undeclared symbol 'mbist_ctrl_i' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(37): undeclared symbol 'mbist_si_i' in bind instance actual, assumed default net type 'wire'
+[INFO (HIER-8002)] .//can_fifo.v(716): Disabling old hierarchical reference handler
+[INFO (VERI-1018)] .//property.sva(1): compiling module 'i_can_fifo'
+[INFO (VERI-1018)] .//can_fifo.v(149): compiling module 'can_fifo'
+[ERROR (VERI-1002)] .//bindings.sva(7): cannot access memory 'overrun_info' directly
+[ERROR (VERI-1002)] .//bindings.sva(10): cannot access memory 'length_fifo' directly
+[ERROR (VERI-1002)] .//bindings.sva(11): cannot access memory 'fifo' directly
+[WARN (VERI-1330)] .//bindings.sva(20): actual bit length 1 differs from formal bit length 3 for port 'mbist_ctrl_i'
+[WARN (VDB-1002)] .//can_fifo.v(212): net 'fifo[0][7]' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(213): net 'length_fifo[0][3]' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(214): net 'overrun_info[0]' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(221): net 'rd_pointer[5]' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(222): net 'wr_pointer[5]' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(223): net 'read_address[5]' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(224): net 'wr_info_pointer[5]' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(225): net 'rd_info_pointer[5]' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(226): net 'wr_q' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(227): net 'len_cnt[3]' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(228): net 'fifo_cnt[6]' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(230): net 'latch_overrun' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(231): net 'initialize_memories' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(233): net 'length_info[3]' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(234): net 'write_length_info' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(235): net 'fifo_empty' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(236): net 'fifo_full' does not have a driver
+[WARN (VDB-1002)] .//can_fifo.v(237): net 'info_full' does not have a driver
+[WARN (VDB-1002)] .//bindings.sva(12): net 'mbist_so_o' does not have a driver
+[WARN (VDB-1002)] .//bindings.sva(13): net 'mbist_s_0' does not have a driver
+[WARN (VDB-1002)] .//bindings.sva(20): net 'mbist_ctrl_i' does not have a driver
+[WARN (VDB-1002)] .//bindings.sva(37): net 'mbist_si_i' does not have a driver
+[ERROR (VDB-9017)] Module can_fifo could not be elaborated
+Summary of errors detected:
+	[ERROR (VERI-1002)] .//bindings.sva(7): cannot access memory 'overrun_info' directly
+	[ERROR (VERI-1002)] .//bindings.sva(10): cannot access memory 'length_fifo' directly
+	[ERROR (VERI-1002)] .//bindings.sva(11): cannot access memory 'fifo' directly
+	[ERROR (VDB-9017)] Module can_fifo could not be elaborated
+ERROR (ENL034): 4 errors detected in the design file(s).
+
+ERROR: problem encountered at line 17 in file FPV_can_fifo.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 1.781 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

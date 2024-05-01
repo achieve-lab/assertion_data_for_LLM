@@ -1,0 +1,10 @@
+bind can_crc
+ i_can_crc v_can_crc(
+.crc_tmp(crc_tmp),
+.enable(enable),
+.clk(clk),
+.initialize(initialize),
+.crc(crc),
+.data(data),
+.crc_next(crc_next)
+);

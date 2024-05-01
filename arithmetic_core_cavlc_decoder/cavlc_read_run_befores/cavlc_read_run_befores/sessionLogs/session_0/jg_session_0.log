@@ -1,0 +1,99 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-04-29 17:04:40 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 161571
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:40871' '-nowindow' '-style' 'windows' '-data' 'AAABRHiclYxBCsJADEXfKBZx4UFEPUHX3VYR3JZaW1HEKdVWcKNH9Sbj72CFLk2YTPLz8wwQPp1z+Bg+VAJiIuUvzPvbhIZ+tPOgr6xfvR9G3XFnCfSmLLhgSThQc5Qyk5JyVlru0mvtr6ql0lJxI2cvPWYj91juQpvGgyNWbLXLRGhEyNRX8qf+ovKshJ2UwrNykZciZvLCRKxSquWkaf4XpY0PnXIsEA==' '-proj' '/data/vpulav2/Work/Jasper/cavlc_read_run_befores/cavlc_read_run_befores/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper/cavlc_read_run_befores/cavlc_read_run_befores/.tmp/.initCmds.tcl' 'FPV_cavlc_read_run_befores.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper/cavlc_read_run_befores/cavlc_read_run_befores/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/cavlc_read_run_befores.v
+[-- (VERI-1482)] Analyzing Verilog file './/cavlc_read_run_befores.v'
+[INFO (VERI-1328)] .//cavlc_read_run_befores.v(40): analyzing included file './/defines.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top cavlc_read_run_befores
+INFO (ISW003): Top module name is "cavlc_read_run_befores".
+[INFO (HIER-8002)] .//cavlc_read_run_befores.v(368): Disabling old hierarchical reference handler
+[INFO (VERI-1018)] .//property.sva(1): compiling module 'i_cavlc_read_run_befores'
+INFO (IPL017): The host machine is running out of memory.
+    This message was triggered because the system reached 10% memory.
+    System memory use information:
+    [Process]
+        Memory In Use: 1962160 kB (42%)
+        Peak Memory Usage: 1962160 kB (42%)
+    [Host]
+        Available Memory: 399860 kB (8%)
+        Total Memory: 4648720 kB
+        Free Swap: 8183804 kB (83%)
+        Total Swap: 9768956 kB
+INFO (IPL017): The host machine is running out of memory.
+    This message was triggered because the system reached 1% memory.
+    System memory use information:
+    [Process]
+        Memory In Use: 2610340 kB (56%)
+        Peak Memory Usage: 2610340 kB (56%)
+    [Host]
+        Available Memory: 78196 kB (1%)
+        Total Memory: 4648720 kB
+        Free Swap: 7001852 kB (71%)
+        Total Swap: 9768956 kB

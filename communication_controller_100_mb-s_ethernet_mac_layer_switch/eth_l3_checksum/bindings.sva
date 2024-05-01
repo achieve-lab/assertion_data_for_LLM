@@ -1,0 +1,15 @@
+bind eth_l3_checksum
+ i_eth_l3_checksum v_eth_l3_checksum(
+.CSready(CSready),
+.prev_latched_Rx1(prev_latched_Rx1),
+.RxData(RxData),
+.Reset(Reset),
+.CheckSum(CheckSum),
+.Divided_2_clk(Divided_2_clk),
+.MRxClk(MRxClk),
+.ByteCnt(ByteCnt),
+.prev_latched_Rx(prev_latched_Rx),
+.StartCalc(StartCalc),
+.Divided_4_clk(Divided_4_clk),
+.Sum(Sum)
+);

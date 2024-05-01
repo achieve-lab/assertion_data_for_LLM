@@ -1,0 +1,10 @@
+bind signed_mult_const_fpga
+ i_signed_mult_const_fpga v_signed_mult_const_fpga(
+.a(a),
+.valid(valid),
+.p_tmp(p_tmp),
+.clk(clk),
+.p(p),
+.a_FF(a_FF),
+.rstn(rstn)
+);

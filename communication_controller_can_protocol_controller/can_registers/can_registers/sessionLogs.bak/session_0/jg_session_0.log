@@ -1,0 +1,122 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.9.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-04-28 18:16:16 CDT
+# hostname  : pal-achieve-07.(none)
+# pid       : 150014
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:44469' '-nowindow' '-style' 'windows' '-data' 'AAABIHicfYxLCsJAEETfKAZx4QE8gqAnyDrbRAS3IlGDIpkwMQpu9KjeZKwMRsjGavpXXdUGiJ/eewKGD5WIlETxg3l/h9jQR7sP+szq1esw6sydJFJOWVBi2VLQcBIzF7PjorDcxTe616qVwuK4cmAvPmUt9Vjqoy634EzI2OiW60Op7qQt9LUOLqe+1JTrN0zkrMRZztpmfzwtPqsAJMQ=' '-proj' '/home/vpulav2/Work/Jasper/can_registers/can_registers/sessionLogs/session_0' '-init' '-hidden' '/home/vpulav2/Work/Jasper/can_registers/can_registers/.tmp/.initCmds.tcl' 'FPV_can_registers.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /home/vpulav2/Work/Jasper/can_registers/can_registers/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/can_registers.v
+[-- (VERI-1482)] Analyzing Verilog file './/can_registers.v'
+[INFO (VERI-1328)] .//can_registers.v(171): analyzing included file './/can_register_asyn.v'
+[INFO (VERI-1328)] .//can_registers.v(172): analyzing included file './/can_register_asyn_syn.v'
+[INFO (VERI-1328)] .//can_registers.v(173): analyzing included file './/can_register.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property.sva'
+% 
+% # Elaborate design and properties
+% elaborate -bbox_m can_registers
+[WARN (VERI-2418)] .//property.sva(1): parameter 'WIDTH' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2311)] .//can_registers.v(174): bind to black box module 'can_registers' is ignored
+[INFO (HIER-8002)] .//property.sva(342382): Disabling old hierarchical reference handler
+[INFO (VERI-1018)] .//can_register_asyn.v(77): compiling module 'can_register_asyn'
+[INFO (VERI-1018)] .//can_register_asyn_syn.v(77): compiling module 'can_register_asyn_syn'
+[INFO (VERI-1018)] .//can_register.v(77): compiling module 'can_register'
+[INFO (VERI-1018)] .//can_registers.v(174): compiling module 'can_registers'
+[INFO (VERI-1018)] .//property.sva(2): compiling module 'i_can_registers'
+INFO (IPL017): The host machine is running out of memory.
+    This message was triggered because the system reached 10% memory.
+    System memory use information:
+    [Process]
+        Memory In Use: 4028796 kB (86%)
+        Peak Memory Usage: 4028796 kB (86%)
+    [Host]
+        Available Memory: 262312 kB (5%)
+        Total Memory: 4648504 kB
+        Free Swap: 8430352 kB (86%)
+        Total Swap: 9768956 kB
+INFO (IPL017): The host machine is running out of memory.
+    This message was triggered because the system reached 1% memory.
+    System memory use information:
+    [Process]
+        Memory In Use: 4108752 kB (88%)
+        Peak Memory Usage: 4108752 kB (88%)
+    [Host]
+        Available Memory: 75840 kB (1%)
+        Total Memory: 4648504 kB
+        Free Swap: 8400656 kB (85%)
+        Total Swap: 9768956 kB
+WARNING (WNL080): Command unexpectedly terminated during elaboration of module/entity "i_can_registers".
+    Use "elaborate -bbox_m" to bypass this problem.
+WARNING (WNL081): Command unexpectedly terminated, possibly because the host machine is running out of memory.
+    Module "can_register_asyn" has the biggest registered footprint, accounting for 1.6MB of memory (RSS).
+    Use "elaborate -bbox_m" to bypass this problem.
+    Run "compilation -profile -report -sort_by memory" to list memory profile information for all modules.
+ERROR (ENL108): Elaboration process on main design terminated due to external UNIX signal "9" (Killed).
+
+ERROR: problem encountered at line 17 in file FPV_can_registers.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 3.971 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

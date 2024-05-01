@@ -1,0 +1,10 @@
+property a3;
+@(posedge clk) (xon_gen_complete == 1) |=> (xon_gen == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a4;
+@(posedge clk) (xon_gen_complete == 0 & xon_cpu_dl1 == 1 & xon_cpu_dl2 == 0) |=> (xon_gen == 1);
+endproperty
+assert_a4: assert property(a4);
+

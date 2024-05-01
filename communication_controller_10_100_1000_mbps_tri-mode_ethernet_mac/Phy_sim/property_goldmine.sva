@@ -1,0 +1,79 @@
+
+module i_Phy_sim(
+input                   Rx_dv,
+input                   Col,
+input                   Rx_er,
+input                   Crs,
+input   [2:0]   Speed,
+input   [7:0]   Txd,
+input                   Tx_clk  ,//used only in MII mode
+input                   Tx_en   ,
+input                   Gtx_clk         ,//used only in GMII mode
+input                           Clk_25m ,//used for 100 Mbps mode
+input                           Clk_2_5m        ,//used for 10 Mbps mode
+input                   Tx_er   ,
+input                   Rx_clk  ,
+input   [7:0]   Rxd
+);
+
+property a6;
+@(posedge Gtx_clk) (Tx_en == 1) |-> (Rx_dv == 1);
+endproperty
+assert_a6: assert property(a6);
+
+property a5;
+@(posedge Gtx_clk) (Tx_en == 0) |-> (Rx_dv == 0);
+endproperty
+assert_a5: assert property(a5);
+
+property a4;
+@(posedge Gtx_clk) (Tx_en == 1) |-> (Crs == 1);
+endproperty
+assert_a4: assert property(a4);
+
+property a3;
+@(posedge Gtx_clk) (Tx_en == 0) |-> (Crs == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a1;
+@(posedge Gtx_clk) (Speed[1] == 0 & Clk_2_5m == 0) |-> (Rx_clk == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge Gtx_clk) (Clk_25m == 0 & Clk_2_5m == 0) |-> (Rx_clk == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a11;
+@(posedge Gtx_clk) (Speed[1] == 0 & Speed[0] == 0) |-> (Rx_clk == 0);
+endproperty
+assert_a11: assert property(a11);
+
+property a2;
+@(posedge Gtx_clk) (Clk_25m == 0 & Speed[0] == 0) |-> (Rx_clk == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a8;
+@(posedge Gtx_clk) (Speed[1] == 0 & Clk_2_5m == 0) |-> (Tx_clk == 0);
+endproperty
+assert_a8: assert property(a8);
+
+property a7;
+@(posedge Gtx_clk) (Clk_25m == 0 & Clk_2_5m == 0) |-> (Tx_clk == 0);
+endproperty
+assert_a7: assert property(a7);
+
+property a10;
+@(posedge Gtx_clk) (Speed[1] == 0 & Speed[0] == 0) |-> (Tx_clk == 0);
+endproperty
+assert_a10: assert property(a10);
+
+property a9;
+@(posedge Gtx_clk) (Clk_25m == 0 & Speed[0] == 0) |-> (Tx_clk == 0);
+endproperty
+assert_a9: assert property(a9);
+
+endmodule

@@ -1,0 +1,8 @@
+bind tcReset
+ i_tcReset v_tcReset(
+.resetIn(resetIn),
+.resets(resets),
+.tcAddr(tcAddr),
+.tcResetEn(tcResetEn),
+.resetOut(resetOut)
+);

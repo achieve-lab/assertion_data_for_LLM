@@ -1,0 +1,9 @@
+bind bitRam i_bitRam v_bitRam(
+.clk(clk),
+.reset(reset),
+.bitRamEn(bitRamEn),
+.bitRamRw(bitRamRw),
+.bitRamIn(bitRamIn), 
+.bitRamAddr(bitRamAddr),
+.bitRamOut(bitRamOut)
+);

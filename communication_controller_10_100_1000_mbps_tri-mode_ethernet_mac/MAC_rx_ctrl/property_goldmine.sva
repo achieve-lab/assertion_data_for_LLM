@@ -1,0 +1,61 @@
+module i_MAC_rx_ctrl(
+input  [2:0]   Rx_pkt_type_rmon        ,
+input [3:0]       Pause_next,
+input             Too_short,
+input             broadcast_ptr           ,
+input [15:0]      Frame_length_counter,
+input [7:0]       pause_quanta_h      ,
+input  [15:0]  pause_quanta        ,
+input          Fifo_data_end   ,
+input           Fifo_full,
+input [3:0]       Pause_current /* synthesis syn_keep*/,
+input   [7:0]   MRxD    ,
+input [3:0]       Next_state,
+input [5:0]       IFG_counter,
+input           MRxErr  ,
+input             RxErr   ,
+input             pause_quanta_val_tmp,
+input             pause_frame_ptr     ,
+input [7:0]       RxD_dl1 ,
+input             Rx_apply_rmon_tmp,
+input  [7:0]   Fifo_data       ,
+input             Fifo_data_en,
+input   [5:0]   RX_IFG_SET    ,
+input   [6:0]   RX_MIN_LENGTH   ,// 64
+input   [15:0]  RX_MAX_LENGTH   ,// 1518
+input          CRC_en  ,
+input [7:0]       RxD ,
+input [2:0]       Rx_pkt_err_type_rmon,
+input           MCrs_dv ,
+input             Rx_apply_rmon,
+input          CRC_init,
+input             Too_long,
+input             Fifo_data_err,
+input             Crs_dv  ,
+input          pause_quanta_val    ,
+input  [15:0]  Rx_pkt_length_rmon      ,
+input             MAC_add_en,
+input             Rx_apply_rmon_tmp_pl1,
+input           Reset   ,
+input           Clk     ,
+input           CRC_err ,
+input           MAC_rx_add_chk_err  ,
+input           broadcast_drop          ,
+input [3:0]       Current_state /* synthesis syn_keep*/
+);
+
+property a0;
+@(posedge Clk) (Rx_apply_rmon_tmp_pl1 == 1) |=> (Rx_apply_rmon == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a1;
+@(posedge Clk) (Current_state[0] == 0) |=> (Rx_apply_rmon == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a2;
+@(posedge Clk) (Current_state[2] == 0 & Current_state[0] == 1) |=> (Rx_apply_rmon == 1);
+endproperty
+assert_a2: assert property(a2);
+endmodule

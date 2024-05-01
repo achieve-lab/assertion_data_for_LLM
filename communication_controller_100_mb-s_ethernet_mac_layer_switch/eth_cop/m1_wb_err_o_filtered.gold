@@ -1,0 +1,15 @@
+property a1;
+@(posedge clk) (m1_wb_stb_i == 0) |-> (m1_wb_err_o == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge clk) (m1_wb_cyc_i == 1 & m1_wb_stb_i == 1) |-> (m1_wb_err_o == 1);
+endproperty
+assert_a0: assert property(a0);
+
+property a2;
+@(posedge clk) (m1_wb_cyc_i == 0) |-> (m1_wb_err_o == 0);
+endproperty
+assert_a2: assert property(a2);
+

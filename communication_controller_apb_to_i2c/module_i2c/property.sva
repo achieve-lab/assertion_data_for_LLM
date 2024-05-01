@@ -1,0 +1,191 @@
+module v_module_i2c(PCLK,PRESETn,fifo_tx_f_full,fifo_tx_f_empty,fifo_tx_data_out,fifo_rx_data_in,fifo_rx_f_full,fifo_rx_f_empty,fifo_rx_wr_en,
+fifo_tx_rd_en,RX_EMPTY,TX_EMPTY,ERROR,ENABLE_SCL,ENABLE_SDA,SDA,SCL,DATA_CONFIG_REG,TIMEOUT_TX,state_tx,count_receive_data,RESPONSE,SDA_OUT,count_timeout,count_send_data,next_state_rx,BR_CLK_O,next_state_tx, count_tx,count_rx,BR_CLK_O_RX,SDA_OUT_RX,state_rx);
+
+input PCLK;
+input PRESETn;
+
+//INTERFACE WITH FIFO TRANSMISSION
+input fifo_tx_f_full;
+input fifo_tx_f_empty;
+input [32-1:0] fifo_tx_data_out;
+
+//INTERFACE WITH FIFO RECEIVER
+input fifo_rx_f_full;
+input fifo_rx_f_empty;
+input fifo_rx_wr_en;
+input [32-1:0] fifo_rx_data_in; 
+
+//INTERFACE WITH REGISTER CONFIGURATION
+input [14-1:0] DATA_CONFIG_REG;
+input [14-1:0] TIMEOUT_TX;
+
+//INTERFACE TO APB AND READ FOR FIFO   
+input fifo_tx_rd_en;
+input   TX_EMPTY;
+input   RX_EMPTY;
+input ERROR;
+input ENABLE_SDA;
+input ENABLE_SCL;
+
+
+//I2C BI DIRETIONAL PORTS
+input SDA;
+input SCL;
+//registers
+input state_tx;
+input state_rx;
+input count_receive_data;
+input SDA_OUT;
+input RESPONSE;
+input count_timeout;
+input count_send_data;
+input next_state_rx;
+input BR_CLK_O;
+input next_state_tx;
+input SDA_OUT_RX;
+input count_tx;
+input count_rx;
+input BR_CLK_O_RX;
+
+property a0;
+    @(posedge PCLK) (DATA_CONFIG_REG[0] == 0) |-> (ERROR == 0);
+endproperty
+
+property a1;
+    @(posedge PCLK) (DATA_CONFIG_REG[1] == 0) |-> (ERROR == 0);
+endproperty
+
+property a2;
+    @(posedge PCLK) (DATA_CONFIG_REG[0] == 1 & DATA_CONFIG_REG[1] == 1) |-> (ERROR == 1);
+endproperty
+
+property a3;
+    @(posedge PCLK) (fifo_rx_f_empty == 1) |-> (RX_EMPTY == 1);
+endproperty
+
+property a4;
+    @(posedge PCLK) (fifo_rx_f_empty == 0) |-> (RX_EMPTY == 0);
+endproperty
+
+property a5;
+    @(posedge PCLK) (fifo_tx_f_empty == 0) |-> (TX_EMPTY == 0);
+endproperty
+
+property a6;
+    @(posedge PCLK) (fifo_tx_f_empty == 1) |-> (TX_EMPTY == 1);
+endproperty
+
+property a7_harm;
+    @(posedge PCLK) (state_tx == 0) ##1 1 |-> (count_receive_data == 0);
+endproperty
+
+assert_a0: assert property(a0);
+assert_a1: assert property(a1);
+assert_a2: assert property(a2);
+assert_a3: assert property(a3);
+assert_a4: assert property(a4);
+assert_a5: assert property(a5);
+assert_a6: assert property(a6);
+assert_a7_harm : assert property(a7_harm);
+assert property(@(posedge PCLK) (!RESPONSE ##1 1) |-> SDA_OUT);
+assert property(@(posedge PCLK) ((count_timeout == 0) ##1 1) |-> SDA_OUT);
+assert property(@(posedge PCLK) (ENABLE_SDA) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((next_state_rx >= 0) && (next_state_rx <= 1) ##1 1) |-> BR_CLK_O);
+assert property(@(posedge PCLK) ((fifo_tx_data_out >= 0) && (fifo_tx_data_out <= 4292353279) ##1 1) |-> BR_CLK_O);
+assert property(@(posedge PCLK) (!fifo_tx_rd_en ##1 1) |-> SDA_OUT);
+assert property(@(posedge PCLK) ((next_state_tx >= 0) && (next_state_tx <= 1) ##1 1) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) (!fifo_rx_wr_en ##1 1) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) ((count_receive_data >= 0) && (count_receive_data <= 4095) ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((count_send_data == 0)) |-> (count_receive_data == 0));
+assert property(@(posedge PCLK) ((fifo_tx_data_out >= 1615616) && (fifo_tx_data_out <= 4292353279)) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) (!fifo_rx_wr_en ##1 1) |-> BR_CLK_O);
+assert property(@(posedge PCLK) ((count_timeout == 0) ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((count_tx == 0) ##1 1) |-> SDA_OUT);
+assert property(@(posedge PCLK) (!PRESETn) |-> (count_receive_data == 0));
+assert property(@(posedge PCLK) (BR_CLK_O) |-> (count_receive_data == 0));
+assert property(@(posedge PCLK) ((count_rx == 0) ##1 1) |-> SDA_OUT);
+assert property(@(posedge PCLK) ((count_send_data == 0)) |-> BR_CLK_O);
+assert property(@(posedge PCLK) (!BR_CLK_O_RX ##1 1) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) (!BR_CLK_O_RX ##1 1) |-> BR_CLK_O);
+assert property(@(posedge PCLK) (!SDA_OUT_RX ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((state_rx == 0) ##1 1) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) ((state_rx == 0) ##1 1) |-> SDA_OUT);
+assert property(@(posedge PCLK) (!ENABLE_SCL ##1 1) |-> (count_receive_data == 0));
+assert property(@(posedge PCLK) ((count_send_data >= 0) && (count_send_data <= 4095) ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((fifo_rx_data_in == 0) ##1 1) |-> SDA_OUT);
+assert property(@(posedge PCLK) (!fifo_rx_wr_en ##1 1) |-> SDA_OUT);
+assert property(@(posedge PCLK) ((TIMEOUT_TX >= 0) && (TIMEOUT_TX <= 16355) ##1 1) |-> BR_CLK_O);
+assert property(@(posedge PCLK) ((TIMEOUT_TX >= 0) && (TIMEOUT_TX <= 16355) ##1 1) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) (PCLK ##1 1) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) ((next_state_rx >= 0) && (next_state_rx <= 1) ##1 1) |-> (count_receive_data == 0));
+assert property(@(posedge PCLK) ((count_rx == 0) ##1 1) |-> (count_receive_data == 0));
+assert property(@(posedge PCLK) (!ENABLE_SCL ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((fifo_tx_data_out >= 0) && (fifo_tx_data_out <= 4292353279) ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((count_receive_data == 0)) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) (BR_CLK_O) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((TIMEOUT_TX >= 0) && (TIMEOUT_TX <= 16355) ##1 1) |-> SDA_OUT);
+assert property(@(posedge PCLK) ((count_send_data == 0)) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) (!fifo_tx_rd_en ##1 1) |-> (count_receive_data == 0));
+assert property(@(posedge PCLK) ((DATA_CONFIG_REG >= 13) && (DATA_CONFIG_REG <= 16369)) |-> (count_receive_data == 0));
+assert property(@(posedge PCLK) (SDA_OUT) |-> BR_CLK_O);
+assert property(@(posedge PCLK) ((TIMEOUT_TX >= 11) && (TIMEOUT_TX <= 16355)) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) ((count_send_data == 0)) |-> SDA_OUT);
+assert property(@(posedge PCLK) (!PRESETn) |-> BR_CLK_O);
+assert property(@(posedge PCLK) ((fifo_tx_data_out >= 1615616) && (fifo_tx_data_out <= 4292353279)) |-> (count_receive_data == 0));
+assert property(@(posedge PCLK) ((fifo_rx_data_in == 0) ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) (!fifo_tx_rd_en ##1 1) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) ((DATA_CONFIG_REG >= 0) && (DATA_CONFIG_REG <= 16369) ##1 1) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) ((next_state_rx >= 0) && (next_state_rx <= 1) ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((state_tx == 0) ##1 1) |-> SDA_OUT);
+assert property(@(posedge PCLK) (ENABLE_SDA) |-> SDA_OUT);
+assert property(@(posedge PCLK) (!fifo_rx_wr_en ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((state_tx == 0) ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((fifo_tx_data_out >= 1615616) && (fifo_tx_data_out <= 4292353279)) |-> SDA_OUT);
+assert property(@(posedge PCLK) ((next_state_rx >= 0) && (next_state_rx <= 1) ##1 1) |-> SDA_OUT);
+assert property(@(posedge PCLK) ((next_state_tx >= 0) && (next_state_tx <= 1) ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((count_receive_data >= 0) && (count_receive_data <= 4095) ##1 1) |-> BR_CLK_O);
+assert property(@(posedge PCLK) ((DATA_CONFIG_REG >= 13) && (DATA_CONFIG_REG <= 16369)) |-> BR_CLK_O);
+assert property(@(posedge PCLK) (!SDA_OUT_RX ##1 1) |-> (count_receive_data == 0));
+assert property(@(posedge PCLK) ((next_state_rx >= 0) && (next_state_rx <= 1) ##1 1) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) ((state_rx == 0) ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((state_rx == 0) ##1 1) |-> BR_CLK_O);
+assert property(@(posedge PCLK) ((DATA_CONFIG_REG >= 0) && (DATA_CONFIG_REG <= 16369) ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((count_receive_data >= 0) && (count_receive_data <= 4095) ##1 1) |-> SDA_OUT);
+assert property(@(posedge PCLK) (PCLK ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((DATA_CONFIG_REG >= 0) && (DATA_CONFIG_REG <= 16369) ##1 1) |-> BR_CLK_O);
+assert property(@(posedge PCLK) ((count_tx == 0) ##1 1) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) (BR_CLK_O) |-> SDA_OUT);
+assert property(@(posedge PCLK) (!RESPONSE ##1 1) |-> BR_CLK_O);
+assert property(@(posedge PCLK) (!SDA_OUT_RX ##1 1) |-> SDA_OUT);
+assert property(@(posedge PCLK) (PCLK ##1 1) |-> BR_CLK_O);
+assert property(@(posedge PCLK) ((next_state_tx >= 0) && (next_state_tx <= 1) ##1 1) |-> BR_CLK_O);
+assert property(@(posedge PCLK) ((count_tx == 0) ##1 1) |-> BR_CLK_O);
+assert property(@(posedge PCLK) ((count_rx == 0) ##1 1) |-> BR_CLK_O);
+assert property(@(posedge PCLK) (!BR_CLK_O_RX ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((count_receive_data == 0)) |-> BR_CLK_O);
+assert property(@(posedge PCLK) ((DATA_CONFIG_REG >= 13) && (DATA_CONFIG_REG <= 16369)) |-> SDA_OUT);
+assert property(@(posedge PCLK) ((fifo_tx_data_out >= 0) && (fifo_tx_data_out <= 4292353279) ##1 1) |-> (count_receive_data == 0));
+assert property(@(posedge PCLK) (SDA_OUT) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((DATA_CONFIG_REG >= 13) && (DATA_CONFIG_REG <= 16369)) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) ((fifo_tx_data_out >= 1615616) && (fifo_tx_data_out <= 4292353279)) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) (!SDA_OUT_RX ##1 1) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) (SDA_OUT) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) ((count_send_data >= 0) && (count_send_data <= 4095) ##1 1) |-> SDA_OUT);
+assert property(@(posedge PCLK) (!fifo_tx_rd_en ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((count_rx == 0) ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((DATA_CONFIG_REG >= 13) && (DATA_CONFIG_REG <= 16369)) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) (BR_CLK_O) |-> BR_CLK_O);
+assert property(@(posedge PCLK) ((count_rx == 0) ##1 1) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) (!fifo_tx_rd_en ##1 1) |-> BR_CLK_O);
+assert property(@(posedge PCLK) ((fifo_rx_data_in == 0) ##1 1) |-> (count_receive_data == 0));
+assert property(@(posedge PCLK) ((DATA_CONFIG_REG >= 0) && (DATA_CONFIG_REG <= 16369) ##1 1) |-> SDA_OUT);
+assert property(@(posedge PCLK) (!PRESETn) |-> SDA_OUT);
+assert property(@(posedge PCLK) ((count_receive_data == 0)) |-> ENABLE_SDA);
+assert property(@(posedge PCLK) ((count_tx == 0) ##1 1) |-> (count_send_data == 0));
+assert property(@(posedge PCLK) ((TIMEOUT_TX >= 11) && (TIMEOUT_TX <= 16355)) |-> (count_receive_data == 0));
+assert property(@(posedge PCLK) ((next_state_tx >= 0) && (next_state_tx <= 1) ##1 1) |-> (count_receive_data == 0));
+assert property(@(posedge PCLK) ((fifo_tx_data_out >= 1615616) && (fifo_tx_data_out <= 4292353279)) |-> BR_CLK_O);
+assert property(@(posedge PCLK) (PCLK ##1 1) |-> (count_receive_data == 0));
+assert property(@(posedge PCLK) (!ENABLE_SCL ##1 1) |-> SDA_OUT);
+
+endmodule

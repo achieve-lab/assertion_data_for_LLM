@@ -1,0 +1,977 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2022.06
+# platform  : Linux 4.18.0-513.9.1.el8_9.x86_64
+# version   : 2022.06p002 64 bits
+# build date: 2022.08.24 16:38:21 UTC
+# ----------------------------------------
+# started   : 2024-04-04 21:38:39 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 14146
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:35413' '-nowindow' '-style' 'windows' '-data' 'AAABOHicJY/BSgMxFEXPIJTiQrroVwgtUlC66KIbXYhFUXAbRo1lZNoUZ6aKG3/VPxlP04S8+97NfTcvBbD47fuevE5+DCPuWPHItfGeZxFuuWTGnAuWvFLyRmRrFumoxClf5i80tCQ+zafytbtSl4yNTLSvO75U/B2RRWEYeM6YZGlgnU3hXKbMJkn7ILvVpmPnPjzSZsPgkE+qh6rfvdmbX3HDg6MHq6iyyh5r60amFCPf4kZ9nYdt/URt56kuOzsSH1ZjFSkPfVAFfWbqXP+JrTNo' '-proj' '/home/vpulav2/Work/Jasper/module_i2c/module_i2c/sessionLogs/session_0' '-init' '-hidden' '/home/vpulav2/Work/Jasper/module_i2c/module_i2c/.tmp/.initCmds.tcl' 'FPV_verilog_sva_example.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2022 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /home/vpulav2/Work/Jasper/module_i2c/module_i2c/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% # ----------------------------------------
+% #  Copyright (c) 2017 Cadence Design Systems, Inc. All Rights
+% #  Reserved.  Unpublished -- rights reserved under the copyright 
+% #  laws of the United States.
+% # ----------------------------------------
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/module_i2c.v
+[-- (VERI-1482)] Analyzing Verilog file './/module_i2c.v'
+% #  ${RTL_PATH}/port_select.v \
+#  ${RTL_PATH}/bridge.v \
+#  ${RTL_PATH}/egress.v \
+#  ${RTL_PATH}/ingress.v \
+#  ${RTL_PATH}/top.v
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2022.06p002/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property.sva'
+[WARN (VERI-2271)] .//property.sva(94): overflow of 32-bit signed integer 4292353279; using -2614017 instead
+[WARN (VERI-2271)] .//property.sva(100): overflow of 32-bit signed integer 4292353279; using -2614017 instead
+[WARN (VERI-2271)] .//property.sva(123): overflow of 32-bit signed integer 4292353279; using -2614017 instead
+[WARN (VERI-2271)] .//property.sva(134): overflow of 32-bit signed integer 4292353279; using -2614017 instead
+[WARN (VERI-2271)] .//property.sva(143): overflow of 32-bit signed integer 4292353279; using -2614017 instead
+[WARN (VERI-2271)] .//property.sva(167): overflow of 32-bit signed integer 4292353279; using -2614017 instead
+[WARN (VERI-2271)] .//property.sva(170): overflow of 32-bit signed integer 4292353279; using -2614017 instead
+[WARN (VERI-2271)] .//property.sva(187): overflow of 32-bit signed integer 4292353279; using -2614017 instead
+%   
+% # Elaborate design and properties
+% elaborate -top module_i2c
+INFO (ISW003): Top module name is "module_i2c".
+[INFO (HIER-8002)] .//module_i2c.v(3382): Disabling old hierarchical reference handler
+[WARN (VERI-1927)] .//bindings.sva(24): port 'RESPONSE' remains unconnected for this instance
+[WARN (VERI-2435)] .//bindings.sva(24): port 'SDA_OUT' is not connected on this instance
+[INFO (VERI-1018)] .//property.sva(1): compiling module 'v_module_i2c'
+[INFO (VERI-1018)] .//module_i2c.v(80): compiling module 'module_i2c'
+[WARN (VERI-1330)] .//bindings.sva(22): actual bit length 6 differs from formal bit length 1 for port 'state_tx'
+[WARN (VERI-1330)] .//bindings.sva(23): actual bit length 12 differs from formal bit length 1 for port 'count_receive_data'
+[WARN (VERI-8028)] .//bindings.sva(2): missing/open ports on instance i_module_i2c of module v_module_i2c
+[WARN (VDB-1013)] .//bindings.sva(24): input port 'RESPONSE' is not connected on this instance
+INFO (INL208): Elaboration synthesis summary:
+  Number of synthesized netlists          3 (1 packages)
+  Single run mode                         On
+  Pipeline                                On (2 pipelined netlists)
+  Late hierarchical reference connection  On
+  Number of analyzed Verilog modules      3 (3 synthesized)
+  Number of analyzed VHDL entities        0 (0 synthesized)
+WARNING (WNL018): .//module_i2c.v(1916): multiplication operator mult_12u_2u (size 14) automatically black boxed.
+    Use the "elaborate -bbox_mul" command to prevent automatic black-boxing.
+INFO (INL003): Clearing all state information (assumes, stopats, and so forth).
+module_i2c
+[<embedded>] % 
+[<embedded>] % # Set up Clocks and Resets
+[<embedded>] % clock PCLK
+[<embedded>] % reset PRESETn
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "PRESETn".
+[<embedded>] % 
+[<embedded>] % # Get design information to check general complexity
+[<embedded>] % get_design_info
+Statistics [for instance "module_i2c"]
+---------------------------
+# Flops:         15 (161) (70 property flop bits)
+# Latches:       0 (0)
+# Gates:         3070 (41860)
+# Nets:          3152
+# Ports:         19
+# RTL Lines:     3494
+# RTL Instances: 2
+# Embedded Assumptions: 0
+# Embedded Assertions:  108
+# Embedded Covers:      108
+161
+[<embedded>] % 
+[<embedded>] % # Prove properties
+[<embedded>] % prove -all
+Ncustom1: Custom engine code is hT3Ng7hPPfiYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSl+CwjiTMAQA
+Bcustom2: Custom engine code is hT3NZbhPDfiY2AbBQnsjfOxn6c+6e6yL+/e8fYmWaKaTqwEA
+AMcustom3: Custom engine code is hT3Ng7hP/feYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSmmqwm7g9AQA
+INFO (IPF036): Starting proof on task: "<embedded>", 216 properties to prove with 0 already proven/unreachable
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis: phase 2 of 4.
+INFO (IRS031): Running reset analysis: phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 4 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 iterations. Assigned values for 0 of 91 design flops, 0 of 0 design latches, 286 of 286 internal elements.
+INFO (IRS039): Reset analysis complete.
+INFO (IPF031): Settings used for proof thread 0:
+    orchestration                 = on (auto)
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = auto
+    proofgrid_per_engine_max_jobs = 1
+    max engine jobs               = auto
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+AMcustom4: Custom engine code is hT3N1rhP11/52HrFRS21ROp2LOjVTgPvT8L8BGXHgLhaIuqtT4nARFjUqrBL+7pLmaTOzBepZW/Jm8SSrHDybSQtoNiO3y43wk+dEoWlsZizu97Fih6O6lPVG/LpWP5SsUPwlGagLNa1FKEFvwVXyX7//8prySbvSxIHXr5er+z4RAEA
+Ncustom5: Custom engine code is hT3OXrhPByJp3TrFSTLhUmMH4KVtJgmTCnNDF46yMXOKY48m4LS5nE7yBzFjA7kDuwO/GhGUpEPiky3p3wmPn3dJZHxFMsafSoObRzSC+tn7sEY0WbTdZ/FV4hL3MYH/b1CIUvXSWR4wqEoVLsmMOD4xIPT4lI1LO6ZCO7PnnWQuLwetnvKlrXx6wCW/A+x+enqslg1YPobi4wEF/EvbzOvcTYdJvl2s4H2yZg2b2ofAVN5WvhWk1HoBAA
+ADcustom6: Custom engine code is hT3Nv7hPv1752HrFRa2kROx2f/ECJeZB2AZsLdlO8VwmIuqtT4nIDFXclhg+O+o+DMmQCekbheGk0kK28laA9gaOFDXsQp29J3X615HY1IPHJWd6FUFvCHjO+p1k652b5JJvZlShNpGlGSXAiQe/mEAj6tEBAA
+Ncustom7: Custom engine code is hT3NR7hPByFp3TrFSTLhUmMH4KWtJglTyV/c51BHEeZWamnJv767nE6PCak26bd3gf3XGN3rIRheufhDieCJQVISo+gNYUKhiUedBKGtsP/a18svAnlMJZudHxDFwK5ufsyoxsIyiAeSY2oi3tEuoDHr5gw42DFKAG3PqO3CEsl8Azzdt3pl5nGA1Ifv2H02eYsFzWb/nfp8PMb3F0krE/EgBcm8TD9Div8BAA
+Tricustom8: Custom engine code is hT3Nu7hP3fiYQADBZnYcglNHp9bfd7EOeniIqP/ji8sGLQu8yhsFO+wxJ+O+R0bU8g/IewXFomyos+viQnWc2xYNYmMqpo3i40O7DaZR7qfp4YqNx26KRvQ/qx0BAA
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c.assert_a0" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c.assert_a1" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c.assert_a2" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c.assert_a3" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c.assert_a4" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c.assert_a5" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c.assert_a6" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_38:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_46" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_73:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_79:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_96" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_107:precondition1" was proven unreachable in 0.00 s.
+0: Found proofs for 13 properties in preprocessing
+0: Using multistage preprocessing
+0: Starting reduce
+0: Finished reduce in 0.052s
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_38" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_73" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_79" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_107" was proven in 0.00 s.
+0: Found proofs for 4 properties in preprocessing
+0.0.PRE: Performing Proof Simplification...
+0.0.N: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: Proof Simplification Iteration 1	[0.00 s]
+0.0.PRE: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c.assert_a0:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.02 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c.assert_a1:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.02 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c.assert_a4:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.02 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c.assert_a5:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.02 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c.assert_a7_harm:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.02 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_9:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.03 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_10:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.03 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_14:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.03 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_16:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.03 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_18:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.04 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_20:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.04 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_21:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.04 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_22:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.05 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_25:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.05 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_26:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.05 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_27:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.05 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_28:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_29:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_30:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_31:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_35:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_40:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_43:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_46:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_47:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.07 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_51:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.07 s]
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_52" in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.07 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_55:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.07 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_58:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_60:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_61:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_67:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.09 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_69:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.09 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_70:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.09 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_75:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.09 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_77:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_78:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_81:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_82:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_83:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_84:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_90:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_93:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_94:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_97:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_98:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_101" in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_102:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.12 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_103:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.12 s]
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c.assert_a2:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c.assert_a3:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c.assert_a6:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_11" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_11:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_12:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_15:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_17:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_23" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_23:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_24" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_24:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_32:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_33:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_39:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_41:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_44" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_44:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_49:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_52:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_57:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_59:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_63:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_64:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_65:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_68:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_72:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_76:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_80:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_87" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_87:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_91:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_92:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_96:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_101:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_105:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "module_i2c.i_module_i2c._assert_108:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c.assert_a7_harm" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_32" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_39" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_40" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_47" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_67" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_86" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_99" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_105" was proven in 0.00 s.
+0.0.N: Proof Simplification Iteration 2	[0.13 s]
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_15" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_16" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_27" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_30" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_37" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_55" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_56" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_68" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_75" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_90" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "module_i2c.i_module_i2c._assert_97" was proven in 0.00 s.
+0.0.N: Proof Simplification Iteration 3	[0.13 s]
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property ":noDeadEnd" was proven in 0.00 s.
+    Use check_assumptions -show -dead_end to show this property in the property table.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property ":noConflict" was proven in 0.00 s.
+    Use check_assumptions -show to show this property in the property table.
+INFO (IPF047): 0.0.PRE: The cover property ":live" was covered in 1 cycles in 0.00 s.
+    Use check_assumptions -show -live to show this property in the property table.
+0.0.PRE: Proof Simplification completed in 0.19 s
+0.0.N: Identified and disabled 110 duplicated targets.
+0: About to start ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+0: =============================== ProofGrid start ===============================
+0: ProofGrid usable level: 68
+0: ProofGrid is starting event handling
+0.0.N: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Hp: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Ht: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.B: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Hp: Proofgrid shell started at 14219@pal-achieve-06(local) jg_14146_pal-achieve-06_1
+0.0.Ht: Proofgrid shell started at 14236@pal-achieve-06(local) jg_14146_pal-achieve-06_1
+0.0.B: Proofgrid shell started at 14249@pal-achieve-06(local) jg_14146_pal-achieve-06_1
+0.0.N: Proofgrid shell started at 14218@pal-achieve-06(local) jg_14146_pal-achieve-06_1
+0.0.Hp: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Ht: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.B: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_9"	[0.00 s].
+0.0.B: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.B: Starting proof for property "module_i2c.i_module_i2c._assert_9"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.02 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 2 cycles. [0.02 s]
+INFO (IPF008): 0.0.N: A max_length bound of 2 was found for the property "module_i2c.i_module_i2c._assert_9" in 0.02 s.
+0.0.N: Trace Attempt  2	[0.03 s]
+0.0.B: Trace Attempt  1	[0.03 s]
+0.0.N: Trace Attempt  2	[0.03 s]
+0.0.N: A trace with 2 cycles was found. [0.03 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_9" in 0.09 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_10" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_12" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_13" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_13:precondition1" was covered in 1 cycles in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_14" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_20" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_22" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_25" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_26" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_28" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_31" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_34" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_34:precondition1" was covered in 1 cycles in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_35" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_36" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_36:precondition1" was covered in 1 cycles in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_45" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_51" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_56:precondition1" was covered in 1 cycles in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_58" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_59" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_63" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_70" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_74" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_77" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_78" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_81" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_82" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_84" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_98" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_100" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_108" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_65" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_80" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_42:precondition1" was covered in 1 cycles in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_86:precondition1" was covered in 1 cycles in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_54:precondition1" was covered in 1 cycles in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_99:precondition1" was covered in 1 cycles in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_37:precondition1" was covered in 1 cycles in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_45:precondition1" was covered in 1 cycles in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_71:precondition1" was covered in 1 cycles in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_74:precondition1" was covered in 1 cycles in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_100:precondition1" was covered in 1 cycles in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_72" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_92" in 0.09 s by the incidental trace "module_i2c.i_module_i2c._assert_9".
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_9"	[0.09 s].
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_17"	[0.00 s].
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_33"	[0.00 s].
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_57"	[0.00 s].
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_64"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 2 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 2 was found for the property "module_i2c.i_module_i2c._assert_17" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 2 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 2 was found for the property "module_i2c.i_module_i2c._assert_33" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 2 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 2 was found for the property "module_i2c.i_module_i2c._assert_57" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 2 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 2 was found for the property "module_i2c.i_module_i2c._assert_64" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_17" in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_21" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_17".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_29" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_17".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_41" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_17".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_42" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_17".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_43" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_17".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_54" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_17".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_60" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_17".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_61" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_17".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_69" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_17".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_71" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_17".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_83" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_17".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_93" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_17".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_94" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_17".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_103" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_17".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_33" in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_57" in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "module_i2c.i_module_i2c._assert_64" in 0.00 s.
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_17"	[0.00 s].
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_33"	[0.00 s].
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_57"	[0.00 s].
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_64"	[0.00 s].
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_18"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_18" in 0.00 s.
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_18"	[0.00 s].
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_19"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_19" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_19:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_62" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_102" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_106" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_19".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_53:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_19".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_62:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_19".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_89:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_19".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_106:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_19".
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_19"	[0.00 s].
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_48"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_48" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_48:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_48".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_66" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_48".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_85" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_48".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_66:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_48".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_85:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_48".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_88:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_48".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_95:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_48".
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_48"	[0.00 s].
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_49"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_49" in 0.00 s.
+0.0.B: Trace Attempt  2	[0.04 s]
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_49"	[0.00 s].
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_50"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_50" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_50:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_50".
+INFO (IPF047): 0.0.N: The cover property "module_i2c.i_module_i2c._assert_104:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_50".
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_50"	[0.01 s].
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_53"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_53" in 0.00 s.
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_53"	[0.00 s].
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_76"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_76" in 0.00 s.
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_76"	[0.00 s].
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_88"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_88" in 0.00 s.
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_88"	[0.00 s].
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_89"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_89" in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_43" in 0.00 s by the incidental trace "module_i2c.i_module_i2c._assert_89".
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_89"	[0.00 s].
+0.0.Ht: Trace Attempt  1	[0.21 s]
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_91"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_91" in 0.00 s.
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_91"	[0.00 s].
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_95"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_95" in 0.00 s.
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_95"	[0.00 s].
+0.0.N: Last scan. Per property time limit: 0s
+0.0.N: Starting proof for property "module_i2c.i_module_i2c._assert_104"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Requesting engine job to stop
+0.0.B: Requesting engine job to stop
+0.0.Hp: Requesting engine job to terminate
+0.0.Ht: Requesting engine job to terminate
+INFO (IPF144): 0: Initiating shutdown of proof [0.35 s]
+0.0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "module_i2c.i_module_i2c._assert_104" in 0.00 s.
+0.0.N: Stopped processing property "module_i2c.i_module_i2c._assert_104"	[0.00 s].
+0.0.Hp: Interrupted (multi)
+0.0.Hp: Interrupted. [0.22 s]
+0.0.N: Interrupted. [0.00 s]
+0.0.Ht: Interrupted (multi)
+0.0.Ht: Interrupted. [0.24 s]
+0.0.Ht: Exited with Success (@ 0.42 s)
+0: ProofGrid usable level: 0
+0.0.N: Exited with Success (@ 0.42 s)
+0.0.Hp: Exited with Success (@ 0.42 s)
+0.0.B: Stopped processing property "module_i2c.i_module_i2c._assert_9"	[0.20 s].
+0.0.B: Interrupted. [0.20 s]
+0.0.B: Exited with Success (@ 0.44 s)
+0: --------------------------------------------------------------
+ProofGrid Summary (utilization 27.90 %)
+--------------------------------------------------------------
+     engines started                               :     4
+     engine jobs started                           :     4
+
+    Average time in state (seconds)
+    ------------------------------------------------------
+    Engine  Pending     Running        Dead    Utilization
+    ------------------------------------------------------
+      N        0.68        0.22        0.00       24.30 %
+     Hp        0.65        0.22        0.00       25.24 %
+     Ht        0.53        0.22        0.00       29.18 %
+      B        0.40        0.22        0.00       35.29 %
+    all        0.57        0.22        0.00       27.90 %
+
+    Total time in state (seconds)
+    -----------------------------------------
+            Pending     Running        Dead  
+    -----------------------------------------
+               2.27        0.88        0.00
+
+    Data read    : 22.92 kiB
+    Data written : 8.92 kiB
+
+0: All pending notifications were processed.
+INFO (IPF059): Completed proof on task: "<embedded>" for proof thread 0
+
+==============================================================
+SUMMARY
+==============================================================
+           Properties Considered              : 216
+                 assertions                   : 108
+                  - proven                    : 33 (30.5556%)
+                  - bounded_proven (user)     : 0 (0%)
+                  - bounded_proven (auto)     : 0 (0%)
+                  - marked_proven             : 0 (0%)
+                  - cex                       : 75 (69.4444%)
+                  - ar_cex                    : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+                 covers                       : 108
+                  - unreachable               : 4 (3.7037%)
+                  - bounded_unreachable (user): 0 (0%)
+                  - covered                   : 104 (96.2963%)
+                  - ar_covered                : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+determined
+[<embedded>] % 
+[<embedded>] % # Report proof results
+[<embedded>] % report
+
+==============================================================
+    Jasper Verification Results
+==============================================================
+    2022.06p002 64 bits for Linux64 3.10.0-1160.21.1.el7.x86_64
+    Host Name: pal-achieve-06.uic.edu
+    User Name: vpulav2
+    Printed on: Thursday, Apr 4, 2024 09:38:45 PM CDT
+    Working Directory: /home/vpulav2/Work/Jasper/module_i2c
+
+
+==============================================================
+RESULTS
+==============================================================
+
+-----------------------------------------------------------------------------------------------------------------
+       Name                                                     |    Result    |  Engine  |  Bound  |  Time    
+-----------------------------------------------------------------------------------------------------------------
+
+---[ <embedded> ]------------------------------------------------------------------------------------------------
+[1]   module_i2c.i_module_i2c.assert_a0                              proven          PRE    Infinite    0.000 s      
+[2]   module_i2c.i_module_i2c.assert_a0:precondition1                covered         PRE           1    0.000 s      
+[3]   module_i2c.i_module_i2c.assert_a1                              proven          PRE    Infinite    0.000 s      
+[4]   module_i2c.i_module_i2c.assert_a1:precondition1                covered         PRE           1    0.000 s      
+[5]   module_i2c.i_module_i2c.assert_a2                              proven          PRE    Infinite    0.000 s      
+[6]   module_i2c.i_module_i2c.assert_a2:precondition1                covered         PRE           1    0.000 s      
+[7]   module_i2c.i_module_i2c.assert_a3                              proven          PRE    Infinite    0.000 s      
+[8]   module_i2c.i_module_i2c.assert_a3:precondition1                covered         PRE           1    0.000 s      
+[9]   module_i2c.i_module_i2c.assert_a4                              proven          PRE    Infinite    0.000 s      
+[10]  module_i2c.i_module_i2c.assert_a4:precondition1                covered         PRE           1    0.000 s      
+[11]  module_i2c.i_module_i2c.assert_a5                              proven          PRE    Infinite    0.000 s      
+[12]  module_i2c.i_module_i2c.assert_a5:precondition1                covered         PRE           1    0.000 s      
+[13]  module_i2c.i_module_i2c.assert_a6                              proven          PRE    Infinite    0.000 s      
+[14]  module_i2c.i_module_i2c.assert_a6:precondition1                covered         PRE           1    0.000 s      
+[15]  module_i2c.i_module_i2c.assert_a7_harm                         proven          PRE    Infinite    0.000 s      
+[16]  module_i2c.i_module_i2c.assert_a7_harm:precondition1           covered         PRE           1    0.000 s      
+[17]  module_i2c.i_module_i2c._assert_9                              cex             N             2    0.087 s      
+[18]  module_i2c.i_module_i2c._assert_9:precondition1                covered         PRE           1    0.000 s      
+[19]  module_i2c.i_module_i2c._assert_10                             cex             N             2    0.087 s      
+[20]  module_i2c.i_module_i2c._assert_10:precondition1               covered         PRE           1    0.000 s      
+[21]  module_i2c.i_module_i2c._assert_11                             cex             PRE           1    0.000 s      
+[22]  module_i2c.i_module_i2c._assert_11:precondition1               covered         PRE           1    0.000 s      
+[23]  module_i2c.i_module_i2c._assert_12                             cex             N             2    0.087 s      
+[24]  module_i2c.i_module_i2c._assert_12:precondition1               covered         PRE           1    0.000 s      
+[25]  module_i2c.i_module_i2c._assert_13                             cex             N             2    0.087 s      
+[26]  module_i2c.i_module_i2c._assert_13:precondition1               covered         N             1    0.087 s      
+[27]  module_i2c.i_module_i2c._assert_14                             cex             N             2    0.087 s      
+[28]  module_i2c.i_module_i2c._assert_14:precondition1               covered         PRE           1    0.000 s      
+[29]  module_i2c.i_module_i2c._assert_15                             proven          PRE    Infinite    0.000 s      
+[30]  module_i2c.i_module_i2c._assert_15:precondition1               covered         PRE           1    0.000 s      
+[31]  module_i2c.i_module_i2c._assert_16                             proven          PRE    Infinite    0.000 s      
+[32]  module_i2c.i_module_i2c._assert_16:precondition1               covered         PRE           1    0.000 s      
+[33]  module_i2c.i_module_i2c._assert_17                             cex             N             2    0.002 s      
+[34]  module_i2c.i_module_i2c._assert_17:precondition1               covered         PRE           1    0.000 s      
+[35]  module_i2c.i_module_i2c._assert_18                             cex             N             1    0.001 s      
+[36]  module_i2c.i_module_i2c._assert_18:precondition1               covered         PRE           1    0.000 s      
+[37]  module_i2c.i_module_i2c._assert_19                             cex             N             1    0.001 s      
+[38]  module_i2c.i_module_i2c._assert_19:precondition1               covered         N             1    0.001 s      
+[39]  module_i2c.i_module_i2c._assert_20                             cex             N             2    0.087 s      
+[40]  module_i2c.i_module_i2c._assert_20:precondition1               covered         PRE           1    0.000 s      
+[41]  module_i2c.i_module_i2c._assert_21                             cex             N             2    0.002 s      
+[42]  module_i2c.i_module_i2c._assert_21:precondition1               covered         PRE           1    0.000 s      
+[43]  module_i2c.i_module_i2c._assert_22                             cex             N             2    0.087 s      
+[44]  module_i2c.i_module_i2c._assert_22:precondition1               covered         PRE           1    0.000 s      
+[45]  module_i2c.i_module_i2c._assert_23                             cex             PRE           1    0.000 s      
+[46]  module_i2c.i_module_i2c._assert_23:precondition1               covered         PRE           1    0.000 s      
+[47]  module_i2c.i_module_i2c._assert_24                             cex             PRE           1    0.000 s      
+[48]  module_i2c.i_module_i2c._assert_24:precondition1               covered         PRE           1    0.000 s      
+[49]  module_i2c.i_module_i2c._assert_25                             cex             N             2    0.087 s      
+[50]  module_i2c.i_module_i2c._assert_25:precondition1               covered         PRE           1    0.000 s      
+[51]  module_i2c.i_module_i2c._assert_26                             cex             N             1    0.087 s      
+[52]  module_i2c.i_module_i2c._assert_26:precondition1               covered         PRE           1    0.000 s      
+[53]  module_i2c.i_module_i2c._assert_27                             proven          PRE    Infinite    0.000 s      
+[54]  module_i2c.i_module_i2c._assert_27:precondition1               covered         PRE           1    0.000 s      
+[55]  module_i2c.i_module_i2c._assert_28                             cex             N             2    0.087 s      
+[56]  module_i2c.i_module_i2c._assert_28:precondition1               covered         PRE           1    0.000 s      
+[57]  module_i2c.i_module_i2c._assert_29                             cex             N             2    0.002 s      
+[58]  module_i2c.i_module_i2c._assert_29:precondition1               covered         PRE           1    0.000 s      
+[59]  module_i2c.i_module_i2c._assert_30                             proven          PRE    Infinite    0.000 s      
+[60]  module_i2c.i_module_i2c._assert_30:precondition1               covered         PRE           1    0.000 s      
+[61]  module_i2c.i_module_i2c._assert_31                             cex             N             2    0.087 s      
+[62]  module_i2c.i_module_i2c._assert_31:precondition1               covered         PRE           1    0.000 s      
+[63]  module_i2c.i_module_i2c._assert_32                             proven          PRE    Infinite    0.000 s      
+[64]  module_i2c.i_module_i2c._assert_32:precondition1               covered         PRE           1    0.000 s      
+[65]  module_i2c.i_module_i2c._assert_33                             cex             N             2    0.002 s      
+[66]  module_i2c.i_module_i2c._assert_33:precondition1               covered         PRE           1    0.000 s      
+[67]  module_i2c.i_module_i2c._assert_34                             cex             N             2    0.087 s      
+[68]  module_i2c.i_module_i2c._assert_34:precondition1               covered         N             1    0.087 s      
+[69]  module_i2c.i_module_i2c._assert_35                             cex             N             2    0.087 s      
+[70]  module_i2c.i_module_i2c._assert_35:precondition1               covered         PRE           1    0.000 s      
+[71]  module_i2c.i_module_i2c._assert_36                             cex             N             2    0.087 s      
+[72]  module_i2c.i_module_i2c._assert_36:precondition1               covered         N             1    0.087 s      
+[73]  module_i2c.i_module_i2c._assert_37                             proven          PRE    Infinite    0.000 s      
+[74]  module_i2c.i_module_i2c._assert_37:precondition1               covered         N             1    0.087 s      
+[75]  module_i2c.i_module_i2c._assert_38                             proven          PRE    Infinite    0.000 s      
+[76]  module_i2c.i_module_i2c._assert_38:precondition1               unreachable     PRE    Infinite    0.000 s      
+[77]  module_i2c.i_module_i2c._assert_39                             proven          PRE    Infinite    0.000 s      
+[78]  module_i2c.i_module_i2c._assert_39:precondition1               covered         PRE           1    0.000 s      
+[79]  module_i2c.i_module_i2c._assert_40                             proven          PRE    Infinite    0.000 s      
+[80]  module_i2c.i_module_i2c._assert_40:precondition1               covered         PRE           1    0.000 s      
+[81]  module_i2c.i_module_i2c._assert_41                             cex             N             2    0.002 s      
+[82]  module_i2c.i_module_i2c._assert_41:precondition1               covered         PRE           1    0.000 s      
+[83]  module_i2c.i_module_i2c._assert_42                             cex             N             2    0.002 s      
+[84]  module_i2c.i_module_i2c._assert_42:precondition1               covered         N             1    0.087 s      
+[85]  module_i2c.i_module_i2c._assert_43                             cex             N             1    0.002 s      
+[86]  module_i2c.i_module_i2c._assert_43:precondition1               covered         PRE           1    0.000 s      
+[87]  module_i2c.i_module_i2c._assert_44                             cex             PRE           1    0.000 s      
+[88]  module_i2c.i_module_i2c._assert_44:precondition1               covered         PRE           1    0.000 s      
+[89]  module_i2c.i_module_i2c._assert_45                             cex             N             2    0.087 s      
+[90]  module_i2c.i_module_i2c._assert_45:precondition1               covered         N             1    0.087 s      
+[91]  module_i2c.i_module_i2c._assert_46                             proven          PRE    Infinite    0.000 s      
+[92]  module_i2c.i_module_i2c._assert_46:precondition1               covered         PRE           1    0.000 s      
+[93]  module_i2c.i_module_i2c._assert_47                             proven          PRE    Infinite    0.000 s      
+[94]  module_i2c.i_module_i2c._assert_47:precondition1               covered         PRE           1    0.000 s      
+[95]  module_i2c.i_module_i2c._assert_48                             cex             N             1    0.001 s      
+[96]  module_i2c.i_module_i2c._assert_48:precondition1               covered         N             1    0.001 s      
+[97]  module_i2c.i_module_i2c._assert_49                             cex             N             1    0.001 s      
+[98]  module_i2c.i_module_i2c._assert_49:precondition1               covered         PRE           1    0.000 s      
+[99]  module_i2c.i_module_i2c._assert_50                             cex             N             1    0.002 s      
+[100] module_i2c.i_module_i2c._assert_50:precondition1               covered         N             1    0.002 s      
+[101] module_i2c.i_module_i2c._assert_51                             cex             N             1    0.087 s      
+[102] module_i2c.i_module_i2c._assert_51:precondition1               covered         PRE           1    0.000 s      
+[103] module_i2c.i_module_i2c._assert_52                             cex             PRE           1    0.000 s      
+[104] module_i2c.i_module_i2c._assert_52:precondition1               covered         PRE           1    0.000 s      
+[105] module_i2c.i_module_i2c._assert_53                             cex             N             1    0.001 s      
+[106] module_i2c.i_module_i2c._assert_53:precondition1               covered         N             1    0.001 s      
+[107] module_i2c.i_module_i2c._assert_54                             cex             N             2    0.002 s      
+[108] module_i2c.i_module_i2c._assert_54:precondition1               covered         N             1    0.087 s      
+[109] module_i2c.i_module_i2c._assert_55                             proven          PRE    Infinite    0.000 s      
+[110] module_i2c.i_module_i2c._assert_55:precondition1               covered         PRE           1    0.000 s      
+[111] module_i2c.i_module_i2c._assert_56                             proven          PRE    Infinite    0.000 s      
+[112] module_i2c.i_module_i2c._assert_56:precondition1               covered         N             1    0.087 s      
+[113] module_i2c.i_module_i2c._assert_57                             cex             N             2    0.002 s      
+[114] module_i2c.i_module_i2c._assert_57:precondition1               covered         PRE           1    0.000 s      
+[115] module_i2c.i_module_i2c._assert_58                             cex             N             2    0.087 s      
+[116] module_i2c.i_module_i2c._assert_58:precondition1               covered         PRE           1    0.000 s      
+[117] module_i2c.i_module_i2c._assert_59                             cex             N             1    0.087 s      
+[118] module_i2c.i_module_i2c._assert_59:precondition1               covered         PRE           1    0.000 s      
+[119] module_i2c.i_module_i2c._assert_60                             cex             N             2    0.002 s      
+[120] module_i2c.i_module_i2c._assert_60:precondition1               covered         PRE           1    0.000 s      
+[121] module_i2c.i_module_i2c._assert_61                             cex             N             2    0.002 s      
+[122] module_i2c.i_module_i2c._assert_61:precondition1               covered         PRE           1    0.000 s      
+[123] module_i2c.i_module_i2c._assert_62                             cex             N             1    0.001 s      
+[124] module_i2c.i_module_i2c._assert_62:precondition1               covered         N             1    0.001 s      
+[125] module_i2c.i_module_i2c._assert_63                             cex             N             2    0.087 s      
+[126] module_i2c.i_module_i2c._assert_63:precondition1               covered         PRE           1    0.000 s      
+[127] module_i2c.i_module_i2c._assert_64                             cex             N             2    0.002 s      
+[128] module_i2c.i_module_i2c._assert_64:precondition1               covered         PRE           1    0.000 s      
+[129] module_i2c.i_module_i2c._assert_65                             cex             N             2    0.087 s      
+[130] module_i2c.i_module_i2c._assert_65:precondition1               covered         PRE           1    0.000 s      
+[131] module_i2c.i_module_i2c._assert_66                             cex             N             1    0.001 s      
+[132] module_i2c.i_module_i2c._assert_66:precondition1               covered         N             1    0.001 s      
+[133] module_i2c.i_module_i2c._assert_67                             proven          PRE    Infinite    0.000 s      
+[134] module_i2c.i_module_i2c._assert_67:precondition1               covered         PRE           1    0.000 s      
+[135] module_i2c.i_module_i2c._assert_68                             proven          PRE    Infinite    0.000 s      
+[136] module_i2c.i_module_i2c._assert_68:precondition1               covered         PRE           1    0.000 s      
+[137] module_i2c.i_module_i2c._assert_69                             cex             N             2    0.002 s      
+[138] module_i2c.i_module_i2c._assert_69:precondition1               covered         PRE           1    0.000 s      
+[139] module_i2c.i_module_i2c._assert_70                             cex             N             2    0.087 s      
+[140] module_i2c.i_module_i2c._assert_70:precondition1               covered         PRE           1    0.000 s      
+[141] module_i2c.i_module_i2c._assert_71                             cex             N             2    0.002 s      
+[142] module_i2c.i_module_i2c._assert_71:precondition1               covered         N             1    0.087 s      
+[143] module_i2c.i_module_i2c._assert_72                             cex             N             2    0.087 s      
+[144] module_i2c.i_module_i2c._assert_72:precondition1               covered         PRE           1    0.000 s      
+[145] module_i2c.i_module_i2c._assert_73                             proven          PRE    Infinite    0.000 s      
+[146] module_i2c.i_module_i2c._assert_73:precondition1               unreachable     PRE    Infinite    0.000 s      
+[147] module_i2c.i_module_i2c._assert_74                             cex             N             2    0.087 s      
+[148] module_i2c.i_module_i2c._assert_74:precondition1               covered         N             1    0.087 s      
+[149] module_i2c.i_module_i2c._assert_75                             proven          PRE    Infinite    0.000 s      
+[150] module_i2c.i_module_i2c._assert_75:precondition1               covered         PRE           1    0.000 s      
+[151] module_i2c.i_module_i2c._assert_76                             cex             N             1    0.001 s      
+[152] module_i2c.i_module_i2c._assert_76:precondition1               covered         PRE           1    0.000 s      
+[153] module_i2c.i_module_i2c._assert_77                             cex             N             2    0.087 s      
+[154] module_i2c.i_module_i2c._assert_77:precondition1               covered         PRE           1    0.000 s      
+[155] module_i2c.i_module_i2c._assert_78                             cex             N             2    0.087 s      
+[156] module_i2c.i_module_i2c._assert_78:precondition1               covered         PRE           1    0.000 s      
+[157] module_i2c.i_module_i2c._assert_79                             proven          PRE    Infinite    0.000 s      
+[158] module_i2c.i_module_i2c._assert_79:precondition1               unreachable     PRE    Infinite    0.000 s      
+[159] module_i2c.i_module_i2c._assert_80                             cex             N             2    0.087 s      
+[160] module_i2c.i_module_i2c._assert_80:precondition1               covered         PRE           1    0.000 s      
+[161] module_i2c.i_module_i2c._assert_81                             cex             N             2    0.087 s      
+[162] module_i2c.i_module_i2c._assert_81:precondition1               covered         PRE           1    0.000 s      
+[163] module_i2c.i_module_i2c._assert_82                             cex             N             2    0.087 s      
+[164] module_i2c.i_module_i2c._assert_82:precondition1               covered         PRE           1    0.000 s      
+[165] module_i2c.i_module_i2c._assert_83                             cex             N             2    0.002 s      
+[166] module_i2c.i_module_i2c._assert_83:precondition1               covered         PRE           1    0.000 s      
+[167] module_i2c.i_module_i2c._assert_84                             cex             N             1    0.087 s      
+[168] module_i2c.i_module_i2c._assert_84:precondition1               covered         PRE           1    0.000 s      
+[169] module_i2c.i_module_i2c._assert_85                             cex             N             1    0.001 s      
+[170] module_i2c.i_module_i2c._assert_85:precondition1               covered         N             1    0.001 s      
+[171] module_i2c.i_module_i2c._assert_86                             proven          PRE    Infinite    0.000 s      
+[172] module_i2c.i_module_i2c._assert_86:precondition1               covered         N             1    0.087 s      
+[173] module_i2c.i_module_i2c._assert_87                             cex             PRE           1    0.000 s      
+[174] module_i2c.i_module_i2c._assert_87:precondition1               covered         PRE           1    0.000 s      
+[175] module_i2c.i_module_i2c._assert_88                             cex             N             1    0.001 s      
+[176] module_i2c.i_module_i2c._assert_88:precondition1               covered         N             1    0.001 s      
+[177] module_i2c.i_module_i2c._assert_89                             cex             N             1    0.001 s      
+[178] module_i2c.i_module_i2c._assert_89:precondition1               covered         N             1    0.001 s      
+[179] module_i2c.i_module_i2c._assert_90                             proven          PRE    Infinite    0.000 s      
+[180] module_i2c.i_module_i2c._assert_90:precondition1               covered         PRE           1    0.000 s      
+[181] module_i2c.i_module_i2c._assert_91                             cex             N             1    0.001 s      
+[182] module_i2c.i_module_i2c._assert_91:precondition1               covered         PRE           1    0.000 s      
+[183] module_i2c.i_module_i2c._assert_92                             cex             N             2    0.087 s      
+[184] module_i2c.i_module_i2c._assert_92:precondition1               covered         PRE           1    0.000 s      
+[185] module_i2c.i_module_i2c._assert_93                             cex             N             2    0.002 s      
+[186] module_i2c.i_module_i2c._assert_93:precondition1               covered         PRE           1    0.000 s      
+[187] module_i2c.i_module_i2c._assert_94                             cex             N             2    0.002 s      
+[188] module_i2c.i_module_i2c._assert_94:precondition1               covered         PRE           1    0.000 s      
+[189] module_i2c.i_module_i2c._assert_95                             cex             N             1    0.000 s      
+[190] module_i2c.i_module_i2c._assert_95:precondition1               covered         N             1    0.001 s      
+[191] module_i2c.i_module_i2c._assert_96                             proven          PRE    Infinite    0.000 s      
+[192] module_i2c.i_module_i2c._assert_96:precondition1               covered         PRE           1    0.000 s      
+[193] module_i2c.i_module_i2c._assert_97                             proven          PRE    Infinite    0.000 s      
+[194] module_i2c.i_module_i2c._assert_97:precondition1               covered         PRE           1    0.000 s      
+[195] module_i2c.i_module_i2c._assert_98                             cex             N             2    0.087 s      
+[196] module_i2c.i_module_i2c._assert_98:precondition1               covered         PRE           1    0.000 s      
+[197] module_i2c.i_module_i2c._assert_99                             proven          PRE    Infinite    0.000 s      
+[198] module_i2c.i_module_i2c._assert_99:precondition1               covered         N             1    0.087 s      
+[199] module_i2c.i_module_i2c._assert_100                            cex             N             2    0.087 s      
+[200] module_i2c.i_module_i2c._assert_100:precondition1              covered         N             1    0.087 s      
+[201] module_i2c.i_module_i2c._assert_101                            cex             PRE           1    0.000 s      
+[202] module_i2c.i_module_i2c._assert_101:precondition1              covered         PRE           1    0.000 s      
+[203] module_i2c.i_module_i2c._assert_102                            cex             N             1    0.001 s      
+[204] module_i2c.i_module_i2c._assert_102:precondition1              covered         PRE           1    0.000 s      
+[205] module_i2c.i_module_i2c._assert_103                            cex             N             2    0.002 s      
+[206] module_i2c.i_module_i2c._assert_103:precondition1              covered         PRE           1    0.000 s      
+[207] module_i2c.i_module_i2c._assert_104                            cex             N             1    0.001 s      
+[208] module_i2c.i_module_i2c._assert_104:precondition1              covered         N             1    0.002 s      
+[209] module_i2c.i_module_i2c._assert_105                            proven          PRE    Infinite    0.000 s      
+[210] module_i2c.i_module_i2c._assert_105:precondition1              covered         PRE           1    0.000 s      
+[211] module_i2c.i_module_i2c._assert_106                            cex             N             1    0.001 s      
+[212] module_i2c.i_module_i2c._assert_106:precondition1              covered         N             1    0.001 s      
+[213] module_i2c.i_module_i2c._assert_107                            proven          PRE    Infinite    0.000 s      
+[214] module_i2c.i_module_i2c._assert_107:precondition1              unreachable     PRE    Infinite    0.000 s      
+[215] module_i2c.i_module_i2c._assert_108                            cex             N             2    0.087 s      
+[216] module_i2c.i_module_i2c._assert_108:precondition1              covered         PRE           1    0.000 s      
+[<embedded>] % :x
+invalid command name ":x"
+
+[<embedded>] % ==============================================================
+invalid command name "=============================================================="
+
+[<embedded>] % SUMMARY
+invalid command name "SUMMARY"
+
+[<embedded>] % ==============================================================
+invalid command name "=============================================================="
+
+[<embedded>] %            Properties Considered              : 216
+invalid command name "Properties"
+
+[<embedded>] %                  assertions                   : 108
+invalid command name "assertions"
+
+[<embedded>] %                   - proven                    : 33 (30.5556%)
+invalid command name "-"
+
+[<embedded>] %                   - bounded_proven (user)     : 0 (0%)
+invalid command name "-"
+
+[<embedded>] %                   - bounded_proven (auto)     : 0 (0%)
+invalid command name "-"
+
+[<embedded>] %                   - marked_proven             : 0 (0%)
+invalid command name "-"
+
+[<embedded>] %                   - cex                       : 75 (69.4444%)
+invalid command name "-"
+
+[<embedded>] %                   - ar_cex                    : 0 (0%)
+invalid command name "-"
+
+[<embedded>] %                   - undetermined              : 0 (0%)
+invalid command name "-"
+
+[<embedded>] %                   - unknown                   : 0 (0%)
+invalid command name "-"
+
+[<embedded>] %                   - error                     : 0 (0%)
+invalid command name "-"
+
+[<embedded>] %                  covers                       : 108
+invalid command name "covers"
+
+[<embedded>] %                   - unreachable               : 4 (3.7037%)
+invalid command name "-"
+
+[<embedded>] %                   - bounded_unreachable (user): 0 (0%)
+invalid command name "-"
+
+[<embedded>] %                   - covered                   : 104 (96.2963%)
+invalid command name "-"
+
+[<embedded>] %                   - ar_covered                : 0 (0%)
+invalid command name "-"
+
+[<embedded>] %                   - undetermined              : 0 (0%)
+invalid command name "-"
+
+[<embedded>] %                   - unknown                   : 0 (0%)
+invalid command name "-"
+
+[<embedded>] %                   - error                     : 0 (0%)
+invalid command name "-"
+
+[<embedded>] % clear
+INFO (IPM031): Clearing proof results of all properties.
+[<embedded>] % :x
+invalid command name ":x"
+
+[<embedded>] % exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL018): The peak resident set memory use for this session was 0.431 GB.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

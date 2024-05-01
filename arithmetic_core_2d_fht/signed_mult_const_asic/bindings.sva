@@ -1,0 +1,12 @@
+bind signed_mult_const_asic
+ i_signed_mult_const_asic v_signed_mult_const_asic(
+.clk(clk),
+.rstn(rstn),
+.mult_wo_sign(mult_wo_sign),
+.a_FF(a_FF),
+.valid(valid),
+.b(b),
+.a(a),
+.div256(div256),
+.p(p)
+);

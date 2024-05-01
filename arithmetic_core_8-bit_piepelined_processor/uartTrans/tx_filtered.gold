@@ -1,0 +1,10 @@
+property a10;
+@(posedge clk) (txNext == 0) |=> (tx == 0);
+endproperty
+assert_a10: assert property(a10);
+
+property a9;
+@(posedge clk) (txNext == 1) |=> (tx == 1);
+endproperty
+assert_a9: assert property(a9);
+
