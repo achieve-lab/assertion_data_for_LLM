@@ -1,0 +1,19 @@
+bind cavlc_read_total_zeros
+ i_cavlc_read_total_zeros v_cavlc_read_total_zeros(
+.TotalZeros_comb(TotalZeros_comb),
+.len_LE3(len_LE3),
+.rbsp(rbsp),
+.TotalZeros_LE3(TotalZeros_LE3),
+.len_chroma_DC(len_chroma_DC),
+.rbsp_LE3(rbsp_LE3),
+.rbsp_chroma_DC(rbsp_chroma_DC),
+.TotalCoeff(TotalCoeff),
+.TotalZeros_G3(TotalZeros_G3),
+.ena(ena),
+.TotalZeros_chroma_DC(TotalZeros_chroma_DC),
+.len_comb(len_comb),
+.sel(sel),
+.len_G3(len_G3),
+.chroma_DC_sel(chroma_DC_sel),
+.rbsp_G3(rbsp_G3)
+);

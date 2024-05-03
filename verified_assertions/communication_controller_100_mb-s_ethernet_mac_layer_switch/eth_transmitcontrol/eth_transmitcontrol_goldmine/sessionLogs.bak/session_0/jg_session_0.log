@@ -1,0 +1,112 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.9.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-05-01 15:09:26 CDT
+# hostname  : pal-achieve-07.(none)
+# pid       : 101185
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:33921' '-nowindow' '-style' 'windows' '-data' 'AAABSnicjY67CsJAEEVvFINY+CGClmKR2jaKYCvBxBdxN2iiYKOf6p/Es4sR0jnDzuM+hg0kRc+6ruWj+6CEijUnfxG8v0MUqB1u77SR5avVpV5jbiQhb6ixjKw22qvSEWQEkignre7gFfyVWpBWF5XKlILHWqHuo97B3Jin/HWhNVyG6kAv0Sfef+Z2qS0XjEct9yceyXEOuFJ49MQ2+9Pv/ux66lmDy8UH02Ut8A==' '-proj' '/home/vpulav2/Work/Jasper/communication_controller_100_mb-s_ethernet_mac_layer_switch/eth_transmitcontrol/eth_transmitcontrol_goldmine/sessionLogs/session_0' '-init' '-hidden' '/home/vpulav2/Work/Jasper/communication_controller_100_mb-s_ethernet_mac_layer_switch/eth_transmitcontrol/eth_transmitcontrol_goldmine/.tmp/.initCmds.tcl' 'FPV_eth_transmitcontrol.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /home/vpulav2/Work/Jasper/communication_controller_100_mb-s_ethernet_mac_layer_switch/eth_transmitcontrol/eth_transmitcontrol_goldmine/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/eth_transmitcontrol.v
+[-- (VERI-1482)] Analyzing Verilog file './/eth_transmitcontrol.v'
+[INFO (VERI-1328)] .//eth_transmitcontrol.v(81): analyzing included file './/eth_fifo.v'
+[INFO (VERI-1328)] .//eth_fifo.v(59): analyzing included file './/ethmac_defines.v'
+[INFO (VERI-1328)] .//eth_fifo.v(60): analyzing included file './/timescale.v'
+[INFO (VERI-1328)] .//eth_transmitcontrol.v(82): analyzing included file './/timescale.v'
+[INFO (VERI-2561)] .//eth_transmitcontrol.v(452): undeclared symbol 'TxFifoClear', assumed default net type 'wire'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_goldmine.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_goldmine.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top eth_transmitcontrol
+INFO (ISW003): Top module name is "eth_transmitcontrol".
+[INFO (VERI-9030)] .//bindings.sva(4): undeclared symbol 'txfifo_cnt' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(5): undeclared symbol 'TxData_wrapped_out' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(6): undeclared symbol 'DMAC' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(7): undeclared symbol 'StateLeftinQ' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(9): undeclared symbol 'StateCount' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(10): undeclared symbol 'write_fifo' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(15): undeclared symbol 'TxBufferAlmostFull' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(17): undeclared symbol 'read_fifo' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(20): undeclared symbol 'clear' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(21): undeclared symbol 'TxBufferEmpty' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(24): undeclared symbol 'TxBufferAlmostEmpty' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(26): undeclared symbol 'TxBufferFull' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(27): undeclared symbol 'TxDataIn' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(32): undeclared symbol 'TxEndFrmIn' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(37): undeclared symbol 'Divided_2_clk' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(41): undeclared symbol 'PreNib15State' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(46): undeclared symbol 'TxEndFrmOut_uc' in bind instance actual, assumed default net type 'wire'
+[ERROR (VERI-1010)] .//bindings.sva(37): cannot find port 'Divided_2_clk' on this module
+[INFO (VERI-1310)] .//property_goldmine.sva(1): 'i_eth_transmitcontrol' is declared here
+[ERROR (VDB-9017)] Module eth_transmitcontrol could not be elaborated
+Summary of errors detected:
+	[ERROR (VERI-1010)] .//bindings.sva(37): cannot find port 'Divided_2_clk' on this module
+	[ERROR (VDB-9017)] Module eth_transmitcontrol could not be elaborated
+ERROR (ENL034): 2 errors detected in the design file(s).
+
+ERROR: problem encountered at line 17 in file FPV_eth_transmitcontrol.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.409 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

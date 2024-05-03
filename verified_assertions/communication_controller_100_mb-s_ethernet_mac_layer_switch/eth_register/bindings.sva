@@ -1,0 +1,9 @@
+bind eth_register
+ i_eth_register v_eth_register(
+.Clk(Clk),
+.DataOut(DataOut),
+.Write(Write),
+.DataIn(DataIn),
+.SyncReset(SyncReset),
+.Reset(Reset)
+);

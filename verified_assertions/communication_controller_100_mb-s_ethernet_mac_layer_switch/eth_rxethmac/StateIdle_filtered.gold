@@ -1,0 +1,10 @@
+property a146;
+@(posedge clk) (MRxDV == 0) |=> (StateIdle == 1);
+endproperty
+assert_a146: assert property(a146);
+
+property a145;
+@(posedge clk) (MRxDV == 1) |=> (StateIdle == 0);
+endproperty
+assert_a145: assert property(a145);
+

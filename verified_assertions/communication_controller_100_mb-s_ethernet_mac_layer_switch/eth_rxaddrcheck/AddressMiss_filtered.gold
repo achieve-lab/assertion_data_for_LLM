@@ -1,0 +1,110 @@
+property a0;
+@(posedge clk) (ByteCntEq0 == 1) |=> (AddressMiss == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a3;
+@(posedge clk) (BroadcastOK == 1 & ByteCntEq7 == 1 & RxCheckEn == 1) |=> (AddressMiss == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a15;
+@(posedge clk) (ByteCntEq0 == 0 & ByteCntEq7 == 1 & r_Bro == 1 & PassAll == 0 & RxCheckEn == 1 & StateData[0] == 0) |=> (AddressMiss == 1);
+endproperty
+assert_a15: assert property(a15);
+
+property a21;
+@(posedge clk) (ByteCntEq0 == 0 & ControlFrmAddressOK == 0 & RxCheckEn == 1 & ByteCntEq7 == 1 & Broadcast == 0 & MulticastOK == 0) |=> (AddressMiss == 1);
+endproperty
+assert_a21: assert property(a21);
+
+property a19;
+@(posedge clk) (ByteCntEq0 == 0 & r_Bro == 1 & ByteCntEq7 == 1 & PassAll == 0 & RxCheckEn == 1 & MulticastOK == 0) |=> (AddressMiss == 1);
+endproperty
+assert_a19: assert property(a19);
+
+property a1;
+@(posedge clk) (MulticastOK == 1 & StateData[0] == 1) |=> (AddressMiss == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a4;
+@(posedge clk) (ByteCntEq7 == 0 & Broadcast == 0 & RxCheckEn == 1 & StateData[0] == 0) |=> (AddressMiss == 0);
+endproperty
+assert_a4: assert property(a4);
+
+property a10;
+@(posedge clk) (RxCheckEn == 0 & BroadcastOK == 1 & PassAll == 1 & ByteCntEq7 == 0) |=> (AddressMiss == 0);
+endproperty
+assert_a10: assert property(a10);
+
+property a5;
+@(posedge clk) (RxCheckEn == 0 & ByteCntEq7 == 1 & ControlFrmAddressOK == 0 & BroadcastOK == 1) |=> (AddressMiss == 0);
+endproperty
+assert_a5: assert property(a5);
+
+property a18;
+@(posedge clk) (ByteCntEq0 == 0 & r_Bro == 1 & ByteCntEq7 == 1 & StateData[0] == 1 & ControlFrmAddressOK == 0 & PassAll == 1) |=> (AddressMiss == 1);
+endproperty
+assert_a18: assert property(a18);
+
+property a20;
+@(posedge clk) (ByteCntEq0 == 0 & ControlFrmAddressOK == 0 & ByteCntEq7 == 1 & RxCheckEn == 1 & Broadcast == 0 & r_Bro == 1) |=> (AddressMiss == 1);
+endproperty
+assert_a20: assert property(a20);
+
+property a16;
+@(posedge clk) (ByteCntEq0 == 0 & ByteCntEq7 == 1 & Broadcast == 0 & PassAll == 0 & RxCheckEn == 1 & r_Bro == 0) |=> (AddressMiss == 1);
+endproperty
+assert_a16: assert property(a16);
+
+property a17;
+@(posedge clk) (ByteCntEq0 == 0 & r_Bro == 1 & ByteCntEq7 == 1 & StateData[0] == 1 & ControlFrmAddressOK == 0 & Broadcast == 0) |=> (AddressMiss == 1);
+endproperty
+assert_a17: assert property(a17);
+
+property a6;
+@(posedge clk) (RxCheckEn == 0 & ByteCntEq7 == 1 & ControlFrmAddressOK == 0 & MulticastOK == 0 & r_Bro == 0) |=> (AddressMiss == 0);
+endproperty
+assert_a6: assert property(a6);
+
+property a12;
+@(posedge clk) (RxCheckEn == 0 & ByteCntEq7 == 1 & r_Bro == 1 & PassAll == 1) |=> (AddressMiss == 0);
+endproperty
+assert_a12: assert property(a12);
+
+property a9;
+@(posedge clk) (RxCheckEn == 0 & BroadcastOK == 1 & ControlFrmAddressOK == 0) |=> (AddressMiss == 0);
+endproperty
+assert_a9: assert property(a9);
+
+property a2;
+@(posedge clk) (BroadcastOK == 1 & MulticastOK == 1) |=> (AddressMiss == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a8;
+@(posedge clk) (ByteCntEq7 == 0 & StateData[0] == 1 & PassAll == 1 & r_Bro == 0) |=> (AddressMiss == 0);
+endproperty
+assert_a8: assert property(a8);
+
+property a7;
+@(posedge clk) (RxCheckEn == 0 & ByteCntEq7 == 1 & r_Bro == 1 & Broadcast == 0) |=> (AddressMiss == 0);
+endproperty
+assert_a7: assert property(a7);
+
+property a14;
+@(posedge clk) (ByteCntEq7 == 0 & Broadcast == 0 & PassAll == 1 & MulticastOK == 1) |=> (AddressMiss == 0);
+endproperty
+assert_a14: assert property(a14);
+
+property a11;
+@(posedge clk) (ByteCntEq7 == 0 & StateData[0] == 1 & PassAll == 1 & ControlFrmAddressOK == 0 & Broadcast == 1) |=> (AddressMiss == 0);
+endproperty
+assert_a11: assert property(a11);
+
+property a13;
+@(posedge clk) (ByteCntEq7 == 0 & Broadcast == 0 & RxCheckEn == 1 & r_Bro == 0 & ControlFrmAddressOK == 0) |=> (AddressMiss == 0);
+endproperty
+assert_a13: assert property(a13);
+

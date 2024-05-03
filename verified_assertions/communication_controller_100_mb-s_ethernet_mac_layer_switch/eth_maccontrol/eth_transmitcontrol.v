@@ -429,7 +429,7 @@ initial begin
                  end
              if (StateCount & PreNib15State >= 8)
                    begin
-                   ByteCnt = ByteCnt+1;
+                   ByteCnt <= ByteCnt+1;
                    write_fifo <= 1;
                    end
                 else   begin

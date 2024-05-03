@@ -1,0 +1,154 @@
+module i_decoder_8b10b(
+   input coding_err,
+   input DISPARITY6b, DISPARITY6a2, DISPARITY6a0,
+   // Registered Coding error input
+   input RBYTECLK,
+   input        AEQB, CEQD, P22, P13, P31,
+   input          xerr,
+   input        P22_b_c_eeqi, P22_bn_cn_eeqi, an_bn_en_in,
+   input        P22_a_c_eeqi, P22_an_cn_eeqi,
+   input disparity_err,
+   input disparity,
+   input derr12, derr34, derr56, derr78,
+   input        OR12_1, OR12_2, OR12_3, OR12_4, OR12_5, OR12_6, OR12_7,
+   input reset,
+   input   zerr1, zerr2, zerr3,
+   input        eeqi, c_d_e_i, cn_dn_en_in,
+   input        a_b_e_i, P13_d_e_i, P13_in, P13_en, P31_i,
+   // Registered 8B input
+   input   xerr1, xerr2, xerr3, xerr4,
+   input        A, B, C, D, E,
+   input cerr1, cerr2, cerr3, cerr4, cerr5, cerr6, cerr7, cerr8, cerr9,
+   input          cerr,
+   input        K, F, G, H, K28p, KA, KB, KC,
+   input heqj, fghjP13, fghjP31, fghj22,
+   input [4:0] decoder_8b_X,  input [2:0] decoder_8b_Y,
+   // Register disparity and disparity_err input
+   input DISPARITY6p, DISPARITY6n, DISPARITY4p, DISPARITY4n,
+   input   a,b,c,d,e,i,f,g,h,j,  // 10 Bit inputs
+   input [9:0] tbi,
+   input          zerr,
+   // --- TBI (Ten Bit Interface) input bus
+   input [7:0] ebi,
+   input K_out,
+   input        derr1,derr2,derr3,derr4,derr5,derr6,derr7,derr8,
+   input feqg,
+   input DISPARITY6a
+   // -- Eight bit input bus
+);
+property a5;
+@(posedge RBYTECLK) (derr78 == 1) |-> (disparity_err == 1);
+endproperty
+assert_a5: assert property(a5);
+
+property a22;
+@(posedge RBYTECLK) (derr12 == 0 & derr78 == 0 & derr56 == 0 & derr34 == 0) |-> (disparity_err == 0);
+endproperty
+assert_a22: assert property(a22);
+
+property a0;
+@(posedge RBYTECLK) (derr34 == 1) |-> (disparity_err == 1);
+endproperty
+assert_a0: assert property(a0);
+
+property a2;
+@(posedge RBYTECLK) (derr12 == 1) |-> (disparity_err == 1);
+endproperty
+assert_a2: assert property(a2);
+
+property a3;
+@(posedge RBYTECLK) (derr56 == 1) |-> (disparity_err == 1);
+endproperty
+assert_a3: assert property(a3);
+
+property a4;
+@(posedge RBYTECLK) (derr8 == 1) |=> (disparity_err == 1);
+endproperty
+assert_a4: assert property(a4);
+
+property a7;
+@(posedge RBYTECLK) (DISPARITY6p == 1) ##1 (derr12 == 0 & derr78 == 0) |-> (disparity_err == 0);
+endproperty
+assert_a7: assert property(a7);
+
+property a6;
+@(posedge RBYTECLK) (DISPARITY6n == 1) ##1 (derr12 == 0 & derr78 == 0) |-> (disparity_err == 0);
+endproperty
+assert_a6: assert property(a6);
+
+property a1;
+@(posedge RBYTECLK) (derr2 == 1) |=> (disparity_err == 1);
+endproperty
+assert_a1: assert property(a1);
+
+property a8;
+@(posedge RBYTECLK) (K == 0) |=> (K_out == 0);
+endproperty
+assert_a8: assert property(a8);
+
+property a10;
+@(posedge RBYTECLK) (KA == 1) |=> (K_out == 1);
+endproperty
+assert_a10: assert property(a10);
+
+property a11;
+@(posedge RBYTECLK) (KC == 1) |=> (K_out == 1);
+endproperty
+assert_a11: assert property(a11);
+
+property a12;
+@(posedge RBYTECLK) (KB == 1) |=> (K_out == 1);
+endproperty
+assert_a12: assert property(a12);
+
+property a9;
+@(posedge RBYTECLK) (cn_dn_en_in == 1) |=> (K_out == 1);
+endproperty
+assert_a9: assert property(a9);
+
+property a14;
+@(posedge RBYTECLK) (DISPARITY6b == 0 & fghj22 == 1) |=> (disparity == 0);
+endproperty
+assert_a14: assert property(a14);
+
+property a17;
+@(posedge RBYTECLK) (DISPARITY6b == 1 & fghj22 == 1) |=> (disparity == 1);
+endproperty
+assert_a17: assert property(a17);
+
+property a13;
+@(posedge RBYTECLK) (fghjP31 == 0 & fghj22 == 0) |=> (disparity == 0);
+endproperty
+assert_a13: assert property(a13);
+
+property a15;
+@(posedge RBYTECLK) (fghjP31 == 1) |=> (disparity == 1);
+endproperty
+assert_a15: assert property(a15);
+
+property a16;
+@(posedge RBYTECLK) (DISPARITY6a2 == 1 & fghj22 == 1) |=> (disparity == 1);
+endproperty
+assert_a16: assert property(a16);
+
+property a21;
+@(posedge RBYTECLK) (cerr == 1) |=> (coding_err == 1);
+endproperty
+assert_a21: assert property(a21);
+
+property a18;
+@(posedge RBYTECLK) (cerr == 0 & zerr == 0 & xerr == 0) |=> (coding_err == 0);
+endproperty
+assert_a18: assert property(a18);
+
+property a20;
+@(posedge RBYTECLK) (xerr == 1) |=> (coding_err == 1);
+endproperty
+assert_a20: assert property(a20);
+
+property a19;
+@(posedge RBYTECLK) (zerr == 1) |=> (coding_err == 1);
+endproperty
+assert_a19: assert property(a19);
+
+endmodule
