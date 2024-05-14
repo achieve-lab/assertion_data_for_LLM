@@ -1,0 +1,43 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="xm1_ym1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="x1_ym1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="x1_y1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="x0_ym1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="c2h" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="x2_ym1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="c2m" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="c0m" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="c3h" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="c2l" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="c1h" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="xm1_y1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="c3l" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="x1_y0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="c1m" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="c3m" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="c1l" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="xm1_y0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="c0l" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="c0h" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="x2_y1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="x0_y0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="x2_y0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="x0_y1" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

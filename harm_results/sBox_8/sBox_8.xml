@@ -1,0 +1,29 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="sBox_8_::base_new_pp" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="sBox_8_::base_new_enc" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="sBox_8_::out_gf_inv8_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="sBox_8_::out_gf_pp" loc="c,dt"/>
+		<prop exp="sBox_8_::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="sBox_8_::base_new" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="sBox_8_::base_new_dec" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="sBox_8_::sbox_out_enc" loc="c,dt"/>
+		<prop exp="sBox_8_::enc_dec" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="sBox_8_::out_gf_inv8_stage1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="sBox_8_::sbox_in" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="sBox_8_::sbox_out_dec" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

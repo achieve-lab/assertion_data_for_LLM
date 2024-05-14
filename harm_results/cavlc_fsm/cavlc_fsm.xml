@@ -1,0 +1,31 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="cavlc_fsm_::i" loc="c,dt"/>
+		<prop exp="cavlc_fsm_::valid" loc="c,dt"/>
+		<prop exp="cavlc_fsm_::start" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_fsm_::state" loc="c,dt"/>
+		<prop exp="cavlc_fsm_::rst_n" loc="c,dt"/>
+		<prop exp="cavlc_fsm_::ena" loc="c,dt"/>
+		<prop exp="cavlc_fsm_::idle" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_fsm_::TotalCoeff_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_fsm_::TrailingOnes" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_fsm_::ZeroLeft" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_fsm_::max_coeff_num" loc="c,dt"/>
+		<prop exp="cavlc_fsm_::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_fsm_::TotalCoeff" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_fsm_::TrailingOnes_comb" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

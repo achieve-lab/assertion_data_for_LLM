@@ -1,0 +1,49 @@
+<harm>
+	<context name="default">
+
+		<prop exp="eth_transmitcontrol_::TxCtrlStartFrm_q" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::TxCtrlStartFrm" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::TxCtrlEndFrm" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::SendingCtrlFrm" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::CtrlMux" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::BlockTxDone" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::ControlEnd" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_transmitcontrol_::ControlData" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::TxUsedDataOut" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::TPauseRq" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::TxReset" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::IncrementDlyCrcCnt" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::ResetByteCnt" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::TxUsedDataIn_q" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::TxUsedDataOutDetected" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::DlyCrcEn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_transmitcontrol_::DlyCrcCnt" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::IncrementByteCntBy2" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::TxDoneIn" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::WillSendControlFrame" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::EnableCnt" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::TxFlow" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::ControlEnd_q" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_transmitcontrol_::MAC" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::MTxClk" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::TxAbortIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_transmitcontrol_::TxPauseTV" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_transmitcontrol_::MuxedCtrlData" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_transmitcontrol_::ByteCnt" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::TxStartFrmIn" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::IncrementByteCnt" loc="c,dt"/>
+		<prop exp="eth_transmitcontrol_::TxUsedDataIn" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

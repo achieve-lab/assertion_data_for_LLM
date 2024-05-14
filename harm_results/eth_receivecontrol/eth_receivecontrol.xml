@@ -1,0 +1,76 @@
+<harm>
+	<context name="default">
+
+		<prop exp="eth_receivecontrol_::TypeLengthOK" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_receivecontrol_::SlotTimer" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::PauseTimerEq0_sync1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_receivecontrol_::PauseTimer" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::OpCodeOK" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ReceivedPauseFrm" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_receivecontrol_::DlyCrcCnt" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::DetectionWindow" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_receivecontrol_::AssembledTimerValue" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_receivecontrol_::TypeLength" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::TxUsedDataOutDetected" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::TxStartFrmOut" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::TxReset" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::Pause" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::TxDoneIn" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::TxAbortIn" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::DlyCrcEn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_receivecontrol_::ByteCnt" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ByteCntEq3" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::MTxClk" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ReceivedPacketGood" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::RxEndFrm" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ByteCntEq4" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ByteCntEq2" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ByteCntEq13" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::RxReset" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ByteCntEq1" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::DecrementPauseTimer" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ResetSlotTimer" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ByteCntEq12" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ByteCntEq16" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::RxStatusWriteLatched_sync2" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ByteCntEq17" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::IncrementByteCnt" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ByteCntEq14" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_receivecontrol_::LatchedTimerValue" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ByteCntEq5" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ByteCntEq18" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::SetPauseTimer" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::r_PassAll" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_receivecontrol_::MAC" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ByteCntEq0" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::MRxClk" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::AddressOK" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ReceivedLengthOK" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::PauseTimerEq0_sync2" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::PauseTimerEq0" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::RxStartFrm" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::Divider2" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ReceiveEnd" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ResetByteCnt" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_receivecontrol_::ReservedMulticast" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ReceivedPauseFrmWAddr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_receivecontrol_::RxData" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::RxFlow" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::RxValid" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::ByteCntEq15" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::IncrementSlotTimer" loc="c,dt"/>
+		<prop exp="eth_receivecontrol_::SlotFinished" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

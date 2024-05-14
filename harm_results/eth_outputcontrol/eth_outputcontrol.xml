@@ -1,0 +1,32 @@
+<harm>
+	<context name="default">
+
+		<prop exp="eth_outputcontrol_::Mdo_d" loc="c,dt"/>
+		<prop exp="eth_outputcontrol_::MdoEn" loc="c,dt"/>
+		<prop exp="eth_outputcontrol_::Mdo" loc="c,dt"/>
+		<prop exp="eth_outputcontrol_::WriteOp" loc="c,dt"/>
+		<prop exp="eth_outputcontrol_::MdoEn_d" loc="c,dt"/>
+		<prop exp="eth_outputcontrol_::ShiftedBit" loc="c,dt"/>
+		<prop exp="eth_outputcontrol_::Clk" loc="c,dt"/>
+		<prop exp="eth_outputcontrol_::SerialEn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_outputcontrol_::BitCounter" loc="c,dt"/>
+		<prop exp="eth_outputcontrol_::Mdo_2d" loc="c,dt"/>
+		<prop exp="eth_outputcontrol_::InProgress" loc="c,dt"/>
+		<prop exp="eth_outputcontrol_::MdcEn_n" loc="c,dt"/>
+		<prop exp="eth_outputcontrol_::NoPre" loc="c,dt"/>
+		<prop exp="eth_outputcontrol_::MdoEn_2d" loc="c,dt"/>
+		<prop exp="eth_outputcontrol_::Reset" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

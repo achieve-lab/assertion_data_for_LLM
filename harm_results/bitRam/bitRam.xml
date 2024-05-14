@@ -1,0 +1,24 @@
+<harm>
+	<context name="default">
+
+		<prop exp="bitRam_::bitRamOut" loc="c,dt"/>
+		<prop exp="bitRam_::bitRamEn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="bitRam_::bitRamAddr" loc="c,dt"/>
+		<prop exp="bitRam_::bitRamIn" loc="c,dt"/>
+		<prop exp="bitRam_::bitRamRw" loc="c,dt"/>
+		<prop exp="bitRam_::clk" loc="c,dt"/>
+		<prop exp="bitRam_::reset" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

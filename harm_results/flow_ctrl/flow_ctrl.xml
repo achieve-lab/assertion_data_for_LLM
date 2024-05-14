@@ -1,0 +1,40 @@
+<harm>
+	<context name="default">
+
+		<prop exp="flow_ctrl_::xon_gen" loc="c,dt"/>
+		<prop exp="flow_ctrl_::xoff_cpu_dl1" loc="c,dt"/>
+		<prop exp="flow_ctrl_::tx_pause_en_dl2" loc="c,dt"/>
+		<prop exp="flow_ctrl_::tx_pause_en" loc="c,dt"/>
+		<prop exp="flow_ctrl_::pause_quanta_sub" loc="c,dt"/>
+		<prop exp="flow_ctrl_::pause_quanta_val_dl1" loc="c,dt"/>
+		<prop exp="flow_ctrl_::pause_quanta_val_dl2" loc="c,dt"/>
+		<prop exp="flow_ctrl_::pause_quanta_val" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="flow_ctrl_::pause_quanta" loc="c,dt"/>
+		<prop exp="flow_ctrl_::Clk" loc="c,dt"/>
+		<prop exp="flow_ctrl_::xoff_gen" loc="c,dt"/>
+		<prop exp="flow_ctrl_::Reset" loc="c,dt"/>
+		<prop exp="flow_ctrl_::xon_cpu_dl2" loc="c,dt"/>
+		<prop exp="flow_ctrl_::xoff_cpu" loc="c,dt"/>
+		<prop exp="flow_ctrl_::xon_cpu_dl1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="flow_ctrl_::pause_quanta_counter" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="flow_ctrl_::pause_quanta_dl1" loc="c,dt"/>
+		<prop exp="flow_ctrl_::xoff_gen_complete" loc="c,dt"/>
+		<prop exp="flow_ctrl_::xon_cpu" loc="c,dt"/>
+		<prop exp="flow_ctrl_::xoff_cpu_dl2" loc="c,dt"/>
+		<prop exp="flow_ctrl_::pause_apply" loc="c,dt"/>
+		<prop exp="flow_ctrl_::xon_gen_complete" loc="c,dt"/>
+		<prop exp="flow_ctrl_::tx_pause_en_dl1" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

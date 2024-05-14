@@ -1,0 +1,38 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="PSGNoteOutMux_::o1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGNoteOutMux_::o3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGNoteOutMux_::o5" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGNoteOutMux_::c" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="o" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGNoteOutMux_::o2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGNoteOutMux_::o4" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGNoteOutMux_::b" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGNoteOutMux_::o" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="d" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="b" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="a" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="e" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="s" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGNoteOutMux_::d" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="c" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGNoteOutMux_::a" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGNoteOutMux_::e" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGNoteOutMux_::s" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

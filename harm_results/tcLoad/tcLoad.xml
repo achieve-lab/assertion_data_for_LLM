@@ -1,0 +1,35 @@
+<harm>
+	<context name="default">
+
+		<prop exp="tcLoad_::cuSel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="dnIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cdIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ttIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cuIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="tcLoad_::ttIn" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="tcLoad_::dnIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="tcLoad_::cdIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="tcAddr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="tcLoad_::cuIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="tcLoadOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="tcLoad_::tcAddr" loc="c,dt"/>
+		<prop exp="tcLoad_::ttSel" loc="c,dt"/>
+		<prop exp="tcLoad_::cdSel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="tcLoad_::tcLoadOut" loc="c,dt"/>
+		<prop exp="tcLoad_::dnSel" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

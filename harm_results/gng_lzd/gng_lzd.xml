@@ -1,0 +1,30 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="gng_lzd_::d" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="gng_lzd_::v1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="gng_lzd_::v2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="gng_lzd_::v3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="gng_lzd_::v4" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="gng_lzd_::v5" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="data_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="data_in" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="gng_lzd_::data_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="gng_lzd_::p6" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="gng_lzd_::data_in" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

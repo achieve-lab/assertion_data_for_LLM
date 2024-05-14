@@ -1,0 +1,48 @@
+<harm>
+	<context name="default">
+
+		<prop exp="reset_pending" loc="c,dt"/>
+		<prop exp="read_wait" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="HTRANS" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="crc_idr_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="HSIZE" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="crc_poly_out" loc="c,dt"/>
+		<prop exp="HRESETn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="crc_out" loc="c,dt"/>
+		<prop exp="HSElx" loc="c,dt"/>
+		<prop exp="HREADY" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="crc_init_out" loc="c,dt"/>
+		<prop exp="HCLK" loc="c,dt"/>
+		<prop exp="buffer_full" loc="c,dt"/>
+		<prop exp="crc_poly_en" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="crc_poly_size" loc="c,dt"/>
+		<prop exp="reset_chain" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="rev_in_type" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="bus_size" loc="c,dt"/>
+		<prop exp="HRESP" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="HADDR" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="HWDATA" loc="c,dt"/>
+		<prop exp="rev_out_type" loc="c,dt"/>
+		<prop exp="crc_idr_en" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="bus_wr" loc="c,dt"/>
+		<prop exp="crc_init_en" loc="c,dt"/>
+		<prop exp="buffer_write_en" loc="c,dt"/>
+		<prop exp="HREADYOUT" loc="c,dt"/>
+		<prop exp="HWRITE" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="HRDATA" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

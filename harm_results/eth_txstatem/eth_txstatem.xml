@@ -1,0 +1,66 @@
+<harm>
+	<context name="default">
+
+		<prop exp="eth_txstatem_::StateTraffic" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StateJam_q" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StateJam" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StateIdle" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StateIPG" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StateBackOff" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txstatem_::StartData" loc="c,dt"/>
+		<prop exp="eth_txstatem_::NibbleMinFl" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txstatem_::IPGR2" loc="c,dt"/>
+		<prop exp="eth_txstatem_::NibCntEq7" loc="c,dt"/>
+		<prop exp="eth_txstatem_::MTxClk" loc="c,dt"/>
+		<prop exp="eth_txstatem_::MaxFrame" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StateFCS" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txstatem_::IPGT" loc="c,dt"/>
+		<prop exp="eth_txstatem_::ColWindow" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StatePreamble" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txstatem_::IPGR1" loc="c,dt"/>
+		<prop exp="eth_txstatem_::NibCntEq15" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StartJam" loc="c,dt"/>
+		<prop exp="eth_txstatem_::Collision" loc="c,dt"/>
+		<prop exp="eth_txstatem_::RandomEqByteCnt" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txstatem_::StateData" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txstatem_::NibCnt" loc="c,dt"/>
+		<prop exp="eth_txstatem_::DeferIndication" loc="c,dt"/>
+		<prop exp="eth_txstatem_::CarrierSense" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StatePAD" loc="c,dt"/>
+		<prop exp="eth_txstatem_::RetryMax" loc="c,dt"/>
+		<prop exp="eth_txstatem_::TxStartFrm" loc="c,dt"/>
+		<prop exp="eth_txstatem_::CrcEn" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StartIdle" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StartPAD" loc="c,dt"/>
+		<prop exp="eth_txstatem_::RandomEq0" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StartBackoff" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StateDefer" loc="c,dt"/>
+		<prop exp="eth_txstatem_::NoBckof" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StartDefer" loc="c,dt"/>
+		<prop exp="eth_txstatem_::ExcessiveDefer" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StartFCS" loc="c,dt"/>
+		<prop exp="eth_txstatem_::Rule1" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StartPreamble" loc="c,dt"/>
+		<prop exp="eth_txstatem_::FullD" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StartIPG" loc="c,dt"/>
+		<prop exp="eth_txstatem_::Reset" loc="c,dt"/>
+		<prop exp="eth_txstatem_::StartTxDone" loc="c,dt"/>
+		<prop exp="eth_txstatem_::TooBig" loc="c,dt"/>
+		<prop exp="eth_txstatem_::Pad" loc="c,dt"/>
+		<prop exp="eth_txstatem_::TxEndFrm" loc="c,dt"/>
+		<prop exp="eth_txstatem_::TxUnderRun" loc="c,dt"/>
+		<prop exp="eth_txstatem_::UnderRun" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

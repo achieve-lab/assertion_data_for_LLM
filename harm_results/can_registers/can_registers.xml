@@ -1,0 +1,327 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="can_registers_::ACCEPTANCE_CODE_REG0::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::ACCEPTANCE_CODE_REG2::we" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ACCEPTANCE_CODE_REG2::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::ACCEPTANCE_CODE_REG3::we" loc="c,dt"/>
+		<prop exp="can_registers_::ACCEPTANCE_MASK_REG0::we" loc="c,dt"/>
+		<prop exp="can_registers_::ACCEPTANCE_MASK_REG0::clk" loc="c,dt"/>
+		<prop exp="can_registers_::ACCEPTANCE_MASK_REG1::we" loc="c,dt"/>
+		<prop exp="can_registers_::ACCEPTANCE_MASK_REG2::we" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ACCEPTANCE_MASK_REG2::data_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ACCEPTANCE_MASK_REG2::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::ACCEPTANCE_MASK_REG2::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ACCEPTANCE_MASK_REG3::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::BUS_TIMING_0_REG::we" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::BUS_TIMING_0_REG::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::BUS_TIMING_0_REG::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::BUS_TIMING_1_REG::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::BUS_TIMING_1_REG::clk" loc="c,dt"/>
+		<prop exp="can_registers_::CLOCK_DIVIDER_REG_3::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::CLOCK_DIVIDER_REG_7::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::CLOCK_DIVIDER_REG_7::we" loc="c,dt"/>
+		<prop exp="can_registers_::CLOCK_DIVIDER_REG_7::data_in" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::CLOCK_DIVIDER_REG_LOW::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::CLOCK_DIVIDER_REG_LOW::we" loc="c,dt"/>
+		<prop exp="can_registers_::CLOCK_DIVIDER_REG_LOW::rst" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::COMMAND_REG::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::CLOCK_DIVIDER_REG_3::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG::we" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG::rst" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::COMMAND_REG::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG::clk" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG0::we" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG0::rst_sync" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG0::rst" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG0::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG1::we" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG1::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG4::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG4::we" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG4::rst" loc="c,dt"/>
+		<prop exp="can_registers_::ERROR_WARNING_REG::rst" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::IRQ_EN_REG::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::IRQ_EN_REG::clk" loc="c,dt"/>
+		<prop exp="can_registers_::ACCEPTANCE_MASK_REG3::we" loc="c,dt"/>
+		<prop exp="can_registers_::MODE_REG0::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::MODE_REG0::rst_sync" loc="c,dt"/>
+		<prop exp="can_registers_::MODE_REG0::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::ACCEPTANCE_CODE_REG2::clk" loc="c,dt"/>
+		<prop exp="can_registers_::MODE_REG0::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::MODE_REG_BASIC::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::MODE_REG_BASIC::rst" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::MODE_REG_BASIC::data_in" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::MODE_REG_EXT::data_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG0::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG0::clk" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG1::we" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG1::data_in" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ERROR_WARNING_REG::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG1::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG0::data_in" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG10::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG10::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG12::data_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG12::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG::rst_sync" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG11::clk" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG12::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG2::data_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG2::data_in" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG3::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::CLOCK_DIVIDER_REG_3::clk" loc="c,dt"/>
+		<prop exp="can_registers_::CLOCK_DIVIDER_REG_7::rst" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG4::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG4::we" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG2::clk" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG5::we" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG5::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG6::we" loc="c,dt"/>
+		<prop exp="can_registers_::ACCEPTANCE_CODE_REG1::we" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG6::data_in" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::tx_data_4" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::tx_data_7" loc="c,dt"/>
+		<prop exp="can_registers_::set_reset_mode" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::tx_data_9" loc="c,dt"/>
+		<prop exp="can_registers_::irq" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::acceptance_code_3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::arbitration_lost_capture" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::acceptance_mask_2" loc="c,dt"/>
+		<prop exp="can_registers_::we_tx_data_6" loc="c,dt"/>
+		<prop exp="can_registers_::we_tx_data_8" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::tx_data_3" loc="c,dt"/>
+		<prop exp="can_registers_::we_tx_data_11" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::rx_message_counter" loc="c,dt"/>
+		<prop exp="can_registers_::we_tx_data_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::tx_data_6" loc="c,dt"/>
+		<prop exp="can_registers_::error_status_q" loc="c,dt"/>
+		<prop exp="can_registers_::we_rx_err_cnt" loc="c,dt"/>
+		<prop exp="can_registers_::set_arbitration_lost_irq" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::sync_jump_width" loc="c,dt"/>
+		<prop exp="can_registers_::we_tx_data_2" loc="c,dt"/>
+		<prop exp="can_registers_::we_clock_divider_low" loc="c,dt"/>
+		<prop exp="can_registers_::transmit_status" loc="c,dt"/>
+		<prop exp="can_registers_::we_acceptance_mask_3" loc="c,dt"/>
+		<prop exp="can_registers_::CLOCK_DIVIDER_REG_3::we" loc="c,dt"/>
+		<prop exp="can_registers_::listen_only_mode" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG11::we" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG3::we" loc="c,dt"/>
+		<prop exp="can_registers_::arbitration_lost_irq" loc="c,dt"/>
+		<prop exp="can_registers_::we_acceptance_mask_2" loc="c,dt"/>
+		<prop exp="can_registers_::we_tx_data_3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ACCEPTANCE_MASK_REG0::data_in" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::BUS_TIMING_1_REG::data_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ERROR_WARNING_REG::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::set_bus_error_irq" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ACCEPTANCE_MASK_REG1::data_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::tx_data_10" loc="c,dt"/>
+		<prop exp="can_registers_::we_clock_divider_hi" loc="c,dt"/>
+		<prop exp="can_registers_::we_acceptance_mask_0" loc="c,dt"/>
+		<prop exp="can_registers_::we_acceptance_code_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ACCEPTANCE_MASK_REG1::data_in" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::addr" loc="c,dt"/>
+		<prop exp="can_registers_::ACCEPTANCE_MASK_REG3::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::MODE_REG_EXT::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::tx_successful" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG3::clk" loc="c,dt"/>
+		<prop exp="can_registers_::tx_state_q" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ACCEPTANCE_CODE_REG3::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::clock_off" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::acceptance_mask_0" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG4::clk" loc="c,dt"/>
+		<prop exp="can_registers_::we_command" loc="c,dt"/>
+		<prop exp="can_registers_::tx_state" loc="c,dt"/>
+		<prop exp="can_registers_::MODE_REG_EXT::rst" loc="c,dt"/>
+		<prop exp="can_registers_::node_error_passive" loc="c,dt"/>
+		<prop exp="can_registers_::we_tx_data_10" loc="c,dt"/>
+		<prop exp="can_registers_::overload_request" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::mode_ext" loc="c,dt"/>
+		<prop exp="can_registers_::overrun_q" loc="c,dt"/>
+		<prop exp="can_registers_::ACCEPTANCE_CODE_REG0::clk" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG2::we" loc="c,dt"/>
+		<prop exp="can_registers_::tx_request" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG7::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::MODE_REG_EXT::we" loc="c,dt"/>
+		<prop exp="can_registers_::info_empty" loc="c,dt"/>
+		<prop exp="can_registers_::error_warning_irq_en" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::error_capture_code" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ACCEPTANCE_CODE_REG3::data_in" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::tx_err_cnt" loc="c,dt"/>
+		<prop exp="can_registers_::we_bus_timing_0" loc="c,dt"/>
+		<prop exp="can_registers_::we_acceptance_code_2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG3::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::read" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::we_tx_data_4" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::acceptance_code_2" loc="c,dt"/>
+		<prop exp="can_registers_::we_tx_data_0" loc="c,dt"/>
+		<prop exp="can_registers_::acceptance_filter_mode" loc="c,dt"/>
+		<prop exp="can_registers_::ACCEPTANCE_MASK_REG1::clk" loc="c,dt"/>
+		<prop exp="can_registers_::MODE_REG_BASIC::we" loc="c,dt"/>
+		<prop exp="can_registers_::we_tx_err_cnt" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::tx_data_5" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG1::rst" loc="c,dt"/>
+		<prop exp="can_registers_::node_bus_off_q" loc="c,dt"/>
+		<prop exp="can_registers_::abort_tx" loc="c,dt"/>
+		<prop exp="can_registers_::read_error_code_capture_reg" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::time_segment1" loc="c,dt"/>
+		<prop exp="can_registers_::we_acceptance_code_3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG4::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG8::we" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG4::clk" loc="c,dt"/>
+		<prop exp="can_registers_::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::irq_reg" loc="c,dt"/>
+		<prop exp="can_registers_::ACCEPTANCE_CODE_REG1::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::CLOCK_DIVIDER_REG_LOW::data_in" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG10::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::error_status" loc="c,dt"/>
+		<prop exp="can_registers_::cs" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ACCEPTANCE_MASK_REG0::data_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG11::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::need_to_tx" loc="c,dt"/>
+		<prop exp="can_registers_::overload_frame" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG1::clk" loc="c,dt"/>
+		<prop exp="can_registers_::we_tx_data_5" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::mode_basic" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::tx_data_1" loc="c,dt"/>
+		<prop exp="can_registers_::read_arbitration_lost_capture_reg" loc="c,dt"/>
+		<prop exp="can_registers_::we_acceptance_mask_1" loc="c,dt"/>
+		<prop exp="can_registers_::read_irq_reg" loc="c,dt"/>
+		<prop exp="can_registers_::MODE_REG_EXT::clk" loc="c,dt"/>
+		<prop exp="can_registers_::sample_point" loc="c,dt"/>
+		<prop exp="can_registers_::reset_mode" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ACCEPTANCE_CODE_REG1::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::transmit_irq_en" loc="c,dt"/>
+		<prop exp="can_registers_::transmitting" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG5::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::error_passive_irq_en" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG9::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::self_test_mode" loc="c,dt"/>
+		<prop exp="can_registers_::MODE_REG_BASIC::clk" loc="c,dt"/>
+		<prop exp="can_registers_::we_interrupt_enable" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::BUS_TIMING_0_REG::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::CLOCK_DIVIDER_REG_LOW::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::rx_err_cnt" loc="c,dt"/>
+		<prop exp="can_registers_::error_warning_irq_en_ext" loc="c,dt"/>
+		<prop exp="can_registers_::MODE_REG0::rst" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::acceptance_code_1" loc="c,dt"/>
+		<prop exp="can_registers_::ERROR_WARNING_REG::we" loc="c,dt"/>
+		<prop exp="can_registers_::node_bus_off" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::tx_data_2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::tx_data_12" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG1::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::we_tx_data_7" loc="c,dt"/>
+		<prop exp="can_registers_::error_passive_irq" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG0::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::tx_data_11" loc="c,dt"/>
+		<prop exp="can_registers_::we_tx_data_12" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::tx_data_0" loc="c,dt"/>
+		<prop exp="can_registers_::receive_irq_en" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG1::rst_sync" loc="c,dt"/>
+		<prop exp="can_registers_::ERROR_WARNING_REG::clk" loc="c,dt"/>
+		<prop exp="can_registers_::IRQ_EN_REG::we" loc="c,dt"/>
+		<prop exp="can_registers_::transmit_irq_en_basic" loc="c,dt"/>
+		<prop exp="can_registers_::triple_sampling" loc="c,dt"/>
+		<prop exp="can_registers_::transmit_buffer_status_q" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG9::clk" loc="c,dt"/>
+		<prop exp="can_registers_::error_irq_en_basic" loc="c,dt"/>
+		<prop exp="can_registers_::transmit_irq_en_ext" loc="c,dt"/>
+		<prop exp="can_registers_::irq_n" loc="c,dt"/>
+		<prop exp="can_registers_::overrun" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::time_segment2" loc="c,dt"/>
+		<prop exp="can_registers_::CLOCK_DIVIDER_REG_3::rst" loc="c,dt"/>
+		<prop exp="can_registers_::MODE_REG0::we" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::status" loc="c,dt"/>
+		<prop exp="can_registers_::bus_error_irq_en" loc="c,dt"/>
+		<prop exp="can_registers_::receive_irq_en_ext" loc="c,dt"/>
+		<prop exp="can_registers_::overrun_irq_en_basic" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG11::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::we_tx_data_9" loc="c,dt"/>
+		<prop exp="can_registers_::mode" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::irq_en_ext" loc="c,dt"/>
+		<prop exp="can_registers_::extended_mode" loc="c,dt"/>
+		<prop exp="can_registers_::data_overrun_irq" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::clock_divider" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::error_warning_limit" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG4::rst_sync" loc="c,dt"/>
+		<prop exp="can_registers_::data_overrun_irq_en" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::acceptance_mask_1" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG12::we" loc="c,dt"/>
+		<prop exp="can_registers_::we_mode" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::command" loc="c,dt"/>
+		<prop exp="can_registers_::we_error_warning_limit" loc="c,dt"/>
+		<prop exp="can_registers_::clkout" loc="c,dt"/>
+		<prop exp="can_registers_::release_buffer" loc="c,dt"/>
+		<prop exp="can_registers_::receive_status" loc="c,dt"/>
+		<prop exp="can_registers_::clear_data_overrun" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::cd" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG5::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::baud_r_presc" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::IRQ_EN_REG::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::arbitration_lost_irq_en" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::acceptance_code_0" loc="c,dt"/>
+		<prop exp="can_registers_::we_bus_timing_1" loc="c,dt"/>
+		<prop exp="can_registers_::receive_buffer_status" loc="c,dt"/>
+		<prop exp="can_registers_::BUS_TIMING_1_REG::we" loc="c,dt"/>
+		<prop exp="can_registers_::bus_error_irq" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ACCEPTANCE_MASK_REG3::data_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::acceptance_mask_3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::clkout_cnt" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::clkout_div" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG10::we" loc="c,dt"/>
+		<prop exp="can_registers_::clkout_tmp" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::data_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG1::data_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::tx_data_8" loc="c,dt"/>
+		<prop exp="can_registers_::error_irq" loc="c,dt"/>
+		<prop exp="can_registers_::receive_irq_en_basic" loc="c,dt"/>
+		<prop exp="can_registers_::node_error_passive_q" loc="c,dt"/>
+		<prop exp="can_registers_::node_error_active" loc="c,dt"/>
+		<prop exp="can_registers_::overrun_status" loc="c,dt"/>
+		<prop exp="can_registers_::ACCEPTANCE_CODE_REG0::we" loc="c,dt"/>
+		<prop exp="can_registers_::self_rx_request" loc="c,dt"/>
+		<prop exp="can_registers_::single_shot_transmission" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG6::clk" loc="c,dt"/>
+		<prop exp="can_registers_::transmit_irq" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ACCEPTANCE_CODE_REG1::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::tx_successful_q" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::bus_timing_0" loc="c,dt"/>
+		<prop exp="can_registers_::transmission_complete" loc="c,dt"/>
+		<prop exp="can_registers_::CLOCK_DIVIDER_REG_7::clk" loc="c,dt"/>
+		<prop exp="can_registers_::receive_irq" loc="c,dt"/>
+		<prop exp="can_registers_::rst" loc="c,dt"/>
+		<prop exp="can_registers_::transmit_buffer_status" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG9::we" loc="c,dt"/>
+		<prop exp="can_registers_::we" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::bus_timing_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG9::data_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ACCEPTANCE_CODE_REG2::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::ACCEPTANCE_CODE_REG3::clk" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG4::data_in" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG8::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG8::data_in" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::ACCEPTANCE_CODE_REG0::data_in" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG8::data_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG6::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::we_acceptance_code_0" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG7::clk" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG0::we" loc="c,dt"/>
+		<prop exp="can_registers_::TX_DATA_REG7::we" loc="c,dt"/>
+		<prop exp="can_registers_::COMMAND_REG0::data_out" loc="c,dt"/>
+		<prop exp="can_registers_::data_overrun_irq_en_ext" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="can_registers_::TX_DATA_REG7::data_out" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

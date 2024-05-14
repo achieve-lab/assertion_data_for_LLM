@@ -1,0 +1,113 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="eth_miim_::clkgen::Counter" loc="c,dt"/>
+		<prop exp="eth_miim_::clkgen::CountEq0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::clkgen::CounterPreset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::clkgen::TempDivider" loc="c,dt"/>
+		<prop exp="eth_miim_::clkgen::Reset" loc="c,dt"/>
+		<prop exp="eth_miim_::clkgen::MdcEn_n" loc="c,dt"/>
+		<prop exp="eth_miim_::outctrl::Mdo_d" loc="c,dt"/>
+		<prop exp="eth_miim_::outctrl::Mdo_2d" loc="c,dt"/>
+		<prop exp="eth_miim_::outctrl::MdoEn_2d" loc="c,dt"/>
+		<prop exp="eth_miim_::outctrl::Mdo" loc="c,dt"/>
+		<prop exp="eth_miim_::outctrl::WriteOp" loc="c,dt"/>
+		<prop exp="eth_miim_::ScanStat_q1" loc="c,dt"/>
+		<prop exp="eth_miim_::EndBusy" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::BitCounter" loc="c,dt"/>
+		<prop exp="eth_miim_::Busy" loc="c,dt"/>
+		<prop exp="eth_miim_::outctrl::SerialEn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::Fiad" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::LatchByte" loc="c,dt"/>
+		<prop exp="eth_miim_::MdcEn_n" loc="c,dt"/>
+		<prop exp="eth_miim_::RStatStart_q2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::clkgen::Divider" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::Prsd" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::shftrg::Rgad" loc="c,dt"/>
+		<prop exp="eth_miim_::ShiftedBit" loc="c,dt"/>
+		<prop exp="eth_miim_::Mdc" loc="c,dt"/>
+		<prop exp="eth_miim_::shftrg::MdcEn_n" loc="c,dt"/>
+		<prop exp="eth_miim_::WriteDataOp" loc="c,dt"/>
+		<prop exp="eth_miim_::LatchByte1_d2" loc="c,dt"/>
+		<prop exp="eth_miim_::LatchByte0_d2" loc="c,dt"/>
+		<prop exp="eth_miim_::ScanStatusOp" loc="c,dt"/>
+		<prop exp="eth_miim_::Mdo" loc="c,dt"/>
+		<prop exp="eth_miim_::Nvalid" loc="c,dt"/>
+		<prop exp="eth_miim_::EndBusy_d" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::Divider" loc="c,dt"/>
+		<prop exp="eth_miim_::WriteOp" loc="c,dt"/>
+		<prop exp="eth_miim_::Reset" loc="c,dt"/>
+		<prop exp="eth_miim_::EndOp" loc="c,dt"/>
+		<prop exp="eth_miim_::InProgress_q1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::Rgad" loc="c,dt"/>
+		<prop exp="eth_miim_::RStat" loc="c,dt"/>
+		<prop exp="eth_miim_::shftrg::Mdi" loc="c,dt"/>
+		<prop exp="eth_miim_::shftrg::WriteOp" loc="c,dt"/>
+		<prop exp="eth_miim_::LinkFail" loc="c,dt"/>
+		<prop exp="eth_miim_::NoPre" loc="c,dt"/>
+		<prop exp="eth_miim_::shftrg::LinkFail" loc="c,dt"/>
+		<prop exp="eth_miim_::ReadStatusOp" loc="c,dt"/>
+		<prop exp="eth_miim_::StartOp" loc="c,dt"/>
+		<prop exp="eth_miim_::WCtrlDataStart" loc="c,dt"/>
+		<prop exp="eth_miim_::MdoEn" loc="c,dt"/>
+		<prop exp="eth_miim_::ScanStat" loc="c,dt"/>
+		<prop exp="eth_miim_::Clk" loc="c,dt"/>
+		<prop exp="eth_miim_::InProgress" loc="c,dt"/>
+		<prop exp="eth_miim_::outctrl::MdcEn_n" loc="c,dt"/>
+		<prop exp="eth_miim_::Mdi" loc="c,dt"/>
+		<prop exp="eth_miim_::shftrg::Reset" loc="c,dt"/>
+		<prop exp="eth_miim_::WCtrlData" loc="c,dt"/>
+		<prop exp="eth_miim_::outctrl::MdoEn_d" loc="c,dt"/>
+		<prop exp="eth_miim_::LatchByte1_d" loc="c,dt"/>
+		<prop exp="eth_miim_::clkgen::MdcEn" loc="c,dt"/>
+		<prop exp="eth_miim_::RStatStart" loc="c,dt"/>
+		<prop exp="eth_miim_::clkgen::Mdc" loc="c,dt"/>
+		<prop exp="eth_miim_::shftrg::Clk" loc="c,dt"/>
+		<prop exp="eth_miim_::RStat_q1" loc="c,dt"/>
+		<prop exp="eth_miim_::WCtrlDataStart_q" loc="c,dt"/>
+		<prop exp="eth_miim_::outctrl::Clk" loc="c,dt"/>
+		<prop exp="eth_miim_::outctrl::Reset" loc="c,dt"/>
+		<prop exp="eth_miim_::RStat_q2" loc="c,dt"/>
+		<prop exp="eth_miim_::SyncStatMdcEn" loc="c,dt"/>
+		<prop exp="eth_miim_::LatchByte0_d" loc="c,dt"/>
+		<prop exp="eth_miim_::UpdateMIIRX_DATAReg" loc="c,dt"/>
+		<prop exp="eth_miim_::outctrl::MdoEn" loc="c,dt"/>
+		<prop exp="eth_miim_::WCtrlDataStart_q1" loc="c,dt"/>
+		<prop exp="eth_miim_::outctrl::InProgress" loc="c,dt"/>
+		<prop exp="eth_miim_::WCtrlDataStart_q2" loc="c,dt"/>
+		<prop exp="eth_miim_::InProgress_q2" loc="c,dt"/>
+		<prop exp="eth_miim_::WCtrlData_q1" loc="c,dt"/>
+		<prop exp="eth_miim_::WCtrlData_q3" loc="c,dt"/>
+		<prop exp="eth_miim_::clkgen::Clk" loc="c,dt"/>
+		<prop exp="eth_miim_::RStat_q3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::shftrg::ByteSelect" loc="c,dt"/>
+		<prop exp="eth_miim_::MdcEn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::shftrg::CtrlData" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::shftrg::Fiad" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::shftrg::LatchByte" loc="c,dt"/>
+		<prop exp="eth_miim_::WCtrlData_q2" loc="c,dt"/>
+		<prop exp="eth_miim_::RStatStart_q1" loc="c,dt"/>
+		<prop exp="eth_miim_::ScanStat_q2" loc="c,dt"/>
+		<prop exp="eth_miim_::shftrg::ShiftedBit" loc="c,dt"/>
+		<prop exp="eth_miim_::InProgress_q3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::ByteSelect" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::CtrlData" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::shftrg::Prsd" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::shftrg::ShiftReg" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_miim_::outctrl::BitCounter" loc="c,dt"/>
+		<prop exp="eth_miim_::outctrl::ShiftedBit" loc="c,dt"/>
+		<prop exp="eth_miim_::outctrl::NoPre" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

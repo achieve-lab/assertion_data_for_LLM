@@ -1,0 +1,43 @@
+<harm>
+	<context name="default">
+
+		<prop exp="auto_baud_with_tracking_::verify_good" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="auto_baud_with_tracking_::measurement" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::measure" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="auto_baud_with_tracking_::main_count" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="auto_baud_with_tracking_::m1_next_state" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::idle" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::enable_clock_count" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::clk_i" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="auto_baud_with_tracking_::m1_state" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::auto_baud_locked_o" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::mid_bit_count" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::baud_clk_o" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::serial_dat_i" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::verify_done" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::main_count_rollover" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::clock_count_rollover" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::baud_count_rollover" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="auto_baud_with_tracking_::baud_count" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::verify" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::reset_i" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::character_miscompare" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="auto_baud_with_tracking_::target_bits" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::run" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="auto_baud_with_tracking_::baud" loc="c,dt"/>
+		<prop exp="auto_baud_with_tracking_::clear_counters" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="auto_baud_with_tracking_::clock_count" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

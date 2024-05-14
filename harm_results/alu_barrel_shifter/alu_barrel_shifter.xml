@@ -1,0 +1,44 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="alu_barrel_shifter_::m" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_barrel_shifter_::k" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_barrel_shifter_::Zrev_copy" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_barrel_shifter_::Zreg" loc="c,dt"/>
+		<prop exp="alu_barrel_shifter_::Xmsb" loc="c,dt"/>
+		<prop exp="alu_barrel_shifter_::Ztmp" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_barrel_shifter_::Xrev" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_barrel_shifter_::Yor" loc="c,dt"/>
+		<prop exp="direction" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_barrel_shifter_::Xreg" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_barrel_shifter_::value_7" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_barrel_shifter_::Zout" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="x" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="z" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_barrel_shifter_::Zrev" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<prop exp="c" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="y" loc="c,dt"/>
+		<prop exp="alu_barrel_shifter_::update_extra_bits" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_barrel_shifter_::y" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_barrel_shifter_::j" loc="c,dt"/>
+		<prop exp="alu_barrel_shifter_::direction" loc="c,dt"/>
+		<prop exp="alu_barrel_shifter_::c" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_barrel_shifter_::x" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_barrel_shifter_::Yreg" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_barrel_shifter_::z" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

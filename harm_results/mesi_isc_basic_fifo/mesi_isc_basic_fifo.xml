@@ -1,0 +1,34 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="mesi_isc_basic_fifo_::i" loc="c,dt"/>
+		<prop exp="mesi_isc_basic_fifo_::rst" loc="c,dt"/>
+		<prop exp="mesi_isc_basic_fifo_::fifo_depth_decrease" loc="c,dt"/>
+		<prop exp="mesi_isc_basic_fifo_::status_full_o" loc="c,dt"/>
+		<prop exp="mesi_isc_basic_fifo_::fifo_depth_increase" loc="c,dt"/>
+		<prop exp="mesi_isc_basic_fifo_::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="mesi_isc_basic_fifo_::fifo_depth" loc="c,dt"/>
+		<prop exp="mesi_isc_basic_fifo_::rd_i" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="mesi_isc_basic_fifo_::ptr_wr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="mesi_isc_basic_fifo_::data_i" loc="c,dt"/>
+		<prop exp="mesi_isc_basic_fifo_::wr_i" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="mesi_isc_basic_fifo_::ptr_rd_plus_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="mesi_isc_basic_fifo_::data_o" loc="c,dt"/>
+		<prop exp="mesi_isc_basic_fifo_::status_empty_o" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="mesi_isc_basic_fifo_::ptr_rd" loc="c,dt"/>
+		<prop exp="mesi_isc_basic_fifo_::status_empty" loc="c,dt"/>
+		<prop exp="mesi_isc_basic_fifo_::status_full" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

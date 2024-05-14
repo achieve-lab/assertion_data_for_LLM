@@ -1,0 +1,193 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::checkSumcalc::prev_latched_Rx1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::checkSumcalc::StartCalc" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::checkSumcalc::Divided_4_clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::checkSumcalc::CheckSum" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::checkSumcalc::CSready" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::checkSumcalc::ByteCnt" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::checkSumcalc::RxData" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::StartPreamble" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::IFGCounterEq24" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::StartDrop" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::ByteCntEq0" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::DlyCrcEn" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::RxValid_d" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::RxStartFrm_d" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::RxEndFrm_d" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::ByteCntEq5" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::RxStartFrm" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::crcrx::Data" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::CrcHash" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::ByteCntEq6" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::StartData1" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::IFGCounterEq24" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::r_IFG" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::RxEndFrm" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::ByteCntEq1" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::StateIdle" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::AddressMiss" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::ByteCntEq7" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::ByteCntEq2" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::GenerateRxValid" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::ByteCntGreat2" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::RxValid" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::MRxD" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::IFGCounterEq24" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::ByteCntEq0" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::Reset" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::ByteCntEq5" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::ByteCntSmall7" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::LatchedByte" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::MRxDEqD" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::StartSFD" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::Reset" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::RxCheckEn" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::PassAll" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::StateIdle" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::crcrx::Initialize" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::MaxFL" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::CSready" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::CheckSum" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::Enable_Crc" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::checkSumcalc::prev_latched_Rx" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::rxaddrcheck1::RxData" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::MRxDV" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::CrcError" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::r_HASH1" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::StatePreamble" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::rxaddrcheck1::StateData" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::MAC" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::Initialize_Crc" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::ByteCntEq3" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::MRxDEq5" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::ByteCntEq4" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::DlyCrcEn" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::UnicastOK" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::Transmitting" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::HugEn" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::StateData0" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::MRxClk" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::HugEn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::r_HASH0" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::RxEndFrm" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::StartIdle" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::RxAddressInvalid" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::StatePreamble" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::AddressMiss" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::ByteCntEq3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::DlyCrcCnt" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::ByteCntEq0" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::ByteCntEq6" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::checkSumcalc::Reset" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::GenerateRxEndFrm" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::MRxDV" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::RxAbort" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::ByteCntEq7" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::checkSumcalc::Divided_2_clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::RxData" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::GenerateRxStartFrm" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::StateSFD" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::ByteCntEq4" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::DelayData" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::StartData0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::RxData_d" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::RxAbort" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::StateData" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::Transmitting" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::rxcounters1::ByteCntDelayed" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::ByteCntMaxFrame" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::rxcounters1::MaxFL" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::checkSumcalc::Sum" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::ByteCntSmall7" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::rxstatem1::StateData" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::rxcounters1::DlyCrcCnt" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::StateData1" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::StateDrop" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::crcrx::Reset" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::StateSFD" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::ByteCntMaxFrame" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::rxcounters1::StateData" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::MRxDEqD" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::Data_Crc" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::rxcounters1::IFGCounter" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::ByteCntEq4" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::Reset" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::DribbleRxEndFrm" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::MulticastOK" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::Multicast" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::Broadcast" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::rxaddrcheck1::MAC" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::MRxDEq5" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::ResetIFGCounter" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::r_Bro" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::Transmitting" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::r_IFG" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::StateSFD" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::ByteCntEq2" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::ResetByteCounter" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::StatePreamble" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::StateDrop" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::IncrementByteCounter" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::ByteCntMaxFrame" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::rxcounters1::ByteCntOut" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::ByteCntMax" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::ByteCntGreat2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::crcrx::CrcNext" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::ByteCntEq7" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::Crc" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::ByteCntEq3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::rxcounters1::ByteCnt" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::ByteCnt" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::MRxDV" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::checkSumcalc::MRxClk" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::ByteCntEq2" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::Broadcast" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::Multicast" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::MRxClk" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::ByteCntEq1" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::MRxClk" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::BroadcastOK" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::r_Pro" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::ControlFrmAddressOK" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::rxaddrcheck1::CrcHash" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::CrcHashGood" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::rxaddrcheck1::HASH0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::rxaddrcheck1::HASH1" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::crcrx::Enable" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::MRxDEqD" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::MRxClk" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::CrcHashGood" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::r_Bro" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::rxaddrcheck1::ByteHash" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::PassAll" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::Reset" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::r_Pro" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::rxaddrcheck1::IntHash" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::HashBit" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::StateDrop" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::ByteCntEq6" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::ByteCntEq5" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxstatem1::ByteCntGreat2" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::StateIdle" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxcounters1::IncrementIFGCounter" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::rxaddrcheck1::ByteCntEq0" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::crcrx::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxethmac_::crcrx::Crc" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::ControlFrmAddressOK" loc="c,dt"/>
+		<prop exp="eth_rxethmac_::crcrx::CrcError" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

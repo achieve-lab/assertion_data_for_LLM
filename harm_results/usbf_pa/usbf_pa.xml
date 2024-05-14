@@ -1,0 +1,59 @@
+<harm>
+	<context name="default">
+
+		<prop exp="usbf_pa_::zero_length_r" loc="c,dt"/>
+		<prop exp="usbf_pa_::tx_valid_r1" loc="c,dt"/>
+		<prop exp="usbf_pa_::rst" loc="c,dt"/>
+		<prop exp="usbf_pa_::tx_ready" loc="c,dt"/>
+		<prop exp="usbf_pa_::crc16_add" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::token_pid_sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::tx_data" loc="c,dt"/>
+		<prop exp="usbf_pa_::tx_valid_last" loc="c,dt"/>
+		<prop exp="usbf_pa_::tx_valid_r" loc="c,dt"/>
+		<prop exp="usbf_pa_::dsel" loc="c,dt"/>
+		<prop exp="usbf_pa_::crc16_clr" loc="c,dt"/>
+		<prop exp="usbf_pa_::send_zero_length" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::crc16_rev" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::data_pid_sel" loc="c,dt"/>
+		<prop exp="usbf_pa_::tx_first" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::token_pid" loc="c,dt"/>
+		<prop exp="usbf_pa_::send_data" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::tx_data_data" loc="c,dt"/>
+		<prop exp="usbf_pa_::send_token" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::u1::din" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::crc16_next" loc="c,dt"/>
+		<prop exp="usbf_pa_::crc_sel1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::u1::crc_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::tx_data_st" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::crc16" loc="c,dt"/>
+		<prop exp="usbf_pa_::crc_sel2" loc="c,dt"/>
+		<prop exp="usbf_pa_::send_data_r2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::data_pid" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::u1::crc_in" loc="c,dt"/>
+		<prop exp="usbf_pa_::last" loc="c,dt"/>
+		<prop exp="usbf_pa_::rd_next" loc="c,dt"/>
+		<prop exp="usbf_pa_::tx_valid" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::next_state" loc="c,dt"/>
+		<prop exp="usbf_pa_::send_zero_length_r" loc="c,dt"/>
+		<prop exp="usbf_pa_::clk" loc="c,dt"/>
+		<prop exp="usbf_pa_::send_token_r" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::state" loc="c,dt"/>
+		<prop exp="usbf_pa_::send_data_r" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::tx_data_d" loc="c,dt"/>
+		<prop exp="usbf_pa_::tx_first_r" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="usbf_pa_::tx_spec_data" loc="c,dt"/>
+		<prop exp="usbf_pa_::tx_valid_d" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

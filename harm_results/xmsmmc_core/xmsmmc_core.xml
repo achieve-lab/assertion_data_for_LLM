@@ -1,0 +1,51 @@
+<harm>
+	<context name="default">
+
+		<prop exp="xmsmmc_core_::mmc_cmd_select_i::arg16_bit" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::mmc_cmd_select_i::stop_bit" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::mmc_cmd_select_i::start_bit" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::mmc_cmd_select_i::cmd_bits" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="xmsmmc_core_::mmc_cmd_select_i::bit" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::mmc_cmd_select_i::CMD1_dat" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::mmc_cmd_select_i::cmd_active" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="xmsmmc_core_::precaler_i::prescaler" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::precaler_i::sys_clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="xmsmmc_core_::counter_command_bits" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="xmsmmc_core_::cmd_state_next" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="xmsmmc_core_::cmd_state" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::precaler_i::mmc_clk" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::init" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::dis" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::mode_transfer" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::mmc_cmd_select_i::data" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::done" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="xmsmmc_core_::mmc_cmd_select_i::cmd" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::precaler_i::rst" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::cclk" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::config_request" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::mmc_cmd" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::cmd_bits" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::precaler_i::mode_transfer" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::mmc_clk" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::cmd_done" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::cmd_data_out" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::cmd1_resp_start_bit" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::error" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::int_reset" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::cmd1_resp_busy_bit" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::mmc_cmd_select_i::crc_bit" loc="c,dt"/>
+		<prop exp="xmsmmc_core_::clk_mmc" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

@@ -1,0 +1,33 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="mux4to1_::i3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="mux4to1_::i2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="mux4to1_::i1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="mux4to1_::i0" loc="c,dt"/>
+		<prop exp="mux4to1_::e" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="i3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="i2" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="s" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="z" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="i1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="mux4to1_::s" loc="c,dt"/>
+		<prop exp="e" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="mux4to1_::z" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="i0" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

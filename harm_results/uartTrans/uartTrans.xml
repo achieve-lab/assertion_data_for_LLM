@@ -1,0 +1,34 @@
+<harm>
+	<context name="default">
+
+		<prop exp="uartTrans_::txStart" loc="c,dt"/>
+		<prop exp="uartTrans_::sTick" loc="c,dt"/>
+		<prop exp="uartTrans_::reset" loc="c,dt"/>
+		<prop exp="uartTrans_::clk" loc="c,dt"/>
+		<prop exp="uartTrans_::tx" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartTrans_::din" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartTrans_::bReg" loc="c,dt"/>
+		<prop exp="uartTrans_::txReg" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartTrans_::sReg" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartTrans_::nNext" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartTrans_::nReg" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartTrans_::stateNext" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartTrans_::bNext" loc="c,dt"/>
+		<prop exp="uartTrans_::txDoneTick" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartTrans_::sNext" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartTrans_::stateReg" loc="c,dt"/>
+		<prop exp="uartTrans_::txNext" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

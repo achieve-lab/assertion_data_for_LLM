@@ -1,0 +1,39 @@
+<harm>
+	<context name="default">
+
+		<prop exp="RMON_addr_gen_::Reg_drop_apply" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_addr_gen_::Reg_data" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_addr_gen_::Reg_addr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_addr_gen_::Pkt_type_rmon_dl1" loc="c,dt"/>
+		<prop exp="RMON_addr_gen_::Reg_next" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_addr_gen_::Pkt_err_type_rmon" loc="c,dt"/>
+		<prop exp="RMON_addr_gen_::Apply_rmon_pulse" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_addr_gen_::Pkt_length_rmon" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_addr_gen_::Pkt_length_rmon_dl1" loc="c,dt"/>
+		<prop exp="RMON_addr_gen_::Apply_rmon" loc="c,dt"/>
+		<prop exp="RMON_addr_gen_::Clk" loc="c,dt"/>
+		<prop exp="RMON_addr_gen_::Apply_rmon_dl2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_addr_gen_::CurrentState" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_addr_gen_::NextState" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_addr_gen_::PktErrTypeReg" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_addr_gen_::Pkt_type_rmon" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_addr_gen_::PktLengthReg" loc="c,dt"/>
+		<prop exp="RMON_addr_gen_::Apply_rmon_dl1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_addr_gen_::PktTypeReg" loc="c,dt"/>
+		<prop exp="RMON_addr_gen_::Reg_apply" loc="c,dt"/>
+		<prop exp="RMON_addr_gen_::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_addr_gen_::Pkt_err_type_rmon_dl1" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

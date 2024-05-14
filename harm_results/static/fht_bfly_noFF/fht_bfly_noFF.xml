@@ -1,0 +1,26 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="signed_mult_const_asic_::a_FF" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="signed_mult_const_asic_::div256" loc="c,dt"/>
+		<prop exp="signed_mult_const_asic_::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="signed_mult_const_asic_::b" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="signed_mult_const_asic_::mult_wo_sign" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="signed_mult_const_asic_::a" loc="c,dt"/>
+		<prop exp="signed_mult_const_asic_::rstn" loc="c,dt"/>
+		<prop exp="signed_mult_const_asic_::valid" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="signed_mult_const_asic_::p" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

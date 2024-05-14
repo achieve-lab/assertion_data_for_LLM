@@ -1,0 +1,30 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="barrel_shifter_simple_working_::z" loc="c,dt"/>
+		<prop exp="barrel_shifter_simple_working_::c" loc="c,dt"/>
+		<prop exp="barrel_shifter_simple_working_::direction" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="barrel_shifter_simple_working_::y" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="barrel_shifter_simple_working_::x" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="y" loc="c,dt"/>
+		<prop exp="c" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="z" loc="c,dt"/>
+		<prop exp="direction" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="barrel_shifter_simple_working_::y_tmp" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="x" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

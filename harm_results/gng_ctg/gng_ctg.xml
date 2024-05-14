@@ -1,0 +1,28 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="gng_ctg_::z2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="gng_ctg_::data_out" loc="c,dt"/>
+		<prop exp="gng_ctg_::ce" loc="c,dt"/>
+		<prop exp="gng_ctg_::rstn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="gng_ctg_::z3" loc="c,dt"/>
+		<prop exp="gng_ctg_::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="gng_ctg_::z3_next" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="gng_ctg_::z2_next" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="gng_ctg_::z1" loc="c,dt"/>
+		<prop exp="gng_ctg_::valid_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="gng_ctg_::z1_next" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

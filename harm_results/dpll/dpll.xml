@@ -1,0 +1,52 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="dpll_::inst_freqdiv::DividerCounter" loc="c,dt"/>
+		<prop exp="dpll_::inst_freqdiv::Negative" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="dpll_::inst_ph_cmp::InputSignalEdgeDet" loc="c,dt"/>
+		<prop exp="dpll_::inst_ph_cmp::OutputSignal" loc="c,dt"/>
+		<prop exp="dpll_::inst_ph_cmp::MainClock" loc="c,dt"/>
+		<prop exp="dpll_::inst_zrwf::inst_M_Filter::Positive" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="dpll_::inst_zrwf::inst_M_Filter::FilterCounter" loc="c,dt"/>
+		<prop exp="dpll_::inst_ph_cmp::InputSignal" loc="c,dt"/>
+		<prop exp="dpll_::inst_zrwf::inst_M_Filter::MainClock" loc="c,dt"/>
+		<prop exp="dpll_::inst_zrwf::inst_M_Filter::Lead" loc="c,dt"/>
+		<prop exp="dpll_::Lead" loc="c,dt"/>
+		<prop exp="dpll_::inst_ph_cmp::InputSignalEdge" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="dpll_::inst_zrwf::N_FilterCounter" loc="c,dt"/>
+		<prop exp="dpll_::inst_zrwf::MainClock" loc="c,dt"/>
+		<prop exp="dpll_::Negative" loc="c,dt"/>
+		<prop exp="dpll_::MainClock" loc="c,dt"/>
+		<prop exp="dpll_::inst_freqdiv::MainClock" loc="c,dt"/>
+		<prop exp="dpll_::inst_zrwf::Lead" loc="c,dt"/>
+		<prop exp="dpll_::inst_ph_cmp::Lag" loc="c,dt"/>
+		<prop exp="dpll_::inst_zrwf::inst_M_Filter::Lag" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="dpll_::inst_zrwf::ResetterValue" loc="c,dt"/>
+		<prop exp="dpll_::SignalOut" loc="c,dt"/>
+		<prop exp="dpll_::Positive" loc="c,dt"/>
+		<prop exp="dpll_::SignalIn" loc="c,dt"/>
+		<prop exp="dpll_::inst_ph_cmp::Lead" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="dpll_::inst_zrwf::ResetterCounter" loc="c,dt"/>
+		<prop exp="dpll_::inst_freqdiv::Positive" loc="c,dt"/>
+		<prop exp="dpll_::inst_zrwf::inst_M_Filter::Negative" loc="c,dt"/>
+		<prop exp="dpll_::inst_zrwf::Lag" loc="c,dt"/>
+		<prop exp="dpll_::inst_zrwf::Up" loc="c,dt"/>
+		<prop exp="dpll_::Lag" loc="c,dt"/>
+		<prop exp="dpll_::inst_zrwf::Down" loc="c,dt"/>
+		<prop exp="dpll_::inst_zrwf::Negative" loc="c,dt"/>
+		<prop exp="dpll_::inst_freqdiv::FrequencyOut" loc="c,dt"/>
+		<prop exp="dpll_::inst_zrwf::Positive" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

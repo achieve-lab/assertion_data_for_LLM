@@ -1,0 +1,44 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="alu_controller_::opcode_sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_controller_::next_opcode" loc="c,dt"/>
+		<prop exp="alu_controller_::load_outputs" loc="c,dt"/>
+		<prop exp="alu_controller_::add_AB" loc="c,dt"/>
+		<prop exp="alu_controller_::clr" loc="c,dt"/>
+		<prop exp="alu_controller_::clr_V" loc="c,dt"/>
+		<prop exp="alu_controller_::sr_AB" loc="c,dt"/>
+		<prop exp="alu_controller_::clr_Z" loc="c,dt"/>
+		<prop exp="alu_controller_::sub_AB" loc="c,dt"/>
+		<prop exp="alu_controller_::sl_AB" loc="c,dt"/>
+		<prop exp="alu_controller_::and_AB" loc="c,dt"/>
+		<prop exp="alu_controller_::clk" loc="c,dt"/>
+		<prop exp="alu_controller_::inc_A" loc="c,dt"/>
+		<prop exp="alu_controller_::mul_AB" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_controller_::opcode" loc="c,dt"/>
+		<prop exp="alu_controller_::xor_AB" loc="c,dt"/>
+		<prop exp="alu_controller_::dec_B" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="alu_controller_::this_opcode" loc="c,dt"/>
+		<prop exp="alu_controller_::reset" loc="c,dt"/>
+		<prop exp="alu_controller_::or_AB" loc="c,dt"/>
+		<prop exp="alu_controller_::inc_B" loc="c,dt"/>
+		<prop exp="alu_controller_::clr_C" loc="c,dt"/>
+		<prop exp="alu_controller_::dec_A" loc="c,dt"/>
+		<prop exp="alu_controller_::load_inputs" loc="c,dt"/>
+		<prop exp="alu_controller_::cmp_AB" loc="c,dt"/>
+		<prop exp="alu_controller_::cpl_B" loc="c,dt"/>
+		<prop exp="alu_controller_::cpl_A" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

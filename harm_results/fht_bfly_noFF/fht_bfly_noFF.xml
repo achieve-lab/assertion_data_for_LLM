@@ -1,0 +1,27 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="fht_bfly_noFF_::d" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fht_bfly_noFF_::a" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fht_bfly_noFF_::b" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="d" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fht_bfly_noFF_::c" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="b" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="c" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="a" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

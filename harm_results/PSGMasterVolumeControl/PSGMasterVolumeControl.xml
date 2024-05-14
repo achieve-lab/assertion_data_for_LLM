@@ -1,0 +1,26 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="PSGMasterVolumeControl_::o" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGMasterVolumeControl_::v2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGMasterVolumeControl_::v1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGMasterVolumeControl_::i" loc="c,dt"/>
+		<prop exp="PSGMasterVolumeControl_::clk_i" loc="c,dt"/>
+		<prop exp="PSGMasterVolumeControl_::rst_i" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGMasterVolumeControl_::volume" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGMasterVolumeControl_::vo" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="PSGMasterVolumeControl_::v3" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

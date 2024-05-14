@@ -1,0 +1,56 @@
+<harm>
+	<context name="default">
+
+		<prop exp="ge_1000baseX_mdio_::strobe_wr" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::st_latch" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::reg_addr_shift" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::phy_addr_done" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_mdio_::data_rd" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::op_code_done" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::phy_addr_match" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::ta0_done" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::phy_addr_shift" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_mdio_::phy_addr" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::op_is_invalid" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::mdio_out" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::reg_addr_done" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::reset" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::st_match" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_mdio_::data_addr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_mdio_::data_wr" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::ta1_done" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::preamble_match" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::mdio" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::st" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::mdio_oe" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_mdio_::reg_addr" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::op_is_rd" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::mdc" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::data_done" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::data_out_shift" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_mdio_::data_in" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::data_in_shift" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::data_out_load" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_mdio_::data_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_mdio_::preamble_cnt" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::op_is_wr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_mdio_::next" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_mdio_::op_code" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_mdio_::pos_cnt" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::op_code_shift" loc="c,dt"/>
+		<prop exp="ge_1000baseX_mdio_::pos_cnt_inc" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_mdio_::present" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

@@ -1,0 +1,224 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_fsm::state" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_fsm::i" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_fsm::idle" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_fsm::rst_n" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_fsm::ena" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_len_gen::len_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_len_gen::len_read_levels_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_len_gen::len_read_run_befores_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_len_gen::len_read_total_coeffs_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_len_gen::len_read_total_zeros_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::suffixLength" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::rbsp_internal" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_suffix" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_prefix_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_code_tmp" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_8" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_5" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_4" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_15" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_14" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_13" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_fsm::TrailingOnes_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_11" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_9" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_10" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_total_coeffs::start" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_total_coeffs::sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::len_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_zeros::len_G3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::TotalCoeff" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_zeros::TotalZeros_G3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::TrailingOnes_2" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_total_coeffs::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_zeros::rbsp" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_total_zeros::ena" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::TotalCoeff_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_zeros::len_chroma_DC" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::coeff_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::level_11" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff_13" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_fsm::TrailingOnes" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff_4" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_levels::calc_sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::ZeroLeft" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_total_zeros::chroma_DC_sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::TrailingOnes_5" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_fsm::valid" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::nC" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::coeff_14" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::len_read_run_befores_comb" loc="c,dt"/>
+		<prop exp="cavlc_top_::ena" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::coeff_15" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::level_3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_zeros::rbsp_chroma_DC" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::level_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::level_7" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_zeros::TotalZeros_LE3" loc="c,dt"/>
+		<prop exp="cavlc_top_::idle" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::rbsp_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::len_2" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_run_befores::rst_n" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_state" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::rbsp_2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff_5" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::coeff_7" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::level_9" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::level_2" loc="c,dt"/>
+		<prop exp="cavlc_top_::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::TotalCoeff" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_fsm::ZeroLeft" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::level_12" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_fsm::TotalCoeff" loc="c,dt"/>
+		<prop exp="cavlc_top_::start" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff_15" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::TotalCoeff_4" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_zeros::len_LE3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::len_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::coeff_8" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::TotalCoeff_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff_2" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_total_coeffs::ena" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::coeff_13" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::len" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::len_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::coeff_2" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_total_coeffs::rst_n" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_fsm::max_coeff_num" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::coeff_0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::level_5" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::nC" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::level_14" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff_12" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::len_read_total_zeros_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::rbsp_5" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::level_3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_prefix" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::coeff_5" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_zeros::TotalZeros_chroma_DC" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::TotalCoeff_2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_zeros::len_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::coeff_10" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::TotalZeros_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::level_15" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::len_5" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::TrailingOnes" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_zeros::TotalCoeff" loc="c,dt"/>
+		<prop exp="cavlc_top_::rst_n" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_run_befores::ZeroLeft_init" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::rbsp" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::i" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::coeff_12" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::level_13" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::max_coeff_num" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_fsm::start" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::TrailingOnes" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::level_10" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::TrailingOnes" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::len_read_levels_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::level_4" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::level_0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::level_11" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::coeff_9" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::ZeroLeft" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::coeff_6" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::TotalCoeff_3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::coeff_3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::level_0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::rbsp_4" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::TotalCoeff_5" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_zeros::rbsp_LE3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::TotalCoeff_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::TrailingOnes_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::rbsp" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::TrailingOnes_4" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::TrailingOnes_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::len_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_len_gen::cavlc_state" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::len_3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::len_4" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_abs" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::TotalCoeff" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_total_zeros::sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::level_8" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::rbsp_3" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_run_befores::sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_12" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_run_befores::clk" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_run_befores::clr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_fsm::TotalCoeff_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_7" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_run_befores::ena" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::level_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::level_7" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::level_10" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::level_14" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff_0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff_14" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::level_12" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::level_13" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::coeff_4" loc="c,dt"/>
+		<prop exp="cavlc_top_::valid" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::level_15" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::level_2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_zeros::TotalZeros_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_zeros::rbsp_G3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::level_4" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::len_read_total_coeffs_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::level_5" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_6" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::level_8" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::i" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::rbsp" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::TotalZeros_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::level_9" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff_10" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff_11" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff_3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff_6" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff_7" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::coeff_11" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_levels::suffix_sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff_8" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::TrailingOnes_comb" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_levels::rst_n" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::coeff_9" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::len_comb" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_levels::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::level_6" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_levels::t1s_sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::run" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_levels::ena" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_total_coeffs::TrailingOnes_3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::i" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_levels::level_abs_refresh" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_levels::prefix_sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::rbsp" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_run_befores::level_6" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::tmp1" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_fsm::clk" loc="c,dt"/>
+		<prop exp="cavlc_top_::cavlc_read_levels::first_level" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_top_::cavlc_read_levels::level_1" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

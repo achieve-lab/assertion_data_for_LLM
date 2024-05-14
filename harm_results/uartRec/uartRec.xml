@@ -1,0 +1,31 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="uartRec_::sReg" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartRec_::sNext" loc="c,dt"/>
+		<prop exp="uartRec_::rxDoneTick" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartRec_::nReg" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartRec_::stateReg" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartRec_::dOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartRec_::bReg" loc="c,dt"/>
+		<prop exp="uartRec_::reset" loc="c,dt"/>
+		<prop exp="uartRec_::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartRec_::nNext" loc="c,dt"/>
+		<prop exp="uartRec_::sTick" loc="c,dt"/>
+		<prop exp="uartRec_::rx" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartRec_::stateNext" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="uartRec_::bNext" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

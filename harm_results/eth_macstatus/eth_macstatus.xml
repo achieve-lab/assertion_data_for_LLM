@@ -1,0 +1,72 @@
+<harm>
+	<context name="default">
+
+		<prop exp="eth_macstatus_::RetryLimit" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_macstatus_::RetryCntLatched" loc="c,dt"/>
+		<prop exp="eth_macstatus_::LoadRxStatus" loc="c,dt"/>
+		<prop exp="eth_macstatus_::LateCollLatched" loc="c,dt"/>
+		<prop exp="eth_macstatus_::LatchedMRxErr" loc="c,dt"/>
+		<prop exp="eth_macstatus_::RxColWindow" loc="c,dt"/>
+		<prop exp="eth_macstatus_::DribbleNibble" loc="c,dt"/>
+		<prop exp="eth_macstatus_::DeferLatched" loc="c,dt"/>
+		<prop exp="eth_macstatus_::CarrierSenseLost" loc="c,dt"/>
+		<prop exp="eth_macstatus_::r_RecSmall" loc="c,dt"/>
+		<prop exp="eth_macstatus_::ShortFrame" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_macstatus_::r_MinFL" loc="c,dt"/>
+		<prop exp="eth_macstatus_::r_HugEn" loc="c,dt"/>
+		<prop exp="eth_macstatus_::LatchedCrcError" loc="c,dt"/>
+		<prop exp="eth_macstatus_::Reset" loc="c,dt"/>
+		<prop exp="eth_macstatus_::DeferIndication" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_macstatus_::CollValid" loc="c,dt"/>
+		<prop exp="eth_macstatus_::ReceivedLengthOK" loc="c,dt"/>
+		<prop exp="eth_macstatus_::InvalidSymbol" loc="c,dt"/>
+		<prop exp="eth_macstatus_::MRxDV" loc="c,dt"/>
+		<prop exp="eth_macstatus_::MaxCollisionOccured" loc="c,dt"/>
+		<prop exp="eth_macstatus_::TxStartFrm" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_macstatus_::RetryCnt" loc="c,dt"/>
+		<prop exp="eth_macstatus_::Collision" loc="c,dt"/>
+		<prop exp="eth_macstatus_::ReceiveEnd" loc="c,dt"/>
+		<prop exp="eth_macstatus_::MRxClk" loc="c,dt"/>
+		<prop exp="eth_macstatus_::ReceivedPacketGood" loc="c,dt"/>
+		<prop exp="eth_macstatus_::StatePreamble" loc="c,dt"/>
+		<prop exp="eth_macstatus_::MRxErr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_macstatus_::RxStateData" loc="c,dt"/>
+		<prop exp="eth_macstatus_::RstDeferLatched" loc="c,dt"/>
+		<prop exp="eth_macstatus_::ReceivedPacketTooBig" loc="c,dt"/>
+		<prop exp="eth_macstatus_::RxStatePreamble" loc="c,dt"/>
+		<prop exp="eth_macstatus_::SetInvalidSymbol" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_macstatus_::MRxD" loc="c,dt"/>
+		<prop exp="eth_macstatus_::MTxClk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_macstatus_::r_MaxFL" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_macstatus_::RxByteCnt" loc="c,dt"/>
+		<prop exp="eth_macstatus_::TxUsedData" loc="c,dt"/>
+		<prop exp="eth_macstatus_::CarrierSense" loc="c,dt"/>
+		<prop exp="eth_macstatus_::Loopback" loc="c,dt"/>
+		<prop exp="eth_macstatus_::StartTxAbort" loc="c,dt"/>
+		<prop exp="eth_macstatus_::RxByteCntEq0" loc="c,dt"/>
+		<prop exp="eth_macstatus_::RxByteCntGreat2" loc="c,dt"/>
+		<prop exp="eth_macstatus_::RxCrcError" loc="c,dt"/>
+		<prop exp="eth_macstatus_::RxByteCntMaxFrame" loc="c,dt"/>
+		<prop exp="eth_macstatus_::RxStateIdle" loc="c,dt"/>
+		<prop exp="eth_macstatus_::RxLateCollision" loc="c,dt"/>
+		<prop exp="eth_macstatus_::RxStateSFD" loc="c,dt"/>
+		<prop exp="eth_macstatus_::StartTxDone" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_macstatus_::StateData" loc="c,dt"/>
+		<prop exp="eth_macstatus_::TakeSample" loc="c,dt"/>
+		<prop exp="eth_macstatus_::LateCollision" loc="c,dt"/>
+		<prop exp="eth_macstatus_::Transmitting" loc="c,dt"/>
+		<prop exp="eth_macstatus_::r_FullD" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+
