@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"186:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f63ad08b1d0>",
+		def_var="['RandomEqByteCnt']",
+		fillcolor=deepskyblue,
+		label="186:AS
+RandomEqByteCnt = (ByteCnt[9:0] == RandomLatched) & &NibCnt[6:0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['ByteCnt', 'RandomLatched', 'NibCnt']"];
+}

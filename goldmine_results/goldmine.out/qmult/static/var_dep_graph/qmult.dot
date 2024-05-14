@@ -1,0 +1,13 @@
+strict digraph "" {
+	a -> a_mult	 [weight=3.0];
+	a -> retVal	 [weight=8.0];
+	a_ext -> a_mult	 [weight=1.0];
+	b -> b_mult	 [weight=3.0];
+	b -> retVal	 [weight=8.0];
+	b_ext -> b_mult	 [weight=1.0];
+	a_mult -> result	 [weight=1.0];
+	result -> retVal	 [weight=1.0];
+	r_ext -> retVal	 [weight=1.0];
+	b_mult -> result	 [weight=1.0];
+	retVal -> c	 [weight=1.0];
+}

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+iverilog -g2001 -osimv -s EthernetTX_bench /data/vpulav2/Work/GoldMine/Runtime/goldmine.out/EthernetTX/EthernetTX_bench.v /data/vpulav2/Work/GoldMine/verilog/communication_controller_cheap_ethernet_interface/EthernetTX.v /data/vpulav2/Work/GoldMine/verilog/communication_controller_cheap_ethernet_interface/TENBASET_TxD.v  -I/data/vpulav2/Work/GoldMine/verilog/communication_controller_cheap_ethernet_interface

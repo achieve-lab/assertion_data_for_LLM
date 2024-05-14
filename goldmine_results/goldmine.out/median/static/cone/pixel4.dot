@@ -1,0 +1,604 @@
+strict digraph "" {
+	"pixel_network_u3.node_u7.data_lo"	 [complexity=6,
+		importance=0.310759810957,
+		rank=0.0517933018261];
+	"pixel_network_u3.node_u7_lo"	 [complexity=6,
+		importance=0.308345626026,
+		rank=0.0513909376709];
+	"pixel_network_u3.node_u7.data_lo" -> "pixel_network_u3.node_u7_lo";
+	"pixel_network_u3.median"	 [complexity=0,
+		importance=0.00417502123707,
+		rank=0.0];
+	pixel4	 [complexity=0,
+		importance=0.00202191886629,
+		rank=0.0];
+	"pixel_network_u3.median" -> pixel4;
+	"pixel_network_u3.node_u8_hi"	 [complexity=3,
+		importance=0.0476326830122,
+		rank=0.0158775610041];
+	"pixel_network_u3.node_u9.data_b"	 [complexity=3,
+		importance=0.0454811535943,
+		rank=0.0151603845314];
+	"pixel_network_u3.node_u8_hi" -> "pixel_network_u3.node_u9.data_b";
+	"pixel_network_u3.node_u6.data_b"	 [complexity=9,
+		importance=1.87060557371,
+		rank=0.207845063746];
+	"pixel_network_u3.node_u6.sel0"	 [complexity=7,
+		importance=0.93429475773,
+		rank=0.133470679676];
+	"pixel_network_u3.node_u6.data_b" -> "pixel_network_u3.node_u6.sel0";
+	"pixel_network_u3.node_u6.data_lo"	 [complexity=6,
+		importance=0.310782407583,
+		rank=0.0517970679306];
+	"pixel_network_u3.node_u6.data_b" -> "pixel_network_u3.node_u6.data_lo";
+	"pixel_network_u3.node_u3.LOW_MUX"	 [complexity=8,
+		importance=0.622421690844,
+		rank=0.0778027113555];
+	"pixel_network_u3.node_u3.data_lo"	 [complexity=6,
+		importance=0.310737554894,
+		rank=0.0517895924824];
+	"pixel_network_u3.node_u3.LOW_MUX" -> "pixel_network_u3.node_u3.data_lo";
+	"pixel_network_u3.node_u8.sel0"	 [complexity=4,
+		importance=0.152085513955,
+		rank=0.0380213784886];
+	"pixel_network_u3.node_u8.data_hi"	 [complexity=3,
+		importance=0.0500440662269,
+		rank=0.016681355409];
+	"pixel_network_u3.node_u8.sel0" -> "pixel_network_u3.node_u8.data_hi";
+	"common_network_u0.node_u11.data_lo"	 [complexity=14,
+		importance=11.2644033021,
+		rank=0.804600235863];
+	"common_network_u0.node_u11_lo"	 [complexity=14,
+		importance=11.2619956256,
+		rank=0.804428258971];
+	"common_network_u0.node_u11.data_lo" -> "common_network_u0.node_u11_lo";
+	word1	 [complexity=24,
+		importance=405.589032579,
+		rank=16.8995430241];
+	xm1_y0	 [complexity=20,
+		importance=405.588085998,
+		rank=20.2794042999];
+	word1 -> xm1_y0;
+	word0	 [complexity=24,
+		importance=405.589032579,
+		rank=16.8995430241];
+	xm1_y1	 [complexity=20,
+		importance=405.588085998,
+		rank=20.2794042999];
+	word0 -> xm1_y1;
+	word2	 [complexity=24,
+		importance=405.589770805,
+		rank=16.8995737835];
+	xm1_ym1	 [complexity=20,
+		importance=405.588824224,
+		rank=20.2794412112];
+	word2 -> xm1_ym1;
+	"common_network_u0.node_u11.HI_MUX"	 [complexity=16,
+		importance=22.5256667195,
+		rank=1.40785416997];
+	"common_network_u0.node_u11.data_hi"	 [complexity=14,
+		importance=11.2623600692,
+		rank=0.804454290659];
+	"common_network_u0.node_u11.HI_MUX" -> "common_network_u0.node_u11.data_hi";
+	c0h	 [complexity=12,
+		importance=11.2557794518,
+		rank=0.937981620987];
+	"pixel_network_u3.c3h"	 [complexity=12,
+		importance=11.2538207937,
+		rank=0.937818399475];
+	c0h -> "pixel_network_u3.c3h";
+	"pixel_network_u3.node_u5.data_b"	 [complexity=9,
+		importance=1.86935489963,
+		rank=0.207706099959];
+	"pixel_network_u3.node_u5.sel0"	 [complexity=7,
+		importance=0.933677301955,
+		rank=0.133382471708];
+	"pixel_network_u3.node_u5.data_b" -> "pixel_network_u3.node_u5.sel0";
+	"pixel_network_u3.node_u5.data_hi"	 [complexity=6,
+		importance=0.310611647113,
+		rank=0.0517686078522];
+	"pixel_network_u3.node_u5.data_b" -> "pixel_network_u3.node_u5.data_hi";
+	c0l	 [complexity=9,
+		importance=1.87216014622,
+		rank=0.208017794024];
+	"pixel_network_u3.c3l"	 [complexity=9,
+		importance=1.87020893967,
+		rank=0.207800993296];
+	c0l -> "pixel_network_u3.c3l";
+	c0m	 [complexity=12,
+		importance=11.2578226847,
+		rank=0.938151890391];
+	"pixel_network_u3.c3m"	 [complexity=12,
+		importance=11.2558640266,
+		rank=0.93798866888];
+	c0m -> "pixel_network_u3.c3m";
+	"pixel_network_u3.node_u1.data_b"	 [complexity=12,
+		importance=11.2546614085,
+		rank=0.93788845071];
+	"pixel_network_u3.node_u1.sel0"	 [complexity=10,
+		importance=5.6265043831,
+		rank=0.56265043831];
+	"pixel_network_u3.node_u1.data_b" -> "pixel_network_u3.node_u1.sel0";
+	"pixel_network_u3.node_u1.data_lo"	 [complexity=12,
+		importance=11.2608879466,
+		rank=0.938407328884];
+	"pixel_network_u3.node_u1.data_b" -> "pixel_network_u3.node_u1.data_lo";
+	"pixel_network_u3.node_u1.data_hi"	 [complexity=9,
+		importance=1.87491638592,
+		rank=0.20832404288];
+	"pixel_network_u3.node_u1.data_b" -> "pixel_network_u3.node_u1.data_hi";
+	"pixel_network_u3.node_u1.data_a"	 [complexity=12,
+		importance=11.2545911564,
+		rank=0.937882596364];
+	"pixel_network_u3.node_u1.data_a" -> "pixel_network_u3.node_u1.sel0";
+	"pixel_network_u3.node_u1.data_a" -> "pixel_network_u3.node_u1.data_lo";
+	"pixel_network_u3.node_u1.data_a" -> "pixel_network_u3.node_u1.data_hi";
+	"pixel_network_u3.node_u0.data_a"	 [complexity=12,
+		importance=11.2525479235,
+		rank=0.937712326959];
+	"pixel_network_u3.node_u0.sel0"	 [complexity=10,
+		importance=5.62548276667,
+		rank=0.562548276667];
+	"pixel_network_u3.node_u0.data_a" -> "pixel_network_u3.node_u0.sel0";
+	"pixel_network_u3.node_u0.data_lo"	 [complexity=9,
+		importance=1.87457584711,
+		rank=0.208286205234];
+	"pixel_network_u3.node_u0.data_a" -> "pixel_network_u3.node_u0.data_lo";
+	"pixel_network_u3.node_u0.sel0" -> "pixel_network_u3.node_u0.data_lo";
+	"dff_c3_pipe.d2"	 [complexity=14,
+		importance=11.2545372103,
+		rank=0.803895515021];
+	"dff_c3_pipe.q2"	 [complexity=12,
+		importance=11.2531026765,
+		rank=0.937758556372];
+	"dff_c3_pipe.d2" -> "dff_c3_pipe.q2";
+	"pixel_network_u3.node_u6.sel0" -> "pixel_network_u3.node_u6.data_lo";
+	"pixel_network_u3.node_u6.data_a"	 [complexity=9,
+		importance=1.87057504284,
+		rank=0.207841671426];
+	"pixel_network_u3.node_u6.data_a" -> "pixel_network_u3.node_u6.sel0";
+	"pixel_network_u3.node_u6.data_a" -> "pixel_network_u3.node_u6.data_lo";
+	"pixel_network_u3.node_u5.data_a"	 [complexity=9,
+		importance=1.86893699407,
+		rank=0.207659666008];
+	"pixel_network_u3.node_u5.data_a" -> "pixel_network_u3.node_u5.sel0";
+	"pixel_network_u3.node_u5.data_a" -> "pixel_network_u3.node_u5.data_hi";
+	"dff_c2_pipe.q2"	 [complexity=12,
+		importance=11.253650575,
+		rank=0.937804214587];
+	c2l_reg	 [complexity=12,
+		importance=11.2518906986,
+		rank=0.937657558219];
+	"dff_c2_pipe.q2" -> c2l_reg;
+	"dff_c2_pipe.q0"	 [complexity=9,
+		importance=1.87557157021,
+		rank=0.208396841135];
+	c2h_reg	 [complexity=9,
+		importance=1.8738116938,
+		rank=0.208201299311];
+	"dff_c2_pipe.q0" -> c2h_reg;
+	"dff_c2_pipe.q1"	 [complexity=12,
+		importance=11.2618836697,
+		rank=0.938490305809];
+	c2m_reg	 [complexity=12,
+		importance=11.2601237933,
+		rank=0.938343649441];
+	"dff_c2_pipe.q1" -> c2m_reg;
+	"common_network_u0.xm1_y0"	 [complexity=20,
+		importance=405.586968505,
+		rank=20.2793484253];
+	"common_network_u0.node_u3.data_b"	 [complexity=20,
+		importance=405.585463169,
+		rank=20.2792731585];
+	"common_network_u0.xm1_y0" -> "common_network_u0.node_u3.data_b";
+	"common_network_u0.xm1_y1"	 [complexity=20,
+		importance=405.586968505,
+		rank=20.2793484253];
+	"common_network_u0.node_u3.data_a"	 [complexity=20,
+		importance=405.585463169,
+		rank=20.2792731585];
+	"common_network_u0.xm1_y1" -> "common_network_u0.node_u3.data_a";
+	"common_network_u0.node_u7.data_hi"	 [complexity=17,
+		importance=67.5967936962,
+		rank=3.97628198213];
+	"common_network_u0.node_u7_hi"	 [complexity=17,
+		importance=67.5944442779,
+		rank=3.97614378105];
+	"common_network_u0.node_u7.data_hi" -> "common_network_u0.node_u7_hi";
+	"pixel_network_u3.node_u8.data_a"	 [complexity=6,
+		importance=0.306192946775,
+		rank=0.0510321577959];
+	"pixel_network_u3.node_u8.data_a" -> "pixel_network_u3.node_u8.sel0";
+	"pixel_network_u3.node_u8.data_a" -> "pixel_network_u3.node_u8.data_hi";
+	"pixel_network_u3.node_u8.data_b"	 [complexity=6,
+		importance=0.306172599901,
+		rank=0.0510287666501];
+	"pixel_network_u3.node_u8.data_b" -> "pixel_network_u3.node_u8.sel0";
+	"pixel_network_u3.node_u8.data_b" -> "pixel_network_u3.node_u8.data_hi";
+	"pixel_network_u3.node_u1.HI_MUX"	 [complexity=11,
+		importance=3.75077935289,
+		rank=0.340979941172];
+	"pixel_network_u3.node_u1.HI_MUX" -> "pixel_network_u3.node_u1.data_hi";
+	"pixel_network_u3.node_u3_lo"	 [complexity=6,
+		importance=0.308357174778,
+		rank=0.051392862463];
+	"pixel_network_u3.node_u7.data_a"	 [complexity=6,
+		importance=0.306220223794,
+		rank=0.0510367039656];
+	"pixel_network_u3.node_u3_lo" -> "pixel_network_u3.node_u7.data_a";
+	"dff_c3_pipe.d0"	 [complexity=14,
+		importance=11.2591762431,
+		rank=0.804226874506];
+	"dff_c3_pipe.q0"	 [complexity=12,
+		importance=11.2577402283,
+		rank=0.938145019027];
+	"dff_c3_pipe.d0" -> "dff_c3_pipe.q0";
+	"common_network_u0.node_u11.data_b"	 [complexity=17,
+		importance=67.5923223888,
+		rank=3.97601896405];
+	"common_network_u0.node_u7_hi" -> "common_network_u0.node_u11.data_b";
+	"pixel_network_u3.node_u0.data_b"	 [complexity=12,
+		importance=11.2526181757,
+		rank=0.937718181305];
+	"pixel_network_u3.node_u0.data_b" -> "pixel_network_u3.node_u0.sel0";
+	"pixel_network_u3.node_u0.data_b" -> "pixel_network_u3.node_u0.data_lo";
+	"pixel_network_u3.node_u0_lo"	 [complexity=9,
+		importance=1.87231262234,
+		rank=0.208034735815];
+	"pixel_network_u3.node_u3.data_a"	 [complexity=9,
+		importance=1.87023450403,
+		rank=0.207803833781];
+	"pixel_network_u3.node_u0_lo" -> "pixel_network_u3.node_u3.data_a";
+	"pixel_network_u3.node_u0.LOW_MUX"	 [complexity=11,
+		importance=3.75009827527,
+		rank=0.340918025024];
+	"pixel_network_u3.node_u0.LOW_MUX" -> "pixel_network_u3.node_u0.data_lo";
+	"common_network_u0.xm1_ym1"	 [complexity=20,
+		importance=405.587706732,
+		rank=20.2793853366];
+	"common_network_u0.node_u7.data_b"	 [complexity=20,
+		importance=405.586201396,
+		rank=20.2793100698];
+	"common_network_u0.xm1_ym1" -> "common_network_u0.node_u7.data_b";
+	"pixel_network_u3.node_u1_lo"	 [complexity=12,
+		importance=11.2586247218,
+		rank=0.93821872682];
+	"pixel_network_u3.node_u4.data_a"	 [complexity=12,
+		importance=11.2565466035,
+		rank=0.938045550294];
+	"pixel_network_u3.node_u1_lo" -> "pixel_network_u3.node_u4.data_a";
+	"pixel_network_u3.node_u4.sel0"	 [complexity=10,
+		importance=5.62728053807,
+		rank=0.562728053807];
+	"pixel_network_u3.node_u4.data_a" -> "pixel_network_u3.node_u4.sel0";
+	"pixel_network_u3.node_u4.data_hi"	 [complexity=9,
+		importance=1.87512290481,
+		rank=0.208346989423];
+	"pixel_network_u3.node_u4.data_a" -> "pixel_network_u3.node_u4.data_hi";
+	"pixel_network_u3.node_u4.data_b"	 [complexity=12,
+		importance=11.2564367322,
+		rank=0.938036394352];
+	"pixel_network_u3.node_u4.data_b" -> "pixel_network_u3.node_u4.sel0";
+	"pixel_network_u3.node_u4.data_b" -> "pixel_network_u3.node_u4.data_hi";
+	"pixel_network_u3.node_u7.LOW_MUX"	 [complexity=8,
+		importance=0.622466202969,
+		rank=0.0778082753711];
+	"pixel_network_u3.node_u7.LOW_MUX" -> "pixel_network_u3.node_u7.data_lo";
+	"pixel_network_u3.c2m"	 [complexity=12,
+		importance=11.2560754126,
+		rank=0.93800628438];
+	"pixel_network_u3.c2m" -> "pixel_network_u3.node_u1.data_b";
+	"pixel_network_u3.node_u4_hi"	 [complexity=9,
+		importance=1.87274252469,
+		rank=0.208082502744];
+	"pixel_network_u3.node_u4_hi" -> "pixel_network_u3.node_u6.data_b";
+	"pixel_network_u3.c2l"	 [complexity=12,
+		importance=11.2493946278,
+		rank=0.93744955232];
+	"pixel_network_u3.node_u2.data_a"	 [complexity=12,
+		importance=11.2479806238,
+		rank=0.937331718649];
+	"pixel_network_u3.c2l" -> "pixel_network_u3.node_u2.data_a";
+	"pixel_network_u3.node_u7.data_a" -> "pixel_network_u3.node_u7.data_lo";
+	"pixel_network_u3.node_u7.data_hi"	 [complexity=3,
+		importance=0.050048299856,
+		rank=0.0166827666187];
+	"pixel_network_u3.node_u7.data_a" -> "pixel_network_u3.node_u7.data_hi";
+	"pixel_network_u3.node_u7.sel0"	 [complexity=4,
+		importance=0.152102082772,
+		rank=0.0380255206929];
+	"pixel_network_u3.node_u7.data_a" -> "pixel_network_u3.node_u7.sel0";
+	"pixel_network_u3.c1m"	 [complexity=12,
+		importance=11.2582974217,
+		rank=0.938191451804];
+	"pixel_network_u3.c1m" -> "pixel_network_u3.node_u4.data_b";
+	"pixel_network_u3.node_u7.data_b"	 [complexity=6,
+		importance=0.306225590769,
+		rank=0.0510375984614];
+	"pixel_network_u3.node_u7.data_b" -> "pixel_network_u3.node_u7.data_lo";
+	"pixel_network_u3.node_u7.data_b" -> "pixel_network_u3.node_u7.data_hi";
+	"pixel_network_u3.node_u7.data_b" -> "pixel_network_u3.node_u7.sel0";
+	"pixel_network_u3.c1h"	 [complexity=9,
+		importance=1.87198532215,
+		rank=0.207998369128];
+	"pixel_network_u3.node_u3.data_b"	 [complexity=9,
+		importance=1.87012463272,
+		rank=0.207791625858];
+	"pixel_network_u3.c1h" -> "pixel_network_u3.node_u3.data_b";
+	"pixel_network_u3.node_u5.sel0" -> "pixel_network_u3.node_u5.data_hi";
+	"pixel_network_u3.node_u2_hi"	 [complexity=9,
+		importance=1.8714604905,
+		rank=0.2079400545];
+	"pixel_network_u3.node_u2_hi" -> "pixel_network_u3.node_u5.data_b";
+	"common_network_u0.node_u3.data_lo"	 [complexity=20,
+		importance=405.59088261,
+		rank=20.2795441305];
+	"common_network_u0.node_u3_lo"	 [complexity=20,
+		importance=405.588588893,
+		rank=20.2794294447];
+	"common_network_u0.node_u3.data_lo" -> "common_network_u0.node_u3_lo";
+	"common_network_u0.node_u3.sel0"	 [complexity=18,
+		importance=202.791881953,
+		rank=11.2662156641];
+	"common_network_u0.node_u3.sel0" -> "common_network_u0.node_u3.data_lo";
+	"common_network_u0.node_u3.data_hi"	 [complexity=17,
+		importance=67.5966952509,
+		rank=3.97627619123];
+	"common_network_u0.node_u3.sel0" -> "common_network_u0.node_u3.data_hi";
+	"pixel_network_u3.node_u1.sel0" -> "pixel_network_u3.node_u1.data_lo";
+	"pixel_network_u3.node_u1.sel0" -> "pixel_network_u3.node_u1.data_hi";
+	"pixel_network_u3.node_u5_hi"	 [complexity=6,
+		importance=0.308283228155,
+		rank=0.0513805380258];
+	"pixel_network_u3.node_u5_hi" -> "pixel_network_u3.node_u8.data_b";
+	"common_network_u0.node_u3_hi"	 [complexity=17,
+		importance=67.5944015344,
+		rank=3.97614126673];
+	"common_network_u0.node_u11.data_a"	 [complexity=17,
+		importance=67.5923080848,
+		rank=3.97601812263];
+	"common_network_u0.node_u3_hi" -> "common_network_u0.node_u11.data_a";
+	"pixel_network_u3.node_u5.HI_MUX"	 [complexity=8,
+		importance=0.622169875282,
+		rank=0.0777712344102];
+	"pixel_network_u3.node_u5.HI_MUX" -> "pixel_network_u3.node_u5.data_hi";
+	"pixel_network_u3.node_u4.sel0" -> "pixel_network_u3.node_u4.data_hi";
+	"dff_c3_pipe.rst_n"	 [complexity=13,
+		importance=22.5206318265,
+		rank=1.73235629434];
+	"dff_c3_pipe.q1"	 [complexity=12,
+		importance=11.2597834612,
+		rank=0.938315288432];
+	"dff_c3_pipe.rst_n" -> "dff_c3_pipe.q1";
+	"dff_c3_pipe.rst_n" -> "dff_c3_pipe.q2";
+	"dff_c3_pipe.rst_n" -> "dff_c3_pipe.q0";
+	"dff_c2_pipe.rst_n"	 [complexity=13,
+		importance=22.5248322435,
+		rank=1.73267940335];
+	"dff_c2_pipe.rst_n" -> "dff_c2_pipe.q2";
+	"dff_c2_pipe.rst_n" -> "dff_c2_pipe.q0";
+	"dff_c2_pipe.rst_n" -> "dff_c2_pipe.q1";
+	"common_network_u0.node_u3.data_a" -> "common_network_u0.node_u3.data_lo";
+	"common_network_u0.node_u3.data_a" -> "common_network_u0.node_u3.sel0";
+	"common_network_u0.node_u3.data_a" -> "common_network_u0.node_u3.data_hi";
+	"common_network_u0.node_u3.data_b" -> "common_network_u0.node_u3.data_lo";
+	"common_network_u0.node_u3.data_b" -> "common_network_u0.node_u3.sel0";
+	"common_network_u0.node_u3.data_b" -> "common_network_u0.node_u3.data_hi";
+	"common_network_u0.node_u7.LOW_MUX"	 [complexity=13,
+		importance=3.75822471798,
+		rank=0.289094209075];
+	"common_network_u0.node_u7.data_lo"	 [complexity=11,
+		importance=1.87863906846,
+		rank=0.17078536986];
+	"common_network_u0.node_u7.LOW_MUX" -> "common_network_u0.node_u7.data_lo";
+	"common_network_u0.node_u11.sel0"	 [complexity=15,
+		importance=33.795157387,
+		rank=2.25301049247];
+	"common_network_u0.node_u11.sel0" -> "common_network_u0.node_u11.data_lo";
+	"common_network_u0.node_u11.sel0" -> "common_network_u0.node_u11.data_hi";
+	"pixel_network_u3.node_u7_lo" -> "pixel_network_u3.node_u8.data_a";
+	"common_network_u0.node_u7.sel0"	 [complexity=18,
+		importance=202.792251067,
+		rank=11.2662361704];
+	"common_network_u0.node_u7.sel0" -> "common_network_u0.node_u7.data_hi";
+	"common_network_u0.node_u7.sel0" -> "common_network_u0.node_u7.data_lo";
+	"pixel_network_u3.node_u6_lo"	 [complexity=6,
+		importance=0.308375411571,
+		rank=0.0513959019285];
+	"pixel_network_u3.node_u6.data_lo" -> "pixel_network_u3.node_u6_lo";
+	"pixel_network_u3.c1l"	 [complexity=12,
+		importance=11.250064327,
+		rank=0.937505360582];
+	c2l_reg -> "pixel_network_u3.c1l";
+	"pixel_network_u3.node_u2.data_hi"	 [complexity=9,
+		importance=1.87377847814,
+		rank=0.208197608683];
+	"pixel_network_u3.node_u2.data_hi" -> "pixel_network_u3.node_u2_hi";
+	"pixel_network_u3.node_u2.data_b"	 [complexity=12,
+		importance=11.2482036376,
+		rank=0.93735030313];
+	"pixel_network_u3.node_u2.data_b" -> "pixel_network_u3.node_u2.data_hi";
+	"pixel_network_u3.node_u2.sel0"	 [complexity=10,
+		importance=5.62316399074,
+		rank=0.562316399074];
+	"pixel_network_u3.node_u2.data_b" -> "pixel_network_u3.node_u2.sel0";
+	"pixel_network_u3.node_u2.data_a" -> "pixel_network_u3.node_u2.data_hi";
+	"pixel_network_u3.node_u2.data_a" -> "pixel_network_u3.node_u2.sel0";
+	"pixel_network_u3.node_u0.data_lo" -> "pixel_network_u3.node_u0_lo";
+	"pixel_network_u3.node_u1.data_lo" -> "pixel_network_u3.node_u1_lo";
+	"pixel_network_u3.node_u8.HI_MUX"	 [complexity=5,
+		importance=0.101034713509,
+		rank=0.0202069427019];
+	"pixel_network_u3.node_u8.HI_MUX" -> "pixel_network_u3.node_u8.data_hi";
+	"common_network_u0.node_u11_hi"	 [complexity=14,
+		importance=11.2599523927,
+		rank=0.804282313767];
+	"common_network_u0.c0h"	 [complexity=12,
+		importance=11.2578013707,
+		rank=0.938150114226];
+	"common_network_u0.node_u11_hi" -> "common_network_u0.c0h";
+	"pixel_network_u3.node_u3.data_lo" -> "pixel_network_u3.node_u3_lo";
+	"pixel_network_u3.node_u9.data_lo"	 [complexity=0,
+		importance=0.00659036675573,
+		rank=0.0];
+	"pixel_network_u3.node_u9.data_b" -> "pixel_network_u3.node_u9.data_lo";
+	"pixel_network_u3.node_u9.sel0"	 [complexity=1,
+		importance=0.0217297584042,
+		rank=0.0217297584042];
+	"pixel_network_u3.node_u9.data_b" -> "pixel_network_u3.node_u9.sel0";
+	"pixel_network_u3.node_u9.data_a"	 [complexity=3,
+		importance=0.0454814356747,
+		rank=0.0151604785582];
+	"pixel_network_u3.node_u9.data_a" -> "pixel_network_u3.node_u9.data_lo";
+	"pixel_network_u3.node_u9.data_a" -> "pixel_network_u3.node_u9.sel0";
+	"common_network_u0.c0m"	 [complexity=12,
+		importance=11.2598446036,
+		rank=0.93832038363];
+	"common_network_u0.node_u11_lo" -> "common_network_u0.c0m";
+	"pixel_network_u3.c3h" -> "pixel_network_u3.node_u0.data_a";
+	"pixel_network_u3.c3l" -> "pixel_network_u3.node_u5.data_a";
+	"pixel_network_u3.c3m" -> "pixel_network_u3.node_u1.data_a";
+	"pixel_network_u3.node_u9.LOW_MUX"	 [complexity=2,
+		importance=0.0141273145671,
+		rank=0.00706365728356];
+	"pixel_network_u3.node_u9.LOW_MUX" -> "pixel_network_u3.node_u9.data_lo";
+	"pixel_network_u3.node_u7_hi"	 [complexity=3,
+		importance=0.0476341149249,
+		rank=0.0158780383083];
+	"pixel_network_u3.node_u7.data_hi" -> "pixel_network_u3.node_u7_hi";
+	c2m_reg -> "pixel_network_u3.c1m";
+	"common_network_u0.node_u11.LOW_MUX"	 [complexity=16,
+		importance=22.5297531852,
+		rank=1.40810957408];
+	"common_network_u0.node_u11.LOW_MUX" -> "common_network_u0.node_u11.data_lo";
+	"pixel_network_u3.node_u2.HI_MUX"	 [complexity=11,
+		importance=3.74850353734,
+		rank=0.340773048849];
+	"pixel_network_u3.node_u2.HI_MUX" -> "pixel_network_u3.node_u2.data_hi";
+	"common_network_u0.node_u3.HI_MUX"	 [complexity=19,
+		importance=135.194337083,
+		rank=7.11549142541];
+	"common_network_u0.node_u3.HI_MUX" -> "common_network_u0.node_u3.data_hi";
+	"pixel_network_u3.node_u7.HI_MUX"	 [complexity=5,
+		importance=0.101043180768,
+		rank=0.0202086361535];
+	"pixel_network_u3.node_u7.HI_MUX" -> "pixel_network_u3.node_u7.data_hi";
+	"common_network_u0.node_u3.LOW_MUX"	 [complexity=22,
+		importance=811.182711801,
+		rank=36.8719414455];
+	"common_network_u0.node_u3.LOW_MUX" -> "common_network_u0.node_u3.data_lo";
+	c2h_reg -> "pixel_network_u3.c1h";
+	"pixel_network_u3.c1l" -> "pixel_network_u3.node_u2.data_b";
+	"common_network_u0.node_u11.data_b" -> "common_network_u0.node_u11.data_lo";
+	"common_network_u0.node_u11.data_b" -> "common_network_u0.node_u11.sel0";
+	"common_network_u0.node_u11.data_b" -> "common_network_u0.node_u11.data_hi";
+	"common_network_u0.node_u11.data_a" -> "common_network_u0.node_u11.data_lo";
+	"common_network_u0.node_u11.data_a" -> "common_network_u0.node_u11.sel0";
+	"common_network_u0.node_u11.data_a" -> "common_network_u0.node_u11.data_hi";
+	"pixel_network_u3.node_u6_lo" -> "pixel_network_u3.node_u7.data_b";
+	"pixel_network_u3.node_u4.data_hi" -> "pixel_network_u3.node_u4_hi";
+	"dff_c2_pipe.d0"	 [complexity=11,
+		importance=1.8768444404,
+		rank=0.170622221855];
+	"dff_c2_pipe.d0" -> "dff_c2_pipe.q0";
+	"dff_c2_pipe.d2"	 [complexity=14,
+		importance=11.2549225206,
+		rank=0.803923037189];
+	"dff_c2_pipe.d2" -> "dff_c2_pipe.q2";
+	c3m_reg	 [complexity=12,
+		importance=11.2579423263,
+		rank=0.938161860527];
+	"dff_c3_pipe.q1" -> c3m_reg;
+	c3l_reg	 [complexity=12,
+		importance=11.2512615416,
+		rank=0.937605128467];
+	"dff_c3_pipe.q2" -> c3l_reg;
+	"common_network_u0.node_u11.data_hi" -> "common_network_u0.node_u11_hi";
+	c3h_reg	 [complexity=12,
+		importance=11.2558990935,
+		rank=0.937991591122];
+	"dff_c3_pipe.q0" -> c3h_reg;
+	"common_network_u0.node_u7_lo"	 [complexity=11,
+		importance=1.87628965014,
+		rank=0.170571786376];
+	"common_network_u0.node_u7.data_lo" -> "common_network_u0.node_u7_lo";
+	"pixel_network_u3.node_u1_hi"	 [complexity=9,
+		importance=1.87265316114,
+		rank=0.208072573461];
+	"pixel_network_u3.node_u1_hi" -> "pixel_network_u3.node_u6.data_a";
+	"dff_c3_pipe.d1"	 [complexity=14,
+		importance=11.2612194759,
+		rank=0.80437281971];
+	"dff_c3_pipe.d1" -> "dff_c3_pipe.q1";
+	"pixel_network_u3.node_u9.data_lo" -> "pixel_network_u3.median";
+	"common_network_u0.node_u3.data_hi" -> "common_network_u0.node_u3_hi";
+	"common_network_u0.node_u7.data_a"	 [complexity=20,
+		importance=405.586495444,
+		rank=20.2793247722];
+	"common_network_u0.node_u7.data_a" -> "common_network_u0.node_u7.data_hi";
+	"common_network_u0.node_u7.data_a" -> "common_network_u0.node_u7.sel0";
+	"common_network_u0.node_u7.data_a" -> "common_network_u0.node_u7.data_lo";
+	"pixel_network_u3.node_u3.sel0"	 [complexity=7,
+		importance=0.934124488325,
+		rank=0.133446355475];
+	"pixel_network_u3.node_u3.sel0" -> "pixel_network_u3.node_u3.data_lo";
+	"pixel_network_u3.c2h"	 [complexity=12,
+		importance=11.2540321797,
+		rank=0.937836014975];
+	c3h_reg -> "pixel_network_u3.c2h";
+	"common_network_u0.node_u7.HI_MUX"	 [complexity=19,
+		importance=135.194533974,
+		rank=7.11550178808];
+	"common_network_u0.node_u7.HI_MUX" -> "common_network_u0.node_u7.data_hi";
+	"dff_c2_pipe.d1"	 [complexity=14,
+		importance=11.2631565399,
+		rank=0.804511181422];
+	"dff_c2_pipe.d1" -> "dff_c2_pipe.q1";
+	"common_network_u0.node_u7.data_b" -> "common_network_u0.node_u7.data_hi";
+	"common_network_u0.node_u7.data_b" -> "common_network_u0.node_u7.sel0";
+	"common_network_u0.node_u7.data_b" -> "common_network_u0.node_u7.data_lo";
+	c3m_reg -> "pixel_network_u3.c2m";
+	"pixel_network_u3.node_u5.data_hi" -> "pixel_network_u3.node_u5_hi";
+	"common_network_u0.c0l"	 [complexity=9,
+		importance=1.87416776104,
+		rank=0.208240862338];
+	"common_network_u0.node_u7_lo" -> "common_network_u0.c0l";
+	"pixel_network_u3.node_u3.data_a" -> "pixel_network_u3.node_u3.data_lo";
+	"pixel_network_u3.node_u3.data_a" -> "pixel_network_u3.node_u3.sel0";
+	"pixel_network_u3.node_u3.data_b" -> "pixel_network_u3.node_u3.data_lo";
+	"pixel_network_u3.node_u3.data_b" -> "pixel_network_u3.node_u3.sel0";
+	xm1_y0 -> "common_network_u0.xm1_y0";
+	xm1_y1 -> "common_network_u0.xm1_y1";
+	"pixel_network_u3.node_u6.LOW_MUX"	 [complexity=8,
+		importance=0.622511396222,
+		rank=0.0778139245278];
+	"pixel_network_u3.node_u6.LOW_MUX" -> "pixel_network_u3.node_u6.data_lo";
+	"common_network_u0.node_u3_lo" -> "common_network_u0.node_u7.data_a";
+	"pixel_network_u3.node_u8.data_hi" -> "pixel_network_u3.node_u8_hi";
+	"pixel_network_u3.node_u2.sel0" -> "pixel_network_u3.node_u2.data_hi";
+	"pixel_network_u3.node_u7_hi" -> "pixel_network_u3.node_u9.data_a";
+	"pixel_network_u3.c2h" -> "pixel_network_u3.node_u0.data_b";
+	PIXEL_DATA_WIDTH	 [complexity=24,
+		importance=405.589032579,
+		rank=16.8995430241];
+	PIXEL_DATA_WIDTH -> xm1_y0;
+	PIXEL_DATA_WIDTH -> xm1_y1;
+	PIXEL_DATA_WIDTH -> xm1_ym1;
+	"pixel_network_u3.node_u9.sel0" -> "pixel_network_u3.node_u9.data_lo";
+	"pixel_network_u3.node_u7.sel0" -> "pixel_network_u3.node_u7.data_lo";
+	"pixel_network_u3.node_u7.sel0" -> "pixel_network_u3.node_u7.data_hi";
+	c3l_reg -> "pixel_network_u3.c2l";
+	xm1_ym1 -> "common_network_u0.xm1_ym1";
+	"common_network_u0.c0l" -> c0l;
+	"common_network_u0.c0m" -> c0m;
+	"pixel_network_u3.node_u4.HI_MUX"	 [complexity=11,
+		importance=3.75119239068,
+		rank=0.341017490062];
+	"pixel_network_u3.node_u4.HI_MUX" -> "pixel_network_u3.node_u4.data_hi";
+	"common_network_u0.c0h" -> c0h;
+	"pixel_network_u3.node_u1.LOW_MUX"	 [complexity=14,
+		importance=22.5227224743,
+		rank=1.60876589102];
+	"pixel_network_u3.node_u1.LOW_MUX" -> "pixel_network_u3.node_u1.data_lo";
+	"pixel_network_u3.node_u1.data_hi" -> "pixel_network_u3.node_u1_hi";
+}

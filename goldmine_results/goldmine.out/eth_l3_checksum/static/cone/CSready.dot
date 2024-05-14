@@ -1,0 +1,13 @@
+strict digraph "" {
+	CSready	 [complexity=0,
+		importance=0.056339671094,
+		rank=0.0];
+	Reset	 [complexity=1,
+		importance=0.160684732794,
+		rank=0.160684732794];
+	Reset -> CSready;
+	ByteCnt	 [complexity=3,
+		importance=0.217024403888,
+		rank=0.0723414679627];
+	ByteCnt -> CSready;
+}

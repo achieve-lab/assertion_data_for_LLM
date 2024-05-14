@@ -1,0 +1,26 @@
+strict digraph "" {
+	node [label="\N"];
+	"Leaf_2921:AL"	 [def_var="['int_upid_set']",
+		label="Leaf_2921:AL"];
+	"2921:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f13b554d410>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="2921:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['pid_SOF', 'CTRL_ep', 'pid_OUT_r', 'pid_IN_r', 'pid_PING_r', 'pid_SETUP_r', 'OUT_ep', 'IN_ep', 'match_r']"];
+	"2922:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f13b554d510>",
+		fillcolor=firebrick,
+		label="2922:NS
+int_upid_set <= match_r & !pid_SOF & (OUT_ep & !(pid_OUT_r | pid_PING_r) | IN_ep & !pid_IN_r | CTRL_ep & !(pid_IN_r | pid_\
+OUT_r | pid_PING_r | pid_SETUP_r));",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f13b554d510>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"2921:AL" -> "2922:NS"	 [cond="[]",
+		lineno=None];
+	"2922:NS" -> "Leaf_2921:AL"	 [cond="[]",
+		lineno=None];
+}

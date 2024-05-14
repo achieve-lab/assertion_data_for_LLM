@@ -1,0 +1,55 @@
+strict digraph "" {
+	node [label="\N"];
+	"38:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f3e073d20d0>",
+		fillcolor=springgreen,
+		label="38:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"39:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f3e073d2750>",
+		fillcolor=firebrick,
+		label="39:NS
+o <= 22'd0 + (tmc_i & { 20{ outctrl[sel] } });",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f3e073d2750>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"38:IF" -> "39:NS"	 [cond="['cnt']",
+		label="(cnt == 8'd0)",
+		lineno=38];
+	"40:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f3e073d2250>",
+		fillcolor=springgreen,
+		label="40:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"38:IF" -> "40:IF"	 [cond="['cnt']",
+		label="!((cnt == 8'd0))",
+		lineno=38];
+	"41:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f3e073d22d0>",
+		fillcolor=firebrick,
+		label="41:NS
+o <= o + (tmc_i & { 20{ outctrl[sel] } });",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f3e073d22d0>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"Leaf_37:AL"	 [def_var="['o']",
+		label="Leaf_37:AL"];
+	"41:NS" -> "Leaf_37:AL"	 [cond="[]",
+		lineno=None];
+	"39:NS" -> "Leaf_37:AL"	 [cond="[]",
+		lineno=None];
+	"37:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f3e073d2bd0>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="37:AL",
+		sens="['clk_i']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['outctrl', 'tmc_i', 'cnt', 'sel', 'o']"];
+	"37:AL" -> "38:IF"	 [cond="[]",
+		lineno=None];
+	"40:IF" -> "41:NS"	 [cond="['cnt']",
+		label="(cnt < 8'd4)",
+		lineno=40];
+}

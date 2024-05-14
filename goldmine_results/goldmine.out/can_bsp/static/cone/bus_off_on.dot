@@ -1,0 +1,33 @@
+strict digraph "" {
+	"[1]reset_mode"	 [complexity=7,
+		importance=0.0138413287673,
+		rank=0.00197733268104];
+	node_bus_off	 [complexity=2,
+		importance=0.00613143258547,
+		rank=0.00306571629274];
+	"[1]reset_mode" -> node_bus_off;
+	"[1]rst"	 [complexity=3,
+		importance=0.0199727613528,
+		rank=0.00665758711759];
+	"[1]rst" -> node_bus_off;
+	"[1]we_tx_err_cnt"	 [complexity=10,
+		importance=0.0199727613528,
+		rank=0.00199727613528];
+	"[1]we_tx_err_cnt" -> node_bus_off;
+	bus_off_on	 [complexity=0,
+		importance=0.00167136279231,
+		rank=0.0];
+	"[1]rx_err_cnt"	 [complexity=7,
+		importance=0.0264182909864,
+		rank=0.00377404156949];
+	"[1]rx_err_cnt" -> node_bus_off;
+	"[1]tx_err_cnt"	 [complexity=10,
+		importance=0.0272058642409,
+		rank=0.00272058642409];
+	"[1]tx_err_cnt" -> node_bus_off;
+	node_bus_off -> bus_off_on;
+	"[1]data_in"	 [complexity=10,
+		importance=0.0199727613528,
+		rank=0.00199727613528];
+	"[1]data_in" -> node_bus_off;
+}

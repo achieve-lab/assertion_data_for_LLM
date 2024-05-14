@@ -1,0 +1,10 @@
+property a1;
+@(posedge clk) (status_full == 1) |-> (status_full_o == 1);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge clk) (status_full == 0) |-> (status_full_o == 0);
+endproperty
+assert_a0: assert property(a0);
+

@@ -1,0 +1,15 @@
+property a0;
+@(posedge clk) (WillSendControlFrame == 0) |=> (CtrlMux == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a2;
+@(posedge clk) (TxUsedDataOut == 0 & WillSendControlFrame == 1) |=> (CtrlMux == 1);
+endproperty
+assert_a2: assert property(a2);
+
+property a1;
+@(posedge clk) (TxUsedDataOut == 1 & TxDoneIn == 1) |=> (CtrlMux == 0);
+endproperty
+assert_a1: assert property(a1);
+

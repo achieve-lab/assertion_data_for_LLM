@@ -1,0 +1,83 @@
+digraph "" {
+	"boot_i.cclk"	 [complexity=8,
+		importance=0.190187670149,
+		rank=0.0237734587686];
+	"boot_i.precaler_i.sys_clk"	 [complexity=8,
+		importance=0.169935672872,
+		rank=0.021241959109];
+	"boot_i.cclk" -> "boot_i.precaler_i.sys_clk";
+	"boot_i.cmd_state"	 [complexity=10,
+		importance=0.251230695994,
+		rank=0.0251230695994];
+	"boot_i.mode_transfer"	 [complexity=8,
+		importance=0.18345075185,
+		rank=0.0229313439812];
+	"boot_i.cmd_state" -> "boot_i.mode_transfer";
+	"boot_i.precaler_i.mmc_clk"	 [complexity=4,
+		importance=0.146308355154,
+		rank=0.0365770887884];
+	"boot_i.precaler_i.sys_clk" -> "boot_i.precaler_i.mmc_clk";
+	"boot_i.int_reset"	 [complexity=11,
+		importance=0.526932532695,
+		rank=0.0479029575178];
+	"boot_i.int_reset" -> "boot_i.cmd_state";
+	"boot_i.mmc_clk"	 [complexity=0,
+		importance=0.0681626285024,
+		rank=0.0];
+	"boot_i.int_reset" -> "boot_i.mmc_clk";
+	"boot_i.config_request"	 [complexity=13,
+		importance=0.548872189242,
+		rank=0.042220937634];
+	"boot_i.config_request" -> "boot_i.int_reset";
+	mmc_clk	 [complexity=0,
+		importance=0.0317216436353,
+		rank=0.0];
+	"boot_i.mmc_clk" -> mmc_clk;
+	"boot_i.init"	 [complexity=16,
+		importance=0.569124186519,
+		rank=0.0355702616574];
+	"boot_i.init" -> "boot_i.config_request";
+	init	 [complexity=16,
+		importance=0.582625537207,
+		rank=0.0364140960754];
+	init -> "boot_i.init";
+	"boot_i.done"	 [complexity=16,
+		importance=0.569124186519,
+		rank=0.0355702616574];
+	"boot_i.done" -> "boot_i.config_request";
+	"boot_i.precaler_i.prescaler"	 [complexity=10,
+		importance=0.203032705882,
+		rank=0.0203032705882];
+	"boot_i.precaler_i.prescaler" -> "boot_i.precaler_i.prescaler";
+	"boot_i.precaler_i.prescaler" -> "boot_i.precaler_i.mmc_clk";
+	"boot_i.cmd_state_next"	 [complexity=12,
+		importance=0.351637433461,
+		rank=0.0293031194551];
+	"boot_i.cmd_state_next" -> "boot_i.cmd_state";
+	"boot_i.precaler_i.rst"	 [complexity=11,
+		importance=0.421606017228,
+		rank=0.038327819748];
+	"boot_i.precaler_i.rst" -> "boot_i.precaler_i.prescaler";
+	"boot_i.precaler_i.mode_transfer"	 [complexity=8,
+		importance=0.16768981125,
+		rank=0.0209612264063];
+	"boot_i.mode_transfer" -> "boot_i.precaler_i.mode_transfer";
+	done	 [complexity=16,
+		importance=0.582625537207,
+		rank=0.0364140960754];
+	done -> "boot_i.done";
+	"boot_i.precaler_i.mode_transfer" -> "boot_i.precaler_i.mmc_clk";
+	"boot_i.clk_mmc"	 [complexity=4,
+		importance=0.103211831665,
+		rank=0.0258029579163];
+	"boot_i.precaler_i.mmc_clk" -> "boot_i.clk_mmc";
+	"boot_i.clk_mmc" -> "boot_i.mmc_clk";
+	cclk	 [complexity=8,
+		importance=0.203689020837,
+		rank=0.0254611276046];
+	cclk -> "boot_i.cclk";
+	"boot_i.dis"	 [complexity=4,
+		importance=0.0816639791908,
+		rank=0.0204159947977];
+	"boot_i.dis" -> "boot_i.mmc_clk";
+}

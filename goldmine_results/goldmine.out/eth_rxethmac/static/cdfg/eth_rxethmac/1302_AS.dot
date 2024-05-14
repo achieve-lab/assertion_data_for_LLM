@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"1302:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fb43032c0d0>",
+		def_var="['Enable_Crc']",
+		fillcolor=deepskyblue,
+		label="1302:AS
+Enable_Crc = MRxDV & (|StateData & ~ByteCntMaxFrame);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['MRxDV', 'StateData', 'ByteCntMaxFrame']"];
+}

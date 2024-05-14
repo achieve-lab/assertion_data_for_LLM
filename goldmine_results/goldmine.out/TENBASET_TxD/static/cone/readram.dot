@@ -1,0 +1,33 @@
+strict digraph "" {
+	"[3]ShiftCount"	 [complexity=11,
+		importance=0.206851546452,
+		rank=0.0188046860411];
+	"[2]ShiftCount"	 [complexity=8,
+		importance=0.164636943965,
+		rank=0.0205796179956];
+	"[3]ShiftCount" -> "[2]ShiftCount";
+	ShiftCount	 [complexity=2,
+		importance=0.0802077389903,
+		rank=0.0401038694951];
+	readram	 [complexity=0,
+		importance=0.037993136503,
+		rank=0.0];
+	ShiftCount -> readram;
+	"[1]ShiftCount"	 [complexity=5,
+		importance=0.122422341478,
+		rank=0.0244844682955];
+	"[2]ShiftCount" -> "[1]ShiftCount";
+	"[2]SendingPacket"	 [complexity=8,
+		importance=0.156194007658,
+		rank=0.0195242509572];
+	"[2]SendingPacket" -> "[1]ShiftCount";
+	"[1]ShiftCount" -> ShiftCount;
+	"[1]SendingPacket"	 [complexity=5,
+		importance=0.113979405171,
+		rank=0.0227958810341];
+	"[1]SendingPacket" -> ShiftCount;
+	"[3]SendingPacket"	 [complexity=11,
+		importance=0.198408610145,
+		rank=0.0180371463768];
+	"[3]SendingPacket" -> "[2]ShiftCount";
+}

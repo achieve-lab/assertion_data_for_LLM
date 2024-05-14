@@ -1,0 +1,11 @@
+ENABLE	access_permission
+PWRITE	write_en
+write_en	key_en
+enable	state
+PSEL	write_en
+state	access_permission
+PENABLE	write_en
+DISABLE	access_permission
+PADDR	key_en
+PRESETn	state
+access_permission	key_en

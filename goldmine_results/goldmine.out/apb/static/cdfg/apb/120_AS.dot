@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"120:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fdc90088490>",
+		def_var="['RD_ENA']",
+		fillcolor=deepskyblue,
+		label="120:AS
+RD_ENA = ((PWRITE == 1'b0) & (PENABLE == 1'b1) & (PADDR == 32'd4) & (PSELx == 1'b1))? 1'b1 : 1'b0;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['PWRITE', 'PENABLE', 'PADDR', 'PSELx']"];
+}

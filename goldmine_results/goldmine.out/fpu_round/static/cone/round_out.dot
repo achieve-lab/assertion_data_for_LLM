@@ -1,0 +1,21 @@
+strict digraph "" {
+	"[1]sum_final"	 [complexity=4,
+		importance=0.211333509941,
+		rank=0.0528333774853];
+	round_out	 [complexity=0,
+		importance=0.123285801006,
+		rank=0.0];
+	"[1]sum_final" -> round_out;
+	"[1]exponent_final"	 [complexity=4,
+		importance=0.213108095059,
+		rank=0.0532770237649];
+	"[1]exponent_final" -> round_out;
+	"[1]sign_term"	 [complexity=4,
+		importance=0.150766589679,
+		rank=0.0376916474198];
+	"[1]sign_term" -> round_out;
+	"[1]rst"	 [complexity=1,
+		importance=0.274052390685,
+		rank=0.274052390685];
+	"[1]rst" -> round_out;
+}

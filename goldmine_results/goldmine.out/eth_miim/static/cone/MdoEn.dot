@@ -1,0 +1,45 @@
+strict digraph "" {
+	"[1]MdcEn_n"	 [complexity=1,
+		importance=0.0450856880635,
+		rank=0.0450856880635];
+	"[1]outctrl.MdcEn_n"	 [complexity=1,
+		importance=0.0351583192765,
+		rank=0.0351583192765];
+	"[1]MdcEn_n" -> "[1]outctrl.MdcEn_n";
+	"outctrl.MdoEn"	 [complexity=0,
+		importance=0.0268118113654,
+		rank=0.0];
+	MdoEn	 [complexity=0,
+		importance=0.0128474143982,
+		rank=0.0];
+	"outctrl.MdoEn" -> MdoEn;
+	"[1]outctrl.MdoEn_d"	 [complexity=3,
+		importance=0.040635642514,
+		rank=0.0135452141713];
+	"[1]outctrl.MdoEn_d" -> "outctrl.MdoEn";
+	"[1]outctrl.Reset"	 [complexity=1,
+		importance=0.0595279703479,
+		rank=0.0595279703479];
+	"[1]outctrl.Reset" -> "outctrl.MdoEn";
+	"[1]outctrl.MdcEn_n" -> "outctrl.MdoEn";
+	"[1]clkgen.Counter"	 [complexity=6,
+		importance=0.0846244595309,
+		rank=0.0141040765885];
+	"[1]clkgen.CountEq0"	 [complexity=4,
+		importance=0.0641855640283,
+		rank=0.0160463910071];
+	"[1]clkgen.Counter" -> "[1]clkgen.CountEq0";
+	"[1]clkgen.Mdc"	 [complexity=4,
+		importance=0.0625173541977,
+		rank=0.0156293385494];
+	"[1]clkgen.MdcEn_n"	 [complexity=1,
+		importance=0.0532111052714,
+		rank=0.0532111052714];
+	"[1]clkgen.Mdc" -> "[1]clkgen.MdcEn_n";
+	"[1]clkgen.MdcEn_n" -> "[1]MdcEn_n";
+	"[1]Reset"	 [complexity=1,
+		importance=0.0653926927016,
+		rank=0.0653926927016];
+	"[1]Reset" -> "[1]outctrl.Reset";
+	"[1]clkgen.CountEq0" -> "[1]clkgen.MdcEn_n";
+}

@@ -1,0 +1,53 @@
+strict digraph "" {
+	Reset	 [complexity=1,
+		importance=0.497675701752,
+		rank=0.497675701752];
+	MRxD	 [complexity=0,
+		importance=0.11856355842,
+		rank=0.0];
+	Reset -> MRxD;
+	"[1]Rx_dv_dl1"	 [complexity=3,
+		importance=0.36145614225,
+		rank=0.12048538075];
+	Rx_odd_data_ptr	 [complexity=2,
+		importance=0.162869154305,
+		rank=0.0814345771526];
+	"[1]Rx_dv_dl1" -> Rx_odd_data_ptr;
+	"[1]Rxd_dl2"	 [complexity=5,
+		importance=0.27006367831,
+		rank=0.054012735662];
+	"[1]Rxd_dl2" -> MRxD;
+	"[1]Rxd_dl1"	 [complexity=3,
+		importance=0.15428139206,
+		rank=0.0514271306867];
+	"[1]Rxd_dl1" -> MRxD;
+	"[1]Txd"	 [complexity=2,
+		importance=0.190875875678,
+		rank=0.0954379378389];
+	"[1]Txd" -> MRxD;
+	Line_loop_en	 [complexity=1,
+		importance=0.379112143332,
+		rank=0.379112143332];
+	Line_loop_en -> MRxD;
+	Rx_odd_data_ptr -> MRxD;
+	"[1]Reset"	 [complexity=3,
+		importance=0.33198425219,
+		rank=0.110661417397];
+	"[1]Reset" -> "[1]Rxd_dl2";
+	"[1]Reset" -> "[1]Rxd_dl1";
+	"[1]Reset" -> Rx_odd_data_ptr;
+	Rx_dv_dl2	 [complexity=2,
+		importance=0.265598902219,
+		rank=0.13279945111];
+	"[1]Reset" -> Rx_dv_dl2;
+	Rx_dv_dl1	 [complexity=2,
+		importance=0.15428139206,
+		rank=0.07714069603];
+	"[1]Reset" -> Rx_dv_dl1;
+	Speed	 [complexity=2,
+		importance=0.260548584911,
+		rank=0.130274292456];
+	Speed -> MRxD;
+	Rx_dv_dl2 -> MRxD;
+	Rx_dv_dl1 -> MRxD;
+}

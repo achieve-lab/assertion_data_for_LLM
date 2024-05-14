@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"1606:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f37fb687810>",
+		def_var="['ByteCntEq4']",
+		fillcolor=deepskyblue,
+		label="1606:AS
+ByteCntEq4 = RxValid & (ByteCnt[4:0] == 5'h4);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['RxValid', 'ByteCnt']"];
+}

@@ -1,0 +1,11 @@
+[1]get_error_code	[1]rxstate_next
+rxstate	receiving
+[1]local_invalid	[1]rxstate_next
+[1]recv_enable	[1]rxstate_next
+[1]length_error	[1]rxstate_next
+[1]get_sfd	[1]rxstate_next
+[1]rxstate	[1]rxstate_next
+[1]rxstate_next	rxstate
+[1]reset	[1]rxstate_next
+[1]reset	rxstate
+[1]get_terminator	[1]rxstate_next

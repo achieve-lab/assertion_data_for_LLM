@@ -1,0 +1,183 @@
+digraph "" {
+	ReceiveEnd	 [complexity=7,
+		importance=0.0557251220835,
+		rank=0.00796073172621];
+	"receivecontrol1.ReceiveEnd"	 [complexity=7,
+		importance=0.0527349439377,
+		rank=0.00753356341968];
+	ReceiveEnd -> "receivecontrol1.ReceiveEnd";
+	"[1]receivecontrol1.ByteCnt"	 [complexity=15,
+		importance=0.0446692463781,
+		rank=0.00297794975854];
+	"[1]receivecontrol1.ByteCnt" -> "[1]receivecontrol1.ByteCnt";
+	"receivecontrol1.ByteCntEq16"	 [complexity=10,
+		importance=0.0275525959761,
+		rank=0.00275525959761];
+	"[1]receivecontrol1.ByteCnt" -> "receivecontrol1.ByteCntEq16";
+	SetPauseTimer	 [complexity=0,
+		importance=0.0046322666661,
+		rank=0.0];
+	"[1]receivecontrol1.ByteCntEq4"	 [complexity=12,
+		importance=0.169415381469,
+		rank=0.0141179484557];
+	"receivecontrol1.AddressOK"	 [complexity=10,
+		importance=0.0553291990455,
+		rank=0.00553291990455];
+	"[1]receivecontrol1.ByteCntEq4" -> "receivecontrol1.AddressOK";
+	"[1]receivecontrol1.ByteCntEq5"	 [complexity=12,
+		importance=0.114086182423,
+		rank=0.00950718186859];
+	"[1]receivecontrol1.ByteCntEq5" -> "receivecontrol1.AddressOK";
+	"[1]receivecontrol1.ByteCntEq0"	 [complexity=12,
+		importance=0.39073217765,
+		rank=0.0325610148042];
+	"[1]receivecontrol1.ByteCntEq0" -> "receivecontrol1.AddressOK";
+	"[1]receivecontrol1.ByteCntEq1"	 [complexity=12,
+		importance=0.335402978605,
+		rank=0.0279502482171];
+	"[1]receivecontrol1.ByteCntEq1" -> "receivecontrol1.AddressOK";
+	"[1]receivecontrol1.ByteCntEq2"	 [complexity=12,
+		importance=0.280073779559,
+		rank=0.02333948163];
+	"[1]receivecontrol1.ByteCntEq2" -> "receivecontrol1.AddressOK";
+	"[1]receivecontrol1.ByteCntEq3"	 [complexity=12,
+		importance=0.224744580514,
+		rank=0.0187287150428];
+	"[1]receivecontrol1.ByteCntEq3" -> "receivecontrol1.AddressOK";
+	"[1]receivecontrol1.MAC"	 [complexity=45,
+		importance=0.335463753253,
+		rank=0.00745475007229];
+	"[1]receivecontrol1.MAC" -> "receivecontrol1.AddressOK";
+	"[1]receivecontrol1.DetectionWindow"	 [complexity=14,
+		importance=0.178433036187,
+		rank=0.0127452168705];
+	"[1]receivecontrol1.DetectionWindow" -> "receivecontrol1.AddressOK";
+	"receivecontrol1.TypeLengthOK"	 [complexity=10,
+		importance=0.0348572672087,
+		rank=0.00348572672087];
+	"[1]receivecontrol1.DetectionWindow" -> "receivecontrol1.TypeLengthOK";
+	"receivecontrol1.OpCodeOK"	 [complexity=10,
+		importance=0.0335203879989,
+		rank=0.00335203879989];
+	"[1]receivecontrol1.DetectionWindow" -> "receivecontrol1.OpCodeOK";
+	"[1]receivecontrol1.ByteCntEq16"	 [complexity=11,
+		importance=0.103988948329,
+		rank=0.00945354075717];
+	"[1]receivecontrol1.ByteCntEq16" -> "receivecontrol1.OpCodeOK";
+	"[1]receivecontrol1.ReservedMulticast"	 [complexity=45,
+		importance=0.334965372419,
+		rank=0.00744367494263];
+	"[1]receivecontrol1.ReservedMulticast" -> "receivecontrol1.AddressOK";
+	"[1]receivecontrol1.RxValid"	 [complexity=13,
+		importance=0.0320379166258,
+		rank=0.00246445512507];
+	"[1]receivecontrol1.RxValid" -> "receivecontrol1.ByteCntEq16";
+	"[1]receivecontrol1.ByteCntEq14"	 [complexity=15,
+		importance=0.07046856033,
+		rank=0.004697904022];
+	"[1]receivecontrol1.ByteCntEq14" -> "receivecontrol1.OpCodeOK";
+	ReceivedLengthOK	 [complexity=6,
+		importance=0.0219594138478,
+		rank=0.00365990230796];
+	"receivecontrol1.ReceivedLengthOK"	 [complexity=6,
+		importance=0.018969235702,
+		rank=0.00316153928367];
+	ReceivedLengthOK -> "receivecontrol1.ReceivedLengthOK";
+	"[1]receivecontrol1.AddressOK"	 [complexity=40,
+		importance=0.307850382629,
+		rank=0.00769625956572];
+	"[1]receivecontrol1.AddressOK" -> "receivecontrol1.AddressOK";
+	"receivecontrol1.RxReset"	 [complexity=7,
+		importance=0.0768597555817,
+		rank=0.0109799650831];
+	"receivecontrol1.ReceivedPauseFrmWAddr"	 [complexity=6,
+		importance=0.024124811644,
+		rank=0.00402080194067];
+	"receivecontrol1.RxReset" -> "receivecontrol1.ReceivedPauseFrmWAddr";
+	"receivecontrol1.AddressOK" -> "receivecontrol1.ReceivedPauseFrmWAddr";
+	"[1]receivecontrol1.ByteCntEq15"	 [complexity=16,
+		importance=0.07046856033,
+		rank=0.00440428502062];
+	"[1]receivecontrol1.ByteCntEq15" -> "receivecontrol1.OpCodeOK";
+	"receivecontrol1.SetPauseTimer"	 [complexity=0,
+		importance=0.0144839150523,
+		rank=0.0];
+	"receivecontrol1.ReceivedPauseFrmWAddr" -> "receivecontrol1.SetPauseTimer";
+	"[1]receivecontrol1.ByteCntEq13"	 [complexity=17,
+		importance=0.107999585958,
+		rank=0.00635291682108];
+	"[1]receivecontrol1.ByteCntEq13" -> "receivecontrol1.TypeLengthOK";
+	RxReset	 [complexity=7,
+		importance=0.0798499337275,
+		rank=0.0114071333896];
+	RxReset -> "receivecontrol1.RxReset";
+	"[1]receivecontrol1.ReceiveEnd"	 [complexity=11,
+		importance=0.0393425878585,
+		rank=0.00357659889622];
+	"[1]receivecontrol1.ReceiveEnd" -> "receivecontrol1.AddressOK";
+	"[1]receivecontrol1.ReceiveEnd" -> "receivecontrol1.TypeLengthOK";
+	"receivecontrol1.ByteCntEq16" -> "receivecontrol1.ReceivedPauseFrmWAddr";
+	"[1]receivecontrol1.RxData"	 [complexity=19,
+		importance=0.0741998550672,
+		rank=0.00390525552985];
+	"[1]receivecontrol1.RxData" -> "receivecontrol1.AddressOK";
+	"[1]receivecontrol1.RxData" -> "receivecontrol1.TypeLengthOK";
+	"[1]receivecontrol1.RxData" -> "receivecontrol1.OpCodeOK";
+	"receivecontrol1.RxFlow"	 [complexity=6,
+		importance=0.018969235702,
+		rank=0.00316153928367];
+	"receivecontrol1.RxFlow" -> "receivecontrol1.SetPauseTimer";
+	"receivecontrol1.ReceivedPacketGood"	 [complexity=6,
+		importance=0.018969235702,
+		rank=0.00316153928367];
+	"receivecontrol1.ReceivedPacketGood" -> "receivecontrol1.SetPauseTimer";
+	"[1]receivecontrol1.ByteCntEq12"	 [complexity=16,
+		importance=0.142856853167,
+		rank=0.00892855332294];
+	"[1]receivecontrol1.ByteCntEq12" -> "receivecontrol1.TypeLengthOK";
+	"[1]receivecontrol1.OpCodeOK"	 [complexity=14,
+		importance=0.0429159643538,
+		rank=0.00306542602527];
+	"[1]receivecontrol1.OpCodeOK" -> "receivecontrol1.OpCodeOK";
+	"[1]receivecontrol1.IncrementByteCnt"	 [complexity=14,
+		importance=0.0428040113559,
+		rank=0.00305742938256];
+	"[1]receivecontrol1.IncrementByteCnt" -> "[1]receivecontrol1.ByteCnt";
+	"receivecontrol1.TypeLengthOK" -> "receivecontrol1.ReceivedPauseFrmWAddr";
+	ReceivedPacketGood	 [complexity=6,
+		importance=0.0219594138478,
+		rank=0.00365990230796];
+	ReceivedPacketGood -> "receivecontrol1.ReceivedPacketGood";
+	"[1]RxValid"	 [complexity=13,
+		importance=0.0350280947716,
+		rank=0.00269446882858];
+	"[1]RxValid" -> "[1]receivecontrol1.RxValid";
+	"[1]receivecontrol1.TypeLength"	 [complexity=19,
+		importance=0.0727047125632,
+		rank=0.00382656381912];
+	"[1]receivecontrol1.TypeLength" -> "receivecontrol1.TypeLengthOK";
+	"[1]receivecontrol1.TypeLengthOK"	 [complexity=15,
+		importance=0.0455897227735,
+		rank=0.00303931485157];
+	"[1]receivecontrol1.TypeLengthOK" -> "receivecontrol1.TypeLengthOK";
+	"receivecontrol1.SetPauseTimer" -> SetPauseTimer;
+	"receivecontrol1.ReceivedLengthOK" -> "receivecontrol1.SetPauseTimer";
+	"[1]receivecontrol1.ResetByteCnt"	 [complexity=14,
+		importance=0.0757727082008,
+		rank=0.00541233630006];
+	"[1]receivecontrol1.ResetByteCnt" -> "[1]receivecontrol1.ByteCnt";
+	RxFlow	 [complexity=6,
+		importance=0.0219594138478,
+		rank=0.00365990230796];
+	RxFlow -> "receivecontrol1.RxFlow";
+	"receivecontrol1.OpCodeOK" -> "receivecontrol1.ReceivedPauseFrmWAddr";
+	"receivecontrol1.ReceiveEnd" -> "receivecontrol1.ReceivedPauseFrmWAddr";
+	"receivecontrol1.ReceiveEnd" -> "receivecontrol1.SetPauseTimer";
+	"[1]receivecontrol1.RxReset"	 [complexity=11,
+		importance=0.143914389485,
+		rank=0.0130831263168];
+	"[1]receivecontrol1.RxReset" -> "[1]receivecontrol1.ByteCnt";
+	"[1]receivecontrol1.RxReset" -> "receivecontrol1.AddressOK";
+	"[1]receivecontrol1.RxReset" -> "receivecontrol1.TypeLengthOK";
+	"[1]receivecontrol1.RxReset" -> "receivecontrol1.OpCodeOK";
+}

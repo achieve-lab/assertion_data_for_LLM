@@ -1,0 +1,37 @@
+strict digraph "" {
+	node [label="\N"];
+	"35:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fc6858ce550>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="35:AL",
+		sens="['i']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['i']"];
+	"36:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fc6858cec10>",
+		fillcolor=turquoise,
+		label="36:BL
+rc2 = 0;
+rc2[0] = i[2] | i[3] | i[6] | i[7];
+rc2[1] = i[0] | i[5] | i[6] | i[7] | i[9];
+rc2[3] = i[3] | i[4] | i[5] | i[6] | \
+i[9] | i[11];
+rc2[7] = i[0] | i[4] | i[6] | i[8] | i[10];
+rc2[15] = i[0] | i[1] | i[3] | i[7] | i[10] | i[11];
+rc2[31] = i[1] | \
+i[2] | i[5] | i[9] | i[11];
+rc2[63] = i[1] | i[3] | i[6] | i[7] | i[8] | i[9] | i[10] | i[11];",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fc6858cec50>, <pyverilog.vparser.ast.BlockingSubstitution object at 0x7fc6858cedd0>, <\
+pyverilog.vparser.ast.BlockingSubstitution object at 0x7fc6858f1350>, <pyverilog.vparser.ast.BlockingSubstitution object at 0x7fc6858f1990>, <\
+pyverilog.vparser.ast.BlockingSubstitution object at 0x7fc6858e7110>, <pyverilog.vparser.ast.BlockingSubstitution object at 0x7fc6858e76d0>, <\
+pyverilog.vparser.ast.BlockingSubstitution object at 0x7fc6858e7e10>, <pyverilog.vparser.ast.BlockingSubstitution object at 0x7fc6853f0490>]",
+		style=filled,
+		typ=Block];
+	"35:AL" -> "36:BL"	 [cond="[]",
+		lineno=None];
+	"Leaf_35:AL"	 [def_var="['rc2']",
+		label="Leaf_35:AL"];
+	"36:BL" -> "Leaf_35:AL"	 [cond="[]",
+		lineno=None];
+}

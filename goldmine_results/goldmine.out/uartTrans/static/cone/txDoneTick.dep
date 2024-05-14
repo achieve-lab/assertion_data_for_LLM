@@ -1,0 +1,16 @@
+[1]idle	[1]stateNext
+[1]idle	stateReg
+[1]stop	[1]stateNext
+[1]sTick	[1]stateNext
+txStart	txDoneTick
+[1]sReg	[1]stateNext
+[1]nReg	[1]stateNext
+[1]start	[1]stateNext
+[1]sbTick	[1]stateNext
+[1]data	[1]stateNext
+stateReg	txDoneTick
+[1]txStart	[1]stateNext
+[1]dataBits	[1]stateNext
+[1]reset	stateReg
+[1]stateReg	[1]stateNext
+[1]stateNext	stateReg

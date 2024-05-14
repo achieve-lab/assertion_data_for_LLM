@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"50:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f4b0cf9a050>",
+		def_var="['dataout']",
+		fillcolor=deepskyblue,
+		label="50:AS
+dataout = (CRCflush)? CRC : ShiftData[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['CRCflush', 'CRC', 'ShiftData']"];
+}

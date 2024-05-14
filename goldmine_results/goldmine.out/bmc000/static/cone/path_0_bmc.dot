@@ -1,0 +1,18 @@
+strict digraph "" {
+	path_0_bmc	 [complexity=0,
+		importance=0.217948606335,
+		rank=0.0];
+	rx_pair	 [complexity=7,
+		importance=0.435897293644,
+		rank=0.0622710419492];
+	tmp00	 [complexity=5,
+		importance=0.333333306342,
+		rank=0.0666666612684];
+	rx_pair -> tmp00;
+	tmp01	 [complexity=5,
+		importance=0.333333306342,
+		rank=0.0666666612684];
+	rx_pair -> tmp01;
+	tmp00 -> path_0_bmc;
+	tmp01 -> path_0_bmc;
+}

@@ -1,0 +1,1180 @@
+Report file generated at: May-12-2024 07:19:19 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a46: (trans_cnt[4] == 1) ##2 (mdio_data_reg[61] == 0 & mdio_data_reg[57] == 1) |=> (mdio_o == 1)
+IRank: : 0.34056
+Importance: : 7.49223
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a33: (transmitting == 0) |=> ##1 (mdio_o == 1)
+IRank: : 0.3357
+Importance: : 2.34993
+Complexity: : 7
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a51: (trans_cnt[4] == 1 & mdio_data_reg[61] == 1) ##3 (trans_cnt[2] == 1) |-> (mdio_o == 1)
+IRank: : 0.31702
+Importance: : 7.6084
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a50: (trans_cnt[4] == 1 & mdio_data_reg[60] == 1) ##3 (trans_cnt[2] == 1) |-> (mdio_o == 1)
+IRank: : 0.31702
+Importance: : 7.6084
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a47: (trans_cnt[4] == 1 & mdio_data_reg[55] == 1) ##3 (trans_cnt[2] == 1) |-> (mdio_o == 1)
+IRank: : 0.31702
+Importance: : 7.6084
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a42: (trans_cnt[4] == 1 & mdio_data_reg[53] == 1) ##3 (trans_cnt[2] == 1) |-> (mdio_o == 1)
+IRank: : 0.31702
+Importance: : 7.6084
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a43: (trans_cnt[4] == 1 & mdio_data_reg[54] == 1) ##3 (trans_cnt[2] == 1) |-> (mdio_o == 1)
+IRank: : 0.31702
+Importance: : 7.6084
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a41: (trans_cnt[4] == 1 & mdio_data_reg[52] == 1) ##3 (trans_cnt[2] == 1) |-> (mdio_o == 1)
+IRank: : 0.31702
+Importance: : 7.6084
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a49: (trans_cnt[4] == 1 & mdio_data_reg[56] == 1) ##3 (trans_cnt[2] == 1) |-> (mdio_o == 1)
+IRank: : 0.31702
+Importance: : 7.6084
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a37: (trans_cnt[4] == 1 & mdio_data_reg[49] == 1) ##2 (mdio_data_reg[61] == 0) |=> (mdio_o == 1)
+IRank: : 0.27298
+Importance: : 7.64353
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a38: (trans_cnt[4] == 1 & mdio_data_reg[50] == 1) ##2 (mdio_data_reg[61] == 0) |=> (mdio_o == 1)
+IRank: : 0.27298
+Importance: : 7.64353
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a44: (trans_cnt[4] == 1 & mdio_data_reg[56] == 1) ##2 (mdio_data_reg[61] == 0) |=> (mdio_o == 1)
+IRank: : 0.27298
+Importance: : 7.64353
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a123: (trans_cnt[4] == 1 & mdio_data_out[8] == 1) ##2 (mdio_data_reg[49] == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.2417
+Importance: : 7.73455
+Complexity: : 32
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a93: (mdio_operate_done == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.23906
+Importance: : 2.62962
+Complexity: : 11
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a45: (trans_cnt[4] == 1 & mdio_data_reg[61] == 0 & mdio_data_reg[50] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.22926
+Importance: : 7.79484
+Complexity: : 34
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a127: (mdio_data_reg[55] == 0 & trans_cnt[3] == 0 & mdio_data_reg[33] == 0) ##2 (mdio_data_reg[52] == 1) ##3 (trans_cnt[0] == 1) |-> (mdio_o == 0)
+IRank: : 0.19432
+Importance: : 8.16163
+Complexity: : 42
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a79: (mdio_data_out[4] == 1) ##1 (mdio_operate_done == 1) |=> ##1 (mdio_o == 0)
+IRank: : 0.11896
+Importance: : 2.37929
+Complexity: : 20
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a78: (mdio_data_out[2] == 1) ##1 (mdio_operate_done == 1) |=> ##1 (mdio_o == 0)
+IRank: : 0.11896
+Importance: : 2.37929
+Complexity: : 20
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a77: (mdio_data_out[0] == 0) ##1 (mdio_operate_done == 1) |=> ##1 (mdio_o == 0)
+IRank: : 0.11896
+Importance: : 2.37929
+Complexity: : 20
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a80: (mdio_data_out[9] == 0) ##1 (mdio_operate_done == 1) |=> ##1 (mdio_o == 0)
+IRank: : 0.11896
+Importance: : 2.37929
+Complexity: : 20
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a32: (nextstate[0] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.08692
+Importance: : 0.60845
+Complexity: : 7
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a34: (trans_cnt[5] == 0) |-> (mdio_o == 1)
+IRank: : 0.08291
+Importance: : 0.16583
+Complexity: : 2
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a98: (mdio_data_reg[37] == 1) ##1 (trans_cnt[5] == 1 & trans_cnt[1] == 1) |-> (mdio_o == 0)
+IRank: : 0.05326
+Importance: : 0.53262
+Complexity: : 10
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a55: (mdio_data_reg[61] == 0) ##1 (trans_cnt[4] == 1 & trans_cnt[1] == 0) |-> (mdio_o == 1)
+IRank: : 0.05326
+Importance: : 0.53262
+Complexity: : 10
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a62: (mdio_data_reg[58] == 0) ##2 (mdio_data_reg[61] == 0) ##3 (trans_cnt[4] == 1 & trans_cnt[0] == 0) |-> (mdio_o == 1)
+IRank: : 0.04022
+Importance: : 0.88488
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a107: (mdio_data_reg[43] == 0) ##2 (mdio_data_reg[57] == 0) ##3 (trans_cnt[1] == 1 & trans_cnt[0] == 1) |-> (mdio_o == 0)
+IRank: : 0.04022
+Importance: : 0.88488
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a92: (mdio_data_reg[32] == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.03701
+Importance: : 0.51809
+Complexity: : 14
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a73: (mdio_data_reg[36] == 1) ##3 (trans_cnt[1] == 0) |-> (mdio_o == 1)
+IRank: : 0.03701
+Importance: : 0.51809
+Complexity: : 14
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a99: (mdio_data_reg[42] == 0) ##2 (mdio_data_reg[41] == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.03595
+Importance: : 0.71906
+Complexity: : 20
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a76: (mdio_data_reg[56] == 1) ##2 (mdio_data_reg[44] == 1) ##3 (trans_cnt[0] == 1) |-> (mdio_o == 1)
+IRank: : 0.03595
+Importance: : 0.71906
+Complexity: : 20
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a106: (mdio_data_reg[41] == 1) ##2 (mdio_data_reg[57] == 0) ##3 (trans_cnt[1] == 1) |-> (mdio_o == 0)
+IRank: : 0.03595
+Importance: : 0.71906
+Complexity: : 20
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a100: (mdio_data_reg[43] == 0) ##2 (mdio_data_reg[41] == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.03595
+Importance: : 0.71906
+Complexity: : 20
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a101: (mdio_data_reg[47] == 1) ##2 (mdio_data_reg[61] == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.03595
+Importance: : 0.71906
+Complexity: : 20
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a54: (mdio_data_reg[57] == 1) ##2 (mdio_data_reg[61] == 0) ##3 (trans_cnt[4] == 1) |-> (mdio_o == 1)
+IRank: : 0.03595
+Importance: : 0.71906
+Complexity: : 20
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a39: (mdio_data_reg[33] == 1) ##2 (mdio_data_reg[39] == 1) ##3 (trans_cnt[0] == 1) |-> (mdio_o == 1)
+IRank: : 0.03595
+Importance: : 0.71906
+Complexity: : 20
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a40: (mdio_data_reg[34] == 1) ##2 (mdio_data_reg[39] == 1) ##3 (trans_cnt[0] == 1) |-> (mdio_o == 1)
+IRank: : 0.03595
+Importance: : 0.71906
+Complexity: : 20
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a75: (mdio_data_reg[57] == 0) ##2 (mdio_data_reg[61] == 0 & mdio_data_reg[54] == 1) ##3 (trans_cnt[1] == 1) |-> (mdio_o == 1)
+IRank: : 0.03539
+Importance: : 0.92002
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a69: (mdio_data_reg[32] == 0) ##2 (mdio_data_reg[57] == 1 & mdio_data_reg[50] == 0) ##3 (trans_cnt[0] == 0) |-> (mdio_o == 1)
+IRank: : 0.03539
+Importance: : 0.92002
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a102: (mdio_data_reg[48] == 1) ##2 (mdio_data_reg[61] == 1 & mdio_data_reg[50] == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.03539
+Importance: : 0.92002
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a110: (mdio_data_reg[60] == 1) ##2 (mdio_data_reg[57] == 0 & mdio_data_reg[56] == 0) ##3 (trans_cnt[1] == 1) |-> (mdio_o == 0)
+IRank: : 0.03539
+Importance: : 0.92002
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a126: (mdio_data_out[24] == 0) ##2 (mdio_data_reg[53] == 1 & mdio_data_reg[48] == 1) ##3 (trans_cnt[5] == 1 & trans_cnt[0] == 1) |-> (mdio_o == 0)
+IRank: : 0.0337
+Importance: : 1.01103
+Complexity: : 30
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a74: (mdio_data_reg[56] == 1 & mdio_data_reg[53] == 0) ##3 (trans_cnt[0] == 1) |-> (mdio_o == 1)
+IRank: : 0.03348
+Importance: : 0.87036
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a125: (mdio_data_reg[58] == 0 & mdio_data_reg[51] == 1) ##3 (trans_cnt[0] == 0) |-> (mdio_o == 0)
+IRank: : 0.03348
+Importance: : 0.87036
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a109: (mdio_data_reg[60] == 1 & mdio_data_reg[61] == 0) ##2 (mdio_data_reg[57] == 0) ##3 (trans_cnt[1] == 1) |-> (mdio_o == 0)
+IRank: : 0.03348
+Importance: : 1.07132
+Complexity: : 32
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a82: (mdio_data_reg[35] == 1) ##2 (mdio_data_reg[57] == 0 & mdio_data_reg[51] == 1) |=> (mdio_o == 0)
+IRank: : 0.03142
+Importance: : 0.75419
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a83: (mdio_data_reg[32] == 1) ##2 (mdio_data_reg[60] == 0 & mdio_data_reg[52] == 1) |=> (mdio_o == 0)
+IRank: : 0.03142
+Importance: : 0.75419
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a81: (mdio_data_reg[34] == 1) ##2 (mdio_data_reg[57] == 0 & mdio_data_reg[51] == 1) |=> (mdio_o == 0)
+IRank: : 0.03142
+Importance: : 0.75419
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a86: (mdio_data_reg[39] == 1) ##2 (mdio_data_reg[57] == 0 & mdio_data_reg[51] == 1) |=> (mdio_o == 0)
+IRank: : 0.03142
+Importance: : 0.75419
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a87: (mdio_data_reg[42] == 1) ##2 (mdio_data_reg[57] == 0 & mdio_data_reg[51] == 1) |=> (mdio_o == 0)
+IRank: : 0.03142
+Importance: : 0.75419
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a84: (mdio_data_reg[52] == 0) ##2 (mdio_data_reg[60] == 0 & mdio_data_reg[52] == 1) |=> (mdio_o == 0)
+IRank: : 0.03142
+Importance: : 0.75419
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a85: (mdio_data_reg[57] == 1) ##2 (mdio_data_reg[60] == 0 & mdio_data_reg[52] == 1) |=> (mdio_o == 0)
+IRank: : 0.03142
+Importance: : 0.75419
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a60: (mdio_data_reg[58] == 1) ##2 (mdio_data_reg[61] == 0 & mdio_data_reg[57] == 1) |=> (mdio_o == 1)
+IRank: : 0.03142
+Importance: : 0.75419
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a103: (mdio_data_reg[38] == 0) ##2 (mdio_data_reg[56] == 0 & mdio_data_reg[49] == 1) |=> (mdio_o == 0)
+IRank: : 0.03142
+Importance: : 0.75419
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a52: (mdio_data_reg[51] == 0) ##2 (mdio_data_reg[57] == 1 & mdio_data_reg[54] == 0) |=> (mdio_o == 1)
+IRank: : 0.03142
+Importance: : 0.75419
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a56: (mdio_data_reg[55] == 1) ##2 (mdio_data_reg[57] == 1 & mdio_data_reg[44] == 1) |=> (mdio_o == 1)
+IRank: : 0.03142
+Importance: : 0.75419
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a115: (mdio_data_reg[38] == 0 & mdio_data_reg[51] == 1) ##2 (mdio_data_reg[56] == 0 & mdio_data_reg[52] == 1) |=> (mdio_o == 0)
+IRank: : 0.03074
+Importance: : 1.10646
+Complexity: : 36
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a36: (mdio_data_reg[40] == 0) ##2 (mdio_data_reg[39] == 1) |=> (mdio_o == 1)
+IRank: : 0.03074
+Importance: : 0.55323
+Complexity: : 18
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a35: (mdio_data_reg[39] == 0) ##2 (mdio_data_reg[39] == 1) |=> (mdio_o == 1)
+IRank: : 0.03074
+Importance: : 0.55323
+Complexity: : 18
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a113: (mdio_data_out[1] == 0) ##2 (mdio_data_reg[61] == 1 & mdio_data_reg[50] == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.03019
+Importance: : 0.84521
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a114: (mdio_data_out[2] == 0) ##2 (mdio_data_reg[61] == 1 & mdio_data_reg[50] == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.03019
+Importance: : 0.84521
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a117: (mdio_data_out[3] == 1) ##2 (mdio_data_reg[61] == 1 & mdio_data_reg[50] == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.03019
+Importance: : 0.84521
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a119: (mdio_data_out[5] == 0) ##2 (mdio_data_reg[61] == 1 & mdio_data_reg[50] == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.03019
+Importance: : 0.84521
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a118: (mdio_data_out[4] == 1) ##2 (mdio_data_reg[61] == 1 & mdio_data_reg[50] == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.03019
+Importance: : 0.84521
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a121: (mdio_data_reg[54] == 1 & mdio_data_out[2] == 1) ##2 (mdio_data_reg[58] == 1 & mdio_data_reg[55] == 0) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.02994
+Importance: : 1.19747
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a122: (mdio_data_reg[54] == 1 & mdio_data_out[3] == 0) ##2 (mdio_data_reg[58] == 1 & mdio_data_reg[55] == 0) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.02994
+Importance: : 1.19747
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a31: (mdio_data_reg[31] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a30: (mdio_data_reg[30] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a20: (mdio_data_reg[20] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a21: (mdio_data_reg[21] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a22: (mdio_data_reg[22] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a23: (mdio_data_reg[23] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a24: (mdio_data_reg[24] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a25: (mdio_data_reg[25] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a26: (mdio_data_reg[26] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a27: (mdio_data_reg[27] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a28: (mdio_data_reg[28] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a29: (mdio_data_reg[29] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a15: (mdio_data_reg[15] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a14: (mdio_data_reg[14] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a17: (mdio_data_reg[17] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a16: (mdio_data_reg[16] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a11: (mdio_data_reg[11] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a10: (mdio_data_reg[10] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a13: (mdio_data_reg[13] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a12: (mdio_data_reg[12] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a19: (mdio_data_reg[19] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a18: (mdio_data_reg[18] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (mdio_data_reg[1] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (mdio_data_reg[0] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (mdio_data_reg[3] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (mdio_data_reg[2] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a5: (mdio_data_reg[5] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (mdio_data_reg[4] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a7: (mdio_data_reg[7] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a6: (mdio_data_reg[6] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a9: (mdio_data_reg[9] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a8: (mdio_data_reg[8] == 1) |=> ##2 (mdio_o == 1)
+IRank: : 0.02936
+Importance: : 0.35227
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a95: (mdio_data_out[1] == 0) ##2 (mdio_data_reg[33] == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.02928
+Importance: : 0.64424
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a94: (mdio_data_out[0] == 0) ##2 (mdio_data_reg[33] == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.02928
+Importance: : 0.64424
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a97: (mdio_data_out[3] == 1) ##2 (mdio_data_reg[33] == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.02928
+Importance: : 0.64424
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a96: (mdio_data_out[2] == 0) ##2 (mdio_data_reg[33] == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.02928
+Importance: : 0.64424
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a112: (mdio_data_out[5] == 0) ##2 (mdio_data_reg[33] == 1) ##3 (trans_cnt[5] == 1) |-> (mdio_o == 0)
+IRank: : 0.02928
+Importance: : 0.64424
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a61: (mdio_data_reg[46] == 0 & mdio_data_out[0] == 1) ##2 (mdio_data_reg[61] == 0 & mdio_data_reg[57] == 1) |=> (mdio_o == 1)
+IRank: : 0.02715
+Importance: : 1.03165
+Complexity: : 38
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a111: (mdio_data_reg[57] == 1 & mdio_data_out[0] == 0) ##2 (mdio_data_reg[60] == 0 & mdio_data_reg[55] == 1) |=> (mdio_o == 0)
+IRank: : 0.02715
+Importance: : 1.03165
+Complexity: : 38
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a120: (mdio_data_reg[56] == 0 & mdio_data_reg[53] == 1 & mdio_data_out[1] == 0) ##2 (mdio_data_reg[52] == 1) |=> (mdio_o == 0)
+IRank: : 0.02689
+Importance: : 1.18295
+Complexity: : 44
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a124: (mdio_data_reg[61] == 0 & mdio_data_reg[54] == 1 & mdio_data_out[3] == 1) ##2 (mdio_data_reg[57] == 0) |=> (mdio_o == 0)
+IRank: : 0.02689
+Importance: : 1.18295
+Complexity: : 44
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a116: (mdio_data_reg[56] == 0 & mdio_data_reg[53] == 1 & mdio_data_out[0] == 1) ##2 (mdio_data_reg[52] == 1) |=> (mdio_o == 0)
+IRank: : 0.02689
+Importance: : 1.18295
+Complexity: : 44
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a91: (mdio_data_out[5] == 1) ##2 (mdio_data_reg[57] == 0 & mdio_data_reg[51] == 1) |=> (mdio_o == 0)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a90: (mdio_data_out[4] == 1) ##2 (mdio_data_reg[57] == 0 & mdio_data_reg[51] == 1) |=> (mdio_o == 0)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a72: (mdio_data_out[9] == 1) ##2 (mdio_data_reg[44] == 1 & mdio_data_reg[48] == 0) |=> (mdio_o == 1)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a71: (mdio_data_out[4] == 0) ##2 (mdio_data_reg[39] == 1 & mdio_data_reg[41] == 0) |=> (mdio_o == 1)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a70: (mdio_data_out[3] == 1) ##2 (mdio_data_reg[44] == 1 & mdio_data_reg[48] == 0) |=> (mdio_o == 1)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a88: (mdio_data_out[0] == 1) ##2 (mdio_data_reg[57] == 0 & mdio_data_reg[51] == 1) |=> (mdio_o == 0)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a89: (mdio_data_out[1] == 0) ##2 (mdio_data_reg[57] == 0 & mdio_data_reg[51] == 1) |=> (mdio_o == 0)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a68: (mdio_data_out[8] == 1) ##2 (mdio_data_reg[57] == 1 & mdio_data_reg[54] == 0) |=> (mdio_o == 1)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a64: (mdio_data_out[2] == 0) ##2 (mdio_data_reg[57] == 1 & mdio_data_reg[44] == 1) |=> (mdio_o == 1)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a66: (mdio_data_out[7] == 1) ##2 (mdio_data_reg[57] == 1 & mdio_data_reg[54] == 0) |=> (mdio_o == 1)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a67: (mdio_data_out[7] == 1) ##2 (mdio_data_reg[57] == 1 & mdio_data_reg[44] == 1) |=> (mdio_o == 1)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a63: (mdio_data_out[2] == 0) ##2 (mdio_data_reg[39] == 1 & mdio_data_reg[41] == 0) |=> (mdio_o == 1)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a104: (mdio_data_out[6] == 0) ##2 (mdio_data_reg[57] == 0 & mdio_data_reg[51] == 1) |=> (mdio_o == 0)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a105: (mdio_data_out[7] == 1) ##2 (mdio_data_reg[57] == 0 & mdio_data_reg[51] == 1) |=> (mdio_o == 0)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a108: (mdio_data_out[13] == 1) ##2 (mdio_data_reg[57] == 0 & mdio_data_reg[51] == 1) |=> (mdio_o == 0)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a53: (mdio_data_out[2] == 0) ##2 (mdio_data_reg[57] == 1 & mdio_data_reg[54] == 0) |=> (mdio_o == 1)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a57: (mdio_data_out[0] == 1) ##2 (mdio_data_reg[57] == 1 & mdio_data_reg[44] == 1) |=> (mdio_o == 1)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a59: (mdio_data_out[5] == 1) ##2 (mdio_data_reg[57] == 1 & mdio_data_reg[54] == 0) |=> (mdio_o == 1)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a58: (mdio_data_out[1] == 1) ##2 (mdio_data_reg[39] == 1 & mdio_data_reg[41] == 0) |=> (mdio_o == 1)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a48: (mdio_data_out[0] == 1) ##2 (mdio_data_reg[39] == 1 & mdio_data_reg[41] == 0) |=> (mdio_o == 1)
+IRank: : 0.02613
+Importance: : 0.67938
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a65: (mdio_data_reg[38] == 1 & mdio_data_out[5] == 1) ##2 (mdio_data_reg[57] == 1) |=> (mdio_o == 1)
+IRank: : 0.02596
+Importance: : 0.83068
+Complexity: : 32
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a46       | 0.34056 |  7.49223   |     22     |  Unknown  | Unknown |   Unknown   
+      a33       | 0.3357  |  2.34993   |     7      |  Unknown  | Unknown |   Unknown   
+      a51       | 0.31702 |   7.6084   |     24     |  Unknown  | Unknown |   Unknown   
+      a50       | 0.31702 |   7.6084   |     24     |  Unknown  | Unknown |   Unknown   
+      a47       | 0.31702 |   7.6084   |     24     |  Unknown  | Unknown |   Unknown   
+      a42       | 0.31702 |   7.6084   |     24     |  Unknown  | Unknown |   Unknown   
+      a43       | 0.31702 |   7.6084   |     24     |  Unknown  | Unknown |   Unknown   
+      a41       | 0.31702 |   7.6084   |     24     |  Unknown  | Unknown |   Unknown   
+      a49       | 0.31702 |   7.6084   |     24     |  Unknown  | Unknown |   Unknown   
+      a37       | 0.27298 |  7.64353   |     28     |  Unknown  | Unknown |   Unknown   
+      a38       | 0.27298 |  7.64353   |     28     |  Unknown  | Unknown |   Unknown   
+      a44       | 0.27298 |  7.64353   |     28     |  Unknown  | Unknown |   Unknown   
+     a123       | 0.2417  |  7.73455   |     32     |  Unknown  | Unknown |   Unknown   
+      a93       | 0.23906 |  2.62962   |     11     |  Unknown  | Unknown |   Unknown   
+      a45       | 0.22926 |  7.79484   |     34     |  Unknown  | Unknown |   Unknown   
+     a127       | 0.19432 |  8.16163   |     42     |  Unknown  | Unknown |   Unknown   
+      a79       | 0.11896 |  2.37929   |     20     |  Unknown  | Unknown |   Unknown   
+      a78       | 0.11896 |  2.37929   |     20     |  Unknown  | Unknown |   Unknown   
+      a77       | 0.11896 |  2.37929   |     20     |  Unknown  | Unknown |   Unknown   
+      a80       | 0.11896 |  2.37929   |     20     |  Unknown  | Unknown |   Unknown   
+      a32       | 0.08692 |  0.60845   |     7      |  Unknown  | Unknown |   Unknown   
+      a34       | 0.08291 |  0.16583   |     2      |  Unknown  | Unknown |   Unknown   
+      a98       | 0.05326 |  0.53262   |     10     |  Unknown  | Unknown |   Unknown   
+      a55       | 0.05326 |  0.53262   |     10     |  Unknown  | Unknown |   Unknown   
+      a62       | 0.04022 |  0.88488   |     22     |  Unknown  | Unknown |   Unknown   
+     a107       | 0.04022 |  0.88488   |     22     |  Unknown  | Unknown |   Unknown   
+      a92       | 0.03701 |  0.51809   |     14     |  Unknown  | Unknown |   Unknown   
+      a73       | 0.03701 |  0.51809   |     14     |  Unknown  | Unknown |   Unknown   
+      a99       | 0.03595 |  0.71906   |     20     |  Unknown  | Unknown |   Unknown   
+      a76       | 0.03595 |  0.71906   |     20     |  Unknown  | Unknown |   Unknown   
+     a106       | 0.03595 |  0.71906   |     20     |  Unknown  | Unknown |   Unknown   
+     a100       | 0.03595 |  0.71906   |     20     |  Unknown  | Unknown |   Unknown   
+     a101       | 0.03595 |  0.71906   |     20     |  Unknown  | Unknown |   Unknown   
+      a54       | 0.03595 |  0.71906   |     20     |  Unknown  | Unknown |   Unknown   
+      a39       | 0.03595 |  0.71906   |     20     |  Unknown  | Unknown |   Unknown   
+      a40       | 0.03595 |  0.71906   |     20     |  Unknown  | Unknown |   Unknown   
+      a75       | 0.03539 |  0.92002   |     26     |  Unknown  | Unknown |   Unknown   
+      a69       | 0.03539 |  0.92002   |     26     |  Unknown  | Unknown |   Unknown   
+     a102       | 0.03539 |  0.92002   |     26     |  Unknown  | Unknown |   Unknown   
+     a110       | 0.03539 |  0.92002   |     26     |  Unknown  | Unknown |   Unknown   
+     a126       | 0.0337  |  1.01103   |     30     |  Unknown  | Unknown |   Unknown   
+      a74       | 0.03348 |  0.87036   |     26     |  Unknown  | Unknown |   Unknown   
+     a125       | 0.03348 |  0.87036   |     26     |  Unknown  | Unknown |   Unknown   
+     a109       | 0.03348 |  1.07132   |     32     |  Unknown  | Unknown |   Unknown   
+      a82       | 0.03142 |  0.75419   |     24     |  Unknown  | Unknown |   Unknown   
+      a83       | 0.03142 |  0.75419   |     24     |  Unknown  | Unknown |   Unknown   
+      a81       | 0.03142 |  0.75419   |     24     |  Unknown  | Unknown |   Unknown   
+      a86       | 0.03142 |  0.75419   |     24     |  Unknown  | Unknown |   Unknown   
+      a87       | 0.03142 |  0.75419   |     24     |  Unknown  | Unknown |   Unknown   
+      a84       | 0.03142 |  0.75419   |     24     |  Unknown  | Unknown |   Unknown   
+      a85       | 0.03142 |  0.75419   |     24     |  Unknown  | Unknown |   Unknown   
+      a60       | 0.03142 |  0.75419   |     24     |  Unknown  | Unknown |   Unknown   
+     a103       | 0.03142 |  0.75419   |     24     |  Unknown  | Unknown |   Unknown   
+      a52       | 0.03142 |  0.75419   |     24     |  Unknown  | Unknown |   Unknown   
+      a56       | 0.03142 |  0.75419   |     24     |  Unknown  | Unknown |   Unknown   
+     a115       | 0.03074 |  1.10646   |     36     |  Unknown  | Unknown |   Unknown   
+      a36       | 0.03074 |  0.55323   |     18     |  Unknown  | Unknown |   Unknown   
+      a35       | 0.03074 |  0.55323   |     18     |  Unknown  | Unknown |   Unknown   
+     a113       | 0.03019 |  0.84521   |     28     |  Unknown  | Unknown |   Unknown   
+     a114       | 0.03019 |  0.84521   |     28     |  Unknown  | Unknown |   Unknown   
+     a117       | 0.03019 |  0.84521   |     28     |  Unknown  | Unknown |   Unknown   
+     a119       | 0.03019 |  0.84521   |     28     |  Unknown  | Unknown |   Unknown   
+     a118       | 0.03019 |  0.84521   |     28     |  Unknown  | Unknown |   Unknown   
+     a121       | 0.02994 |  1.19747   |     40     |  Unknown  | Unknown |   Unknown   
+     a122       | 0.02994 |  1.19747   |     40     |  Unknown  | Unknown |   Unknown   
+      a31       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a30       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a20       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a21       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a22       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a23       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a24       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a25       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a26       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a27       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a28       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a29       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a15       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a14       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a17       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a16       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a11       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a10       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a13       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a12       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a19       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a18       | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a1        | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a0        | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a3        | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a2        | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a5        | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a4        | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a7        | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a6        | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a9        | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a8        | 0.02936 |  0.35227   |     12     |  Unknown  | Unknown |   Unknown   
+      a95       | 0.02928 |  0.64424   |     22     |  Unknown  | Unknown |   Unknown   
+      a94       | 0.02928 |  0.64424   |     22     |  Unknown  | Unknown |   Unknown   
+      a97       | 0.02928 |  0.64424   |     22     |  Unknown  | Unknown |   Unknown   
+      a96       | 0.02928 |  0.64424   |     22     |  Unknown  | Unknown |   Unknown   
+     a112       | 0.02928 |  0.64424   |     22     |  Unknown  | Unknown |   Unknown   
+      a61       | 0.02715 |  1.03165   |     38     |  Unknown  | Unknown |   Unknown   
+     a111       | 0.02715 |  1.03165   |     38     |  Unknown  | Unknown |   Unknown   
+     a120       | 0.02689 |  1.18295   |     44     |  Unknown  | Unknown |   Unknown   
+     a124       | 0.02689 |  1.18295   |     44     |  Unknown  | Unknown |   Unknown   
+     a116       | 0.02689 |  1.18295   |     44     |  Unknown  | Unknown |   Unknown   
+      a91       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a90       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a72       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a71       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a70       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a88       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a89       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a68       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a64       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a66       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a67       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a63       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+     a104       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+     a105       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+     a108       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a53       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a57       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a59       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a58       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a48       | 0.02613 |  0.67938   |     26     |  Unknown  | Unknown |   Unknown   
+      a65       | 0.02596 |  0.83068   |     32     |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 128
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 128
+Hit rate: 0.0
+Miss rate: 1.0

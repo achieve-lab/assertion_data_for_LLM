@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"431:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f01261e37d0>",
+		def_var="['poly_sel']",
+		fillcolor=deepskyblue,
+		label="431:AS
+poly_sel[CRC_SIZE - k] = crc_poly_size >> k - 1;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly_size', 'k']"];
+}

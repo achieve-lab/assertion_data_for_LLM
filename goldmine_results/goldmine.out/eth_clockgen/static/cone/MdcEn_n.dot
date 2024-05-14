@@ -1,0 +1,48 @@
+strict digraph "" {
+	"[1]CountEq0"	 [complexity=6,
+		importance=1.01177217721,
+		rank=0.168628696201];
+	Mdc	 [complexity=3,
+		importance=0.207182448682,
+		rank=0.0690608162273];
+	"[1]CountEq0" -> Mdc;
+	Counter	 [complexity=5,
+		importance=0.444591389785,
+		rank=0.0889182779571];
+	"[1]CountEq0" -> Counter;
+	MdcEn_n	 [complexity=0,
+		importance=0.0969583360449,
+		rank=0.0];
+	Mdc -> MdcEn_n;
+	CountEq0	 [complexity=3,
+		importance=0.219547733682,
+		rank=0.0731825778942];
+	Counter -> CountEq0;
+	"[1]CounterPreset"	 [complexity=7,
+		importance=0.560666886534,
+		rank=0.0800952695048];
+	"[1]CounterPreset" -> Counter;
+	"[1]TempDivider"	 [complexity=9,
+		importance=0.660160069115,
+		rank=0.0733511187906];
+	"[1]TempDivider" -> "[1]CounterPreset";
+	CountEq0 -> MdcEn_n;
+	"[1]Divider"	 [complexity=12,
+		importance=0.726488810217,
+		rank=0.0605407341847];
+	"[1]Divider" -> "[1]TempDivider";
+	"[1]Counter"	 [complexity=8,
+		importance=1.23681583331,
+		rank=0.154601979164];
+	"[1]Counter" -> "[1]CountEq0";
+	"[1]Counter" -> Counter;
+	"[1]Reset"	 [complexity=6,
+		importance=1.40010291046,
+		rank=0.233350485076];
+	"[1]Reset" -> Mdc;
+	"[1]Reset" -> Counter;
+	"[1]Mdc"	 [complexity=5,
+		importance=0.317406561319,
+		rank=0.0634813122638];
+	"[1]Mdc" -> Mdc;
+}

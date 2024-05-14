@@ -1,0 +1,29 @@
+strict digraph "" {
+	wait_crc_check	 [complexity=3,
+		importance=0.110744972819,
+		rank=0.0369149909397];
+	"[1]wait_crc_check"	 [complexity=6,
+		importance=0.221489945638,
+		rank=0.0369149909397];
+	"[1]wait_crc_check" -> wait_crc_check;
+	"[1]crc_check_valid"	 [complexity=6,
+		importance=0.254581829636,
+		rank=0.0424303049394];
+	"[1]crc_check_valid" -> wait_crc_check;
+	"[1]crc_check_invalid"	 [complexity=6,
+		importance=0.254581829636,
+		rank=0.0424303049394];
+	"[1]crc_check_invalid" -> wait_crc_check;
+	"[1]length_error"	 [complexity=6,
+		importance=0.254581829636,
+		rank=0.0424303049394];
+	"[1]length_error" -> wait_crc_check;
+	"[1]rxstate"	 [complexity=4,
+		importance=0.443528168138,
+		rank=0.110882042034];
+	"[1]rxstate" -> wait_crc_check;
+	"[1]reset"	 [complexity=4,
+		importance=0.476071775274,
+		rank=0.119017943819];
+	"[1]reset" -> wait_crc_check;
+}

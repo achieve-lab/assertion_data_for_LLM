@@ -1,0 +1,13 @@
+[1]u0.rx_active	[1]u0.pid_ld_en
+[1]u0.rx_data	u0.pid
+[1]rst	[1]u0.rst
+[1]u0.state	[1]u0.pid_le_sm
+[1]rx_valid	[1]u0.rx_valid
+[1]u0.rst	u0.pid
+[1]rx_data	[1]u0.rx_data
+[1]u0.pid_le_sm	[1]u0.pid_ld_en
+[1]u0.pid_ld_en	u0.pid
+u0.pid	u0.pid_cks_err
+[1]u0.rx_valid	[1]u0.pid_ld_en
+u0.pid_cks_err	pid_cs_err
+[1]rx_active	[1]u0.rx_active

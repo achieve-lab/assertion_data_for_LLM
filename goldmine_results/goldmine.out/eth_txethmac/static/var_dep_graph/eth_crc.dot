@@ -1,0 +1,9 @@
+strict digraph "" {
+	Reset -> Crc	 [weight=3.0];
+	Enable -> CrcNext	 [weight=28.0];
+	Initialize -> Crc	 [weight=2.0];
+	CrcNext -> Crc	 [weight=1.0];
+	Crc -> CrcNext	 [weight=84.0];
+	Crc -> CrcError	 [weight=1.0];
+	Data -> CrcNext	 [weight=56.0];
+}

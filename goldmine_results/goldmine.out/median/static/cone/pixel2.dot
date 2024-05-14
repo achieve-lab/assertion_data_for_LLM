@@ -1,0 +1,17 @@
+strict digraph "" {
+	"dff_out_pipe.d1"	 [complexity=2,
+		importance=0.00605776474647,
+		rank=0.00302888237323];
+	"dff_out_pipe.q1"	 [complexity=0,
+		importance=0.00409910660944,
+		rank=0.0];
+	"dff_out_pipe.d1" -> "dff_out_pipe.q1";
+	"dff_out_pipe.rst_n"	 [complexity=1,
+		importance=0.00926311732954,
+		rank=0.00926311732954];
+	"dff_out_pipe.rst_n" -> "dff_out_pipe.q1";
+	pixel2	 [complexity=0,
+		importance=0.00199617189484,
+		rank=0.0];
+	"dff_out_pipe.q1" -> pixel2;
+}

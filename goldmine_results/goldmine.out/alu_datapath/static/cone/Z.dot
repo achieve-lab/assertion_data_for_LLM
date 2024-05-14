@@ -1,0 +1,21 @@
+strict digraph "" {
+	Zreg	 [complexity=2,
+		importance=0.0422103914127,
+		rank=0.0211051957064];
+	Z	 [complexity=0,
+		importance=0.0188910327485,
+		rank=0.0];
+	Zreg -> Z;
+	reset	 [complexity=3,
+		importance=0.176071472544,
+		rank=0.058690490848];
+	reset -> Zreg;
+	alu_out	 [complexity=3,
+		importance=0.120175069892,
+		rank=0.0400583566305];
+	alu_out -> Zreg;
+	clr_Z	 [complexity=3,
+		importance=0.0494402983058,
+		rank=0.0164800994353];
+	clr_Z -> Zreg;
+}

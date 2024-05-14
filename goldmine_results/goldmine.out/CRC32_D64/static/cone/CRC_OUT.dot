@@ -1,0 +1,85 @@
+strict digraph "" {
+	"[1]startCRC"	 [complexity=5,
+		importance=0.550561446708,
+		rank=0.110112289342];
+	CRC_OUT	 [complexity=4,
+		importance=0.449437699896,
+		rank=0.112359424974];
+	"[1]startCRC" -> CRC_OUT;
+	"[2]RESET"	 [complexity=9,
+		importance=1.86516656191,
+		rank=0.207240729102];
+	"[1]CRC_OUT"	 [complexity=8,
+		importance=0.898875399792,
+		rank=0.112359424974];
+	"[2]RESET" -> "[1]CRC_OUT";
+	"[3]START"	 [complexity=11,
+		importance=1.06741490893,
+		rank=0.097037718994];
+	"[2]startCRC"	 [complexity=9,
+		importance=0.999999146604,
+		rank=0.111111016289];
+	"[3]START" -> "[2]startCRC";
+	"[3]CRC_OUT"	 [complexity=16,
+		importance=1.79775079958,
+		rank=0.112359424974];
+	"[2]CRC_OUT"	 [complexity=12,
+		importance=1.34831309969,
+		rank=0.112359424974];
+	"[3]CRC_OUT" -> "[2]CRC_OUT";
+	"[2]data_del"	 [complexity=12,
+		importance=0.999999146604,
+		rank=0.083333262217];
+	"[2]data_del" -> "[1]CRC_OUT";
+	"[1]CRC_OUT" -> CRC_OUT;
+	"[2]DATA_IN"	 [complexity=77,
+		importance=1.06741490893,
+		rank=0.0138625312849];
+	"[2]DATA_IN" -> "[2]data_del";
+	"[3]nextCRC32_D64"	 [complexity=16,
+		importance=1.41572886202,
+		rank=0.0884830538761];
+	"[3]nextCRC32_D64" -> "[2]CRC_OUT";
+	"[2]nextCRC32_D64"	 [complexity=12,
+		importance=0.966291162122,
+		rank=0.0805242635102];
+	"[2]nextCRC32_D64" -> "[1]CRC_OUT";
+	"[2]START"	 [complexity=7,
+		importance=0.617977209039,
+		rank=0.0882824584341];
+	"[2]START" -> "[1]startCRC";
+	"[2]CRC_OUT" -> "[1]CRC_OUT";
+	"[1]nextCRC32_D64"	 [complexity=8,
+		importance=0.516853462226,
+		rank=0.0646066827783];
+	"[1]nextCRC32_D64" -> CRC_OUT;
+	"[3]startCRC"	 [complexity=13,
+		importance=1.4494368465,
+		rank=0.111495142038];
+	"[3]startCRC" -> "[2]CRC_OUT";
+	"[2]startCRC" -> "[1]CRC_OUT";
+	"[3]RESET"	 [complexity=13,
+		importance=2.76404196171,
+		rank=0.212618612439];
+	"[3]RESET" -> "[2]CRC_OUT";
+	"[3]DATA_IN"	 [complexity=81,
+		importance=1.51685260883,
+		rank=0.0187265754177];
+	"[3]data_del"	 [complexity=16,
+		importance=1.4494368465,
+		rank=0.0905898029062];
+	"[3]DATA_IN" -> "[3]data_del";
+	"[1]RESET"	 [complexity=5,
+		importance=0.966291162122,
+		rank=0.193258232424];
+	"[1]RESET" -> CRC_OUT;
+	"[1]data_del"	 [complexity=8,
+		importance=0.550561446708,
+		rank=0.0688201808385];
+	"[1]data_del" -> CRC_OUT;
+	"[3]data_del" -> "[2]CRC_OUT";
+	"[1]DATA_IN"	 [complexity=73,
+		importance=0.617977209039,
+		rank=0.00846544121971];
+	"[1]DATA_IN" -> "[1]data_del";
+}

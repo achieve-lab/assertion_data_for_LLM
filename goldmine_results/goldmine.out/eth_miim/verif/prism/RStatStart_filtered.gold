@@ -1,0 +1,10 @@
+property a0;
+@(posedge clk) (RStat_q2 == 1) |=> (RStatStart == 1);
+endproperty
+assert_a0: assert property(a0);
+
+property a1;
+@(posedge clk) (RStat_q3 == 1) |=> (RStatStart == 1);
+endproperty
+assert_a1: assert property(a1);
+

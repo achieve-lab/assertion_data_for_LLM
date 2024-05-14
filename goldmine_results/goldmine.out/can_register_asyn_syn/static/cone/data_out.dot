@@ -1,0 +1,21 @@
+strict digraph "" {
+	"[1]we"	 [complexity=1,
+		importance=0.571428111254,
+		rank=0.571428111254];
+	data_out	 [complexity=0,
+		importance=0.428570815005,
+		rank=0.0];
+	"[1]we" -> data_out;
+	"[1]data_in"	 [complexity=2,
+		importance=0.571428111254,
+		rank=0.285714055627];
+	"[1]data_in" -> data_out;
+	"[1]rst"	 [complexity=1,
+		importance=1.42856974126,
+		rank=1.42856974126];
+	"[1]rst" -> data_out;
+	"[1]rst_sync"	 [complexity=1,
+		importance=0.999998926258,
+		rank=0.999998926258];
+	"[1]rst_sync" -> data_out;
+}

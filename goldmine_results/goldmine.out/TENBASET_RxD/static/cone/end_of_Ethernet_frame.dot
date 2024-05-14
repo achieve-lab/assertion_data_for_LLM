@@ -1,0 +1,50 @@
+strict digraph "" {
+	"[1]cnt"	 [complexity=3,
+		importance=0.239935051969,
+		rank=0.0799783506562];
+	"[1]transition_timeout"	 [complexity=2,
+		importance=0.16286808569,
+		rank=0.081434042845];
+	"[1]cnt" -> "[1]transition_timeout";
+	"[2]cnt"	 [complexity=5,
+		importance=0.335498039142,
+		rank=0.0670996078285];
+	"[2]transition_timeout"	 [complexity=4,
+		importance=0.258431072864,
+		rank=0.0646077682159];
+	"[2]cnt" -> "[2]transition_timeout";
+	end_of_Ethernet_frame	 [complexity=0,
+		importance=0.0673050985163,
+		rank=0.0];
+	"[1]transition_timeout" -> end_of_Ethernet_frame;
+	"[2]in_data"	 [complexity=6,
+		importance=1.11592911941,
+		rank=0.185988186569];
+	"[2]in_data" -> "[1]cnt";
+	"[2]in_data" -> "[2]transition_timeout";
+	"[3]in_data"	 [complexity=8,
+		importance=1.49818106811,
+		rank=0.187272633514];
+	"[3]in_data" -> "[2]cnt";
+	"[3]transition_timeout"	 [complexity=6,
+		importance=0.353994060038,
+		rank=0.0589990100063];
+	"[3]in_data" -> "[3]transition_timeout";
+	"[1]in_data"	 [complexity=4,
+		importance=0.733677170718,
+		rank=0.18341929268];
+	"[3]in_data" -> "[1]in_data";
+	"[3]cnt"	 [complexity=7,
+		importance=0.431061026316,
+		rank=0.0615801466166];
+	"[3]in_data" -> "[3]cnt";
+	"[3]transition_timeout" -> "[2]transition_timeout";
+	"[1]in_data" -> "[1]transition_timeout";
+	"[3]cnt" -> "[1]cnt";
+	"[3]cnt" -> "[3]transition_timeout";
+	"[3]manchester_data_in"	 [complexity=7,
+		importance=0.785055178996,
+		rank=0.112150739857];
+	"[3]manchester_data_in" -> "[1]in_data";
+	"[2]transition_timeout" -> "[1]transition_timeout";
+}

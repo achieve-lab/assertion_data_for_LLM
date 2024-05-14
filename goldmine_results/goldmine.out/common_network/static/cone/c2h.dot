@@ -1,0 +1,110 @@
+strict digraph "" {
+	x1_ym1	 [complexity=8,
+		importance=1.34553892631,
+		rank=0.168192365789];
+	"node_u5.data_b"	 [complexity=8,
+		importance=1.34134617796,
+		rank=0.167668272245];
+	x1_ym1 -> "node_u5.data_b";
+	"node_u9.HI_MUX"	 [complexity=4,
+		importance=0.0623469505909,
+		rank=0.0155867376477];
+	"node_u9.data_hi"	 [complexity=2,
+		importance=0.0290771011215,
+		rank=0.0145385505608];
+	"node_u9.HI_MUX" -> "node_u9.data_hi";
+	"node_u5.data_hi"	 [complexity=5,
+		importance=0.2198617642,
+		rank=0.04397235284];
+	node_u5_hi	 [complexity=5,
+		importance=0.209711530079,
+		rank=0.0419423060158];
+	"node_u5.data_hi" -> node_u5_hi;
+	"node_u1.data_lo"	 [complexity=8,
+		importance=1.36250548163,
+		rank=0.170313185204];
+	node_u1_lo	 [complexity=8,
+		importance=1.35280947976,
+		rank=0.169101184969];
+	"node_u1.data_lo" -> node_u1_lo;
+	node_u9_hi	 [complexity=2,
+		importance=0.0184502598506,
+		rank=0.00922512992529];
+	"node_u9.data_hi" -> node_u9_hi;
+	"node_u9.data_b"	 [complexity=5,
+		importance=0.200444426643,
+		rank=0.0400888853285];
+	node_u5_hi -> "node_u9.data_b";
+	"node_u1.data_hi"	 [complexity=5,
+		importance=0.21906690671,
+		rank=0.043813381342];
+	node_u1_hi	 [complexity=5,
+		importance=0.209370904836,
+		rank=0.0418741809673];
+	"node_u1.data_hi" -> node_u1_hi;
+	"node_u5.data_b" -> "node_u5.data_hi";
+	"node_u5.sel0"	 [complexity=6,
+		importance=0.667528393851,
+		rank=0.111254732309];
+	"node_u5.data_b" -> "node_u5.sel0";
+	"node_u5.data_a"	 [complexity=8,
+		importance=1.34376924216,
+		rank=0.16797115527];
+	"node_u5.data_a" -> "node_u5.data_hi";
+	"node_u5.data_a" -> "node_u5.sel0";
+	"node_u1.sel0"	 [complexity=6,
+		importance=0.664538217018,
+		rank=0.110756369503];
+	"node_u1.sel0" -> "node_u1.data_lo";
+	"node_u1.sel0" -> "node_u1.data_hi";
+	x1_y0	 [complexity=8,
+		importance=1.33955857264,
+		rank=0.16744482158];
+	"node_u1.data_b"	 [complexity=8,
+		importance=1.33536582429,
+		rank=0.166920728037];
+	x1_y0 -> "node_u1.data_b";
+	x1_y1	 [complexity=8,
+		importance=1.33955857264,
+		rank=0.16744482158];
+	"node_u1.data_a"	 [complexity=8,
+		importance=1.33536582429,
+		rank=0.166920728037];
+	x1_y1 -> "node_u1.data_a";
+	"node_u1.data_b" -> "node_u1.data_lo";
+	"node_u1.data_b" -> "node_u1.data_hi";
+	"node_u1.data_b" -> "node_u1.sel0";
+	node_u1_lo -> "node_u5.data_a";
+	"node_u1.data_a" -> "node_u1.data_lo";
+	"node_u1.data_a" -> "node_u1.data_hi";
+	"node_u1.data_a" -> "node_u1.sel0";
+	"node_u1.LOW_MUX"	 [complexity=10,
+		importance=2.72920371161,
+		rank=0.272920371161];
+	"node_u1.LOW_MUX" -> "node_u1.data_lo";
+	"node_u5.sel0" -> "node_u5.data_hi";
+	c2h	 [complexity=0,
+		importance=0.00894468120601,
+		rank=0.0];
+	"node_u1.HI_MUX"	 [complexity=7,
+		importance=0.442326561768,
+		rank=0.063189508824];
+	"node_u1.HI_MUX" -> "node_u1.data_hi";
+	"node_u9.data_b" -> "node_u9.data_hi";
+	"node_u9.sel0"	 [complexity=3,
+		importance=0.0958091063917,
+		rank=0.0319363687972];
+	"node_u9.data_b" -> "node_u9.sel0";
+	"node_u9.data_a"	 [complexity=5,
+		importance=0.200330667242,
+		rank=0.0400661334483];
+	"node_u9.data_a" -> "node_u9.data_hi";
+	"node_u9.data_a" -> "node_u9.sel0";
+	"node_u9.sel0" -> "node_u9.data_hi";
+	node_u9_hi -> c2h;
+	node_u1_hi -> "node_u9.data_a";
+	"node_u5.HI_MUX"	 [complexity=7,
+		importance=0.443916276748,
+		rank=0.063416610964];
+	"node_u5.HI_MUX" -> "node_u5.data_hi";
+}

@@ -1,0 +1,85 @@
+strict digraph "" {
+	"[1]we"	 [complexity=8,
+		importance=0.0226901977301,
+		rank=0.00283627471626];
+	"[1]read"	 [complexity=5,
+		importance=0.0207477606771,
+		rank=0.00414955213542];
+	"[1]we" -> "[1]read";
+	"[1]COMMAND_REG4.data_out"	 [complexity=4,
+		importance=0.040229539764,
+		rank=0.010057384941];
+	"[1]command"	 [complexity=4,
+		importance=0.0338583193208,
+		rank=0.0084645798302];
+	"[1]COMMAND_REG4.data_out" -> "[1]command";
+	"[1]bus_error_irq"	 [complexity=9,
+		importance=0.023385152413,
+		rank=0.00259835026811];
+	"[1]irq"	 [complexity=1,
+		importance=0.0191691205159,
+		rank=0.0191691205159];
+	"[1]bus_error_irq" -> "[1]irq";
+	"[1]transmit_irq"	 [complexity=9,
+		importance=0.0247198131768,
+		rank=0.00274664590854];
+	"[1]transmit_irq" -> "[1]irq";
+	"[1]rst"	 [complexity=1,
+		importance=0.0266234351059,
+		rank=0.0266234351059];
+	irq_n	 [complexity=0,
+		importance=0.00822699935098,
+		rank=0.0];
+	"[1]rst" -> irq_n;
+	"[1]COMMAND_REG.data_out"	 [complexity=4,
+		importance=0.0401324634171,
+		rank=0.0100331158543];
+	"[1]COMMAND_REG.data_out" -> "[1]command";
+	"[1]arbitration_lost_irq"	 [complexity=9,
+		importance=0.023385152413,
+		rank=0.00259835026811];
+	"[1]arbitration_lost_irq" -> "[1]irq";
+	"[1]cs"	 [complexity=8,
+		importance=0.0226901977301,
+		rank=0.00283627471626];
+	"[1]cs" -> "[1]read";
+	"[1]error_irq"	 [complexity=9,
+		importance=0.0265712400359,
+		rank=0.00295236000399];
+	"[1]error_irq" -> "[1]irq";
+	"[1]irq" -> irq_n;
+	"[1]release_buffer"	 [complexity=2,
+		importance=0.0189692653145,
+		rank=0.00948463265725];
+	"[1]command" -> "[1]release_buffer";
+	"[1]error_passive_irq"	 [complexity=9,
+		importance=0.0252300297443,
+		rank=0.00280333663825];
+	"[1]error_passive_irq" -> "[1]irq";
+	"[1]release_buffer" -> irq_n;
+	"[1]read_irq_reg"	 [complexity=2,
+		importance=0.0187426784276,
+		rank=0.00937133921379];
+	"[1]read_irq_reg" -> irq_n;
+	"[1]addr"	 [complexity=5,
+		importance=0.0206851154805,
+		rank=0.00413702309611];
+	"[1]addr" -> "[1]read_irq_reg";
+	"[1]receive_irq"	 [complexity=9,
+		importance=0.0258935470899,
+		rank=0.00287706078776];
+	"[1]receive_irq" -> "[1]irq";
+	"[1]COMMAND_REG1.data_out"	 [complexity=4,
+		importance=0.0407419667278,
+		rank=0.010185491682];
+	"[1]COMMAND_REG1.data_out" -> "[1]command";
+	"[1]COMMAND_REG0.data_out"	 [complexity=4,
+		importance=0.040229539764,
+		rank=0.010057384941];
+	"[1]COMMAND_REG0.data_out" -> "[1]command";
+	"[1]read" -> "[1]read_irq_reg";
+	"[1]data_overrun_irq"	 [complexity=9,
+		importance=0.0243626228233,
+		rank=0.00270695809147];
+	"[1]data_overrun_irq" -> "[1]irq";
+}

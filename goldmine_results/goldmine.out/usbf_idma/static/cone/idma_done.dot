@@ -1,0 +1,17 @@
+strict digraph "" {
+	"[1]sizd_c"	 [complexity=5,
+		importance=0.054815941026,
+		rank=0.0109631882052];
+	"[1]sizd_is_zero_d"	 [complexity=3,
+		importance=0.0250519863844,
+		rank=0.00835066212814];
+	"[1]sizd_c" -> "[1]sizd_is_zero_d";
+	idma_done	 [complexity=0,
+		importance=0.0127612301805,
+		rank=0.0];
+	"[1]sizd_is_zero_d" -> idma_done;
+	"[1]rx_data_done_r"	 [complexity=3,
+		importance=0.0256164667711,
+		rank=0.00853882225703];
+	"[1]rx_data_done_r" -> idma_done;
+}

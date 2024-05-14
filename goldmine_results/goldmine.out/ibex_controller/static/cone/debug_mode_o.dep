@@ -1,0 +1,16 @@
+debug_mode_q	debug_mode_o
+[1]mret_insn_i	[1]mret_insn
+[1]dret_insn	[1]debug_mode_d
+[1]debug_single_step_i	[1]debug_mode_d
+[1]exc_req_q	[1]debug_mode_d
+[1]debug_mode_d	debug_mode_q
+[1]dret_insn_i	[1]dret_insn
+[1]load_err_q	[1]debug_mode_d
+[1]debug_req_i	[1]debug_mode_d
+[1]store_err_q	[1]debug_mode_d
+[1]mret_insn	[1]debug_mode_d
+[1]ctrl_fsm_cs	[1]debug_mode_d
+[1]rst_ni	debug_mode_q
+[1]instr_valid_i	[1]mret_insn
+[1]instr_valid_i	[1]dret_insn
+[1]debug_mode_q	[1]debug_mode_d

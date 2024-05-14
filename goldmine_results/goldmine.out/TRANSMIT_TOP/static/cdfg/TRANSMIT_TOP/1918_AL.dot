@@ -1,0 +1,63 @@
+strict digraph "" {
+	node [label="\N"];
+	"1925:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f2e12ff5750>",
+		fillcolor=turquoise,
+		label="1925:BL
+append_reg[0] <= load_CRC8;
+append_reg[9:1] <= append_reg[8:0];
+load_final_CRC <= append_reg[9];
+append_end_frame <= load_\
+final_CRC;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2e12ff3ed0>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f2e12ff50d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2e12ff5390>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f2e12ff5590>]",
+		style=filled,
+		typ=Block];
+	"Leaf_1918:AL"	 [def_var="['load_final_CRC', 'append_end_frame', 'append_reg']",
+		label="Leaf_1918:AL"];
+	"1925:BL" -> "Leaf_1918:AL"	 [cond="[]",
+		lineno=None];
+	"1918:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f2e12ff5790>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="1918:AL",
+		sens="['TX_CLK', 'reset_int']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['load_final_CRC', 'reset_int', 'load_CRC8', 'append_reg']"];
+	"1919:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f2e12ff5910>",
+		fillcolor=turquoise,
+		label="1919:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"1918:AL" -> "1919:BL"	 [cond="[]",
+		lineno=None];
+	"1920:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f2e12ff5950>",
+		fillcolor=springgreen,
+		label="1920:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"1919:BL" -> "1920:IF"	 [cond="[]",
+		lineno=None];
+	"1920:IF" -> "1925:BL"	 [cond="['reset_int']",
+		label="!(reset_int)",
+		lineno=1920];
+	"1920:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f2e12ff5990>",
+		fillcolor=turquoise,
+		label="1920:BL
+append_reg <= 0;
+load_final_CRC <= 0;
+append_end_frame <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2e12ff59d0>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f2e12ff5b10>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2e12ff5c90>]",
+		style=filled,
+		typ=Block];
+	"1920:IF" -> "1920:BL"	 [cond="['reset_int']",
+		label=reset_int,
+		lineno=1920];
+	"1920:BL" -> "Leaf_1918:AL"	 [cond="[]",
+		lineno=None];
+}

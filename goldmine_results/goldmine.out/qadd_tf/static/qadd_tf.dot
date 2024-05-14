@@ -1,0 +1,9 @@
+strict digraph "()" {
+	a -> "uut.a"	 [weight=1.0];
+	b -> "uut.b"	 [weight=1.0];
+	"uut.a" -> "uut.res"	 [weight=39.0];
+	"uut.c" -> c	 [weight=1.0];
+	"uut.b" -> "uut.res"	 [weight=39.0];
+	"uut.N" -> "uut.res"	 [weight=68.0];
+	"uut.res" -> "uut.c"	 [weight=1.0];
+}

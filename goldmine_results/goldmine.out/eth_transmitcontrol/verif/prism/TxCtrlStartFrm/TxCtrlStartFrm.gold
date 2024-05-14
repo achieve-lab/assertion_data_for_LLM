@@ -1,0 +1,100 @@
+Report file generated at: Apr-11-2024 07:01:08 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a1: (TxUsedDataIn_q == 1 & CtrlMux == 1) |=> (TxCtrlStartFrm == 0)
+IRank: : 0.08057
+Importance: : 0.32229
+Complexity: : 4
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a6: (CtrlMux == 0 & TxUsedDataOut == 0 & TxDoneIn == 1) |=> (TxCtrlStartFrm == 1)
+IRank: : 0.02412
+Importance: : 0.33773
+Complexity: : 14
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (TxUsedDataIn_q == 0 & TxUsedDataOut == 0 & TxAbortIn == 1) |=> (TxCtrlStartFrm == 1)
+IRank: : 0.0228
+Importance: : 0.31919
+Complexity: : 14
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a5: (TxUsedDataIn_q == 0 & TxUsedDataOut == 0 & TxDoneIn == 1) |=> (TxCtrlStartFrm == 1)
+IRank: : 0.0228
+Importance: : 0.31919
+Complexity: : 14
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (TxUsedDataIn_q == 0 & TxUsedDataOut == 0 & TxUsedDataOutDetected == 0) |=> (TxCtrlStartFrm == 1)
+IRank: : 0.0228
+Importance: : 0.31919
+Complexity: : 14
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a7: (TxUsedDataIn_q == 0 & TxUsedDataOut == 0 & TxStartFrmIn == 1) |=> (TxCtrlStartFrm == 1)
+IRank: : 0.0228
+Importance: : 0.31919
+Complexity: : 14
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (WillSendControlFrame == 0) |=> (TxCtrlStartFrm == 0)
+IRank: : 0.02099
+Importance: : 0.12593
+Complexity: : 6
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (TxUsedDataOut == 1 & TxUsedDataIn_q == 1 & TxUsedDataOutDetected == 0 & TxDoneIn == 0 & TxAbortIn == 0 & TxStartFrmIn == 1) |=> (TxCtrlStartFrm == 0)
+IRank: : 0.01782
+Importance: : 0.57015
+Complexity: : 32
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a1        | 0.08057 |  0.32229   |     4      |  Unknown  | Unknown |   Unknown   
+      a6        | 0.02412 |  0.33773   |     14     |  Unknown  | Unknown |   Unknown   
+      a3        | 0.0228  |  0.31919   |     14     |  Unknown  | Unknown |   Unknown   
+      a5        | 0.0228  |  0.31919   |     14     |  Unknown  | Unknown |   Unknown   
+      a4        | 0.0228  |  0.31919   |     14     |  Unknown  | Unknown |   Unknown   
+      a7        | 0.0228  |  0.31919   |     14     |  Unknown  | Unknown |   Unknown   
+      a0        | 0.02099 |  0.12593   |     6      |  Unknown  | Unknown |   Unknown   
+      a2        | 0.01782 |  0.57015   |     32     |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 8
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 8
+Hit rate: 0.0
+Miss rate: 1.0

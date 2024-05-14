@@ -1,0 +1,25 @@
+strict digraph "" {
+	cmd	 [complexity=2,
+		importance=0.0287973130652,
+		rank=0.0143986565326];
+	cmd_o	 [complexity=0,
+		importance=0.00942427334243,
+		rank=0.0];
+	cmd -> cmd_o;
+	"[1]cmd_i"	 [complexity=4,
+		importance=0.0380832080775,
+		rank=0.00952080201937];
+	"[1]cmd_i" -> cmd;
+	"[1]busy"	 [complexity=5,
+		importance=0.0673244160546,
+		rank=0.0134648832109];
+	"[1]busy" -> cmd;
+	"[1]rst_i"	 [complexity=3,
+		importance=0.124475147273,
+		rank=0.0414917157577];
+	"[1]rst_i" -> cmd;
+	"[1]cmd_w_i"	 [complexity=3,
+		importance=0.0956778342079,
+		rank=0.0318926114026];
+	"[1]cmd_w_i" -> cmd;
+}

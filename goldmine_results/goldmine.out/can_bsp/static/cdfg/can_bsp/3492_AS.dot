@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"3492:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f44f6949410>",
+		def_var="['send_ack']",
+		fillcolor=deepskyblue,
+		label="3492:AS
+send_ack = ~tx_state & rx_ack & ~err & ~listen_only_mode;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['tx_state', 'rx_ack', 'err', 'listen_only_mode']"];
+}

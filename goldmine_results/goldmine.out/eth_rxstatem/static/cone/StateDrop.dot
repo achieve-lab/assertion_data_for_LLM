@@ -1,0 +1,68 @@
+strict digraph "" {
+	"[1]StartDrop"	 [complexity=1,
+		importance=0.123352018695,
+		rank=0.123352018695];
+	StateDrop	 [complexity=0,
+		importance=0.0400203621217,
+		rank=0.0];
+	"[1]StartDrop" -> StateDrop;
+	"[1]IFGCounterEq24"	 [complexity=10,
+		importance=0.148352018695,
+		rank=0.0148352018695];
+	"[1]IFGCounterEq24" -> "[1]StartDrop";
+	"[1]StatePreamble"	 [complexity=7,
+		importance=0.241869335518,
+		rank=0.0345527622168];
+	"[1]StartIdle"	 [complexity=1,
+		importance=0.180682751247,
+		rank=0.180682751247];
+	"[1]StatePreamble" -> "[1]StartIdle";
+	"[1]Transmitting"	 [complexity=10,
+		importance=0.148352018695,
+		rank=0.0148352018695];
+	"[1]Transmitting" -> "[1]StartDrop";
+	"[1]StateDrop"	 [complexity=7,
+		importance=0.220703113369,
+		rank=0.0315290161956];
+	"[1]StateDrop" -> "[1]StartIdle";
+	"[1]StateData"	 [complexity=7,
+		importance=0.232768462725,
+		rank=0.0332526375322];
+	"[1]StateData" -> "[1]StartIdle";
+	"[1]StateData0"	 [complexity=10,
+		importance=0.298116657806,
+		rank=0.0298116657806];
+	"[1]StateData0" -> "[1]StartDrop";
+	"[1]StateData0" -> "[1]StateData";
+	"[1]StateIdle"	 [complexity=10,
+		importance=0.184737029178,
+		rank=0.0184737029178];
+	"[1]StateIdle" -> "[1]StartDrop";
+	"[1]MRxDEqD"	 [complexity=10,
+		importance=0.148352018695,
+		rank=0.0148352018695];
+	"[1]MRxDEqD" -> "[1]StartDrop";
+	"[1]StartIdle" -> StateDrop;
+	"[1]ByteCntMaxFrame"	 [complexity=10,
+		importance=0.148352018695,
+		rank=0.0148352018695];
+	"[1]ByteCntMaxFrame" -> "[1]StartDrop";
+	"[1]Reset"	 [complexity=1,
+		importance=0.145061086365,
+		rank=0.145061086365];
+	"[1]Reset" -> StateDrop;
+	"[1]StateData1"	 [complexity=10,
+		importance=0.29754448188,
+		rank=0.029754448188];
+	"[1]StateData1" -> "[1]StateData";
+	"[1]StateSFD"	 [complexity=7,
+		importance=0.253936849177,
+		rank=0.0362766927396];
+	"[1]StateSFD" -> "[1]StartDrop";
+	"[1]StateSFD" -> "[1]StartIdle";
+	"[1]MRxDV"	 [complexity=7,
+		importance=0.205682751247,
+		rank=0.0293832501782];
+	"[1]MRxDV" -> "[1]StartDrop";
+	"[1]MRxDV" -> "[1]StartIdle";
+}

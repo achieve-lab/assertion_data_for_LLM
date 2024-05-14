@@ -1,0 +1,46 @@
+strict digraph "" {
+	m1_addressed_s1	 [complexity=5,
+		importance=0.13455929154,
+		rank=0.0269118583079];
+	m1_wb_err_o	 [complexity=0,
+		importance=0.0291625431297,
+		rank=0.0];
+	m1_addressed_s1 -> m1_wb_err_o;
+	"[1]MEMORY_WIDTH"	 [complexity=11,
+		importance=0.118421523494,
+		rank=0.0107655930449];
+	m1_addressed_s2	 [complexity=5,
+		importance=0.10539674841,
+		rank=0.021079349682];
+	"[1]MEMORY_WIDTH" -> m1_addressed_s2;
+	m1_addressed_s2 -> m1_wb_err_o;
+	m1_in_progress	 [complexity=1,
+		importance=0.138239052825,
+		rank=0.138239052825];
+	m1_in_progress -> m1_wb_err_o;
+	"[1]ETH_WIDTH"	 [complexity=11,
+		importance=0.147584066623,
+		rank=0.0134167333294];
+	"[1]ETH_WIDTH" -> m1_addressed_s1;
+	m1_wb_stb_i	 [complexity=4,
+		importance=0.0713498613433,
+		rank=0.0178374653358];
+	m1_wb_stb_i -> m1_wb_err_o;
+	"[1]m1_wb_adr_i"	 [complexity=11,
+		importance=0.118421523494,
+		rank=0.0107655930449];
+	"[1]m1_wb_adr_i" -> m1_addressed_s1;
+	"[1]m1_wb_adr_i" -> m1_addressed_s2;
+	m1_wb_cyc_i	 [complexity=4,
+		importance=0.0713498613433,
+		rank=0.0178374653358];
+	m1_wb_cyc_i -> m1_wb_err_o;
+	"[1]s2_wb_err_i"	 [complexity=2,
+		importance=0.0421873182136,
+		rank=0.0210936591068];
+	"[1]s2_wb_err_i" -> m1_wb_err_o;
+	"[1]s1_wb_err_i"	 [complexity=2,
+		importance=0.0421873182136,
+		rank=0.0210936591068];
+	"[1]s1_wb_err_i" -> m1_wb_err_o;
+}

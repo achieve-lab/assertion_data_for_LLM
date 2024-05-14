@@ -1,0 +1,16 @@
+digraph "" {
+	Reset -> RandomLatched	 [weight=2.0];
+	Reset -> x	 [weight=2.0];
+	StateJam -> RandomLatched	 [weight=1.0];
+	RetryCnt -> Random	 [weight=9.0];
+	Feedback -> x	 [weight=1.0];
+	RandomLatched -> RandomEqByteCnt	 [weight=1.0];
+	RandomLatched -> RandomEq0	 [weight=1.0];
+	ByteCnt -> RandomEqByteCnt	 [weight=1.0];
+	NibCnt -> RandomEqByteCnt	 [weight=1.0];
+	Random -> RandomLatched	 [weight=1.0];
+	StateJam_q -> RandomLatched	 [weight=1.0];
+	x -> Feedback	 [weight=1.0];
+	x -> Random	 [weight=10.0];
+	x -> x	 [weight=1.0];
+}

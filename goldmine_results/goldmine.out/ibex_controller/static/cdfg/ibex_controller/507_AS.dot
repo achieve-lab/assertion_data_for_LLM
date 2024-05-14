@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"507:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fefacf07b10>",
+		def_var="['illegal_umode']",
+		fillcolor=deepskyblue,
+		label="507:AS
+illegal_umode = (priv_mode_i != PRIV_LVL_M) & (mret_insn | csr_mstatus_tw_i & wfi_insn);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['priv_mode_i', 'PRIV_LVL_M', 'mret_insn', 'csr_mstatus_tw_i', 'wfi_insn']"];
+}

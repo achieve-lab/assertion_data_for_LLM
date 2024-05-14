@@ -1,0 +1,204 @@
+strict digraph "" {
+	node [label="\N"];
+	"73:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f8f18157950>",
+		fillcolor=springgreen,
+		label="73:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"79:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f8f18157a50>",
+		fillcolor=turquoise,
+		label="79:BL
+window_column_counter <= 10'd0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8f18157a90>]",
+		style=filled,
+		typ=Block];
+	"73:IF" -> "79:BL"	 [cond="['window_column_counter', 'IMG_WIDTH']",
+		label="!((window_column_counter != IMG_WIDTH / 4 - 1))",
+		lineno=73];
+	"73:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f8f18177e50>",
+		fillcolor=turquoise,
+		label="73:BL
+window_column_counter <= window_column_counter + 1'b1;
+valid <= 1'b1;
+raddr_a <= raddr_a + 1'b1;
+raddr_b <= raddr_b + 1'b1;
+\
+raddr_c <= raddr_c + 1'b1;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8f18177e90>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f8f18165110>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8f18165250>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f8f18165410>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8f181655d0>]",
+		style=filled,
+		typ=Block];
+	"73:IF" -> "73:BL"	 [cond="['window_column_counter', 'IMG_WIDTH']",
+		label="(window_column_counter != IMG_WIDTH / 4 - 1)",
+		lineno=73];
+	"90:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f8f18167710>",
+		fillcolor=turquoise,
+		label="90:BL
+raddr_b <= raddr_b + 1'b1;
+raddr_a <= raddr_a - window_column_counter;
+raddr_c <= raddr_c - window_column_counter;
+window_\
+line_counter = window_line_counter + 1'b1;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8f18167750>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f8f18167910>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8f18167b10>, <pyverilog.vparser.ast.BlockingSubstitution \
+object at 0x7f8f18167d10>]",
+		style=filled,
+		typ=Block];
+	"Leaf_64:AL"	 [def_var="['window_line_counter', 'valid', 'raddr_a', 'raddr_c', 'raddr_b', 'window_column_counter']",
+		label="Leaf_64:AL"];
+	"90:BL" -> "Leaf_64:AL"	 [cond="[]",
+		lineno=None];
+	"104:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f8f18177750>",
+		fillcolor=turquoise,
+		label="104:BL
+raddr_a <= { LUT_ADDR_WIDTH{ 1'b0 } };
+raddr_b <= { LUT_ADDR_WIDTH{ 1'b0 } };
+raddr_c <= { LUT_ADDR_WIDTH{ 1'b0 } };",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8f18177790>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f8f18177990>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8f18177bd0>]",
+		style=filled,
+		typ=Block];
+	"104:BL" -> "Leaf_64:AL"	 [cond="[]",
+		lineno=None];
+	"81:CS"	 [ast="<pyverilog.vparser.ast.CaseStatement object at 0x7f8f18157c50>",
+		fillcolor=linen,
+		label="81:CS",
+		statements="[]",
+		style=filled,
+		typ=CaseStatement];
+	"96:CA"	 [ast="<pyverilog.vparser.ast.Case object at 0x7f8f18167f50>",
+		fillcolor=lightcyan,
+		label="96:CA",
+		statements="[]",
+		style=filled,
+		typ=Case];
+	"81:CS" -> "96:CA"	 [cond="['window_line_counter']",
+		label=window_line_counter,
+		lineno=81];
+	"89:CA"	 [ast="<pyverilog.vparser.ast.Case object at 0x7f8f18167690>",
+		fillcolor=lightcyan,
+		label="89:CA",
+		statements="[]",
+		style=filled,
+		typ=Case];
+	"81:CS" -> "89:CA"	 [cond="['window_line_counter']",
+		label=window_line_counter,
+		lineno=81];
+	"103:CA"	 [ast="<pyverilog.vparser.ast.Case object at 0x7f8f18177710>",
+		fillcolor=lightcyan,
+		label="103:CA",
+		statements="[]",
+		style=filled,
+		typ=Case];
+	"81:CS" -> "103:CA"	 [cond="['window_line_counter']",
+		label=window_line_counter,
+		lineno=81];
+	"82:CA"	 [ast="<pyverilog.vparser.ast.Case object at 0x7f8f18157d50>",
+		fillcolor=lightcyan,
+		label="82:CA",
+		statements="[]",
+		style=filled,
+		typ=Case];
+	"81:CS" -> "82:CA"	 [cond="['window_line_counter']",
+		label=window_line_counter,
+		lineno=81];
+	"79:BL" -> "81:CS"	 [cond="[]",
+		lineno=None];
+	"97:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f8f18167fd0>",
+		fillcolor=turquoise,
+		label="97:BL
+raddr_b <= raddr_b - window_column_counter;
+raddr_a <= raddr_a - window_column_counter;
+raddr_c <= raddr_c + 1'b1;
+window_\
+line_counter = 2'b00;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8f18177050>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f8f18177250>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8f18177450>, <pyverilog.vparser.ast.BlockingSubstitution \
+object at 0x7f8f18177590>]",
+		style=filled,
+		typ=Block];
+	"96:CA" -> "97:BL"	 [cond="[]",
+		lineno=None];
+	"89:CA" -> "90:BL"	 [cond="[]",
+		lineno=None];
+	"64:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f8f1814f550>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="64:AL",
+		sens="['clk', 'rst_n']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['rst_n', 'raddr_b', 'IMG_WIDTH', 'raddr_a', 'raddr_c', 'window_line_counter', 'window_column_counter']"];
+	"65:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f8f1814f6d0>",
+		fillcolor=turquoise,
+		label="65:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"64:AL" -> "65:BL"	 [cond="[]",
+		lineno=None];
+	"97:BL" -> "Leaf_64:AL"	 [cond="[]",
+		lineno=None];
+	"66:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f8f181659d0>",
+		fillcolor=springgreen,
+		label="66:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"72:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f8f18165a10>",
+		fillcolor=turquoise,
+		label="72:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"66:IF" -> "72:BL"	 [cond="['rst_n']",
+		label="!((~rst_n))",
+		lineno=66];
+	"66:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f8f18165a50>",
+		fillcolor=turquoise,
+		label="66:BL
+window_column_counter <= 10'd0;
+window_line_counter <= 2'b00;
+raddr_a <= { LUT_ADDR_WIDTH{ 1'b0 } };
+raddr_b <= { LUT_ADDR_\
+WIDTH{ 1'b0 } };
+raddr_c <= { LUT_ADDR_WIDTH{ 1'b0 } };",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8f18165a90>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f8f18165c10>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8f18165d90>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f8f18165fd0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8f1814f250>]",
+		style=filled,
+		typ=Block];
+	"66:IF" -> "66:BL"	 [cond="['rst_n']",
+		label="(~rst_n)",
+		lineno=66];
+	"65:BL" -> "66:IF"	 [cond="[]",
+		lineno=None];
+	"103:CA" -> "104:BL"	 [cond="[]",
+		lineno=None];
+	"83:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f8f18157dd0>",
+		fillcolor=turquoise,
+		label="83:BL
+raddr_a <= raddr_a + 1'b1;
+raddr_b <= raddr_b - window_column_counter;
+raddr_c <= raddr_c - window_column_counter;
+window_\
+line_counter = window_line_counter + 1'b1;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8f18157e10>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f8f18157fd0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8f18167210>, <pyverilog.vparser.ast.BlockingSubstitution \
+object at 0x7f8f18167410>]",
+		style=filled,
+		typ=Block];
+	"83:BL" -> "Leaf_64:AL"	 [cond="[]",
+		lineno=None];
+	"73:BL" -> "Leaf_64:AL"	 [cond="[]",
+		lineno=None];
+	"82:CA" -> "83:BL"	 [cond="[]",
+		lineno=None];
+	"72:BL" -> "73:IF"	 [cond="[]",
+		lineno=None];
+	"66:BL" -> "Leaf_64:AL"	 [cond="[]",
+		lineno=None];
+}

@@ -1,0 +1,9 @@
+strict digraph "" {
+	Reset -> RegOut	 [weight=2.0];
+	CCSB -> RegOut	 [weight=1.0];
+	CA_reg_set -> RegOut	 [weight=1.0];
+	CD_in_reg -> RegOut	 [weight=1.0];
+	CA_reg -> RegOut	 [weight=1.0];
+	CWR_pulse -> RegOut	 [weight=1.0];
+	RegInit -> RegOut	 [weight=1.0];
+}

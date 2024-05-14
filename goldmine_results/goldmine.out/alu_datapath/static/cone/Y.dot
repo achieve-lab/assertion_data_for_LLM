@@ -1,0 +1,21 @@
+strict digraph "" {
+	Y	 [complexity=0,
+		importance=0.0162026981463,
+		rank=0.0];
+	Yreg	 [complexity=2,
+		importance=0.0341468235194,
+		rank=0.0170734117597];
+	Yreg -> Y;
+	load_outputs	 [complexity=3,
+		importance=0.0413767304125,
+		rank=0.0137922434708];
+	load_outputs -> Yreg;
+	clr	 [complexity=3,
+		importance=0.0413767304125,
+		rank=0.0137922434708];
+	clr -> Yreg;
+	reset	 [complexity=3,
+		importance=0.109670377451,
+		rank=0.0365567924837];
+	reset -> Yreg;
+}

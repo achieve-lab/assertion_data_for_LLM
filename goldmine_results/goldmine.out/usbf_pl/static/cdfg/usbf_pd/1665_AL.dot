@@ -1,0 +1,34 @@
+strict digraph "" {
+	node [label="\N"];
+	"1665:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f13b5568f90>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="1665:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['token_le_2', 'rx_data']"];
+	"1666:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f13b55d4e50>",
+		fillcolor=springgreen,
+		label="1666:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"1665:AL" -> "1666:IF"	 [cond="[]",
+		lineno=None];
+	"Leaf_1665:AL"	 [def_var="['token1']",
+		label="Leaf_1665:AL"];
+	"1666:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f13b55d4cd0>",
+		fillcolor=firebrick,
+		label="1666:NS
+token1 <= rx_data;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f13b55d4cd0>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"1666:IF" -> "1666:NS"	 [cond="['token_le_2']",
+		label=token_le_2,
+		lineno=1666];
+	"1666:NS" -> "Leaf_1665:AL"	 [cond="[]",
+		lineno=None];
+}

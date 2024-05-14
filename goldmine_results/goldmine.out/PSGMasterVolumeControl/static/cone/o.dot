@@ -1,0 +1,39 @@
+strict digraph "" {
+	"[1]vo"	 [complexity=2,
+		importance=0.376318092432,
+		rank=0.188159046216];
+	o	 [complexity=0,
+		importance=0.200468416728,
+		rank=0.0];
+	"[1]vo" -> o;
+	"[1]volume"	 [complexity=20,
+		importance=0.849941294957,
+		rank=0.0424970647478];
+	"[1]volume" -> "[1]vo";
+	"[1]v2"	 [complexity=12,
+		importance=0.681125166076,
+		rank=0.0567604305063];
+	"[1]volume" -> "[1]v2";
+	"[1]v3"	 [complexity=7,
+		importance=0.540444890176,
+		rank=0.0772064128822];
+	"[1]volume" -> "[1]v3";
+	"[1]v1"	 [complexity=17,
+		importance=0.774911942435,
+		rank=0.0455830554374];
+	"[1]volume" -> "[1]v1";
+	"[1]v2" -> "[1]v3";
+	"[1]v3" -> "[1]vo";
+	"[1]v1" -> "[1]v2";
+	"[1]i"	 [complexity=20,
+		importance=0.849941294957,
+		rank=0.0424970647478];
+	"[1]i" -> "[1]vo";
+	"[1]i" -> "[1]v2";
+	"[1]i" -> "[1]v3";
+	"[1]i" -> "[1]v1";
+	"[1]rst_i"	 [complexity=1,
+		importance=0.475966185977,
+		rank=0.475966185977];
+	"[1]rst_i" -> o;
+}

@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"308:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fb430335c10>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="308:AS
+CrcNext[1] = Enable & (Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29]);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Crc', 'Crc']"];
+}

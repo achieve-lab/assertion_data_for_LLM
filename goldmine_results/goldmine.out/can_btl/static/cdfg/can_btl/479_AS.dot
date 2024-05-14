@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"479:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f2998c0c790>",
+		def_var="['go_seg1']",
+		fillcolor=deepskyblue,
+		label="479:AS
+go_seg1 = clk_en_q & (sync | hard_sync | resync & seg2 & sync_window | resync_latched & sync_window);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['clk_en_q', 'sync', 'hard_sync', 'resync', 'seg2', 'sync_window', 'resync_latched', 'sync_window']"];
+}

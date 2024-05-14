@@ -1,0 +1,50 @@
+strict digraph "" {
+	node [label="\N"];
+	"120:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f5c9ac70110>",
+		fillcolor=springgreen,
+		label="120:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"121:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f5c9ac70510>",
+		fillcolor=turquoise,
+		label="121:BL
+xon_cpu_dl1 <= 0;
+xon_cpu_dl2 <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f5c9ac70550>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f5c9ac70690>]",
+		style=filled,
+		typ=Block];
+	"120:IF" -> "121:BL"	 [cond="['Reset']",
+		label=Reset,
+		lineno=120];
+	"126:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f5c9ac701d0>",
+		fillcolor=turquoise,
+		label="126:BL
+xon_cpu_dl1 <= xon_cpu;
+xon_cpu_dl2 <= xon_cpu_dl1;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f5c9ac70210>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f5c9ac70390>]",
+		style=filled,
+		typ=Block];
+	"120:IF" -> "126:BL"	 [cond="['Reset']",
+		label="!(Reset)",
+		lineno=120];
+	"Leaf_119:AL"	 [def_var="['xon_cpu_dl2', 'xon_cpu_dl1']",
+		label="Leaf_119:AL"];
+	"121:BL" -> "Leaf_119:AL"	 [cond="[]",
+		lineno=None];
+	"126:BL" -> "Leaf_119:AL"	 [cond="[]",
+		lineno=None];
+	"119:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f5c9ac70810>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="119:AL",
+		sens="['Clk', 'Reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['Reset', 'xon_cpu_dl1', 'xon_cpu']"];
+	"119:AL" -> "120:IF"	 [cond="[]",
+		lineno=None];
+}

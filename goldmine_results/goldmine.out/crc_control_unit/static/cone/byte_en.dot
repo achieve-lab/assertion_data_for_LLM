@@ -1,0 +1,170 @@
+strict digraph "" {
+	"[1]next_state_full"	 [complexity=18,
+		importance=0.14797879764,
+		rank=0.00822104431334];
+	state_full	 [complexity=16,
+		importance=0.0970265218439,
+		rank=0.00606415761524];
+	"[1]next_state_full" -> state_full;
+	state_byte	 [complexity=24,
+		importance=0.120221004711,
+		rank=0.00500920852961];
+	byte_en	 [complexity=0,
+		importance=0.0296491579404,
+		rank=0.0];
+	state_byte -> byte_en;
+	last_byte	 [complexity=11,
+		importance=0.061554519692,
+		rank=0.00559586542655];
+	state_byte -> last_byte;
+	"[1]BYPASS"	 [complexity=22,
+		importance=0.163388686377,
+		rank=0.00742675847169];
+	"[1]BYPASS" -> "[1]next_state_full";
+	"[1]buffer_full"	 [complexity=32,
+		importance=0.821776850663,
+		rank=0.0256805265832];
+	"[1]BYPASS" -> "[1]buffer_full";
+	"[1]has_data"	 [complexity=34,
+		importance=1.02077466133,
+		rank=0.0300227841567];
+	"[1]BYPASS" -> "[1]has_data";
+	"[1]next_state_byte"	 [complexity=26,
+		importance=0.199884076976,
+		rank=0.00768784911446];
+	"[1]next_state_byte" -> state_byte;
+	"[1]EMPTY"	 [complexity=24,
+		importance=0.311367484017,
+		rank=0.0129736451674];
+	"[1]EMPTY" -> "[1]next_state_full";
+	"[1]EMPTY" -> state_full;
+	WRITE_2	 [complexity=16,
+		importance=0.066413323125,
+		rank=0.00415083269531];
+	has_data	 [complexity=11,
+		importance=0.051003434388,
+		rank=0.00463667585345];
+	WRITE_2 -> has_data;
+	"[1]buffer_full" -> "[1]next_state_byte";
+	"[1]WORD"	 [complexity=35,
+		importance=0.639230441049,
+		rank=0.0182637268871];
+	"[1]last_byte"	 [complexity=22,
+		importance=0.623820552312,
+		rank=0.0283554796505];
+	"[1]WORD" -> "[1]last_byte";
+	has_data -> byte_en;
+	size_in	 [complexity=24,
+		importance=0.0769644084291,
+		rank=0.00320685035121];
+	size_in -> byte_en;
+	size_in -> last_byte;
+	"[1]has_data" -> "[1]next_state_byte";
+	WORD	 [complexity=24,
+		importance=0.0769644084291,
+		rank=0.00320685035121];
+	WORD -> byte_en;
+	WORD -> last_byte;
+	state_full -> has_data;
+	state_full -> byte_en;
+	"[1]HALF_WORD"	 [complexity=35,
+		importance=0.639230441049,
+		rank=0.0182637268871];
+	"[1]HALF_WORD" -> "[1]next_state_byte";
+	"[1]HALF_WORD" -> "[1]last_byte";
+	"[1]WRITE_1"	 [complexity=28,
+		importance=0.459346281657,
+		rank=0.0164052243449];
+	"[1]WRITE_1" -> "[1]next_state_full";
+	BYPASS	 [complexity=16,
+		importance=0.066413323125,
+		rank=0.00415083269531];
+	BYPASS -> has_data;
+	BYPASS -> byte_en;
+	"[1]WRITE_2"	 [complexity=20,
+		importance=0.163388686377,
+		rank=0.00816943431886];
+	"[1]WRITE_2" -> "[1]next_state_full";
+	"[1]WRITE_2" -> "[1]buffer_full";
+	"[1]WRITE_2" -> "[1]has_data";
+	BYTE_1	 [complexity=24,
+		importance=0.0769644084291,
+		rank=0.00320685035121];
+	BYTE_1 -> last_byte;
+	BYTE_0	 [complexity=24,
+		importance=0.0769644084291,
+		rank=0.00320685035121];
+	BYTE_0 -> byte_en;
+	BYTE_0 -> last_byte;
+	"[1]last_byte" -> "[1]next_state_full";
+	"[1]last_byte" -> "[1]buffer_full";
+	"[1]rst_n"	 [complexity=17,
+		importance=0.209462932425,
+		rank=0.0123213489662];
+	"[1]rst_n" -> state_byte;
+	"[1]rst_n" -> state_full;
+	"[1]IDLE"	 [complexity=36,
+		importance=0.814946196641,
+		rank=0.0226373943511];
+	"[1]IDLE" -> state_byte;
+	"[1]IDLE" -> "[1]next_state_byte";
+	"[1]BYTE_1"	 [complexity=35,
+		importance=0.639230441049,
+		rank=0.0182637268871];
+	"[1]BYTE_1" -> "[1]next_state_byte";
+	"[1]BYTE_1" -> "[1]last_byte";
+	"[1]BYTE"	 [complexity=35,
+		importance=0.639230441049,
+		rank=0.0182637268871];
+	"[1]BYTE" -> "[1]next_state_byte";
+	"[1]BYTE" -> "[1]last_byte";
+	last_byte -> byte_en;
+	BYTE	 [complexity=24,
+		importance=0.0769644084291,
+		rank=0.00320685035121];
+	BYTE -> last_byte;
+	HALF_WORD	 [complexity=24,
+		importance=0.0769644084291,
+		rank=0.00320685035121];
+	HALF_WORD -> byte_en;
+	HALF_WORD -> last_byte;
+	BYTE_3	 [complexity=24,
+		importance=0.0769644084291,
+		rank=0.00320685035121];
+	BYTE_3 -> last_byte;
+	"[1]state_byte"	 [complexity=35,
+		importance=0.68248703733,
+		rank=0.019499629638];
+	"[1]state_byte" -> "[1]next_state_byte";
+	"[1]state_byte" -> "[1]last_byte";
+	"[1]size_in"	 [complexity=35,
+		importance=0.639230441049,
+		rank=0.0182637268871];
+	"[1]size_in" -> "[1]next_state_byte";
+	"[1]size_in" -> "[1]last_byte";
+	"[1]state_full"	 [complexity=21,
+		importance=0.933895873296,
+		rank=0.0444712320617];
+	"[1]state_full" -> "[1]next_state_full";
+	"[1]state_full" -> "[1]buffer_full";
+	"[1]state_full" -> "[1]has_data";
+	"[1]BYTE_3"	 [complexity=35,
+		importance=0.639230441049,
+		rank=0.0182637268871];
+	"[1]BYTE_3" -> "[1]next_state_byte";
+	"[1]BYTE_3" -> "[1]last_byte";
+	"[1]BYTE_2"	 [complexity=28,
+		importance=0.215293965713,
+		rank=0.00768907020404];
+	"[1]BYTE_2" -> "[1]next_state_byte";
+	"[1]write"	 [complexity=30,
+		importance=0.755303876937,
+		rank=0.0251767958979];
+	"[1]write" -> "[1]next_state_full";
+	"[1]write" -> "[1]next_state_byte";
+	"[1]BYTE_0"	 [complexity=35,
+		importance=0.639230441049,
+		rank=0.0182637268871];
+	"[1]BYTE_0" -> "[1]next_state_byte";
+	"[1]BYTE_0" -> "[1]last_byte";
+}

@@ -1,0 +1,29 @@
+strict digraph "" {
+	"transmitcontrol1.TxCtrlEndFrm"	 [complexity=0,
+		importance=0.00959058059162,
+		rank=0.0];
+	TxCtrlEndFrm	 [complexity=0,
+		importance=0.00393314275812,
+		rank=0.0];
+	"transmitcontrol1.TxCtrlEndFrm" -> TxCtrlEndFrm;
+	"[1]transmitcontrol1.ControlEnd"	 [complexity=2,
+		importance=0.0224383086045,
+		rank=0.0112191543022];
+	"[1]transmitcontrol1.ControlEnd" -> "transmitcontrol1.TxCtrlEndFrm";
+	"[1]transmitcontrol1.ByteCnt"	 [complexity=4,
+		importance=0.0352520224758,
+		rank=0.00881300561895];
+	"[1]transmitcontrol1.ByteCnt" -> "[1]transmitcontrol1.ControlEnd";
+	"[1]TxReset"	 [complexity=1,
+		importance=0.0348455444728,
+		rank=0.0348455444728];
+	"[1]transmitcontrol1.TxReset"	 [complexity=1,
+		importance=0.0318553663271,
+		rank=0.0318553663271];
+	"[1]TxReset" -> "[1]transmitcontrol1.TxReset";
+	"[1]transmitcontrol1.TxReset" -> "transmitcontrol1.TxCtrlEndFrm";
+	"[1]transmitcontrol1.ControlEnd_q"	 [complexity=2,
+		importance=0.022578503533,
+		rank=0.0112892517665];
+	"[1]transmitcontrol1.ControlEnd_q" -> "transmitcontrol1.TxCtrlEndFrm";
+}

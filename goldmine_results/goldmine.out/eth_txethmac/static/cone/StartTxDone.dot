@@ -1,0 +1,100 @@
+digraph "" {
+	StateFCS	 [complexity=10,
+		importance=0.0119567754938,
+		rank=0.00119567754938];
+	StartTxDone	 [complexity=0,
+		importance=0.00727376131327,
+		rank=0.0];
+	StateFCS -> StartTxDone;
+	"txcounters1.NibCnt"	 [complexity=15,
+		importance=0.0571984011557,
+		rank=0.00381322674371];
+	"txcounters1.NibCnt" -> "txcounters1.NibCnt";
+	"txcounters1.NibCntEq7"	 [complexity=10,
+		importance=0.0151253602276,
+		rank=0.00151253602276];
+	"txcounters1.NibCnt" -> "txcounters1.NibCntEq7";
+	"txcounters1.NibbleMinFl"	 [complexity=10,
+		importance=0.0193151965389,
+		rank=0.00193151965389];
+	"txcounters1.NibCnt" -> "txcounters1.NibbleMinFl";
+	"txstatem1.StateData"	 [complexity=10,
+		importance=0.0149072099526,
+		rank=0.00149072099526];
+	StateData	 [complexity=10,
+		importance=0.0104750330348,
+		rank=0.00104750330348];
+	"txstatem1.StateData" -> StateData;
+	"txcounters1.MinFL"	 [complexity=13,
+		importance=0.0235630419169,
+		rank=0.00181254168592];
+	"txcounters1.MinFL" -> "txcounters1.NibbleMinFl";
+	NibCntEq7	 [complexity=10,
+		importance=0.0111095838464,
+		rank=0.00111095838464];
+	"txcounters1.NibCntEq7" -> NibCntEq7;
+	"txstatem1.StartFCS"	 [complexity=11,
+		importance=0.028785009532,
+		rank=0.00261681904836];
+	"txstatem1.StateFCS"	 [complexity=10,
+		importance=0.0193603685587,
+		rank=0.00193603685587];
+	"txstatem1.StartFCS" -> "txstatem1.StateFCS";
+	Pad	 [complexity=10,
+		importance=0.0101056454596,
+		rank=0.00101056454596];
+	Pad -> StartTxDone;
+	"txcounters1.Reset"	 [complexity=16,
+		importance=0.174463394312,
+		rank=0.0109039621445];
+	"txcounters1.Reset" -> "txcounters1.NibCnt";
+	MinFL	 [complexity=13,
+		importance=0.0263949260632,
+		rank=0.00203037892794];
+	MinFL -> "txcounters1.MinFL";
+	StateData -> StartTxDone;
+	TxEndFrm	 [complexity=10,
+		importance=0.0101056454596,
+		rank=0.00101056454596];
+	TxEndFrm -> StartTxDone;
+	Collision	 [complexity=10,
+		importance=0.0101056454596,
+		rank=0.00101056454596];
+	Collision -> StartTxDone;
+	"txstatem1.Reset"	 [complexity=11,
+		importance=0.256290760038,
+		rank=0.0232991600035];
+	"txstatem1.Reset" -> "txstatem1.StateData";
+	"txstatem1.Reset" -> "txstatem1.StateFCS";
+	"txcounters1.IncrementNibCnt"	 [complexity=16,
+		importance=0.0687614068291,
+		rank=0.00429758792682];
+	"txcounters1.IncrementNibCnt" -> "txcounters1.NibCnt";
+	"txstatem1.StartJam"	 [complexity=12,
+		importance=0.0489337117087,
+		rank=0.00407780930906];
+	"txstatem1.StartJam" -> "txstatem1.StateFCS";
+	"txcounters1.ResetNibCnt"	 [complexity=16,
+		importance=0.131725815318,
+		rank=0.00823286345736];
+	"txcounters1.ResetNibCnt" -> "txcounters1.NibCnt";
+	CrcEn	 [complexity=10,
+		importance=0.0101056454596,
+		rank=0.00101056454596];
+	CrcEn -> StartTxDone;
+	NibCntEq7 -> StartTxDone;
+	NibbleMinFl	 [complexity=10,
+		importance=0.0131754781095,
+		rank=0.00131754781095];
+	"txcounters1.NibbleMinFl" -> NibbleMinFl;
+	"txstatem1.StateFCS" -> StateFCS;
+	"txstatem1.StartDefer"	 [complexity=12,
+		importance=0.0632771358587,
+		rank=0.0052730946549];
+	"txstatem1.StartDefer" -> "txstatem1.StateFCS";
+	NibbleMinFl -> StartTxDone;
+	"txstatem1.StartData"	 [complexity=12,
+		importance=0.0245130636154,
+		rank=0.00204275530129];
+	"txstatem1.StartData" -> "txstatem1.StateData";
+}

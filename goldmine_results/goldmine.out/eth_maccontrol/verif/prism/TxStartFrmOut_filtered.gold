@@ -1,0 +1,10 @@
+property a1;
+@(posedge clk) (TxCtrlStartFrm == 1) |-> (TxStartFrmOut == 1);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge clk) (TxCtrlStartFrm == 0) |-> (TxStartFrmOut == 0);
+endproperty
+assert_a0: assert property(a0);
+

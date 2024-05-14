@@ -1,0 +1,107 @@
+strict digraph "" {
+	"[1]TooBig"	 [complexity=23,
+		importance=0.163567432036,
+		rank=0.00711162747981];
+	"[1]StartDefer"	 [complexity=2,
+		importance=0.152689522845,
+		rank=0.0763447614223];
+	"[1]TooBig" -> "[1]StartDefer";
+	"[1]StateBackOff"	 [complexity=23,
+		importance=0.1767507206,
+		rank=0.00768481393914];
+	"[1]StateBackOff" -> "[1]StartDefer";
+	"[1]NoBckof"	 [complexity=23,
+		importance=0.163567432036,
+		rank=0.00711162747981];
+	"[1]NoBckof" -> "[1]StartDefer";
+	"[1]CarrierSense"	 [complexity=6,
+		importance=0.0973884340619,
+		rank=0.016231405677];
+	"[1]CarrierSense" -> "[1]StartDefer";
+	"[1]StartPreamble"	 [complexity=2,
+		importance=0.0865105248709,
+		rank=0.0432552624355];
+	"[1]CarrierSense" -> "[1]StartPreamble";
+	"[1]StartIdle"	 [complexity=1,
+		importance=0.0731372757587,
+		rank=0.0731372757587];
+	StateIdle	 [complexity=0,
+		importance=0.0327780691281,
+		rank=0.0];
+	"[1]StartIdle" -> StateIdle;
+	"[1]StateIPG"	 [complexity=9,
+		importance=0.110702989905,
+		rank=0.0123003322117];
+	"[1]StateIPG" -> "[1]StartIdle";
+	"[1]StateIPG" -> "[1]StartDefer";
+	"[1]NibCntEq7"	 [complexity=23,
+		importance=0.163567432036,
+		rank=0.00711162747981];
+	"[1]NibCntEq7" -> "[1]StartDefer";
+	"[1]IPGT"	 [complexity=9,
+		importance=0.0840151849498,
+		rank=0.00933502054997];
+	"[1]IPGT" -> "[1]StartIdle";
+	"[1]StartTxDone"	 [complexity=23,
+		importance=0.163567432036,
+		rank=0.00711162747981];
+	"[1]StartTxDone" -> "[1]StartDefer";
+	"[1]RandomEqByteCnt"	 [complexity=23,
+		importance=0.163567432036,
+		rank=0.00711162747981];
+	"[1]RandomEqByteCnt" -> "[1]StartDefer";
+	"[1]TxUnderRun"	 [complexity=23,
+		importance=0.163567432036,
+		rank=0.00711162747981];
+	"[1]TxUnderRun" -> "[1]StartDefer";
+	"[1]TxStartFrm"	 [complexity=6,
+		importance=0.0973884340619,
+		rank=0.016231405677];
+	"[1]TxStartFrm" -> "[1]StartPreamble";
+	"[1]IPGR2"	 [complexity=9,
+		importance=0.0840151849498,
+		rank=0.00933502054997];
+	"[1]IPGR2" -> "[1]StartIdle";
+	"[1]IPGR2" -> "[1]StartDefer";
+	"[1]IPGR1"	 [complexity=23,
+		importance=0.163567432036,
+		rank=0.00711162747981];
+	"[1]IPGR1" -> "[1]StartDefer";
+	"[1]NibCnt"	 [complexity=9,
+		importance=0.0840151849498,
+		rank=0.00933502054997];
+	"[1]NibCnt" -> "[1]StartIdle";
+	"[1]NibCnt" -> "[1]StartDefer";
+	"[1]Reset"	 [complexity=1,
+		importance=0.109212116575,
+		rank=0.109212116575];
+	"[1]Reset" -> StateIdle;
+	"[1]StateJam"	 [complexity=23,
+		importance=0.18564423371,
+		rank=0.00807148842217];
+	"[1]StateJam" -> "[1]StartDefer";
+	"[1]StartDefer" -> StateIdle;
+	"[1]StateIdle"	 [complexity=6,
+		importance=0.119288593999,
+		rank=0.0198814323332];
+	"[1]StateIdle" -> "[1]StartDefer";
+	"[1]StateIdle" -> "[1]StartPreamble";
+	"[1]RandomEq0"	 [complexity=23,
+		importance=0.163567432036,
+		rank=0.00711162747981];
+	"[1]RandomEq0" -> "[1]StartDefer";
+	"[1]Rule1"	 [complexity=9,
+		importance=0.109986288901,
+		rank=0.0122206987668];
+	"[1]Rule1" -> "[1]StartIdle";
+	"[1]Rule1" -> "[1]StartDefer";
+	"[1]ColWindow"	 [complexity=23,
+		importance=0.163567432036,
+		rank=0.00711162747981];
+	"[1]ColWindow" -> "[1]StartDefer";
+	"[1]StartPreamble" -> StateIdle;
+	"[1]RetryMax"	 [complexity=23,
+		importance=0.163567432036,
+		rank=0.00711162747981];
+	"[1]RetryMax" -> "[1]StartDefer";
+}

@@ -1,0 +1,113 @@
+strict digraph "" {
+	"[1]in_token"	 [complexity=25,
+		importance=0.0893066528059,
+		rank=0.00357226611224];
+	"[1]in_op"	 [complexity=21,
+		importance=0.0833484824708,
+		rank=0.00396897535575];
+	"[1]in_token" -> "[1]in_op";
+	"[1]new_size"	 [complexity=5,
+		importance=0.0412805916151,
+		rank=0.00825611832302];
+	idin	 [complexity=0,
+		importance=0.0316893413421,
+		rank=0.0];
+	"[1]new_size" -> idin;
+	"[1]new_adr"	 [complexity=9,
+		importance=0.0767321721645,
+		rank=0.00852579690717];
+	"[1]in_op" -> "[1]new_adr";
+	"[1]dma_en"	 [complexity=3,
+		importance=0.105960724167,
+		rank=0.0353202413891];
+	"[1]dma_en" -> "[1]new_adr";
+	"[1]buf_set_d"	 [complexity=1,
+		importance=0.101110320252,
+		rank=0.101110320252];
+	"[1]dma_en" -> "[1]buf_set_d";
+	"[1]next_bsel"	 [complexity=3,
+		importance=0.0386854457469,
+		rank=0.0128951485823];
+	"[1]dma_en" -> "[1]next_bsel";
+	"[1]next_dpid"	 [complexity=3,
+		importance=0.048537099131,
+		rank=0.0161790330437];
+	"[1]next_dpid" -> idin;
+	"[1]size_next_r"	 [complexity=21,
+		importance=0.0829847844832,
+		rank=0.00395165640396];
+	"[1]size_next_r" -> "[1]new_adr";
+	"[1]csr"	 [complexity=8,
+		importance=0.115498495539,
+		rank=0.0144373119423];
+	"[1]csr" -> "[1]dma_en";
+	"[1]CTRL_ep"	 [complexity=6,
+		importance=0.110740830983,
+		rank=0.0184568051638];
+	"[1]csr" -> "[1]CTRL_ep";
+	"[1]OUT_ep"	 [complexity=25,
+		importance=0.0899381387634,
+		rank=0.00359752555054];
+	"[1]csr" -> "[1]OUT_ep";
+	"[1]max_pl_sz"	 [complexity=21,
+		importance=0.08151227898,
+		rank=0.00388153709429];
+	"[1]csr" -> "[1]max_pl_sz";
+	"[1]IN_ep"	 [complexity=25,
+		importance=0.0881285892862,
+		rank=0.00352514357145];
+	"[1]csr" -> "[1]IN_ep";
+	"[1]uc_bsel"	 [complexity=8,
+		importance=0.0434655525624,
+		rank=0.0054331940703];
+	"[1]csr" -> "[1]uc_bsel";
+	"[1]buf0"	 [complexity=12,
+		importance=0.0736869716313,
+		rank=0.00614058096927];
+	"[1]buf0_adr"	 [complexity=9,
+		importance=0.0689293070753,
+		rank=0.00765881189725];
+	"[1]buf0" -> "[1]buf0_adr";
+	"[1]CTRL_ep" -> "[1]in_op";
+	"[1]CTRL_ep" -> "[1]dma_en";
+	"[1]out_op"	 [complexity=21,
+		importance=0.0851580319479,
+		rank=0.00405514437847];
+	"[1]CTRL_ep" -> "[1]out_op";
+	"[1]buf0_adr" -> idin;
+	"[1]sizu_c"	 [complexity=21,
+		importance=0.0814898367205,
+		rank=0.00388046841526];
+	"[1]sizu_c" -> "[1]new_adr";
+	"[1]sizu_c" -> idin;
+	"[1]OUT_ep" -> "[1]out_op";
+	"[1]buffer_done"	 [complexity=3,
+		importance=0.110396457816,
+		rank=0.0367988192719];
+	"[1]buffer_done" -> idin;
+	"[1]buffer_done" -> "[1]buf_set_d";
+	"[1]buffer_done" -> "[1]next_bsel";
+	"[1]new_adr" -> idin;
+	"[1]buf_set_d" -> idin;
+	"[1]state"	 [complexity=2,
+		importance=0.131048036367,
+		rank=0.0655240181836];
+	"[1]state" -> "[1]buf_set_d";
+	"[1]out_to_small_r"	 [complexity=13,
+		importance=0.133498909937,
+		rank=0.0102691469182];
+	"[1]out_to_small_r" -> idin;
+	"[1]max_pl_sz" -> "[1]new_adr";
+	"[1]out_token"	 [complexity=25,
+		importance=0.091397595526,
+		rank=0.00365590382104];
+	"[1]out_token" -> "[1]out_op";
+	"[1]adr_r"	 [complexity=21,
+		importance=0.0848603142995,
+		rank=0.00404096734759];
+	"[1]adr_r" -> "[1]new_adr";
+	"[1]IN_ep" -> "[1]in_op";
+	"[1]next_bsel" -> idin;
+	"[1]uc_bsel" -> "[1]next_bsel";
+	"[1]out_op" -> "[1]new_adr";
+}

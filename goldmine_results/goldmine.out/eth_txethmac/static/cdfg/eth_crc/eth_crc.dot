@@ -1,0 +1,437 @@
+strict digraph "compose( ,  )" {
+	node [label="\N"];
+	"165:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274e2050>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="165:AS
+CrcNext[20] = Crc[16];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Crc']"];
+	"179:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7ff805bd9910>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="179:AL",
+		sens="['Clk', 'Reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['Initialize', 'Reset', 'CrcNext']"];
+	"165:AS" -> "179:AL";
+	"149:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff805bd5ed0>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="149:AS
+CrcNext[4] = Enable & (Data[3] ^ Data[2] ^ Data[0] ^ Crc[28] ^ Crc[30] ^ Crc[31]) ^ Crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Data', 'Crc', 'Crc', 'Crc', 'Crc']"];
+	"149:AS" -> "179:AL";
+	"162:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274c32d0>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="162:AS
+CrcNext[17] = Enable & (Data[1] ^ Crc[29]) ^ Crc[13];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Crc', 'Crc']"];
+	"162:AS" -> "179:AL";
+	"173:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff82775f4d0>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="173:AS
+CrcNext[28] = Enable & (Data[2] ^ Crc[30]) ^ Crc[24];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Crc', 'Crc']"];
+	"173:AS" -> "179:AL";
+	"147:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff805bddd90>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="147:AS
+CrcNext[2] = Enable & (Data[2] ^ Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29] ^ Crc[30]);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Data', 'Crc', 'Crc', 'Crc']"];
+	"147:AS" -> "179:AL";
+	"167:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274e2a50>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="167:AS
+CrcNext[22] = Enable & (Data[0] ^ Crc[28]) ^ Crc[18];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Crc', 'Crc']"];
+	"167:AS" -> "179:AL";
+	"158:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274cc890>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="158:AS
+CrcNext[13] = Enable & (Data[3] ^ Data[2] ^ Data[1] ^ Crc[29] ^ Crc[30] ^ Crc[31]) ^ Crc[9];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Data', 'Crc', 'Crc', 'Crc', 'Crc']"];
+	"158:AS" -> "179:AL";
+	"164:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274e2b50>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="164:AS
+CrcNext[19] = Enable & (Data[3] ^ Crc[31]) ^ Crc[15];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Crc', 'Crc']"];
+	"164:AS" -> "179:AL";
+	"145:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff826d6ee50>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="145:AS
+CrcNext[0] = Enable & (Data[0] ^ Crc[28]);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Crc']"];
+	"145:AS" -> "179:AL";
+	"146:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8277d8190>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="146:AS
+CrcNext[1] = Enable & (Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29]);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Crc', 'Crc']"];
+	"146:AS" -> "179:AL";
+	"180:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7ff805bd9990>",
+		fillcolor=turquoise,
+		label="180:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"179:AL" -> "180:BL"	 [cond="[]",
+		lineno=None];
+	"181:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7ff805bd9c90>",
+		fillcolor=springgreen,
+		label="181:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"180:BL" -> "181:IF"	 [cond="[]",
+		lineno=None];
+	"166:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274e20d0>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="166:AS
+CrcNext[21] = Crc[17];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Crc']"];
+	"166:AS" -> "179:AL";
+	"184:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7ff805bd9b50>",
+		fillcolor=springgreen,
+		label="184:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"181:IF" -> "184:IF"	 [cond="['Reset']",
+		label="!(Reset)",
+		lineno=181];
+	"182:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7ff805bd9cd0>",
+		fillcolor=firebrick,
+		label="182:NS
+Crc <= 32'hffffffff;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7ff805bd9cd0>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"181:IF" -> "182:NS"	 [cond="['Reset']",
+		label=Reset,
+		lineno=181];
+	"187:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7ff805bd9f10>",
+		fillcolor=firebrick,
+		label="187:NS
+Crc <= CrcNext;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7ff805bd9f10>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"Leaf_179:AL"	 [def_var="['Crc']",
+		label="Leaf_179:AL"];
+	"187:NS" -> "Leaf_179:AL"	 [cond="[]",
+		lineno=None];
+	"169:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274f0990>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="169:AS
+CrcNext[24] = Enable & (Data[2] ^ Data[1] ^ Crc[30] ^ Crc[29]) ^ Crc[20];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Crc', 'Crc', 'Crc']"];
+	"169:AS" -> "179:AL";
+	"155:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274feb50>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="155:AS
+CrcNext[10] = Enable & (Data[3] ^ Data[2] ^ Data[0] ^ Crc[28] ^ Crc[30] ^ Crc[31]) ^ Crc[6];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Data', 'Crc', 'Crc', 'Crc', 'Crc']"];
+	"155:AS" -> "179:AL";
+	"184:IF" -> "187:NS"	 [cond="['Initialize']",
+		label="!(Initialize)",
+		lineno=184];
+	"185:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7ff805bd9c10>",
+		fillcolor=firebrick,
+		label="185:NS
+Crc <= 32'hffffffff;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7ff805bd9c10>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"184:IF" -> "185:NS"	 [cond="['Initialize']",
+		label=Initialize,
+		lineno=184];
+	"170:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274f9750>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="170:AS
+CrcNext[25] = Enable & (Data[3] ^ Data[2] ^ Crc[31] ^ Crc[30]) ^ Crc[21];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Crc', 'Crc', 'Crc']"];
+	"170:AS" -> "179:AL";
+	"172:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274f9dd0>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="172:AS
+CrcNext[27] = Enable & (Data[1] ^ Crc[29]) ^ Crc[23];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Crc', 'Crc']"];
+	"172:AS" -> "179:AL";
+	"156:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274fe490>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="156:AS
+CrcNext[11] = Enable & (Data[3] ^ Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29] ^ Crc[31]) ^ Crc[7];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Data', 'Crc', 'Crc', 'Crc', 'Crc']"];
+	"156:AS" -> "179:AL";
+	"154:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274fca10>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="154:AS
+CrcNext[9] = Enable & (Data[2] ^ Data[1] ^ Crc[29] ^ Crc[30]) ^ Crc[5];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Crc', 'Crc', 'Crc']"];
+	"154:AS" -> "179:AL";
+	"176:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff805bd9750>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="176:AS
+CrcNext[31] = Crc[27];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Crc']"];
+	"176:AS" -> "179:AL";
+	"190:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff805bdc9d0>",
+		def_var="['CrcError']",
+		fillcolor=deepskyblue,
+		label="190:AS
+CrcError = Crc[31:0] != 32'hc704dd7b;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Crc']"];
+	"171:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274f9650>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="171:AS
+CrcNext[26] = Enable & (Data[3] ^ Data[0] ^ Crc[31] ^ Crc[28]) ^ Crc[22];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Crc', 'Crc', 'Crc']"];
+	"171:AS" -> "179:AL";
+	"160:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274ccad0>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="160:AS
+CrcNext[15] = Enable & (Data[3] ^ Crc[31]) ^ Crc[11];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Crc', 'Crc']"];
+	"160:AS" -> "179:AL";
+	"150:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff805bf8bd0>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="150:AS
+CrcNext[5] = Enable & (Data[3] ^ Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29] ^ Crc[31]) ^ Crc[1];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Data', 'Crc', 'Crc', 'Crc', 'Crc']"];
+	"150:AS" -> "179:AL";
+	"157:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274e6d90>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="157:AS
+CrcNext[12] = Enable & (Data[2] ^ Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29] ^ Crc[30]) ^ Crc[8];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Data', 'Crc', 'Crc', 'Crc', 'Crc']"];
+	"157:AS" -> "179:AL";
+	"174:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff805bd9290>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="174:AS
+CrcNext[29] = Enable & (Data[3] ^ Crc[31]) ^ Crc[25];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Crc', 'Crc']"];
+	"174:AS" -> "179:AL";
+	"148:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff805bd5250>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="148:AS
+CrcNext[3] = Enable & (Data[3] ^ Data[2] ^ Data[1] ^ Crc[29] ^ Crc[30] ^ Crc[31]);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Data', 'Crc', 'Crc', 'Crc']"];
+	"148:AS" -> "179:AL";
+	"152:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff827500390>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="152:AS
+CrcNext[7] = Enable & (Data[3] ^ Data[2] ^ Data[0] ^ Crc[28] ^ Crc[30] ^ Crc[31]) ^ Crc[3];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Data', 'Crc', 'Crc', 'Crc', 'Crc']"];
+	"152:AS" -> "179:AL";
+	"151:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff827500cd0>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="151:AS
+CrcNext[6] = Enable & (Data[2] ^ Data[1] ^ Crc[29] ^ Crc[30]) ^ Crc[2];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Crc', 'Crc', 'Crc']"];
+	"151:AS" -> "179:AL";
+	"182:NS" -> "Leaf_179:AL"	 [cond="[]",
+		lineno=None];
+	"185:NS" -> "Leaf_179:AL"	 [cond="[]",
+		lineno=None];
+	"175:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff805bd9590>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="175:AS
+CrcNext[30] = Crc[26];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Crc']"];
+	"175:AS" -> "179:AL";
+	"159:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274cc250>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="159:AS
+CrcNext[14] = Enable & (Data[3] ^ Data[2] ^ Crc[30] ^ Crc[31]) ^ Crc[10];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Crc', 'Crc', 'Crc']"];
+	"159:AS" -> "179:AL";
+	"Leaf_179:AL" -> "165:AS";
+	"Leaf_179:AL" -> "149:AS";
+	"Leaf_179:AL" -> "162:AS";
+	"Leaf_179:AL" -> "173:AS";
+	"Leaf_179:AL" -> "147:AS";
+	"Leaf_179:AL" -> "167:AS";
+	"Leaf_179:AL" -> "158:AS";
+	"Leaf_179:AL" -> "164:AS";
+	"Leaf_179:AL" -> "145:AS";
+	"Leaf_179:AL" -> "146:AS";
+	"Leaf_179:AL" -> "166:AS";
+	"Leaf_179:AL" -> "169:AS";
+	"Leaf_179:AL" -> "155:AS";
+	"Leaf_179:AL" -> "170:AS";
+	"Leaf_179:AL" -> "172:AS";
+	"Leaf_179:AL" -> "156:AS";
+	"Leaf_179:AL" -> "154:AS";
+	"Leaf_179:AL" -> "176:AS";
+	"Leaf_179:AL" -> "190:AS";
+	"Leaf_179:AL" -> "171:AS";
+	"Leaf_179:AL" -> "160:AS";
+	"Leaf_179:AL" -> "150:AS";
+	"Leaf_179:AL" -> "157:AS";
+	"Leaf_179:AL" -> "174:AS";
+	"Leaf_179:AL" -> "148:AS";
+	"Leaf_179:AL" -> "152:AS";
+	"Leaf_179:AL" -> "151:AS";
+	"Leaf_179:AL" -> "175:AS";
+	"Leaf_179:AL" -> "159:AS";
+	"153:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274fca50>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="153:AS
+CrcNext[8] = Enable & (Data[3] ^ Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29] ^ Crc[31]) ^ Crc[4];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Data', 'Crc', 'Crc', 'Crc', 'Crc']"];
+	"Leaf_179:AL" -> "153:AS";
+	"163:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274c3810>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="163:AS
+CrcNext[18] = Enable & (Data[2] ^ Crc[30]) ^ Crc[14];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Crc', 'Crc']"];
+	"Leaf_179:AL" -> "163:AS";
+	"161:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274c37d0>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="161:AS
+CrcNext[16] = Enable & (Data[0] ^ Crc[28]) ^ Crc[12];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Crc', 'Crc']"];
+	"Leaf_179:AL" -> "161:AS";
+	"168:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274f0550>",
+		def_var="['CrcNext']",
+		fillcolor=deepskyblue,
+		label="168:AS
+CrcNext[23] = Enable & (Data[1] ^ Data[0] ^ Crc[29] ^ Crc[28]) ^ Crc[19];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Enable', 'Data', 'Data', 'Crc', 'Crc', 'Crc']"];
+	"Leaf_179:AL" -> "168:AS";
+	"153:AS" -> "179:AL";
+	"163:AS" -> "179:AL";
+	"161:AS" -> "179:AL";
+	"168:AS" -> "179:AL";
+}

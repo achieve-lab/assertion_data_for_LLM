@@ -1,0 +1,46 @@
+strict digraph "" {
+	"[1]get_error_code"	 [complexity=10,
+		importance=0.93562567007,
+		rank=0.093562567007];
+	"[1]rxstate_next"	 [complexity=7,
+		importance=0.300844595357,
+		rank=0.0429777993367];
+	"[1]get_error_code" -> "[1]rxstate_next";
+	rxstate	 [complexity=4,
+		importance=0.146804625286,
+		rank=0.0367011563215];
+	receiving	 [complexity=0,
+		importance=0.0355113756053,
+		rank=0.0];
+	rxstate -> receiving;
+	"[1]local_invalid"	 [complexity=10,
+		importance=0.93562567007,
+		rank=0.093562567007];
+	"[1]local_invalid" -> "[1]rxstate_next";
+	"[1]recv_enable"	 [complexity=13,
+		importance=1.83815945614,
+		rank=0.141396881242];
+	"[1]recv_enable" -> "[1]rxstate_next";
+	"[1]length_error"	 [complexity=10,
+		importance=0.93562567007,
+		rank=0.093562567007];
+	"[1]length_error" -> "[1]rxstate_next";
+	"[1]get_sfd"	 [complexity=13,
+		importance=1.83815945614,
+		rank=0.141396881242];
+	"[1]get_sfd" -> "[1]rxstate_next";
+	"[1]rxstate"	 [complexity=8,
+		importance=3.42058379861,
+		rank=0.427572974826];
+	"[1]rxstate" -> "[1]rxstate_next";
+	"[1]rxstate_next" -> rxstate;
+	"[1]reset"	 [complexity=8,
+		importance=3.64322702828,
+		rank=0.455403378536];
+	"[1]reset" -> rxstate;
+	"[1]reset" -> "[1]rxstate_next";
+	"[1]get_terminator"	 [complexity=8,
+		importance=0.634781074713,
+		rank=0.0793476343391];
+	"[1]get_terminator" -> "[1]rxstate_next";
+}

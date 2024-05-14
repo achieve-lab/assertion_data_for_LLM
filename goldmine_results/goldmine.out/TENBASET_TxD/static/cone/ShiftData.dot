@@ -1,0 +1,74 @@
+strict digraph "" {
+	"[3]pkt_data"	 [complexity=16,
+		importance=0.329274626538,
+		rank=0.0205796641586];
+	"[2]ShiftData"	 [complexity=12,
+		importance=0.295502960358,
+		rank=0.0246252466965];
+	"[3]pkt_data" -> "[2]ShiftData";
+	"[3]ShiftCount"	 [complexity=17,
+		importance=0.436218549631,
+		rank=0.0256599146842];
+	"[3]readram"	 [complexity=16,
+		importance=0.333496096861,
+		rank=0.0208435060538];
+	"[3]ShiftCount" -> "[3]readram";
+	"[2]ShiftCount"	 [complexity=13,
+		importance=0.337717562845,
+		rank=0.025978274065];
+	"[3]ShiftCount" -> "[2]ShiftCount";
+	"[1]ShiftCount"	 [complexity=9,
+		importance=0.239216576059,
+		rank=0.0265796195621];
+	"[3]ShiftCount" -> "[1]ShiftCount";
+	"[3]ShiftData"	 [complexity=16,
+		importance=0.394003947144,
+		rank=0.0246252466965];
+	"[3]ShiftCount" -> "[3]ShiftData";
+	"[1]ShiftData"	 [complexity=8,
+		importance=0.197001973572,
+		rank=0.0246252466965];
+	ShiftData	 [complexity=4,
+		importance=0.098500986786,
+		rank=0.0246252466965];
+	"[1]ShiftData" -> ShiftData;
+	"[1]pkt_data"	 [complexity=8,
+		importance=0.132272652966,
+		rank=0.0165340816208];
+	"[1]pkt_data" -> ShiftData;
+	"[2]pkt_data"	 [complexity=12,
+		importance=0.230773639752,
+		rank=0.019231136646];
+	"[2]pkt_data" -> "[1]ShiftData";
+	"[2]ShiftData" -> "[1]ShiftData";
+	"[3]readram" -> "[2]ShiftData";
+	"[2]ShiftCount" -> "[2]ShiftData";
+	ShiftCount	 [complexity=5,
+		importance=0.140715589273,
+		rank=0.0281431178547];
+	"[2]ShiftCount" -> ShiftCount;
+	"[2]readram"	 [complexity=12,
+		importance=0.234995110075,
+		rank=0.0195829258396];
+	"[2]ShiftCount" -> "[2]readram";
+	"[2]ShiftCount" -> "[1]ShiftCount";
+	"[2]SendingPacket"	 [complexity=13,
+		importance=0.212480391957,
+		rank=0.0163446455351];
+	"[2]SendingPacket" -> ShiftCount;
+	"[2]SendingPacket" -> "[1]ShiftCount";
+	ShiftCount -> ShiftData;
+	"[2]readram" -> "[1]ShiftData";
+	"[1]ShiftCount" -> "[1]ShiftData";
+	"[1]readram"	 [complexity=8,
+		importance=0.136494123289,
+		rank=0.0170617654111];
+	"[1]ShiftCount" -> "[1]readram";
+	"[1]readram" -> ShiftData;
+	"[3]SendingPacket"	 [complexity=17,
+		importance=0.310981378743,
+		rank=0.018293022279];
+	"[3]SendingPacket" -> "[2]ShiftCount";
+	"[3]SendingPacket" -> "[1]ShiftCount";
+	"[3]ShiftData" -> "[2]ShiftData";
+}

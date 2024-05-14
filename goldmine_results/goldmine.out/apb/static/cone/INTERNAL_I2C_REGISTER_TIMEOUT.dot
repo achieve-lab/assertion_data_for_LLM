@@ -1,0 +1,51 @@
+strict digraph "" {
+	"[1]PWDATA"	 [complexity=2,
+		importance=0.106996703254,
+		rank=0.0534983516268];
+	INTERNAL_I2C_REGISTER_TIMEOUT	 [complexity=0,
+		importance=0.0741805222067,
+		rank=0.0];
+	"[1]PWDATA" -> INTERNAL_I2C_REGISTER_TIMEOUT;
+	"[1]PSELx"	 [complexity=20,
+		importance=0.311797720853,
+		rank=0.0155898860426];
+	"[1]RD_ENA"	 [complexity=15,
+		importance=0.278981539806,
+		rank=0.0185987693204];
+	"[1]PSELx" -> "[1]RD_ENA";
+	"[1]PREADY"	 [complexity=8,
+		importance=0.234660115902,
+		rank=0.0293325144877];
+	"[1]PSELx" -> "[1]PREADY";
+	"[1]PSELx" -> INTERNAL_I2C_REGISTER_TIMEOUT;
+	"[1]WR_ENA"	 [complexity=15,
+		importance=0.278981539806,
+		rank=0.0185987693204];
+	"[1]PSELx" -> "[1]WR_ENA";
+	"[1]PWRITE"	 [complexity=20,
+		importance=0.311797720853,
+		rank=0.0155898860426];
+	"[1]PWRITE" -> "[1]RD_ENA";
+	"[1]PWRITE" -> INTERNAL_I2C_REGISTER_TIMEOUT;
+	"[1]PWRITE" -> "[1]WR_ENA";
+	"[1]PENABLE"	 [complexity=20,
+		importance=0.311797720853,
+		rank=0.0155898860426];
+	"[1]PENABLE" -> "[1]RD_ENA";
+	"[1]PENABLE" -> "[1]PREADY";
+	"[1]PENABLE" -> "[1]WR_ENA";
+	"[1]RD_ENA" -> "[1]PREADY";
+	"[1]PRESETn"	 [complexity=1,
+		importance=0.18117722546,
+		rank=0.18117722546];
+	"[1]PRESETn" -> INTERNAL_I2C_REGISTER_TIMEOUT;
+	"[1]PREADY" -> INTERNAL_I2C_REGISTER_TIMEOUT;
+	"[1]WR_ENA" -> "[1]PREADY";
+	"[1]PADDR"	 [complexity=20,
+		importance=0.311797720853,
+		rank=0.0155898860426];
+	"[1]PADDR" -> "[1]RD_ENA";
+	"[1]PADDR" -> "[1]PREADY";
+	"[1]PADDR" -> INTERNAL_I2C_REGISTER_TIMEOUT;
+	"[1]PADDR" -> "[1]WR_ENA";
+}

@@ -1,0 +1,120 @@
+strict digraph "" {
+	"[1]rst"	 [complexity=7,
+		importance=0.381434015989,
+		rank=0.0544905737127];
+	sampled_bit	 [complexity=6,
+		importance=0.102459845588,
+		rank=0.0170766409313];
+	"[1]rst" -> sampled_bit;
+	hard_sync_blocked	 [complexity=6,
+		importance=0.123097940912,
+		rank=0.0205163234854];
+	"[1]rst" -> hard_sync_blocked;
+	"[1]rx_inter"	 [complexity=19,
+		importance=0.313797366254,
+		rank=0.0165156508555];
+	"[1]hard_sync"	 [complexity=13,
+		importance=0.301657173002,
+		rank=0.0232043979232];
+	"[1]rx_inter" -> "[1]hard_sync";
+	"[1]rx_inter" -> hard_sync_blocked;
+	"[1]triple_sampling"	 [complexity=7,
+		importance=0.217059884428,
+		rank=0.0310085549183];
+	"[1]triple_sampling" -> sampled_bit;
+	"[1]go_rx_inter"	 [complexity=11,
+		importance=0.135238134165,
+		rank=0.0122943758331];
+	"[1]go_rx_inter" -> hard_sync_blocked;
+	"[1]rx_idle"	 [complexity=19,
+		importance=0.313797366254,
+		rank=0.0165156508555];
+	"[1]rx_idle" -> "[1]hard_sync";
+	"[1]rx_idle" -> hard_sync_blocked;
+	"[1]seg1"	 [complexity=10,
+		importance=0.225581142044,
+		rank=0.0225581142044];
+	"[1]seg1" -> sampled_bit;
+	"[1]time_segment1"	 [complexity=10,
+		importance=0.217059884428,
+		rank=0.0217059884428];
+	"[1]time_segment1" -> sampled_bit;
+	"[1]delay"	 [complexity=10,
+		importance=0.26841312762,
+		rank=0.026841312762];
+	"[1]delay" -> sampled_bit;
+	rx	 [complexity=6,
+		importance=0.0676014844296,
+		rank=0.0112669140716];
+	hard_sync	 [complexity=0,
+		importance=0.0554612911774,
+		rank=0.0];
+	rx -> hard_sync;
+	sampled_bit -> hard_sync;
+	"[1]sample_point"	 [complexity=11,
+		importance=0.160940369228,
+		rank=0.0146309426571];
+	"[1]sample_point" -> hard_sync_blocked;
+	"[1]hard_sync" -> sampled_bit;
+	"[1]hard_sync" -> hard_sync_blocked;
+	"[1]sample"	 [complexity=14,
+		importance=0.120637358004,
+		rank=0.00861695414314];
+	"[1]sample" -> sampled_bit;
+	"[1]hard_sync_blocked"	 [complexity=19,
+		importance=0.369293822737,
+		rank=0.0194365169862];
+	"[1]hard_sync_blocked" -> "[1]hard_sync";
+	hard_sync_blocked -> hard_sync;
+	"[1]transmitter"	 [complexity=13,
+		importance=0.258336075077,
+		rank=0.0198720057751];
+	"[1]transmitter" -> hard_sync_blocked;
+	rx_idle	 [complexity=6,
+		importance=0.0676014844296,
+		rank=0.0112669140716];
+	rx_idle -> hard_sync;
+	"[1]tx_next"	 [complexity=13,
+		importance=0.258336075077,
+		rank=0.0198720057751];
+	"[1]tx_next" -> hard_sync_blocked;
+	"[1]sampled_bit"	 [complexity=19,
+		importance=0.348655727413,
+		rank=0.0183503014428];
+	"[1]sampled_bit" -> "[1]hard_sync";
+	"[1]sampled_bit" -> hard_sync_blocked;
+	"[1]tx_point"	 [complexity=13,
+		importance=0.279299349655,
+		rank=0.0214845653581];
+	"[1]tx_point" -> hard_sync_blocked;
+	rx_inter	 [complexity=6,
+		importance=0.0676014844296,
+		rank=0.0112669140716];
+	rx_inter -> hard_sync;
+	"[1]go_tx"	 [complexity=13,
+		importance=0.258336075077,
+		rank=0.0198720057751];
+	"[1]go_tx" -> hard_sync_blocked;
+	"[1]transmitting"	 [complexity=13,
+		importance=0.258336075077,
+		rank=0.0198720057751];
+	"[1]transmitting" -> hard_sync_blocked;
+	"[1]go_error_frame"	 [complexity=7,
+		importance=0.217059884428,
+		rank=0.0310085549183];
+	"[1]go_error_frame" -> sampled_bit;
+	"[1]rx"	 [complexity=19,
+		importance=0.313797366254,
+		rank=0.0165156508555];
+	"[1]rx" -> sampled_bit;
+	"[1]rx" -> "[1]hard_sync";
+	"[1]clk_en_q"	 [complexity=13,
+		importance=0.264054546737,
+		rank=0.0203118882106];
+	"[1]clk_en_q" -> sampled_bit;
+	"[1]clk_en_q" -> hard_sync_blocked;
+	"[1]quant_cnt"	 [complexity=10,
+		importance=0.233518490115,
+		rank=0.0233518490115];
+	"[1]quant_cnt" -> sampled_bit;
+}

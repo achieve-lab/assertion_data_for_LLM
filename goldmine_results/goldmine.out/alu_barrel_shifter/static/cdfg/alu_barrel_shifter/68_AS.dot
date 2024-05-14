@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"68:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fd311d60590>",
+		def_var="['z']",
+		fillcolor=deepskyblue,
+		label="68:AS
+z = (!direction)? Zout[SHIFTER_WIDTH-1:0] : { Xmsb, Zout[SHIFTER_WIDTH-1:1] } | ((y[2:0] == 0)? 'd0 : Zrev_copy);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['direction', 'Zout', 'Xmsb', 'Zout', 'y', 'Zrev_copy']"];
+}

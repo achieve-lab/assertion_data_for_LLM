@@ -1,0 +1,61 @@
+strict digraph "" {
+	Reset	 [complexity=3,
+		importance=0.0656612940712,
+		rank=0.0218870980237];
+	RetryCnt	 [complexity=2,
+		importance=0.0209431366416,
+		rank=0.0104715683208];
+	Reset -> RetryCnt;
+	StateJam	 [complexity=18,
+		importance=0.0666203083365,
+		rank=0.00370112824091];
+	StateJam -> RetryCnt;
+	TxUnderRun	 [complexity=11,
+		importance=0.0447181574296,
+		rank=0.00406528703905];
+	TxUnderRun -> RetryCnt;
+	RetryMax	 [complexity=11,
+		importance=0.049624527155,
+		rank=0.00451132065045];
+	RetryMax -> RetryCnt;
+	NibCntEq7	 [complexity=18,
+		importance=0.0666652324579,
+		rank=0.00370362402544];
+	NibCntEq7 -> RetryCnt;
+	StateBackOff	 [complexity=9,
+		importance=0.0245238890174,
+		rank=0.00272487655749];
+	StateBackOff -> RetryCnt;
+	UnderRun	 [complexity=11,
+		importance=0.0452925390624,
+		rank=0.00411750355113];
+	UnderRun -> RetryCnt;
+	NoBckof	 [complexity=9,
+		importance=0.0237750207879,
+		rank=0.00264166897644];
+	NoBckof -> RetryCnt;
+	RandomEqByteCnt	 [complexity=9,
+		importance=0.0283513354656,
+		rank=0.00315014838507];
+	RandomEqByteCnt -> RetryCnt;
+	TooBig	 [complexity=11,
+		importance=0.0472593997729,
+		rank=0.00429630907027];
+	TooBig -> RetryCnt;
+	ColWindow	 [complexity=18,
+		importance=0.0732087267694,
+		rank=0.00406715148719];
+	ColWindow -> RetryCnt;
+	RandomEq0	 [complexity=9,
+		importance=0.0266644959845,
+		rank=0.00296272177606];
+	RandomEq0 -> RetryCnt;
+	StartTxDone	 [complexity=11,
+		importance=0.0491600345965,
+		rank=0.00446909405423];
+	StartTxDone -> RetryCnt;
+	ExcessiveDeferOccured	 [complexity=11,
+		importance=0.0486388107901,
+		rank=0.00442171007183];
+	ExcessiveDeferOccured -> RetryCnt;
+}

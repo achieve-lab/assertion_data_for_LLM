@@ -1,0 +1,90 @@
+strict digraph "" {
+	"[1]buf1_adr"	 [complexity=14,
+		importance=0.0281064080014,
+		rank=0.00200760057153];
+	buf1_na	 [complexity=11,
+		importance=0.0225557836102,
+		rank=0.00205052578275];
+	"[1]buf1_adr" -> buf1_na;
+	"[1]buf0_adr"	 [complexity=14,
+		importance=0.027736356594,
+		rank=0.00198116832814];
+	buf0_na	 [complexity=11,
+		importance=0.0221857322028,
+		rank=0.00201688474571];
+	"[1]buf0_adr" -> buf0_na;
+	CTRL_ep	 [complexity=14,
+		importance=0.0257105414308,
+		rank=0.00183646724506];
+	dma_en	 [complexity=11,
+		importance=0.0209304346153,
+		rank=0.00190276678321];
+	CTRL_ep -> dma_en;
+	buf_sel	 [complexity=4,
+		importance=0.0160800307006,
+		rank=0.00402000767514];
+	CTRL_ep -> buf_sel;
+	buf1_na -> buf_sel;
+	buf_size	 [complexity=0,
+		importance=0.00803583704457,
+		rank=0.0];
+	"[1]rst"	 [complexity=12,
+		importance=0.0708722676632,
+		rank=0.00590602230527];
+	in_token	 [complexity=11,
+		importance=0.0220382010357,
+		rank=0.00200347282143];
+	"[1]rst" -> in_token;
+	"[1]pid_OUT"	 [complexity=13,
+		importance=0.0267958655917,
+		rank=0.00206122043013];
+	"[1]pid_OUT" -> in_token;
+	buf1	 [complexity=6,
+		importance=0.0183441259917,
+		rank=0.00305735433196];
+	buf1_sz	 [complexity=4,
+		importance=0.0135864614357,
+		rank=0.00339661535893];
+	buf1 -> buf1_sz;
+	buf0	 [complexity=6,
+		importance=0.0183441259917,
+		rank=0.00305735433196];
+	buf0_sz	 [complexity=4,
+		importance=0.0135864614357,
+		rank=0.00339661535893];
+	buf0 -> buf0_sz;
+	uc_bsel	 [complexity=11,
+		importance=0.0208601375161,
+		rank=0.00189637613782];
+	uc_bsel -> buf_sel;
+	"[1]pid_IN"	 [complexity=12,
+		importance=0.0488340666275,
+		rank=0.00406950555229];
+	"[1]pid_IN" -> in_token;
+	buf0_sz -> buf_size;
+	dma_en -> buf_sel;
+	"[1]buf0"	 [complexity=17,
+		importance=0.03249402115,
+		rank=0.00191141300882];
+	"[1]buf0" -> "[1]buf0_adr";
+	"[1]buf0" -> buf0_na;
+	buf0_na -> buf_sel;
+	csr	 [complexity=16,
+		importance=0.0304682059868,
+		rank=0.00190426287418];
+	csr -> CTRL_ep;
+	csr -> uc_bsel;
+	csr -> dma_en;
+	"[1]pid_SETUP"	 [complexity=13,
+		importance=0.0267958655917,
+		rank=0.00206122043013];
+	"[1]pid_SETUP" -> in_token;
+	buf1_sz -> buf_size;
+	in_token -> buf_sel;
+	"[1]buf1"	 [complexity=17,
+		importance=0.0328640725574,
+		rank=0.00193318073867];
+	"[1]buf1" -> "[1]buf1_adr";
+	"[1]buf1" -> buf1_na;
+	buf_sel -> buf_size;
+}

@@ -1,0 +1,13 @@
+strict digraph "" {
+	rxclk	 [complexity=2,
+		importance=0.4814814098,
+		rank=0.2407407049];
+	rxclk_180	 [complexity=0,
+		importance=0.2592590624,
+		rank=0.0];
+	rxclk -> rxclk_180;
+	rxclk_in	 [complexity=4,
+		importance=0.6296295312,
+		rank=0.1574073828];
+	rxclk_in -> rxclk;
+}

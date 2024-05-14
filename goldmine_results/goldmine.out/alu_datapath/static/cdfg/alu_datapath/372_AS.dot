@@ -1,0 +1,17 @@
+strict digraph "" {
+	node [label="\N"];
+	"372:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f030bfc2290>",
+		def_var="['adder_in_b']",
+		fillcolor=deepskyblue,
+		label="372:AS
+adder_in_b = (!sub_AB && !inc_A && !cpl_A && !cpl_B)? (dec_A)? { ALU_WIDTH{ 1'b1 } } : Breg : 
+(sub_AB && !inc_A || cpl_B)? ~\
+Breg : 
+(!sub_AB && inc_A && !cpl_B)? 'd0 : 
+(cpl_A)? 'd0 : adder_in_b;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['sub_AB', 'inc_A', 'cpl_A', 'cpl_B', 'dec_A', 'Breg', 'sub_AB', 'inc_A', 'cpl_B', 'Breg', 'sub_AB', 'inc_A', 'cpl_B', 'cpl_A', '\
+adder_in_b']"];
+}

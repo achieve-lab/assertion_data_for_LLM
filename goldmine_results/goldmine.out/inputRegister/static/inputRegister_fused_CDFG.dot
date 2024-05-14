@@ -1,0 +1,12 @@
+strict digraph "compose( ,  )" {
+	node [label="\N"];
+	"223:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fe93a691050>",
+		def_var="['inputReadOut']",
+		fillcolor=deepskyblue,
+		label="223:AS
+inputReadOut = inputs[inputReadAddr];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['inputs', 'inputReadAddr']"];
+}

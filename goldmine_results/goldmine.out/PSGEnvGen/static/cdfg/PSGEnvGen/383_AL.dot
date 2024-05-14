@@ -1,0 +1,25 @@
+strict digraph "" {
+	node [label="\N"];
+	"384:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fc6850ade10>",
+		fillcolor=firebrick,
+		label="384:NS
+attack <= AttackDecode(attack_x);",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fc6850ade10>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"Leaf_383:AL"	 [def_var="['attack']",
+		label="Leaf_383:AL"];
+	"384:NS" -> "Leaf_383:AL"	 [cond="[]",
+		lineno=None];
+	"383:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fc6850ad310>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="383:AL",
+		sens="['attack_x']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['attack_x', 'AttackDecode']"];
+	"383:AL" -> "384:NS"	 [cond="[]",
+		lineno=None];
+}

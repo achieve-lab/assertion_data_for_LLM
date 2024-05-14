@@ -1,0 +1,17 @@
+strict digraph "" {
+	"txstatem1.StartData"	 [complexity=2,
+		importance=0.0172393023022,
+		rank=0.00861965115109];
+	"txstatem1.StateData"	 [complexity=0,
+		importance=0.00763344863929,
+		rank=0.0];
+	"txstatem1.StartData" -> "txstatem1.StateData";
+	"txstatem1.Reset"	 [complexity=1,
+		importance=0.132636817712,
+		rank=0.132636817712];
+	"txstatem1.Reset" -> "txstatem1.StateData";
+	StateData	 [complexity=0,
+		importance=0.00320127172152,
+		rank=0.0];
+	"txstatem1.StateData" -> StateData;
+}

@@ -1,0 +1,73 @@
+Report file generated at: Apr-10-2024 04:05:34 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a0: (clear == 1) ##1 (cnt[0] == 0) |-> (empty == 1)
+IRank: : 0.12946
+Importance: : 0.64728
+Complexity: : 5
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (clear == 0 & cnt[0] == 1) ##1 (cnt[1] == 0) |-> (empty == 0)
+IRank: : 0.09526
+Importance: : 1.04788
+Complexity: : 11
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (clear == 0 & cnt[0] == 1) ##1 (cnt[2] == 0) |-> (empty == 0)
+IRank: : 0.09526
+Importance: : 1.04788
+Complexity: : 11
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (cnt[0] == 1) |-> (empty == 0)
+IRank: : 0.07544
+Importance: : 0.15087
+Complexity: : 2
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (cnt[0] == 0) ##1 (cnt[0] == 0 & cnt[1] == 0) |-> (empty == 1)
+IRank: : 0.07023
+Importance: : 0.70234
+Complexity: : 10
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a0        | 0.12946 |  0.64728   |     5      |  Unknown  | Unknown |   Unknown   
+      a3        | 0.09526 |  1.04788   |     11     |  Unknown  | Unknown |   Unknown   
+      a4        | 0.09526 |  1.04788   |     11     |  Unknown  | Unknown |   Unknown   
+      a2        | 0.07544 |  0.15087   |     2      |  Unknown  | Unknown |   Unknown   
+      a1        | 0.07023 |  0.70234   |     10     |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 5
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 5
+Hit rate: 0.0
+Miss rate: 1.0

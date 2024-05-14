@@ -1,0 +1,25 @@
+strict digraph "" {
+	Reset	 [complexity=1,
+		importance=0.0260966831211,
+		rank=0.0260966831211];
+	TxAbort	 [complexity=0,
+		importance=0.00775493299159,
+		rank=0.0];
+	Reset -> TxAbort;
+	StatusLatch	 [complexity=3,
+		importance=0.019528801456,
+		rank=0.00650960048534];
+	StatusLatch -> TxAbort;
+	TxStartFrm	 [complexity=3,
+		importance=0.0183417501295,
+		rank=0.00611391670983];
+	TxStartFrm -> TxAbort;
+	StartTxAbort	 [complexity=1,
+		importance=0.0139199495911,
+		rank=0.0139199495911];
+	StartTxAbort -> TxAbort;
+	ExcessiveDeferOccured	 [complexity=3,
+		importance=0.0222624034901,
+		rank=0.00742080116335];
+	ExcessiveDeferOccured -> TxAbort;
+}

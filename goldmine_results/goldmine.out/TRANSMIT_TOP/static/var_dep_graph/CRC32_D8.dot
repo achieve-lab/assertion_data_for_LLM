@@ -1,0 +1,11 @@
+digraph "" {
+	RESET -> CRC_OUT	 [weight=3.0];
+	LOAD -> CRC_OUT	 [weight=1.0];
+	data_int -> CRC_OUT	 [weight=1.0];
+	CRC_OUT -> CRC_OUT	 [weight=1.0];
+	nextCRC32_D8 -> CRC_OUT	 [weight=1.0];
+	DATA_IN -> data_int	 [weight=1.0];
+	START -> start_int	 [weight=1.0];
+	start_int -> CRC_OUT	 [weight=2.0];
+	CRC_IN -> CRC_OUT	 [weight=1.0];
+}

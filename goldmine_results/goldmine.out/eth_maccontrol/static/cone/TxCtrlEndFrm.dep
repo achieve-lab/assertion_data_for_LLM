@@ -1,0 +1,6 @@
+transmitcontrol1.TxCtrlEndFrm	TxCtrlEndFrm
+[1]transmitcontrol1.ControlEnd	transmitcontrol1.TxCtrlEndFrm
+[1]transmitcontrol1.ByteCnt	[1]transmitcontrol1.ControlEnd
+[1]TxReset	[1]transmitcontrol1.TxReset
+[1]transmitcontrol1.TxReset	transmitcontrol1.TxCtrlEndFrm
+[1]transmitcontrol1.ControlEnd_q	transmitcontrol1.TxCtrlEndFrm

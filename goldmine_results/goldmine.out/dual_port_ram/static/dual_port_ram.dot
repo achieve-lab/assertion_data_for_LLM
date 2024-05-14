@@ -1,0 +1,7 @@
+strict digraph "" {
+	mem -> r_data	 [weight=1.0];
+	w_ena -> mem	 [weight=1.0];
+	r_ena -> r_data	 [weight=1.0];
+	r_addr -> r_data	 [weight=1.0];
+	w_data -> mem	 [weight=1.0];
+}

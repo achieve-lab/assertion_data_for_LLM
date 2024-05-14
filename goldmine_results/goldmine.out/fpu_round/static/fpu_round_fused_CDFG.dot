@@ -1,0 +1,177 @@
+strict digraph "compose( ,  )" {
+	node [label="\N"];
+	"83:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f0fffc78b50>",
+		fillcolor=turquoise,
+		label="83:BL
+sum_round <= rounding_amount + mantissa_term;
+sum_round_2 <= (sum_round_overflow)? sum_round >> 1 : sum_round;
+exponent_round <= (\
+sum_round_overflow)? exponent_term + 1 : exponent_term;
+sum_final <= (round_trigger)? sum_round_2 : mantissa_term;
+exponent_final <= (\
+round_trigger)? exponent_round : exponent_term;
+round_out <= { sign_term, exponent_final[10:0], sum_final[53:2] };",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f0fff89af50>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f0fffc781d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f0fffc785d0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f0fffc78790>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f0fffc78a90>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f0fffc78f90>]",
+		style=filled,
+		typ=Block];
+	"Leaf_73:AL"	 [def_var="['sum_final', 'exponent_round', 'sum_round_2', 'round_out', 'sum_round', 'exponent_final']",
+		label="Leaf_73:AL"];
+	"83:BL" -> "Leaf_73:AL"	 [cond="[]",
+		lineno=None];
+	"74:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f0fff89a450>",
+		fillcolor=turquoise,
+		label="74:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"75:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f0fff89ad10>",
+		fillcolor=springgreen,
+		label="75:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"74:BL" -> "75:IF"	 [cond="[]",
+		lineno=None];
+	"57:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0fff8a7f50>",
+		def_var="['round_to_neg_inf_trigger']",
+		fillcolor=deepskyblue,
+		label="57:AS
+round_to_neg_inf_trigger = sign_term & |mantissa_term[1:0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['sign_term', 'mantissa_term']"];
+	"58:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0fff89d550>",
+		def_var="['round_trigger']",
+		fillcolor=deepskyblue,
+		label="58:AS
+round_trigger = round_nearest & round_nearest_trigger | round_to_pos_inf & round_to_pos_inf_trigger | round_to_neg_inf & round_\
+to_neg_inf_trigger;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['round_nearest', 'round_nearest_trigger', 'round_to_pos_inf', 'round_to_pos_inf_trigger', 'round_to_neg_inf', 'round_to_neg_inf_\
+trigger']"];
+	"57:AS" -> "58:AS";
+	"64:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0fff89d990>",
+		def_var="['sum_round_overflow']",
+		fillcolor=deepskyblue,
+		label="64:AS
+sum_round_overflow = sum_round[55];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['sum_round']"];
+	"Leaf_73:AL" -> "64:AS";
+	"73:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f0fff89a3d0>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="73:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['exponent_term', 'sum_final', 'exponent_round', 'sum_round_2', 'mantissa_term', 'rounding_amount', 'rst', 'sign_term', 'round_trigger', '\
+sum_round', 'exponent_final', 'sum_round_overflow']"];
+	"Leaf_73:AL" -> "73:AL";
+	"75:IF" -> "83:BL"	 [cond="['rst']",
+		label="!(rst)",
+		lineno=75];
+	"75:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f0fff89ab10>",
+		fillcolor=turquoise,
+		label="75:BL
+sum_round <= 0;
+sum_round_2 <= 0;
+exponent_round <= 0;
+sum_final <= 0;
+exponent_final <= 0;
+round_out <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f0fff89a5d0>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f0fff89a710>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f0fff89a890>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f0fff89a9d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f0fff89ab50>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f0fff89ac90>]",
+		style=filled,
+		typ=Block];
+	"75:IF" -> "75:BL"	 [cond="['rst']",
+		label=rst,
+		lineno=75];
+	"56:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0fff8a7b90>",
+		def_var="['round_to_pos_inf_trigger']",
+		fillcolor=deepskyblue,
+		label="56:AS
+round_to_pos_inf_trigger = !sign_term & |mantissa_term[1:0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['sign_term', 'mantissa_term']"];
+	"56:AS" -> "58:AS";
+	"58:AS" -> "73:AL";
+	"75:BL" -> "Leaf_73:AL"	 [cond="[]",
+		lineno=None];
+	"51:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0ffffdcbd0>",
+		def_var="['round_nearest']",
+		fillcolor=deepskyblue,
+		label="51:AS
+round_nearest = round_mode == 2'b00;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['round_mode']"];
+	"51:AS" -> "58:AS";
+	"55:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0fff8a7790>",
+		def_var="['round_nearest_trigger']",
+		fillcolor=deepskyblue,
+		label="55:AS
+round_nearest_trigger = round_nearest & mantissa_term[1];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['round_nearest', 'mantissa_term']"];
+	"51:AS" -> "55:AS";
+	"53:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0fff8a7150>",
+		def_var="['round_to_pos_inf']",
+		fillcolor=deepskyblue,
+		label="53:AS
+round_to_pos_inf = round_mode == 2'b10;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['round_mode']"];
+	"53:AS" -> "58:AS";
+	"64:AS" -> "73:AL";
+	"55:AS" -> "58:AS";
+	"73:AL" -> "74:BL"	 [cond="[]",
+		lineno=None];
+	"52:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0ffff6f290>",
+		def_var="['round_to_zero']",
+		fillcolor=deepskyblue,
+		label="52:AS
+round_to_zero = round_mode == 2'b01;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['round_mode']"];
+	"54:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0fff8a73d0>",
+		def_var="['round_to_neg_inf']",
+		fillcolor=deepskyblue,
+		label="54:AS
+round_to_neg_inf = round_mode == 2'b11;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['round_mode']"];
+	"54:AS" -> "58:AS";
+	"50:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0fffc8eb10>",
+		def_var="['rounding_amount']",
+		fillcolor=deepskyblue,
+		label="50:AS
+rounding_amount = { 53'b0, 1'b1, 2'b0 };",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="[]"];
+	"50:AS" -> "73:AL";
+}

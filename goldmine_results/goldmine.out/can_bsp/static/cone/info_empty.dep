@@ -1,0 +1,17 @@
+[1]i_can_fifo.write_length_info	i_can_fifo.info_cnt
+[1]reset_mode	[1]i_can_fifo.reset_mode
+[1]i_can_fifo.wr	[1]i_can_fifo.write_length_info
+i_can_fifo.info_empty	info_empty
+[1]rst	[1]i_can_fifo.rst
+[1]wr_fifo	[1]i_can_fifo.wr
+[1]i_can_fifo.info_empty	i_can_fifo.info_cnt
+[1]i_can_fifo.info_full	i_can_fifo.info_cnt
+i_can_fifo.info_cnt	i_can_fifo.info_empty
+[1]i_can_fifo.info_cnt	[1]i_can_fifo.info_empty
+[1]i_can_fifo.info_cnt	[1]i_can_fifo.info_full
+[1]i_can_fifo.info_cnt	i_can_fifo.info_cnt
+[1]i_can_fifo.release_buffer	i_can_fifo.info_cnt
+[1]i_can_fifo.wr_q	[1]i_can_fifo.write_length_info
+[1]release_buffer	[1]i_can_fifo.release_buffer
+[1]i_can_fifo.rst	i_can_fifo.info_cnt
+[1]i_can_fifo.reset_mode	i_can_fifo.info_cnt

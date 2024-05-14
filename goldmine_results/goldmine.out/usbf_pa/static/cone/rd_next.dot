@@ -1,0 +1,49 @@
+strict digraph "" {
+	"[1]state"	 [complexity=6,
+		importance=0.522334391279,
+		rank=0.0870557318798];
+	"[1]next_state"	 [complexity=3,
+		importance=0.0706679119122,
+		rank=0.0235559706374];
+	"[1]state" -> "[1]next_state";
+	"[1]tx_valid_r"	 [complexity=6,
+		importance=0.0964485007898,
+		rank=0.0160747501316];
+	"[1]tx_valid_r" -> "[1]next_state";
+	"[1]rst"	 [complexity=2,
+		importance=0.103361516599,
+		rank=0.0516807582996];
+	state	 [complexity=1,
+		importance=0.0450752451416,
+		rank=0.0450752451416];
+	"[1]rst" -> state;
+	"[1]next_state" -> state;
+	"[1]send_data"	 [complexity=9,
+		importance=0.295882673965,
+		rank=0.0328758526627];
+	"[1]send_data" -> "[1]next_state";
+	rd_next	 [complexity=0,
+		importance=0.0174162372483,
+		rank=0.0];
+	state -> rd_next;
+	tx_valid_r	 [complexity=2,
+		importance=0.0431968261259,
+		rank=0.021598413063];
+	tx_valid_r -> rd_next;
+	"[1]send_zero_length_r"	 [complexity=5,
+		importance=0.161152428759,
+		rank=0.0322304857517];
+	"[1]send_zero_length_r" -> "[1]next_state";
+	tx_ready	 [complexity=2,
+		importance=0.0306272635641,
+		rank=0.0153136317821];
+	tx_ready -> rd_next;
+	"[1]tx_valid_r1"	 [complexity=4,
+		importance=0.0683357362755,
+		rank=0.0170839340689];
+	"[1]tx_valid_r1" -> tx_valid_r;
+	"[1]tx_ready"	 [complexity=8,
+		importance=0.225214762052,
+		rank=0.0281518452566];
+	"[1]tx_ready" -> "[1]next_state";
+}

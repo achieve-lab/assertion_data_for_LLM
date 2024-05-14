@@ -1,0 +1,30 @@
+property a1;
+@(posedge clk) (opb[8] == 1 & opa[8] == 1) |-> (sign == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge clk) (opa[30] == 0 & opb[8] == 0 & opa[8] == 0) |-> (sign == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a3;
+@(posedge clk) (opb[30] == 0 & opa[8] == 1 & opb[8] == 0) |-> (sign == 1);
+endproperty
+assert_a3: assert property(a3);
+
+property a2;
+@(posedge clk) (opa[8] == 0 & opb[8] == 0) |-> (sign == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a5;
+@(posedge clk) (opb[8] == 0 & opa[8] == 1) |-> (sign == 1);
+endproperty
+assert_a5: assert property(a5);
+
+property a4;
+@(posedge clk) (opa[8] == 0 & opb[8] == 1) |-> (sign == 1);
+endproperty
+assert_a4: assert property(a4);
+

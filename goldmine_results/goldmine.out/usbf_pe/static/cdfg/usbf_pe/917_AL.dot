@@ -1,0 +1,25 @@
+strict digraph "" {
+	node [label="\N"];
+	"Leaf_917:AL"	 [def_var="['no_bufs0']",
+		label="Leaf_917:AL"];
+	"917:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fae5e104c10>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="917:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['no_buf0_dma', 'dma_en', 'buf_sel', 'buf0_st_max', 'buf0_na', 'buffer_full']"];
+	"918:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fae5e104d10>",
+		fillcolor=firebrick,
+		label="918:NS
+no_bufs0 <= buf0_na | no_buf0_dma | ((buf_sel)? buf0_st_max : buffer_full & !dma_en);",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fae5e104d10>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"917:AL" -> "918:NS"	 [cond="[]",
+		lineno=None];
+	"918:NS" -> "Leaf_917:AL"	 [cond="[]",
+		lineno=None];
+}

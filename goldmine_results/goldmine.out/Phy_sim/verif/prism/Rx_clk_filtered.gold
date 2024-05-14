@@ -1,0 +1,20 @@
+property a1;
+@(posedge clk) (Speed[1] == 0 & Clk_2_5m == 0) |-> (Rx_clk == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge clk) (Clk_25m == 0 & Clk_2_5m == 0) |-> (Rx_clk == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a3;
+@(posedge clk) (Speed[1] == 0 & Speed[0] == 0) |-> (Rx_clk == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a2;
+@(posedge clk) (Clk_25m == 0 & Speed[0] == 0) |-> (Rx_clk == 0);
+endproperty
+assert_a2: assert property(a2);
+

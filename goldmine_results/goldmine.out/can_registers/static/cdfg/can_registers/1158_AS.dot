@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"1158:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fd7734d5dd0>",
+		def_var="['we_tx_data_11']",
+		fillcolor=deepskyblue,
+		label="1158:AS
+we_tx_data_11 = cs & we & ~reset_mode & (extended_mode & (addr == 8'd27)) & transmit_buffer_status;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['cs', 'we', 'reset_mode', 'extended_mode', 'addr', 'transmit_buffer_status']"];
+}

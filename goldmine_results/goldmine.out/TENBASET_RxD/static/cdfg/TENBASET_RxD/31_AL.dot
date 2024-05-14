@@ -1,0 +1,65 @@
+strict digraph "" {
+	node [label="\N"];
+	"31:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f4415e11a90>",
+		fillcolor=turquoise,
+		label="31:BL
+in_data <= { in_data[1:0], manchester_data_in };
+new_bit_available <= cnt == 3;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f4415e11590>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f4415e11890>]",
+		style=filled,
+		typ=Block];
+	"36:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f4415e11fd0>",
+		fillcolor=springgreen,
+		label="36:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"31:BL" -> "36:IF"	 [cond="[]",
+		lineno=None];
+	"34:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f4415e11ad0>",
+		fillcolor=springgreen,
+		label="34:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"31:BL" -> "34:IF"	 [cond="[]",
+		lineno=None];
+	"Leaf_31:AL"	 [def_var="['cnt', 'in_data', 'RcvData', 'new_bit_available']",
+		label="Leaf_31:AL"];
+	"37:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f4415e17050>",
+		fillcolor=firebrick,
+		label="37:NS
+RcvData <= { in_data[1], RcvData[7:1] };",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f4415e17050>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"36:IF" -> "37:NS"	 [cond="['cnt']",
+		label="(cnt == 3)",
+		lineno=36];
+	"35:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f4415e11b90>",
+		fillcolor=firebrick,
+		label="35:NS
+cnt <= cnt + 1;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f4415e11b90>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"35:NS" -> "Leaf_31:AL"	 [cond="[]",
+		lineno=None];
+	"37:NS" -> "Leaf_31:AL"	 [cond="[]",
+		lineno=None];
+	"34:IF" -> "35:NS"	 [cond="['cnt', 'in_data', 'in_data']",
+		label="(|cnt || in_data[2] ^ in_data[1])",
+		lineno=34];
+	"31:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f4415e17450>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="31:AL",
+		sens="['clk48']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['cnt', 'in_data', 'RcvData', 'manchester_data_in']"];
+	"31:AL" -> "31:BL"	 [cond="[]",
+		lineno=None];
+}

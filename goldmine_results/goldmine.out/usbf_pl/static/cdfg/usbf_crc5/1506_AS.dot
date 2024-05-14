@@ -1,0 +1,13 @@
+strict digraph "" {
+	node [label="\N"];
+	"1506:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f13b55d4ed0>",
+		def_var="['crc_out']",
+		fillcolor=deepskyblue,
+		label="1506:AS
+crc_out[2] = din[10] ^ din[9] ^ din[8] ^ din[7] ^ din[6] ^ din[3] ^ din[2] ^ din[0] ^ crc_in[0] ^ crc_in[1] ^ crc_in[2] ^ \
+crc_in[3] ^ crc_in[4];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['din', 'din', 'din', 'din', 'din', 'din', 'din', 'din', 'crc_in', 'crc_in', 'crc_in', 'crc_in', 'crc_in']"];
+}

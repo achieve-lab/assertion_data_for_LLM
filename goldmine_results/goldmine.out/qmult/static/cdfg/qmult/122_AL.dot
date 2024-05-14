@@ -1,0 +1,58 @@
+strict digraph "" {
+	node [label="\N"];
+	"125:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f2a7b13ac10>",
+		fillcolor=springgreen,
+		label="125:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"129:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f2a7b11bc90>",
+		fillcolor=turquoise,
+		label="129:BL
+retVal[32 - 1] <= 0;
+retVal[32-2:0] <= result[32-2+15:15];",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2a7b11bd10>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f2a7b14b1d0>]",
+		style=filled,
+		typ=Block];
+	"125:IF" -> "129:BL"	 [cond="['a', 'b', 'a', 'b']",
+		label="!(((a[32 - 1] == 1) && (b[32 - 1] == 0) || (a[32 - 1] == 0) && (b[32 - 1] == 1)))",
+		lineno=125];
+	"125:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f2a7b14b650>",
+		fillcolor=turquoise,
+		label="125:BL
+retVal[32 - 1] <= 1;
+retVal[32-2:0] <= r_ext[32-2:0];",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2a7b14b690>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f2a7b14b8d0>]",
+		style=filled,
+		typ=Block];
+	"125:IF" -> "125:BL"	 [cond="['a', 'b', 'a', 'b']",
+		label="((a[32 - 1] == 1) && (b[32 - 1] == 0) || (a[32 - 1] == 0) && (b[32 - 1] == 1))",
+		lineno=125];
+	"122:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f2a7b13b490>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="122:AL",
+		sens="['result', 'r_ext']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['a', 'b', 'result', 'r_ext']"];
+	"123:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f2a7b13b610>",
+		fillcolor=turquoise,
+		label="123:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"122:AL" -> "123:BL"	 [cond="[]",
+		lineno=None];
+	"Leaf_122:AL"	 [def_var="['retVal']",
+		label="Leaf_122:AL"];
+	"129:BL" -> "Leaf_122:AL"	 [cond="[]",
+		lineno=None];
+	"125:BL" -> "Leaf_122:AL"	 [cond="[]",
+		lineno=None];
+	"123:BL" -> "125:IF"	 [cond="[]",
+		lineno=None];
+}

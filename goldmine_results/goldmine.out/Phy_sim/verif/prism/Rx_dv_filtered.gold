@@ -1,0 +1,10 @@
+property a1;
+@(posedge clk) (Tx_en == 1) |-> (Rx_dv == 1);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge clk) (Tx_en == 0) |-> (Rx_dv == 0);
+endproperty
+assert_a0: assert property(a0);
+

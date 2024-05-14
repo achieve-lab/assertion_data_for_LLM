@@ -1,0 +1,62 @@
+strict digraph "" {
+	"[1]StatePAD"	 [complexity=12,
+		importance=0.128986013546,
+		rank=0.0107488344622];
+	"[1]IncrementByteCnt"	 [complexity=3,
+		importance=0.114242527177,
+		rank=0.0380808423923];
+	"[1]StatePAD" -> "[1]IncrementByteCnt";
+	"[1]ResetByteCnt"	 [complexity=3,
+		importance=0.165237682479,
+		rank=0.055079227493];
+	ByteCnt	 [complexity=2,
+		importance=0.0672610048119,
+		rank=0.0336305024059];
+	"[1]ResetByteCnt" -> ByteCnt;
+	"[1]PacketFinished_q"	 [complexity=8,
+		importance=0.179981168848,
+		rank=0.022497646106];
+	"[1]PacketFinished_q" -> "[1]ResetByteCnt";
+	"[1]TxStartFrm"	 [complexity=8,
+		importance=0.179981168848,
+		rank=0.022497646106];
+	"[1]TxStartFrm" -> "[1]ResetByteCnt";
+	"[1]ByteCntMax"	 [complexity=12,
+		importance=0.140196161673,
+		rank=0.0116830134727];
+	"[1]ByteCntMax" -> "[1]IncrementByteCnt";
+	"[1]ByteCnt"	 [complexity=14,
+		importance=0.207457166484,
+		rank=0.0148183690346];
+	"[1]ByteCnt" -> "[1]ByteCntMax";
+	"[1]ByteCnt" -> ByteCnt;
+	"[1]StateData"	 [complexity=12,
+		importance=0.128986013546,
+		rank=0.0107488344622];
+	"[1]StateData" -> "[1]IncrementByteCnt";
+	"[1]StartBackoff"	 [complexity=8,
+		importance=0.179981168848,
+		rank=0.022497646106];
+	"[1]StartBackoff" -> "[1]ResetByteCnt";
+	"[1]StateBackOff"	 [complexity=12,
+		importance=0.128986013546,
+		rank=0.0107488344622];
+	"[1]StateBackOff" -> "[1]IncrementByteCnt";
+	"[1]StateIdle"	 [complexity=8,
+		importance=0.179981168848,
+		rank=0.022497646106];
+	"[1]StateIdle" -> "[1]ResetByteCnt";
+	"[1]StateFCS"	 [complexity=12,
+		importance=0.128986013546,
+		rank=0.0107488344622];
+	"[1]StateFCS" -> "[1]IncrementByteCnt";
+	"[1]IncrementByteCnt" -> ByteCnt;
+	"[1]NibCnt"	 [complexity=12,
+		importance=0.208461571069,
+		rank=0.0173717975891];
+	"[1]NibCnt" -> "[1]IncrementByteCnt";
+	"[1]Reset"	 [complexity=3,
+		importance=0.216526500805,
+		rank=0.0721755002683];
+	"[1]Reset" -> ByteCnt;
+}

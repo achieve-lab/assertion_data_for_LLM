@@ -1,0 +1,57 @@
+strict digraph "" {
+	tx_valid_d	 [complexity=2,
+		importance=0.0451439656835,
+		rank=0.0225719828418];
+	tx_valid	 [complexity=0,
+		importance=0.0238554728496,
+		rank=0.0];
+	tx_valid_d -> tx_valid;
+	"[1]state"	 [complexity=8,
+		importance=2.92848280882,
+		rank=0.366060351102];
+	"[1]next_state"	 [complexity=5,
+		importance=0.414403400132,
+		rank=0.0828806800264];
+	"[1]state" -> "[1]next_state";
+	"[1]tx_valid_r"	 [complexity=8,
+		importance=0.44018398901,
+		rank=0.0550229986262];
+	"[1]tx_valid_r" -> "[1]next_state";
+	"[1]rst"	 [complexity=4,
+		importance=0.790832493039,
+		rank=0.19770812326];
+	state	 [complexity=3,
+		importance=0.388810733362,
+		rank=0.129603577787];
+	"[1]rst" -> state;
+	"[1]next_state" -> state;
+	"[1]send_data"	 [complexity=11,
+		importance=1.67082462684,
+		rank=0.151893147895];
+	"[1]send_data" -> "[1]next_state";
+	send_zero_length_r	 [complexity=4,
+		importance=0.110104536301,
+		rank=0.0275261340753];
+	send_zero_length_r -> tx_valid_d;
+	send_data	 [complexity=5,
+		importance=0.148642923366,
+		rank=0.0297285846733];
+	send_data -> tx_valid_d;
+	state -> tx_valid_d;
+	"[1]send_zero_length_r"	 [complexity=7,
+		importance=0.848623405198,
+		rank=0.121231915028];
+	"[1]send_zero_length_r" -> "[1]next_state";
+	tx_ready	 [complexity=3,
+		importance=0.0583549919994,
+		rank=0.0194516639998];
+	tx_ready -> tx_valid_d;
+	"[1]send_zero_length"	 [complexity=6,
+		importance=0.123315562617,
+		rank=0.0205525937695];
+	"[1]send_zero_length" -> send_zero_length_r;
+	"[1]tx_ready"	 [complexity=10,
+		importance=1.25642122671,
+		rank=0.125642122671];
+	"[1]tx_ready" -> "[1]next_state";
+}

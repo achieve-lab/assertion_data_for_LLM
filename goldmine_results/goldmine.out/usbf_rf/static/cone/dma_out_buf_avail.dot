@@ -1,0 +1,173 @@
+strict digraph "" {
+	"[1]ep6_dma_out_buf_avail"	 [complexity=2,
+		importance=0.0227680458388,
+		rank=0.0113840229194];
+	dma_out_buf_avail	 [complexity=0,
+		importance=0.0208802606031,
+		rank=0.0];
+	"[1]ep6_dma_out_buf_avail" -> dma_out_buf_avail;
+	"[1]ep9_match"	 [complexity=1,
+		importance=0.148049609458,
+		rank=0.148049609458];
+	"[1]ep9_match" -> dma_out_buf_avail;
+	"[1]ep2_match"	 [complexity=1,
+		importance=0.294211433679,
+		rank=0.294211433679];
+	"[1]ep2_match" -> dma_out_buf_avail;
+	"[1]u0.csr"	 [complexity=4,
+		importance=0.350252031355,
+		rank=0.0875630078387];
+	"[1]u0.ep_match"	 [complexity=1,
+		importance=0.340933448512,
+		rank=0.340933448512];
+	"[1]u0.csr" -> "[1]u0.ep_match";
+	"[1]ep4_dma_out_buf_avail"	 [complexity=2,
+		importance=0.0227680458388,
+		rank=0.0113840229194];
+	"[1]ep4_dma_out_buf_avail" -> dma_out_buf_avail;
+	"[1]ep9_dma_out_buf_avail"	 [complexity=2,
+		importance=0.0227680458388,
+		rank=0.0113840229194];
+	"[1]ep9_dma_out_buf_avail" -> dma_out_buf_avail;
+	"[1]ep2_dma_out_buf_avail"	 [complexity=2,
+		importance=0.0227680458388,
+		rank=0.0113840229194];
+	"[1]ep2_dma_out_buf_avail" -> dma_out_buf_avail;
+	"[1]u0.uc_dpd"	 [complexity=10,
+		importance=0.354051163736,
+		rank=0.0354051163736];
+	"[1]u0.uc_dpd" -> "[1]u0.csr";
+	"[1]ep1_match"	 [complexity=1,
+		importance=0.315091694282,
+		rank=0.315091694282];
+	"[1]ep1_match" -> dma_out_buf_avail;
+	"[1]ep10_dma_out_buf_avail"	 [complexity=2,
+		importance=0.0227680458388,
+		rank=0.0113840229194];
+	"[1]ep10_dma_out_buf_avail" -> dma_out_buf_avail;
+	"[1]ep12_dma_out_buf_avail"	 [complexity=2,
+		importance=0.0227680458388,
+		rank=0.0113840229194];
+	"[1]ep12_dma_out_buf_avail" -> dma_out_buf_avail;
+	"[1]ep4_match"	 [complexity=1,
+		importance=0.252450912473,
+		rank=0.252450912473];
+	"[1]ep4_match" -> dma_out_buf_avail;
+	"[1]ep8_match"	 [complexity=1,
+		importance=0.168929870061,
+		rank=0.168929870061];
+	"[1]ep8_match" -> dma_out_buf_avail;
+	"[1]ep12_match"	 [complexity=1,
+		importance=0.0854088276482,
+		rank=0.0854088276482];
+	"[1]ep12_match" -> dma_out_buf_avail;
+	"[1]ep5_match"	 [complexity=1,
+		importance=0.23157065187,
+		rank=0.23157065187];
+	"[1]ep5_match" -> dma_out_buf_avail;
+	"[1]ep3_dma_out_buf_avail"	 [complexity=2,
+		importance=0.0227680458388,
+		rank=0.0113840229194];
+	"[1]ep3_dma_out_buf_avail" -> dma_out_buf_avail;
+	"[1]u0.csr0"	 [complexity=10,
+		importance=0.35260695547,
+		rank=0.035260695547];
+	"[1]u0.csr0" -> "[1]u0.csr";
+	"[1]u0.csr1"	 [complexity=10,
+		importance=0.353984204573,
+		rank=0.0353984204573];
+	"[1]u0.csr1" -> "[1]u0.csr";
+	"[1]ep14_dma_out_buf_avail"	 [complexity=2,
+		importance=0.0227680458388,
+		rank=0.0113840229194];
+	"[1]ep14_dma_out_buf_avail" -> dma_out_buf_avail;
+	"[1]ep14_match"	 [complexity=1,
+		importance=0.0436483064419,
+		rank=0.0436483064419];
+	"[1]ep14_match" -> dma_out_buf_avail;
+	"[1]ep11_match"	 [complexity=1,
+		importance=0.106289088251,
+		rank=0.106289088251];
+	"[1]ep11_match" -> dma_out_buf_avail;
+	"[1]ep3_match"	 [complexity=1,
+		importance=0.273331173076,
+		rank=0.273331173076];
+	"[1]ep3_match" -> dma_out_buf_avail;
+	"[1]ep13_dma_out_buf_avail"	 [complexity=2,
+		importance=0.0227680458388,
+		rank=0.0113840229194];
+	"[1]ep13_dma_out_buf_avail" -> dma_out_buf_avail;
+	"[1]ep0_match"	 [complexity=1,
+		importance=0.336964091644,
+		rank=0.336964091644];
+	"[1]ep0_match" -> dma_out_buf_avail;
+	"[1]ep10_match"	 [complexity=1,
+		importance=0.127169348854,
+		rank=0.127169348854];
+	"[1]ep10_match" -> dma_out_buf_avail;
+	"[1]ep7_dma_out_buf_avail"	 [complexity=2,
+		importance=0.0227680458388,
+		rank=0.0113840229194];
+	"[1]ep7_dma_out_buf_avail" -> dma_out_buf_avail;
+	"[1]ep5_dma_out_buf_avail"	 [complexity=2,
+		importance=0.0227680458388,
+		rank=0.0113840229194];
+	"[1]ep5_dma_out_buf_avail" -> dma_out_buf_avail;
+	"[1]ep6_match"	 [complexity=1,
+		importance=0.210690391267,
+		rank=0.210690391267];
+	"[1]ep6_match" -> dma_out_buf_avail;
+	"[1]ep1_dma_out_buf_avail"	 [complexity=2,
+		importance=0.0227680458388,
+		rank=0.0113840229194];
+	"[1]ep1_dma_out_buf_avail" -> dma_out_buf_avail;
+	"[1]ep11_dma_out_buf_avail"	 [complexity=2,
+		importance=0.0227680458388,
+		rank=0.0113840229194];
+	"[1]ep11_dma_out_buf_avail" -> dma_out_buf_avail;
+	"[1]ep13_match"	 [complexity=1,
+		importance=0.0645285670451,
+		rank=0.0645285670451];
+	"[1]ep13_match" -> dma_out_buf_avail;
+	"[1]u0.dma_out_buf_avail"	 [complexity=2,
+		importance=0.0281097742752,
+		rank=0.0140548871376];
+	"[1]ep0_dma_out_buf_avail"	 [complexity=2,
+		importance=0.0245488814047,
+		rank=0.0122744407024];
+	"[1]u0.dma_out_buf_avail" -> "[1]ep0_dma_out_buf_avail";
+	"[1]ep7_match"	 [complexity=1,
+		importance=0.189810130664,
+		rank=0.189810130664];
+	"[1]ep7_match" -> dma_out_buf_avail;
+	"[1]ep15_dma_out_buf_avail"	 [complexity=2,
+		importance=0.0227680458388,
+		rank=0.0113840229194];
+	"[1]ep15_dma_out_buf_avail" -> dma_out_buf_avail;
+	"[1]ep_sel"	 [complexity=4,
+		importance=0.34565285358,
+		rank=0.086413213395];
+	"[1]u0.ep_sel"	 [complexity=4,
+		importance=0.343765068344,
+		rank=0.0859412670861];
+	"[1]ep_sel" -> "[1]u0.ep_sel";
+	"[1]u0.ep_match" -> "[1]ep0_match";
+	"[1]u0.ep_sel" -> "[1]u0.ep_match";
+	"[1]ep15_match"	 [complexity=1,
+		importance=0.0227680458388,
+		rank=0.0227680458388];
+	"[1]ep15_match" -> dma_out_buf_avail;
+	"[1]ep8_dma_out_buf_avail"	 [complexity=2,
+		importance=0.0227680458388,
+		rank=0.0113840229194];
+	"[1]ep8_dma_out_buf_avail" -> dma_out_buf_avail;
+	"[1]u0.uc_bsel"	 [complexity=10,
+		importance=0.354051163736,
+		rank=0.0354051163736];
+	"[1]u0.uc_bsel" -> "[1]u0.csr";
+	"[1]ep0_dma_out_buf_avail" -> dma_out_buf_avail;
+	"[1]u0.ots_stop"	 [complexity=10,
+		importance=0.35260695547,
+		rank=0.035260695547];
+	"[1]u0.ots_stop" -> "[1]u0.csr";
+}

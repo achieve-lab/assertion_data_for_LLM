@@ -1,0 +1,17 @@
+strict digraph "" {
+	p	 [complexity=0,
+		importance=0.230768029763,
+		rank=0.0];
+	prod	 [complexity=2,
+		importance=0.487178745566,
+		rank=0.243589372783];
+	prod -> p;
+	"[1]b_reg"	 [complexity=5,
+		importance=0.641025248415,
+		rank=0.128205049683];
+	"[1]b_reg" -> prod;
+	"[1]a_reg"	 [complexity=5,
+		importance=0.641025248415,
+		rank=0.128205049683];
+	"[1]a_reg" -> prod;
+}

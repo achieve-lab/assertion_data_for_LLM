@@ -1,0 +1,63 @@
+strict digraph "" {
+	"[1]frame_no"	 [complexity=6,
+		importance=0.00839266311424,
+		rank=0.00139877718571];
+	frame_no_r	 [complexity=4,
+		importance=0.00603886649392,
+		rank=0.00150971662348];
+	"[1]frame_no" -> frame_no_r;
+	"[1]rst"	 [complexity=5,
+		importance=0.0134042023019,
+		rank=0.00268084046039];
+	"[1]rst" -> frame_no_r;
+	mfm_cnt	 [complexity=4,
+		importance=0.00823829385058,
+		rank=0.00205957346265];
+	"[1]rst" -> mfm_cnt;
+	frm_nat	 [complexity=0,
+		importance=0.00383623945663,
+		rank=0.0];
+	frame_no_r -> frm_nat;
+	"[1]u0.token1"	 [complexity=9,
+		importance=0.0123620242754,
+		rank=0.00137355825282];
+	"[1]u0.frame_no"	 [complexity=6,
+		importance=0.010447472952,
+		rank=0.001741245492];
+	"[1]u0.token1" -> "[1]u0.frame_no";
+	"[1]mfm_cnt"	 [complexity=6,
+		importance=0.0126403482445,
+		rank=0.00210672470742];
+	"[1]mfm_cnt" -> mfm_cnt;
+	"[1]hms_clk"	 [complexity=5,
+		importance=0.00945492926485,
+		rank=0.00189098585297];
+	sof_time	 [complexity=4,
+		importance=0.00727048425271,
+		rank=0.00181762106318];
+	"[1]hms_clk" -> sof_time;
+	"[1]u0.token0"	 [complexity=9,
+		importance=0.01290234081,
+		rank=0.00143359342334];
+	"[1]u0.token0" -> "[1]u0.frame_no";
+	"[1]sof_time"	 [complexity=6,
+		importance=0.0107047290488,
+		rank=0.00178412150813];
+	"[1]sof_time" -> sof_time;
+	"[1]frame_no_same"	 [complexity=7,
+		importance=0.0276236645062,
+		rank=0.0039462377866];
+	"[1]frame_no_same" -> mfm_cnt;
+	"[1]frame_no_we_r"	 [complexity=5,
+		importance=0.00780849008983,
+		rank=0.00156169801797];
+	"[1]frame_no_we_r" -> frame_no_r;
+	"[1]frame_no_we_r" -> mfm_cnt;
+	"[1]u0.frame_no" -> "[1]frame_no";
+	sof_time -> frm_nat;
+	mfm_cnt -> frm_nat;
+	"[1]clr_sof_time"	 [complexity=5,
+		importance=0.0163105921013,
+		rank=0.00326211842026];
+	"[1]clr_sof_time" -> sof_time;
+}

@@ -1,0 +1,14 @@
+strict digraph "" {
+	node [label="\N"];
+	"2792:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f13b5542cd0>",
+		def_var="['new_adr']",
+		fillcolor=deepskyblue,
+		label="2792:AS
+new_adr = adr_r[SSRAM_HADR+2:0] + ((out_op && dma_en)? { { SSRAM_HADR + 2 - 10{ 1'b0 } }, max_pl_sz[10:0] } : 
+(in_op)? { { \
+SSRAM_HADR + 2 - 13{ 1'b0 } }, size_next_r[13:0] } : { { SSRAM_HADR + 2 - 10{ 1'b0 } }, sizu_c[10:0] });",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['adr_r', 'out_op', 'dma_en', 'max_pl_sz', 'in_op', 'size_next_r', 'sizu_c']"];
+}

@@ -1,0 +1,15 @@
+wb_req_s1	rf_we_d
+wb_we_i	rf_we_d
+[1]state	[1]next_state
+wb_addr_i	rf_we_d
+[1]wb_we_i	[1]next_state
+[1]next_state	state
+[1]ma_ack	[1]next_state
+state	rf_we_d
+[1]wb_addr_i	[1]next_state
+[1]wb_stb_i	wb_req_s1
+[1]wb_req_s1	[1]next_state
+rst	state
+rf_we_d	rf_we
+[1]rst	[1]state
+[1]wb_cyc_i	wb_req_s1

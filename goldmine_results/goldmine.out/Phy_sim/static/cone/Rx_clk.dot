@@ -1,0 +1,21 @@
+strict digraph "" {
+	Clk_2_5m	 [complexity=7,
+		importance=0.187499729319,
+		rank=0.026785675617];
+	Rx_clk	 [complexity=0,
+		importance=0.124999613313,
+		rank=0.0];
+	Clk_2_5m -> Rx_clk;
+	Gtx_clk	 [complexity=7,
+		importance=0.187499729319,
+		rank=0.026785675617];
+	Gtx_clk -> Rx_clk;
+	Speed	 [complexity=7,
+		importance=0.187499729319,
+		rank=0.026785675617];
+	Speed -> Rx_clk;
+	Clk_25m	 [complexity=7,
+		importance=0.187499729319,
+		rank=0.026785675617];
+	Clk_25m -> Rx_clk;
+}

@@ -1,0 +1,14 @@
+strict digraph "" {
+	dma_en	 [complexity=0,
+		importance=0.00485040391475,
+		rank=0.0];
+	CTRL_ep	 [complexity=3,
+		importance=0.00963051073024,
+		rank=0.00321017024341];
+	CTRL_ep -> dma_en;
+	csr	 [complexity=5,
+		importance=0.0143881752863,
+		rank=0.00287763505725];
+	csr -> dma_en;
+	csr -> CTRL_ep;
+}

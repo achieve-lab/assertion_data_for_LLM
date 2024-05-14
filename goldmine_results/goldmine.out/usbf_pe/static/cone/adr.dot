@@ -1,0 +1,56 @@
+strict digraph "" {
+	"[1]buf1_adr"	 [complexity=4,
+		importance=0.0122912815099,
+		rank=0.00307282037747];
+	adr	 [complexity=0,
+		importance=0.00674065711871,
+		rank=0.0];
+	"[1]buf1_adr" -> adr;
+	"[1]buf0_adr"	 [complexity=4,
+		importance=0.0122912815099,
+		rank=0.00307282037747];
+	"[1]buf0_adr" -> adr;
+	"[1]in_token"	 [complexity=11,
+		importance=0.0207430211099,
+		rank=0.00188572919181];
+	"[1]buf_sel"	 [complexity=4,
+		importance=0.0147848507747,
+		rank=0.00369621269368];
+	"[1]in_token" -> "[1]buf_sel";
+	"[1]buf0_na"	 [complexity=11,
+		importance=0.020890552277,
+		rank=0.00189914111609];
+	"[1]buf0_na" -> "[1]buf_sel";
+	"[1]CTRL_ep"	 [complexity=14,
+		importance=0.024415361505,
+		rank=0.00174395439321];
+	"[1]dma_en"	 [complexity=11,
+		importance=0.0196352546895,
+		rank=0.00178502315359];
+	"[1]CTRL_ep" -> "[1]dma_en";
+	"[1]CTRL_ep" -> "[1]buf_sel";
+	"[1]dma_en" -> "[1]buf_sel";
+	"[1]buf_sel" -> adr;
+	"[1]uc_bsel"	 [complexity=11,
+		importance=0.0195649575902,
+		rank=0.0017786325082];
+	"[1]uc_bsel" -> "[1]buf_sel";
+	"[1]csr"	 [complexity=16,
+		importance=0.029173026061,
+		rank=0.00182331412881];
+	"[1]csr" -> "[1]CTRL_ep";
+	"[1]csr" -> "[1]dma_en";
+	"[1]csr" -> "[1]uc_bsel";
+	"[1]buf1_na"	 [complexity=11,
+		importance=0.0212606036844,
+		rank=0.00193278215312];
+	"[1]buf1_na" -> "[1]buf_sel";
+	"[1]buf1"	 [complexity=7,
+		importance=0.0170489460659,
+		rank=0.0024355637237];
+	"[1]buf1" -> "[1]buf1_adr";
+	"[1]buf0"	 [complexity=7,
+		importance=0.0170489460659,
+		rank=0.0024355637237];
+	"[1]buf0" -> "[1]buf0_adr";
+}

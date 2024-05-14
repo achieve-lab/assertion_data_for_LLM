@@ -1,0 +1,17 @@
+ORsel	carry_out
+XorY	or_result
+XorY	carry_out
+XORsel	z
+carry_out	z
+carry_out	carry_out
+XandY	and_result
+XandY	carry_out
+XxorY	z
+XxorY	xor_result
+carry_in	carry_out
+y	XorY
+y	XxorY
+y	XandY
+x	XorY
+x	XxorY
+x	XandY

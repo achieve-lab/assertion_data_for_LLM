@@ -1,0 +1,13 @@
+{'mmc_clk': {'CDeps': [],
+             'CLines': [],
+             'Clocked': False,
+             'DDeps': [['mode_transfer', 'sys_clk', 'prescaler']],
+             'DLines': ['266:D'],
+             'Expressions': [<pyverilog.vparser.ast.Assign object at 0x7f1146a54c10>]},
+ 'prescaler': {'CDeps': [[[], ['rst']], [[], ['rst']]],
+               'CLines': [[None, '257:C'], [None, '257:C']],
+               'Clocked': False,
+               'DDeps': [[], ['prescaler']],
+               'DLines': ['258:D', '260:D'],
+               'Expressions': [<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f1146a548d0>,
+                               <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f1146a54ad0>]}}

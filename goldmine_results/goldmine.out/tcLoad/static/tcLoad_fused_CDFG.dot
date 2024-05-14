@@ -1,0 +1,52 @@
+strict digraph "compose( ,  )" {
+	node [label="\N"];
+	"225:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f9e05bc2290>",
+		def_var="['cdSel']",
+		fillcolor=deepskyblue,
+		label="225:AS
+cdSel = cdIn[tcAddr];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['cdIn', 'tcAddr']"];
+	"227:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f9e05bc2610>",
+		def_var="['tcLoadOut']",
+		fillcolor=deepskyblue,
+		label="227:AS
+tcLoadOut = { 4'b0, cdSel, cuSel, ttSel, dnSel };",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['cdSel', 'cuSel', 'ttSel', 'dnSel']"];
+	"225:AS" -> "227:AS";
+	"223:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f9e05bc8c50>",
+		def_var="['ttSel']",
+		fillcolor=deepskyblue,
+		label="223:AS
+ttSel = ttIn[tcAddr];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['ttIn', 'tcAddr']"];
+	"223:AS" -> "227:AS";
+	"224:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f9e05bda210>",
+		def_var="['cuSel']",
+		fillcolor=deepskyblue,
+		label="224:AS
+cuSel = cuIn[tcAddr];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['cuIn', 'tcAddr']"];
+	"224:AS" -> "227:AS";
+	"222:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f9e05bbee50>",
+		def_var="['dnSel']",
+		fillcolor=deepskyblue,
+		label="222:AS
+dnSel = dnIn[tcAddr];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['dnIn', 'tcAddr']"];
+	"222:AS" -> "227:AS";
+}

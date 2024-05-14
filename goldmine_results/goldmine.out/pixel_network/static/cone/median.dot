@@ -1,0 +1,327 @@
+strict digraph "" {
+	c1l	 [complexity=12,
+		importance=56.8595823637,
+		rank=4.73829853031];
+	"node_u2.data_b"	 [complexity=12,
+		importance=56.8533404098,
+		rank=4.73777836748];
+	c1l -> "node_u2.data_b";
+	"node_u7.data_a"	 [complexity=6,
+		importance=1.53871036639,
+		rank=0.256451727732];
+	"node_u7.sel0"	 [complexity=4,
+		importance=0.762784890265,
+		rank=0.190696222566];
+	"node_u7.data_a" -> "node_u7.sel0";
+	"node_u7.data_lo"	 [complexity=6,
+		importance=1.56899691901,
+		rank=0.261499486501];
+	"node_u7.data_a" -> "node_u7.data_lo";
+	"node_u7.data_hi"	 [complexity=3,
+		importance=0.249975924209,
+		rank=0.0833253080698];
+	"node_u7.data_a" -> "node_u7.data_hi";
+	"node_u7.data_b"	 [complexity=6,
+		importance=1.53888796912,
+		rank=0.256481328187];
+	"node_u7.data_b" -> "node_u7.sel0";
+	"node_u7.data_b" -> "node_u7.data_lo";
+	"node_u7.data_b" -> "node_u7.data_hi";
+	"node_u4.data_hi"	 [complexity=9,
+		importance=9.48074912928,
+		rank=1.05341656992];
+	node_u4_hi	 [complexity=9,
+		importance=9.46563812228,
+		rank=1.05173756914];
+	"node_u4.data_hi" -> node_u4_hi;
+	"node_u0.data_lo"	 [complexity=9,
+		importance=9.47022838749,
+		rank=1.05224759861];
+	node_u0_lo	 [complexity=9,
+		importance=9.45579396016,
+		rank=1.05064377335];
+	"node_u0.data_lo" -> node_u0_lo;
+	"node_u6.data_b"	 [complexity=9,
+		importance=9.45184077647,
+		rank=1.05020453072];
+	"node_u6.sel0"	 [complexity=7,
+		importance=4.7193500953,
+		rank=0.674192870758];
+	"node_u6.data_b" -> "node_u6.sel0";
+	"node_u6.data_lo"	 [complexity=6,
+		importance=1.56885994719,
+		rank=0.261476657866];
+	"node_u6.data_b" -> "node_u6.data_lo";
+	"node_u8.data_hi"	 [complexity=3,
+		importance=0.249978304883,
+		rank=0.0833261016275];
+	node_u8_hi	 [complexity=3,
+		importance=0.234091136877,
+		rank=0.0780303789591];
+	"node_u8.data_hi" -> node_u8_hi;
+	node_u4_hi -> "node_u6.data_b";
+	"node_u6.data_a"	 [complexity=9,
+		importance=9.45167168586,
+		rank=1.05018574287];
+	"node_u6.data_a" -> "node_u6.sel0";
+	"node_u6.data_a" -> "node_u6.data_lo";
+	node_u7_hi	 [complexity=3,
+		importance=0.234090801519,
+		rank=0.0780302671731];
+	"node_u9.data_a"	 [complexity=3,
+		importance=0.21990512244,
+		rank=0.0733017074801];
+	node_u7_hi -> "node_u9.data_a";
+	"node_u2.data_hi"	 [complexity=9,
+		importance=9.4703551307,
+		rank=1.05226168119];
+	"node_u2.data_b" -> "node_u2.data_hi";
+	"node_u2.sel0"	 [complexity=10,
+		importance=28.4219887482,
+		rank=2.84219887482];
+	"node_u2.data_b" -> "node_u2.sel0";
+	"node_u1.HI_MUX"	 [complexity=11,
+		importance=18.9653724141,
+		rank=1.72412476492];
+	"node_u1.data_hi"	 [complexity=9,
+		importance=9.47956523009,
+		rank=1.05328502557];
+	"node_u1.HI_MUX" -> "node_u1.data_hi";
+	"node_u8.sel0"	 [complexity=4,
+		importance=0.762795452199,
+		rank=0.19069886305];
+	"node_u8.sel0" -> "node_u8.data_hi";
+	"node_u1.data_a"	 [complexity=12,
+		importance=56.9086010061,
+		rank=4.74238341718];
+	"node_u1.data_lo"	 [complexity=12,
+		importance=56.949010848,
+		rank=4.745750904];
+	"node_u1.data_a" -> "node_u1.data_lo";
+	"node_u1.data_a" -> "node_u1.data_hi";
+	"node_u1.sel0"	 [complexity=10,
+		importance=28.4496190463,
+		rank=2.84496190463];
+	"node_u1.data_a" -> "node_u1.sel0";
+	"node_u8.HI_MUX"	 [complexity=5,
+		importance=0.506198563705,
+		rank=0.101239712741];
+	"node_u8.HI_MUX" -> "node_u8.data_hi";
+	"node_u7.sel0" -> "node_u7.data_lo";
+	"node_u7.sel0" -> "node_u7.data_hi";
+	"node_u0.LOW_MUX"	 [complexity=11,
+		importance=18.9466987289,
+		rank=1.72242715717];
+	"node_u0.LOW_MUX" -> "node_u0.data_lo";
+	"node_u8.data_b"	 [complexity=6,
+		importance=1.53873149026,
+		rank=0.256455248377];
+	"node_u8.data_b" -> "node_u8.data_hi";
+	"node_u8.data_b" -> "node_u8.sel0";
+	"node_u5.data_hi"	 [complexity=6,
+		importance=1.56763984307,
+		rank=0.261273307178];
+	node_u5_hi	 [complexity=6,
+		importance=1.55252883607,
+		rank=0.258754806012];
+	"node_u5.data_hi" -> node_u5_hi;
+	"node_u7.HI_MUX"	 [complexity=5,
+		importance=0.506193802358,
+		rank=0.101238760472];
+	"node_u7.HI_MUX" -> "node_u7.data_hi";
+	node_u1_lo	 [complexity=12,
+		importance=56.9345764206,
+		rank=4.74454803505];
+	"node_u1.data_lo" -> node_u1_lo;
+	"node_u3.sel0"	 [complexity=7,
+		importance=4.714681674,
+		rank=0.673525953429];
+	"node_u3.data_lo"	 [complexity=6,
+		importance=1.5676187192,
+		rank=0.261269786533];
+	"node_u3.sel0" -> "node_u3.data_lo";
+	node_u5_hi -> "node_u8.data_b";
+	"node_u3.data_a"	 [complexity=9,
+		importance=9.44233484326,
+		rank=1.04914831592];
+	node_u0_lo -> "node_u3.data_a";
+	c2m	 [complexity=12,
+		importance=56.9148429601,
+		rank=4.74290358001];
+	"node_u1.data_b"	 [complexity=12,
+		importance=56.9086010061,
+		rank=4.74238341718];
+	c2m -> "node_u1.data_b";
+	"node_u5.data_b"	 [complexity=9,
+		importance=9.44246158647,
+		rank=1.0491623985];
+	"node_u5.data_b" -> "node_u5.data_hi";
+	"node_u5.sel0"	 [complexity=7,
+		importance=4.71474504561,
+		rank=0.673535006516];
+	"node_u5.data_b" -> "node_u5.sel0";
+	node_u1_hi	 [complexity=9,
+		importance=9.46513080276,
+		rank=1.05168120031];
+	"node_u1.data_hi" -> node_u1_hi;
+	"node_u6.LOW_MUX"	 [complexity=8,
+		importance=3.14396184833,
+		rank=0.392995231041];
+	"node_u6.LOW_MUX" -> "node_u6.data_lo";
+	"node_u5.data_a"	 [complexity=9,
+		importance=9.43885300469,
+		rank=1.04876144497];
+	"node_u5.data_a" -> "node_u5.data_hi";
+	"node_u5.data_a" -> "node_u5.sel0";
+	"node_u4.data_a"	 [complexity=12,
+		importance=56.9211173037,
+		rank=4.74342644198];
+	"node_u4.data_a" -> "node_u4.data_hi";
+	"node_u4.sel0"	 [complexity=10,
+		importance=28.4540729042,
+		rank=2.84540729042];
+	"node_u4.data_a" -> "node_u4.sel0";
+	"node_u4.data_b"	 [complexity=12,
+		importance=56.9175087219,
+		rank=4.74312572683];
+	"node_u4.data_b" -> "node_u4.data_hi";
+	"node_u4.data_b" -> "node_u4.sel0";
+	"node_u0.data_a"	 [complexity=12,
+		importance=56.8525799505,
+		rank=4.73771499588];
+	"node_u0.data_a" -> "node_u0.data_lo";
+	"node_u0.sel0"	 [complexity=10,
+		importance=28.4216085185,
+		rank=2.84216085185];
+	"node_u0.data_a" -> "node_u0.sel0";
+	"node_u1.sel0" -> "node_u1.data_lo";
+	"node_u1.sel0" -> "node_u1.data_hi";
+	"node_u0.data_b"	 [complexity=12,
+		importance=56.8525799505,
+		rank=4.73771499588];
+	"node_u0.data_b" -> "node_u0.data_lo";
+	"node_u0.data_b" -> "node_u0.sel0";
+	"node_u9.data_b"	 [complexity=3,
+		importance=0.21990512244,
+		rank=0.0733017074801];
+	node_u8_hi -> "node_u9.data_b";
+	c2h	 [complexity=12,
+		importance=56.8588219045,
+		rank=4.73823515871];
+	c2h -> "node_u0.data_b";
+	"node_u8.data_a"	 [complexity=6,
+		importance=1.53892611724,
+		rank=0.256487686206];
+	"node_u8.data_a" -> "node_u8.data_hi";
+	"node_u8.data_a" -> "node_u8.sel0";
+	c2l	 [complexity=12,
+		importance=56.8595823637,
+		rank=4.73829853031];
+	"node_u2.data_a"	 [complexity=12,
+		importance=56.8533404098,
+		rank=4.73777836748];
+	c2l -> "node_u2.data_a";
+	node_u7_lo	 [complexity=6,
+		importance=1.55311179632,
+		rank=0.258851966053];
+	node_u7_lo -> "node_u8.data_a";
+	"node_u1.data_b" -> "node_u1.data_lo";
+	"node_u1.data_b" -> "node_u1.data_hi";
+	"node_u1.data_b" -> "node_u1.sel0";
+	node_u1_lo -> "node_u4.data_a";
+	node_u3_lo	 [complexity=6,
+		importance=1.5525077122,
+		rank=0.258751285367];
+	node_u3_lo -> "node_u7.data_a";
+	c3l	 [complexity=9,
+		importance=9.44509495863,
+		rank=1.0494549954];
+	c3l -> "node_u5.data_a";
+	"node_u2.HI_MUX"	 [complexity=11,
+		importance=18.9469522153,
+		rank=1.72245020139];
+	"node_u2.HI_MUX" -> "node_u2.data_hi";
+	"node_u0.sel0" -> "node_u0.data_lo";
+	"node_u6.sel0" -> "node_u6.data_lo";
+	"node_u1.LOW_MUX"	 [complexity=14,
+		importance=113.90426365,
+		rank=8.13601883213];
+	"node_u1.LOW_MUX" -> "node_u1.data_lo";
+	"node_u3.data_lo" -> node_u3_lo;
+	node_u6_lo	 [complexity=6,
+		importance=1.55304018941,
+		rank=0.258840031568];
+	"node_u6.data_lo" -> node_u6_lo;
+	node_u2_hi	 [complexity=9,
+		importance=9.45592070337,
+		rank=1.05065785593];
+	"node_u2.data_hi" -> node_u2_hi;
+	"node_u2.data_a" -> "node_u2.data_hi";
+	"node_u2.data_a" -> "node_u2.sel0";
+	"node_u4.HI_MUX"	 [complexity=11,
+		importance=18.9677402125,
+		rank=1.72434001932];
+	"node_u4.HI_MUX" -> "node_u4.data_hi";
+	"node_u9.data_lo"	 [complexity=0,
+		importance=0.030125570133,
+		rank=0.0];
+	median	 [complexity=0,
+		importance=0.0142031630328,
+		rank=0.0];
+	"node_u9.data_lo" -> median;
+	"node_u5.sel0" -> "node_u5.data_hi";
+	c3m	 [complexity=12,
+		importance=56.9148429601,
+		rank=4.74290358001];
+	c3m -> "node_u1.data_a";
+	"node_u4.sel0" -> "node_u4.data_hi";
+	"node_u3.data_a" -> "node_u3.sel0";
+	"node_u3.data_a" -> "node_u3.data_lo";
+	node_u6_lo -> "node_u7.data_b";
+	"node_u3.data_b"	 [complexity=9,
+		importance=9.43872626148,
+		rank=1.04874736239];
+	"node_u3.data_b" -> "node_u3.sel0";
+	"node_u3.data_b" -> "node_u3.data_lo";
+	c1h	 [complexity=9,
+		importance=9.44496821542,
+		rank=1.04944091282];
+	c1h -> "node_u3.data_b";
+	"node_u9.LOW_MUX"	 [complexity=2,
+		importance=0.0664930942054,
+		rank=0.0332465471027];
+	"node_u9.LOW_MUX" -> "node_u9.data_lo";
+	"node_u7.data_lo" -> node_u7_lo;
+	"node_u7.LOW_MUX"	 [complexity=8,
+		importance=3.14423579196,
+		rank=0.393029473994];
+	"node_u7.LOW_MUX" -> "node_u7.data_lo";
+	"node_u9.data_b" -> "node_u9.data_lo";
+	"node_u9.sel0"	 [complexity=1,
+		importance=0.1032849548,
+		rank=0.1032849548];
+	"node_u9.data_b" -> "node_u9.sel0";
+	"node_u9.data_a" -> "node_u9.data_lo";
+	"node_u9.data_a" -> "node_u9.sel0";
+	c1m	 [complexity=12,
+		importance=56.9237506759,
+		rank=4.74364588966];
+	c1m -> "node_u4.data_b";
+	"node_u5.HI_MUX"	 [complexity=8,
+		importance=3.14152164008,
+		rank=0.392690205009];
+	"node_u5.HI_MUX" -> "node_u5.data_hi";
+	node_u2_hi -> "node_u5.data_b";
+	c3h	 [complexity=12,
+		importance=56.8588219045,
+		rank=4.73823515871];
+	c3h -> "node_u0.data_a";
+	"node_u7.data_hi" -> node_u7_hi;
+	"node_u2.sel0" -> "node_u2.data_hi";
+	"node_u3.LOW_MUX"	 [complexity=8,
+		importance=3.14147939234,
+		rank=0.392684924042];
+	"node_u3.LOW_MUX" -> "node_u3.data_lo";
+	"node_u9.sel0" -> "node_u9.data_lo";
+	node_u1_hi -> "node_u6.data_a";
+}

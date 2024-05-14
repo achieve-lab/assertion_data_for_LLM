@@ -1,0 +1,8 @@
+strict digraph "" {
+	i -> words	 [weight=1.0];
+	j -> words	 [weight=2.0];
+	data_in -> words	 [weight=2.0];
+	swap_type -> data_swap	 [weight=1.0];
+	WIDTH -> words	 [weight=1.0];
+	words -> data_swap	 [weight=1.0];
+}

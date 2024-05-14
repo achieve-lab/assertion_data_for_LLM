@@ -1,0 +1,41 @@
+strict digraph "" {
+	"[1]TxAbortIn"	 [complexity=6,
+		importance=0.0836557338681,
+		rank=0.0139426223113];
+	TxCtrlStartFrm	 [complexity=0,
+		importance=0.0653152871209,
+		rank=0.0];
+	"[1]TxAbortIn" -> TxCtrlStartFrm;
+	"[1]TxUsedDataOutDetected"	 [complexity=6,
+		importance=0.0836557338681,
+		rank=0.0139426223113];
+	"[1]TxUsedDataOutDetected" -> TxCtrlStartFrm;
+	"[1]TxUsedDataOut"	 [complexity=6,
+		importance=0.0836557338681,
+		rank=0.0139426223113];
+	"[1]TxUsedDataOut" -> TxCtrlStartFrm;
+	"[1]TxUsedDataIn_q"	 [complexity=2,
+		importance=0.151874944258,
+		rank=0.0759374721291];
+	"[1]TxUsedDataIn_q" -> TxCtrlStartFrm;
+	"[1]TxDoneIn"	 [complexity=6,
+		importance=0.0836557338681,
+		rank=0.0139426223113];
+	"[1]TxDoneIn" -> TxCtrlStartFrm;
+	"[1]TxReset"	 [complexity=1,
+		importance=0.21428630811,
+		rank=0.21428630811];
+	"[1]TxReset" -> TxCtrlStartFrm;
+	"[1]TxStartFrmIn"	 [complexity=6,
+		importance=0.0836557338681,
+		rank=0.0139426223113];
+	"[1]TxStartFrmIn" -> TxCtrlStartFrm;
+	"[1]WillSendControlFrame"	 [complexity=6,
+		importance=0.125932206959,
+		rank=0.0209887011598];
+	"[1]WillSendControlFrame" -> TxCtrlStartFrm;
+	"[1]CtrlMux"	 [complexity=2,
+		importance=0.170417653409,
+		rank=0.0852088267045];
+	"[1]CtrlMux" -> TxCtrlStartFrm;
+}

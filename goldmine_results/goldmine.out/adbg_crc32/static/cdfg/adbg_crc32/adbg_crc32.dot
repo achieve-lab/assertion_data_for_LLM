@@ -1,0 +1,478 @@
+strict digraph "compose( ,  )" {
+	node [label="\N"];
+	"91:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e24d85310>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="91:AS
+new_crc[5] = crc[6] ^ data ^ crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc', 'data', 'crc']"];
+	"119:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f1e246c9390>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="119:AL",
+		sens="['clk', 'rst']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['new_crc', 'enable', 'shift', 'crc', 'rst', 'clr']"];
+	"91:AS" -> "119:AL";
+	"104:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246d4550>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="104:AS
+new_crc[18] = crc[19];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"104:AS" -> "119:AL";
+	"115:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246caa90>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="115:AS
+new_crc[29] = crc[30] ^ data ^ crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc', 'data', 'crc']"];
+	"115:AS" -> "119:AL";
+	"101:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e24695e50>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="101:AS
+new_crc[15] = crc[16] ^ data ^ crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc', 'data', 'crc']"];
+	"101:AS" -> "119:AL";
+	"90:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e26efd690>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="90:AS
+new_crc[4] = crc[5];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"90:AS" -> "119:AL";
+	"108:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246c7310>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="108:AS
+new_crc[22] = crc[23];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"108:AS" -> "119:AL";
+	"125:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f1e246c9c90>",
+		fillcolor=springgreen,
+		label="125:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"126:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f1e246c9cd0>",
+		fillcolor=firebrick,
+		label="126:NS
+crc[31:0] <= new_crc;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f1e246c9cd0>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"125:IF" -> "126:NS"	 [cond="['enable']",
+		label=enable,
+		lineno=125];
+	"127:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f1e246c9f90>",
+		fillcolor=springgreen,
+		label="127:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"125:IF" -> "127:IF"	 [cond="['enable']",
+		label="!(enable)",
+		lineno=125];
+	"122:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f1e246c9610>",
+		fillcolor=firebrick,
+		label="122:NS
+crc[31:0] <= 32'hffffffff;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f1e246c9610>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"Leaf_119:AL"	 [def_var="['crc']",
+		label="Leaf_119:AL"];
+	"122:NS" -> "Leaf_119:AL"	 [cond="[]",
+		lineno=None];
+	"121:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f1e246c95d0>",
+		fillcolor=springgreen,
+		label="121:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"121:IF" -> "122:NS"	 [cond="['rst']",
+		label=rst,
+		lineno=121];
+	"123:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f1e246c9950>",
+		fillcolor=springgreen,
+		label="123:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"121:IF" -> "123:IF"	 [cond="['rst']",
+		label="!(rst)",
+		lineno=121];
+	"86:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e24ac1090>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="86:AS
+new_crc[0] = crc[1];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"86:AS" -> "119:AL";
+	"114:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246ca6d0>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="114:AS
+new_crc[28] = crc[29];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"114:AS" -> "119:AL";
+	"109:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246c76d0>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="109:AS
+new_crc[23] = crc[24] ^ data ^ crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc', 'data', 'crc']"];
+	"109:AS" -> "119:AL";
+	"106:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246d4cd0>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="106:AS
+new_crc[20] = crc[21] ^ data ^ crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc', 'data', 'crc']"];
+	"106:AS" -> "119:AL";
+	"98:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e24695610>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="98:AS
+new_crc[12] = crc[13];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"98:AS" -> "119:AL";
+	"89:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e24d9cd50>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="89:AS
+new_crc[3] = crc[4];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"89:AS" -> "119:AL";
+	"117:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246c9150>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="117:AS
+new_crc[31] = data ^ crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['data', 'crc']"];
+	"117:AS" -> "119:AL";
+	"111:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246c7cd0>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="111:AS
+new_crc[25] = crc[26];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"111:AS" -> "119:AL";
+	"134:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e24aa50d0>",
+		def_var="['serial_out']",
+		fillcolor=deepskyblue,
+		label="134:AS
+serial_out = crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"105:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246d4910>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="105:AS
+new_crc[19] = crc[20] ^ data ^ crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc', 'data', 'crc']"];
+	"105:AS" -> "119:AL";
+	"95:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e24d85f10>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="95:AS
+new_crc[9] = crc[10] ^ data ^ crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc', 'data', 'crc']"];
+	"95:AS" -> "119:AL";
+	"128:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f1e24aa5210>",
+		fillcolor=firebrick,
+		label="128:NS
+crc[31:0] <= { 1'b0, crc[31:1] };",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f1e24aa5210>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"128:NS" -> "Leaf_119:AL"	 [cond="[]",
+		lineno=None];
+	"99:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e24695850>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="99:AS
+new_crc[13] = crc[14];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"99:AS" -> "119:AL";
+	"103:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246d4310>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="103:AS
+new_crc[17] = crc[18];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"103:AS" -> "119:AL";
+	"96:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e24695190>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="96:AS
+new_crc[10] = crc[11];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"96:AS" -> "119:AL";
+	"126:NS" -> "Leaf_119:AL"	 [cond="[]",
+		lineno=None];
+	"116:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246cae50>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="116:AS
+new_crc[30] = crc[31] ^ data ^ crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc', 'data', 'crc']"];
+	"116:AS" -> "119:AL";
+	"87:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e24ab7bd0>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="87:AS
+new_crc[1] = crc[2];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"87:AS" -> "119:AL";
+	"88:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e24ab7fd0>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="88:AS
+new_crc[2] = crc[3];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"88:AS" -> "119:AL";
+	"133:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246c99d0>",
+		def_var="['crc_out']",
+		fillcolor=deepskyblue,
+		label="133:AS
+crc_out = crc;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"93:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e24d85790>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="93:AS
+new_crc[7] = crc[8];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"93:AS" -> "119:AL";
+	"102:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246d40d0>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="102:AS
+new_crc[16] = crc[17];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"102:AS" -> "119:AL";
+	"120:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f1e246c93d0>",
+		fillcolor=turquoise,
+		label="120:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"119:AL" -> "120:BL"	 [cond="[]",
+		lineno=None];
+	"92:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e24d85550>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="92:AS
+new_crc[6] = crc[7];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"92:AS" -> "119:AL";
+	"120:BL" -> "121:IF"	 [cond="[]",
+		lineno=None];
+	"113:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246ca490>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="113:AS
+new_crc[27] = crc[28] ^ data ^ crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc', 'data', 'crc']"];
+	"113:AS" -> "119:AL";
+	"123:IF" -> "125:IF"	 [cond="['clr']",
+		label="!(clr)",
+		lineno=123];
+	"124:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f1e246c9990>",
+		fillcolor=firebrick,
+		label="124:NS
+crc[31:0] <= 32'hffffffff;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f1e246c9990>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"123:IF" -> "124:NS"	 [cond="['clr']",
+		label=clr,
+		lineno=123];
+	"124:NS" -> "Leaf_119:AL"	 [cond="[]",
+		lineno=None];
+	"94:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e24d85b50>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="94:AS
+new_crc[8] = crc[9] ^ data ^ crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc', 'data', 'crc']"];
+	"94:AS" -> "119:AL";
+	"Leaf_119:AL" -> "91:AS";
+	"Leaf_119:AL" -> "104:AS";
+	"Leaf_119:AL" -> "115:AS";
+	"Leaf_119:AL" -> "101:AS";
+	"Leaf_119:AL" -> "90:AS";
+	"Leaf_119:AL" -> "108:AS";
+	"Leaf_119:AL" -> "86:AS";
+	"Leaf_119:AL" -> "114:AS";
+	"Leaf_119:AL" -> "109:AS";
+	"Leaf_119:AL" -> "106:AS";
+	"Leaf_119:AL" -> "98:AS";
+	"Leaf_119:AL" -> "89:AS";
+	"Leaf_119:AL" -> "117:AS";
+	"Leaf_119:AL" -> "111:AS";
+	"Leaf_119:AL" -> "134:AS";
+	"Leaf_119:AL" -> "105:AS";
+	"Leaf_119:AL" -> "95:AS";
+	"Leaf_119:AL" -> "99:AS";
+	"Leaf_119:AL" -> "103:AS";
+	"Leaf_119:AL" -> "96:AS";
+	"Leaf_119:AL" -> "116:AS";
+	"Leaf_119:AL" -> "87:AS";
+	"Leaf_119:AL" -> "88:AS";
+	"Leaf_119:AL" -> "133:AS";
+	"Leaf_119:AL" -> "93:AS";
+	"Leaf_119:AL" -> "102:AS";
+	"Leaf_119:AL" -> "119:AL";
+	"Leaf_119:AL" -> "92:AS";
+	"Leaf_119:AL" -> "113:AS";
+	"Leaf_119:AL" -> "94:AS";
+	"100:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e24695a90>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="100:AS
+new_crc[14] = crc[15];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"Leaf_119:AL" -> "100:AS";
+	"112:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246ca0d0>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="112:AS
+new_crc[26] = crc[27] ^ data ^ crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc', 'data', 'crc']"];
+	"Leaf_119:AL" -> "112:AS";
+	"110:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246c7a90>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="110:AS
+new_crc[24] = crc[25] ^ data ^ crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc', 'data', 'crc']"];
+	"Leaf_119:AL" -> "110:AS";
+	"107:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246c70d0>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="107:AS
+new_crc[21] = crc[22] ^ data ^ crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc', 'data', 'crc']"];
+	"Leaf_119:AL" -> "107:AS";
+	"97:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e246953d0>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="97:AS
+new_crc[11] = crc[12];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc']"];
+	"Leaf_119:AL" -> "97:AS";
+	"127:IF" -> "128:NS"	 [cond="['shift']",
+		label=shift,
+		lineno=127];
+	"100:AS" -> "119:AL";
+	"112:AS" -> "119:AL";
+	"110:AS" -> "119:AL";
+	"107:AS" -> "119:AL";
+	"97:AS" -> "119:AL";
+}

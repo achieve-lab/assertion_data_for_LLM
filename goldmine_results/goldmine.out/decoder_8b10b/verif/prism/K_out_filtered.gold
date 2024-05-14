@@ -1,0 +1,25 @@
+property a0;
+@(posedge clk) (K == 0) |=> (K_out == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a2;
+@(posedge clk) (KA == 1) |=> (K_out == 1);
+endproperty
+assert_a2: assert property(a2);
+
+property a3;
+@(posedge clk) (KC == 1) |=> (K_out == 1);
+endproperty
+assert_a3: assert property(a3);
+
+property a4;
+@(posedge clk) (KB == 1) |=> (K_out == 1);
+endproperty
+assert_a4: assert property(a4);
+
+property a1;
+@(posedge clk) (cn_dn_en_in == 1) |=> (K_out == 1);
+endproperty
+assert_a1: assert property(a1);
+

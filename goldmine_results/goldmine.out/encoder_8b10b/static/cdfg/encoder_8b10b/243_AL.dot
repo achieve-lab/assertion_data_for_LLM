@@ -1,0 +1,83 @@
+strict digraph "" {
+	node [label="\N"];
+	"243:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f9359f3ee50>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="243:AL",
+		sens="['SBYTECLK', 'reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['reset', 'A', 'C', 'B', 'E', 'D', 'K', 'L04', 'L13', 'L40', 'L22']"];
+	"244:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f9359f3efd0>",
+		fillcolor=springgreen,
+		label="244:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"243:AL" -> "244:IF"	 [cond="[]",
+		lineno=None];
+	"244:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f9359e953d0>",
+		fillcolor=turquoise,
+		label="244:BL
+tNAO <= 0;
+tNBOx <= 0;
+tNBOy <= 0;
+tNCOx <= 0;
+tNCOy <= 0;
+tNDO <= 0;
+tNEOx <= 0;
+tNEOy <= 0;
+tNIOw <= 0;
+tNIOx <= 0;
+tNIOy <= \
+0;
+tNIOz <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359e95410>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f9359e95550>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359e95690>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9359e957d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359e95910>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9359e95a50>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359e95b90>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9359e95cd0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359e95e10>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9359e95f50>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359e9f0d0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9359e9f210>]",
+		style=filled,
+		typ=Block];
+	"Leaf_243:AL"	 [def_var="['tNBOx', 'tNBOy', 'tNIOz', 'tNIOy', 'tNIOx', 'tNCOy', 'tNCOx', 'tNAO', 'tNIOw', 'tNDO', 'tNEOy', 'tNEOx']",
+		label="Leaf_243:AL"];
+	"244:BL" -> "Leaf_243:AL"	 [cond="[]",
+		lineno=None];
+	"244:IF" -> "244:BL"	 [cond="['reset']",
+		label=reset,
+		lineno=244];
+	"258:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f9359ea2090>",
+		fillcolor=turquoise,
+		label="258:BL
+tNAO <= A;
+tNBOx <= B & !L40;
+tNBOy <= L04;
+tNCOx <= L04 | C;
+tNCOy <= E & D & !C & !B & !A;
+tNDO <= D & !(A & B & C);
+tNEOx <= \
+E | L13;
+tNEOy <= !(E & D & !C & !B & !A);
+tNIOw <= L22 & !E | E & L40;
+tNIOx <= E & !D & !C & !(A & B);
+tNIOy <= K & E & D & C & !\
+B & !A;
+tNIOz <= E & !D & C & !B & !A;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359ea20d0>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f9359ea2250>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359ea2450>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9359ea2590>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359ea2750>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9359ea2ad0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359ea2dd0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9359ea2f90>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359e8b410>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9359e8b710>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359e8bb10>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9359e8bf50>]",
+		style=filled,
+		typ=Block];
+	"244:IF" -> "258:BL"	 [cond="['reset']",
+		label="!(reset)",
+		lineno=244];
+	"258:BL" -> "Leaf_243:AL"	 [cond="[]",
+		lineno=None];
+}

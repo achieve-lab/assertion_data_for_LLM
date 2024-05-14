@@ -1,0 +1,122 @@
+strict digraph "" {
+	"[1]rst"	 [complexity=5,
+		importance=0.0136412121479,
+		rank=0.00272824242958];
+	arbitration_lost	 [complexity=4,
+		importance=0.00737581767445,
+		rank=0.00184395441861];
+	"[1]rst" -> arbitration_lost;
+	arbitration_blocked	 [complexity=4,
+		importance=0.00776054143027,
+		rank=0.00194013535757];
+	"[1]rst" -> arbitration_blocked;
+	arbitration_lost_q	 [complexity=4,
+		importance=0.00603137427577,
+		rank=0.00150784356894];
+	"[1]rst" -> arbitration_lost_q;
+	"[1]rx_inter"	 [complexity=15,
+		importance=0.0211268538552,
+		rank=0.00140845692368];
+	"[1]last_bit_of_inter"	 [complexity=12,
+		importance=0.0189570648383,
+		rank=0.00157975540319];
+	"[1]rx_inter" -> "[1]last_bit_of_inter";
+	"[1]bit_cnt"	 [complexity=15,
+		importance=0.0234631288598,
+		rank=0.00156420859065];
+	"[1]bit_cnt" -> "[1]last_bit_of_inter";
+	"[1]bus_free"	 [complexity=12,
+		importance=0.0200102258244,
+		rank=0.0016675188187];
+	"[1]go_rx_idle"	 [complexity=6,
+		importance=0.0170006946984,
+		rank=0.00283344911639];
+	"[1]bus_free" -> "[1]go_rx_idle";
+	"[1]rx_rtr1"	 [complexity=15,
+		importance=0.0127933950535,
+		rank=0.00085289300357];
+	"[1]arbitration_field"	 [complexity=9,
+		importance=0.0101810118455,
+		rank=0.00113122353839];
+	"[1]rx_rtr1" -> "[1]arbitration_field";
+	"[1]rx_rtr2"	 [complexity=15,
+		importance=0.012760538841,
+		rank=0.000850702589403];
+	"[1]rx_rtr2" -> "[1]arbitration_field";
+	"[1]read_arbitration_lost_capture_reg"	 [complexity=5,
+		importance=0.0170995464569,
+		rank=0.00341990929138];
+	"[1]read_arbitration_lost_capture_reg" -> arbitration_blocked;
+	set_arbitration_lost_irq	 [complexity=0,
+		importance=0.00430707587881,
+		rank=0.0];
+	arbitration_lost -> set_arbitration_lost_irq;
+	"[1]tx_point"	 [complexity=9,
+		importance=0.0182551221729,
+		rank=0.0020283469081];
+	"[1]error_frame_ended"	 [complexity=6,
+		importance=0.0166766585765,
+		rank=0.00277944309608];
+	"[1]tx_point" -> "[1]error_frame_ended";
+	"[1]arbitration_field" -> arbitration_lost;
+	"[1]node_bus_off"	 [complexity=12,
+		importance=0.0214607644915,
+		rank=0.00178839704096];
+	"[1]node_bus_off" -> "[1]go_rx_idle";
+	"[1]go_rx_idle" -> arbitration_lost;
+	"[1]tx"	 [complexity=9,
+		importance=0.0188022832717,
+		rank=0.00208914258574];
+	"[1]tx" -> arbitration_lost;
+	"[1]arbitration_blocked"	 [complexity=9,
+		importance=0.0155210828605,
+		rank=0.00172456476228];
+	"[1]set_arbitration_lost_irq"	 [complexity=5,
+		importance=0.0120676173091,
+		rank=0.00241352346181];
+	"[1]arbitration_blocked" -> "[1]set_arbitration_lost_irq";
+	"[1]rx_ide"	 [complexity=15,
+		importance=0.0129410607721,
+		rank=0.000862737384804];
+	"[1]rx_ide" -> "[1]arbitration_field";
+	"[1]transmitter"	 [complexity=9,
+		importance=0.0100511820176,
+		rank=0.00111679800196];
+	"[1]transmitter" -> arbitration_lost;
+	"[1]last_bit_of_inter" -> "[1]go_rx_idle";
+	arbitration_blocked -> set_arbitration_lost_irq;
+	"[1]sampled_bit"	 [complexity=12,
+		importance=0.0185791582947,
+		rank=0.00154826319123];
+	"[1]sampled_bit" -> arbitration_lost;
+	"[1]sampled_bit" -> "[1]go_rx_idle";
+	"[1]set_arbitration_lost_irq" -> arbitration_blocked;
+	"[1]sample_point"	 [complexity=12,
+		importance=0.0185791582947,
+		rank=0.00154826319123];
+	"[1]sample_point" -> arbitration_lost;
+	"[1]sample_point" -> "[1]go_rx_idle";
+	"[1]rx_id2"	 [complexity=15,
+		importance=0.0126471754245,
+		rank=0.000843145028302];
+	"[1]rx_id2" -> "[1]arbitration_field";
+	"[1]rx_id1"	 [complexity=15,
+		importance=0.0125419358974,
+		rank=0.000836129059828];
+	"[1]rx_id1" -> "[1]arbitration_field";
+	"[1]arbitration_lost_q"	 [complexity=9,
+		importance=0.013791915706,
+		rank=0.00153243507845];
+	"[1]arbitration_lost_q" -> "[1]set_arbitration_lost_irq";
+	"[1]arbitration_lost"	 [complexity=7,
+		importance=0.00910011607142,
+		rank=0.00130001658163];
+	"[1]arbitration_lost" -> "[1]set_arbitration_lost_irq";
+	"[1]arbitration_lost" -> arbitration_lost_q;
+	"[1]error_cnt2"	 [complexity=9,
+		importance=0.0189634926022,
+		rank=0.00210705473358];
+	"[1]error_cnt2" -> "[1]error_frame_ended";
+	arbitration_lost_q -> set_arbitration_lost_irq;
+	"[1]error_frame_ended" -> arbitration_lost;
+}

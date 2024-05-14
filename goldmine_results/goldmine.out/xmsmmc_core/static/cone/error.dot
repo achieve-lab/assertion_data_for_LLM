@@ -1,0 +1,125 @@
+strict digraph "" {
+	"[1]mmc_cmd_select_i.bit"	 [complexity=18,
+		importance=0.553591872341,
+		rank=0.030755104019];
+	"[1]mmc_cmd_select_i.stop_bit"	 [complexity=28,
+		importance=0.591077822621,
+		rank=0.0211099222365];
+	"[1]mmc_cmd_select_i.bit" -> "[1]mmc_cmd_select_i.stop_bit";
+	"[1]mmc_cmd_select_i.cmd_bits"	 [complexity=14,
+		importance=0.53578687001,
+		rank=0.038270490715];
+	"[1]mmc_cmd_select_i.bit" -> "[1]mmc_cmd_select_i.cmd_bits";
+	"[1]mmc_cmd_select_i.arg16_bit"	 [complexity=28,
+		importance=0.591077822621,
+		rank=0.0211099222365];
+	"[1]mmc_cmd_select_i.bit" -> "[1]mmc_cmd_select_i.arg16_bit";
+	"[1]mmc_cmd_select_i.crc_bit"	 [complexity=28,
+		importance=0.593337948234,
+		rank=0.0211906410084];
+	"[1]mmc_cmd_select_i.bit" -> "[1]mmc_cmd_select_i.crc_bit";
+	"[1]mmc_cmd_select_i.data"	 [complexity=12,
+		importance=0.574225156983,
+		rank=0.0478520964152];
+	"[1]mmc_cmd_select_i.bit" -> "[1]mmc_cmd_select_i.data";
+	"[1]mmc_cmd_select_i.start_bit"	 [complexity=28,
+		importance=0.591077822621,
+		rank=0.0211099222365];
+	"[1]mmc_cmd_select_i.bit" -> "[1]mmc_cmd_select_i.start_bit";
+	"[1]mmc_cmd_select_i.CMD1_dat"	 [complexity=28,
+		importance=0.593337948234,
+		rank=0.0211906410084];
+	"[1]mmc_cmd_select_i.bit" -> "[1]mmc_cmd_select_i.CMD1_dat";
+	"[1]mmc_cmd_select_i.cmd"	 [complexity=18,
+		importance=0.553868316307,
+		rank=0.0307704620171];
+	"[1]mmc_cmd_select_i.cmd" -> "[1]mmc_cmd_select_i.cmd_bits";
+	"[1]mmc_cmd_select_i.cmd" -> "[1]mmc_cmd_select_i.crc_bit";
+	"[1]mmc_cmd_select_i.cmd" -> "[1]mmc_cmd_select_i.data";
+	"[1]mmc_cmd_select_i.cmd" -> "[1]mmc_cmd_select_i.CMD1_dat";
+	"[1]dis"	 [complexity=12,
+		importance=0.478968124314,
+		rank=0.0399140103595];
+	"[1]mmc_cmd"	 [complexity=8,
+		importance=0.463387246689,
+		rank=0.0579234058361];
+	"[1]dis" -> "[1]mmc_cmd";
+	int_reset	 [complexity=3,
+		importance=0.212801496698,
+		rank=0.0709338322327];
+	cmd_state	 [complexity=2,
+		importance=0.0930920758783,
+		rank=0.0465460379392];
+	int_reset -> cmd_state;
+	"[1]cmd_state"	 [complexity=18,
+		importance=0.628878945888,
+		rank=0.034937719216];
+	"[1]cmd_state" -> "[1]mmc_cmd_select_i.cmd";
+	"[1]cmd_state_next"	 [complexity=4,
+		importance=0.20308481623,
+		rank=0.0507712040576];
+	"[1]cmd_state" -> "[1]cmd_state_next";
+	"[1]mmc_cmd_select_i.stop_bit" -> "[1]mmc_cmd_select_i.data";
+	"[1]cmd_state_next" -> cmd_state;
+	"[1]cmd_data_out"	 [complexity=12,
+		importance=0.510720357948,
+		rank=0.042560029829];
+	"[1]cmd_data_out" -> "[1]mmc_cmd";
+	"[1]int_reset"	 [complexity=9,
+		importance=0.512879437272,
+		rank=0.0569866041414];
+	"[1]int_reset" -> "[1]cmd_state";
+	"[1]counter_command_bits"	 [complexity=8,
+		importance=0.243131046165,
+		rank=0.0303913807707];
+	"[1]int_reset" -> "[1]counter_command_bits";
+	"[1]cmd_bits"	 [complexity=12,
+		importance=0.491536721799,
+		rank=0.0409613934833];
+	"[1]cmd_bits" -> "[1]mmc_cmd";
+	"[1]done"	 [complexity=8,
+		importance=0.25045530042,
+		rank=0.0313069125525];
+	"[1]done" -> "[1]cmd_state_next";
+	"[1]config_request"	 [complexity=5,
+		importance=0.234874422795,
+		rank=0.0469748845589];
+	"[1]done" -> "[1]config_request";
+	"[1]counter_command_bits" -> "[1]mmc_cmd_select_i.bit";
+	"[1]cmd1_resp_busy_bit"	 [complexity=6,
+		importance=0.220889818562,
+		rank=0.0368149697603];
+	"[1]counter_command_bits" -> "[1]cmd1_resp_busy_bit";
+	"[1]cmd_done"	 [complexity=12,
+		importance=1.43939871594,
+		rank=0.119949892995];
+	"[1]counter_command_bits" -> "[1]cmd_done";
+	"[1]cmd1_resp_start_bit"	 [complexity=6,
+		importance=0.220889818562,
+		rank=0.0368149697603];
+	"[1]counter_command_bits" -> "[1]cmd1_resp_start_bit";
+	"[1]init"	 [complexity=8,
+		importance=0.25045530042,
+		rank=0.0313069125525];
+	"[1]init" -> "[1]cmd_state_next";
+	"[1]init" -> "[1]config_request";
+	"[1]cmd1_resp_busy_bit" -> "[1]cmd_state_next";
+	"[1]mmc_cmd_select_i.cmd_active"	 [complexity=12,
+		importance=0.516674078759,
+		rank=0.0430561732299];
+	"[1]mmc_cmd_select_i.cmd_bits" -> "[1]mmc_cmd_select_i.cmd_active";
+	"[1]mmc_cmd_select_i.arg16_bit" -> "[1]mmc_cmd_select_i.data";
+	"[1]cmd_done" -> "[1]cmd_state_next";
+	"[1]mmc_cmd_select_i.crc_bit" -> "[1]mmc_cmd_select_i.data";
+	"[1]mmc_cmd_select_i.cmd_active" -> "[1]cmd_bits";
+	"[1]mmc_cmd" -> "[1]cmd_state_next";
+	error	 [complexity=0,
+		importance=0.0180814462974,
+		rank=0.0];
+	cmd_state -> error;
+	"[1]mmc_cmd_select_i.data" -> "[1]cmd_data_out";
+	"[1]mmc_cmd_select_i.start_bit" -> "[1]mmc_cmd_select_i.data";
+	"[1]mmc_cmd_select_i.CMD1_dat" -> "[1]mmc_cmd_select_i.data";
+	"[1]config_request" -> int_reset;
+	"[1]cmd1_resp_start_bit" -> "[1]cmd_state_next";
+}

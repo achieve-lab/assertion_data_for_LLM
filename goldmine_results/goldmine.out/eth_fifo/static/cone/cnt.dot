@@ -1,0 +1,25 @@
+strict digraph "" {
+	"[1]clear"	 [complexity=5,
+		importance=0.340327093809,
+		rank=0.0680654187617];
+	cnt	 [complexity=4,
+		importance=0.0988454118134,
+		rank=0.0247113529534];
+	"[1]clear" -> cnt;
+	"[1]cnt"	 [complexity=8,
+		importance=0.29653623544,
+		rank=0.03706702943];
+	"[1]cnt" -> cnt;
+	"[1]write"	 [complexity=10,
+		importance=0.340327093809,
+		rank=0.0340327093809];
+	"[1]write" -> cnt;
+	"[1]reset"	 [complexity=5,
+		importance=0.439172505622,
+		rank=0.0878345011244];
+	"[1]reset" -> cnt;
+	"[1]read"	 [complexity=11,
+		importance=0.538017917436,
+		rank=0.0489107197669];
+	"[1]read" -> cnt;
+}

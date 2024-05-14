@@ -1,0 +1,33 @@
+strict digraph "" {
+	"[1]CA_reg_set"	 [complexity=4,
+		importance=0.47826180951,
+		rank=0.119565452377];
+	RegOut	 [complexity=0,
+		importance=0.391305444428,
+		rank=0.0];
+	"[1]CA_reg_set" -> RegOut;
+	"[1]RegInit"	 [complexity=2,
+		importance=0.47826180951,
+		rank=0.239130904755];
+	"[1]RegInit" -> RegOut;
+	"[1]CD_in_reg"	 [complexity=2,
+		importance=0.47826180951,
+		rank=0.239130904755];
+	"[1]CD_in_reg" -> RegOut;
+	"[1]CWR_pulse"	 [complexity=4,
+		importance=0.47826180951,
+		rank=0.119565452377];
+	"[1]CWR_pulse" -> RegOut;
+	"[1]CCSB"	 [complexity=4,
+		importance=0.47826180951,
+		rank=0.119565452377];
+	"[1]CCSB" -> RegOut;
+	"[1]Reset"	 [complexity=1,
+		importance=0.869567253938,
+		rank=0.869567253938];
+	"[1]Reset" -> RegOut;
+	"[1]CA_reg"	 [complexity=4,
+		importance=0.47826180951,
+		rank=0.119565452377];
+	"[1]CA_reg" -> RegOut;
+}

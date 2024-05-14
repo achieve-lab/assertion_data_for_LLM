@@ -1,0 +1,15 @@
+property a1;
+@(posedge clk) (DATA_CONFIG_REG[1] == 0) |-> (ERROR == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge clk) (DATA_CONFIG_REG[0] == 0) |-> (ERROR == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a2;
+@(posedge clk) (DATA_CONFIG_REG[0] == 1 & DATA_CONFIG_REG[1] == 1) |-> (ERROR == 1);
+endproperty
+assert_a2: assert property(a2);
+

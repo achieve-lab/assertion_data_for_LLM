@@ -1,0 +1,13 @@
+strict digraph "" {
+	node [label="\N"];
+	"2637:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f44f6b5e3d0>",
+		def_var="['bit_err_exc4']",
+		fillcolor=deepskyblue,
+		label="2637:AS
+bit_err_exc4 = error_frame & (error_cnt1 == 3'd7) & ~enable_error_cnt2 | overload_frame & (overload_cnt1 == 3'd7) & ~enable_\
+overload_cnt2;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['error_frame', 'error_cnt1', 'enable_error_cnt2', 'overload_frame', 'overload_cnt1', 'enable_overload_cnt2']"];
+}

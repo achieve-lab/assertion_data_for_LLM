@@ -1,0 +1,45 @@
+property a4;
+@(posedge clk) (stateReg[0] == 0) |-> (rxDoneTick == 0);
+endproperty
+assert_a4: assert property(a4);
+
+property a1;
+@(posedge clk) (sReg[2] == 0) |=> (rxDoneTick == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge clk) (sReg[1] == 0) |=> (rxDoneTick == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a7;
+@(posedge clk) (rx == 1 & sTick == 1) |=> (rxDoneTick == 0);
+endproperty
+assert_a7: assert property(a7);
+
+property a8;
+@(posedge clk) (sTick == 0 & rx == 0) |=> (rxDoneTick == 0);
+endproperty
+assert_a8: assert property(a8);
+
+property a3;
+@(posedge clk) (nReg[1] == 0) |=> (rxDoneTick == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a2;
+@(posedge clk) (nReg[0] == 0) |=> (rxDoneTick == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a5;
+@(posedge clk) (sTick == 0) |-> (rxDoneTick == 0);
+endproperty
+assert_a5: assert property(a5);
+
+property a6;
+@(posedge clk) (sNext[0] == 0) |=> (rxDoneTick == 0);
+endproperty
+assert_a6: assert property(a6);
+

@@ -1,0 +1,298 @@
+Report file generated at: Apr-11-2024 07:43:12 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a1: (go_rx_crc_lim == 0 & ide == 1) |=> (id_ok == 0)
+IRank: : 0.81639
+Importance: : 2.44917
+Complexity: : 3
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a25: (match == 1 & go_rx_crc_lim == 1 & extended_mode == 0) |=> (id_ok == 1)
+IRank: : 0.59165
+Importance: : 2.95825
+Complexity: : 5
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a23: (match_sf_std == 1 & go_rx_crc_lim == 1) |=> (id_ok == 1)
+IRank: : 0.44679
+Importance: : 1.78714
+Complexity: : 4
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (go_rx_crc_lim == 0 & go_rx_inter == 1) |=> (id_ok == 0)
+IRank: : 0.43181
+Importance: : 1.72725
+Complexity: : 4
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a8: (go_rx_crc_lim == 0 & reset_mode == 1) |=> (id_ok == 0)
+IRank: : 0.43181
+Importance: : 1.72725
+Complexity: : 4
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a24: (match == 1 & go_rx_crc_lim == 1 & match_df_ext == 1) |=> (id_ok == 1)
+IRank: : 0.28831
+Importance: : 2.01816
+Complexity: : 7
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a14: (go_rx_crc_lim == 0 & data0[3] == 1) |=> (id_ok == 0)
+IRank: : 0.0164
+Importance: : 1.78714
+Complexity: : 109
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a16: (go_rx_crc_lim == 0 & data0[4] == 0) |=> (id_ok == 0)
+IRank: : 0.0164
+Importance: : 1.78714
+Complexity: : 109
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a11: (go_rx_crc_lim == 0 & data0[1] == 1) |=> (id_ok == 0)
+IRank: : 0.0164
+Importance: : 1.78714
+Complexity: : 109
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a10: (go_rx_crc_lim == 0 & data0[0] == 0) |=> (id_ok == 0)
+IRank: : 0.0164
+Importance: : 1.78714
+Complexity: : 109
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a5: (go_rx_crc_lim == 0 & no_byte0 == 1) |=> (id_ok == 0)
+IRank: : 0.0164
+Importance: : 1.78714
+Complexity: : 109
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a15: (extended_mode == 1 & acceptance_code_3[0] == 1 & go_rx_inter == 0) |=> (id_ok == 0)
+IRank: : 0.01615
+Importance: : 1.80853
+Complexity: : 112
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a19: (extended_mode == 1 & id[13] == 1 & go_rx_inter == 1) |=> (id_ok == 0)
+IRank: : 0.01615
+Importance: : 1.80853
+Complexity: : 112
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a12: (extended_mode == 1 & acceptance_mask_0[0] == 0) |=> (id_ok == 0)
+IRank: : 0.01419
+Importance: : 1.54651
+Complexity: : 109
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a17: (match == 0 & rtr2 == 0) |=> (id_ok == 0)
+IRank: : 0.00603
+Importance: : 0.58502
+Complexity: : 97
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a18: (match == 0 & data1[5] == 0) |=> (id_ok == 0)
+IRank: : 0.00572
+Importance: : 0.61176
+Complexity: : 107
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a26: (match_df_ext == 1 & acceptance_mask_2[6] == 0) |=> (id_ok == 1)
+IRank: : 0.00546
+Importance: : 0.60641
+Complexity: : 111
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a28: (match_df_std == 1 & acceptance_code_0[6] == 0 & acceptance_mask_1[5] == 0 & go_rx_inter == 1) |=> (id_ok == 1)
+IRank: : 0.00543
+Importance: : 1.2064
+Complexity: : 222
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a21: (match == 0 & acceptance_code_3[0] == 1) |=> (id_ok == 0)
+IRank: : 0.00532
+Importance: : 0.59037
+Complexity: : 111
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a13: (match == 0 & acceptance_mask_1[2] == 0) |=> (id_ok == 0)
+IRank: : 0.00532
+Importance: : 0.59037
+Complexity: : 111
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (match == 0 & data0[5] == 0) |=> (id_ok == 0)
+IRank: : 0.00532
+Importance: : 0.59037
+Complexity: : 111
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (match == 0 & data0[2] == 0) |=> (id_ok == 0)
+IRank: : 0.00532
+Importance: : 0.59037
+Complexity: : 111
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (match == 0 & acceptance_mask_2[1] == 0) |=> (id_ok == 0)
+IRank: : 0.00532
+Importance: : 0.59037
+Complexity: : 111
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a7: (match == 0 & acceptance_mask_0[0] == 0) |=> (id_ok == 0)
+IRank: : 0.00532
+Importance: : 0.59037
+Complexity: : 111
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a6: (match == 0 & acceptance_mask_3[6] == 0) |=> (id_ok == 0)
+IRank: : 0.00532
+Importance: : 0.59037
+Complexity: : 111
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a9: (match == 0 & acceptance_mask_1[0] == 0) |=> (id_ok == 0)
+IRank: : 0.00532
+Importance: : 0.59037
+Complexity: : 111
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a27: (match_df_ext == 1 & acceptance_mask_2[2] == 0 & no_byte0 == 1) |=> (id_ok == 1)
+IRank: : 0.00424
+Importance: : 0.92833
+Complexity: : 219
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a29: (id[27] == 0 & acceptance_code_3[6] == 0 & acceptance_code_2[6] == 0 & acceptance_code_1[4] == 0 & data1[3] == 0) |=> (id_ok == 1)
+IRank: : 0.00304
+Importance: : 1.631
+Complexity: : 536
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a20: (id[27] == 0 & acceptance_mask_3[4] == 1) |=> (id_ok == 0)
+IRank: : 0.00298
+Importance: : 0.64384
+Complexity: : 216
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a22: (id[27] == 0 & data0[2] == 0 & no_byte0 == 1) |=> (id_ok == 0)
+IRank: : 0.00298
+Importance: : 0.96577
+Complexity: : 324
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a1        | 0.81639 |  2.44917   |     3      |  Unknown  | Unknown |   Unknown   
+      a25       | 0.59165 |  2.95825   |     5      |  Unknown  | Unknown |   Unknown   
+      a23       | 0.44679 |  1.78714   |     4      |  Unknown  | Unknown |   Unknown   
+      a0        | 0.43181 |  1.72725   |     4      |  Unknown  | Unknown |   Unknown   
+      a8        | 0.43181 |  1.72725   |     4      |  Unknown  | Unknown |   Unknown   
+      a24       | 0.28831 |  2.01816   |     7      |  Unknown  | Unknown |   Unknown   
+      a14       | 0.0164  |  1.78714   |    109     |  Unknown  | Unknown |   Unknown   
+      a16       | 0.0164  |  1.78714   |    109     |  Unknown  | Unknown |   Unknown   
+      a11       | 0.0164  |  1.78714   |    109     |  Unknown  | Unknown |   Unknown   
+      a10       | 0.0164  |  1.78714   |    109     |  Unknown  | Unknown |   Unknown   
+      a5        | 0.0164  |  1.78714   |    109     |  Unknown  | Unknown |   Unknown   
+      a15       | 0.01615 |  1.80853   |    112     |  Unknown  | Unknown |   Unknown   
+      a19       | 0.01615 |  1.80853   |    112     |  Unknown  | Unknown |   Unknown   
+      a12       | 0.01419 |  1.54651   |    109     |  Unknown  | Unknown |   Unknown   
+      a17       | 0.00603 |  0.58502   |     97     |  Unknown  | Unknown |   Unknown   
+      a18       | 0.00572 |  0.61176   |    107     |  Unknown  | Unknown |   Unknown   
+      a26       | 0.00546 |  0.60641   |    111     |  Unknown  | Unknown |   Unknown   
+      a28       | 0.00543 |   1.2064   |    222     |  Unknown  | Unknown |   Unknown   
+      a21       | 0.00532 |  0.59037   |    111     |  Unknown  | Unknown |   Unknown   
+      a13       | 0.00532 |  0.59037   |    111     |  Unknown  | Unknown |   Unknown   
+      a3        | 0.00532 |  0.59037   |    111     |  Unknown  | Unknown |   Unknown   
+      a2        | 0.00532 |  0.59037   |    111     |  Unknown  | Unknown |   Unknown   
+      a4        | 0.00532 |  0.59037   |    111     |  Unknown  | Unknown |   Unknown   
+      a7        | 0.00532 |  0.59037   |    111     |  Unknown  | Unknown |   Unknown   
+      a6        | 0.00532 |  0.59037   |    111     |  Unknown  | Unknown |   Unknown   
+      a9        | 0.00532 |  0.59037   |    111     |  Unknown  | Unknown |   Unknown   
+      a27       | 0.00424 |  0.92833   |    219     |  Unknown  | Unknown |   Unknown   
+      a29       | 0.00304 |   1.631    |    536     |  Unknown  | Unknown |   Unknown   
+      a20       | 0.00298 |  0.64384   |    216     |  Unknown  | Unknown |   Unknown   
+      a22       | 0.00298 |  0.96577   |    324     |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 30
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 30
+Hit rate: 0.0
+Miss rate: 1.0

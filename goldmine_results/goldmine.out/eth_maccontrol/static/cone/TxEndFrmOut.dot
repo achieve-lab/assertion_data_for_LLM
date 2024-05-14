@@ -1,0 +1,199 @@
+digraph "" {
+	"[1]L2_UC_wrapper.L2_fifo.empty"	 [complexity=9,
+		importance=0.0511777189071,
+		rank=0.0056864132119];
+	"[1]L2_UC_wrapper.TxBufferEmpty"	 [complexity=9,
+		importance=0.0475460871883,
+		rank=0.00528289857648];
+	"[1]L2_UC_wrapper.L2_fifo.empty" -> "[1]L2_UC_wrapper.TxBufferEmpty";
+	"[1]transmitcontrol1.TxUsedDataOut"	 [complexity=6,
+		importance=0.0393354482136,
+		rank=0.00655590803561];
+	"transmitcontrol1.CtrlMux"	 [complexity=4,
+		importance=0.0176699510529,
+		rank=0.00441748776323];
+	"[1]transmitcontrol1.TxUsedDataOut" -> "transmitcontrol1.CtrlMux";
+	"L2_UC_wrapper.read_fifo"	 [complexity=16,
+		importance=0.176682388836,
+		rank=0.0110426493022];
+	"L2_UC_wrapper.L2_fifo.read"	 [complexity=16,
+		importance=0.17006638035,
+		rank=0.0106291487719];
+	"L2_UC_wrapper.read_fifo" -> "L2_UC_wrapper.L2_fifo.read";
+	"[1]transmitcontrol1.ByteCnt"	 [complexity=8,
+		importance=0.0505857348514,
+		rank=0.00632321685642];
+	"[1]transmitcontrol1.ControlEnd"	 [complexity=6,
+		importance=0.0377720209801,
+		rank=0.00629533683001];
+	"[1]transmitcontrol1.ByteCnt" -> "[1]transmitcontrol1.ControlEnd";
+	"[1]transmitcontrol1.TxReset"	 [complexity=5,
+		importance=0.056093477711,
+		rank=0.0112186955422];
+	"[1]transmitcontrol1.TxReset" -> "transmitcontrol1.CtrlMux";
+	"transmitcontrol1.TxCtrlEndFrm"	 [complexity=4,
+		importance=0.0172574367794,
+		rank=0.00431435919485];
+	"[1]transmitcontrol1.TxReset" -> "transmitcontrol1.TxCtrlEndFrm";
+	"L2_UC_wrapper.L2_fifo.reset"	 [complexity=10,
+		importance=0.1355464454,
+		rank=0.01355464454];
+	"L2_UC_wrapper.L2_fifo.cnt"	 [complexity=13,
+		importance=0.0744871802358,
+		rank=0.00572978309506];
+	"L2_UC_wrapper.L2_fifo.reset" -> "L2_UC_wrapper.L2_fifo.cnt";
+	"[1]transmitcontrol1.WillSendControlFrame"	 [complexity=6,
+		importance=0.0456807855798,
+		rank=0.0076134642633];
+	"[1]transmitcontrol1.WillSendControlFrame" -> "transmitcontrol1.CtrlMux";
+	"[1]L2_UC_wrapper.StateCount"	 [complexity=17,
+		importance=0.218945040854,
+		rank=0.0128791200502];
+	"[1]L2_UC_wrapper.StateCount" -> "L2_UC_wrapper.read_fifo";
+	"L2_UC_wrapper.write_fifo"	 [complexity=15,
+		importance=0.107307275994,
+		rank=0.00715381839959];
+	"[1]L2_UC_wrapper.StateCount" -> "L2_UC_wrapper.write_fifo";
+	"L2_UC_wrapper.StateLeftinQ"	 [complexity=7,
+		importance=0.021823979799,
+		rank=0.00311771139985];
+	"L2_UC_wrapper.TxEndFrmOut_uc"	 [complexity=4,
+		importance=0.0162438598789,
+		rank=0.00406096496973];
+	"L2_UC_wrapper.StateLeftinQ" -> "L2_UC_wrapper.TxEndFrmOut_uc";
+	"[1]L2_UC_wrapper.L2_fifo.reset"	 [complexity=14,
+		importance=0.302480767112,
+		rank=0.0216057690794];
+	"[1]L2_UC_wrapper.L2_fifo.cnt"	 [complexity=17,
+		importance=0.157954341091,
+		rank=0.00929143182891];
+	"[1]L2_UC_wrapper.L2_fifo.reset" -> "[1]L2_UC_wrapper.L2_fifo.cnt";
+	"[1]L2_UC_wrapper.L2_fifo.reset" -> "L2_UC_wrapper.L2_fifo.cnt";
+	TxReset	 [complexity=10,
+		importance=0.141620248098,
+		rank=0.0141620248098];
+	"L2_UC_wrapper.TxReset"	 [complexity=10,
+		importance=0.138630069952,
+		rank=0.0138630069952];
+	TxReset -> "L2_UC_wrapper.TxReset";
+	"[1]TxUsedDataOut"	 [complexity=6,
+		importance=0.043356769177,
+		rank=0.00722612819616];
+	"[1]TxUsedDataOut" -> "[1]transmitcontrol1.TxUsedDataOut";
+	"[1]L2_UC_wrapper.ByteCnt"	 [complexity=17,
+		importance=2.30064886734,
+		rank=0.135332286314];
+	"[1]L2_UC_wrapper.ByteCnt" -> "L2_UC_wrapper.read_fifo";
+	"L2_UC_wrapper.TxBufferEmpty"	 [complexity=7,
+		importance=0.0201419874693,
+		rank=0.00287742678132];
+	"L2_UC_wrapper.TxBufferEmpty" -> "L2_UC_wrapper.TxEndFrmOut_uc";
+	"[1]L2_UC_wrapper.L2_fifo.read"	 [complexity=20,
+		importance=0.378734282489,
+		rank=0.0189367141245];
+	"[1]L2_UC_wrapper.L2_fifo.read" -> "[1]L2_UC_wrapper.L2_fifo.cnt";
+	"[1]L2_UC_wrapper.L2_fifo.read" -> "L2_UC_wrapper.L2_fifo.cnt";
+	"[1]TxDoneIn"	 [complexity=5,
+		importance=0.0238638991307,
+		rank=0.00477277982613];
+	"[1]transmitcontrol1.TxDoneIn"	 [complexity=5,
+		importance=0.0208737209849,
+		rank=0.00417474419699];
+	"[1]TxDoneIn" -> "[1]transmitcontrol1.TxDoneIn";
+	"[1]TxReset"	 [complexity=5,
+		importance=0.0590836558567,
+		rank=0.0118167311713];
+	"[1]TxReset" -> "[1]transmitcontrol1.TxReset";
+	"[1]L2_UC_wrapper.L2_fifo.write"	 [complexity=19,
+		importance=0.228470540868,
+		rank=0.0120247653088];
+	"[1]L2_UC_wrapper.L2_fifo.write" -> "[1]L2_UC_wrapper.L2_fifo.cnt";
+	"[1]L2_UC_wrapper.L2_fifo.write" -> "L2_UC_wrapper.L2_fifo.cnt";
+	"[1]CtrlMux"	 [complexity=9,
+		importance=0.0467594911699,
+		rank=0.00519549901888];
+	"[1]CtrlMux" -> "[1]TxUsedDataOut";
+	CtrlMux	 [complexity=4,
+		importance=0.0110695781807,
+		rank=0.00276739454517];
+	"transmitcontrol1.CtrlMux" -> CtrlMux;
+	"L2_UC_wrapper.L2_fifo.read" -> "L2_UC_wrapper.L2_fifo.cnt";
+	"[1]L2_UC_wrapper.TxStartFrmIn"	 [complexity=19,
+		importance=2.47670974879,
+		rank=0.130353144673];
+	"[1]L2_UC_wrapper.TxStartFrmIn" -> "L2_UC_wrapper.read_fifo";
+	"L2_UC_wrapper.TxReset" -> "L2_UC_wrapper.L2_fifo.reset";
+	"[1]L2_UC_wrapper.PreNib15State"	 [complexity=17,
+		importance=0.21832240204,
+		rank=0.0128424942377];
+	"[1]L2_UC_wrapper.PreNib15State" -> "L2_UC_wrapper.write_fifo";
+	"[1]transmitcontrol1.TxDoneIn" -> "transmitcontrol1.CtrlMux";
+	"[1]transmitcontrol1.ControlEnd" -> "transmitcontrol1.TxCtrlEndFrm";
+	TxEndFrmOut_uc	 [complexity=4,
+		importance=0.0125193985469,
+		rank=0.00312984963672];
+	TxEndFrmOut	 [complexity=0,
+		importance=0.00766685618779,
+		rank=0.0];
+	TxEndFrmOut_uc -> TxEndFrmOut;
+	"L2_UC_wrapper.TxFifoClear"	 [complexity=10,
+		importance=0.105736298219,
+		rank=0.0105736298219];
+	"L2_UC_wrapper.L2_fifo.clear"	 [complexity=10,
+		importance=0.102746120074,
+		rank=0.0102746120074];
+	"L2_UC_wrapper.TxFifoClear" -> "L2_UC_wrapper.L2_fifo.clear";
+	TxCtrlEndFrm	 [complexity=4,
+		importance=0.0115999989459,
+		rank=0.00289999973648];
+	TxCtrlEndFrm -> TxEndFrmOut;
+	"[1]L2_UC_wrapper.L2_fifo.cnt" -> "[1]L2_UC_wrapper.L2_fifo.empty";
+	"[1]L2_UC_wrapper.L2_fifo.cnt" -> "[1]L2_UC_wrapper.L2_fifo.cnt";
+	"[1]L2_UC_wrapper.L2_fifo.cnt" -> "L2_UC_wrapper.L2_fifo.cnt";
+	"L2_UC_wrapper.TxEndFrmOut_uc" -> TxEndFrmOut_uc;
+	"[1]L2_UC_wrapper.StateLeftinQ"	 [complexity=19,
+		importance=2.47913356362,
+		rank=0.130480713875];
+	"[1]L2_UC_wrapper.StateLeftinQ" -> "L2_UC_wrapper.read_fifo";
+	"[1]L2_UC_wrapper.StateLeftinQ" -> "L2_UC_wrapper.StateLeftinQ";
+	"[1]transmitcontrol1.ControlEnd_q"	 [complexity=6,
+		importance=0.0379122159085,
+		rank=0.00631870265142];
+	"[1]transmitcontrol1.ControlEnd_q" -> "transmitcontrol1.TxCtrlEndFrm";
+	"L2_UC_wrapper.L2_fifo.write"	 [complexity=15,
+		importance=0.103269799585,
+		rank=0.00688465330564];
+	"L2_UC_wrapper.L2_fifo.write" -> "L2_UC_wrapper.L2_fifo.cnt";
+	"L2_UC_wrapper.L2_fifo.clear" -> "L2_UC_wrapper.L2_fifo.cnt";
+	"L2_UC_wrapper.write_fifo" -> "L2_UC_wrapper.L2_fifo.write";
+	"transmitcontrol1.TxCtrlEndFrm" -> TxCtrlEndFrm;
+	"[1]TxUsedDataIn"	 [complexity=9,
+		importance=0.0463469473227,
+		rank=0.00514966081364];
+	"[1]TxUsedDataIn" -> "[1]TxUsedDataOut";
+	"L2_UC_wrapper.L2_fifo.cnt" -> "L2_UC_wrapper.L2_fifo.cnt";
+	"L2_UC_wrapper.L2_fifo.empty"	 [complexity=7,
+		importance=0.0237736191881,
+		rank=0.00339623131258];
+	"L2_UC_wrapper.L2_fifo.cnt" -> "L2_UC_wrapper.L2_fifo.empty";
+	"[1]L2_UC_wrapper.TxEndFrmIn"	 [complexity=9,
+		importance=0.0481332802476,
+		rank=0.00534814224974];
+	"[1]L2_UC_wrapper.TxEndFrmIn" -> "L2_UC_wrapper.StateLeftinQ";
+	"[1]TxEndFrmIn"	 [complexity=9,
+		importance=0.0511234583934,
+		rank=0.00568038426593];
+	"[1]TxEndFrmIn" -> "[1]L2_UC_wrapper.TxEndFrmIn";
+	"L2_UC_wrapper.L2_fifo.empty" -> "L2_UC_wrapper.TxBufferEmpty";
+	CtrlMux -> TxEndFrmOut;
+	"[1]L2_UC_wrapper.TxBufferEmpty" -> "L2_UC_wrapper.StateLeftinQ";
+	"[1]L2_UC_wrapper.L2_fifo.clear"	 [complexity=14,
+		importance=0.227946861357,
+		rank=0.0162819186684];
+	"[1]L2_UC_wrapper.L2_fifo.clear" -> "[1]L2_UC_wrapper.L2_fifo.cnt";
+	"[1]L2_UC_wrapper.L2_fifo.clear" -> "L2_UC_wrapper.L2_fifo.cnt";
+	"[1]transmitcontrol1.CtrlMux"	 [complexity=9,
+		importance=0.0533598640421,
+		rank=0.00592887378246];
+	"[1]transmitcontrol1.CtrlMux" -> "[1]CtrlMux";
+}

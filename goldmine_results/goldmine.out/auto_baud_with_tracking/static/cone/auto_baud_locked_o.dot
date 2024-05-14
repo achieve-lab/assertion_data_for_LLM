@@ -1,0 +1,21 @@
+strict digraph "" {
+	"[1]reset_i"	 [complexity=3,
+		importance=0.127592229869,
+		rank=0.0425307432896];
+	run	 [complexity=2,
+		importance=0.0532330855977,
+		rank=0.0266165427988];
+	"[1]reset_i" -> run;
+	"[1]verify_good"	 [complexity=3,
+		importance=0.0752891320382,
+		rank=0.0250963773461];
+	"[1]verify_good" -> run;
+	"[1]m1_state"	 [complexity=4,
+		importance=0.1441040223,
+		rank=0.0360260055751];
+	"[1]m1_state" -> "[1]verify_good";
+	auto_baud_locked_o	 [complexity=0,
+		importance=0.025712788856,
+		rank=0.0];
+	run -> auto_baud_locked_o;
+}

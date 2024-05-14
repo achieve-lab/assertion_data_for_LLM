@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"137:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f9ff6c85650>",
+		def_var="['SendDataPos']",
+		fillcolor=deepskyblue,
+		label="137:AS
+SendDataPos = (rdaddress > 12'h32)? rdaddress - 12'h32 : 0;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['rdaddress', 'rdaddress']"];
+}

@@ -1,0 +1,250 @@
+property a11;
+@(posedge clk) (crc_bit == 0 & bit[5] == 1 & bit[0] == 0 & bit[4] == 1) |-> (data == 0);
+endproperty
+assert_a11: assert property(a11);
+
+property a22;
+@(posedge clk) (crc_bit == 0 & CMD1_dat == 0 & bit[4] == 1 & bit[3] == 0 & bit[6] == 1) |-> (data == 0);
+endproperty
+assert_a22: assert property(a22);
+
+property a24;
+@(posedge clk) (crc_bit == 0 & bit[3] == 1 & bit[5] == 0 & CMD1_dat == 0) |-> (data == 0);
+endproperty
+assert_a24: assert property(a24);
+
+property a1;
+@(posedge clk) (bit[2] == 0 & crc_bit == 0 & CMD1_dat == 0 & start_bit == 0) |-> (data == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a40;
+@(posedge clk) (crc_bit == 1) |-> (data == 1);
+endproperty
+assert_a40: assert property(a40);
+
+property a41;
+@(posedge clk) (CMD1_dat == 1) |-> (data == 1);
+endproperty
+assert_a41: assert property(a41);
+
+property a39;
+@(posedge clk) (start_bit == 1) |-> (data == 1);
+endproperty
+assert_a39: assert property(a39);
+
+property a42;
+@(posedge clk) (stop_bit == 1) |-> (data == 1);
+endproperty
+assert_a42: assert property(a42);
+
+property a45;
+@(posedge clk) (bit[2] == 1 & bit[4] == 0 & bit[5] == 0 & bit[3] == 0 & bit[0] == 0 & bit[6] == 1 & cmd[2] == 0) |-> (data == 1);
+endproperty
+assert_a45: assert property(a45);
+
+property a38;
+@(posedge clk) (crc_bit == 0 & CMD1_dat == 0 & bit[1] == 0 & bit[6] == 1 & bit[5] == 1 & cmd[1] == 0) |-> (data == 0);
+endproperty
+assert_a38: assert property(a38);
+
+property a20;
+@(posedge clk) (crc_bit == 0 & bit[5] == 1 & bit[3] == 0 & bit[4] == 0 & cmd[0] == 1) |-> (data == 0);
+endproperty
+assert_a20: assert property(a20);
+
+property a31;
+@(posedge clk) (crc_bit == 0 & bit[3] == 1 & bit[4] == 1 & cmd[0] == 1 & bit[1] == 0) |-> (data == 0);
+endproperty
+assert_a31: assert property(a31);
+
+property a28;
+@(posedge clk) (crc_bit == 0 & CMD1_dat == 0 & bit[4] == 1 & arg16_bit == 0 & bit[6] == 0 & cmd[1] == 1) |-> (data == 0);
+endproperty
+assert_a28: assert property(a28);
+
+property a30;
+@(posedge clk) (crc_bit == 0 & CMD1_dat == 0 & bit[4] == 1 & cmd[1] == 0 & bit[0] == 1) |-> (data == 0);
+endproperty
+assert_a30: assert property(a30);
+
+property a27;
+@(posedge clk) (cmd[0] == 0 & bit[3] == 0 & bit[0] == 1 & bit[1] == 1) |-> (data == 0);
+endproperty
+assert_a27: assert property(a27);
+
+property a16;
+@(posedge clk) (crc_bit == 0 & bit[3] == 1 & bit[5] == 0 & cmd[2] == 1) |-> (data == 0);
+endproperty
+assert_a16: assert property(a16);
+
+property a15;
+@(posedge clk) (bit[4] == 1 & CMD1_dat == 0 & bit[5] == 0 & cmd[0] == 0) |-> (data == 0);
+endproperty
+assert_a15: assert property(a15);
+
+property a9;
+@(posedge clk) (crc_bit == 0 & bit[3] == 1 & bit[5] == 0 & cmd[0] == 0) |-> (data == 0);
+endproperty
+assert_a9: assert property(a9);
+
+property a8;
+@(posedge clk) (bit[4] == 1 & CMD1_dat == 0 & bit[0] == 0 & cmd[1] == 1) |-> (data == 0);
+endproperty
+assert_a8: assert property(a8);
+
+property a47;
+@(posedge clk) (bit[2] == 1 & bit[4] == 0 & bit[5] == 0 & bit[3] == 0 & bit[0] == 0 & cmd[1] == 1 & cmd[2] == 0) |-> (data == 1);
+endproperty
+assert_a47: assert property(a47);
+
+property a44;
+@(posedge clk) (bit[2] == 1 & bit[4] == 0 & bit[5] == 0 & bit[3] == 0 & cmd[0] == 1 & bit[1] == 1 & cmd[1] == 1) |-> (data == 1);
+endproperty
+assert_a44: assert property(a44);
+
+property a26;
+@(posedge clk) (cmd[0] == 0 & bit[4] == 1 & bit[6] == 0) |-> (data == 0);
+endproperty
+assert_a26: assert property(a26);
+
+property a10;
+@(posedge clk) (cmd[1] == 0 & bit[3] == 1 & bit[5] == 0) |-> (data == 0);
+endproperty
+assert_a10: assert property(a10);
+
+property a3;
+@(posedge clk) (bit[4] == 1 & bit[3] == 1 & cmd[1] == 0) |-> (data == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a5;
+@(posedge clk) (bit[4] == 1 & cmd[0] == 0 & bit[0] == 0) |-> (data == 0);
+endproperty
+assert_a5: assert property(a5);
+
+property a6;
+@(posedge clk) (cmd[0] == 0 & bit[4] == 1 & bit[1] == 1) |-> (data == 0);
+endproperty
+assert_a6: assert property(a6);
+
+property a46;
+@(posedge clk) (bit[2] == 1 & bit[4] == 0 & bit[5] == 0 & bit[3] == 0 & cmd[0] == 1 & cmd[2] == 1 & bit[0] == 1 & cmd[1] == 0 & bit[6] == 0) |-> (data == 1);
+endproperty
+assert_a46: assert property(a46);
+
+property a48;
+@(posedge clk) (bit[2] == 1 & bit[4] == 0 & cmd[2] == 1 & bit[5] == 0 & bit[3] == 0 & bit[6] == 1 & bit[1] == 0 & cmd[0] == 0 & cmd[1] == 0) |-> (data == 1);
+endproperty
+assert_a48: assert property(a48);
+
+property a37;
+@(posedge clk) (crc_bit == 0 & CMD1_dat == 0 & bit[1] == 0 & cmd[1] == 1 & cmd[0] == 1 & bit[3] == 1) |-> (data == 0);
+endproperty
+assert_a37: assert property(a37);
+
+property a49;
+@(posedge clk) (bit[2] == 1 & bit[4] == 0 & cmd[2] == 1 & cmd[1] == 1 & bit[0] == 1 & bit[1] == 0 & cmd[0] == 0 & bit[6] == 0) |-> (data == 1);
+endproperty
+assert_a49: assert property(a49);
+
+property a34;
+@(posedge clk) (crc_bit == 0 & bit[4] == 0 & stop_bit == 0 & bit[5] == 1 & cmd[0] == 1 & cmd[2] == 0) |-> (data == 0);
+endproperty
+assert_a34: assert property(a34);
+
+property a4;
+@(posedge clk) (bit[4] == 1 & cmd[0] == 0 & arg16_bit == 1) |-> (data == 0);
+endproperty
+assert_a4: assert property(a4);
+
+property a43;
+@(posedge clk) (arg16_bit == 1 & cmd[0] == 1 & bit[6] == 0) |-> (data == 1);
+endproperty
+assert_a43: assert property(a43);
+
+property a25;
+@(posedge clk) (crc_bit == 0 & bit[5] == 1 & bit[1] == 0 & cmd[0] == 1 & cmd[1] == 0) |-> (data == 0);
+endproperty
+assert_a25: assert property(a25);
+
+property a17;
+@(posedge clk) (crc_bit == 0 & bit[5] == 1 & bit[0] == 0 & cmd[0] == 1 & cmd[1] == 0) |-> (data == 0);
+endproperty
+assert_a17: assert property(a17);
+
+property a12;
+@(posedge clk) (crc_bit == 0 & bit[5] == 1 & bit[0] == 0 & cmd[2] == 1 & cmd[0] == 0) |-> (data == 0);
+endproperty
+assert_a12: assert property(a12);
+
+property a32;
+@(posedge clk) (crc_bit == 0 & bit[4] == 0 & cmd[1] == 0 & cmd[2] == 0 & bit[0] == 1) |-> (data == 0);
+endproperty
+assert_a32: assert property(a32);
+
+property a14;
+@(posedge clk) (crc_bit == 0 & bit[5] == 1 & cmd[2] == 0 & bit[1] == 0 & cmd[0] == 1) |-> (data == 0);
+endproperty
+assert_a14: assert property(a14);
+
+property a36;
+@(posedge clk) (bit[5] == 0 & CMD1_dat == 0 & cmd[2] == 1 & bit[6] == 0 & cmd[0] == 0) |-> (data == 0);
+endproperty
+assert_a36: assert property(a36);
+
+property a18;
+@(posedge clk) (crc_bit == 0 & bit[5] == 1 & cmd[2] == 0 & bit[3] == 1 & cmd[0] == 0) |-> (data == 0);
+endproperty
+assert_a18: assert property(a18);
+
+property a21;
+@(posedge clk) (crc_bit == 0 & CMD1_dat == 0 & bit[4] == 1 & cmd[1] == 0 & cmd[2] == 1) |-> (data == 0);
+endproperty
+assert_a21: assert property(a21);
+
+property a23;
+@(posedge clk) (cmd[0] == 0 & bit[3] == 0 & bit[0] == 1 & cmd[2] == 0) |-> (data == 0);
+endproperty
+assert_a23: assert property(a23);
+
+property a33;
+@(posedge clk) (cmd[0] == 0 & bit[3] == 0 & cmd[2] == 1 & bit[5] == 1) |-> (data == 0);
+endproperty
+assert_a33: assert property(a33);
+
+property a35;
+@(posedge clk) (bit[5] == 0 & cmd[0] == 0 & cmd[1] == 0 & bit[1] == 1) |-> (data == 0);
+endproperty
+assert_a35: assert property(a35);
+
+property a7;
+@(posedge clk) (cmd[0] == 0 & cmd[1] == 0 & bit[2] == 1 & bit[0] == 1) |-> (data == 0);
+endproperty
+assert_a7: assert property(a7);
+
+property a19;
+@(posedge clk) (bit[4] == 1 & CMD1_dat == 0 & cmd[2] == 0 & cmd[1] == 1) |-> (data == 0);
+endproperty
+assert_a19: assert property(a19);
+
+property a13;
+@(posedge clk) (crc_bit == 0 & bit[5] == 1 & cmd[2] == 0 & cmd[1] == 1 & cmd[0] == 0) |-> (data == 0);
+endproperty
+assert_a13: assert property(a13);
+
+property a0;
+@(posedge clk) (bit[4] == 1 & cmd[0] == 0 & cmd[1] == 0) |-> (data == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a2;
+@(posedge clk) (bit[4] == 1 & cmd[0] == 0 & cmd[2] == 0) |-> (data == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a29;
+@(posedge clk) (cmd[1] == 0 & cmd[0] == 0 & bit[5] == 0 & cmd[2] == 0) |-> (data == 0);
+endproperty
+assert_a29: assert property(a29);
+

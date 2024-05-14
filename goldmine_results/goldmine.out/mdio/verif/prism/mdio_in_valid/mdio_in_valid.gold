@@ -1,0 +1,127 @@
+Report file generated at: May-12-2024 07:26:06 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a10: (nextstate[0] == 1 & mdio_opcode[0] == 1) |=> ##2 (mdio_in_valid == 1)
+IRank: : 0.35713
+Importance: : 4.9998
+Complexity: : 14
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a9: (nextstate[0] == 1 & mdio_out_valid == 0) |=> ##2 (mdio_in_valid == 1)
+IRank: : 0.35713
+Importance: : 4.9998
+Complexity: : 14
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (mdio_out_valid == 1) ##2 (transmitting == 1) |=> (mdio_in_valid == 0)
+IRank: : 0.35221
+Importance: : 4.57873
+Complexity: : 13
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (mdio_operate_done == 1) |-> (mdio_in_valid == 0)
+IRank: : 0.14329
+Importance: : 0.14329
+Complexity: : 1
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (receiving == 1) |-> (mdio_in_valid == 0)
+IRank: : 0.11442
+Importance: : 0.11442
+Complexity: : 1
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (transmitting == 1 & trans_cnt[0] == 0) |=> (mdio_in_valid == 0)
+IRank: : 0.08447
+Importance: : 0.59128
+Complexity: : 7
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a5: (trans_cnt[0] == 1 & trans_cnt[2] == 0) |=> (mdio_in_valid == 0)
+IRank: : 0.06127
+Importance: : 0.36762
+Complexity: : 6
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (trans_cnt[0] == 1 & trans_cnt[1] == 0) |=> (mdio_in_valid == 0)
+IRank: : 0.06127
+Importance: : 0.36762
+Complexity: : 6
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a7: (trans_cnt[0] == 1 & trans_cnt[4] == 0) |=> (mdio_in_valid == 0)
+IRank: : 0.06127
+Importance: : 0.36762
+Complexity: : 6
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a6: (trans_cnt[0] == 1 & trans_cnt[3] == 0) |=> (mdio_in_valid == 0)
+IRank: : 0.06127
+Importance: : 0.36762
+Complexity: : 6
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a8: (trans_cnt[0] == 1 & trans_cnt[5] == 0) |=> (mdio_in_valid == 0)
+IRank: : 0.06127
+Importance: : 0.36762
+Complexity: : 6
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a10       | 0.35713 |   4.9998   |     14     |  Unknown  | Unknown |   Unknown   
+      a9        | 0.35713 |   4.9998   |     14     |  Unknown  | Unknown |   Unknown   
+      a2        | 0.35221 |  4.57873   |     13     |  Unknown  | Unknown |   Unknown   
+      a0        | 0.14329 |  0.14329   |     1      |  Unknown  | Unknown |   Unknown   
+      a1        | 0.11442 |  0.11442   |     1      |  Unknown  | Unknown |   Unknown   
+      a3        | 0.08447 |  0.59128   |     7      |  Unknown  | Unknown |   Unknown   
+      a5        | 0.06127 |  0.36762   |     6      |  Unknown  | Unknown |   Unknown   
+      a4        | 0.06127 |  0.36762   |     6      |  Unknown  | Unknown |   Unknown   
+      a7        | 0.06127 |  0.36762   |     6      |  Unknown  | Unknown |   Unknown   
+      a6        | 0.06127 |  0.36762   |     6      |  Unknown  | Unknown |   Unknown   
+      a8        | 0.06127 |  0.36762   |     6      |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 11
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 11
+Hit rate: 0.0
+Miss rate: 1.0

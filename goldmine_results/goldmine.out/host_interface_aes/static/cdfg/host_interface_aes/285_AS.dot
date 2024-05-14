@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"285:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fea06003550>",
+		def_var="['key_sel']",
+		fillcolor=deepskyblue,
+		label="285:AS
+key_sel = ~PADDR[1:0] & { 2{ PADDR[2] & access_permission } };",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['PADDR', 'PADDR', 'access_permission']"];
+}

@@ -1,0 +1,115 @@
+strict digraph "" {
+	"[1]WCtrlDataStart"	 [complexity=3,
+		importance=0.0312245593496,
+		rank=0.0104081864499];
+	"[1]MIICOMMAND2.SyncReset"	 [complexity=3,
+		importance=0.0299578800801,
+		rank=0.00998596002669];
+	"[1]WCtrlDataStart" -> "[1]MIICOMMAND2.SyncReset";
+	MIICOMMANDOut	 [complexity=2,
+		importance=0.00974307586133,
+		rank=0.00487153793066];
+	r_ScanStat	 [complexity=0,
+		importance=0.00220850429627,
+		rank=0.0];
+	MIICOMMANDOut -> r_ScanStat;
+	"[1]Write"	 [complexity=6,
+		importance=0.0194423502807,
+		rank=0.00324039171345];
+	"[1]MIICOMMAND_Wr"	 [complexity=3,
+		importance=0.0175422007449,
+		rank=0.00584740024832];
+	"[1]Write" -> "[1]MIICOMMAND_Wr";
+	"[1]Address"	 [complexity=8,
+		importance=0.0200887565812,
+		rank=0.00251109457264];
+	"[1]MIICOMMAND_Sel"	 [complexity=6,
+		importance=0.0188220773117,
+		rank=0.00313701288528];
+	"[1]Address" -> "[1]MIICOMMAND_Sel";
+	"[1]MIICOMMAND0.Write"	 [complexity=3,
+		importance=0.0152999767931,
+		rank=0.00509999226435];
+	"MIICOMMAND0.DataOut"	 [complexity=2,
+		importance=0.0137123832762,
+		rank=0.00685619163808];
+	"[1]MIICOMMAND0.Write" -> "MIICOMMAND0.DataOut";
+	"[1]MIICOMMAND_Sel" -> "[1]MIICOMMAND_Wr";
+	"[1]DataIn"	 [complexity=4,
+		importance=0.0165729605953,
+		rank=0.00414324014884];
+	"[1]MIICOMMAND1.DataIn"	 [complexity=4,
+		importance=0.0153062813258,
+		rank=0.00382657033146];
+	"[1]DataIn" -> "[1]MIICOMMAND1.DataIn";
+	"[1]MIICOMMAND0.DataIn"	 [complexity=4,
+		importance=0.0149897993298,
+		rank=0.00374744983246];
+	"[1]DataIn" -> "[1]MIICOMMAND0.DataIn";
+	"[1]MIICOMMAND2.DataIn"	 [complexity=4,
+		importance=0.0153062813258,
+		rank=0.00382657033146];
+	"[1]DataIn" -> "[1]MIICOMMAND2.DataIn";
+	"[1]MIICOMMAND2.Reset"	 [complexity=3,
+		importance=0.0433593081362,
+		rank=0.0144531027121];
+	"MIICOMMAND2.DataOut"	 [complexity=2,
+		importance=0.0140288652722,
+		rank=0.00701443263609];
+	"[1]MIICOMMAND2.Reset" -> "MIICOMMAND2.DataOut";
+	"[1]Cs"	 [complexity=9,
+		importance=0.0207090295502,
+		rank=0.00230100328335];
+	"[1]Cs" -> "[1]Write";
+	"[1]MIICOMMAND1.Reset"	 [complexity=3,
+		importance=0.0433593081362,
+		rank=0.0144531027121];
+	"MIICOMMAND1.DataOut"	 [complexity=2,
+		importance=0.0140288652722,
+		rank=0.00701443263609];
+	"[1]MIICOMMAND1.Reset" -> "MIICOMMAND1.DataOut";
+	"[1]MIICOMMAND0.SyncReset"	 [complexity=3,
+		importance=0.0286914458218,
+		rank=0.00956381527394];
+	"[1]MIICOMMAND0.SyncReset" -> "MIICOMMAND0.DataOut";
+	"MIICOMMAND2.DataOut" -> MIICOMMANDOut;
+	"[1]MIICOMMAND_Wr" -> "[1]MIICOMMAND0.Write";
+	"[1]MIICOMMAND2.Write"	 [complexity=3,
+		importance=0.0156164587891,
+		rank=0.00520548626302];
+	"[1]MIICOMMAND_Wr" -> "[1]MIICOMMAND2.Write";
+	"[1]MIICOMMAND1.Write"	 [complexity=3,
+		importance=0.0156164587891,
+		rank=0.00520548626302];
+	"[1]MIICOMMAND_Wr" -> "[1]MIICOMMAND1.Write";
+	"[1]RStatStart"	 [complexity=3,
+		importance=0.0312245593496,
+		rank=0.0104081864499];
+	"[1]MIICOMMAND1.SyncReset"	 [complexity=3,
+		importance=0.0299578800801,
+		rank=0.00998596002669];
+	"[1]RStatStart" -> "[1]MIICOMMAND1.SyncReset";
+	"[1]MIICOMMAND0.Reset"	 [complexity=3,
+		importance=0.0424098621482,
+		rank=0.0141366207161];
+	"[1]MIICOMMAND0.Reset" -> "MIICOMMAND0.DataOut";
+	"[1]MIICOMMAND1.DataIn" -> "MIICOMMAND1.DataOut";
+	"[1]MIICOMMAND1.SyncReset" -> "MIICOMMAND1.DataOut";
+	"[1]MIICOMMAND2.Write" -> "MIICOMMAND2.DataOut";
+	"[1]MIICOMMAND0.DataIn" -> "MIICOMMAND0.DataOut";
+	"[1]Reset"	 [complexity=3,
+		importance=0.0446259874057,
+		rank=0.0148753291352];
+	"[1]Reset" -> "[1]MIICOMMAND2.Reset";
+	"[1]Reset" -> "[1]MIICOMMAND1.Reset";
+	"[1]Reset" -> "[1]MIICOMMAND0.Reset";
+	"[1]MIICOMMAND2.SyncReset" -> "MIICOMMAND2.DataOut";
+	"[1]MIICOMMAND1.Write" -> "MIICOMMAND1.DataOut";
+	"MIICOMMAND0.DataOut" -> MIICOMMANDOut;
+	"[1]Rw"	 [complexity=9,
+		importance=0.0207090295502,
+		rank=0.00230100328335];
+	"[1]Rw" -> "[1]Write";
+	"[1]MIICOMMAND2.DataIn" -> "MIICOMMAND2.DataOut";
+	"MIICOMMAND1.DataOut" -> MIICOMMANDOut;
+}

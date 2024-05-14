@@ -1,0 +1,25 @@
+strict digraph "" {
+	MAC_tx_addr_rd	 [complexity=0,
+		importance=0.0123042968333,
+		rank=0.0];
+	"[1]StateSendPauseFrame"	 [complexity=5,
+		importance=0.0330398495963,
+		rank=0.00660796991926];
+	"[1]StateSendPauseFrame" -> MAC_tx_addr_rd;
+	"[1]Current_state"	 [complexity=5,
+		importance=0.0408962899414,
+		rank=0.00817925798829];
+	"[1]Current_state" -> MAC_tx_addr_rd;
+	"[1]MAC_tx_add_en"	 [complexity=5,
+		importance=0.0330398495963,
+		rank=0.00660796991926];
+	"[1]MAC_tx_add_en" -> MAC_tx_addr_rd;
+	"[1]Reset"	 [complexity=1,
+		importance=0.0453441464296,
+		rank=0.0453441464296];
+	"[1]Reset" -> MAC_tx_addr_rd;
+	"[1]Tx_pkt_length_rmon"	 [complexity=5,
+		importance=0.0617541573238,
+		rank=0.0123508314648];
+	"[1]Tx_pkt_length_rmon" -> MAC_tx_addr_rd;
+}

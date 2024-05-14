@@ -1,0 +1,17 @@
+strict digraph "" {
+	sample_bus	 [complexity=3,
+		importance=0.0920197390808,
+		rank=0.0306732463603];
+	hsize_pp	 [complexity=2,
+		importance=0.0446977284726,
+		rank=0.0223488642363];
+	sample_bus -> hsize_pp;
+	bus_size	 [complexity=0,
+		importance=0.0223959065389,
+		rank=0.0];
+	hsize_pp -> bus_size;
+	HRESETn	 [complexity=3,
+		importance=0.055942766515,
+		rank=0.0186475888383];
+	HRESETn -> hsize_pp;
+}

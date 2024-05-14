@@ -1,0 +1,29 @@
+strict digraph "" {
+	"[1]State_data"	 [complexity=4,
+		importance=0.0410068535637,
+		rank=0.0102517133909];
+	Frame_length_counter	 [complexity=2,
+		importance=0.0285946384674,
+		rank=0.0142973192337];
+	"[1]State_data" -> Frame_length_counter;
+	Rx_pkt_length_rmon	 [complexity=0,
+		importance=0.0126690813558,
+		rank=0.0];
+	"[1]Current_state"	 [complexity=6,
+		importance=0.114920048582,
+		rank=0.0191533414303];
+	"[1]Current_state" -> Frame_length_counter;
+	"[1]State_SFD"	 [complexity=4,
+		importance=0.0696014920311,
+		rank=0.0174003730078];
+	"[1]State_SFD" -> Frame_length_counter;
+	Frame_length_counter -> Rx_pkt_length_rmon;
+	"[1]Frame_length_counter"	 [complexity=4,
+		importance=0.0445201955791,
+		rank=0.0111300488948];
+	"[1]Frame_length_counter" -> Frame_length_counter;
+	"[1]Reset"	 [complexity=3,
+		importance=0.0981961304985,
+		rank=0.0327320434995];
+	"[1]Reset" -> Frame_length_counter;
+}

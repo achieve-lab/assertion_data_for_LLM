@@ -1,0 +1,107 @@
+strict digraph "" {
+	"[1]MODER_1.Write"	 [complexity=3,
+		importance=0.0142683952219,
+		rank=0.00475613174062];
+	"MODER_1.DataOut"	 [complexity=2,
+		importance=0.012674472283,
+		rank=0.0063372361415];
+	"[1]MODER_1.Write" -> "MODER_1.DataOut";
+	MODEROut	 [complexity=2,
+		importance=0.00870199873225,
+		rank=0.00435099936612];
+	"MODER_1.DataOut" -> MODEROut;
+	"[1]Write"	 [complexity=12,
+		importance=0.0505965553405,
+		rank=0.00421637961171];
+	"[1]MODER_Wr"	 [complexity=3,
+		importance=0.0162321352682,
+		rank=0.00541071175608];
+	"[1]Write" -> "[1]MODER_Wr";
+	"[1]MODER_1.DataIn"	 [complexity=4,
+		importance=0.0139518883367,
+		rank=0.00348797208417];
+	"[1]MODER_1.DataIn" -> "MODER_1.DataOut";
+	"[1]Address"	 [complexity=14,
+		importance=0.051242961641,
+		rank=0.00366021154578];
+	"[1]MODER_Sel"	 [complexity=12,
+		importance=0.0499762823715,
+		rank=0.00416469019762];
+	"[1]Address" -> "[1]MODER_Sel";
+	"[1]MODER_2.DataIn"	 [complexity=4,
+		importance=0.0139518883367,
+		rank=0.00348797208417];
+	"MODER_2.DataOut"	 [complexity=2,
+		importance=0.012674472283,
+		rank=0.0063372361415];
+	"[1]MODER_2.DataIn" -> "MODER_2.DataOut";
+	"[1]DataIn"	 [complexity=4,
+		importance=0.0152185676062,
+		rank=0.00380464190154];
+	"[1]DataIn" -> "[1]MODER_1.DataIn";
+	"[1]DataIn" -> "[1]MODER_2.DataIn";
+	"[1]MODER_0.DataIn"	 [complexity=4,
+		importance=0.0139518883367,
+		rank=0.00348797208417];
+	"[1]DataIn" -> "[1]MODER_0.DataIn";
+	"[1]Cs"	 [complexity=15,
+		importance=0.05186323461,
+		rank=0.003457548974];
+	"[1]Cs" -> "[1]Write";
+	"[1]MODER_0.Write"	 [complexity=3,
+		importance=0.0142683952219,
+		rank=0.00475613174062];
+	"MODER_0.DataOut"	 [complexity=2,
+		importance=0.012674472283,
+		rank=0.0063372361415];
+	"[1]MODER_0.Write" -> "MODER_0.DataOut";
+	r_Iam	 [complexity=0,
+		importance=0.00147910315838,
+		rank=0.0];
+	"[1]Rw"	 [complexity=15,
+		importance=0.05186323461,
+		rank=0.003457548974];
+	"[1]Rw" -> "[1]Write";
+	"[1]MODER_1.SyncReset"	 [complexity=3,
+		importance=0.0266156238355,
+		rank=0.00887187461183];
+	"[1]MODER_1.SyncReset" -> "MODER_1.DataOut";
+	"[1]MODER_0.Reset"	 [complexity=3,
+		importance=0.0392961291686,
+		rank=0.0130987097229];
+	"[1]MODER_0.Reset" -> "MODER_0.DataOut";
+	MODEROut -> r_Iam;
+	"MODER_0.DataOut" -> MODEROut;
+	"[1]MODER_0.SyncReset"	 [complexity=3,
+		importance=0.0266156238355,
+		rank=0.00887187461183];
+	"[1]MODER_0.SyncReset" -> "MODER_0.DataOut";
+	"[1]MODER_1.Reset"	 [complexity=3,
+		importance=0.0392961291686,
+		rank=0.0130987097229];
+	"[1]MODER_1.Reset" -> "MODER_1.DataOut";
+	"[1]MODER_2.Write"	 [complexity=3,
+		importance=0.0142683952219,
+		rank=0.00475613174062];
+	"[1]MODER_2.Write" -> "MODER_2.DataOut";
+	"[1]Reset"	 [complexity=3,
+		importance=0.0405628084381,
+		rank=0.013520936146];
+	"[1]Reset" -> "[1]MODER_0.Reset";
+	"[1]Reset" -> "[1]MODER_1.Reset";
+	"[1]MODER_2.Reset"	 [complexity=3,
+		importance=0.0392961291686,
+		rank=0.0130987097229];
+	"[1]Reset" -> "[1]MODER_2.Reset";
+	"MODER_2.DataOut" -> MODEROut;
+	"[1]MODER_0.DataIn" -> "MODER_0.DataOut";
+	"[1]MODER_Sel" -> "[1]MODER_Wr";
+	"[1]MODER_Wr" -> "[1]MODER_1.Write";
+	"[1]MODER_Wr" -> "[1]MODER_0.Write";
+	"[1]MODER_Wr" -> "[1]MODER_2.Write";
+	"[1]MODER_2.SyncReset"	 [complexity=3,
+		importance=0.0266156238355,
+		rank=0.00887187461183];
+	"[1]MODER_2.SyncReset" -> "MODER_2.DataOut";
+	"[1]MODER_2.Reset" -> "MODER_2.DataOut";
+}

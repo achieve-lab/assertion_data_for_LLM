@@ -1,0 +1,194 @@
+strict digraph "" {
+	expon_final_4_et0	 [complexity=11,
+		importance=0.0834834338698,
+		rank=0.00758940307907];
+	remainder_6	 [complexity=7,
+		importance=0.0743882276586,
+		rank=0.0106268896655];
+	expon_final_4_et0 -> remainder_6;
+	mantissa_6	 [complexity=5,
+		importance=0.0584663718008,
+		rank=0.0116932743602];
+	expon_final_4_et0 -> mantissa_6;
+	"[1]quotient"	 [complexity=23,
+		importance=0.144100603738,
+		rank=0.00626524364078];
+	quotient_out	 [complexity=21,
+		importance=0.131175171687,
+		rank=0.006246436747];
+	"[1]quotient" -> quotient_out;
+	"[1]rst"	 [complexity=16,
+		importance=0.234187707757,
+		rank=0.0146367317348];
+	"[1]rst" -> expon_final_4_et0;
+	expon_final_5	 [complexity=7,
+		importance=0.0602353050489,
+		rank=0.00860504357842];
+	"[1]rst" -> expon_final_5;
+	expon_final_4	 [complexity=15,
+		importance=0.113868776362,
+		rank=0.0075912517575];
+	"[1]rst" -> expon_final_4;
+	mantissa_1	 [complexity=9,
+		importance=0.070556205815,
+		rank=0.00783957842389];
+	"[1]rst" -> mantissa_1;
+	remainder_b	 [complexity=13,
+		importance=0.108170086837,
+		rank=0.00832077591056];
+	"[1]rst" -> remainder_b;
+	"[1]rst" -> quotient_out;
+	remainder_out	 [complexity=23,
+		importance=0.135408890421,
+		rank=0.00588734306179];
+	"[1]rst" -> remainder_out;
+	remainder_msb	 [complexity=23,
+		importance=0.137558744746,
+		rank=0.00598081498895];
+	"[1]rst" -> remainder_msb;
+	"[1]enable_reg_2"	 [complexity=16,
+		importance=0.122000070637,
+		rank=0.00762500441484];
+	"[1]enable_reg_2" -> expon_final_4_et0;
+	"[1]enable_reg_2" -> expon_final_5;
+	"[1]enable_reg_2" -> expon_final_4;
+	"[1]enable_reg_2" -> mantissa_1;
+	"[1]enable_reg_2" -> remainder_b;
+	remainder_3	 [complexity=19,
+		importance=0.121684134827,
+		rank=0.00640442814879];
+	remainder_4	 [complexity=15,
+		importance=0.11066122906,
+		rank=0.00737741527066];
+	remainder_3 -> remainder_4;
+	"[1]remainder_out"	 [complexity=20,
+		importance=0.132917748198,
+		rank=0.00664588740992];
+	"[1]remainder_a"	 [complexity=16,
+		importance=0.120274921658,
+		rank=0.00751718260364];
+	"[1]remainder_out" -> "[1]remainder_a";
+	m_norm	 [complexity=5,
+		importance=0.0457948924455,
+		rank=0.0091589784891];
+	expon_final_5 -> m_norm;
+	remainder_5	 [complexity=11,
+		importance=0.0944177708969,
+		rank=0.0085834337179];
+	expon_final_4 -> remainder_5;
+	mantissa_5	 [complexity=9,
+		importance=0.0759080273892,
+		rank=0.00843422526546];
+	expon_final_4 -> mantissa_5;
+	"[1]remainder_a" -> remainder_b;
+	remainder_2	 [complexity=19,
+		importance=0.122766063881,
+		rank=0.00646137178321];
+	remainder_2 -> remainder_5;
+	remainder_2 -> remainder_4;
+	remainder_1	 [complexity=11,
+		importance=0.0899493150628,
+		rank=0.00817721046026];
+	remainder_1 -> remainder_6;
+	"[1]count_nonzero_reg"	 [complexity=25,
+		importance=0.147062682677,
+		rank=0.00588250730707];
+	"[1]count_nonzero_reg" -> remainder_msb;
+	mantissa_7	 [complexity=0,
+		importance=0.035734657953,
+		rank=0.0];
+	remainder_6 -> mantissa_7;
+	rem_lsb	 [complexity=5,
+		importance=0.0486260513604,
+		rank=0.00972521027209];
+	remainder_6 -> rem_lsb;
+	remainder_5 -> remainder_6;
+	"[1]remainder_msb"	 [complexity=20,
+		importance=0.135067602523,
+		rank=0.00675338012616];
+	"[1]remainder_msb" -> "[1]remainder_a";
+	mantissa_6 -> mantissa_7;
+	mantissa_5 -> mantissa_6;
+	mantissa_4	 [complexity=13,
+		importance=0.0892625468365,
+		rank=0.00686634975666];
+	mantissa_4 -> mantissa_5;
+	mantissa_3	 [complexity=17,
+		importance=0.0967946309222,
+		rank=0.00569380181895];
+	mantissa_3 -> mantissa_4;
+	mantissa_2	 [complexity=17,
+		importance=0.0967946309222,
+		rank=0.00569380181895];
+	mantissa_2 -> mantissa_5;
+	mantissa_2 -> mantissa_4;
+	mantissa_1 -> mantissa_6;
+	"[1]expon_final_4"	 [complexity=13,
+		importance=0.102934439335,
+		rank=0.00791803379503];
+	"[1]expon_final_4" -> expon_final_4_et0;
+	"[1]expon_final_4" -> expon_final_5;
+	"[1]expon_final_3"	 [complexity=18,
+		importance=0.127590408706,
+		rank=0.00708835603924];
+	"[1]expon_final_3" -> expon_final_4;
+	rem_lsb -> mantissa_7;
+	"[1]count_nonzero_reg_2"	 [complexity=25,
+		importance=0.145027893147,
+		rank=0.00580111572587];
+	"[1]count_nonzero_reg_2" -> remainder_msb;
+	"[1]divisor_reg"	 [complexity=26,
+		importance=0.152828520254,
+		rank=0.00587802000977];
+	"[1]divisor_reg" -> remainder_msb;
+	remainder_4 -> remainder_5;
+	quotient_msb	 [complexity=19,
+		importance=0.118193313146,
+		rank=0.00622070069187];
+	quotient_msb -> mantissa_4;
+	quotient_msb -> remainder_4;
+	"[1]quotient_msb"	 [complexity=12,
+		importance=0.0677673891346,
+		rank=0.00564728242788];
+	"[1]quotient_msb" -> expon_final_5;
+	m_norm -> mantissa_7;
+	remainder_b -> remainder_1;
+	"[1]remainder_shift_term"	 [complexity=16,
+		importance=0.119177991798,
+		rank=0.00744862448735];
+	"[1]remainder_shift_term" -> remainder_b;
+	"[1]quotient_out"	 [complexity=20,
+		importance=0.1332567802,
+		rank=0.00666283900998];
+	"[1]quotient_out" -> "[1]remainder_a";
+	"[1]quotient_out" -> mantissa_1;
+	"[1]quotient_out" -> "[1]quotient_msb";
+	"[1]expon_final_4_term"	 [complexity=12,
+		importance=0.0684150966897,
+		rank=0.00570125805747];
+	"[1]expon_final_4_term" -> expon_final_5;
+	quotient_out -> remainder_2;
+	quotient_out -> mantissa_3;
+	quotient_out -> mantissa_2;
+	quotient_out -> quotient_msb;
+	"[1]expon_shift_b"	 [complexity=18,
+		importance=0.12572210352,
+		rank=0.00698456130665];
+	"[1]expon_shift_b" -> expon_final_4;
+	"[1]expon_uf_term_4"	 [complexity=12,
+		importance=0.0879321998235,
+		rank=0.00732768331863];
+	"[1]expon_uf_term_4" -> mantissa_1;
+	"[1]dividend_reg"	 [complexity=26,
+		importance=0.160850592597,
+		rank=0.00618656125374];
+	"[1]dividend_reg" -> remainder_msb;
+	remainder_out -> remainder_3;
+	remainder_out -> remainder_2;
+	remainder_msb -> remainder_3;
+	remainder_msb -> remainder_2;
+	"[1]remainder"	 [complexity=25,
+		importance=0.14765674708,
+		rank=0.00590626988322];
+	"[1]remainder" -> remainder_out;
+}

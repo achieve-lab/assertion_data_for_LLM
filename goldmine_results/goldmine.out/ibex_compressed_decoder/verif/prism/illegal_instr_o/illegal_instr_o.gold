@@ -1,0 +1,289 @@
+Report file generated at: Nov-15-2023 07:04:58 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a20: (instr_i[13] == 0 & instr_i[1] == 1 & instr_i[12] == 0 & instr_i[6] == 0) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 11.72884
+Complexity: : 64
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a21: (instr_i[0] == 0 & instr_i[13] == 1) |-> (illegal_instr_o == 1)
+IRank: : 0.18326
+Importance: : 5.86442
+Complexity: : 32
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a22: (instr_i[0] == 0 & instr_i[14] == 0 & instr_i[1] == 0 & instr_i[15] == 1) |-> (illegal_instr_o == 1)
+IRank: : 0.18326
+Importance: : 11.72884
+Complexity: : 64
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a23: (instr_i[0] == 0 & instr_i[14] == 0 & instr_i[12] == 1 & instr_i[15] == 0 & instr_i[1] == 1) |-> (illegal_instr_o == 1)
+IRank: : 0.18326
+Importance: : 14.66105
+Complexity: : 80
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a24: (instr_i[9] == 0 & instr_i[17] == 1 & instr_i[1] == 0 & instr_i[12] == 1 & instr_i[14] == 0 & instr_i[11] == 0 & instr_i[2] == 1) |-> (illegal_instr_o == 1)
+IRank: : 0.18326
+Importance: : 20.52548
+Complexity: : 112
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a25: (instr_i[9] == 0 & instr_i[17] == 1 & instr_i[2] == 0 & instr_i[1] == 0 & instr_i[12] == 1 & instr_i[14] == 0 & instr_i[19] == 1) |-> (illegal_instr_o == 1)
+IRank: : 0.18326
+Importance: : 20.52548
+Complexity: : 112
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a26: (instr_i[9] == 0 & instr_i[16] == 0 & instr_i[19] == 0 & instr_i[2] == 0 & instr_i[11] == 0 & instr_i[12] == 1 & instr_i[1] == 0) |-> (illegal_instr_o == 1)
+IRank: : 0.18326
+Importance: : 20.52548
+Complexity: : 112
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a27: (instr_i[9] == 0 & instr_i[27] == 0 & instr_i[6] == 1 & instr_i[0] == 0 & instr_i[30] == 0 & instr_i[5] == 1) |-> (illegal_instr_o == 1)
+IRank: : 0.18326
+Importance: : 17.59327
+Complexity: : 96
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a28: (instr_i[15] == 1 & instr_i[24] == 0 & instr_i[14] == 0 & instr_i[13] == 0 & instr_i[12] == 1 & instr_i[10] == 1) |-> (illegal_instr_o == 1)
+IRank: : 0.18326
+Importance: : 17.59327
+Complexity: : 96
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a15: (instr_i[13] == 0 & instr_i[1] == 1 & instr_i[12] == 0 & instr_i[2] == 1) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 11.72884
+Complexity: : 64
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a14: (instr_i[13] == 0 & instr_i[15] == 0 & instr_i[1] == 0) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 8.79663
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a17: (instr_i[0] == 1 & instr_i[2] == 1 & instr_i[3] == 1) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 8.79663
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a16: (instr_i[13] == 0 & instr_i[1] == 1 & instr_i[12] == 0 & instr_i[3] == 0) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 11.72884
+Complexity: : 64
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a11: (instr_i[13] == 0 & instr_i[14] == 1 & instr_i[6] == 0) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 8.79663
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a10: (instr_i[13] == 0 & instr_i[14] == 1 & instr_i[5] == 0) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 8.79663
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a13: (instr_i[0] == 1 & instr_i[15] == 0) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 5.86442
+Complexity: : 32
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a12: (instr_i[13] == 0 & instr_i[1] == 1 & instr_i[15] == 1) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 8.79663
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a19: (instr_i[13] == 0 & instr_i[1] == 1 & instr_i[12] == 0 & instr_i[5] == 0) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 11.72884
+Complexity: : 64
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a18: (instr_i[13] == 0 & instr_i[1] == 1 & instr_i[12] == 0 & instr_i[4] == 1) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 11.72884
+Complexity: : 64
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (instr_i[0] == 1 & instr_i[7] == 0) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 5.86442
+Complexity: : 32
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (instr_i[0] == 1 & instr_i[1] == 1) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 5.86442
+Complexity: : 32
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (instr_i[0] == 1 & instr_i[12] == 0) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 5.86442
+Complexity: : 32
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (instr_i[0] == 1 & instr_i[9] == 1) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 5.86442
+Complexity: : 32
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a5: (instr_i[13] == 0 & instr_i[14] == 1 & instr_i[0] == 1) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 8.79663
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (instr_i[0] == 1 & instr_i[13] == 1) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 5.86442
+Complexity: : 32
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a7: (instr_i[13] == 0 & instr_i[14] == 1 & instr_i[2] == 1) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 8.79663
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a6: (instr_i[13] == 0 & instr_i[14] == 1 & instr_i[1] == 0) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 8.79663
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a9: (instr_i[13] == 0 & instr_i[14] == 1 & instr_i[4] == 1) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 8.79663
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a8: (instr_i[13] == 0 & instr_i[14] == 1 & instr_i[3] == 0) |-> (illegal_instr_o == 0)
+IRank: : 0.18326
+Importance: : 8.79663
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a20       | 0.18326 |  11.72884  |     64     |  Unknown  | Unknown |   Unknown   
+      a21       | 0.18326 |  5.86442   |     32     |  Unknown  | Unknown |   Unknown   
+      a22       | 0.18326 |  11.72884  |     64     |  Unknown  | Unknown |   Unknown   
+      a23       | 0.18326 |  14.66105  |     80     |  Unknown  | Unknown |   Unknown   
+      a24       | 0.18326 |  20.52548  |    112     |  Unknown  | Unknown |   Unknown   
+      a25       | 0.18326 |  20.52548  |    112     |  Unknown  | Unknown |   Unknown   
+      a26       | 0.18326 |  20.52548  |    112     |  Unknown  | Unknown |   Unknown   
+      a27       | 0.18326 |  17.59327  |     96     |  Unknown  | Unknown |   Unknown   
+      a28       | 0.18326 |  17.59327  |     96     |  Unknown  | Unknown |   Unknown   
+      a15       | 0.18326 |  11.72884  |     64     |  Unknown  | Unknown |   Unknown   
+      a14       | 0.18326 |  8.79663   |     48     |  Unknown  | Unknown |   Unknown   
+      a17       | 0.18326 |  8.79663   |     48     |  Unknown  | Unknown |   Unknown   
+      a16       | 0.18326 |  11.72884  |     64     |  Unknown  | Unknown |   Unknown   
+      a11       | 0.18326 |  8.79663   |     48     |  Unknown  | Unknown |   Unknown   
+      a10       | 0.18326 |  8.79663   |     48     |  Unknown  | Unknown |   Unknown   
+      a13       | 0.18326 |  5.86442   |     32     |  Unknown  | Unknown |   Unknown   
+      a12       | 0.18326 |  8.79663   |     48     |  Unknown  | Unknown |   Unknown   
+      a19       | 0.18326 |  11.72884  |     64     |  Unknown  | Unknown |   Unknown   
+      a18       | 0.18326 |  11.72884  |     64     |  Unknown  | Unknown |   Unknown   
+      a1        | 0.18326 |  5.86442   |     32     |  Unknown  | Unknown |   Unknown   
+      a0        | 0.18326 |  5.86442   |     32     |  Unknown  | Unknown |   Unknown   
+      a3        | 0.18326 |  5.86442   |     32     |  Unknown  | Unknown |   Unknown   
+      a2        | 0.18326 |  5.86442   |     32     |  Unknown  | Unknown |   Unknown   
+      a5        | 0.18326 |  8.79663   |     48     |  Unknown  | Unknown |   Unknown   
+      a4        | 0.18326 |  5.86442   |     32     |  Unknown  | Unknown |   Unknown   
+      a7        | 0.18326 |  8.79663   |     48     |  Unknown  | Unknown |   Unknown   
+      a6        | 0.18326 |  8.79663   |     48     |  Unknown  | Unknown |   Unknown   
+      a9        | 0.18326 |  8.79663   |     48     |  Unknown  | Unknown |   Unknown   
+      a8        | 0.18326 |  8.79663   |     48     |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 29
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 29
+Hit rate: 0.0
+Miss rate: 1.0

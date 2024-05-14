@@ -1,0 +1,13 @@
+Reset	U_0_019.Reset
+U_0_019.RegOut	broadcast_bucket_depth
+WRB	U_0_019.CWR_pulse
+U_0_019.Reset	U_0_019.RegOut
+CD_in	U_0_019.CD_in_reg
+U_0_019.CWR_pulse	U_0_019.RegOut
+CSB	U_0_019.CCSB
+U_0_019.CD_in_reg	U_0_019.RegOut
+U_0_019.CCSB	U_0_019.RegOut
+U_0_019.CA_reg_set	U_0_019.RegOut
+U_0_019.RegInit	U_0_019.RegOut
+CA	U_0_019.CA_reg
+U_0_019.CA_reg	U_0_019.RegOut

@@ -1,0 +1,7 @@
+digraph "" {
+	rst -> prescaler	 [weight=2.0];
+	mode_transfer -> mmc_clk	 [weight=1.0];
+	prescaler -> mmc_clk	 [weight=1.0];
+	prescaler -> prescaler	 [weight=1.0];
+	sys_clk -> mmc_clk	 [weight=1.0];
+}

@@ -1,0 +1,25 @@
+strict digraph "" {
+	node [label="\N"];
+	"245:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7ff806594c10>",
+		fillcolor=turquoise,
+		label="245:BL
+StateTraffic = 1;",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7ff826da2e90>]",
+		style=filled,
+		typ=Block];
+	"Leaf_244:AL"	 [def_var="['StateTraffic']",
+		label="Leaf_244:AL"];
+	"245:BL" -> "Leaf_244:AL"	 [cond="[]",
+		lineno=None];
+	"244:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7ff80673ee50>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="244:AL",
+		sens="['TxStartFrm']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="[]"];
+	"244:AL" -> "245:BL"	 [cond="[]",
+		lineno=None];
+}

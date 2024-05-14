@@ -1,0 +1,173 @@
+strict digraph "" {
+	"[1]ep9_match"	 [complexity=1,
+		importance=0.146706821105,
+		rank=0.146706821105];
+	dma_in_buf_sz1	 [complexity=0,
+		importance=0.0206884336956,
+		rank=0.0];
+	"[1]ep9_match" -> dma_in_buf_sz1;
+	"[1]ep2_match"	 [complexity=1,
+		importance=0.291525856974,
+		rank=0.291525856974];
+	"[1]ep2_match" -> dma_in_buf_sz1;
+	"[1]ep4_match"	 [complexity=1,
+		importance=0.250148989583,
+		rank=0.250148989583];
+	"[1]ep4_match" -> dma_in_buf_sz1;
+	"[1]ep10_dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0225762189313,
+		rank=0.0112881094657];
+	"[1]ep10_dma_in_buf_sz1" -> dma_in_buf_sz1;
+	"[1]ep3_match"	 [complexity=1,
+		importance=0.270837423279,
+		rank=0.270837423279];
+	"[1]ep3_match" -> dma_in_buf_sz1;
+	"[1]u0.uc_dpd"	 [complexity=10,
+		importance=0.350981933216,
+		rank=0.0350981933216];
+	"[1]u0.csr"	 [complexity=4,
+		importance=0.347182800835,
+		rank=0.0867957002086];
+	"[1]u0.uc_dpd" -> "[1]u0.csr";
+	"[1]ep1_match"	 [complexity=1,
+		importance=0.31221429067,
+		rank=0.31221429067];
+	"[1]ep1_match" -> dma_in_buf_sz1;
+	"[1]ep9_dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0225762189313,
+		rank=0.0112881094657];
+	"[1]ep9_dma_in_buf_sz1" -> dma_in_buf_sz1;
+	"[1]ep2_dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0225762189313,
+		rank=0.0112881094657];
+	"[1]ep2_dma_in_buf_sz1" -> dma_in_buf_sz1;
+	"[1]ep0_dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0239721254555,
+		rank=0.0119860627277];
+	"[1]ep0_dma_in_buf_sz1" -> dma_in_buf_sz1;
+	"[1]ep13_dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0225762189313,
+		rank=0.0112881094657];
+	"[1]ep13_dma_in_buf_sz1" -> dma_in_buf_sz1;
+	"[1]ep8_match"	 [complexity=1,
+		importance=0.167395254801,
+		rank=0.167395254801];
+	"[1]ep8_match" -> dma_in_buf_sz1;
+	"[1]ep4_dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0225762189313,
+		rank=0.0112881094657];
+	"[1]ep4_dma_in_buf_sz1" -> dma_in_buf_sz1;
+	"[1]ep12_match"	 [complexity=1,
+		importance=0.0846415200181,
+		rank=0.0846415200181];
+	"[1]ep12_match" -> dma_in_buf_sz1;
+	"[1]ep7_dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0225762189313,
+		rank=0.0112881094657];
+	"[1]ep7_dma_in_buf_sz1" -> dma_in_buf_sz1;
+	"[1]u0.ep_match"	 [complexity=1,
+		importance=0.337864217992,
+		rank=0.337864217992];
+	"[1]u0.csr" -> "[1]u0.ep_match";
+	"[1]u0.csr0"	 [complexity=10,
+		importance=0.34953772495,
+		rank=0.034953772495];
+	"[1]u0.csr0" -> "[1]u0.csr";
+	"[1]u0.csr1"	 [complexity=10,
+		importance=0.350914974053,
+		rank=0.0350914974053];
+	"[1]u0.csr1" -> "[1]u0.csr";
+	"[1]ep14_dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0225762189313,
+		rank=0.0112881094657];
+	"[1]ep14_dma_in_buf_sz1" -> dma_in_buf_sz1;
+	"[1]ep14_match"	 [complexity=1,
+		importance=0.0432646526269,
+		rank=0.0432646526269];
+	"[1]ep14_match" -> dma_in_buf_sz1;
+	"[1]ep11_match"	 [complexity=1,
+		importance=0.105329953714,
+		rank=0.105329953714];
+	"[1]ep11_match" -> dma_in_buf_sz1;
+	"[1]ep5_match"	 [complexity=1,
+		importance=0.229460555887,
+		rank=0.229460555887];
+	"[1]ep5_match" -> dma_in_buf_sz1;
+	"[1]ep0_match"	 [complexity=1,
+		importance=0.333894861123,
+		rank=0.333894861123];
+	"[1]ep0_match" -> dma_in_buf_sz1;
+	"[1]ep10_match"	 [complexity=1,
+		importance=0.126018387409,
+		rank=0.126018387409];
+	"[1]ep10_match" -> dma_in_buf_sz1;
+	"[1]ep1_dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0225762189313,
+		rank=0.0112881094657];
+	"[1]ep1_dma_in_buf_sz1" -> dma_in_buf_sz1;
+	"[1]ep11_dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0225762189313,
+		rank=0.0112881094657];
+	"[1]ep11_dma_in_buf_sz1" -> dma_in_buf_sz1;
+	"[1]u0.ots_stop"	 [complexity=10,
+		importance=0.34953772495,
+		rank=0.034953772495];
+	"[1]u0.ots_stop" -> "[1]u0.csr";
+	"[1]ep12_dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0225762189313,
+		rank=0.0112881094657];
+	"[1]ep12_dma_in_buf_sz1" -> dma_in_buf_sz1;
+	"[1]ep5_dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0225762189313,
+		rank=0.0112881094657];
+	"[1]ep5_dma_in_buf_sz1" -> dma_in_buf_sz1;
+	"[1]ep6_match"	 [complexity=1,
+		importance=0.208772122192,
+		rank=0.208772122192];
+	"[1]ep6_match" -> dma_in_buf_sz1;
+	"[1]ep13_match"	 [complexity=1,
+		importance=0.0639530863225,
+		rank=0.0639530863225];
+	"[1]ep13_match" -> dma_in_buf_sz1;
+	"[1]ep7_match"	 [complexity=1,
+		importance=0.188083688496,
+		rank=0.188083688496];
+	"[1]ep7_match" -> dma_in_buf_sz1;
+	"[1]ep3_dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0225762189313,
+		rank=0.0112881094657];
+	"[1]ep3_dma_in_buf_sz1" -> dma_in_buf_sz1;
+	"[1]ep_sel"	 [complexity=4,
+		importance=0.34258362306,
+		rank=0.0856459057649];
+	"[1]u0.ep_sel"	 [complexity=4,
+		importance=0.340695837824,
+		rank=0.085173959456];
+	"[1]ep_sel" -> "[1]u0.ep_sel";
+	"[1]u0.ep_match" -> "[1]ep0_match";
+	"[1]ep6_dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0225762189313,
+		rank=0.0112881094657];
+	"[1]ep6_dma_in_buf_sz1" -> dma_in_buf_sz1;
+	"[1]u0.ep_sel" -> "[1]u0.ep_match";
+	"[1]ep15_match"	 [complexity=1,
+		importance=0.0225762189313,
+		rank=0.0225762189313];
+	"[1]ep15_match" -> dma_in_buf_sz1;
+	"[1]ep15_dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0225762189313,
+		rank=0.0112881094657];
+	"[1]ep15_dma_in_buf_sz1" -> dma_in_buf_sz1;
+	"[1]u0.dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0267637245107,
+		rank=0.0133818622553];
+	"[1]u0.dma_in_buf_sz1" -> "[1]ep0_dma_in_buf_sz1";
+	"[1]u0.uc_bsel"	 [complexity=10,
+		importance=0.350981933216,
+		rank=0.0350981933216];
+	"[1]u0.uc_bsel" -> "[1]u0.csr";
+	"[1]ep8_dma_in_buf_sz1"	 [complexity=2,
+		importance=0.0225762189313,
+		rank=0.0112881094657];
+	"[1]ep8_dma_in_buf_sz1" -> dma_in_buf_sz1;
+}

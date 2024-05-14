@@ -1,0 +1,21 @@
+strict digraph "" {
+	"[1]ControlEnd_q"	 [complexity=2,
+		importance=0.0901760778247,
+		rank=0.0450880389123];
+	TxCtrlEndFrm	 [complexity=0,
+		importance=0.0346694769534,
+		rank=0.0];
+	"[1]ControlEnd_q" -> TxCtrlEndFrm;
+	"[1]ControlEnd"	 [complexity=2,
+		importance=0.0893123257099,
+		rank=0.0446561628549];
+	"[1]ControlEnd" -> TxCtrlEndFrm;
+	"[1]TxReset"	 [complexity=1,
+		importance=0.122348877607,
+		rank=0.122348877607];
+	"[1]TxReset" -> TxCtrlEndFrm;
+	"[1]ByteCnt"	 [complexity=4,
+		importance=0.167693274872,
+		rank=0.0419233187179];
+	"[1]ByteCnt" -> "[1]ControlEnd";
+}

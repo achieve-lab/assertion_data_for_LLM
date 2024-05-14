@@ -1,0 +1,62 @@
+strict digraph "" {
+	p2	 [complexity=77,
+		importance=110.884548973,
+		rank=1.44005907758];
+	p3	 [complexity=37,
+		importance=7.38707679545,
+		rank=0.199650724201];
+	p2 -> p3;
+	p4	 [complexity=17,
+		importance=1.0421755959,
+		rank=0.0613044468175];
+	p3 -> p4;
+	p1	 [complexity=157,
+		importance=3437.47010328,
+		rank=21.8947140336];
+	p1 -> p2;
+	p6	 [complexity=2,
+		importance=0.213225525584,
+		rank=0.106612762792];
+	data_out	 [complexity=0,
+		importance=0.0971988987127,
+		rank=0.0];
+	p6 -> data_out;
+	d	 [complexity=205,
+		importance=215365.030907,
+		rank=1050.56112637];
+	d -> p1;
+	v1	 [complexity=109,
+		importance=3418.49162109,
+		rank=31.3623084503];
+	d -> v1;
+	p5	 [complexity=7,
+		importance=0.314634428923,
+		rank=0.0449477755604];
+	p4 -> p5;
+	p5 -> p6;
+	data_in	 [complexity=207,
+		importance=215365.070092,
+		rank=1040.41096663];
+	data_in -> d;
+	v1 -> p2;
+	v2	 [complexity=61,
+		importance=110.272030513,
+		rank=1.80773820513];
+	v1 -> v2;
+	v2 -> p3;
+	v3	 [complexity=37,
+		importance=7.34787840115,
+		rank=0.198591308139];
+	v2 -> v3;
+	v3 -> p4;
+	v4	 [complexity=17,
+		importance=0.996251231694,
+		rank=0.0586030136291];
+	v3 -> v4;
+	v4 -> p5;
+	v5	 [complexity=7,
+		importance=0.265498128904,
+		rank=0.0379283041292];
+	v4 -> v5;
+	v5 -> p6;
+}

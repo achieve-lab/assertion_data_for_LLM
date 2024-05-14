@@ -1,0 +1,226 @@
+Report file generated at: Apr-10-2024 04:52:33 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a0: (ByteCntEq0 == 1) |=> (AddressMiss == 0)
+IRank: : 0.18932
+Importance: : 0.18932
+Complexity: : 1
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (BroadcastOK == 1 & ByteCntEq7 == 1 & RxCheckEn == 1) |=> (AddressMiss == 0)
+IRank: : 0.03349
+Importance: : 0.33489
+Complexity: : 10
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a15: (ByteCntEq0 == 0 & ByteCntEq7 == 1 & r_Bro == 1 & PassAll == 0 & RxCheckEn == 1 & StateData[0] == 0) |=> (AddressMiss == 1)
+IRank: : 0.03221
+Importance: : 0.77293
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a21: (ByteCntEq0 == 0 & ControlFrmAddressOK == 0 & RxCheckEn == 1 & ByteCntEq7 == 1 & Broadcast == 0 & MulticastOK == 0) |=> (AddressMiss == 1)
+IRank: : 0.03113
+Importance: : 0.80937
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a19: (ByteCntEq0 == 0 & r_Bro == 1 & ByteCntEq7 == 1 & PassAll == 0 & RxCheckEn == 1 & MulticastOK == 0) |=> (AddressMiss == 1)
+IRank: : 0.03113
+Importance: : 0.80937
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (MulticastOK == 1 & StateData[0] == 1) |=> (AddressMiss == 0)
+IRank: : 0.02936
+Importance: : 0.29364
+Complexity: : 10
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (ByteCntEq7 == 0 & Broadcast == 0 & RxCheckEn == 1 & StateData[0] == 0) |=> (AddressMiss == 0)
+IRank: : 0.02826
+Importance: : 0.48047
+Complexity: : 17
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a10: (RxCheckEn == 0 & BroadcastOK == 1 & PassAll == 1 & ByteCntEq7 == 0) |=> (AddressMiss == 0)
+IRank: : 0.02738
+Importance: : 0.43804
+Complexity: : 16
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a5: (RxCheckEn == 0 & ByteCntEq7 == 1 & ControlFrmAddressOK == 0 & BroadcastOK == 1) |=> (AddressMiss == 0)
+IRank: : 0.02738
+Importance: : 0.43804
+Complexity: : 16
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a18: (ByteCntEq0 == 0 & r_Bro == 1 & ByteCntEq7 == 1 & StateData[0] == 1 & ControlFrmAddressOK == 0 & PassAll == 1) |=> (AddressMiss == 1)
+IRank: : 0.0273
+Importance: : 0.76444
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a20: (ByteCntEq0 == 0 & ControlFrmAddressOK == 0 & ByteCntEq7 == 1 & RxCheckEn == 1 & Broadcast == 0 & r_Bro == 1) |=> (AddressMiss == 1)
+IRank: : 0.02695
+Importance: : 0.78142
+Complexity: : 29
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a16: (ByteCntEq0 == 0 & ByteCntEq7 == 1 & Broadcast == 0 & PassAll == 0 & RxCheckEn == 1 & r_Bro == 0) |=> (AddressMiss == 1)
+IRank: : 0.02695
+Importance: : 0.78142
+Complexity: : 29
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a17: (ByteCntEq0 == 0 & r_Bro == 1 & ByteCntEq7 == 1 & StateData[0] == 1 & ControlFrmAddressOK == 0 & Broadcast == 0) |=> (AddressMiss == 1)
+IRank: : 0.02575
+Importance: : 0.79839
+Complexity: : 31
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a6: (RxCheckEn == 0 & ByteCntEq7 == 1 & ControlFrmAddressOK == 0 & MulticastOK == 0 & r_Bro == 0) |=> (AddressMiss == 0)
+IRank: : 0.0248
+Importance: : 0.62005
+Complexity: : 25
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a12: (RxCheckEn == 0 & ByteCntEq7 == 1 & r_Bro == 1 & PassAll == 1) |=> (AddressMiss == 0)
+IRank: : 0.02395
+Importance: : 0.45501
+Complexity: : 19
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a9: (RxCheckEn == 0 & BroadcastOK == 1 & ControlFrmAddressOK == 0) |=> (AddressMiss == 0)
+IRank: : 0.02392
+Importance: : 0.33489
+Complexity: : 14
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (BroadcastOK == 1 & MulticastOK == 1) |=> (AddressMiss == 0)
+IRank: : 0.02376
+Importance: : 0.28516
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a8: (ByteCntEq7 == 0 & StateData[0] == 1 & PassAll == 1 & r_Bro == 0) |=> (AddressMiss == 0)
+IRank: : 0.02248
+Importance: : 0.47198
+Complexity: : 21
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a7: (RxCheckEn == 0 & ByteCntEq7 == 1 & r_Bro == 1 & Broadcast == 0) |=> (AddressMiss == 0)
+IRank: : 0.02223
+Importance: : 0.48895
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a14: (ByteCntEq7 == 0 & Broadcast == 0 & PassAll == 1 & MulticastOK == 1) |=> (AddressMiss == 0)
+IRank: : 0.02211
+Importance: : 0.50842
+Complexity: : 23
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a11: (ByteCntEq7 == 0 & StateData[0] == 1 & PassAll == 1 & ControlFrmAddressOK == 0 & Broadcast == 1) |=> (AddressMiss == 0)
+IRank: : 0.0213
+Importance: : 0.57513
+Complexity: : 27
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a13: (ByteCntEq7 == 0 & Broadcast == 0 & RxCheckEn == 1 & r_Bro == 0 & ControlFrmAddressOK == 0) |=> (AddressMiss == 0)
+IRank: : 0.02115
+Importance: : 0.5921
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a0        | 0.18932 |  0.18932   |     1      |  Unknown  | Unknown |   Unknown   
+      a3        | 0.03349 |  0.33489   |     10     |  Unknown  | Unknown |   Unknown   
+      a15       | 0.03221 |  0.77293   |     24     |  Unknown  | Unknown |   Unknown   
+      a21       | 0.03113 |  0.80937   |     26     |  Unknown  | Unknown |   Unknown   
+      a19       | 0.03113 |  0.80937   |     26     |  Unknown  | Unknown |   Unknown   
+      a1        | 0.02936 |  0.29364   |     10     |  Unknown  | Unknown |   Unknown   
+      a4        | 0.02826 |  0.48047   |     17     |  Unknown  | Unknown |   Unknown   
+      a10       | 0.02738 |  0.43804   |     16     |  Unknown  | Unknown |   Unknown   
+      a5        | 0.02738 |  0.43804   |     16     |  Unknown  | Unknown |   Unknown   
+      a18       | 0.0273  |  0.76444   |     28     |  Unknown  | Unknown |   Unknown   
+      a20       | 0.02695 |  0.78142   |     29     |  Unknown  | Unknown |   Unknown   
+      a16       | 0.02695 |  0.78142   |     29     |  Unknown  | Unknown |   Unknown   
+      a17       | 0.02575 |  0.79839   |     31     |  Unknown  | Unknown |   Unknown   
+      a6        | 0.0248  |  0.62005   |     25     |  Unknown  | Unknown |   Unknown   
+      a12       | 0.02395 |  0.45501   |     19     |  Unknown  | Unknown |   Unknown   
+      a9        | 0.02392 |  0.33489   |     14     |  Unknown  | Unknown |   Unknown   
+      a2        | 0.02376 |  0.28516   |     12     |  Unknown  | Unknown |   Unknown   
+      a8        | 0.02248 |  0.47198   |     21     |  Unknown  | Unknown |   Unknown   
+      a7        | 0.02223 |  0.48895   |     22     |  Unknown  | Unknown |   Unknown   
+      a14       | 0.02211 |  0.50842   |     23     |  Unknown  | Unknown |   Unknown   
+      a11       | 0.0213  |  0.57513   |     27     |  Unknown  | Unknown |   Unknown   
+      a13       | 0.02115 |   0.5921   |     28     |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 22
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 22
+Hit rate: 0.0
+Miss rate: 1.0

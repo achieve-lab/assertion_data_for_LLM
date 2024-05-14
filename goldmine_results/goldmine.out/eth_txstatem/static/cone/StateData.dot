@@ -1,0 +1,41 @@
+strict digraph "" {
+	"[1]StartData"	 [complexity=2,
+		importance=0.0533215397112,
+		rank=0.0266607698556];
+	StateData	 [complexity=0,
+		importance=0.0182403410783,
+		rank=0.0];
+	"[1]StartData" -> StateData;
+	"[1]TxEndFrm"	 [complexity=8,
+		importance=0.0641994489022,
+		rank=0.00802493111278];
+	"[1]TxEndFrm" -> "[1]StartData";
+	"[1]StateData"	 [complexity=13,
+		importance=0.124883420501,
+		rank=0.0096064169616];
+	"[1]StateData" -> "[1]StartData";
+	"[1]StatePreamble"	 [complexity=8,
+		importance=0.0874505269985,
+		rank=0.0109313158748];
+	"[1]StatePreamble" -> "[1]StartData";
+	"[1]Collision"	 [complexity=13,
+		importance=0.117520988613,
+		rank=0.00904007604719];
+	"[1]Collision" -> "[1]StartData";
+	"[1]NibCntEq15"	 [complexity=8,
+		importance=0.0641994489022,
+		rank=0.00802493111278];
+	"[1]NibCntEq15" -> "[1]StartData";
+	"[1]MaxFrame"	 [complexity=7,
+		importance=0.0641994489022,
+		rank=0.00917134984318];
+	"[1]MaxFrame" -> "[1]StartData";
+	"[1]Reset"	 [complexity=1,
+		importance=0.320963707523,
+		rank=0.320963707523];
+	"[1]Reset" -> StateData;
+	"[1]TxUnderRun"	 [complexity=7,
+		importance=0.0641994489022,
+		rank=0.00917134984318];
+	"[1]TxUnderRun" -> "[1]StartData";
+}

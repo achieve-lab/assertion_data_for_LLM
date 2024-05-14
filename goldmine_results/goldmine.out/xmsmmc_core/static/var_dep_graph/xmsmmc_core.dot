@@ -1,0 +1,27 @@
+digraph "" {
+	cmd_done -> cmd_state_next	 [weight=7.0];
+	int_reset -> cmd_state	 [weight=2.0];
+	int_reset -> mmc_clk	 [weight=1.0];
+	int_reset -> counter_command_bits	 [weight=2.0];
+	cmd_state_next -> cmd_state	 [weight=1.0];
+	cmd_data_out -> mmc_cmd	 [weight=1.0];
+	cmd_state -> cmd_state_next	 [weight=12.0];
+	cmd_state -> mode_transfer	 [weight=1.0];
+	cmd_state -> error	 [weight=1.0];
+	cmd_bits -> mmc_cmd	 [weight=1.0];
+	clk_mmc -> mmc_clk	 [weight=1.0];
+	cmd1_resp_busy_bit -> cmd_state_next	 [weight=1.0];
+	init -> cmd_state_next	 [weight=2.0];
+	init -> config_request	 [weight=1.0];
+	cmd1_resp_start_bit -> cmd_state_next	 [weight=1.0];
+	mmc_cmd -> cmd_state_next	 [weight=2.0];
+	done -> cmd_state_next	 [weight=1.0];
+	done -> config_request	 [weight=1.0];
+	config_request -> int_reset	 [weight=1.0];
+	counter_command_bits -> cmd_done	 [weight=1.0];
+	counter_command_bits -> cmd1_resp_busy_bit	 [weight=1.0];
+	counter_command_bits -> cmd1_resp_start_bit	 [weight=1.0];
+	counter_command_bits -> counter_command_bits	 [weight=1.0];
+	dis -> mmc_cmd	 [weight=1.0];
+	dis -> mmc_clk	 [weight=1.0];
+}

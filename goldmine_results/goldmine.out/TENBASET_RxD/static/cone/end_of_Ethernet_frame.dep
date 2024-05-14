@@ -1,0 +1,15 @@
+[1]cnt	[1]transition_timeout
+[2]cnt	[2]transition_timeout
+[1]transition_timeout	end_of_Ethernet_frame
+[2]in_data	[2]transition_timeout
+[2]in_data	[1]cnt
+[3]in_data	[1]in_data
+[3]in_data	[3]cnt
+[3]in_data	[2]cnt
+[3]in_data	[3]transition_timeout
+[3]transition_timeout	[2]transition_timeout
+[1]in_data	[1]transition_timeout
+[3]cnt	[1]cnt
+[3]cnt	[3]transition_timeout
+[3]manchester_data_in	[1]in_data
+[2]transition_timeout	[1]transition_timeout

@@ -1,0 +1,13 @@
+strict digraph "" {
+	"[1]reset"	 [complexity=1,
+		importance=0.0345509539722,
+		rank=0.0345509539722];
+	ebi_rxd_out	 [complexity=0,
+		importance=0.0122897693457,
+		rank=0.0];
+	"[1]reset" -> ebi_rxd_out;
+	"[1]ebi_rxd_d1"	 [complexity=2,
+		importance=0.0276457488891,
+		rank=0.0138228744446];
+	"[1]ebi_rxd_d1" -> ebi_rxd_out;
+}

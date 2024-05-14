@@ -1,0 +1,69 @@
+strict digraph "" {
+	node [label="\N"];
+	"325:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fbd1c2d1e10>",
+		fillcolor=firebrick,
+		label="325:NS
+Almost_full <= 1;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fbd1c2d1e10>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"Leaf_317:AL"	 [def_var="['Almost_full']",
+		label="Leaf_317:AL"];
+	"325:NS" -> "Leaf_317:AL"	 [cond="[]",
+		lineno=None];
+	"317:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fbd1c2d40d0>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="317:AL",
+		sens="['Clk_MAC', 'Reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['Add_rd_ungray', 'Reset', 'Add_wr_pluse', 'Add_wr_pluse4', 'Add_wr_pluse2', 'Add_wr_pluse3']"];
+	"318:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fbd1c2d4250>",
+		fillcolor=springgreen,
+		label="318:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"317:AL" -> "318:IF"	 [cond="[]",
+		lineno=None];
+	"327:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fbd1c2d42d0>",
+		fillcolor=firebrick,
+		label="327:NS
+Almost_full <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fbd1c2d42d0>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"327:NS" -> "Leaf_317:AL"	 [cond="[]",
+		lineno=None];
+	"320:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fbd1c2d4290>",
+		fillcolor=springgreen,
+		label="320:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"318:IF" -> "320:IF"	 [cond="['Reset']",
+		label="!(Reset)",
+		lineno=318];
+	"319:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fbd1c2d4810>",
+		fillcolor=firebrick,
+		label="319:NS
+Almost_full <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fbd1c2d4810>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"318:IF" -> "319:NS"	 [cond="['Reset']",
+		label=Reset,
+		lineno=318];
+	"320:IF" -> "325:NS"	 [cond="['Add_wr_pluse4', 'Add_rd_ungray', 'Add_wr_pluse3', 'Add_rd_ungray', 'Add_wr_pluse2', 'Add_rd_ungray', 'Add_wr_pluse', 'Add_rd_ungray']",
+		label="((Add_wr_pluse4 == Add_rd_ungray) || (Add_wr_pluse3 == Add_rd_ungray) || (Add_wr_pluse2 == Add_rd_ungray) || (Add_wr_pluse == Add_\
+rd_ungray))",
+		lineno=320];
+	"320:IF" -> "327:NS"	 [cond="['Add_wr_pluse4', 'Add_rd_ungray', 'Add_wr_pluse3', 'Add_rd_ungray', 'Add_wr_pluse2', 'Add_rd_ungray', 'Add_wr_pluse', 'Add_rd_ungray']",
+		label="!(((Add_wr_pluse4 == Add_rd_ungray) || (Add_wr_pluse3 == Add_rd_ungray) || (Add_wr_pluse2 == Add_rd_ungray) || (Add_wr_pluse == \
+Add_rd_ungray)))",
+		lineno=320];
+	"319:NS" -> "Leaf_317:AL"	 [cond="[]",
+		lineno=None];
+}

@@ -1,0 +1,82 @@
+strict digraph "" {
+	"[1]Fifo_full"	 [complexity=5,
+		importance=0.481943504216,
+		rank=0.0963887008432];
+	"[1]Next_state"	 [complexity=4,
+		importance=0.156510429707,
+		rank=0.0391276074267];
+	"[1]Fifo_full" -> "[1]Next_state";
+	"[1]CRC_err"	 [complexity=5,
+		importance=0.32543307451,
+		rank=0.0650866149019];
+	"[1]CRC_err" -> "[1]Next_state";
+	"[1]broadcast_drop"	 [complexity=8,
+		importance=0.32543307451,
+		rank=0.0406791343137];
+	"[1]broadcast_drop" -> "[1]Next_state";
+	"[1]RxD"	 [complexity=8,
+		importance=1.1103021865,
+		rank=0.138787773313];
+	"[1]RxD" -> "[1]Next_state";
+	"[1]IFG_counter"	 [complexity=6,
+		importance=0.331201645078,
+		rank=0.0552002741797];
+	"[1]IFG_counter" -> "[1]Next_state";
+	Current_state	 [complexity=2,
+		importance=0.0576582733505,
+		rank=0.0288291366752];
+	"[1]Next_state" -> Current_state;
+	"[1]RX_IFG_SET"	 [complexity=6,
+		importance=0.32543307451,
+		rank=0.0542388457516];
+	"[1]RX_IFG_SET" -> "[1]Next_state";
+	"[1]Crs_dv"	 [complexity=16,
+		importance=3.61860649655,
+		rank=0.226162906035];
+	"[1]Crs_dv" -> "[1]Next_state";
+	CRC_init	 [complexity=0,
+		importance=0.0142610700853,
+		rank=0.0];
+	Current_state -> CRC_init;
+	"[1]Current_state"	 [complexity=15,
+		importance=5.1939803135,
+		rank=0.346265354233];
+	"[1]Current_state" -> "[1]Next_state";
+	"[1]RX_MAX_LENGTH"	 [complexity=16,
+		importance=3.49390586811,
+		rank=0.218369116757];
+	"[1]Too_long"	 [complexity=14,
+		importance=1.74074682651,
+		rank=0.124339059036];
+	"[1]RX_MAX_LENGTH" -> "[1]Too_long";
+	"[1]Too_short"	 [complexity=10,
+		importance=1.4277259671,
+		rank=0.14277259671];
+	"[1]Too_short" -> "[1]Next_state";
+	"[1]RX_MIN_LENGTH"	 [complexity=12,
+		importance=2.86786414929,
+		rank=0.238988679107];
+	"[1]RX_MIN_LENGTH" -> "[1]Too_short";
+	"[1]Too_long" -> "[1]Next_state";
+	"[1]Frame_length_counter"	 [complexity=16,
+		importance=3.49741921013,
+		rank=0.218588700633];
+	"[1]Frame_length_counter" -> "[1]Too_short";
+	"[1]Frame_length_counter" -> "[1]Too_long";
+	"[1]Reset"	 [complexity=3,
+		importance=0.127728761797,
+		rank=0.0425762539324];
+	"[1]Reset" -> Current_state;
+	"[1]MAC_rx_add_chk_err"	 [complexity=8,
+		importance=0.32543307451,
+		rank=0.0406791343137];
+	"[1]MAC_rx_add_chk_err" -> "[1]Next_state";
+	"[1]RxErr"	 [complexity=10,
+		importance=1.27095005095,
+		rank=0.127095005095];
+	"[1]RxErr" -> "[1]Next_state";
+	State_SFD	 [complexity=2,
+		importance=0.0409343552669,
+		rank=0.0204671776335];
+	State_SFD -> CRC_init;
+}

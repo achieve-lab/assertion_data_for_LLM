@@ -1,0 +1,16 @@
+[1]fifo_full	overrun_info
+rd_info_pointer	overrun
+[1]rst	rd_info_pointer
+[1]wr	[1]write_length_info
+[1]wr	overrun_info
+[1]wr_q	[1]write_length_info
+[1]rd_info_pointer	rd_info_pointer
+[1]info_full	rd_info_pointer
+[1]info_full	overrun_info
+[1]write_length_info	overrun_info
+[1]release_buffer	rd_info_pointer
+[1]info_cnt	[1]info_full
+[1]latch_overrun	overrun_info
+[1]fifo_cnt	[1]fifo_full
+[1]initialize_memories	overrun_info
+overrun_info	overrun

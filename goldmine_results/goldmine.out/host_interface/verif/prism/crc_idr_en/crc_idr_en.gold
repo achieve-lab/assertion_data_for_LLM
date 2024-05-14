@@ -1,0 +1,82 @@
+Report file generated at: Mar-28-2024 06:41:41 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a2: (write_en == 0) |-> (crc_idr_en == 0)
+IRank: : 0.01618
+Importance: : 0.04855
+Complexity: : 3
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a5: (write_en == 1 & crc_idr_sel == 1) |-> (crc_idr_en == 1)
+IRank: : 0.01444
+Importance: : 0.08663
+Complexity: : 6
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (crc_idr_sel == 0) |-> (crc_idr_en == 0)
+IRank: : 0.01269
+Importance: : 0.03807
+Complexity: : 3
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (hselx_pp == 0) |-> (crc_idr_en == 0)
+IRank: : 0.01022
+Importance: : 0.07156
+Complexity: : 7
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (hwrite_pp == 0) |-> (crc_idr_en == 0)
+IRank: : 0.01012
+Importance: : 0.07086
+Complexity: : 7
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (haddr_pp[1] == 0) |-> (crc_idr_en == 0)
+IRank: : 0.01006
+Importance: : 0.06038
+Complexity: : 6
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a2        | 0.01618 |  0.04855   |     3      |  Unknown  | Unknown |   Unknown   
+      a5        | 0.01444 |  0.08663   |     6      |  Unknown  | Unknown |   Unknown   
+      a4        | 0.01269 |  0.03807   |     3      |  Unknown  | Unknown |   Unknown   
+      a1        | 0.01022 |  0.07156   |     7      |  Unknown  | Unknown |   Unknown   
+      a0        | 0.01012 |  0.07086   |     7      |  Unknown  | Unknown |   Unknown   
+      a3        | 0.01006 |  0.06038   |     6      |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 6
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 6
+Hit rate: 0.0
+Miss rate: 1.0

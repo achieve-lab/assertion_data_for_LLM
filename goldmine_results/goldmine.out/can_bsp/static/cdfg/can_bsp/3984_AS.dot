@@ -1,0 +1,13 @@
+strict digraph "" {
+	node [label="\N"];
+	"3984:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f44f6ad8d50>",
+		def_var="['receive_status']",
+		fillcolor=deepskyblue,
+		label="3984:AS
+receive_status = (extended_mode)? waiting_for_bus_free || !rx_idle && !transmitting : !waiting_for_bus_free && !rx_idle && !\
+transmitting;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['extended_mode', 'waiting_for_bus_free', 'rx_idle', 'transmitting', 'waiting_for_bus_free', 'rx_idle', 'transmitting']"];
+}

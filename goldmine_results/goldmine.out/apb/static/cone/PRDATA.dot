@@ -1,0 +1,13 @@
+strict digraph "" {
+	PADDR	 [complexity=4,
+		importance=0.0836813339105,
+		rank=0.0209203334776];
+	PRDATA	 [complexity=0,
+		importance=0.0508651528636,
+		rank=0.0];
+	PADDR -> PRDATA;
+	READ_DATA_ON_RX	 [complexity=4,
+		importance=0.0836813339105,
+		rank=0.0209203334776];
+	READ_DATA_ON_RX -> PRDATA;
+}

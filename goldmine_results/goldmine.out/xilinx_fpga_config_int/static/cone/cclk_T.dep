@@ -1,0 +1,5 @@
+enable_internal_cclk	cclk_T
+[1]prog_b	[1]internal_reset
+[1]internal_reset	enable_internal_cclk
+[1]M_latched	enable_internal_cclk
+[1]por	[1]internal_reset

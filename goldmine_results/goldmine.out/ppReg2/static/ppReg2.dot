@@ -1,0 +1,19 @@
+strict digraph "" {
+	aluOpcodeIn -> aluOpcodeOut	 [weight=1.0];
+	fieldIn -> fieldOut	 [weight=1.0];
+	op2MuxSelIn -> op2MuxSelOut	 [weight=1.0];
+	entypeEnIn -> entypeEnOut	 [weight=1.0];
+	bitRamRwIn -> bitRamRwOut	 [weight=1.0];
+	uartReadIn -> uartReadOut	 [weight=1.0];
+	tcAccReadIn -> tcAccReadOut	 [weight=1.0];
+	bitRamEnIn -> bitRamEnOut	 [weight=1.0];
+	tcResetEnIn -> tcResetEnOut	 [weight=1.0];
+	tcPresetEnIn -> tcPresetEnOut	 [weight=1.0];
+	aluEnIn -> aluEnOut	 [weight=1.0];
+	accEnIn -> accEnOut	 [weight=1.0];
+	outputRwIn -> outputRwOut	 [weight=1.0];
+	uartWriteIn -> uartWriteOut	 [weight=1.0];
+	byteRamRwIn -> byteRamRwOut	 [weight=1.0];
+	byteRamEnIn -> byteRamEnOut	 [weight=1.0];
+	accMuxSelIn -> accMuxSelOut	 [weight=1.0];
+}

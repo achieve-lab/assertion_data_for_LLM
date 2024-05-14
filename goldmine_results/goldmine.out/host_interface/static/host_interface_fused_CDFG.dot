@@ -1,0 +1,396 @@
+strict digraph "compose( ,  )" {
+	node [label="\N"];
+	"186:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba166ed510>",
+		def_var="['crc_init_en']",
+		fillcolor=deepskyblue,
+		label="186:AS
+crc_init_en = crc_init_sel && write_en;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_init_sel', 'write_en']"];
+	"201:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba166ef4d0>",
+		def_var="['HREADYOUT']",
+		fillcolor=deepskyblue,
+		label="201:AS
+HREADYOUT = !(buffer_write_en && buffer_full || buffer_read_en && read_wait || crc_init_en && reset_pending);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['buffer_write_en', 'buffer_full', 'buffer_read_en', 'read_wait', 'crc_init_en', 'reset_pending']"];
+	"186:AS" -> "201:AS";
+	"188:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba166ed8d0>",
+		def_var="['crc_poly_en']",
+		fillcolor=deepskyblue,
+		label="188:AS
+crc_poly_en = crc_poly_sel && write_en;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly_sel', 'write_en']"];
+	"173:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba163172d0>",
+		def_var="['ahb_enable']",
+		fillcolor=deepskyblue,
+		label="173:AS
+ahb_enable = htrans_pp == NON_SEQ;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['htrans_pp', 'NON_SEQ']"];
+	"174:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba16317490>",
+		def_var="['write_en']",
+		fillcolor=deepskyblue,
+		label="174:AS
+write_en = hselx_pp && hwrite_pp && ahb_enable;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['hselx_pp', 'hwrite_pp', 'ahb_enable']"];
+	"173:AS" -> "174:AS";
+	"175:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba16317710>",
+		def_var="['read_en']",
+		fillcolor=deepskyblue,
+		label="175:AS
+read_en = hselx_pp && !hwrite_pp && ahb_enable;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['hselx_pp', 'hwrite_pp', 'ahb_enable']"];
+	"173:AS" -> "175:AS";
+	"185:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba166ed310>",
+		def_var="['buffer_write_en']",
+		fillcolor=deepskyblue,
+		label="185:AS
+buffer_write_en = crc_dr_sel && write_en;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_dr_sel', 'write_en']"];
+	"185:AS" -> "201:AS";
+	"235:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba162a2550>",
+		def_var="['rev_in_type']",
+		fillcolor=deepskyblue,
+		label="235:AS
+rev_in_type = crc_cr_ff[3:2];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_cr_ff']"];
+	"187:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba166ed6d0>",
+		def_var="['crc_idr_en']",
+		fillcolor=deepskyblue,
+		label="187:AS
+crc_idr_en = crc_idr_sel && write_en;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_idr_sel', 'write_en']"];
+	"163:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fba16317090>",
+		fillcolor=turquoise,
+		label="163:BL
+haddr_pp <= HADDR[4:2];
+hsize_pp <= HSIZE;
+htrans_pp <= HTRANS;
+hwrite_pp <= HWRITE;
+hselx_pp <= HSElx;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fba162e2c50>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7fba162e2e10>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fba162e2f50>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fba163170d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fba16317210>]",
+		style=filled,
+		typ=Block];
+	"Leaf_155:AL"	 [def_var="['htrans_pp', 'hselx_pp', 'haddr_pp', 'hsize_pp', 'hwrite_pp']",
+		label="Leaf_155:AL"];
+	"163:BL" -> "Leaf_155:AL"	 [cond="[]",
+		lineno=None];
+	"Leaf_223:AL"	 [def_var="['crc_cr_ff']",
+		label="Leaf_223:AL"];
+	"Leaf_223:AL" -> "235:AS";
+	"234:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba162a2350>",
+		def_var="['crc_poly_size']",
+		fillcolor=deepskyblue,
+		label="234:AS
+crc_poly_size = crc_cr_ff[1:0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_cr_ff']"];
+	"Leaf_223:AL" -> "234:AS";
+	"236:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba162a2790>",
+		def_var="['rev_out_type']",
+		fillcolor=deepskyblue,
+		label="236:AS
+rev_out_type = crc_cr_ff[4];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_cr_ff']"];
+	"Leaf_223:AL" -> "236:AS";
+	"213:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba166efa10>",
+		def_var="['crc_cr_rd']",
+		fillcolor=deepskyblue,
+		label="213:AS
+crc_cr_rd = { 24'h0, crc_cr_ff[4:0], 3'h0 };",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_cr_ff']"];
+	"Leaf_223:AL" -> "213:AS";
+	"229:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fba166f5f10>",
+		fillcolor=firebrick,
+		label="229:NS
+crc_cr_ff <= { HWDATA[7], HWDATA[6:5], HWDATA[4:3] };",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fba166f5f10>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"229:NS" -> "Leaf_223:AL"	 [cond="[]",
+		lineno=None];
+	"206:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba166ef5d0>",
+		def_var="['sample_bus']",
+		fillcolor=deepskyblue,
+		label="206:AS
+sample_bus = HREADYOUT && HREADY;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['HREADYOUT', 'HREADY']"];
+	"201:AS" -> "206:AS";
+	"226:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fba166f5a50>",
+		fillcolor=firebrick,
+		label="226:NS
+crc_cr_ff <= RESET_CRC_CR;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fba166f5a50>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"226:NS" -> "Leaf_223:AL"	 [cond="[]",
+		lineno=None];
+	"181:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba16317f10>",
+		def_var="['crc_poly_sel']",
+		fillcolor=deepskyblue,
+		label="181:AS
+crc_poly_sel = haddr_pp == CRC_POL;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['haddr_pp', 'CRC_POL']"];
+	"181:AS" -> "188:AS";
+	"216:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba166f5590>",
+		def_var="['HRDATA']",
+		fillcolor=deepskyblue,
+		label="216:AS
+HRDATA = { 32{ crc_dr_sel } } & crc_out | { 32{ crc_init_sel } } & crc_init_out | { 32{ crc_idr_sel } } & { 24'h0, crc_idr_\
+out } | { 32{ crc_poly_sel } } & crc_poly_out | { 32{ crc_cr_sel } } & crc_cr_rd;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_dr_sel', 'crc_out', 'crc_init_sel', 'crc_init_out', 'crc_idr_sel', 'crc_idr_out', 'crc_poly_sel', 'crc_poly_out', 'crc_cr_\
+sel', 'crc_cr_rd']"];
+	"181:AS" -> "216:AS";
+	"162:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fba162e2a90>",
+		fillcolor=springgreen,
+		label="162:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"162:IF" -> "163:BL"	 [cond="['sample_bus']",
+		label=sample_bus,
+		lineno=162];
+	"182:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba166ed110>",
+		def_var="['crc_cr_sel']",
+		fillcolor=deepskyblue,
+		label="182:AS
+crc_cr_sel = haddr_pp == CRC_CR;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['haddr_pp', 'CRC_CR']"];
+	"182:AS" -> "216:AS";
+	"189:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba166eda90>",
+		def_var="['crc_cr_en']",
+		fillcolor=deepskyblue,
+		label="189:AS
+crc_cr_en = crc_cr_sel && write_en;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_cr_sel', 'write_en']"];
+	"182:AS" -> "189:AS";
+	"155:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fba162e26d0>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="155:AL",
+		sens="['HCLK']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['HTRANS', 'HSIZE', 'sample_bus', 'HADDR', 'HWRITE', 'HSElx', 'HRESETn']"];
+	"156:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fba162e2750>",
+		fillcolor=turquoise,
+		label="156:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"155:AL" -> "156:BL"	 [cond="[]",
+		lineno=None];
+	"233:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba162a2110>",
+		def_var="['reset_chain']",
+		fillcolor=deepskyblue,
+		label="233:AS
+reset_chain = crc_cr_en && HWDATA[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_cr_en', 'HWDATA']"];
+	"224:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fba166f5890>",
+		fillcolor=turquoise,
+		label="224:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"225:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fba166f5a90>",
+		fillcolor=springgreen,
+		label="225:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"224:BL" -> "225:IF"	 [cond="[]",
+		lineno=None];
+	"198:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba166edf10>",
+		def_var="['bus_wr']",
+		fillcolor=deepskyblue,
+		label="198:AS
+bus_wr = HWDATA;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['HWDATA']"];
+	"179:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba16317b50>",
+		def_var="['crc_init_sel']",
+		fillcolor=deepskyblue,
+		label="179:AS
+crc_init_sel = haddr_pp == CRC_INIT;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['haddr_pp', 'CRC_INIT']"];
+	"179:AS" -> "186:AS";
+	"179:AS" -> "216:AS";
+	"158:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fba162e2590>",
+		fillcolor=turquoise,
+		label="158:BL
+hselx_pp <= 1'b0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fba162e2910>]",
+		style=filled,
+		typ=Block];
+	"158:BL" -> "Leaf_155:AL"	 [cond="[]",
+		lineno=None];
+	"157:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fba162e28d0>",
+		fillcolor=springgreen,
+		label="157:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"157:IF" -> "162:IF"	 [cond="['HRESETn']",
+		label="!((!HRESETn))",
+		lineno=157];
+	"157:IF" -> "158:BL"	 [cond="['HRESETn']",
+		label="(!HRESETn)",
+		lineno=157];
+	"192:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba166edc90>",
+		def_var="['buffer_read_en']",
+		fillcolor=deepskyblue,
+		label="192:AS
+buffer_read_en = crc_dr_sel && read_en;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_dr_sel', 'read_en']"];
+	"192:AS" -> "201:AS";
+	"Leaf_155:AL" -> "173:AS";
+	"Leaf_155:AL" -> "181:AS";
+	"Leaf_155:AL" -> "182:AS";
+	"Leaf_155:AL" -> "179:AS";
+	"Leaf_155:AL" -> "174:AS";
+	"Leaf_155:AL" -> "175:AS";
+	"195:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba166eddd0>",
+		def_var="['bus_size']",
+		fillcolor=deepskyblue,
+		label="195:AS
+bus_size = hsize_pp;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['hsize_pp']"];
+	"Leaf_155:AL" -> "195:AS";
+	"178:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba16317950>",
+		def_var="['crc_dr_sel']",
+		fillcolor=deepskyblue,
+		label="178:AS
+crc_dr_sel = haddr_pp == CRC_DR;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['haddr_pp', 'CRC_DR']"];
+	"Leaf_155:AL" -> "178:AS";
+	"180:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba16317d10>",
+		def_var="['crc_idr_sel']",
+		fillcolor=deepskyblue,
+		label="180:AS
+crc_idr_sel = haddr_pp == CRC_IDR;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['haddr_pp', 'CRC_IDR']"];
+	"Leaf_155:AL" -> "180:AS";
+	"225:IF" -> "226:NS"	 [cond="['HRESETn']",
+		label="(!HRESETn)",
+		lineno=225];
+	"228:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fba166f5b90>",
+		fillcolor=springgreen,
+		label="228:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"225:IF" -> "228:IF"	 [cond="['HRESETn']",
+		label="!((!HRESETn))",
+		lineno=225];
+	"210:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba166ef710>",
+		def_var="['HRESP']",
+		fillcolor=deepskyblue,
+		label="210:AS
+HRESP = OK;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['OK']"];
+	"174:AS" -> "186:AS";
+	"174:AS" -> "188:AS";
+	"174:AS" -> "185:AS";
+	"174:AS" -> "187:AS";
+	"174:AS" -> "189:AS";
+	"228:IF" -> "229:NS"	 [cond="['crc_cr_en']",
+		label=crc_cr_en,
+		lineno=228];
+	"175:AS" -> "192:AS";
+	"223:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fba166f5810>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="223:AL",
+		sens="['HCLK']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['HWDATA', 'RESET_CRC_CR', 'crc_cr_en', 'HRESETn']"];
+	"223:AL" -> "224:BL"	 [cond="[]",
+		lineno=None];
+	"156:BL" -> "157:IF"	 [cond="[]",
+		lineno=None];
+	"178:AS" -> "185:AS";
+	"178:AS" -> "192:AS";
+	"178:AS" -> "216:AS";
+	"189:AS" -> "233:AS";
+	"189:AS" -> "223:AL";
+	"213:AS" -> "216:AS";
+	"180:AS" -> "187:AS";
+	"180:AS" -> "216:AS";
+	"206:AS" -> "155:AL";
+}

@@ -1,0 +1,546 @@
+strict digraph "" {
+	"[1]pid_PRE"	 [complexity=24,
+		importance=0.101006937938,
+		rank=0.00420862241408];
+	"[1]pid_bad1"	 [complexity=16,
+		importance=0.0989793508692,
+		rank=0.00618620942933];
+	"[1]pid_PRE" -> "[1]pid_bad1";
+	"[1]u0.pid_ERR"	 [complexity=24,
+		importance=0.102409185215,
+		rank=0.00426704938396];
+	"[1]pid_ERR"	 [complexity=24,
+		importance=0.101006937938,
+		rank=0.00420862241408];
+	"[1]u0.pid_ERR" -> "[1]pid_ERR";
+	"[1]u3.match"	 [complexity=7,
+		importance=0.0835546949225,
+		rank=0.0119363849889];
+	"u3.state"	 [complexity=6,
+		importance=0.0396179668917,
+		rank=0.00660299448196];
+	"[1]u3.match" -> "u3.state";
+	"[1]u0.state"	 [complexity=15,
+		importance=0.179738244757,
+		rank=0.0119825496504];
+	"[1]u0.data_done"	 [complexity=14,
+		importance=0.175527537035,
+		rank=0.0125376812168];
+	"[1]u0.state" -> "[1]u0.data_done";
+	"[1]rx_err"	 [complexity=16,
+		importance=0.178843679196,
+		rank=0.0111777299497];
+	"[1]u0.rx_err"	 [complexity=16,
+		importance=0.177517209882,
+		rank=0.0110948256176];
+	"[1]rx_err" -> "[1]u0.rx_err";
+	"[1]u2.idma_done"	 [complexity=9,
+		importance=0.117779996357,
+		rank=0.0130866662619];
+	"[1]idma_done"	 [complexity=9,
+		importance=0.115734428034,
+		rank=0.0128593808927];
+	"[1]u2.idma_done" -> "[1]idma_done";
+	"u3.buf1_not_aloc"	 [complexity=5,
+		importance=0.00727924079656,
+		rank=0.00145584815931];
+	"u3.int_buf1_set"	 [complexity=0,
+		importance=0.0056764375585,
+		rank=0.0];
+	"u3.buf1_not_aloc" -> "u3.int_buf1_set";
+	"[1]u3.mode_hs"	 [complexity=10,
+		importance=0.167983962909,
+		rank=0.0167983962909];
+	"[1]u3.next_state"	 [complexity=8,
+		importance=0.055441963943,
+		rank=0.00693024549287];
+	"[1]u3.mode_hs" -> "[1]u3.next_state";
+	"[1]pid_bad"	 [complexity=13,
+		importance=0.0942604710868,
+		rank=0.00725080546821];
+	"[1]match_o"	 [complexity=7,
+		importance=0.0895361220948,
+		rank=0.012790874585];
+	"[1]pid_bad" -> "[1]match_o";
+	"[1]u3.buf0_na"	 [complexity=17,
+		importance=0.445359592771,
+		rank=0.0261976231042];
+	"[1]u3.buf0_na" -> "[1]u3.next_state";
+	int_buf1_set	 [complexity=0,
+		importance=0.0027763753882,
+		rank=0.0];
+	"u3.int_buf1_set" -> int_buf1_set;
+	"[1]u3.to_small"	 [complexity=10,
+		importance=0.223995946544,
+		rank=0.0223995946544];
+	"[1]u3.to_small" -> "[1]u3.next_state";
+	"[1]u0.rx_active"	 [complexity=16,
+		importance=0.177185608116,
+		rank=0.0110741005072];
+	"[1]u0.rx_active" -> "[1]u0.data_done";
+	"[1]u0.token_endp"	 [complexity=78,
+		importance=2.86653750126,
+		rank=0.0367504807854];
+	"[1]u0.u0.din"	 [complexity=78,
+		importance=2.86448269142,
+		rank=0.0367241370695];
+	"[1]u0.token_endp" -> "[1]u0.u0.din";
+	"[1]u0.rx_err" -> "[1]u0.data_done";
+	"[1]u3.pid_seq_err"	 [complexity=9,
+		importance=0.169608165366,
+		rank=0.0188453517074];
+	"[1]u3.pid_seq_err" -> "[1]u3.next_state";
+	"[1]u0.u0.crc_in"	 [complexity=78,
+		importance=1.69745012171,
+		rank=0.0217621810476];
+	"[1]u0.u0.crc_out"	 [complexity=23,
+		importance=0.106007728275,
+		rank=0.00460903166413];
+	"[1]u0.u0.crc_in" -> "[1]u0.u0.crc_out";
+	"[1]u3.IN_ep"	 [complexity=13,
+		importance=0.0114736315672,
+		rank=0.000882587043631];
+	"[1]u3.no_buf0_dma"	 [complexity=17,
+		importance=0.225368832495,
+		rank=0.0132569901468];
+	"[1]u3.IN_ep" -> "[1]u3.no_buf0_dma";
+	"[1]u3.IN_ep" -> "[1]u3.next_state";
+	"[1]u3.in_op"	 [complexity=9,
+		importance=0.0101377770203,
+		rank=0.00112641966893];
+	"[1]u3.IN_ep" -> "[1]u3.in_op";
+	"[1]crc16_err"	 [complexity=11,
+		importance=0.171519610627,
+		rank=0.0155926918752];
+	"[1]u3.crc16_err"	 [complexity=11,
+		importance=0.168941532675,
+		rank=0.0153583211523];
+	"[1]crc16_err" -> "[1]u3.crc16_err";
+	"[1]pid_bad2"	 [complexity=16,
+		importance=0.0963377874146,
+		rank=0.00602111171341];
+	"[1]pid_bad2" -> "[1]pid_bad";
+	"[1]pid_bad1" -> "[1]pid_bad";
+	"[1]pid_SPLIT"	 [complexity=24,
+		importance=0.101006937938,
+		rank=0.00420862241408];
+	"[1]pid_SPLIT" -> "[1]pid_bad1";
+	"[1]u0.pid_SOF"	 [complexity=11,
+		importance=0.282034809745,
+		rank=0.0256395281586];
+	"[1]pid_SOF"	 [complexity=11,
+		importance=0.280632562468,
+		rank=0.0255120511335];
+	"[1]u0.pid_SOF" -> "[1]pid_SOF";
+	"[1]u3.pid_IN"	 [complexity=20,
+		importance=0.334816743467,
+		rank=0.0167408371734];
+	"u3.in_token"	 [complexity=12,
+		importance=0.00972108055879,
+		rank=0.000810090046566];
+	"[1]u3.pid_IN" -> "u3.in_token";
+	"[1]u3.pid_IN" -> "[1]u3.next_state";
+	"[1]u3.abort"	 [complexity=13,
+		importance=0.557776841288,
+		rank=0.0429059108683];
+	"[1]u3.abort" -> "[1]u3.next_state";
+	"[1]u0.rx_data_done"	 [complexity=9,
+		importance=0.116329536515,
+		rank=0.0129255040573];
+	"[1]rx_data_done"	 [complexity=9,
+		importance=0.114815054332,
+		rank=0.0127572282591];
+	"[1]u0.rx_data_done" -> "[1]rx_data_done";
+	"[1]u0.token_valid"	 [complexity=10,
+		importance=0.06194196089,
+		rank=0.006194196089];
+	"[1]token_valid"	 [complexity=10,
+		importance=0.0591347946882,
+		rank=0.00591347946882];
+	"[1]u0.token_valid" -> "[1]token_valid";
+	"[1]u0.crc5_err"	 [complexity=13,
+		importance=0.0972194333439,
+		rank=0.00747841794953];
+	"[1]u0.token_valid" -> "[1]u0.crc5_err";
+	"[1]rst"	 [complexity=7,
+		importance=0.121562106264,
+		rank=0.0173660151806];
+	"[1]u3.rst"	 [complexity=7,
+		importance=0.12023563695,
+		rank=0.0171765195643];
+	"[1]rst" -> "[1]u3.rst";
+	"[1]u0.pid_NACK"	 [complexity=24,
+		importance=0.102409185215,
+		rank=0.00426704938396];
+	"[1]pid_NACK"	 [complexity=24,
+		importance=0.101006937938,
+		rank=0.00420862241408];
+	"[1]u0.pid_NACK" -> "[1]pid_NACK";
+	"[1]u3.CTRL_ep"	 [complexity=13,
+		importance=0.0114736315672,
+		rank=0.000882587043631];
+	"[1]u3.CTRL_ep" -> "[1]u3.next_state";
+	"[1]u3.dma_en"	 [complexity=23,
+		importance=0.22672433104,
+		rank=0.00985757961043];
+	"[1]u3.CTRL_ep" -> "[1]u3.dma_en";
+	"[1]u3.CTRL_ep" -> "[1]u3.in_op";
+	"[1]u3.rst" -> "u3.in_token";
+	"[1]u3.rst" -> "u3.state";
+	"[1]u3.dma_in_buf_sz1"	 [complexity=23,
+		importance=0.227358505341,
+		rank=0.00988515240615];
+	"[1]u3.dma_in_buf_sz1" -> "[1]u3.no_buf0_dma";
+	"[1]u3.buffer_empty"	 [complexity=9,
+		importance=0.0100334865883,
+		rank=0.00111483184314];
+	"u3.buffer_done"	 [complexity=5,
+		importance=0.00826448487759,
+		rank=0.00165289697552];
+	"[1]u3.buffer_empty" -> "u3.buffer_done";
+	"[1]u3.no_buf0_dma" -> "[1]u3.next_state";
+	"[1]u3.pid_SETUP"	 [complexity=12,
+		importance=0.0576069237521,
+		rank=0.00480057697934];
+	"[1]u3.pid_SETUP" -> "u3.in_token";
+	"[1]u3.pid_SETUP" -> "[1]u3.next_state";
+	"[1]u3.tx_data_to"	 [complexity=11,
+		importance=0.16914891852,
+		rank=0.0153771744109];
+	"[1]u3.tx_data_to" -> "[1]u3.next_state";
+	"[1]csr"	 [complexity=15,
+		importance=0.0147897737278,
+		rank=0.000985984915186];
+	"[1]u3.csr"	 [complexity=15,
+		importance=0.0134633044137,
+		rank=0.000897553627581];
+	"[1]csr" -> "[1]u3.csr";
+	"[1]u0.crc16_err"	 [complexity=11,
+		importance=0.174023311724,
+		rank=0.0158203010658];
+	"[1]u0.crc16_err" -> "[1]crc16_err";
+	"[1]pid_SETUP"	 [complexity=12,
+		importance=0.0592839519435,
+		rank=0.00494032932863];
+	"[1]pid_SETUP" -> "[1]u3.pid_SETUP";
+	"[1]u0.crc5_out"	 [complexity=23,
+		importance=0.102880855686,
+		rank=0.004473080682];
+	"[1]u0.u0.crc_out" -> "[1]u0.crc5_out";
+	"[1]pid_OUT"	 [complexity=21,
+		importance=0.281051807715,
+		rank=0.013383419415];
+	"[1]u3.pid_OUT"	 [complexity=21,
+		importance=0.279374779524,
+		rank=0.0133035609297];
+	"[1]pid_OUT" -> "[1]u3.pid_OUT";
+	"[1]u3.dma_out_buf_avail"	 [complexity=23,
+		importance=0.227358505341,
+		rank=0.00988515240615];
+	"[1]u3.dma_out_buf_avail" -> "[1]u3.no_buf0_dma";
+	"[1]u3.ep_stall"	 [complexity=9,
+		importance=0.278545674262,
+		rank=0.0309495193624];
+	"[1]u3.ep_stall" -> "[1]u3.next_state";
+	"[1]u0.token_valid_str1"	 [complexity=12,
+		importance=0.0649030332249,
+		rank=0.00540858610208];
+	"[1]u0.token_valid_str1" -> "[1]u0.token_valid";
+	"[1]u3.state"	 [complexity=11,
+		importance=1.50721359836,
+		rank=0.137019418033];
+	"[1]u3.state" -> "[1]u3.next_state";
+	"[1]u0.crc16_sum"	 [complexity=14,
+		importance=0.177974490827,
+		rank=0.0127124636305];
+	"[1]u0.crc16_sum" -> "[1]u0.crc16_err";
+	"[1]u0.pid"	 [complexity=12,
+		importance=0.173879286331,
+		rank=0.0144899405276];
+	"[1]u0.pid" -> "[1]u0.pid_ERR";
+	"[1]u0.pid" -> "[1]u0.pid_SOF";
+	"[1]u0.pid" -> "[1]u0.pid_NACK";
+	"[1]u0.pid_NYET"	 [complexity=24,
+		importance=0.102409185215,
+		rank=0.00426704938396];
+	"[1]u0.pid" -> "[1]u0.pid_NYET";
+	"[1]u0.pid_STALL"	 [complexity=24,
+		importance=0.102409185215,
+		rank=0.00426704938396];
+	"[1]u0.pid" -> "[1]u0.pid_STALL";
+	"[1]u0.pid_PRE"	 [complexity=24,
+		importance=0.102409185215,
+		rank=0.00426704938396];
+	"[1]u0.pid" -> "[1]u0.pid_PRE";
+	"[1]u0.pid_ACK"	 [complexity=10,
+		importance=0.0599261299163,
+		rank=0.00599261299163];
+	"[1]u0.pid" -> "[1]u0.pid_ACK";
+	"[1]u0.pid_SPLIT"	 [complexity=24,
+		importance=0.102409185215,
+		rank=0.00426704938396];
+	"[1]u0.pid" -> "[1]u0.pid_SPLIT";
+	"[1]u0.pid_IN"	 [complexity=20,
+		importance=0.337896018936,
+		rank=0.0168948009468];
+	"[1]u0.pid" -> "[1]u0.pid_IN";
+	"[1]u0.pid_PING"	 [complexity=10,
+		importance=0.171150881859,
+		rank=0.0171150881859];
+	"[1]u0.pid" -> "[1]u0.pid_PING";
+	"[1]u0.pid_SETUP"	 [complexity=12,
+		importance=0.0606861992206,
+		rank=0.00505718326838];
+	"[1]u0.pid" -> "[1]u0.pid_SETUP";
+	"[1]u0.pid_OUT"	 [complexity=21,
+		importance=0.282454054993,
+		rank=0.0134501930949];
+	"[1]u0.pid" -> "[1]u0.pid_OUT";
+	"[1]pid_NYET"	 [complexity=24,
+		importance=0.101006937938,
+		rank=0.00420862241408];
+	"[1]u0.pid_NYET" -> "[1]pid_NYET";
+	"[1]fa"	 [complexity=16,
+		importance=0.0937325069211,
+		rank=0.00585828168257];
+	"[1]fsel"	 [complexity=13,
+		importance=0.092406037607,
+		rank=0.007108156739];
+	"[1]fa" -> "[1]fsel";
+	"u3.csr"	 [complexity=17,
+		importance=0.0126272834332,
+		rank=0.000742781378422];
+	"u3.CTRL_ep"	 [complexity=15,
+		importance=0.0106376105867,
+		rank=0.000709174039111];
+	"u3.csr" -> "u3.CTRL_ep";
+	"u3.uc_bsel"	 [complexity=12,
+		importance=0.00928211204169,
+		rank=0.000773509336808];
+	"u3.csr" -> "u3.uc_bsel";
+	"u3.dma_en"	 [complexity=12,
+		importance=0.00930175603979,
+		rank=0.000775146336649];
+	"u3.csr" -> "u3.dma_en";
+	"[1]u3.idma_done"	 [complexity=9,
+		importance=0.113385077194,
+		rank=0.0125983419105];
+	"[1]idma_done" -> "[1]u3.idma_done";
+	"[1]u3.pid_OUT" -> "u3.in_token";
+	"[1]u3.pid_OUT" -> "[1]u3.next_state";
+	"[1]u3.txfr_iso"	 [complexity=10,
+		importance=0.223103710319,
+		rank=0.0223103710319];
+	"[1]u3.txfr_iso" -> "[1]u3.next_state";
+	"u3.buf_sel"	 [complexity=5,
+		importance=0.00794625749483,
+		rank=0.00158925149897];
+	"u3.in_token" -> "u3.buf_sel";
+	"[1]pid_STALL"	 [complexity=24,
+		importance=0.101006937938,
+		rank=0.00420862241408];
+	"[1]u0.pid_STALL" -> "[1]pid_STALL";
+	"[1]pid_PING"	 [complexity=10,
+		importance=0.169748634582,
+		rank=0.0169748634582];
+	"[1]pid_PING" -> "[1]pid_bad2";
+	"[1]u3.pid_PING"	 [complexity=10,
+		importance=0.168071606391,
+		rank=0.0168071606391];
+	"[1]pid_PING" -> "[1]u3.pid_PING";
+	"[1]u3.pid_SOF"	 [complexity=11,
+		importance=0.278955534277,
+		rank=0.0253595940251];
+	"[1]pid_SOF" -> "[1]u3.pid_SOF";
+	"[1]mode_hs"	 [complexity=10,
+		importance=0.169310432223,
+		rank=0.0169310432223];
+	"[1]mode_hs" -> "[1]u3.mode_hs";
+	"[1]mode_hs" -> "[1]pid_bad2";
+	"[1]u3.pid_SOF" -> "[1]u3.next_state";
+	"[1]u0.pid_PRE" -> "[1]pid_PRE";
+	"[1]u0.crc5_out2"	 [complexity=17,
+		importance=0.0999910797875,
+		rank=0.00588182822279];
+	"[1]u0.crc5_out2" -> "[1]u0.crc5_err";
+	"[1]pid_ACK"	 [complexity=10,
+		importance=0.0585238826393,
+		rank=0.00585238826393];
+	"[1]u0.pid_ACK" -> "[1]pid_ACK";
+	"[1]u0.token_fadr"	 [complexity=78,
+		importance=2.86621837747,
+		rank=0.0367463894547];
+	"[1]token_fadr"	 [complexity=16,
+		importance=0.0941664019502,
+		rank=0.00588540012189];
+	"[1]u0.token_fadr" -> "[1]token_fadr";
+	"[1]u0.token_fadr" -> "[1]u0.u0.din";
+	"[1]dma_in_buf_sz1"	 [complexity=23,
+		importance=0.228684974656,
+		rank=0.00994282498502];
+	"[1]dma_in_buf_sz1" -> "[1]u3.dma_in_buf_sz1";
+	"[1]u3.ep_disabled"	 [complexity=11,
+		importance=0.278545674262,
+		rank=0.0253223340238];
+	"[1]u3.ep_disabled" -> "[1]u3.next_state";
+	"u3.int_set_en"	 [complexity=5,
+		importance=0.0073343487473,
+		rank=0.00146686974946];
+	"u3.int_set_en" -> "u3.int_buf1_set";
+	"[1]crc5_err"	 [complexity=13,
+		importance=0.0929823749978,
+		rank=0.00715249038445];
+	"[1]crc5_err" -> "[1]match_o";
+	"[1]u0.data_done" -> "[1]u0.rx_data_done";
+	"[1]u0.data_done" -> "[1]u0.crc16_err";
+	"[1]u0.crc5_out" -> "[1]u0.crc5_out2";
+	"[1]buf1"	 [complexity=10,
+		importance=0.0122534638298,
+		rank=0.00122534638298];
+	"[1]u3.buf1"	 [complexity=10,
+		importance=0.0109269945157,
+		rank=0.00109269945157];
+	"[1]buf1" -> "[1]u3.buf1";
+	"[1]buf0"	 [complexity=18,
+		importance=0.0147443617551,
+		rank=0.000819131208615];
+	"[1]u3.buf0"	 [complexity=18,
+		importance=0.013417892441,
+		rank=0.000745438468944];
+	"[1]buf0" -> "[1]u3.buf0";
+	"[1]u0.pid_SPLIT" -> "[1]pid_SPLIT";
+	"[1]pid_IN"	 [complexity=20,
+		importance=0.336493771658,
+		rank=0.0168246885829];
+	"[1]u0.pid_IN" -> "[1]pid_IN";
+	"u3.CTRL_ep" -> "u3.buf_sel";
+	"u3.CTRL_ep" -> "u3.dma_en";
+	"[1]u3.next_state" -> "u3.state";
+	"[1]match"	 [complexity=13,
+		importance=0.0908625914088,
+		rank=0.00698943010837];
+	"[1]match" -> "[1]match_o";
+	"[1]u3.rx_data_done"	 [complexity=9,
+		importance=0.11273130879,
+		rank=0.0125257009767];
+	"[1]rx_data_done" -> "[1]u3.rx_data_done";
+	"[1]u3.buf1_na"	 [complexity=17,
+		importance=0.44547012634,
+		rank=0.0262041250789];
+	"[1]u3.buf1_na" -> "[1]u3.next_state";
+	"[1]u3.in_token"	 [complexity=13,
+		importance=0.0119126000843,
+		rank=0.000916353852638];
+	"[1]u3.in_token" -> "[1]u3.in_op";
+	"[1]u3.buf0_adr"	 [complexity=15,
+		importance=0.0114282195945,
+		rank=0.000761881306298];
+	"u3.buf0_na"	 [complexity=12,
+		importance=0.00977013872185,
+		rank=0.00081417822682];
+	"[1]u3.buf0_adr" -> "u3.buf0_na";
+	"[1]u3.buf1_adr"	 [complexity=7,
+		importance=0.00893732166919,
+		rank=0.00127676023846];
+	"[1]u3.buf1_adr" -> "u3.buf1_not_aloc";
+	"u3.buf1_na"	 [complexity=12,
+		importance=0.00988067229144,
+		rank=0.00082338935762];
+	"[1]u3.buf1_adr" -> "u3.buf1_na";
+	"[1]pid_IN" -> "[1]u3.pid_IN";
+	"[1]pid_ERR" -> "[1]pid_bad1";
+	"[1]match_o" -> "[1]u3.match";
+	"[1]u3.match_r"	 [complexity=11,
+		importance=0.278968457451,
+		rank=0.0253607688592];
+	"[1]u3.match_r" -> "[1]u3.next_state";
+	"[1]pid_NACK" -> "[1]pid_bad1";
+	"u3.state" -> "u3.int_set_en";
+	"[1]u3.rx_data_done" -> "[1]u3.next_state";
+	"u3.buf_sel" -> "u3.int_buf1_set";
+	"u3.uc_bsel" -> "u3.buf_sel";
+	"u3.buf0_na" -> "u3.buf_sel";
+	"u3.dma_en" -> "u3.buf_sel";
+	"[1]u0.pid_PING" -> "[1]pid_PING";
+	"[1]u3.idma_done" -> "[1]u3.next_state";
+	"[1]u3.OUT_ep"	 [complexity=23,
+		importance=0.226704687042,
+		rank=0.00985672552356];
+	"[1]u3.OUT_ep" -> "[1]u3.no_buf0_dma";
+	"[1]u3.OUT_ep" -> "[1]u3.next_state";
+	"[1]pid_NYET" -> "[1]pid_bad1";
+	"u3.buffer_done" -> "u3.int_buf1_set";
+	"[1]u3.buf0" -> "[1]u3.buf0_adr";
+	"[1]u3.buf0" -> "u3.buf0_na";
+	"[1]u3.buf1" -> "[1]u3.buf1_adr";
+	"[1]u3.buf1" -> "u3.buf1_na";
+	"[1]u3.dma_en" -> "[1]u3.no_buf0_dma";
+	"[1]u0.token1"	 [complexity=19,
+		importance=0.100779577774,
+		rank=0.00530418830387];
+	"[1]u0.token1" -> "[1]u0.token_endp";
+	"[1]u0.token_crc5"	 [complexity=17,
+		importance=0.0988650264501,
+		rank=0.00581558979118];
+	"[1]u0.token1" -> "[1]u0.token_crc5";
+	"[1]u0.token0"	 [complexity=81,
+		importance=2.86899236912,
+		rank=0.035419658878];
+	"[1]u0.token0" -> "[1]u0.token_endp";
+	"[1]u0.token0" -> "[1]u0.token_fadr";
+	"[1]u3.csr" -> "[1]u3.IN_ep";
+	"[1]u3.csr" -> "[1]u3.CTRL_ep";
+	"[1]u3.csr" -> "[1]u3.ep_stall";
+	"[1]u3.csr" -> "[1]u3.txfr_iso";
+	"[1]u3.csr" -> "[1]u3.ep_disabled";
+	"[1]u3.csr" -> "[1]u3.OUT_ep";
+	"[1]u3.csr" -> "[1]u3.dma_en";
+	"[1]token_valid" -> "[1]match_o";
+	"[1]u3.token_valid"	 [complexity=10,
+		importance=0.0571065331001,
+		rank=0.00571065331001];
+	"[1]token_valid" -> "[1]u3.token_valid";
+	"[1]u3.pid_ACK"	 [complexity=10,
+		importance=0.0571195113525,
+		rank=0.00571195113525];
+	"[1]u3.pid_ACK" -> "[1]u3.next_state";
+	"[1]dma_out_buf_avail"	 [complexity=23,
+		importance=0.228684974656,
+		rank=0.00994282498502];
+	"[1]dma_out_buf_avail" -> "[1]u3.dma_out_buf_avail";
+	"[1]u3.token_valid" -> "[1]u3.next_state";
+	"u3.buf1_na" -> "u3.buf_sel";
+	"[1]u3.in_op" -> "u3.buffer_done";
+	"[1]token_fadr" -> "[1]fsel";
+	"[1]u0.pid_SETUP" -> "[1]pid_SETUP";
+	"[1]u3.to_large"	 [complexity=10,
+		importance=0.223995946544,
+		rank=0.0223995946544];
+	"[1]u3.to_large" -> "[1]u3.next_state";
+	"[1]u3.crc16_err" -> "[1]u3.next_state";
+	csr	 [complexity=17,
+		importance=0.0139537527472,
+		rank=0.000820808985132];
+	csr -> "u3.csr";
+	"[1]fsel" -> "[1]match_o";
+	"[1]u0.crc5_err" -> "[1]crc5_err";
+	"[1]u3.pid_PING" -> "[1]u3.next_state";
+	"[1]u0.token_crc5" -> "[1]u0.crc5_err";
+	"[1]u3.buffer_full"	 [complexity=9,
+		importance=0.0100942044006,
+		rank=0.00112157826673];
+	"[1]u3.buffer_full" -> "u3.buffer_done";
+	"[1]u3.rx_ack_to"	 [complexity=9,
+		importance=0.113905982227,
+		rank=0.0126562202475];
+	"[1]u3.rx_ack_to" -> "[1]u3.next_state";
+	"[1]rx_active"	 [complexity=16,
+		importance=0.17851207743,
+		rank=0.0111570048394];
+	"[1]rx_active" -> "[1]u0.rx_active";
+	"[1]pid_STALL" -> "[1]pid_bad1";
+	"[1]u0.u0.din" -> "[1]u0.u0.crc_out";
+	"[1]pid_ACK" -> "[1]pid_bad1";
+	"[1]pid_ACK" -> "[1]u3.pid_ACK";
+	"[1]u0.pid_OUT" -> "[1]pid_OUT";
+}

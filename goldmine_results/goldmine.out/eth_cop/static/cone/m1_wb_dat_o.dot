@@ -1,0 +1,38 @@
+strict digraph "" {
+	m1_addressed_s1	 [complexity=1,
+		importance=0.0605422263413,
+		rank=0.0605422263413];
+	m1_wb_dat_o	 [complexity=0,
+		importance=0.0213165536603,
+		rank=0.0];
+	m1_addressed_s1 -> m1_wb_dat_o;
+	"[1]MEMORY_WIDTH"	 [complexity=7,
+		importance=0.0522504477649,
+		rank=0.0074643496807];
+	m1_addressed_s2	 [complexity=1,
+		importance=0.039225672681,
+		rank=0.039225672681];
+	"[1]MEMORY_WIDTH" -> m1_addressed_s2;
+	m1_addressed_s2 -> m1_wb_dat_o;
+	m1_in_progress	 [complexity=1,
+		importance=0.0642219876264,
+		rank=0.0642219876264];
+	m1_in_progress -> m1_wb_dat_o;
+	"[1]s2_wb_dat_i"	 [complexity=2,
+		importance=0.0343413287442,
+		rank=0.0171706643721];
+	"[1]s2_wb_dat_i" -> m1_wb_dat_o;
+	"[1]s1_wb_dat_i"	 [complexity=2,
+		importance=0.0343413287442,
+		rank=0.0171706643721];
+	"[1]s1_wb_dat_i" -> m1_wb_dat_o;
+	"[1]m1_wb_adr_i"	 [complexity=7,
+		importance=0.0735670014252,
+		rank=0.0105095716322];
+	"[1]m1_wb_adr_i" -> m1_addressed_s1;
+	"[1]m1_wb_adr_i" -> m1_addressed_s2;
+	"[1]ETH_WIDTH"	 [complexity=7,
+		importance=0.0735670014252,
+		rank=0.0105095716322];
+	"[1]ETH_WIDTH" -> m1_addressed_s1;
+}

@@ -1,0 +1,150 @@
+strict digraph "" {
+	"[1]rst"	 [complexity=1,
+		importance=1.70586034899,
+		rank=1.70586034899];
+	id_ok	 [complexity=0,
+		importance=0.240638544848,
+		rank=0.0];
+	"[1]rst" -> id_ok;
+	"[1]go_rx_inter"	 [complexity=3,
+		importance=0.262029079897,
+		rank=0.0873430266325];
+	"[1]go_rx_inter" -> id_ok;
+	"[1]ide"	 [complexity=2,
+		importance=0.983944714442,
+		rank=0.491972357221];
+	"[1]ide" -> id_ok;
+	"[1]no_byte0"	 [complexity=108,
+		importance=0.321921968652,
+		rank=0.002980758969];
+	"[1]match_sf_std"	 [complexity=3,
+		importance=0.321921630106,
+		rank=0.107307210035];
+	"[1]no_byte0" -> "[1]match_sf_std";
+	"[1]match_df_std"	 [complexity=3,
+		importance=0.300531433603,
+		rank=0.100177144534];
+	"[1]no_byte0" -> "[1]match_df_std";
+	"[1]go_rx_crc_lim"	 [complexity=1,
+		importance=1.46522180414,
+		rank=1.46522180414];
+	"[1]go_rx_crc_lim" -> id_ok;
+	"[1]reset_mode"	 [complexity=3,
+		importance=0.262029079897,
+		rank=0.0873430266325];
+	"[1]reset_mode" -> id_ok;
+	"[1]data0"	 [complexity=108,
+		importance=0.321921968652,
+		rank=0.002980758969];
+	"[1]data0" -> "[1]match_sf_std";
+	"[1]data0" -> "[1]match_df_std";
+	"[1]acceptance_mask_2"	 [complexity=108,
+		importance=0.321921968652,
+		rank=0.002980758969];
+	"[1]match_df_ext"	 [complexity=3,
+		importance=0.284488786226,
+		rank=0.0948295954085];
+	"[1]acceptance_mask_2" -> "[1]match_df_ext";
+	"[1]match_sf_ext"	 [complexity=3,
+		importance=0.295183884477,
+		rank=0.098394628159];
+	"[1]acceptance_mask_2" -> "[1]match_sf_ext";
+	"[1]acceptance_mask_2" -> "[1]match_sf_std";
+	"[1]acceptance_mask_2" -> "[1]match_df_std";
+	"[1]acceptance_mask_3"	 [complexity=108,
+		importance=0.321921968652,
+		rank=0.002980758969];
+	"[1]acceptance_mask_3" -> "[1]match_df_ext";
+	"[1]acceptance_mask_3" -> "[1]match_sf_ext";
+	"[1]acceptance_mask_3" -> "[1]match_sf_std";
+	"[1]acceptance_mask_3" -> "[1]match_df_std";
+	"[1]acceptance_mask_0"	 [complexity=108,
+		importance=0.321921968652,
+		rank=0.002980758969];
+	"[1]acceptance_mask_0" -> "[1]match_df_ext";
+	"[1]match"	 [complexity=3,
+		importance=0.268446138848,
+		rank=0.0894820462828];
+	"[1]acceptance_mask_0" -> "[1]match";
+	"[1]acceptance_mask_0" -> "[1]match_sf_ext";
+	"[1]acceptance_mask_0" -> "[1]match_sf_std";
+	"[1]acceptance_mask_0" -> "[1]match_df_std";
+	"[1]acceptance_mask_1"	 [complexity=108,
+		importance=0.321921968652,
+		rank=0.002980758969];
+	"[1]acceptance_mask_1" -> "[1]match_df_ext";
+	"[1]acceptance_mask_1" -> "[1]match_sf_ext";
+	"[1]acceptance_mask_1" -> "[1]match_sf_std";
+	"[1]acceptance_mask_1" -> "[1]match_df_std";
+	"[1]no_byte1"	 [complexity=104,
+		importance=0.343312165155,
+		rank=0.00330107851111];
+	"[1]no_byte1" -> "[1]match_sf_std";
+	"[1]match_df_ext" -> id_ok;
+	"[1]match" -> id_ok;
+	"[1]rtr2"	 [complexity=94,
+		importance=0.316574419526,
+		rank=0.00336781297368];
+	"[1]rtr2" -> "[1]match_sf_ext";
+	"[1]rtr1"	 [complexity=108,
+		importance=0.321921968652,
+		rank=0.002980758969];
+	"[1]rtr1" -> "[1]match_sf_std";
+	"[1]rtr1" -> "[1]match_df_std";
+	"[1]data1"	 [complexity=104,
+		importance=0.343312165155,
+		rank=0.00330107851111];
+	"[1]data1" -> "[1]match_sf_std";
+	"[1]match_sf_ext" -> id_ok;
+	"[1]match_sf_std" -> id_ok;
+	"[1]match_df_std" -> id_ok;
+	"[1]go_error_frame"	 [complexity=3,
+		importance=0.262029079897,
+		rank=0.0873430266325];
+	"[1]go_error_frame" -> id_ok;
+	"[1]acceptance_code_1"	 [complexity=108,
+		importance=0.321921968652,
+		rank=0.002980758969];
+	"[1]acceptance_code_1" -> "[1]match_df_ext";
+	"[1]acceptance_code_1" -> "[1]match_sf_ext";
+	"[1]acceptance_code_1" -> "[1]match_sf_std";
+	"[1]acceptance_code_1" -> "[1]match_df_std";
+	"[1]acceptance_code_0"	 [complexity=108,
+		importance=0.321921968652,
+		rank=0.002980758969];
+	"[1]acceptance_code_0" -> "[1]match_df_ext";
+	"[1]acceptance_code_0" -> "[1]match";
+	"[1]acceptance_code_0" -> "[1]match_sf_ext";
+	"[1]acceptance_code_0" -> "[1]match_sf_std";
+	"[1]acceptance_code_0" -> "[1]match_df_std";
+	"[1]acceptance_code_3"	 [complexity=108,
+		importance=0.321921968652,
+		rank=0.002980758969];
+	"[1]acceptance_code_3" -> "[1]match_df_ext";
+	"[1]acceptance_code_3" -> "[1]match_sf_ext";
+	"[1]acceptance_code_3" -> "[1]match_sf_std";
+	"[1]acceptance_code_3" -> "[1]match_df_std";
+	"[1]acceptance_code_2"	 [complexity=108,
+		importance=0.321921968652,
+		rank=0.002980758969];
+	"[1]acceptance_code_2" -> "[1]match_df_ext";
+	"[1]acceptance_code_2" -> "[1]match_sf_ext";
+	"[1]acceptance_code_2" -> "[1]match_sf_std";
+	"[1]acceptance_code_2" -> "[1]match_df_std";
+	"[1]acceptance_filter_mode"	 [complexity=1,
+		importance=0.983944714442,
+		rank=0.983944714442];
+	"[1]acceptance_filter_mode" -> id_ok;
+	"[1]id"	 [complexity=108,
+		importance=0.321921968652,
+		rank=0.002980758969];
+	"[1]id" -> "[1]match_df_ext";
+	"[1]id" -> "[1]match";
+	"[1]id" -> "[1]match_sf_ext";
+	"[1]id" -> "[1]match_sf_std";
+	"[1]id" -> "[1]match_df_std";
+	"[1]extended_mode"	 [complexity=1,
+		importance=1.22458325929,
+		rank=1.22458325929];
+	"[1]extended_mode" -> id_ok;
+}

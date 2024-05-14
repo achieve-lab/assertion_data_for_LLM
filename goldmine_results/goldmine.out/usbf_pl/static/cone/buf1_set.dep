@@ -1,0 +1,17 @@
+[1]u3.buf_sel	u3.buf1_set
+[1]u3.in_token	[1]u3.buf_sel
+[1]u3.buf_set_d	u3.buf1_set
+[1]u3.state	[1]u3.buf_set_d
+[1]u3.dma_en	[1]u3.buf_sel
+[1]u3.dma_en	[1]u3.buf_set_d
+[1]u3.CTRL_ep	[1]u3.buf_sel
+[1]u3.CTRL_ep	[1]u3.dma_en
+u3.buf1_set	buf1_set
+[1]u3.buffer_done	[1]u3.buf_set_d
+[1]u3.buf0_na	[1]u3.buf_sel
+[1]u3.csr	[1]u3.dma_en
+[1]u3.csr	[1]u3.CTRL_ep
+[1]u3.csr	[1]u3.uc_bsel
+[1]u3.uc_bsel	[1]u3.buf_sel
+[1]csr	[1]u3.csr
+[1]u3.buf1_na	[1]u3.buf_sel

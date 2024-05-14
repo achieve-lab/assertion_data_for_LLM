@@ -1,0 +1,13 @@
+strict digraph "" {
+	node [label="\N"];
+	"975:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fae5e1caa90>",
+		def_var="['next_bsel']",
+		fillcolor=deepskyblue,
+		label="975:AS
+next_bsel = (dma_en)? 2'h0 : 
+(buffer_done)? uc_bsel + 2'h1 : uc_bsel;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['dma_en', 'buffer_done', 'uc_bsel', 'uc_bsel']"];
+}

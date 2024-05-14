@@ -1,0 +1,242 @@
+strict digraph "" {
+	dout	 [complexity=0,
+		importance=0.0296608611912,
+		rank=0.0];
+	"[1]ep12_dout"	 [complexity=2,
+		importance=0.0315486464269,
+		rank=0.0157743232135];
+	"[1]ep12_dout" -> dout;
+	"[1]rst"	 [complexity=8,
+		importance=0.166113757232,
+		rank=0.020764219654];
+	"[1]int_srcb"	 [complexity=7,
+		importance=0.0962527450482,
+		rank=0.0137503921497];
+	"[1]rst" -> "[1]int_srcb";
+	"[1]intb_msk"	 [complexity=7,
+		importance=0.0821129859981,
+		rank=0.0117304265712];
+	"[1]rst" -> "[1]intb_msk";
+	"[1]inta_msk"	 [complexity=7,
+		importance=0.0821129859981,
+		rank=0.0117304265712];
+	"[1]rst" -> "[1]inta_msk";
+	"[1]funct_adr"	 [complexity=6,
+		importance=0.0821129859981,
+		rank=0.0136854976663];
+	"[1]rst" -> "[1]funct_adr";
+	"[1]ep3_dout"	 [complexity=2,
+		importance=0.0315486464269,
+		rank=0.0157743232135];
+	"[1]ep3_dout" -> dout;
+	"[1]ep6_dout"	 [complexity=2,
+		importance=0.0315486464269,
+		rank=0.0157743232135];
+	"[1]ep6_dout" -> dout;
+	"[1]u0.csr"	 [complexity=4,
+		importance=0.0533141690603,
+		rank=0.0133285422651];
+	"[1]u0.dout"	 [complexity=2,
+		importance=0.0439955862176,
+		rank=0.0219977931088];
+	"[1]u0.csr" -> "[1]u0.dout";
+	"[1]u0.int_stat"	 [complexity=8,
+		importance=0.0628931629873,
+		rank=0.00786164537342];
+	"[1]u0.int"	 [complexity=4,
+		importance=0.0494482431618,
+		rank=0.0123620607905];
+	"[1]u0.int_stat" -> "[1]u0.int";
+	"[1]crc5_err_r"	 [complexity=8,
+		importance=0.0990843648804,
+		rank=0.0123855456101];
+	"[1]crc5_err_r" -> "[1]int_srcb";
+	"[1]rx_err_r"	 [complexity=8,
+		importance=0.0990843648804,
+		rank=0.0123855456101];
+	"[1]rx_err_r" -> "[1]int_srcb";
+	"[1]ep14_dout"	 [complexity=2,
+		importance=0.0315486464269,
+		rank=0.0157743232135];
+	"[1]ep14_dout" -> dout;
+	"[1]ep0_dout"	 [complexity=2,
+		importance=0.0356973741714,
+		rank=0.0178486870857];
+	"[1]u0.dout" -> "[1]ep0_dout";
+	"[1]suspend_end"	 [complexity=8,
+		importance=0.0991040465341,
+		rank=0.0123880058168];
+	"[1]suspend_end" -> "[1]int_srcb";
+	"[1]dtmp"	 [complexity=4,
+		importance=0.0799674969044,
+		rank=0.0199918742261];
+	"[1]int_srcb" -> "[1]dtmp";
+	"[1]ep9_dout"	 [complexity=2,
+		importance=0.0315486464269,
+		rank=0.0157743232135];
+	"[1]ep9_dout" -> dout;
+	"[1]int_srca"	 [complexity=7,
+		importance=0.0981540462954,
+		rank=0.0140220066136];
+	"[1]int_srca" -> "[1]dtmp";
+	adr	 [complexity=1,
+		importance=0.595105009061,
+		rank=0.595105009061];
+	adr -> dout;
+	"[1]u0.int" -> "[1]u0.dout";
+	"[1]line_stat"	 [complexity=11,
+		importance=0.0865745711653,
+		rank=0.00787041556048];
+	"[1]main_csr"	 [complexity=6,
+		importance=0.0846867859296,
+		rank=0.0141144643216];
+	"[1]line_stat" -> "[1]main_csr";
+	"[1]dtmp" -> dout;
+	"[1]ep15_dout"	 [complexity=2,
+		importance=0.0315486464269,
+		rank=0.0157743232135];
+	"[1]ep15_dout" -> dout;
+	"[1]usb_attached"	 [complexity=11,
+		importance=0.0865745711653,
+		rank=0.00787041556048];
+	"[1]usb_attached" -> "[1]main_csr";
+	"[1]ep2_dout"	 [complexity=2,
+		importance=0.0315486464269,
+		rank=0.0157743232135];
+	"[1]ep2_dout" -> dout;
+	"[1]u0.uc_dpd"	 [complexity=10,
+		importance=0.0571133014414,
+		rank=0.00571133014414];
+	"[1]u0.uc_dpd" -> "[1]u0.csr";
+	"[1]ep10_dout"	 [complexity=2,
+		importance=0.0315486464269,
+		rank=0.0157743232135];
+	"[1]ep10_dout" -> dout;
+	"[1]ep1_dout"	 [complexity=2,
+		importance=0.0315486464269,
+		rank=0.0157743232135];
+	"[1]ep1_dout" -> dout;
+	"[1]u0.adr"	 [complexity=3,
+		importance=0.177884010027,
+		rank=0.0592946700088];
+	"[1]u0.adr" -> "[1]u0.dout";
+	"[1]ep7_dout"	 [complexity=2,
+		importance=0.0315486464269,
+		rank=0.0157743232135];
+	"[1]ep7_dout" -> dout;
+	"[1]ep5_dout"	 [complexity=2,
+		importance=0.0315486464269,
+		rank=0.0157743232135];
+	"[1]ep5_dout" -> dout;
+	"[1]attach"	 [complexity=8,
+		importance=0.0991040465341,
+		rank=0.0123880058168];
+	"[1]attach" -> "[1]int_srcb";
+	"[1]we"	 [complexity=9,
+		importance=0.0840007712338,
+		rank=0.00933341902598];
+	"[1]we" -> "[1]intb_msk";
+	"[1]we" -> "[1]inta_msk";
+	"[1]we" -> "[1]funct_adr";
+	"[1]u0.buf1"	 [complexity=4,
+		importance=0.0495925157453,
+		rank=0.0123981289363];
+	"[1]u0.buf1" -> "[1]u0.dout";
+	"[1]u0.buf0"	 [complexity=4,
+		importance=0.0487814612454,
+		rank=0.0121953653114];
+	"[1]u0.buf0" -> "[1]u0.dout";
+	"[1]adr"	 [complexity=9,
+		importance=0.0840007712338,
+		rank=0.00933341902598];
+	"[1]adr" -> "[1]dtmp";
+	"[1]adr" -> "[1]u0.adr";
+	"[1]adr" -> "[1]intb_msk";
+	"[1]adr" -> "[1]inta_msk";
+	"[1]adr" -> "[1]funct_adr";
+	"[1]frm_nat"	 [complexity=6,
+		importance=0.0818552821401,
+		rank=0.0136425470234];
+	"[1]frm_nat" -> "[1]dtmp";
+	"[1]ep4_dout"	 [complexity=2,
+		importance=0.0315486464269,
+		rank=0.0157743232135];
+	"[1]ep4_dout" -> dout;
+	"[1]ep11_dout"	 [complexity=2,
+		importance=0.0315486464269,
+		rank=0.0157743232135];
+	"[1]ep11_dout" -> dout;
+	"[1]u0.ienb"	 [complexity=8,
+		importance=0.0520969864976,
+		rank=0.0065121233122];
+	"[1]u0.ienb" -> "[1]u0.int";
+	"[1]u0.iena"	 [complexity=8,
+		importance=0.0520969864976,
+		rank=0.0065121233122];
+	"[1]u0.iena" -> "[1]u0.int";
+	"[1]u0.ots_stop"	 [complexity=10,
+		importance=0.0556690931756,
+		rank=0.00556690931756];
+	"[1]u0.ots_stop" -> "[1]u0.csr";
+	"[1]nse_err_r"	 [complexity=8,
+		importance=0.0990843648804,
+		rank=0.0123855456101];
+	"[1]nse_err_r" -> "[1]int_srcb";
+	"[1]main_csr" -> "[1]dtmp";
+	"[1]ep13_dout"	 [complexity=2,
+		importance=0.0315486464269,
+		rank=0.0157743232135];
+	"[1]ep13_dout" -> dout;
+	"[1]intb_msk" -> "[1]dtmp";
+	"[1]u0.csr0"	 [complexity=10,
+		importance=0.0556690931756,
+		rank=0.00556690931756];
+	"[1]u0.csr0" -> "[1]u0.csr";
+	"[1]inta_msk" -> "[1]dtmp";
+	"[1]pid_cs_err_r"	 [complexity=8,
+		importance=0.0990843648804,
+		rank=0.0123855456101];
+	"[1]pid_cs_err_r" -> "[1]int_srcb";
+	"[1]u0.csr1"	 [complexity=10,
+		importance=0.057046342279,
+		rank=0.0057046342279];
+	"[1]u0.csr1" -> "[1]u0.csr";
+	"[1]usb_reset_r"	 [complexity=8,
+		importance=0.0990843648804,
+		rank=0.0123855456101];
+	"[1]usb_reset_r" -> "[1]int_srcb";
+	"[1]ep0_dout" -> dout;
+	"[1]deattach"	 [complexity=8,
+		importance=0.0991040465341,
+		rank=0.0123880058168];
+	"[1]deattach" -> "[1]int_srcb";
+	"[1]ep8_dout"	 [complexity=2,
+		importance=0.0315486464269,
+		rank=0.0157743232135];
+	"[1]ep8_dout" -> dout;
+	"[1]suspend_start"	 [complexity=8,
+		importance=0.0991040465341,
+		rank=0.0123880058168];
+	"[1]suspend_start" -> "[1]int_srcb";
+	"[1]utmi_vend_stat_r"	 [complexity=6,
+		importance=0.0827991167366,
+		rank=0.0137998527894];
+	"[1]utmi_vend_stat_r" -> "[1]dtmp";
+	"[1]suspend"	 [complexity=11,
+		importance=0.0865745711653,
+		rank=0.00787041556048];
+	"[1]suspend" -> "[1]main_csr";
+	"[1]mode_hs"	 [complexity=11,
+		importance=0.0865745711653,
+		rank=0.00787041556048];
+	"[1]mode_hs" -> "[1]main_csr";
+	"[1]int_src_re"	 [complexity=16,
+		importance=1.73450659571,
+		rank=0.108406662232];
+	"[1]int_src_re" -> "[1]int_srcb";
+	"[1]u0.uc_bsel"	 [complexity=10,
+		importance=0.0571133014414,
+		rank=0.00571133014414];
+	"[1]u0.uc_bsel" -> "[1]u0.csr";
+	"[1]funct_adr" -> "[1]dtmp";
+}

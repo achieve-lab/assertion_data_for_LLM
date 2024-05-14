@@ -1,0 +1,11 @@
+[1]state	[1]next_state
+[1]tx_valid_r	[1]next_state
+[1]rst	state
+[1]next_state	state
+[1]send_data	[1]next_state
+state	rd_next
+tx_valid_r	rd_next
+[1]send_zero_length_r	[1]next_state
+tx_ready	rd_next
+[1]tx_valid_r1	tx_valid_r
+[1]tx_ready	[1]next_state

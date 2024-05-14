@@ -1,0 +1,59 @@
+strict digraph "" {
+	node [label="\N"];
+	"1873:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f0a38ecff50>",
+		fillcolor=turquoise,
+		label="1873:BL
+intb_msk <= din[24:16];
+inta_msk <= din[08:00];",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f0a38ecfb50>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f0a38ecfd50>]",
+		style=filled,
+		typ=Block];
+	"Leaf_1864:AL"	 [def_var="['intb_msk', 'inta_msk']",
+		label="Leaf_1864:AL"];
+	"1873:BL" -> "Leaf_1864:AL"	 [cond="[]",
+		lineno=None];
+	"1866:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f0a38ecff90>",
+		fillcolor=springgreen,
+		label="1866:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"1872:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f0a38d9a050>",
+		fillcolor=springgreen,
+		label="1872:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"1866:IF" -> "1872:IF"	 [cond="['rst']",
+		label="!((!rst))",
+		lineno=1866];
+	"1867:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f0a38d9a2d0>",
+		fillcolor=turquoise,
+		label="1867:BL
+inta_msk <= 9'h0;
+intb_msk <= 9'h0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f0a38d9a310>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f0a38d9a450>]",
+		style=filled,
+		typ=Block];
+	"1866:IF" -> "1867:BL"	 [cond="['rst']",
+		label="(!rst)",
+		lineno=1866];
+	"1872:IF" -> "1873:BL"	 [cond="['adr', 'we']",
+		label="((adr[6:0] == 7'h2) && we)",
+		lineno=1872];
+	"1864:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f0a38d9a610>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="1864:AL",
+		sens="['wclk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['rst', 'we', 'adr', 'din']"];
+	"1864:AL" -> "1866:IF"	 [cond="[]",
+		lineno=None];
+	"1867:BL" -> "Leaf_1864:AL"	 [cond="[]",
+		lineno=None];
+}

@@ -1,0 +1,35 @@
+property a1;
+@(posedge clk) (rxstate[1] == 1) |=> (wait_crc_check == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge clk) (rxstate[0] == 1) |=> (wait_crc_check == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a3;
+@(posedge clk) (rxstate[3] == 1) |=> (wait_crc_check == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a2;
+@(posedge clk) (rxstate[2] == 1) |=> (wait_crc_check == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a6;
+@(posedge clk) (crc_check_valid == 0 & crc_check_invalid == 0 & wait_crc_check == 0) |=> (wait_crc_check == 0);
+endproperty
+assert_a6: assert property(a6);
+
+property a5;
+@(posedge clk) (wait_crc_check == 1 & crc_check_invalid == 1) |=> (wait_crc_check == 0);
+endproperty
+assert_a5: assert property(a5);
+
+property a4;
+@(posedge clk) (wait_crc_check == 1 & crc_check_valid == 1) |=> (wait_crc_check == 0);
+endproperty
+assert_a4: assert property(a4);
+

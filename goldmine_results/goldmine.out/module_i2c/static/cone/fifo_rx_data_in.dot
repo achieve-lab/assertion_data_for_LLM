@@ -1,0 +1,67 @@
+strict digraph "" {
+	"[1]BR_CLK_O_RX"	 [complexity=199,
+		importance=1.16505803143,
+		rank=0.00585456297199];
+	"[1]SCL"	 [complexity=194,
+		importance=1.15285438365,
+		rank=0.00594254836934];
+	"[1]BR_CLK_O_RX" -> "[1]SCL";
+	fifo_rx_data_in	 [complexity=0,
+		importance=0.0343423697939,
+		rank=0.0];
+	"[1]RESPONSE_DATA0_1"	 [complexity=79,
+		importance=1.16407227245,
+		rank=0.0147350920563];
+	"[1]SDA"	 [complexity=66,
+		importance=1.1568306964,
+		rank=0.0175277378242];
+	"[1]RESPONSE_DATA0_1" -> "[1]SDA";
+	"[1]state_rx"	 [complexity=1,
+		importance=1.23638754722,
+		rank=1.23638754722];
+	"[1]state_rx" -> fifo_rx_data_in;
+	"[1]DATA_CONFIG_REG"	 [complexity=79,
+		importance=1.16407227245,
+		rank=0.0147350920563];
+	"[1]DATA_CONFIG_REG" -> fifo_rx_data_in;
+	"[1]DATA_CONFIG_REG" -> "[1]SCL";
+	"[1]DATA_CONFIG_REG" -> "[1]SDA";
+	"[1]SDA_OUT_RX"	 [complexity=79,
+		importance=1.16901282407,
+		rank=0.0147976306844];
+	"[1]SDA_OUT_RX" -> "[1]SDA";
+	"[1]SCL" -> fifo_rx_data_in;
+	"[1]RESPONSE_DATA1_1"	 [complexity=79,
+		importance=1.16407227245,
+		rank=0.0147350920563];
+	"[1]RESPONSE_DATA1_1" -> "[1]SDA";
+	"[1]state_tx"	 [complexity=79,
+		importance=1.21247335892,
+		rank=0.0153477640369];
+	"[1]state_tx" -> "[1]SDA";
+	"[1]PRESETn"	 [complexity=1,
+		importance=1.17488214904,
+		rank=1.17488214904];
+	"[1]PRESETn" -> fifo_rx_data_in;
+	"[1]BR_CLK_O"	 [complexity=199,
+		importance=1.17340799572,
+		rank=0.00589652259157];
+	"[1]BR_CLK_O" -> "[1]SCL";
+	"[1]RESPONSE_ADDRESS"	 [complexity=79,
+		importance=1.16407227245,
+		rank=0.0147350920563];
+	"[1]RESPONSE_ADDRESS" -> "[1]SDA";
+	"[1]count_receive_data"	 [complexity=197,
+		importance=2.36480000369,
+		rank=0.0120040609324];
+	"[1]count_receive_data" -> fifo_rx_data_in;
+	"[1]RESPONSE_CIN"	 [complexity=79,
+		importance=1.16407227245,
+		rank=0.0147350920563];
+	"[1]RESPONSE_CIN" -> "[1]SDA";
+	"[1]SDA_OUT"	 [complexity=79,
+		importance=1.18106629491,
+		rank=0.0149502062646];
+	"[1]SDA_OUT" -> "[1]SDA";
+	"[1]SDA" -> fifo_rx_data_in;
+}

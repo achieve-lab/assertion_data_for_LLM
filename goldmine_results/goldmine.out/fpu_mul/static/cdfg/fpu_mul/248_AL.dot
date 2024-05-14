@@ -1,0 +1,69 @@
+strict digraph "" {
+	node [label="\N"];
+	"248:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f4243cf9110>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="248:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['rst', 'count', 'enable', 'count_ready']"];
+	"249:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f4243cf9d90>",
+		fillcolor=turquoise,
+		label="249:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"248:AL" -> "249:BL"	 [cond="[]",
+		lineno=None];
+	"250:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f4243cf9dd0>",
+		fillcolor=springgreen,
+		label="250:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"255:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f4243cf9e50>",
+		fillcolor=springgreen,
+		label="255:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"250:IF" -> "255:IF"	 [cond="['rst']",
+		label="!(rst)",
+		lineno=250];
+	"250:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f4243c9c4d0>",
+		fillcolor=turquoise,
+		label="250:BL
+ready <= 0;
+count_ready_0 <= 0;
+count_ready <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f4243c9c510>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f4243c9c650>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f4243c9c7d0>]",
+		style=filled,
+		typ=Block];
+	"250:IF" -> "250:BL"	 [cond="['rst']",
+		label=rst,
+		lineno=250];
+	"249:BL" -> "250:IF"	 [cond="[]",
+		lineno=None];
+	"255:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f4243cf9ed0>",
+		fillcolor=turquoise,
+		label="255:BL
+ready <= count_ready;
+count_ready_0 <= count == 18;
+count_ready <= count == 19;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f4243cf9f10>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f4243c9c0d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f4243c9c2d0>]",
+		style=filled,
+		typ=Block];
+	"Leaf_248:AL"	 [def_var="['ready', 'count_ready_0', 'count_ready']",
+		label="Leaf_248:AL"];
+	"255:BL" -> "Leaf_248:AL"	 [cond="[]",
+		lineno=None];
+	"255:IF" -> "255:BL"	 [cond="['enable']",
+		label=enable,
+		lineno=255];
+	"250:BL" -> "Leaf_248:AL"	 [cond="[]",
+		lineno=None];
+}

@@ -1,0 +1,145 @@
+strict digraph "" {
+	node [label="\N"];
+	"78:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f53bfa28a10>",
+		fillcolor=turquoise,
+		label="78:BL
+sign <= 0;
+exponent_a <= 0;
+exponent_b <= 0;
+mantissa_a <= 0;
+mantissa_b <= 0;
+expa_gt_expb <= 0;
+exponent_small <= 0;
+exponent_\
+large <= 0;
+mantissa_small <= 0;
+mantissa_large <= 0;
+small_is_denorm <= 0;
+large_is_denorm <= 0;
+large_norm_small_denorm <= 0;
+\
+exponent_diff <= 0;
+large_add <= 0;
+small_add <= 0;
+small_shift <= 0;
+small_shift_3 <= 0;
+sum <= 0;
+sum_2 <= 0;
+exponent <= 0;
+denorm_\
+to_norm <= 0;
+exponent_2 <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bf52ef90>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f53bf51b350>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bf51b850>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bf51b990>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bf51bad0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bf51bc10>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bf51bd90>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bf51bf10>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bf5070d0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bf507250>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bf5073d0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bf507550>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bf5076d0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bf507850>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bf5079d0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bf507b10>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bf507c50>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bf507d90>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bf52ea10>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bfa28250>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bfa283d0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bfa28ed0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bfa28e10>]",
+		style=filled,
+		typ=Block];
+	"Leaf_76:AL"	 [def_var="['exponent_diff', 'mantissa_large', 'sign', 'sum_2', 'exponent_b', 'exponent_a', 'exponent', 'small_shift_3', 'sum', 'exponent_small', '\
+small_add', 'large_norm_small_denorm', 'mantissa_small', 'exponent_large', 'denorm_to_norm', 'small_shift', 'exponent_2', 'small_\
+is_denorm', 'large_is_denorm', 'mantissa_b', 'mantissa_a', 'large_add', 'expa_gt_expb']",
+		label="Leaf_76:AL"];
+	"78:BL" -> "Leaf_76:AL"	 [cond="[]",
+		lineno=None];
+	"78:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f53bfa28850>",
+		fillcolor=springgreen,
+		label="78:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"78:IF" -> "78:BL"	 [cond="['rst']",
+		label=rst,
+		lineno=78];
+	"103:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f53bfa06b90>",
+		fillcolor=springgreen,
+		label="103:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"78:IF" -> "103:IF"	 [cond="['rst']",
+		label="!(rst)",
+		lineno=78];
+	"103:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f53bfa06ed0>",
+		fillcolor=turquoise,
+		label="103:BL
+sign <= opa[63];
+exponent_a <= opa[62:52];
+exponent_b <= opb[62:52];
+mantissa_a <= opa[51:0];
+mantissa_b <= opb[51:0];
+expa_\
+gt_expb <= exponent_a > exponent_b;
+exponent_small <= (expa_gt_expb)? exponent_b : exponent_a;
+exponent_large <= (expa_gt_expb)? \
+exponent_a : exponent_b;
+mantissa_small <= (expa_gt_expb)? mantissa_b : mantissa_a;
+mantissa_large <= (expa_gt_expb)? mantissa_a : \
+mantissa_b;
+small_is_denorm <= !(exponent_small > 0);
+large_is_denorm <= !(exponent_large > 0);
+large_norm_small_denorm <= small_\
+is_denorm && !large_is_denorm;
+exponent_diff <= exponent_large - exponent_small - large_norm_small_denorm;
+large_add <= { 1'b0, !\
+large_is_denorm, mantissa_large, 2'b0 };
+small_add <= { 1'b0, !small_is_denorm, mantissa_small, 2'b0 };
+small_shift <= small_add >> \
+exponent_diff;
+small_shift_3 <= (small_fraction_enable)? small_shift_2 : small_shift;
+sum <= large_add + small_shift_3;
+sum_2 <= (\
+sum_overflow)? sum >> 1 : sum;
+exponent <= (sum_overflow)? exponent_large + 1 : exponent_large;
+denorm_to_norm <= sum_leading_one & \
+large_is_denorm;
+exponent_2 <= (denorm_to_norm)? exponent + 1 : exponent;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bfa06190>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f53bfa06050>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bfa06fd0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bfa06f50>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bfa06210>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bfa06890>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bfa06850>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bfa21e90>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bfa21190>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bfa314d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bfa318d0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bfca7c50>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bfca72d0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bf996d50>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bf519190>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bf519490>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bf519790>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bf519990>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bf519c50>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bf519e50>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bf536150>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f53bf536490>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f53bf536710>]",
+		style=filled,
+		typ=Block];
+	"103:BL" -> "Leaf_76:AL"	 [cond="[]",
+		lineno=None];
+	"76:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f53bf536a50>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="76:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['exponent_diff', 'mantissa_large', 'large_is_denorm', 'sum_leading_one', 'small_add', 'sum_overflow', 'exponent_large', 'exponent', '\
+small_shift_2', 'small_shift_3', 'sum', 'exponent_small', 'exponent_b', 'enable', 'small_fraction_enable', 'large_norm_small_denorm', '\
+mantissa_small', 'exponent_a', 'opa', 'opb', 'rst', 'denorm_to_norm', 'small_shift', 'small_is_denorm', 'mantissa_b', 'mantissa_\
+a', 'large_add', 'expa_gt_expb']"];
+	"77:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f53bf536b50>",
+		fillcolor=turquoise,
+		label="77:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"76:AL" -> "77:BL"	 [cond="[]",
+		lineno=None];
+	"77:BL" -> "78:IF"	 [cond="[]",
+		lineno=None];
+	"103:IF" -> "103:BL"	 [cond="['enable']",
+		label=enable,
+		lineno=103];
+}

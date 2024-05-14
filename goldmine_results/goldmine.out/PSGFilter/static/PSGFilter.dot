@@ -1,0 +1,20 @@
+digraph "" {
+	acc -> acc	 [weight=1.0];
+	acc -> o	 [weight=1.0];
+	din -> coeff	 [weight=1.0];
+	din -> sgn	 [weight=1.0];
+	tap -> mult	 [weight=1.0];
+	i -> tap	 [weight=1.0];
+	coeff -> mult	 [weight=1.0];
+	cnt -> acc	 [weight=5.0];
+	cnt -> tap	 [weight=1.0];
+	cnt -> o	 [weight=1.0];
+	cnt -> mult	 [weight=1.0];
+	pTaps -> acc	 [weight=1.0];
+	wr -> coeff	 [weight=1.0];
+	wr -> sgn	 [weight=1.0];
+	sgn -> acc	 [weight=2.0];
+	rst -> acc	 [weight=3.0];
+	rst -> o	 [weight=2.0];
+	mult -> acc	 [weight=3.0];
+}

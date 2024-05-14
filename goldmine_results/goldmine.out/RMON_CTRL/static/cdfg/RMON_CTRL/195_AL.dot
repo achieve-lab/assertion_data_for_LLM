@@ -1,0 +1,46 @@
+strict digraph "" {
+	node [label="\N"];
+	"Leaf_195:AL"	 [def_var="['Pipeline']",
+		label="Leaf_195:AL"];
+	"195:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f7ac5192390>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="195:AL",
+		sens="['StepCounter', 'CurrentState']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['StepCounter']"];
+	"196:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f7ac5192310>",
+		fillcolor=springgreen,
+		label="196:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"195:AL" -> "196:IF"	 [cond="[]",
+		lineno=None];
+	"198:BS"	 [ast="<pyverilog.vparser.ast.BlockingSubstitution object at 0x7f7ac5192850>",
+		fillcolor=cadetblue,
+		label="198:BS
+Pipeline = 1;",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7f7ac5192850>]",
+		style=filled,
+		typ=BlockingSubstitution];
+	"198:BS" -> "Leaf_195:AL"	 [cond="[]",
+		lineno=None];
+	"196:IF" -> "198:BS"	 [cond="['StepCounter', 'StepCounter', 'StepCounter', 'StepCounter']",
+		label="((StepCounter == 2) || (StepCounter == 5) || (StepCounter == 8) || (StepCounter == 11))",
+		lineno=196];
+	"200:BS"	 [ast="<pyverilog.vparser.ast.BlockingSubstitution object at 0x7f7ac5192690>",
+		fillcolor=cadetblue,
+		label="200:BS
+Pipeline = 0;",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7f7ac5192690>]",
+		style=filled,
+		typ=BlockingSubstitution];
+	"196:IF" -> "200:BS"	 [cond="['StepCounter', 'StepCounter', 'StepCounter', 'StepCounter']",
+		label="!(((StepCounter == 2) || (StepCounter == 5) || (StepCounter == 8) || (StepCounter == 11)))",
+		lineno=196];
+	"200:BS" -> "Leaf_195:AL"	 [cond="[]",
+		lineno=None];
+}

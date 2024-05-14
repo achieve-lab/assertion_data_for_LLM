@@ -1,0 +1,95 @@
+strict digraph "compose( ,  )" {
+	node [label="\N"];
+	"59:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f7dff37d310>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="59:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['a', 'c', 'b']"];
+	"59:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f7dff37db10>",
+		fillcolor=turquoise,
+		label="59:BL
+a_reg <= a;
+b_reg <= b;
+c_reg <= c;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f7dff37d8d0>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f7dff37d110>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f7e017d0f50>]",
+		style=filled,
+		typ=Block];
+	"59:AL" -> "59:BL"	 [cond="[]",
+		lineno=None];
+	"Leaf_59:AL"	 [def_var="['b_reg', 'c_reg', 'a_reg']",
+		label="Leaf_59:AL"];
+	"59:BL" -> "Leaf_59:AL"	 [cond="[]",
+		lineno=None];
+	"Leaf_71:AL"	 [def_var="['result']",
+		label="Leaf_71:AL"];
+	"75:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f7dff235a90>",
+		def_var="['p']",
+		fillcolor=deepskyblue,
+		label="75:AS
+p = result;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['result']"];
+	"Leaf_71:AL" -> "75:AS";
+	"71:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f7dff235810>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="71:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['sum']"];
+	"71:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f7dff235450>",
+		fillcolor=turquoise,
+		label="71:BL
+result <= sum;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f7dff2359d0>]",
+		style=filled,
+		typ=Block];
+	"71:AL" -> "71:BL"	 [cond="[]",
+		lineno=None];
+	"65:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f7dff65de90>",
+		fillcolor=turquoise,
+		label="65:BL
+prod <= a_reg * b_reg;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f7e017be710>]",
+		style=filled,
+		typ=Block];
+	"Leaf_65:AL"	 [def_var="['prod']",
+		label="Leaf_65:AL"];
+	"65:BL" -> "Leaf_65:AL"	 [cond="[]",
+		lineno=None];
+	"69:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f7dff235150>",
+		def_var="['sum']",
+		fillcolor=deepskyblue,
+		label="69:AS
+sum = c_reg + prod;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['c_reg', 'prod']"];
+	"69:AS" -> "71:AL";
+	"Leaf_59:AL" -> "69:AS";
+	"65:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f7dff65d9d0>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="65:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['b_reg', 'a_reg']"];
+	"Leaf_59:AL" -> "65:AL";
+	"71:BL" -> "Leaf_71:AL"	 [cond="[]",
+		lineno=None];
+	"65:AL" -> "65:BL"	 [cond="[]",
+		lineno=None];
+	"Leaf_65:AL" -> "69:AS";
+}

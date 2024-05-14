@@ -1,0 +1,32 @@
+strict digraph "compose( ,  )" {
+	node [label="\N"];
+	"106:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7eff4107b0d0>",
+		def_var="['words']",
+		fillcolor=deepskyblue,
+		label="106:AS
+words[i][j] = data_in[WIDTH - WIDTH / 2 ** i - 2 * (WIDTH / 2 ** i) * (j / (WIDTH / 2 ** i)) + j];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['data_in', 'i', 'i', 'j', 'WIDTH', 'i', 'j']"];
+	"113:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7eff40c9a5d0>",
+		def_var="['data_swap']",
+		fillcolor=deepskyblue,
+		label="113:AS
+data_swap = words[swap_type];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['words', 'swap_type']"];
+	"106:AS" -> "113:AS";
+	"108:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7eff4107b490>",
+		def_var="['words']",
+		fillcolor=deepskyblue,
+		label="108:AS
+words[i][j] = data_in[WIDTH - 1 - j];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['data_in', 'j']"];
+	"108:AS" -> "113:AS";
+}

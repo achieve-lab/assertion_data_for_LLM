@@ -1,0 +1,25 @@
+strict digraph "" {
+	LoadRxStatus	 [complexity=0,
+		importance=0.0181981647448,
+		rank=0.0];
+	"[1]TakeSample"	 [complexity=2,
+		importance=0.0415316419539,
+		rank=0.020765820977];
+	"[1]TakeSample" -> LoadRxStatus;
+	"[1]Reset"	 [complexity=1,
+		importance=0.0503565481416,
+		rank=0.0503565481416];
+	"[1]Reset" -> LoadRxStatus;
+	"[1]RxByteCntMaxFrame"	 [complexity=8,
+		importance=0.0554918606058,
+		rank=0.00693648257572];
+	"[1]RxByteCntMaxFrame" -> "[1]TakeSample";
+	"[1]RxStateData"	 [complexity=8,
+		importance=0.0554918606058,
+		rank=0.00693648257572];
+	"[1]RxStateData" -> "[1]TakeSample";
+	"[1]MRxDV"	 [complexity=8,
+		importance=0.0554918606058,
+		rank=0.00693648257572];
+	"[1]MRxDV" -> "[1]TakeSample";
+}

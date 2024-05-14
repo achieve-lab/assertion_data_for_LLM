@@ -1,0 +1,61 @@
+strict digraph "" {
+	buf0_set	 [complexity=0,
+		importance=0.00214526548889,
+		rank=0.0];
+	"[1]u3.buf_sel"	 [complexity=3,
+		importance=0.00605271604371,
+		rank=0.00201757201457];
+	"u3.buf0_set"	 [complexity=0,
+		importance=0.00378289610738,
+		rank=0.0];
+	"[1]u3.buf_sel" -> "u3.buf0_set";
+	"[1]u3.in_token"	 [complexity=10,
+		importance=0.00782753910767,
+		rank=0.000782753910767];
+	"[1]u3.in_token" -> "[1]u3.buf_sel";
+	"[1]u3.buf_set_d"	 [complexity=3,
+		importance=0.0054756973903,
+		rank=0.00182523246343];
+	"[1]u3.buf_set_d" -> "u3.buf0_set";
+	"[1]u3.buf0_na"	 [complexity=10,
+		importance=0.00787659727073,
+		rank=0.000787659727073];
+	"[1]u3.buf0_na" -> "[1]u3.buf_sel";
+	"[1]u3.dma_en"	 [complexity=5,
+		importance=0.00683119593527,
+		rank=0.00136623918705];
+	"[1]u3.dma_en" -> "[1]u3.buf_sel";
+	"[1]u3.dma_en" -> "[1]u3.buf_set_d";
+	"[1]u3.CTRL_ep"	 [complexity=8,
+		importance=0.00816705048213,
+		rank=0.00102088131027];
+	"[1]u3.CTRL_ep" -> "[1]u3.buf_sel";
+	"[1]u3.CTRL_ep" -> "[1]u3.dma_en";
+	"[1]u3.buffer_done"	 [complexity=5,
+		importance=0.00806374470938,
+		rank=0.00161274894188];
+	"[1]u3.buffer_done" -> "[1]u3.buf_set_d";
+	"u3.buf0_set" -> buf0_set;
+	"[1]u3.csr"	 [complexity=10,
+		importance=0.0101567233286,
+		rank=0.00101567233286];
+	"[1]u3.csr" -> "[1]u3.dma_en";
+	"[1]u3.csr" -> "[1]u3.CTRL_ep";
+	"[1]u3.uc_bsel"	 [complexity=10,
+		importance=0.00738857059057,
+		rank=0.000738857059057];
+	"[1]u3.csr" -> "[1]u3.uc_bsel";
+	"[1]u3.uc_bsel" -> "[1]u3.buf_sel";
+	"[1]u3.state"	 [complexity=4,
+		importance=0.0157562692928,
+		rank=0.00393906732321];
+	"[1]u3.state" -> "[1]u3.buf_set_d";
+	"[1]csr"	 [complexity=10,
+		importance=0.0114831926427,
+		rank=0.00114831926427];
+	"[1]csr" -> "[1]u3.csr";
+	"[1]u3.buf1_na"	 [complexity=10,
+		importance=0.00798713084032,
+		rank=0.000798713084032];
+	"[1]u3.buf1_na" -> "[1]u3.buf_sel";
+}

@@ -1,0 +1,69 @@
+strict digraph "" {
+	write_CMD	 [complexity=5,
+		importance=0.0588234034966,
+		rank=0.0117646806993];
+	CMD	 [complexity=4,
+		importance=0.0457706137441,
+		rank=0.011442653436];
+	write_CMD -> CMD;
+	"[1]word_stb"	 [complexity=15,
+		importance=0.127888436942,
+		rank=0.00852589579615];
+	"[1]header"	 [complexity=14,
+		importance=0.111374382713,
+		rank=0.0079553130509];
+	"[1]word_stb" -> "[1]header";
+	"[1]cfg_write_stb"	 [complexity=8,
+		importance=0.0811247970631,
+		rank=0.0101405996329];
+	"[1]word_stb" -> "[1]cfg_write_stb";
+	"[1]header_type_command"	 [complexity=12,
+		importance=0.0930624922091,
+		rank=0.0077552076841];
+	"[1]header_type_command" -> "[1]cfg_write_stb";
+	"[1]prog_b"	 [complexity=8,
+		importance=0.125392592781,
+		rank=0.0156740740976];
+	internal_reset	 [complexity=5,
+		importance=0.114108872531,
+		rank=0.0228217745062];
+	"[1]prog_b" -> internal_reset;
+	"[1]internal_reset"	 [complexity=7,
+		importance=2.89279802227,
+		rank=0.413256860324];
+	"[1]sr"	 [complexity=6,
+		importance=0.0869766780978,
+		rank=0.0144961130163];
+	"[1]internal_reset" -> "[1]sr";
+	"[1]syn_det_ok"	 [complexity=15,
+		importance=0.240378255691,
+		rank=0.0160252170461];
+	"[1]syn_det_ok" -> "[1]header";
+	"[1]shift_cnt32"	 [complexity=14,
+		importance=0.118560197294,
+		rank=0.00846858552101];
+	"[1]syn_det_ok" -> "[1]shift_cnt32";
+	cfg_state_START	 [complexity=2,
+		importance=0.0302412333547,
+		rank=0.0151206166773];
+	CMD -> cfg_state_START;
+	trace1	 [complexity=0,
+		importance=0.0150752354667,
+		rank=0.0];
+	cfg_state_START -> trace1;
+	internal_reset -> CMD;
+	"[1]header_op_write"	 [complexity=12,
+		importance=0.0930624922091,
+		rank=0.0077552076841];
+	"[1]header_op_write" -> "[1]cfg_write_stb";
+	"[1]header" -> write_CMD;
+	"[1]header" -> "[1]header_type_command";
+	"[1]header" -> "[1]header_op_write";
+	"[1]shift_cnt32" -> "[1]word_stb";
+	"[1]cfg_write_stb" -> write_CMD;
+	"[1]por"	 [complexity=8,
+		importance=0.125392592781,
+		rank=0.0156740740976];
+	"[1]por" -> internal_reset;
+	"[1]sr" -> CMD;
+}

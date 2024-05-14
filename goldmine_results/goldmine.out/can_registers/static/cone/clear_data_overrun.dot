@@ -1,0 +1,180 @@
+strict digraph "" {
+	"[1]COMMAND_REG1.data_in"	 [complexity=4,
+		importance=0.0262581479516,
+		rank=0.0065645369879];
+	"COMMAND_REG1.data_out"	 [complexity=2,
+		importance=0.0242879680259,
+		rank=0.0121439840129];
+	"[1]COMMAND_REG1.data_in" -> "COMMAND_REG1.data_out";
+	"[1]rst"	 [complexity=3,
+		importance=0.0749370096401,
+		rank=0.0249790032134];
+	"[1]COMMAND_REG0.rst"	 [complexity=3,
+		importance=0.0732858016278,
+		rank=0.0244286005426];
+	"[1]rst" -> "[1]COMMAND_REG0.rst";
+	"[1]COMMAND_REG4.rst"	 [complexity=3,
+		importance=0.0732858016278,
+		rank=0.0244286005426];
+	"[1]rst" -> "[1]COMMAND_REG4.rst";
+	"[1]COMMAND_REG.rst"	 [complexity=3,
+		importance=0.0729945725872,
+		rank=0.0243315241957];
+	"[1]rst" -> "[1]COMMAND_REG.rst";
+	"[1]COMMAND_REG1.rst"	 [complexity=3,
+		importance=0.0748230825193,
+		rank=0.0249410275064];
+	"[1]rst" -> "[1]COMMAND_REG1.rst";
+	"[1]cs"	 [complexity=7,
+		importance=0.0298326542697,
+		rank=0.00426180775282];
+	"[1]we_command"	 [complexity=3,
+		importance=0.0278902172168,
+		rank=0.00929673907226];
+	"[1]cs" -> "[1]we_command";
+	"[1]COMMAND_REG4.data_out"	 [complexity=3,
+		importance=0.0711571071219,
+		rank=0.0237190357073];
+	"[1]command"	 [complexity=3,
+		importance=0.0647858866787,
+		rank=0.0215952955596];
+	"[1]COMMAND_REG4.data_out" -> "[1]command";
+	"COMMAND_REG4.data_out"	 [complexity=2,
+		importance=0.023775541062,
+		rank=0.011887770531];
+	command	 [complexity=2,
+		importance=0.0174043206188,
+		rank=0.00870216030942];
+	"COMMAND_REG4.data_out" -> command;
+	"[1]COMMAND_REG.rst_sync"	 [complexity=3,
+		importance=0.0498968326724,
+		rank=0.0166322775575];
+	"COMMAND_REG.data_out"	 [complexity=2,
+		importance=0.0236784647152,
+		rank=0.0118392323576];
+	"[1]COMMAND_REG.rst_sync" -> "COMMAND_REG.data_out";
+	"[1]COMMAND_REG1.we"	 [complexity=3,
+		importance=0.0264825007711,
+		rank=0.00882750025704];
+	"[1]COMMAND_REG1.we" -> "COMMAND_REG1.data_out";
+	"[1]COMMAND_REG0.we"	 [complexity=3,
+		importance=0.0259700738073,
+		rank=0.00865669126909];
+	"COMMAND_REG0.data_out"	 [complexity=2,
+		importance=0.023775541062,
+		rank=0.011887770531];
+	"[1]COMMAND_REG0.we" -> "COMMAND_REG0.data_out";
+	"[1]we"	 [complexity=7,
+		importance=0.0298326542697,
+		rank=0.00426180775282];
+	"[1]we" -> "[1]we_command";
+	"COMMAND_REG1.data_out" -> command;
+	"[1]command" -> "[1]COMMAND_REG.rst_sync";
+	"[1]tx_request"	 [complexity=6,
+		importance=0.0575475273475,
+		rank=0.00959125455792];
+	"[1]command" -> "[1]tx_request";
+	"[1]COMMAND_REG4.rst_sync"	 [complexity=3,
+		importance=0.0502851854756,
+		rank=0.0167617284919];
+	"[1]command" -> "[1]COMMAND_REG4.rst_sync";
+	"[1]COMMAND_REG0.rst_sync"	 [complexity=3,
+		importance=0.0502851854756,
+		rank=0.0167617284919];
+	"[1]command" -> "[1]COMMAND_REG0.rst_sync";
+	"[1]abort_tx"	 [complexity=3,
+		importance=0.055032260735,
+		rank=0.0183440869117];
+	"[1]command" -> "[1]abort_tx";
+	"[1]COMMAND_REG0.data_in"	 [complexity=4,
+		importance=0.0257457209877,
+		rank=0.00643643024694];
+	"[1]COMMAND_REG0.data_in" -> "COMMAND_REG0.data_out";
+	"[1]COMMAND_REG0.rst" -> "COMMAND_REG0.data_out";
+	"[1]COMMAND_REG.we"	 [complexity=3,
+		importance=0.0258729974604,
+		rank=0.00862433248681];
+	"[1]COMMAND_REG.we" -> "COMMAND_REG.data_out";
+	"[1]COMMAND_REG4.rst" -> "COMMAND_REG4.data_out";
+	"[1]COMMAND_REG1.rst_sync"	 [complexity=3,
+		importance=0.0523372586709,
+		rank=0.0174457528903];
+	"[1]tx_request" -> "[1]COMMAND_REG1.rst_sync";
+	"[1]tx_request" -> "[1]abort_tx";
+	"[1]COMMAND_REG4.data_in"	 [complexity=4,
+		importance=0.0257457209877,
+		rank=0.00643643024694];
+	"[1]COMMAND_REG4.data_in" -> "COMMAND_REG4.data_out";
+	"[1]mode"	 [complexity=5,
+		importance=0.0578988650009,
+		rank=0.0115797730002];
+	"[1]reset_mode"	 [complexity=3,
+		importance=0.0527054786913,
+		rank=0.0175684928971];
+	"[1]mode" -> "[1]reset_mode";
+	"[1]data_in"	 [complexity=4,
+		importance=0.0275910816938,
+		rank=0.00689777042346];
+	"[1]data_in" -> "[1]COMMAND_REG1.data_in";
+	"[1]data_in" -> "[1]COMMAND_REG0.data_in";
+	"[1]data_in" -> "[1]COMMAND_REG4.data_in";
+	"[1]COMMAND_REG.data_in"	 [complexity=4,
+		importance=0.0256486446409,
+		rank=0.00641216116022];
+	"[1]data_in" -> "[1]COMMAND_REG.data_in";
+	"[1]COMMAND_REG4.we"	 [complexity=3,
+		importance=0.0259700738073,
+		rank=0.00865669126909];
+	"[1]COMMAND_REG4.we" -> "COMMAND_REG4.data_out";
+	"COMMAND_REG0.data_out" -> command;
+	"[1]reset_mode" -> "[1]COMMAND_REG.rst_sync";
+	"[1]reset_mode" -> "[1]COMMAND_REG4.rst_sync";
+	"[1]reset_mode" -> "[1]COMMAND_REG0.rst_sync";
+	"[1]reset_mode" -> "[1]COMMAND_REG1.rst_sync";
+	"[1]we_command" -> "[1]COMMAND_REG1.we";
+	"[1]we_command" -> "[1]COMMAND_REG0.we";
+	"[1]we_command" -> "[1]COMMAND_REG.we";
+	"[1]we_command" -> "[1]COMMAND_REG4.we";
+	clear_data_overrun	 [complexity=0,
+		importance=0.00251526661254,
+		rank=0.0];
+	"[1]COMMAND_REG4.rst_sync" -> "COMMAND_REG4.data_out";
+	"[1]COMMAND_REG.rst" -> "COMMAND_REG.data_out";
+	"[1]COMMAND_REG0.data_out"	 [complexity=3,
+		importance=0.0711571071219,
+		rank=0.0237190357073];
+	"[1]COMMAND_REG0.data_out" -> "[1]command";
+	"[1]MODE_REG0.data_out"	 [complexity=5,
+		importance=0.0644009578232,
+		rank=0.0128801915646];
+	"[1]MODE_REG0.data_out" -> "[1]mode";
+	"[1]COMMAND_REG1.rst" -> "COMMAND_REG1.data_out";
+	"[1]sample_point"	 [complexity=3,
+		importance=0.0522276225285,
+		rank=0.0174092075095];
+	"[1]sample_point" -> "[1]COMMAND_REG4.rst_sync";
+	"[1]sample_point" -> "[1]COMMAND_REG0.rst_sync";
+	"[1]sample_point" -> "[1]COMMAND_REG1.rst_sync";
+	"[1]COMMAND_REG1.data_out"	 [complexity=3,
+		importance=0.0716695340858,
+		rank=0.0238898446953];
+	"[1]COMMAND_REG1.data_out" -> "[1]command";
+	"[1]COMMAND_REG0.rst_sync" -> "COMMAND_REG0.data_out";
+	"COMMAND_REG.data_out" -> command;
+	"[1]transmitting"	 [complexity=3,
+		importance=0.0542796957239,
+		rank=0.018093231908];
+	"[1]transmitting" -> "[1]COMMAND_REG1.rst_sync";
+	"[1]COMMAND_REG.data_out"	 [complexity=3,
+		importance=0.0710600307751,
+		rank=0.023686676925];
+	"[1]COMMAND_REG.data_out" -> "[1]command";
+	command -> clear_data_overrun;
+	"[1]addr"	 [complexity=7,
+		importance=0.0298326542697,
+		rank=0.00426180775282];
+	"[1]addr" -> "[1]we_command";
+	"[1]COMMAND_REG1.rst_sync" -> "COMMAND_REG1.data_out";
+	"[1]abort_tx" -> "[1]COMMAND_REG1.rst_sync";
+	"[1]COMMAND_REG.data_in" -> "COMMAND_REG.data_out";
+}

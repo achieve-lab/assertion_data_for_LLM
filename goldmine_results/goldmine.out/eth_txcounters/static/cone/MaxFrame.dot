@@ -1,0 +1,74 @@
+strict digraph "" {
+	"[1]NibCnt"	 [complexity=14,
+		importance=0.249158762321,
+		rank=0.0177970544515];
+	"[1]IncrementByteCnt"	 [complexity=5,
+		importance=0.154939718429,
+		rank=0.0309879436858];
+	"[1]NibCnt" -> "[1]IncrementByteCnt";
+	MaxFL	 [complexity=4,
+		importance=0.055440677621,
+		rank=0.0138601694053];
+	MaxFrame	 [complexity=0,
+		importance=0.0406971912519,
+		rank=0.0];
+	MaxFL -> MaxFrame;
+	"[1]ResetByteCnt"	 [complexity=5,
+		importance=0.246632064983,
+		rank=0.0493264129966];
+	ByteCnt	 [complexity=4,
+		importance=0.107958196064,
+		rank=0.0269895490159];
+	"[1]ResetByteCnt" -> ByteCnt;
+	HugEn	 [complexity=4,
+		importance=0.055440677621,
+		rank=0.0138601694053];
+	HugEn -> MaxFrame;
+	"[1]TxStartFrm"	 [complexity=10,
+		importance=0.261375551352,
+		rank=0.0261375551352];
+	"[1]TxStartFrm" -> "[1]ResetByteCnt";
+	"[1]StatePAD"	 [complexity=14,
+		importance=0.169683204798,
+		rank=0.0121202289141];
+	"[1]StatePAD" -> "[1]IncrementByteCnt";
+	"[1]ByteCntMax"	 [complexity=14,
+		importance=0.180893352924,
+		rank=0.0129209537803];
+	"[1]ByteCntMax" -> "[1]IncrementByteCnt";
+	"[1]ByteCnt"	 [complexity=16,
+		importance=0.248154357736,
+		rank=0.0155096473585];
+	"[1]ByteCnt" -> "[1]ByteCntMax";
+	"[1]ByteCnt" -> ByteCnt;
+	"[1]StateData"	 [complexity=14,
+		importance=0.169683204798,
+		rank=0.0121202289141];
+	"[1]StateData" -> "[1]IncrementByteCnt";
+	"[1]PacketFinished_q"	 [complexity=10,
+		importance=0.261375551352,
+		rank=0.0261375551352];
+	"[1]PacketFinished_q" -> "[1]ResetByteCnt";
+	"[1]StateIdle"	 [complexity=10,
+		importance=0.261375551352,
+		rank=0.0261375551352];
+	"[1]StateIdle" -> "[1]ResetByteCnt";
+	"[1]StateFCS"	 [complexity=14,
+		importance=0.169683204798,
+		rank=0.0121202289141];
+	"[1]StateFCS" -> "[1]IncrementByteCnt";
+	"[1]IncrementByteCnt" -> ByteCnt;
+	"[1]StartBackoff"	 [complexity=10,
+		importance=0.261375551352,
+		rank=0.0261375551352];
+	"[1]StartBackoff" -> "[1]ResetByteCnt";
+	"[1]Reset"	 [complexity=5,
+		importance=0.338618074561,
+		rank=0.0677236149121];
+	"[1]Reset" -> ByteCnt;
+	"[1]StateBackOff"	 [complexity=14,
+		importance=0.169683204798,
+		rank=0.0121202289141];
+	"[1]StateBackOff" -> "[1]IncrementByteCnt";
+	ByteCnt -> MaxFrame;
+}

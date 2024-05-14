@@ -1,0 +1,42 @@
+strict digraph "" {
+	"[1]reset_mode"	 [complexity=8,
+		importance=0.0142606563739,
+		rank=0.00178258204673];
+	node_bus_off	 [complexity=3,
+		importance=0.00634109638875,
+		rank=0.00211369879625];
+	"[1]reset_mode" -> node_bus_off;
+	"[1]rst"	 [complexity=4,
+		importance=0.0206017527626,
+		rank=0.00515043819065];
+	node_bus_off_q	 [complexity=3,
+		importance=0.00355841399068,
+		rank=0.00118613799689];
+	"[1]rst" -> node_bus_off_q;
+	"[1]rst" -> node_bus_off;
+	set_reset_mode	 [complexity=0,
+		importance=0.00188102659559,
+		rank=0.0];
+	"[1]we_tx_err_cnt"	 [complexity=11,
+		importance=0.0206017527626,
+		rank=0.00187288661478];
+	"[1]we_tx_err_cnt" -> node_bus_off;
+	"[1]rx_err_cnt"	 [complexity=8,
+		importance=0.026837618593,
+		rank=0.00335470232412];
+	"[1]rx_err_cnt" -> node_bus_off;
+	"[1]node_bus_off"	 [complexity=6,
+		importance=0.00801848378384,
+		rank=0.00133641396397];
+	"[1]node_bus_off" -> node_bus_off_q;
+	"[1]tx_err_cnt"	 [complexity=11,
+		importance=0.0278348556507,
+		rank=0.00253044142279];
+	"[1]tx_err_cnt" -> node_bus_off;
+	node_bus_off_q -> set_reset_mode;
+	node_bus_off -> set_reset_mode;
+	"[1]data_in"	 [complexity=11,
+		importance=0.0206017527626,
+		rank=0.00187288661478];
+	"[1]data_in" -> node_bus_off;
+}

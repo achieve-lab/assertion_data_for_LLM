@@ -1,0 +1,11 @@
+strict digraph "" {
+	a -> a_reg	 [weight=1.0];
+	c -> c_reg	 [weight=1.0];
+	b -> b_reg	 [weight=1.0];
+	a_reg -> prod	 [weight=1.0];
+	b_reg -> prod	 [weight=1.0];
+	sum -> result	 [weight=1.0];
+	result -> p	 [weight=1.0];
+	prod -> sum	 [weight=1.0];
+	c_reg -> sum	 [weight=1.0];
+}

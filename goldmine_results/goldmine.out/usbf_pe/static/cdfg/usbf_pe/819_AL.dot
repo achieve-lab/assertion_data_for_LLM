@@ -1,0 +1,26 @@
+strict digraph "" {
+	node [label="\N"];
+	"820:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fae5e1c9110>",
+		fillcolor=firebrick,
+		label="820:NS
+pid_seq_err <= !((this_dpid == 2'b00) & pid_DATA0 | (this_dpid == 2'b01) & pid_DATA1 | (this_dpid == 2'b10) & pid_DATA2 | (\
+this_dpid == 2'b11) & pid_MDATA);",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fae5e1c9110>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"Leaf_819:AL"	 [def_var="['pid_seq_err']",
+		label="Leaf_819:AL"];
+	"820:NS" -> "Leaf_819:AL"	 [cond="[]",
+		lineno=None];
+	"819:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fae5e225fd0>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="819:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['this_dpid', 'pid_MDATA', 'pid_DATA2', 'pid_DATA1', 'pid_DATA0']"];
+	"819:AL" -> "820:NS"	 [cond="[]",
+		lineno=None];
+}

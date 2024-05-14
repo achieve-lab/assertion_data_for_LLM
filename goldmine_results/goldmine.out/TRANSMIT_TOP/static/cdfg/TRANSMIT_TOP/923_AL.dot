@@ -1,0 +1,28 @@
+strict digraph "" {
+	node [label="\N"];
+	"Leaf_923:AL"	 [def_var="['PAUSEVAL_DEL2', 'PAUSEVAL_DEL', 'PAUSEVAL_DEL1']",
+		label="Leaf_923:AL"];
+	"923:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f2e132e9a50>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="923:AL",
+		sens="['TX_CLK']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['FC_TRANS_PAUSEVAL', 'PAUSEVAL_DEL', 'PAUSEVAL_DEL1']"];
+	"924:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f2e132e9fd0>",
+		fillcolor=turquoise,
+		label="924:BL
+PAUSEVAL_DEL <= FC_TRANS_PAUSEVAL;
+PAUSEVAL_DEL1 <= PAUSEVAL_DEL;
+PAUSEVAL_DEL2 <= PAUSEVAL_DEL1;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2e132e9710>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f2e132e93d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2e132e9510>]",
+		style=filled,
+		typ=Block];
+	"923:AL" -> "924:BL"	 [cond="[]",
+		lineno=None];
+	"924:BL" -> "Leaf_923:AL"	 [cond="[]",
+		lineno=None];
+}

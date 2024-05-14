@@ -1,0 +1,41 @@
+strict digraph "" {
+	col_rd_en	 [complexity=0,
+		importance=0.0122408532965,
+		rank=0.0];
+	enable	 [complexity=7,
+		importance=0.101989011817,
+		rank=0.014569858831];
+	state	 [complexity=6,
+		importance=0.0455767890475,
+		rank=0.00759613150792];
+	enable -> state;
+	PSEL	 [complexity=9,
+		importance=0.031657703813,
+		rank=0.00351752264589];
+	read_en	 [complexity=6,
+		importance=0.0236231298566,
+		rank=0.00393718830943];
+	PSEL -> read_en;
+	state -> col_rd_en;
+	PWRITE	 [complexity=9,
+		importance=0.031657703813,
+		rank=0.00351752264589];
+	PWRITE -> read_en;
+	PADDR	 [complexity=6,
+		importance=0.0202754272529,
+		rank=0.00337923787548];
+	PADDR -> col_rd_en;
+	read_en -> col_rd_en;
+	PRESETn	 [complexity=7,
+		importance=0.144764941099,
+		rank=0.0206807058713];
+	PRESETn -> state;
+	OUTPUT	 [complexity=6,
+		importance=0.0202754272529,
+		rank=0.00337923787548];
+	OUTPUT -> col_rd_en;
+	AES_DOUTR	 [complexity=6,
+		importance=0.0202754272529,
+		rank=0.00337923787548];
+	AES_DOUTR -> col_rd_en;
+}

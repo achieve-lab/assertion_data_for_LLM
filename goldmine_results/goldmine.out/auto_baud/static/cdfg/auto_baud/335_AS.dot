@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"335:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f7881749e10>",
+		def_var="['mid_bit_count']",
+		fillcolor=deepskyblue,
+		label="335:AS
+mid_bit_count = (clock_count == (CLOCK_FACTOR_PP >> 1) - 1) && enable_clock_count;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['clock_count', 'enable_clock_count']"];
+}

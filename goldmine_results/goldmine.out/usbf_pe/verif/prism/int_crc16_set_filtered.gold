@@ -1,0 +1,15 @@
+property a1;
+@(posedge clk) (crc16_err == 0) |-> (int_crc16_set == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge clk) (rx_data_done == 0) |-> (int_crc16_set == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a2;
+@(posedge clk) (rx_data_done == 1 & crc16_err == 1) |-> (int_crc16_set == 1);
+endproperty
+assert_a2: assert property(a2);
+

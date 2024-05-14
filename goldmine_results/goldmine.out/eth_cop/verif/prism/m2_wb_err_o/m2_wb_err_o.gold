@@ -1,0 +1,55 @@
+Report file generated at: Apr-10-2024 04:07:03 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a1: (m2_wb_stb_i == 0) |-> (m2_wb_err_o == 0)
+IRank: : 0.01784
+Importance: : 0.07135
+Complexity: : 4
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (m2_wb_cyc_i == 1 & m2_wb_stb_i == 1) |-> (m2_wb_err_o == 1)
+IRank: : 0.01784
+Importance: : 0.1427
+Complexity: : 8
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (m2_wb_cyc_i == 0) |-> (m2_wb_err_o == 0)
+IRank: : 0.01784
+Importance: : 0.07135
+Complexity: : 4
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a1        | 0.01784 |  0.07135   |     4      |  Unknown  | Unknown |   Unknown   
+      a0        | 0.01784 |   0.1427   |     8      |  Unknown  | Unknown |   Unknown   
+      a2        | 0.01784 |  0.07135   |     4      |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 3
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 3
+Hit rate: 0.0
+Miss rate: 1.0

@@ -1,0 +1,13 @@
+strict digraph "" {
+	"[1]Reset"	 [complexity=1,
+		importance=0.0446006582713,
+		rank=0.0446006582713];
+	ReceiveEnd	 [complexity=0,
+		importance=0.0153202198097,
+		rank=0.0];
+	"[1]Reset" -> ReceiveEnd;
+	"[1]LoadRxStatus"	 [complexity=2,
+		importance=0.0335183845545,
+		rank=0.0167591922773];
+	"[1]LoadRxStatus" -> ReceiveEnd;
+}

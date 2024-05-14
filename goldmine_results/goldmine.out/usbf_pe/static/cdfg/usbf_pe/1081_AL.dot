@@ -1,0 +1,25 @@
+strict digraph "" {
+	node [label="\N"];
+	"Leaf_1081:AL"	 [def_var="['int_seqerr_set']",
+		label="Leaf_1081:AL"];
+	"1082:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fae5e1f7850>",
+		fillcolor=firebrick,
+		label="1082:NS
+int_seqerr_set <= int_seqerr_set_d;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fae5e1f7850>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"1082:NS" -> "Leaf_1081:AL"	 [cond="[]",
+		lineno=None];
+	"1081:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fae5e120ad0>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="1081:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['int_seqerr_set_d']"];
+	"1081:AL" -> "1082:NS"	 [cond="[]",
+		lineno=None];
+}

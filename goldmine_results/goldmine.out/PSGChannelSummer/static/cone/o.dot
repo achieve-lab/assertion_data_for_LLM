@@ -1,0 +1,26 @@
+strict digraph "" {
+	"[1]outctrl"	 [complexity=14,
+		importance=1.275,
+		rank=0.0910714285714];
+	o	 [complexity=5,
+		importance=0.5875,
+		rank=0.1175];
+	"[1]outctrl" -> o;
+	"[1]cnt"	 [complexity=16,
+		importance=1.3875,
+		rank=0.08671875];
+	"[1]cnt" -> o;
+	"[1]sel"	 [complexity=14,
+		importance=1.2875,
+		rank=0.0919642857143];
+	"[1]cnt" -> "[1]sel";
+	"[1]sel" -> o;
+	"[1]tmc_i"	 [complexity=14,
+		importance=1.275,
+		rank=0.0910714285714];
+	"[1]tmc_i" -> o;
+	"[1]o"	 [complexity=10,
+		importance=1.175,
+		rank=0.1175];
+	"[1]o" -> o;
+}

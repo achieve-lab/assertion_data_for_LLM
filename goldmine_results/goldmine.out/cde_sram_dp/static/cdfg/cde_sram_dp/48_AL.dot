@@ -1,0 +1,34 @@
+strict digraph "" {
+	node [label="\N"];
+	"48:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fbfca5ec210>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="48:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['cs', 'wdata', 'wr']"];
+	"49:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fbfca5ec390>",
+		fillcolor=springgreen,
+		label="49:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"48:AL" -> "49:IF"	 [cond="[]",
+		lineno=None];
+	"49:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fbfca5ec450>",
+		fillcolor=firebrick,
+		label="49:NS
+mem[waddr[ADDR-1:0]] <= wdata[WIDTH-1:0];",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fbfca5ec450>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"49:IF" -> "49:NS"	 [cond="['wr', 'cs']",
+		label="(wr && cs)",
+		lineno=49];
+	"Leaf_48:AL"	 [def_var="['mem']",
+		label="Leaf_48:AL"];
+	"49:NS" -> "Leaf_48:AL"	 [cond="[]",
+		lineno=None];
+}

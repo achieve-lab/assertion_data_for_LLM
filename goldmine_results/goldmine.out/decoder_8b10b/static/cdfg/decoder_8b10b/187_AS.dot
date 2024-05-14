@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"187:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f14ceed8a90>",
+		def_var="['P22']",
+		fillcolor=deepskyblue,
+		label="187:AS
+P22 = a & b & !c & !d | c & d & !a & !b | !AEQB & !CEQD;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['a', 'b', 'c', 'd', 'c', 'd', 'a', 'b', 'AEQB', 'CEQD']"];
+}

@@ -1,0 +1,77 @@
+strict digraph "" {
+	"[1]StartData"	 [complexity=2,
+		importance=0.103339173207,
+		rank=0.0516695866037];
+	StatePreamble	 [complexity=0,
+		importance=0.0341289872872,
+		rank=0.0];
+	"[1]StartData" -> StatePreamble;
+	"[1]StatePAD"	 [complexity=10,
+		importance=0.16462060816,
+		rank=0.016462060816];
+	"[1]StartJam"	 [complexity=2,
+		importance=0.122849064246,
+		rank=0.0614245321229];
+	"[1]StatePAD" -> "[1]StartJam";
+	"[1]TxStartFrm"	 [complexity=5,
+		importance=0.0659612830929,
+		rank=0.0131922566186];
+	"[1]StartPreamble"	 [complexity=1,
+		importance=0.0550833739019,
+		rank=0.0550833739019];
+	"[1]TxStartFrm" -> "[1]StartPreamble";
+	"[1]TxEndFrm"	 [complexity=8,
+		importance=0.114217082398,
+		rank=0.0142771352998];
+	"[1]TxEndFrm" -> "[1]StartData";
+	"[1]StateData"	 [complexity=13,
+		importance=0.224918687493,
+		rank=0.0173014374995];
+	"[1]StateData" -> "[1]StartData";
+	"[1]StateData" -> "[1]StartJam";
+	"[1]MaxFrame"	 [complexity=7,
+		importance=0.114217082398,
+		rank=0.0163167260569];
+	"[1]MaxFrame" -> "[1]StartData";
+	"[1]StatePreamble"	 [complexity=8,
+		importance=0.137468160495,
+		rank=0.0171835200618];
+	"[1]StatePreamble" -> "[1]StartData";
+	"[1]StatePreamble" -> "[1]StartJam";
+	"[1]Collision"	 [complexity=13,
+		importance=0.217556255606,
+		rank=0.0167350965851];
+	"[1]Collision" -> "[1]StartData";
+	"[1]Collision" -> "[1]StartJam";
+	"[1]StateIdle"	 [complexity=5,
+		importance=0.08786144303,
+		rank=0.017572288606];
+	"[1]StateIdle" -> "[1]StartPreamble";
+	"[1]StateFCS"	 [complexity=10,
+		importance=0.155867286189,
+		rank=0.0155867286189];
+	"[1]StateFCS" -> "[1]StartJam";
+	"[1]NibCntEq15"	 [complexity=8,
+		importance=0.114217082398,
+		rank=0.0142771352998];
+	"[1]NibCntEq15" -> "[1]StartData";
+	"[1]NibCntEq15" -> "[1]StartJam";
+	"[1]TxUnderRun"	 [complexity=7,
+		importance=0.114217082398,
+		rank=0.0163167260569];
+	"[1]TxUnderRun" -> "[1]StartData";
+	"[1]UnderRun"	 [complexity=10,
+		importance=0.133726973437,
+		rank=0.0133726973437];
+	"[1]UnderRun" -> "[1]StartJam";
+	"[1]CarrierSense"	 [complexity=5,
+		importance=0.0659612830929,
+		rank=0.0131922566186];
+	"[1]CarrierSense" -> "[1]StartPreamble";
+	"[1]Reset"	 [complexity=1,
+		importance=0.113264871053,
+		rank=0.113264871053];
+	"[1]Reset" -> StatePreamble;
+	"[1]StartPreamble" -> StatePreamble;
+	"[1]StartJam" -> StatePreamble;
+}

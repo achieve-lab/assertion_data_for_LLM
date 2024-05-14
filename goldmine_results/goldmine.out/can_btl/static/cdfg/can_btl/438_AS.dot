@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"438:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f2998c0c950>",
+		def_var="['hard_sync']",
+		fillcolor=deepskyblue,
+		label="438:AS
+hard_sync = (rx_idle | rx_inter) & ~rx & sampled_bit & ~hard_sync_blocked;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['rx_idle', 'rx_inter', 'rx', 'sampled_bit', 'hard_sync_blocked']"];
+}

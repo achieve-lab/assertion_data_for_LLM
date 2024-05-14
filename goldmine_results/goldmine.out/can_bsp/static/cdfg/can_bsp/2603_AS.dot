@@ -1,0 +1,14 @@
+strict digraph "" {
+	node [label="\N"];
+	"2603:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f44f6b75d90>",
+		def_var="['go_rx_crc']",
+		fillcolor=deepskyblue,
+		label="2603:AS
+go_rx_crc = ~bit_de_stuff & sample_point & (rx_dlc & (bit_cnt[1:0] == 2'd3) & (~sampled_bit & ~(|data_len[2:0]) | remote_\
+rq) | rx_data & (bit_cnt[5:0] == (limited_data_len << 3) - 1'b1));",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['bit_de_stuff', 'sample_point', 'rx_dlc', 'bit_cnt', 'sampled_bit', 'data_len', 'remote_rq', 'rx_data', 'bit_cnt', 'limited_data_\
+len']"];
+}

@@ -1,0 +1,55 @@
+Report file generated at: Feb-08-2024 10:30:18 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a0: (CTRL_ep == 1) |-> (dma_en == 0)
+IRank: : 0.00321
+Importance: : 0.00963
+Complexity: : 3
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (csr[15] == 1 & CTRL_ep == 0) |-> (dma_en == 1)
+IRank: : 0.003
+Importance: : 0.02402
+Complexity: : 8
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (csr[15] == 0) |-> (dma_en == 0)
+IRank: : 0.00288
+Importance: : 0.01439
+Complexity: : 5
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a0        | 0.00321 |  0.00963   |     3      |  Unknown  | Unknown |   Unknown   
+      a2        |  0.003  |  0.02402   |     8      |  Unknown  | Unknown |   Unknown   
+      a1        | 0.00288 |  0.01439   |     5      |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 3
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 3
+Hit rate: 0.0
+Miss rate: 1.0

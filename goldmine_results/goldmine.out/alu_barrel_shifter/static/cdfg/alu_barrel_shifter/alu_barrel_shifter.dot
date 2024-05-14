@@ -1,0 +1,26 @@
+strict digraph "compose( ,  )" {
+	node [label="\N"];
+	"25:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7ff18396ab90>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="25:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['x']"];
+	"26:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7ff185dbef10>",
+		fillcolor=turquoise,
+		label="26:BL
+z = x;
+c = 0;",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7ff18396a0d0>, <pyverilog.vparser.ast.BlockingSubstitution object at 0x7ff183d0cbd0>]",
+		style=filled,
+		typ=Block];
+	"25:AL" -> "26:BL"	 [cond="[]",
+		lineno=None];
+	"Leaf_25:AL"	 [def_var="['c', 'z']",
+		label="Leaf_25:AL"];
+	"26:BL" -> "Leaf_25:AL"	 [cond="[]",
+		lineno=None];
+}

@@ -1,0 +1,17 @@
+ahb_enable	write_en
+NON_SEQ	ahb_enable
+sample_bus	htrans_pp
+sample_bus	hwrite_pp
+sample_bus	haddr_pp
+sample_bus	hselx_pp
+write_en	buffer_write_en
+hwrite_pp	write_en
+haddr_pp	crc_dr_sel
+CRC_DR	crc_dr_sel
+crc_dr_sel	buffer_write_en
+hselx_pp	write_en
+htrans_pp	ahb_enable
+HRESETn	htrans_pp
+HRESETn	hwrite_pp
+HRESETn	haddr_pp
+HRESETn	hselx_pp

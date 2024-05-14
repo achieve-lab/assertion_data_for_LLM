@@ -1,0 +1,23 @@
+strict digraph "" {
+	PIXEL_DATA_WIDTH -> x0_y1	 [weight=1.0];
+	PIXEL_DATA_WIDTH -> x0_y0	 [weight=1.0];
+	PIXEL_DATA_WIDTH -> xm1_ym1	 [weight=1.0];
+	PIXEL_DATA_WIDTH -> x1_ym1	 [weight=1.0];
+	PIXEL_DATA_WIDTH -> xm1_y0	 [weight=1.0];
+	PIXEL_DATA_WIDTH -> x1_y0	 [weight=1.0];
+	PIXEL_DATA_WIDTH -> x1_y1	 [weight=1.0];
+	PIXEL_DATA_WIDTH -> x0_ym1	 [weight=1.0];
+	PIXEL_DATA_WIDTH -> xm1_y1	 [weight=1.0];
+	word0 -> x0_y1	 [weight=1.0];
+	word0 -> x2_y1	 [weight=1.0];
+	word0 -> x1_y1	 [weight=1.0];
+	word0 -> xm1_y1	 [weight=1.0];
+	word2 -> xm1_ym1	 [weight=1.0];
+	word2 -> x2_ym1	 [weight=1.0];
+	word2 -> x1_ym1	 [weight=1.0];
+	word2 -> x0_ym1	 [weight=1.0];
+	word1 -> x0_y0	 [weight=1.0];
+	word1 -> x2_y0	 [weight=1.0];
+	word1 -> xm1_y0	 [weight=1.0];
+	word1 -> x1_y0	 [weight=1.0];
+}

@@ -1,0 +1,106 @@
+strict digraph "" {
+	rx_err	 [complexity=4,
+		importance=0.0290214951971,
+		rank=0.00725537379927];
+	data_done	 [complexity=2,
+		importance=0.0201393909406,
+		rank=0.0100696954703];
+	rx_err -> data_done;
+	"[1]rx_err"	 [complexity=27,
+		importance=1.26910329747,
+		rank=0.0470038258321];
+	"[1]next_state"	 [complexity=5,
+		importance=0.0900157995151,
+		rank=0.018003159903];
+	"[1]rx_err" -> "[1]next_state";
+	"[1]rst"	 [complexity=4,
+		importance=0.108771144228,
+		rank=0.027192786057];
+	state	 [complexity=3,
+		importance=0.0499445199858,
+		rank=0.0166481733286];
+	"[1]rst" -> state;
+	"[1]pid_IN"	 [complexity=20,
+		importance=0.401755625924,
+		rank=0.0200877812962];
+	"[1]pid_TOKEN"	 [complexity=14,
+		importance=0.392381291233,
+		rank=0.0280272350881];
+	"[1]pid_IN" -> "[1]pid_TOKEN";
+	"[1]pid_DATA1"	 [complexity=19,
+		importance=0.307052628625,
+		rank=0.0161606646645];
+	"[1]pid_DATA"	 [complexity=14,
+		importance=0.297678293935,
+		rank=0.021262735281];
+	"[1]pid_DATA1" -> "[1]pid_DATA";
+	"[1]pid_DATA0"	 [complexity=19,
+		importance=0.307052628625,
+		rank=0.0161606646645];
+	"[1]pid_DATA0" -> "[1]pid_DATA";
+	"[1]pid_DATA2"	 [complexity=19,
+		importance=0.307052628625,
+		rank=0.0161606646645];
+	"[1]pid_DATA2" -> "[1]pid_DATA";
+	"[1]pid"	 [complexity=9,
+		importance=0.387158257804,
+		rank=0.0430175842005];
+	"[1]pid" -> "[1]pid_IN";
+	"[1]pid" -> "[1]pid_DATA1";
+	"[1]pid" -> "[1]pid_DATA0";
+	"[1]pid" -> "[1]pid_DATA2";
+	"[1]pid_OUT"	 [complexity=20,
+		importance=0.401755625924,
+		rank=0.0200877812962];
+	"[1]pid" -> "[1]pid_OUT";
+	"[1]pid_MDATA"	 [complexity=19,
+		importance=0.307052628625,
+		rank=0.0161606646645];
+	"[1]pid" -> "[1]pid_MDATA";
+	"[1]pid_PING"	 [complexity=20,
+		importance=0.401755625924,
+		rank=0.0200877812962];
+	"[1]pid" -> "[1]pid_PING";
+	"[1]pid_SOF"	 [complexity=20,
+		importance=0.401755625924,
+		rank=0.0200877812962];
+	"[1]pid" -> "[1]pid_SOF";
+	"[1]pid_ACK"	 [complexity=7,
+		importance=0.369437532751,
+		rank=0.052776790393];
+	"[1]pid" -> "[1]pid_ACK";
+	"[1]pid_SETUP"	 [complexity=20,
+		importance=0.401755625924,
+		rank=0.0200877812962];
+	"[1]pid" -> "[1]pid_SETUP";
+	"[1]pid_DATA" -> "[1]next_state";
+	"[1]pid_OUT" -> "[1]pid_TOKEN";
+	"[1]pid_TOKEN" -> "[1]next_state";
+	state -> data_done;
+	rx_data_done	 [complexity=0,
+		importance=0.0101328953571,
+		rank=0.0];
+	"[1]next_state" -> state;
+	rx_active	 [complexity=4,
+		importance=0.0290214951971,
+		rank=0.00725537379927];
+	rx_active -> data_done;
+	"[1]pid_MDATA" -> "[1]pid_DATA";
+	"[1]state"	 [complexity=8,
+		importance=0.839947324681,
+		rank=0.104993415585];
+	"[1]state" -> "[1]next_state";
+	"[1]rx_active"	 [complexity=31,
+		importance=1.35911909698,
+		rank=0.0438425515156];
+	"[1]rx_active" -> "[1]next_state";
+	"[1]rx_valid"	 [complexity=23,
+		importance=0.819024299892,
+		rank=0.0356097521692];
+	"[1]rx_valid" -> "[1]next_state";
+	"[1]pid_PING" -> "[1]pid_TOKEN";
+	data_done -> rx_data_done;
+	"[1]pid_SOF" -> "[1]pid_TOKEN";
+	"[1]pid_ACK" -> "[1]next_state";
+	"[1]pid_SETUP" -> "[1]pid_TOKEN";
+}

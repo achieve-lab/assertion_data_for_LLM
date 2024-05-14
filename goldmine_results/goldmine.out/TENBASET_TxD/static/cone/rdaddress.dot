@@ -1,0 +1,51 @@
+strict digraph "" {
+	"[3]ShiftCount"	 [complexity=13,
+		importance=0.379914460238,
+		rank=0.0292241892491];
+	"[1]ShiftCount"	 [complexity=7,
+		importance=0.211064531363,
+		rank=0.0301520759089];
+	"[3]ShiftCount" -> "[1]ShiftCount";
+	"[3]rdaddress"	 [complexity=12,
+		importance=0.337699857751,
+		rank=0.0281416548126];
+	"[3]ShiftCount" -> "[3]rdaddress";
+	"[2]ShiftCount"	 [complexity=10,
+		importance=0.2954894958,
+		rank=0.02954894958];
+	"[3]ShiftCount" -> "[2]ShiftCount";
+	ShiftCount	 [complexity=4,
+		importance=0.126639566925,
+		rank=0.0316598917312];
+	rdaddress	 [complexity=3,
+		importance=0.0844249644377,
+		rank=0.0281416548126];
+	ShiftCount -> rdaddress;
+	"[1]rdaddress"	 [complexity=6,
+		importance=0.168849928875,
+		rank=0.0281416548126];
+	"[1]ShiftCount" -> "[1]rdaddress";
+	"[2]rdaddress"	 [complexity=9,
+		importance=0.253274893313,
+		rank=0.0281416548126];
+	"[2]rdaddress" -> "[1]rdaddress";
+	"[3]rdaddress" -> "[2]rdaddress";
+	"[2]ShiftCount" -> ShiftCount;
+	"[2]ShiftCount" -> "[2]rdaddress";
+	"[2]SendingPacket"	 [complexity=9,
+		importance=0.202621595056,
+		rank=0.0225135105617];
+	"[2]SendingPacket" -> ShiftCount;
+	"[2]SendingPacket" -> "[1]rdaddress";
+	"[1]rdaddress" -> rdaddress;
+	"[1]SendingPacket"	 [complexity=6,
+		importance=0.118196630618,
+		rank=0.0196994384363];
+	"[1]SendingPacket" -> rdaddress;
+	"[3]SendingPacket"	 [complexity=12,
+		importance=0.287046559493,
+		rank=0.0239205466244];
+	"[3]SendingPacket" -> "[1]ShiftCount";
+	"[3]SendingPacket" -> "[2]rdaddress";
+	"[3]SendingPacket" -> "[2]ShiftCount";
+}

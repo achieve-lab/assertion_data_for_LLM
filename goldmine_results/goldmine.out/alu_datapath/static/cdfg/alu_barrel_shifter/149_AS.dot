@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"149:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f030bfc24d0>",
+		def_var="['Xmsb']",
+		fillcolor=deepskyblue,
+		label="149:AS
+Xmsb = (y[2:0] == 0)? x[SHIFTER_WIDTH - 1] : 1'b0;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['y', 'x']"];
+}

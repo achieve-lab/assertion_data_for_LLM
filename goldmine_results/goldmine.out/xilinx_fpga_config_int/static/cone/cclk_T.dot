@@ -1,0 +1,25 @@
+strict digraph "" {
+	enable_internal_cclk	 [complexity=2,
+		importance=0.0270049922841,
+		rank=0.013502496142];
+	cclk_T	 [complexity=0,
+		importance=0.0144280371824,
+		rank=0.0];
+	enable_internal_cclk -> cclk_T;
+	"[1]prog_b"	 [complexity=6,
+		importance=0.087861349861,
+		rank=0.0146435583102];
+	"[1]internal_reset"	 [complexity=3,
+		importance=0.0765776296111,
+		rank=0.025525876537];
+	"[1]prog_b" -> "[1]internal_reset";
+	"[1]internal_reset" -> enable_internal_cclk;
+	"[1]M_latched"	 [complexity=3,
+		importance=0.0426179097604,
+		rank=0.0142059699201];
+	"[1]M_latched" -> enable_internal_cclk;
+	"[1]por"	 [complexity=6,
+		importance=0.087861349861,
+		rank=0.0146435583102];
+	"[1]por" -> "[1]internal_reset";
+}

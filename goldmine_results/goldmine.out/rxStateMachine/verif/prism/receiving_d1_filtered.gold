@@ -1,0 +1,10 @@
+property a1;
+@(posedge clk) (receiving == 1) |=> (receiving_d1 == 1);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge clk) (receiving == 0) |=> (receiving_d1 == 0);
+endproperty
+assert_a0: assert property(a0);
+

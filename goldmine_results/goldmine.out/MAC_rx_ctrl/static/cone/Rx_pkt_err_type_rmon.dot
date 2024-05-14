@@ -1,0 +1,29 @@
+strict digraph "" {
+	"[1]State_ErrEnd"	 [complexity=2,
+		importance=0.0524109074155,
+		rank=0.0262054537077];
+	Rx_pkt_err_type_rmon	 [complexity=0,
+		importance=0.0199993461596,
+		rank=0.0];
+	"[1]State_ErrEnd" -> Rx_pkt_err_type_rmon;
+	"[1]State_FFFullErrEnd"	 [complexity=2,
+		importance=0.0724102535751,
+		rank=0.0362051267875];
+	"[1]State_FFFullErrEnd" -> Rx_pkt_err_type_rmon;
+	"[1]Current_state"	 [complexity=8,
+		importance=0.229129594776,
+		rank=0.028641199347];
+	"[1]Current_state" -> Rx_pkt_err_type_rmon;
+	"[1]State_CRCErrEnd"	 [complexity=2,
+		importance=0.0924095997347,
+		rank=0.0462047998673];
+	"[1]State_CRCErrEnd" -> Rx_pkt_err_type_rmon;
+	"[1]Reset"	 [complexity=1,
+		importance=0.112408945894,
+		rank=0.112408945894];
+	"[1]Reset" -> Rx_pkt_err_type_rmon;
+	"[1]State_OkEnd"	 [complexity=2,
+		importance=0.0324115612559,
+		rank=0.0162057806279];
+	"[1]State_OkEnd" -> Rx_pkt_err_type_rmon;
+}

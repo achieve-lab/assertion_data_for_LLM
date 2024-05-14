@@ -1,0 +1,17 @@
+strict digraph "" {
+	Fifo_data	 [complexity=0,
+		importance=0.0127074574808,
+		rank=0.0];
+	RxD_dl1	 [complexity=2,
+		importance=0.0262884995798,
+		rank=0.0131442497899];
+	RxD_dl1 -> Fifo_data;
+	"[1]Reset"	 [complexity=3,
+		importance=0.0649892142559,
+		rank=0.0216630714186];
+	"[1]Reset" -> RxD_dl1;
+	"[1]RxD"	 [complexity=4,
+		importance=0.0410176781344,
+		rank=0.0102544195336];
+	"[1]RxD" -> RxD_dl1;
+}

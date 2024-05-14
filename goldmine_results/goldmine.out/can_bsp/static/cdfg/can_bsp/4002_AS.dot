@@ -1,0 +1,13 @@
+strict digraph "" {
+	node [label="\N"];
+	"4002:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f44f6adb410>",
+		def_var="['error_capture_code_segment']",
+		fillcolor=deepskyblue,
+		label="4002:AS
+error_capture_code_segment[2] = rx_id1 & (bit_cnt > 6'd7) | rx_rtr1 | rx_ide | rx_id2 | rx_rtr2 | rx_r1 | error_frame & \
+node_error_passive | overload_frame;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['rx_id1', 'bit_cnt', 'rx_rtr1', 'rx_ide', 'rx_id2', 'rx_rtr2', 'rx_r1', 'error_frame', 'node_error_passive', 'overload_frame']"];
+}

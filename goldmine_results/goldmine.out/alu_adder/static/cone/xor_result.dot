@@ -1,0 +1,17 @@
+strict digraph "" {
+	y	 [complexity=5,
+		importance=0.173639582281,
+		rank=0.0347279164562];
+	XxorY	 [complexity=2,
+		importance=0.122680146072,
+		rank=0.0613400730362];
+	y -> XxorY;
+	xor_result	 [complexity=0,
+		importance=0.0547342026735,
+		rank=0.0];
+	XxorY -> xor_result;
+	x	 [complexity=5,
+		importance=0.173639582281,
+		rank=0.0347279164562];
+	x -> XxorY;
+}

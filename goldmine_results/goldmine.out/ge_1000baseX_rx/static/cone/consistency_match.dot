@@ -1,0 +1,104 @@
+strict digraph "" {
+	"[1]rx_config"	 [complexity=16,
+		importance=0.0518260420661,
+		rank=0.00323912762913];
+	"[1]ability"	 [complexity=12,
+		importance=0.0436757134046,
+		rank=0.00363964278372];
+	"[1]rx_config" -> "[1]ability";
+	rx_config	 [complexity=8,
+		importance=0.0260347950469,
+		rank=0.00325434938087];
+	ability	 [complexity=4,
+		importance=0.0178844663854,
+		rank=0.00447111659636];
+	rx_config -> ability;
+	ability_match	 [complexity=4,
+		importance=0.0194577997763,
+		rank=0.00486444994407];
+	consistency_match	 [complexity=0,
+		importance=0.0124507324889,
+		rank=0.0];
+	ability_match -> consistency_match;
+	"[1]pcs_rx_present"	 [complexity=10,
+		importance=0.0777241113301,
+		rank=0.00777241113301];
+	"[1]rx_config_hi_read"	 [complexity=9,
+		importance=0.0308558992932,
+		rank=0.0034284332548];
+	"[1]pcs_rx_present" -> "[1]rx_config_hi_read";
+	"[1]rx_config_lo_read"	 [complexity=9,
+		importance=0.0308558992932,
+		rank=0.0034284332548];
+	"[1]pcs_rx_present" -> "[1]rx_config_lo_read";
+	"[1]rx_config_d1"	 [complexity=16,
+		importance=0.0496069166596,
+		rank=0.00310043229122];
+	"[1]ability_d1"	 [complexity=12,
+		importance=0.043651648714,
+		rank=0.00363763739283];
+	"[1]rx_config_d1" -> "[1]ability_d1";
+	"[1]rx_config_d2"	 [complexity=16,
+		importance=0.0495741063519,
+		rank=0.003098381647];
+	"[1]ability_d2"	 [complexity=12,
+		importance=0.0436450836634,
+		rank=0.00363709030528];
+	"[1]rx_config_d2" -> "[1]ability_d2";
+	"[1]ability_matched"	 [complexity=5,
+		importance=0.0304462170062,
+		rank=0.00608924340124];
+	"[1]ability_matched" -> ability_match;
+	ability_matched_reg	 [complexity=4,
+		importance=0.0201567455779,
+		rank=0.00503918639447];
+	"[1]ability_matched" -> ability_matched_reg;
+	"[1]reset"	 [complexity=5,
+		importance=0.0447284077312,
+		rank=0.00894568154624];
+	"[1]reset" -> rx_config;
+	"[1]reset" -> ability_match;
+	"[1]reset" -> ability_matched_reg;
+	ability_matched_reg -> consistency_match;
+	"[1]rx_config_cnt"	 [complexity=11,
+		importance=0.0523077794692,
+		rank=0.00475525267902];
+	"[1]rx_config_cnt_done"	 [complexity=9,
+		importance=0.0383505408168,
+		rank=0.00426117120187];
+	"[1]rx_config_cnt" -> "[1]rx_config_cnt_done";
+	"[1]ebi_K_d3"	 [complexity=11,
+		importance=0.0354586748605,
+		rank=0.00322351589641];
+	"[1]ebi_K_d3" -> "[1]rx_config_hi_read";
+	"[1]ebi_K_d3" -> "[1]rx_config_lo_read";
+	"[1]ability" -> ability_matched_reg;
+	"[1]ability_matched2"	 [complexity=9,
+		importance=0.038241979508,
+		rank=0.00424910883422];
+	"[1]ability" -> "[1]ability_matched2";
+	"[1]ability_matched1"	 [complexity=9,
+		importance=0.0382441600745,
+		rank=0.00424935111939];
+	"[1]ability" -> "[1]ability_matched1";
+	"[1]ability_d1" -> "[1]ability_matched1";
+	ability -> consistency_match;
+	"[1]rx_config_cnt_done" -> "[1]ability_matched";
+	"[1]ability_d2" -> "[1]ability_matched2";
+	"[1]rx_config_tmp"	 [complexity=10,
+		importance=0.0340690187736,
+		rank=0.00340690187736];
+	"[1]rx_config_tmp" -> rx_config;
+	"[1]rx_config_lo"	 [complexity=13,
+		importance=0.0397728317314,
+		rank=0.00305944859472];
+	"[1]rx_config_lo" -> "[1]rx_config_tmp";
+	"[1]ability_matched2" -> "[1]ability_matched";
+	"[1]ability_matched1" -> "[1]ability_matched";
+	"[1]ebi_rxd_d3"	 [complexity=13,
+		importance=0.038673114177,
+		rank=0.00297485493669];
+	"[1]ebi_rxd_d3" -> "[1]rx_config_tmp";
+	"[1]rx_config_hi_read" -> rx_config;
+	"[1]rx_config_lo_read" -> rx_config;
+}

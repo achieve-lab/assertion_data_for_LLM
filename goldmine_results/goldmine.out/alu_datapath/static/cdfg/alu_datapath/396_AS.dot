@@ -1,0 +1,16 @@
+strict digraph "" {
+	node [label="\N"];
+	"396:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f030bf4c410>",
+		def_var="['carry']",
+		fillcolor=deepskyblue,
+		label="396:AS
+carry = (add_AB && !and_AB && !or_AB && !xor_AB && !cpl_B && !clr)? carry_out[ALU_WIDTH] : 
+(and_AB || or_AB || xor_AB || \
+cpl_B || clr)? 'b0 : 
+(sl_AB || sr_AB)? shifter_carry : carry;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['add_AB', 'and_AB', 'or_AB', 'xor_AB', 'cpl_B', 'clr', 'carry_out', 'and_AB', 'or_AB', 'xor_AB', 'cpl_B', 'clr', 'sl_AB', 'sr_AB', '\
+shifter_carry', 'carry']"];
+}

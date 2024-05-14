@@ -1,0 +1,26 @@
+strict digraph "" {
+	Zrev -> Zout	 [weight=1.0];
+	direction -> c	 [weight=1.0];
+	direction -> Xreg	 [weight=1.0];
+	direction -> Zout	 [weight=1.0];
+	direction -> Xrev	 [weight=1.0];
+	direction -> z	 [weight=1.0];
+	reverse -> Zrev	 [weight=1.0];
+	reverse -> Xrev	 [weight=1.0];
+	Zrev_copy -> z	 [weight=1.0];
+	Yreg -> Yor	 [weight=8.0];
+	value_7 -> Yreg	 [weight=1.0];
+	Zreg -> Zrev	 [weight=1.0];
+	Zreg -> Zout	 [weight=1.0];
+	Zout -> c	 [weight=1.0];
+	Zout -> z	 [weight=1.0];
+	Xrev -> Xreg	 [weight=1.0];
+	update_extra_bits;
+	y -> Yreg	 [weight=1.0];
+	y -> z	 [weight=1.0];
+	y -> Xmsb	 [weight=1.0];
+	x -> Xreg	 [weight=1.0];
+	x -> Xrev	 [weight=1.0];
+	x -> Xmsb	 [weight=1.0];
+	Xmsb -> z	 [weight=1.0];
+}

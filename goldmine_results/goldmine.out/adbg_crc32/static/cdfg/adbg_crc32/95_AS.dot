@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"95:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1e241dfbd0>",
+		def_var="['new_crc']",
+		fillcolor=deepskyblue,
+		label="95:AS
+new_crc[9] = crc[10] ^ data ^ crc[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc', 'data', 'crc']"];
+}

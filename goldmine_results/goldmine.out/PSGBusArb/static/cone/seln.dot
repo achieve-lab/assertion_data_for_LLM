@@ -1,0 +1,53 @@
+strict digraph "" {
+	seln	 [complexity=2,
+		importance=0.0805555555556,
+		rank=0.0402777777778];
+	"[1]rst"	 [complexity=3,
+		importance=0.830555555556,
+		rank=0.276851851852];
+	"[1]rst" -> seln;
+	"[1]ce"	 [complexity=4,
+		importance=0.75,
+		rank=0.1875];
+	"[1]ce" -> seln;
+	"[1]seln"	 [complexity=4,
+		importance=0.161111111111,
+		rank=0.0402777777778];
+	"[1]seln" -> seln;
+	"[1]ack"	 [complexity=4,
+		importance=0.75,
+		rank=0.1875];
+	"[1]ack" -> seln;
+	"[1]req2"	 [complexity=3,
+		importance=0.588888888889,
+		rank=0.196296296296];
+	"[1]req2" -> seln;
+	"[1]req3"	 [complexity=3,
+		importance=0.508333333333,
+		rank=0.169444444444];
+	"[1]req3" -> seln;
+	"[1]req0"	 [complexity=3,
+		importance=0.75,
+		rank=0.25];
+	"[1]req0" -> seln;
+	"[1]req1"	 [complexity=3,
+		importance=0.669444444444,
+		rank=0.223148148148];
+	"[1]req1" -> seln;
+	"[1]req6"	 [complexity=3,
+		importance=0.266666666667,
+		rank=0.0888888888889];
+	"[1]req6" -> seln;
+	"[1]req7"	 [complexity=3,
+		importance=0.186111111111,
+		rank=0.062037037037];
+	"[1]req7" -> seln;
+	"[1]req4"	 [complexity=3,
+		importance=0.427777777778,
+		rank=0.142592592593];
+	"[1]req4" -> seln;
+	"[1]req5"	 [complexity=3,
+		importance=0.347222222222,
+		rank=0.115740740741];
+	"[1]req5" -> seln;
+}

@@ -1,0 +1,65 @@
+strict digraph "" {
+	wb_req_s1	 [complexity=6,
+		importance=0.140656881122,
+		rank=0.0234428135203];
+	ma_req	 [complexity=0,
+		importance=0.0454643670908,
+		rank=0.0];
+	wb_req_s1 -> ma_req;
+	wb_we_i	 [complexity=6,
+		importance=0.115792759106,
+		rank=0.0192987931843];
+	wb_we_i -> ma_req;
+	"[1]state"	 [complexity=6,
+		importance=3.24961792609,
+		rank=0.541602987681];
+	"[1]next_state"	 [complexity=3,
+		importance=0.31793929201,
+		rank=0.105979764003];
+	"[1]state" -> "[1]next_state";
+	wb_addr_i	 [complexity=6,
+		importance=0.115792759106,
+		rank=0.0192987931843];
+	wb_addr_i -> ma_req;
+	"[1]wb_we_i"	 [complexity=15,
+		importance=1.29662119296,
+		rank=0.0864414128642];
+	"[1]wb_we_i" -> "[1]next_state";
+	state	 [complexity=1,
+		importance=0.252082474354,
+		rank=0.252082474354];
+	"[1]next_state" -> state;
+	"[1]rst"	 [complexity=7,
+		importance=6.5240998771,
+		rank=0.932014268157];
+	"[1]rst" -> "[1]state";
+	"[1]ma_ack"	 [complexity=5,
+		importance=0.660742608943,
+		rank=0.132148521789];
+	"[1]ma_ack" -> "[1]next_state";
+	state -> ma_req;
+	"[1]wb_addr_i"	 [complexity=15,
+		importance=1.29662119296,
+		rank=0.0864414128642];
+	"[1]wb_addr_i" -> "[1]next_state";
+	"[1]wb_stb_i"	 [complexity=9,
+		importance=0.165520906046,
+		rank=0.0183912117829];
+	"[1]wb_stb_i" -> wb_req_s1;
+	"[1]wb_req_s1"	 [complexity=15,
+		importance=1.32148531498,
+		rank=0.0880990209985];
+	"[1]wb_req_s1" -> "[1]next_state";
+	rst	 [complexity=2,
+		importance=0.529028973631,
+		rank=0.264514486816];
+	rst -> state;
+	ma_ack	 [complexity=2,
+		importance=0.115792759106,
+		rank=0.0578963795529];
+	ma_ack -> ma_req;
+	"[1]wb_cyc_i"	 [complexity=9,
+		importance=0.165520906046,
+		rank=0.0183912117829];
+	"[1]wb_cyc_i" -> wb_req_s1;
+}

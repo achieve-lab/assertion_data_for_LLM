@@ -1,0 +1,17 @@
+write_CMD	CMD
+[1]word_stb	[1]cfg_write_stb
+[1]word_stb	[1]header
+[1]header_type_command	[1]cfg_write_stb
+[1]prog_b	internal_reset
+[1]internal_reset	[1]sr
+[1]syn_det_ok	[1]header
+[1]syn_det_ok	[1]shift_cnt32
+[1]shift_cnt32	[1]word_stb
+internal_reset	CMD
+[1]header_op_write	[1]cfg_write_stb
+[1]header	write_CMD
+[1]header	[1]header_op_write
+[1]header	[1]header_type_command
+[1]cfg_write_stb	write_CMD
+[1]por	internal_reset
+[1]sr	CMD

@@ -1,0 +1,30 @@
+digraph "" {
+	rst_n -> waddr	 [weight=2.0];
+	rst_n -> valid	 [weight=1.0];
+	rst_n -> raddr_a	 [weight=6.0];
+	rst_n -> window_line_counter	 [weight=4.0];
+	rst_n -> raddr_c	 [weight=6.0];
+	rst_n -> raddr_b	 [weight=6.0];
+	rst_n -> window_column_counter	 [weight=6.0];
+	waddr -> waddr	 [weight=1.0];
+	IMG_WIDTH -> valid	 [weight=1.0];
+	IMG_WIDTH -> raddr_a	 [weight=5.0];
+	IMG_WIDTH -> window_line_counter	 [weight=3.0];
+	IMG_WIDTH -> raddr_c	 [weight=5.0];
+	IMG_WIDTH -> raddr_b	 [weight=5.0];
+	IMG_WIDTH -> window_column_counter	 [weight=5.0];
+	valid -> waddr	 [weight=1.0];
+	raddr_a -> raddr_a	 [weight=4.0];
+	window_line_counter -> raddr_a	 [weight=4.0];
+	window_line_counter -> window_line_counter	 [weight=5.0];
+	window_line_counter -> raddr_c	 [weight=4.0];
+	window_line_counter -> raddr_b	 [weight=4.0];
+	raddr_c -> raddr_c	 [weight=4.0];
+	raddr_b -> raddr_b	 [weight=4.0];
+	window_column_counter -> valid	 [weight=1.0];
+	window_column_counter -> raddr_a	 [weight=7.0];
+	window_column_counter -> window_line_counter	 [weight=3.0];
+	window_column_counter -> raddr_c	 [weight=7.0];
+	window_column_counter -> raddr_b	 [weight=7.0];
+	window_column_counter -> window_column_counter	 [weight=6.0];
+}

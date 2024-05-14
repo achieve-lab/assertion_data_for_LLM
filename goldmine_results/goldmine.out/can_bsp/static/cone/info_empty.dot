@@ -1,0 +1,67 @@
+strict digraph "" {
+	"[1]i_can_fifo.write_length_info"	 [complexity=6,
+		importance=0.0272318001125,
+		rank=0.00453863335208];
+	"i_can_fifo.info_cnt"	 [complexity=2,
+		importance=0.00819857347899,
+		rank=0.00409928673949];
+	"[1]i_can_fifo.write_length_info" -> "i_can_fifo.info_cnt";
+	"[1]reset_mode"	 [complexity=3,
+		importance=0.0277655857111,
+		rank=0.00925519523702];
+	"[1]i_can_fifo.reset_mode"	 [complexity=3,
+		importance=0.0261871221147,
+		rank=0.0087290407049];
+	"[1]reset_mode" -> "[1]i_can_fifo.reset_mode";
+	"[1]i_can_fifo.wr"	 [complexity=9,
+		importance=0.0303365683765,
+		rank=0.00337072981961];
+	"[1]i_can_fifo.wr" -> "[1]i_can_fifo.write_length_info";
+	"i_can_fifo.info_empty"	 [complexity=0,
+		importance=0.00391929757485,
+		rank=0.0];
+	info_empty	 [complexity=0,
+		importance=0.00191286468092,
+		rank=0.0];
+	"i_can_fifo.info_empty" -> info_empty;
+	"[1]rst"	 [complexity=3,
+		importance=0.0359542334101,
+		rank=0.01198474447];
+	"[1]i_can_fifo.rst"	 [complexity=3,
+		importance=0.0343757698137,
+		rank=0.0114585899379];
+	"[1]rst" -> "[1]i_can_fifo.rst";
+	"[1]wr_fifo"	 [complexity=9,
+		importance=0.0394917106982,
+		rank=0.00438796785536];
+	"[1]wr_fifo" -> "[1]i_can_fifo.wr";
+	"[1]i_can_fifo.info_empty"	 [complexity=4,
+		importance=0.0184035798519,
+		rank=0.00460089496298];
+	"[1]i_can_fifo.info_empty" -> "i_can_fifo.info_cnt";
+	"[1]i_can_fifo.info_full"	 [complexity=4,
+		importance=0.0102050063729,
+		rank=0.00255125159323];
+	"[1]i_can_fifo.info_full" -> "i_can_fifo.info_cnt";
+	"i_can_fifo.info_cnt" -> "i_can_fifo.info_empty";
+	"[1]i_can_fifo.info_cnt"	 [complexity=6,
+		importance=0.0144842822771,
+		rank=0.00241404704618];
+	"[1]i_can_fifo.info_cnt" -> "[1]i_can_fifo.info_empty";
+	"[1]i_can_fifo.info_cnt" -> "[1]i_can_fifo.info_full";
+	"[1]i_can_fifo.info_cnt" -> "i_can_fifo.info_cnt";
+	"[1]i_can_fifo.release_buffer"	 [complexity=6,
+		importance=0.0351619804756,
+		rank=0.00586033007926];
+	"[1]i_can_fifo.release_buffer" -> "i_can_fifo.info_cnt";
+	"[1]i_can_fifo.wr_q"	 [complexity=9,
+		importance=0.0291082209008,
+		rank=0.00323424676675];
+	"[1]i_can_fifo.wr_q" -> "[1]i_can_fifo.write_length_info";
+	"[1]release_buffer"	 [complexity=6,
+		importance=0.036740444072,
+		rank=0.00612340734533];
+	"[1]release_buffer" -> "[1]i_can_fifo.release_buffer";
+	"[1]i_can_fifo.rst" -> "i_can_fifo.info_cnt";
+	"[1]i_can_fifo.reset_mode" -> "i_can_fifo.info_cnt";
+}

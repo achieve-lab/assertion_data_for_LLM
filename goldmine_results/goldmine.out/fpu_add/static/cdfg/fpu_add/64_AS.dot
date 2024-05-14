@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"64:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f53bf51b590>",
+		def_var="['small_is_nonzero']",
+		fillcolor=deepskyblue,
+		label="64:AS
+small_is_nonzero = (exponent_small > 0) | |mantissa_small[51:0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['exponent_small', 'mantissa_small']"];
+}

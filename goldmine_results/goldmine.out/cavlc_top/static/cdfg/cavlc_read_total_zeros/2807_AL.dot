@@ -1,0 +1,97 @@
+strict digraph "" {
+	node [label="\N"];
+	"2808:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f204c598e50>",
+		fillcolor=springgreen,
+		label="2808:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"2812:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f204c598ad0>",
+		fillcolor=springgreen,
+		label="2812:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"2808:IF" -> "2812:IF"	 [cond="['ena', 'sel', 'chroma_DC_sel']",
+		label="!((ena && sel && chroma_DC_sel))",
+		lineno=2808];
+	"2808:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f204c749e50>",
+		fillcolor=turquoise,
+		label="2808:BL
+TotalZeros_comb <= TotalZeros_chroma_DC;
+len_comb <= len_chroma_DC;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f204c749ed0>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f204c749210>]",
+		style=filled,
+		typ=Block];
+	"2808:IF" -> "2808:BL"	 [cond="['ena', 'sel', 'chroma_DC_sel']",
+		label="(ena && sel && chroma_DC_sel)",
+		lineno=2808];
+	"2816:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f204c749750>",
+		fillcolor=turquoise,
+		label="2816:BL
+TotalZeros_comb <= TotalZeros_G3;
+len_comb <= len_G3;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f204c749550>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f204c749690>]",
+		style=filled,
+		typ=Block];
+	"Leaf_2807:AL"	 [def_var="['TotalZeros_comb', 'len_comb']",
+		label="Leaf_2807:AL"];
+	"2816:BL" -> "Leaf_2807:AL"	 [cond="[]",
+		lineno=None];
+	"2820:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f204c598cd0>",
+		fillcolor=turquoise,
+		label="2820:BL
+TotalZeros_comb <= 0;
+len_comb <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f204c598c90>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f204c598610>]",
+		style=filled,
+		typ=Block];
+	"2820:BL" -> "Leaf_2807:AL"	 [cond="[]",
+		lineno=None];
+	"2816:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f204c5986d0>",
+		fillcolor=springgreen,
+		label="2816:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"2816:IF" -> "2816:BL"	 [cond="['ena', 'sel']",
+		label="(ena && sel)",
+		lineno=2816];
+	"2816:IF" -> "2820:BL"	 [cond="['ena', 'sel']",
+		label="!((ena && sel))",
+		lineno=2816];
+	"2812:IF" -> "2816:IF"	 [cond="['ena', 'sel', 'TotalCoeff']",
+		label="!((ena && sel && (TotalCoeff[3:2] == 2'b00)))",
+		lineno=2812];
+	"2812:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f204c749910>",
+		fillcolor=turquoise,
+		label="2812:BL
+TotalZeros_comb <= TotalZeros_LE3;
+len_comb <= len_LE3;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f204c749950>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f204c749c50>]",
+		style=filled,
+		typ=Block];
+	"2812:IF" -> "2812:BL"	 [cond="['ena', 'sel', 'TotalCoeff']",
+		label="(ena && sel && (TotalCoeff[3:2] == 2'b00))",
+		lineno=2812];
+	"2808:BL" -> "Leaf_2807:AL"	 [cond="[]",
+		lineno=None];
+	"2812:BL" -> "Leaf_2807:AL"	 [cond="[]",
+		lineno=None];
+	"2807:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f204c6dd090>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="2807:AL",
+		sens="['len_LE3', 'TotalZeros_chroma_DC', 'TotalZeros_LE3', 'len_chroma_DC', 'len_G3', 'TotalZeros_G3']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['ena', 'sel', 'len_LE3', 'TotalZeros_chroma_DC', 'TotalZeros_LE3', 'len_chroma_DC', 'len_G3', 'TotalZeros_G3', 'chroma_DC_sel', '\
+TotalCoeff']"];
+	"2807:AL" -> "2808:IF"	 [cond="[]",
+		lineno=None];
+}

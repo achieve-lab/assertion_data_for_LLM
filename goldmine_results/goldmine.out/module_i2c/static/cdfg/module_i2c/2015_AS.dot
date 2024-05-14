@@ -1,0 +1,16 @@
+strict digraph "" {
+	node [label="\N"];
+	"2015:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f093246f310>",
+		def_var="['ENABLE_SDA']",
+		fillcolor=deepskyblue,
+		label="2015:AS
+ENABLE_SDA = ((state_rx == RESPONSE_CIN) || (state_rx == RESPONSE_ADDRESS) || (state_rx == RESPONSE_DATA0_1) || (state_rx == \
+RESPONSE_DATA1_1))? 1'b1 : 
+((state_tx == RESPONSE_CIN) || (state_tx == RESPONSE_ADDRESS) || (state_tx == RESPONSE_DATA0_1) || (\
+state_tx == RESPONSE_DATA1_1))? 1'b0 : 1'b1;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['state_rx', 'RESPONSE_CIN', 'state_rx', 'RESPONSE_ADDRESS', 'state_rx', 'RESPONSE_DATA0_1', 'state_rx', 'RESPONSE_DATA1_1', 'state_\
+tx', 'RESPONSE_CIN', 'state_tx', 'RESPONSE_ADDRESS', 'state_tx', 'RESPONSE_DATA0_1', 'state_tx', 'RESPONSE_DATA1_1']"];
+}

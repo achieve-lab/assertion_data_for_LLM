@@ -1,0 +1,86 @@
+strict digraph "" {
+	"[2]reset"	 [complexity=6,
+		importance=1.51670703632,
+		rank=0.252784506054];
+	"[1]start_count_del"	 [complexity=3,
+		importance=0.2834870199,
+		rank=0.0944956732998];
+	"[2]reset" -> "[1]start_count_del";
+	"[2]start_count"	 [complexity=5,
+		importance=0.481192073333,
+		rank=0.0962384146665];
+	"[2]reset" -> "[2]start_count";
+	"[3]max_count"	 [complexity=10,
+		importance=0.86491783033,
+		rank=0.086491783033];
+	"[3]start_count"	 [complexity=7,
+		importance=0.791787014006,
+		rank=0.113112430572];
+	"[3]max_count" -> "[3]start_count";
+	"[1]counter"	 [complexity=6,
+		importance=0.594081960573,
+		rank=0.0990136600954];
+	"[3]max_count" -> "[1]counter";
+	"[3]start_count" -> "[1]counter";
+	"[3]ready"	 [complexity=10,
+		importance=0.86491783033,
+		rank=0.086491783033];
+	"[3]ready" -> "[3]start_count";
+	"[1]start_count"	 [complexity=3,
+		importance=0.367797299202,
+		rank=0.122599099734];
+	"[1]counter" -> "[1]start_count";
+	"[2]counter"	 [complexity=8,
+		importance=0.707476734703,
+		rank=0.0884345918379];
+	"[2]counter" -> "[2]start_count";
+	tx_ack	 [complexity=0,
+		importance=0.170092245769,
+		rank=0.0];
+	"[1]start_count_del" -> tx_ack;
+	"[3]tx_start"	 [complexity=8,
+		importance=1.65670484434,
+		rank=0.207088105542];
+	"[3]tx_start" -> "[3]start_count";
+	"[2]ready"	 [complexity=8,
+		importance=0.554322889657,
+		rank=0.0692903612071];
+	"[2]ready" -> "[2]start_count";
+	"[1]ready"	 [complexity=6,
+		importance=0.440928115526,
+		rank=0.0734880192544];
+	"[1]ready" -> "[1]start_count";
+	"[1]tx_start"	 [complexity=4,
+		importance=0.808725414728,
+		rank=0.202181353682];
+	"[1]tx_start" -> "[1]start_count";
+	"[2]tx_start"	 [complexity=6,
+		importance=1.03551496299,
+		rank=0.172585827165];
+	"[2]tx_start" -> "[2]start_count";
+	"[1]max_count"	 [complexity=6,
+		importance=0.440928115526,
+		rank=0.0734880192544];
+	"[1]max_count" -> "[1]start_count";
+	"[1]start_count" -> tx_ack;
+	"[2]start_count" -> "[1]start_count_del";
+	"[3]counter"	 [complexity=10,
+		importance=1.01807167538,
+		rank=0.101807167538];
+	"[3]counter" -> "[3]start_count";
+	"[3]counter" -> "[1]counter";
+	"[3]reset"	 [complexity=8,
+		importance=2.44849185834,
+		rank=0.306061482293];
+	"[3]reset" -> "[3]start_count";
+	"[3]reset" -> "[1]counter";
+	"[1]reset"	 [complexity=4,
+		importance=1.17652271393,
+		rank=0.294130678482];
+	"[1]reset" -> tx_ack;
+	"[1]reset" -> "[1]start_count";
+	"[2]max_count"	 [complexity=8,
+		importance=0.554322889657,
+		rank=0.0692903612071];
+	"[2]max_count" -> "[2]start_count";
+}

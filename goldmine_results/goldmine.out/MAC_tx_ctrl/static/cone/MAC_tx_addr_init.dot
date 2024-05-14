@@ -1,0 +1,191 @@
+strict digraph "" {
+	StateSFD	 [complexity=15,
+		importance=0.128117116374,
+		rank=0.0085411410916];
+	Fifo_rd	 [complexity=2,
+		importance=0.0598429302222,
+		rank=0.0299214651111];
+	StateSFD -> Fifo_rd;
+	"[1]IFG_counter"	 [complexity=24,
+		importance=2.36574041523,
+		rank=0.0985725173013];
+	"[1]Next_state"	 [complexity=17,
+		importance=0.587843713668,
+		rank=0.0345790419805];
+	"[1]IFG_counter" -> "[1]Next_state";
+	StateFFEmptyDrop	 [complexity=15,
+		importance=0.128117116374,
+		rank=0.0085411410916];
+	StateFFEmptyDrop -> Fifo_rd;
+	Current_state	 [complexity=15,
+		importance=0.495031138052,
+		rank=0.0330020758701];
+	Current_state -> Fifo_rd;
+	MAC_tx_addr_init	 [complexity=0,
+		importance=0.0197462055776,
+		rank=0.0];
+	Fifo_rd -> MAC_tx_addr_init;
+	"[1]StateFCS"	 [complexity=10,
+		importance=0.0604606370754,
+		rank=0.00604606370754];
+	Tx_pkt_length_rmon	 [complexity=2,
+		importance=0.0520293811458,
+		rank=0.0260146905729];
+	"[1]StateFCS" -> Tx_pkt_length_rmon;
+	xoff_gen	 [complexity=15,
+		importance=0.128117116374,
+		rank=0.0085411410916];
+	xoff_gen -> Fifo_rd;
+	"[1]Tx_pkt_length_rmon"	 [complexity=4,
+		importance=0.0645663511362,
+		rank=0.0161415877841];
+	"[1]Tx_pkt_length_rmon" -> Tx_pkt_length_rmon;
+	"[1]pause_frame_send_en_dl1"	 [complexity=28,
+		importance=2.36414404306,
+		rank=0.0844337158235];
+	"[1]pause_frame_send_en_dl1" -> "[1]Next_state";
+	"[1]PktDrpEvenPtr"	 [complexity=17,
+		importance=0.260387287938,
+		rank=0.0153168992905];
+	PktDrpEvenPtr	 [complexity=15,
+		importance=0.249879504414,
+		rank=0.0166586336276];
+	"[1]PktDrpEvenPtr" -> PktDrpEvenPtr;
+	"[1]IPLengthCounter"	 [complexity=21,
+		importance=4.12709682569,
+		rank=0.196528420271];
+	"[1]IPLengthCounter" -> "[1]Next_state";
+	"[1]Reset"	 [complexity=3,
+		importance=0.164519399367,
+		rank=0.054839799789];
+	"[1]Reset" -> Current_state;
+	"[1]Reset" -> PktDrpEvenPtr;
+	pause_frame_send_en_dl1	 [complexity=15,
+		importance=0.132455048828,
+		rank=0.00883033658855];
+	"[1]Reset" -> pause_frame_send_en_dl1;
+	"[1]Reset" -> Tx_pkt_length_rmon;
+	StateData	 [complexity=15,
+		importance=0.128117116374,
+		rank=0.0085411410916];
+	StateData -> Fifo_rd;
+	"[1]pause_frame_send_en"	 [complexity=17,
+		importance=0.140886304758,
+		rank=0.00828742969164];
+	"[1]pause_frame_send_en" -> pause_frame_send_en_dl1;
+	"[1]CRC_end"	 [complexity=18,
+		importance=1.18411868327,
+		rank=0.0657843712926];
+	"[1]CRC_end" -> "[1]Next_state";
+	"[1]Next_state" -> Current_state;
+	PktDrpEvenPtr -> Fifo_rd;
+	"[1]xon_gen"	 [complexity=28,
+		importance=2.3598061106,
+		rank=0.0842787896644];
+	"[1]xon_gen" -> "[1]Next_state";
+	"[1]FullDuplex"	 [complexity=54,
+		importance=23.5221798027,
+		rank=0.435595922271];
+	"[1]FullDuplex" -> "[1]Next_state";
+	"[1]Fifo_data_err_empty"	 [complexity=18,
+		importance=2.3598061106,
+		rank=0.131100339478];
+	"[1]Fifo_data_err_empty" -> "[1]Next_state";
+	"[1]RetryCnt"	 [complexity=22,
+		importance=2.96150756412,
+		rank=0.134613980187];
+	"[1]RetryCnt" -> "[1]Next_state";
+	"[1]StateSFD"	 [complexity=4,
+		importance=0.112490018221,
+		rank=0.0281225045553];
+	"[1]StateSFD" -> Tx_pkt_length_rmon;
+	"[1]MaxRetry"	 [complexity=22,
+		importance=2.94764982427,
+		rank=0.133984082921];
+	"[1]MaxRetry" -> "[1]Next_state";
+	"[1]Fifo_ra"	 [complexity=25,
+		importance=2.3598061106,
+		rank=0.0943922444241];
+	"[1]Fifo_ra" -> "[1]Next_state";
+	"[1]Preamble_counter"	 [complexity=22,
+		importance=2.36339834775,
+		rank=0.107427197625];
+	"[1]Preamble_counter" -> "[1]Next_state";
+	"[1]StatePAD"	 [complexity=10,
+		importance=0.0604606370754,
+		rank=0.00604606370754];
+	"[1]StatePAD" -> Tx_pkt_length_rmon;
+	pause_frame_send_en_dl1 -> Fifo_rd;
+	"[1]StateFFEmptyDrop"	 [complexity=19,
+		importance=0.258310760343,
+		rank=0.013595303176];
+	"[1]StateFFEmptyDrop" -> PktDrpEvenPtr;
+	"[1]StateJamDrop"	 [complexity=19,
+		importance=0.258310760343,
+		rank=0.013595303176];
+	"[1]StateJamDrop" -> PktDrpEvenPtr;
+	Tx_pkt_length_rmon -> MAC_tx_addr_init;
+	"[1]xoff_gen"	 [complexity=28,
+		importance=2.3598061106,
+		rank=0.0842787896644];
+	"[1]xoff_gen" -> "[1]Next_state";
+	"[1]TxEn"	 [complexity=35,
+		importance=11.2036002491,
+		rank=0.320102864259];
+	"[1]Collision"	 [complexity=32,
+		importance=11.1863753255,
+		rank=0.349574228921];
+	"[1]TxEn" -> "[1]Collision";
+	xon_gen	 [complexity=15,
+		importance=0.128117116374,
+		rank=0.0085411410916];
+	xon_gen -> Fifo_rd;
+	"[1]Fifo_eop"	 [complexity=22,
+		importance=5.29902467894,
+		rank=0.240864758134];
+	"[1]Fifo_eop" -> "[1]Next_state";
+	"[1]Current_state"	 [complexity=12,
+		importance=0.328463983149,
+		rank=0.0273719985958];
+	"[1]Current_state" -> "[1]Next_state";
+	"[1]Current_state" -> PktDrpEvenPtr;
+	"[1]Current_state" -> Tx_pkt_length_rmon;
+	"[1]IFGset"	 [complexity=24,
+		importance=2.3598061106,
+		rank=0.0983252546084];
+	"[1]IFGset" -> "[1]Next_state";
+	"[1]JamCounter"	 [complexity=20,
+		importance=1.77499098228,
+		rank=0.088749549114];
+	"[1]JamCounter" -> "[1]Next_state";
+	"[1]Random_time_meet"	 [complexity=18,
+		importance=1.18411868327,
+		rank=0.0657843712926];
+	"[1]Random_time_meet" -> "[1]Next_state";
+	StateJamDrop	 [complexity=15,
+		importance=0.128117116374,
+		rank=0.0085411410916];
+	StateJamDrop -> Fifo_rd;
+	"[1]StateData"	 [complexity=10,
+		importance=0.0604606370754,
+		rank=0.00604606370754];
+	"[1]StateData" -> Tx_pkt_length_rmon;
+	"[1]Collision" -> "[1]Next_state";
+	"[1]StateSendPauseFrame"	 [complexity=10,
+		importance=0.0604606370754,
+		rank=0.00604606370754];
+	"[1]StateSendPauseFrame" -> Tx_pkt_length_rmon;
+	"[1]pause_counter"	 [complexity=18,
+		importance=1.19005298789,
+		rank=0.066114054883];
+	"[1]pause_counter" -> "[1]Next_state";
+	"[1]pause_apply"	 [complexity=18,
+		importance=1.77196239693,
+		rank=0.0984423553852];
+	"[1]pause_apply" -> "[1]Next_state";
+	"[1]CRS"	 [complexity=35,
+		importance=11.1948065814,
+		rank=0.319851616612];
+	"[1]CRS" -> "[1]Next_state";
+	"[1]CRS" -> "[1]Collision";
+}

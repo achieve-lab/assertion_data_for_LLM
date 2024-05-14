@@ -1,0 +1,29 @@
+strict digraph "" {
+	Mdc	 [complexity=0,
+		importance=0.00702796748122,
+		rank=0.0];
+	"[1]clkgen.Counter"	 [complexity=3,
+		importance=0.0477475706669,
+		rank=0.015915856889];
+	"[1]clkgen.CountEq0"	 [complexity=1,
+		importance=0.0273086751643,
+		rank=0.0273086751643];
+	"[1]clkgen.Counter" -> "[1]clkgen.CountEq0";
+	"[1]clkgen.Mdc"	 [complexity=3,
+		importance=0.0256404653336,
+		rank=0.00854682177788];
+	"clkgen.Mdc"	 [complexity=0,
+		importance=0.0163342164074,
+		rank=0.0];
+	"[1]clkgen.Mdc" -> "clkgen.Mdc";
+	"[1]clkgen.Reset"	 [complexity=1,
+		importance=0.038572780432,
+		rank=0.038572780432];
+	"[1]clkgen.Reset" -> "clkgen.Mdc";
+	"clkgen.Mdc" -> Mdc;
+	"[1]Reset"	 [complexity=1,
+		importance=0.0444375027857,
+		rank=0.0444375027857];
+	"[1]Reset" -> "[1]clkgen.Reset";
+	"[1]clkgen.CountEq0" -> "clkgen.Mdc";
+}

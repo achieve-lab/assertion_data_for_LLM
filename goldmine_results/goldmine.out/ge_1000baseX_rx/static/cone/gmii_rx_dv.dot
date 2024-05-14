@@ -1,0 +1,70 @@
+strict digraph "" {
+	"[1]check_end_R_R_K28_5"	 [complexity=2,
+		importance=0.0310937616003,
+		rank=0.0155468808002];
+	"[1]gmii_rx_dv_m_clr"	 [complexity=1,
+		importance=0.0246039488985,
+		rank=0.0246039488985];
+	"[1]check_end_R_R_K28_5" -> "[1]gmii_rx_dv_m_clr";
+	"[1]early_end"	 [complexity=2,
+		importance=0.0599437422646,
+		rank=0.0299718711323];
+	"[1]early_end" -> "[1]gmii_rx_dv_m_clr";
+	gmii_rx_dv	 [complexity=0,
+		importance=0.0127214289526,
+		rank=0.0];
+	"[1]gmii_rx_dv_m_clr" -> gmii_rx_dv;
+	"[1]pcs_rx_present"	 [complexity=2,
+		importance=0.0769229535568,
+		rank=0.0384614767784];
+	"[1]pcs_rx_present" -> "[1]gmii_rx_dv_m_clr";
+	"[1]gmii_rx_dv_m_set"	 [complexity=1,
+		importance=0.0300547415198,
+		rank=0.0300547415198];
+	"[1]pcs_rx_present" -> "[1]gmii_rx_dv_m_set";
+	"[1]xmit"	 [complexity=10,
+		importance=0.0709380799413,
+		rank=0.00709380799413];
+	"[1]xmit_DATA"	 [complexity=8,
+		importance=0.0665231633658,
+		rank=0.00831539542073];
+	"[1]xmit" -> "[1]xmit_DATA";
+	"[1]receiving"	 [complexity=2,
+		importance=0.0364829800948,
+		rank=0.0182414900474];
+	"[1]receiving" -> "[1]gmii_rx_dv_m_clr";
+	"[1]carrier_detect_d3"	 [complexity=8,
+		importance=0.0697195279226,
+		rank=0.00871494099032];
+	"[1]xmit_DATA_CD"	 [complexity=5,
+		importance=0.0613724137873,
+		rank=0.0122744827575];
+	"[1]carrier_detect_d3" -> "[1]xmit_DATA_CD";
+	"[1]xmit_DATA_CD_SPD"	 [complexity=2,
+		importance=0.0545845509855,
+		rank=0.0272922754927];
+	"[1]xmit_DATA_CD" -> "[1]xmit_DATA_CD_SPD";
+	"[1]xmit_DATA_CD_SPD" -> "[1]gmii_rx_dv_m_clr";
+	"[1]SPD_match"	 [complexity=5,
+		importance=0.0593370857556,
+		rank=0.0118674171511];
+	"[1]SPD_match" -> "[1]xmit_DATA_CD_SPD";
+	"[1]check_end_T_R_K28_5"	 [complexity=2,
+		importance=0.0556977104988,
+		rank=0.0278488552494];
+	"[1]check_end_T_R_K28_5" -> "[1]gmii_rx_dv_m_clr";
+	"[1]reset"	 [complexity=1,
+		importance=0.0425792034332,
+		rank=0.0425792034332];
+	"[1]reset" -> gmii_rx_dv;
+	"[1]gmii_rx_dv_m_set" -> gmii_rx_dv;
+	"[1]check_end_R_R_R"	 [complexity=2,
+		importance=0.0551458357464,
+		rank=0.0275729178732];
+	"[1]check_end_R_R_R" -> "[1]gmii_rx_dv_m_clr";
+	"[1]check_end_T_R_R"	 [complexity=2,
+		importance=0.030541886848,
+		rank=0.015270943424];
+	"[1]check_end_T_R_R" -> "[1]gmii_rx_dv_m_clr";
+	"[1]xmit_DATA" -> "[1]xmit_DATA_CD";
+}

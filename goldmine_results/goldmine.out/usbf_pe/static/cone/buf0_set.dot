@@ -1,0 +1,53 @@
+strict digraph "" {
+	buf0_set	 [complexity=0,
+		importance=0.00586472624048,
+		rank=0.0];
+	"[1]CTRL_ep"	 [complexity=8,
+		importance=0.021537533197,
+		rank=0.00269219164963];
+	"[1]dma_en"	 [complexity=5,
+		importance=0.0167574263815,
+		rank=0.00335148527631];
+	"[1]CTRL_ep" -> "[1]dma_en";
+	"[1]buf_sel"	 [complexity=3,
+		importance=0.0139089198965,
+		rank=0.00463630663216];
+	"[1]CTRL_ep" -> "[1]buf_sel";
+	"[1]in_token"	 [complexity=10,
+		importance=0.0198670902316,
+		rank=0.00198670902316];
+	"[1]in_token" -> "[1]buf_sel";
+	"[1]buf0_na"	 [complexity=10,
+		importance=0.0200146213987,
+		rank=0.00200146213987];
+	"[1]buf0_na" -> "[1]buf_sel";
+	"[1]dma_en" -> "[1]buf_sel";
+	"[1]buf_set_d"	 [complexity=3,
+		importance=0.0119070224668,
+		rank=0.00396900748893];
+	"[1]dma_en" -> "[1]buf_set_d";
+	"[1]buf_sel" -> buf0_set;
+	"[1]buffer_done"	 [complexity=5,
+		importance=0.02119316003,
+		rank=0.004238632006];
+	"[1]buffer_done" -> "[1]buf_set_d";
+	"[1]state"	 [complexity=4,
+		importance=0.0418447385816,
+		rank=0.0104611846454];
+	"[1]state" -> "[1]buf_set_d";
+	"[1]uc_bsel"	 [complexity=10,
+		importance=0.018689026712,
+		rank=0.0018689026712];
+	"[1]uc_bsel" -> "[1]buf_sel";
+	"[1]csr"	 [complexity=10,
+		importance=0.026295197753,
+		rank=0.0026295197753];
+	"[1]csr" -> "[1]CTRL_ep";
+	"[1]csr" -> "[1]dma_en";
+	"[1]csr" -> "[1]uc_bsel";
+	"[1]buf_set_d" -> buf0_set;
+	"[1]buf1_na"	 [complexity=10,
+		importance=0.0203846728061,
+		rank=0.00203846728061];
+	"[1]buf1_na" -> "[1]buf_sel";
+}

@@ -1,0 +1,34 @@
+strict digraph "" {
+	node [label="\N"];
+	"667:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7feacf629590>",
+		fillcolor=firebrick,
+		label="667:NS
+raddr <= addr;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7feacf629590>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"Leaf_665:AL"	 [def_var="['raddr']",
+		label="Leaf_665:AL"];
+	"667:NS" -> "Leaf_665:AL"	 [cond="[]",
+		lineno=None];
+	"665:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7feacf629850>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="665:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['addr', 'ce']"];
+	"666:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7feacf629950>",
+		fillcolor=springgreen,
+		label="666:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"665:AL" -> "666:IF"	 [cond="[]",
+		lineno=None];
+	"666:IF" -> "667:NS"	 [cond="['ce']",
+		label=ce,
+		lineno=666];
+}

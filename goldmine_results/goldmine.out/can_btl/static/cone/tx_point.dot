@@ -1,0 +1,69 @@
+strict digraph "" {
+	"[1]seg2"	 [complexity=22,
+		importance=0.0546836722154,
+		rank=0.00248562146433];
+	tx_point	 [complexity=11,
+		importance=0.0331034678302,
+		rank=0.00300940616638];
+	"[1]seg2" -> tx_point;
+	"[1]rst"	 [complexity=12,
+		importance=0.0783471289125,
+		rank=0.00652892740938];
+	"[1]rst" -> tx_point;
+	"[1]time_segment2"	 [complexity=22,
+		importance=0.0452436610824,
+		rank=0.0020565300492];
+	"[1]time_segment2" -> tx_point;
+	"[1]rx_inter"	 [complexity=28,
+		importance=0.0762970027162,
+		rank=0.00272489295415];
+	"[1]resync"	 [complexity=22,
+		importance=0.064156809464,
+		rank=0.002916218612];
+	"[1]rx_inter" -> "[1]resync";
+	"[1]hard_sync"	 [complexity=22,
+		importance=0.0885647590075,
+		rank=0.00402567086398];
+	"[1]rx_inter" -> "[1]hard_sync";
+	"[1]clk_en"	 [complexity=22,
+		importance=0.0550248846919,
+		rank=0.00250113112236];
+	"[1]clk_en" -> tx_point;
+	"[1]rx"	 [complexity=28,
+		importance=0.0762970027162,
+		rank=0.00272489295415];
+	"[1]rx" -> "[1]resync";
+	"[1]rx" -> "[1]hard_sync";
+	"[1]hard_sync_blocked"	 [complexity=28,
+		importance=0.156201408742,
+		rank=0.0055786217408];
+	"[1]hard_sync_blocked" -> "[1]hard_sync";
+	"[1]rx_idle"	 [complexity=28,
+		importance=0.0762970027162,
+		rank=0.00272489295415];
+	"[1]rx_idle" -> "[1]resync";
+	"[1]rx_idle" -> "[1]hard_sync";
+	"[1]sync_blocked"	 [complexity=28,
+		importance=0.0829725251764,
+		rank=0.00296330447059];
+	"[1]sync_blocked" -> "[1]resync";
+	"[1]resync" -> tx_point;
+	"[1]clk_en_q"	 [complexity=22,
+		importance=0.0509621327429,
+		rank=0.00231646057922];
+	"[1]clk_en_q" -> tx_point;
+	"[1]quant_cnt"	 [complexity=22,
+		importance=0.0617022667693,
+		rank=0.00280464848951];
+	"[1]quant_cnt" -> tx_point;
+	"[1]sampled_bit"	 [complexity=28,
+		importance=0.111155363875,
+		rank=0.00396983442409];
+	"[1]sampled_bit" -> "[1]resync";
+	"[1]sampled_bit" -> "[1]hard_sync";
+	"[1]hard_sync" -> tx_point;
+	"[1]tx_point"	 [complexity=22,
+		importance=0.0662069356603,
+		rank=0.00300940616638];
+	"[1]tx_point" -> tx_point;
+}

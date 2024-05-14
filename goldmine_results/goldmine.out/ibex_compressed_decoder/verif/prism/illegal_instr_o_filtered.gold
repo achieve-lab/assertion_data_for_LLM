@@ -1,0 +1,145 @@
+property a20;
+@(posedge clk) (instr_i[13] == 0 & instr_i[1] == 1 & instr_i[12] == 0 & instr_i[6] == 0) |-> (illegal_instr_o == 0);
+endproperty
+assert_a20: assert property(a20);
+
+property a21;
+@(posedge clk) (instr_i[0] == 0 & instr_i[13] == 1) |-> (illegal_instr_o == 1);
+endproperty
+assert_a21: assert property(a21);
+
+property a22;
+@(posedge clk) (instr_i[0] == 0 & instr_i[14] == 0 & instr_i[1] == 0 & instr_i[15] == 1) |-> (illegal_instr_o == 1);
+endproperty
+assert_a22: assert property(a22);
+
+property a23;
+@(posedge clk) (instr_i[0] == 0 & instr_i[14] == 0 & instr_i[12] == 1 & instr_i[15] == 0 & instr_i[1] == 1) |-> (illegal_instr_o == 1);
+endproperty
+assert_a23: assert property(a23);
+
+property a24;
+@(posedge clk) (instr_i[9] == 0 & instr_i[17] == 1 & instr_i[1] == 0 & instr_i[12] == 1 & instr_i[14] == 0 & instr_i[11] == 0 & instr_i[2] == 1) |-> (illegal_instr_o == 1);
+endproperty
+assert_a24: assert property(a24);
+
+property a25;
+@(posedge clk) (instr_i[9] == 0 & instr_i[17] == 1 & instr_i[2] == 0 & instr_i[1] == 0 & instr_i[12] == 1 & instr_i[14] == 0 & instr_i[19] == 1) |-> (illegal_instr_o == 1);
+endproperty
+assert_a25: assert property(a25);
+
+property a26;
+@(posedge clk) (instr_i[9] == 0 & instr_i[16] == 0 & instr_i[19] == 0 & instr_i[2] == 0 & instr_i[11] == 0 & instr_i[12] == 1 & instr_i[1] == 0) |-> (illegal_instr_o == 1);
+endproperty
+assert_a26: assert property(a26);
+
+property a27;
+@(posedge clk) (instr_i[9] == 0 & instr_i[27] == 0 & instr_i[6] == 1 & instr_i[0] == 0 & instr_i[30] == 0 & instr_i[5] == 1) |-> (illegal_instr_o == 1);
+endproperty
+assert_a27: assert property(a27);
+
+property a28;
+@(posedge clk) (instr_i[15] == 1 & instr_i[24] == 0 & instr_i[14] == 0 & instr_i[13] == 0 & instr_i[12] == 1 & instr_i[10] == 1) |-> (illegal_instr_o == 1);
+endproperty
+assert_a28: assert property(a28);
+
+property a15;
+@(posedge clk) (instr_i[13] == 0 & instr_i[1] == 1 & instr_i[12] == 0 & instr_i[2] == 1) |-> (illegal_instr_o == 0);
+endproperty
+assert_a15: assert property(a15);
+
+property a14;
+@(posedge clk) (instr_i[13] == 0 & instr_i[15] == 0 & instr_i[1] == 0) |-> (illegal_instr_o == 0);
+endproperty
+assert_a14: assert property(a14);
+
+property a17;
+@(posedge clk) (instr_i[0] == 1 & instr_i[2] == 1 & instr_i[3] == 1) |-> (illegal_instr_o == 0);
+endproperty
+assert_a17: assert property(a17);
+
+property a16;
+@(posedge clk) (instr_i[13] == 0 & instr_i[1] == 1 & instr_i[12] == 0 & instr_i[3] == 0) |-> (illegal_instr_o == 0);
+endproperty
+assert_a16: assert property(a16);
+
+property a11;
+@(posedge clk) (instr_i[13] == 0 & instr_i[14] == 1 & instr_i[6] == 0) |-> (illegal_instr_o == 0);
+endproperty
+assert_a11: assert property(a11);
+
+property a10;
+@(posedge clk) (instr_i[13] == 0 & instr_i[14] == 1 & instr_i[5] == 0) |-> (illegal_instr_o == 0);
+endproperty
+assert_a10: assert property(a10);
+
+property a13;
+@(posedge clk) (instr_i[0] == 1 & instr_i[15] == 0) |-> (illegal_instr_o == 0);
+endproperty
+assert_a13: assert property(a13);
+
+property a12;
+@(posedge clk) (instr_i[13] == 0 & instr_i[1] == 1 & instr_i[15] == 1) |-> (illegal_instr_o == 0);
+endproperty
+assert_a12: assert property(a12);
+
+property a19;
+@(posedge clk) (instr_i[13] == 0 & instr_i[1] == 1 & instr_i[12] == 0 & instr_i[5] == 0) |-> (illegal_instr_o == 0);
+endproperty
+assert_a19: assert property(a19);
+
+property a18;
+@(posedge clk) (instr_i[13] == 0 & instr_i[1] == 1 & instr_i[12] == 0 & instr_i[4] == 1) |-> (illegal_instr_o == 0);
+endproperty
+assert_a18: assert property(a18);
+
+property a1;
+@(posedge clk) (instr_i[0] == 1 & instr_i[7] == 0) |-> (illegal_instr_o == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge clk) (instr_i[0] == 1 & instr_i[1] == 1) |-> (illegal_instr_o == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a3;
+@(posedge clk) (instr_i[0] == 1 & instr_i[12] == 0) |-> (illegal_instr_o == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a2;
+@(posedge clk) (instr_i[0] == 1 & instr_i[9] == 1) |-> (illegal_instr_o == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a5;
+@(posedge clk) (instr_i[13] == 0 & instr_i[14] == 1 & instr_i[0] == 1) |-> (illegal_instr_o == 0);
+endproperty
+assert_a5: assert property(a5);
+
+property a4;
+@(posedge clk) (instr_i[0] == 1 & instr_i[13] == 1) |-> (illegal_instr_o == 0);
+endproperty
+assert_a4: assert property(a4);
+
+property a7;
+@(posedge clk) (instr_i[13] == 0 & instr_i[14] == 1 & instr_i[2] == 1) |-> (illegal_instr_o == 0);
+endproperty
+assert_a7: assert property(a7);
+
+property a6;
+@(posedge clk) (instr_i[13] == 0 & instr_i[14] == 1 & instr_i[1] == 0) |-> (illegal_instr_o == 0);
+endproperty
+assert_a6: assert property(a6);
+
+property a9;
+@(posedge clk) (instr_i[13] == 0 & instr_i[14] == 1 & instr_i[4] == 1) |-> (illegal_instr_o == 0);
+endproperty
+assert_a9: assert property(a9);
+
+property a8;
+@(posedge clk) (instr_i[13] == 0 & instr_i[14] == 1 & instr_i[3] == 0) |-> (illegal_instr_o == 0);
+endproperty
+assert_a8: assert property(a8);
+

@@ -1,0 +1,21 @@
+strict digraph "" {
+	"[1]StateDefer"	 [complexity=3,
+		importance=0.0307761430208,
+		rank=0.0102587143403];
+	xoff_gen_complete	 [complexity=0,
+		importance=0.0111724435456,
+		rank=0.0];
+	"[1]StateDefer" -> xoff_gen_complete;
+	"[1]Reset"	 [complexity=1,
+		importance=0.0419485865664,
+		rank=0.0419485865664];
+	"[1]Reset" -> xoff_gen_complete;
+	"[1]Current_state"	 [complexity=3,
+		importance=0.038632583366,
+		rank=0.0128775277887];
+	"[1]Current_state" -> xoff_gen_complete;
+	"[1]xoff_gen"	 [complexity=3,
+		importance=0.0307761430208,
+		rank=0.0102587143403];
+	"[1]xoff_gen" -> xoff_gen_complete;
+}

@@ -1,0 +1,17 @@
+strict digraph "" {
+	Reset	 [complexity=3,
+		importance=0.177418280215,
+		rank=0.0591394267382];
+	Rx_er_dl1	 [complexity=2,
+		importance=0.0769984060722,
+		rank=0.0384992030361];
+	Reset -> Rx_er_dl1;
+	MRxErr	 [complexity=0,
+		importance=0.0412805724326,
+		rank=0.0];
+	Rx_er_dl1 -> MRxErr;
+	"[1]Rx_er"	 [complexity=4,
+		importance=0.100419874142,
+		rank=0.0251049685356];
+	"[1]Rx_er" -> Rx_er_dl1;
+}

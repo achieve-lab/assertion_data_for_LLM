@@ -1,0 +1,85 @@
+strict digraph "" {
+	"[1]InProgress"	 [complexity=18,
+		importance=0.226482431127,
+		rank=0.0125823572848];
+	"[1]ByteSelect"	 [complexity=1,
+		importance=0.0533562638677,
+		rank=0.0533562638677];
+	"[1]InProgress" -> "[1]ByteSelect";
+	"[1]shftrg.ByteSelect"	 [complexity=1,
+		importance=0.0402548751351,
+		rank=0.0402548751351];
+	"shftrg.LinkFail"	 [complexity=0,
+		importance=0.0278390661575,
+		rank=0.0];
+	"[1]shftrg.ByteSelect" -> "shftrg.LinkFail";
+	"[1]ByteSelect" -> "[1]shftrg.ByteSelect";
+	"[1]BitCounter"	 [complexity=18,
+		importance=0.224516446649,
+		rank=0.0124731359249];
+	"[1]BitCounter" -> "[1]ByteSelect";
+	LinkFail	 [complexity=0,
+		importance=0.013190142553,
+		rank=0.0];
+	"[1]WriteOp"	 [complexity=9,
+		importance=0.123186128961,
+		rank=0.0136873476623];
+	"[1]WriteOp" -> "[1]ByteSelect";
+	"[1]MdcEn_n"	 [complexity=1,
+		importance=0.0461129428556,
+		rank=0.0461129428556];
+	"[1]shftrg.MdcEn_n"	 [complexity=1,
+		importance=0.0361855740686,
+		rank=0.0361855740686];
+	"[1]MdcEn_n" -> "[1]shftrg.MdcEn_n";
+	"[1]NoPre"	 [complexity=7,
+		importance=0.0592209862214,
+		rank=0.00846014088877];
+	"[1]NoPre" -> "[1]ByteSelect";
+	"shftrg.LinkFail" -> LinkFail;
+	"[1]Rgad"	 [complexity=1,
+		importance=0.0425007803608,
+		rank=0.0425007803608];
+	"[1]shftrg.Rgad"	 [complexity=1,
+		importance=0.0366360580071,
+		rank=0.0366360580071];
+	"[1]Rgad" -> "[1]shftrg.Rgad";
+	"[1]shftrg.Rgad" -> "shftrg.LinkFail";
+	"[1]shftrg.MdcEn_n" -> "shftrg.LinkFail";
+	"[1]clkgen.Counter"	 [complexity=6,
+		importance=0.085651714323,
+		rank=0.0142752857205];
+	"[1]clkgen.CountEq0"	 [complexity=4,
+		importance=0.0652128188204,
+		rank=0.0163032047051];
+	"[1]clkgen.Counter" -> "[1]clkgen.CountEq0";
+	"[1]clkgen.Mdc"	 [complexity=4,
+		importance=0.0635446089898,
+		rank=0.0158861522474];
+	"[1]clkgen.MdcEn_n"	 [complexity=1,
+		importance=0.0542383600636,
+		rank=0.0542383600636];
+	"[1]clkgen.Mdc" -> "[1]clkgen.MdcEn_n";
+	"[1]LatchByte"	 [complexity=1,
+		importance=0.0589029966295,
+		rank=0.0589029966295];
+	"[1]shftrg.LatchByte"	 [complexity=1,
+		importance=0.042103160596,
+		rank=0.042103160596];
+	"[1]LatchByte" -> "[1]shftrg.LatchByte";
+	"[1]clkgen.MdcEn_n" -> "[1]MdcEn_n";
+	"[1]Reset"	 [complexity=1,
+		importance=0.0674472022858,
+		rank=0.0674472022858];
+	"[1]shftrg.Reset"	 [complexity=1,
+		importance=0.0615824799322,
+		rank=0.0615824799322];
+	"[1]Reset" -> "[1]shftrg.Reset";
+	"[1]shftrg.ShiftReg"	 [complexity=3,
+		importance=0.0630054196359,
+		rank=0.0210018065453];
+	"[1]shftrg.ShiftReg" -> "shftrg.LinkFail";
+	"[1]clkgen.CountEq0" -> "[1]clkgen.MdcEn_n";
+	"[1]shftrg.LatchByte" -> "shftrg.LinkFail";
+	"[1]shftrg.Reset" -> "shftrg.LinkFail";
+}

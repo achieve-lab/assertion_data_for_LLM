@@ -1,0 +1,19 @@
+strict digraph "" {
+	cmd_bits -> cmd_active	 [weight=1.0];
+	start_bit -> data	 [weight=1.0];
+	cmd -> cmd_bits	 [weight=1.0];
+	cmd -> crc_bit	 [weight=1.0];
+	cmd -> CMD1_dat	 [weight=1.0];
+	cmd -> data	 [weight=1.0];
+	arg16_bit -> data	 [weight=1.0];
+	crc_bit -> data	 [weight=1.0];
+	CMD1_dat -> data	 [weight=1.0];
+	stop_bit -> data	 [weight=1.0];
+	bit -> cmd_bits	 [weight=1.0];
+	bit -> start_bit	 [weight=1.0];
+	bit -> arg16_bit	 [weight=1.0];
+	bit -> crc_bit	 [weight=1.0];
+	bit -> CMD1_dat	 [weight=1.0];
+	bit -> stop_bit	 [weight=1.0];
+	bit -> data	 [weight=1.0];
+}

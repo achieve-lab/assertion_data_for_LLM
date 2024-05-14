@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"761:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fefacf1a090>",
+		def_var="['stall']",
+		fillcolor=deepskyblue,
+		label="761:AS
+stall = stall_lsu_i | stall_multdiv_i | stall_jump_i | stall_branch_i;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['stall_lsu_i', 'stall_multdiv_i', 'stall_jump_i', 'stall_branch_i']"];
+}

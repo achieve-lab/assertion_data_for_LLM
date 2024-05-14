@@ -1,0 +1,91 @@
+Report file generated at: May-12-2024 04:24:48 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a6: (in_data[1] == 1 & in_data[0] == 1) ##1 (in_data[0] == 0) |=> (end_of_Ethernet_frame == 0)
+IRank: : 0.18535
+Importance: : 2.96554
+Complexity: : 16
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (transition_timeout[1] == 0) |=> (end_of_Ethernet_frame == 0)
+IRank: : 0.08143
+Importance: : 0.16287
+Complexity: : 2
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (transition_timeout[0] == 0) |=> (end_of_Ethernet_frame == 0)
+IRank: : 0.08143
+Importance: : 0.16287
+Complexity: : 2
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (cnt[0] == 1) |=> (end_of_Ethernet_frame == 0)
+IRank: : 0.07998
+Importance: : 0.23994
+Complexity: : 3
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (cnt[0] == 1) |=> ##1 (end_of_Ethernet_frame == 0)
+IRank: : 0.0671
+Importance: : 0.3355
+Complexity: : 5
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a5: (transition_timeout[1] == 1) |=> ##2 (end_of_Ethernet_frame == 0)
+IRank: : 0.059
+Importance: : 0.35399
+Complexity: : 6
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (transition_timeout[0] == 0) |=> ##2 (end_of_Ethernet_frame == 0)
+IRank: : 0.059
+Importance: : 0.35399
+Complexity: : 6
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a6        | 0.18535 |  2.96554   |     16     |  Unknown  | Unknown |   Unknown   
+      a3        | 0.08143 |  0.16287   |     2      |  Unknown  | Unknown |   Unknown   
+      a2        | 0.08143 |  0.16287   |     2      |  Unknown  | Unknown |   Unknown   
+      a0        | 0.07998 |  0.23994   |     3      |  Unknown  | Unknown |   Unknown   
+      a1        | 0.0671  |   0.3355   |     5      |  Unknown  | Unknown |   Unknown   
+      a5        |  0.059  |  0.35399   |     6      |  Unknown  | Unknown |   Unknown   
+      a4        |  0.059  |  0.35399   |     6      |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 7
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 7
+Hit rate: 0.0
+Miss rate: 1.0

@@ -1,0 +1,39 @@
+strict digraph "" {
+	"[1]push_ok"	 [complexity=7,
+		importance=0.364059328664,
+		rank=0.0520084755234];
+	counter	 [complexity=4,
+		importance=0.163555371277,
+		rank=0.0408888428192];
+	"[1]push_ok" -> counter;
+	"[1]pop_ok"	 [complexity=7,
+		importance=0.200503957387,
+		rank=0.0286434224839];
+	"[1]pop_ok" -> counter;
+	"[1]RST"	 [complexity=5,
+		importance=0.524978242004,
+		rank=0.104995648401];
+	"[1]RST" -> counter;
+	"[1]counter"	 [complexity=9,
+		importance=0.274324489009,
+		rank=0.0304804987788];
+	"[1]counter" -> "[1]push_ok";
+	"[1]counter" -> "[1]pop_ok";
+	"[1]counter" -> counter;
+	BYTES_AVAIL	 [complexity=2,
+		importance=0.0897348396547,
+		rank=0.0448674198274];
+	counter -> BYTES_AVAIL;
+	BYTES_FREE	 [complexity=0,
+		importance=0.0527862535444,
+		rank=0.0];
+	"[1]PUSH_POPn"	 [complexity=10,
+		importance=0.524978242004,
+		rank=0.0524978242004];
+	"[1]PUSH_POPn" -> counter;
+	BYTES_AVAIL -> BYTES_FREE;
+	"[1]EN"	 [complexity=10,
+		importance=0.524978242004,
+		rank=0.0524978242004];
+	"[1]EN" -> counter;
+}

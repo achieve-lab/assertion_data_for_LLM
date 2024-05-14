@@ -1,0 +1,52 @@
+2024-05-12 17:16:48,918 - INFO - goldmine.py -             <module> - User specified assertion file does not exist. Continuing with auto-generated assertions
+2024-05-12 17:16:48,918 - INFO - goldmine.py -             <module> - No Mining Engine specified. Engine specified in the goldmine.cfg will be used
+2024-05-12 17:16:48,926 - WARNING - goldmine.py -             <module> - VCS Executable Not Found.
+2024-05-12 17:16:48,926 - WARNING - goldmine.py -             <module> - IFV Executable Not Found. Assertion Verification won't be possible.
+2024-05-12 17:16:51,419 - INFO - goldmine.py -             <module> - Total time for parsing, ranking: 0:00:02.484817
+2024-05-12 17:16:51,419 - INFO - goldmine.py -             <module> - Peak Memory Usage for parsing, ranking: 905.28 MB
+2024-05-12 17:17:02,834 - INFO - goldmine.py -             <module> - Simulating with: iverilog
+2024-05-12 17:17:03,850 - INFO - goldmine.py -             <module> - Compile Time: 0:00:01.014999
+2024-05-12 17:17:03,850 - INFO - goldmine.py -             <module> - Compile Memory Usage: 217.29 MB
+2024-05-12 17:17:04,865 - INFO - goldmine.py -             <module> - Run Time: 0:00:01.014999
+2024-05-12 17:17:04,865 - INFO - goldmine.py -             <module> - Run Memory Usage: 9.45 MB
+2024-05-12 17:17:04,873 - INFO - goldmine.py -             <module> - Parsing VCD file: /data/vpulav2/Work/GoldMine/Runtime/goldmine.out/mdio/mdio.vcd
+2024-05-12 17:17:04,889 - INFO - simulation.py -             parse - Parsing VCD file generated on: Sun May 12 17:17:03 2024
+2024-05-12 17:17:04,889 - INFO - simulation.py -             parse - VCD file created by the tool: Icarus Verilog
+2024-05-12 17:17:04,889 - INFO - simulation.py -             parse - Design was simulated using timescale: 1ps
+2024-05-12 17:17:04,895 - INFO - simulation.py -             parse - Parsing trace data
+2024-05-12 17:29:54,465 - INFO - simulation.py -             parse - Creating time shifted data for Sequential circuit type
+2024-05-12 17:30:22,846 - INFO - simulation.py -             parse - Converting time shifted mine data in dataframes
+2024-05-12 17:30:32,523 - INFO - simulation.py -             parse - Validating simulation data
+2024-05-12 17:39:03,502 - INFO - goldmine.py -             <module> - Number of added unique data examples: 9997
+2024-05-12 17:39:03,503 - INFO - goldmine.py -             <module> - Number of valid examples: 1636
+2024-05-12 17:39:03,503 - INFO - goldmine.py -             <module> - Number of invalid examples: 8361
+2024-05-12 17:39:03,503 - INFO - goldmine.py -             <module> - Total time to parse VCD file: 0:21:58.628693
+2024-05-12 17:39:09,756 - INFO - goldmine.py -             <module> - Engine used for mining: prism
+2024-05-12 17:39:09,757 - INFO - miner.py -             miner - Constructing target specific data frame for mining..
+2024-05-12 17:52:17,028 - INFO - simulation.py -             erase_and_reindex_data - Number of added unique data examples: 9997
+2024-05-12 17:52:17,028 - INFO - simulation.py -             erase_and_reindex_data - Number of valid examples: 9975
+2024-05-12 17:52:17,028 - INFO - simulation.py -             erase_and_reindex_data - Number of invalid examples: 22
+2024-05-12 18:26:36,788 - INFO - goldmine.py -             <module> - Formal verification of mined assertions was skipped as per user request
+2024-05-12 18:26:37,934 - INFO - miner.py -             miner - Constructing target specific data frame for mining..
+2024-05-12 18:56:59,417 - INFO - simulation.py -             erase_and_reindex_data - Number of added unique data examples: 9997
+2024-05-12 18:56:59,417 - INFO - simulation.py -             erase_and_reindex_data - Number of valid examples: 6086
+2024-05-12 18:56:59,418 - INFO - simulation.py -             erase_and_reindex_data - Number of invalid examples: 3911
+2024-05-12 19:19:19,532 - INFO - goldmine.py -             <module> - Formal verification of mined assertions was skipped as per user request
+2024-05-12 19:19:19,556 - INFO - assertion_analyzer.py -             analyze_for_rank - Cannot find file: /data/vpulav2/Work/GoldMine/Runtime/goldmine.out/mdio/verif/prism/mdio_o/mdio_o.cone
+2024-05-12 19:19:19,557 - INFO - assertion_analyzer.py -             analyze - Cannot find file: /data/vpulav2/Work/GoldMine/Runtime/goldmine.out/mdio/verif/prism/mdio_o/mdio_o.gold
+2024-05-12 19:19:20,423 - INFO - miner.py -             miner - Constructing target specific data frame for mining..
+2024-05-12 19:22:46,471 - INFO - simulation.py -             erase_and_reindex_data - Number of added unique data examples: 9997
+2024-05-12 19:22:46,471 - INFO - simulation.py -             erase_and_reindex_data - Number of valid examples: 6086
+2024-05-12 19:22:46,471 - INFO - simulation.py -             erase_and_reindex_data - Number of invalid examples: 3911
+2024-05-12 19:22:51,827 - INFO - goldmine.py -             <module> - Formal verification of mined assertions was skipped as per user request
+2024-05-12 19:22:51,836 - INFO - assertion_analyzer.py -             analyze_for_rank - Cannot find file: /data/vpulav2/Work/GoldMine/Runtime/goldmine.out/mdio/verif/prism/mdio_t/mdio_t.cone
+2024-05-12 19:22:51,836 - INFO - assertion_analyzer.py -             analyze - Cannot find file: /data/vpulav2/Work/GoldMine/Runtime/goldmine.out/mdio/verif/prism/mdio_t/mdio_t.gold
+2024-05-12 19:22:52,682 - INFO - miner.py -             miner - Constructing target specific data frame for mining..
+2024-05-12 19:25:53,943 - INFO - simulation.py -             erase_and_reindex_data - Number of added unique data examples: 9997
+2024-05-12 19:25:53,943 - INFO - simulation.py -             erase_and_reindex_data - Number of valid examples: 6086
+2024-05-12 19:25:53,943 - INFO - simulation.py -             erase_and_reindex_data - Number of invalid examples: 3911
+2024-05-12 19:26:06,365 - INFO - goldmine.py -             <module> - Formal verification of mined assertions was skipped as per user request
+2024-05-12 19:26:06,373 - INFO - assertion_analyzer.py -             analyze_for_rank - Cannot find file: /data/vpulav2/Work/GoldMine/Runtime/goldmine.out/mdio/verif/prism/mdio_in_valid/mdio_in_valid.cone
+2024-05-12 19:26:06,374 - INFO - assertion_analyzer.py -             analyze - Cannot find file: /data/vpulav2/Work/GoldMine/Runtime/goldmine.out/mdio/verif/prism/mdio_in_valid/mdio_in_valid.gold
+2024-05-12 19:26:07,172 - INFO - goldmine.py -             <module> - Total time to mine: 1:46:57.416038
+2024-05-12 19:26:07,172 - INFO - goldmine.py -             <module> - Total Run Time: 2:09:18.245761

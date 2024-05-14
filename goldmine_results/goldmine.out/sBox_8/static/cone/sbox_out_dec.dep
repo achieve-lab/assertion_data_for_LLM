@@ -1,0 +1,15 @@
+base_new_pp	out_gf_inv8_1
+[1]base_new_dec	[1]base_new
+[1]gf_inv_8_stage1	[1]out_gf_inv8_stage1
+out_gf_inv8_1	sbox_out_dec
+[1]base_new	base_new_pp
+[1]base_new	[1]out_gf_inv8_stage1
+[1]isomorphism	[1]base_new_enc
+[1]sbox_in	[1]base_new_enc
+out_gf_pp	out_gf_inv8_1
+[1]enc_dec	[1]base_new
+isomorphism_inv	sbox_out_dec
+gf_inv_8_stage2	out_gf_inv8_1
+DEC	sbox_out_dec
+[1]out_gf_inv8_stage1	out_gf_pp
+[1]base_new_enc	[1]base_new

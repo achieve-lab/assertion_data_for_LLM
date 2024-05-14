@@ -1,0 +1,14 @@
+strict digraph "" {
+	node [label="\N"];
+	"254:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fd1e8de2ed0>",
+		def_var="['encrypt_decrypt']",
+		fillcolor=deepskyblue,
+		label="254:AS
+encrypt_decrypt = (op_mode == ENCRYPTION) || (op_mode == KEY_DERIVATION) || (state == GEN_KEY0) || (state == GEN_KEY1) || (\
+state == GEN_KEY2) || (state == GEN_KEY3);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['op_mode', 'ENCRYPTION', 'op_mode', 'KEY_DERIVATION', 'state', 'GEN_KEY0', 'state', 'GEN_KEY1', 'state', 'GEN_KEY2', 'state', '\
+GEN_KEY3']"];
+}

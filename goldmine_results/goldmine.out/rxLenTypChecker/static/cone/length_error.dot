@@ -1,0 +1,43 @@
+strict digraph "" {
+	"[1]location_reg"	 [complexity=7,
+		importance=2.36976381092,
+		rank=0.338537687274];
+	large_error	 [complexity=3,
+		importance=0.287390234591,
+		rank=0.0957967448638];
+	"[1]location_reg" -> large_error;
+	length_error	 [complexity=0,
+		importance=0.137556196315,
+		rank=0.0];
+	"[1]jumbo_enable"	 [complexity=7,
+		importance=1.76468886135,
+		rank=0.252098408765];
+	"[1]jumbo_enable" -> large_error;
+	"[1]tagged_frame"	 [complexity=5,
+		importance=2.33946933054,
+		rank=0.467893866107];
+	"[1]tagged_frame" -> large_error;
+	small_error	 [complexity=3,
+		importance=0.182137908632,
+		rank=0.0607126362106];
+	small_error -> length_error;
+	"[1]frame_cnt"	 [complexity=13,
+		importance=5.21337167645,
+		rank=0.401028590496];
+	"[1]frame_cnt" -> small_error;
+	"[1]frame_cnt" -> large_error;
+	large_error -> length_error;
+	"[1]reset"	 [complexity=4,
+		importance=2.62685956513,
+		rank=0.656714891282];
+	"[1]reset" -> small_error;
+	"[1]reset" -> large_error;
+	"[1]get_terminator"	 [complexity=7,
+		importance=0.222485362436,
+		rank=0.0317836232052];
+	"[1]get_terminator" -> small_error;
+	"[1]vlan_enable"	 [complexity=5,
+		importance=2.33946933054,
+		rank=0.467893866107];
+	"[1]vlan_enable" -> large_error;
+}

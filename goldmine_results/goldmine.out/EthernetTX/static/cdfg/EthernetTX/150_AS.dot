@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"150:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f9ff6c89c90>",
+		def_var="['IPchecksum2']",
+		fillcolor=deepskyblue,
+		label="150:AS
+IPchecksum2 = ~(IPchecksum1[15:0] + IPchecksum1[18:16]);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['IPchecksum1', 'IPchecksum1']"];
+}

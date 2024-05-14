@@ -1,0 +1,25 @@
+strict digraph "" {
+	node [label="\N"];
+	"Leaf_1058:AL"	 [def_var="['pid_OUT_r']",
+		label="Leaf_1058:AL"];
+	"1058:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fae5e115c90>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="1058:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['pid_OUT']"];
+	"1059:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fae5e115d90>",
+		fillcolor=firebrick,
+		label="1059:NS
+pid_OUT_r <= pid_OUT;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fae5e115d90>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"1058:AL" -> "1059:NS"	 [cond="[]",
+		lineno=None];
+	"1059:NS" -> "Leaf_1058:AL"	 [cond="[]",
+		lineno=None];
+}

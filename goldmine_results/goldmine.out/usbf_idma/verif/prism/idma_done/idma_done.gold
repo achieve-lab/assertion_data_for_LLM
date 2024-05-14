@@ -1,0 +1,46 @@
+Report file generated at: Nov-15-2023 09:42:56 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a1: (rx_data_done_r == 0) |=> (idma_done == 0)
+IRank: : 0.00854
+Importance: : 0.02562
+Complexity: : 3
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (rx_data_done_r == 1) |=> (idma_done == 1)
+IRank: : 0.00854
+Importance: : 0.02562
+Complexity: : 3
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a1        | 0.00854 |  0.02562   |     3      |  Unknown  | Unknown |   Unknown   
+      a0        | 0.00854 |  0.02562   |     3      |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 2
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 2
+Hit rate: 0.0
+Miss rate: 1.0

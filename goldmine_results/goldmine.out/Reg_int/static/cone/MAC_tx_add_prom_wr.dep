@@ -1,0 +1,13 @@
+Reset	U_0_010.Reset
+U_0_010.CCSB	U_0_010.RegOut
+U_0_010.CWR_pulse	U_0_010.RegOut
+WRB	U_0_010.CWR_pulse
+CD_in	U_0_010.CD_in_reg
+CA	U_0_010.CA_reg
+U_0_010.RegInit	U_0_010.RegOut
+U_0_010.RegOut	MAC_tx_add_prom_wr
+U_0_010.CD_in_reg	U_0_010.RegOut
+U_0_010.Reset	U_0_010.RegOut
+U_0_010.CA_reg	U_0_010.RegOut
+U_0_010.CA_reg_set	U_0_010.RegOut
+CSB	U_0_010.CCSB

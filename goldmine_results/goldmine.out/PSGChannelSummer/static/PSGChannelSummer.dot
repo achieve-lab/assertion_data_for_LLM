@@ -1,0 +1,8 @@
+digraph "" {
+	outctrl -> o	 [weight=2.0];
+	tmc_i -> o	 [weight=2.0];
+	cnt -> sel	 [weight=1.0];
+	cnt -> o	 [weight=3.0];
+	sel -> o	 [weight=2.0];
+	o -> o	 [weight=1.0];
+}

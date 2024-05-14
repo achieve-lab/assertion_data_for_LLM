@@ -1,0 +1,111 @@
+strict digraph "" {
+	"[1]TXCTRL_0.Reset"	 [complexity=3,
+		importance=0.0428239731128,
+		rank=0.0142746577043];
+	"TXCTRL_0.DataOut"	 [complexity=2,
+		importance=0.0138504202644,
+		rank=0.00692521013219];
+	"[1]TXCTRL_0.Reset" -> "TXCTRL_0.DataOut";
+	"[1]TXCTRL_1.SyncReset"	 [complexity=3,
+		importance=0.0289675197982,
+		rank=0.00965583993275];
+	"TXCTRL_1.DataOut"	 [complexity=2,
+		importance=0.0138504202644,
+		rank=0.00692521013219];
+	"[1]TXCTRL_1.SyncReset" -> "TXCTRL_1.DataOut";
+	TXCTRLOut	 [complexity=2,
+		importance=0.00987794671362,
+		rank=0.00493897335681];
+	"TXCTRL_0.DataOut" -> TXCTRLOut;
+	r_TxPauseRq	 [complexity=0,
+		importance=0.00249682648635,
+		rank=0.0];
+	TXCTRLOut -> r_TxPauseRq;
+	"[1]TXCTRL_0.SyncReset"	 [complexity=3,
+		importance=0.0289675197982,
+		rank=0.00965583993275];
+	"[1]TXCTRL_0.SyncReset" -> "TXCTRL_0.DataOut";
+	"TXCTRL_2.DataOut"	 [complexity=2,
+		importance=0.0141669022604,
+		rank=0.00708345113019];
+	"TXCTRL_2.DataOut" -> TXCTRLOut;
+	"[1]TXCTRL_2.SyncReset"	 [complexity=3,
+		importance=0.0302339540565,
+		rank=0.0100779846855];
+	"[1]TXCTRL_2.SyncReset" -> "TXCTRL_2.DataOut";
+	"[1]Write"	 [complexity=12,
+		importance=0.0550738452726,
+		rank=0.00458948710605];
+	"[1]TXCTRL_Wr"	 [complexity=3,
+		importance=0.0177245652456,
+		rank=0.00590818841521];
+	"[1]Write" -> "[1]TXCTRL_Wr";
+	"[1]Address"	 [complexity=14,
+		importance=0.0557202515731,
+		rank=0.00398001796951];
+	"[1]TXCTRL_Sel"	 [complexity=12,
+		importance=0.0544535723036,
+		rank=0.00453779769197];
+	"[1]Address" -> "[1]TXCTRL_Sel";
+	"[1]TXCTRL_1.Write"	 [complexity=3,
+		importance=0.0154443432033,
+		rank=0.00514811440108];
+	"[1]TXCTRL_1.Write" -> "TXCTRL_1.DataOut";
+	"[1]RstTxPauseRq"	 [complexity=3,
+		importance=0.031500633326,
+		rank=0.0105002111087];
+	"[1]RstTxPauseRq" -> "[1]TXCTRL_2.SyncReset";
+	"[1]TXCTRL_1.DataIn"	 [complexity=4,
+		importance=0.015127836318,
+		rank=0.00378195907951];
+	"[1]TXCTRL_1.DataIn" -> "TXCTRL_1.DataOut";
+	"[1]DataIn"	 [complexity=4,
+		importance=0.0167109975835,
+		rank=0.00417774939589];
+	"[1]DataIn" -> "[1]TXCTRL_1.DataIn";
+	"[1]TXCTRL_0.DataIn"	 [complexity=4,
+		importance=0.015127836318,
+		rank=0.00378195907951];
+	"[1]DataIn" -> "[1]TXCTRL_0.DataIn";
+	"[1]TXCTRL_2.DataIn"	 [complexity=4,
+		importance=0.015444318314,
+		rank=0.00386107957851];
+	"[1]DataIn" -> "[1]TXCTRL_2.DataIn";
+	"[1]Cs"	 [complexity=15,
+		importance=0.0563405245421,
+		rank=0.00375603496947];
+	"[1]Cs" -> "[1]Write";
+	"[1]Rw"	 [complexity=15,
+		importance=0.0563405245421,
+		rank=0.00375603496947];
+	"[1]Rw" -> "[1]Write";
+	"TXCTRL_1.DataOut" -> TXCTRLOut;
+	"[1]TXCTRL_0.DataIn" -> "TXCTRL_0.DataOut";
+	"[1]TXCTRL_2.Write"	 [complexity=3,
+		importance=0.0157608251993,
+		rank=0.00525360839975];
+	"[1]TXCTRL_2.Write" -> "TXCTRL_2.DataOut";
+	"[1]TXCTRL_0.Write"	 [complexity=3,
+		importance=0.0154443432033,
+		rank=0.00514811440108];
+	"[1]TXCTRL_0.Write" -> "TXCTRL_0.DataOut";
+	"[1]Reset"	 [complexity=3,
+		importance=0.0450400983703,
+		rank=0.0150133661234];
+	"[1]Reset" -> "[1]TXCTRL_0.Reset";
+	"[1]TXCTRL_2.Reset"	 [complexity=3,
+		importance=0.0437734191008,
+		rank=0.0145911397003];
+	"[1]Reset" -> "[1]TXCTRL_2.Reset";
+	"[1]TXCTRL_1.Reset"	 [complexity=3,
+		importance=0.0428239731128,
+		rank=0.0142746577043];
+	"[1]Reset" -> "[1]TXCTRL_1.Reset";
+	"[1]TXCTRL_Wr" -> "[1]TXCTRL_1.Write";
+	"[1]TXCTRL_Wr" -> "[1]TXCTRL_2.Write";
+	"[1]TXCTRL_Wr" -> "[1]TXCTRL_0.Write";
+	"[1]TXCTRL_2.Reset" -> "TXCTRL_2.DataOut";
+	"[1]TXCTRL_2.DataIn" -> "TXCTRL_2.DataOut";
+	"[1]TXCTRL_1.Reset" -> "TXCTRL_1.DataOut";
+	"[1]TXCTRL_Sel" -> "[1]TXCTRL_Wr";
+}

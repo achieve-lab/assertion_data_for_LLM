@@ -1,0 +1,12 @@
+data_counter.reset	data_counter.value
+reset	data_counter.reset
+data_counter.load	data_counter.value
+[1]data_counter.en	data_counter.value
+[1]data_counter.value	data_counter.value
+[1]data_counter.load	data_counter.value
+data_counter.value	data_counter.value
+data_counter.value	frame_cnt
+data_counter.en	data_counter.value
+receiving	data_counter.load
+receiving	data_counter.en
+[1]data_counter.reset	data_counter.value

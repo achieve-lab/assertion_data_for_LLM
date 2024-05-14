@@ -1,0 +1,15 @@
+Reset	Rx_mac_rd
+Reset	Start_tran
+Tx_mac_eop	Start_tran
+Tx_mac_wa	operation
+Tx_mac_wa	data
+Tx_mac_wa	Start_tran
+Rx_mac_rd	Rx_mac_rd
+Rx_mac_ra	Rx_mac_rd
+CPU_init_end	operation
+CPU_init_end	data
+operation	Tx_mac_wr
+operation	Tx_mac_eop
+operation	Tx_mac_BE
+operation	Tx_mac_sop
+data	Tx_mac_data

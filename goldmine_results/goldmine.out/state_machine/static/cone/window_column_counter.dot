@@ -1,0 +1,17 @@
+strict digraph "" {
+	"[1]IMG_WIDTH"	 [complexity=6,
+		importance=0.424892587106,
+		rank=0.0708154311843];
+	window_column_counter	 [complexity=4,
+		importance=0.0738674063101,
+		rank=0.0184668515775];
+	"[1]IMG_WIDTH" -> window_column_counter;
+	"[1]rst_n"	 [complexity=5,
+		importance=0.498759993416,
+		rank=0.0997519986832];
+	"[1]rst_n" -> window_column_counter;
+	"[1]window_column_counter"	 [complexity=8,
+		importance=0.517071844171,
+		rank=0.0646339805213];
+	"[1]window_column_counter" -> window_column_counter;
+}

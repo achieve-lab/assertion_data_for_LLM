@@ -1,0 +1,150 @@
+strict digraph "" {
+	inta	 [complexity=0,
+		importance=0.00947670483603,
+		rank=0.0];
+	"[1]rst"	 [complexity=15,
+		importance=0.836188613924,
+		rank=0.055745907595];
+	"[1]int_srcb"	 [complexity=6,
+		importance=0.0309000306922,
+		rank=0.00515000511536];
+	"[1]rst" -> "[1]int_srcb";
+	"[1]inta_msk"	 [complexity=6,
+		importance=0.0167602716421,
+		rank=0.00279337860701];
+	"[1]rst" -> "[1]inta_msk";
+	"[1]u0.int_stat"	 [complexity=35,
+		importance=0.0420326103306,
+		rank=0.00120093172373];
+	"[1]u0.inta"	 [complexity=20,
+		importance=0.0285876905051,
+		rank=0.00142938452526];
+	"[1]u0.int_stat" -> "[1]u0.inta";
+	"[1]ep0_inta"	 [complexity=20,
+		importance=0.0237972255557,
+		rank=0.00118986127779];
+	"[1]inta_ep"	 [complexity=3,
+		importance=0.0195138721493,
+		rank=0.00650462404978];
+	"[1]ep0_inta" -> "[1]inta_ep";
+	"[1]ep8_inta"	 [complexity=20,
+		importance=0.021401657385,
+		rank=0.00107008286925];
+	"[1]ep8_inta" -> "[1]inta_ep";
+	"[1]ep9_inta"	 [complexity=20,
+		importance=0.021401657385,
+		rank=0.00107008286925];
+	"[1]ep9_inta" -> "[1]inta_ep";
+	"[1]ep7_inta"	 [complexity=20,
+		importance=0.021401657385,
+		rank=0.00107008286925];
+	"[1]ep7_inta" -> "[1]inta_ep";
+	"[1]suspend_end"	 [complexity=7,
+		importance=0.0337513321781,
+		rank=0.00482161888259];
+	"[1]suspend_end" -> "[1]int_srcb";
+	"[1]inta_rf"	 [complexity=3,
+		importance=0.0146147825484,
+		rank=0.0048715941828];
+	"[1]int_srcb" -> "[1]inta_rf";
+	"[1]ep14_inta"	 [complexity=20,
+		importance=0.021401657385,
+		rank=0.00107008286925];
+	"[1]ep14_inta" -> "[1]inta_ep";
+	"[1]adr"	 [complexity=8,
+		importance=0.0186480568778,
+		rank=0.00233100710972];
+	"[1]adr" -> "[1]inta_msk";
+	"[1]u0.inta" -> "[1]ep0_inta";
+	"[1]ep15_inta"	 [complexity=20,
+		importance=0.021401657385,
+		rank=0.00107008286925];
+	"[1]ep15_inta" -> "[1]inta_ep";
+	"[1]ep5_inta"	 [complexity=20,
+		importance=0.021401657385,
+		rank=0.00107008286925];
+	"[1]ep5_inta" -> "[1]inta_ep";
+	"[1]ep3_inta"	 [complexity=20,
+		importance=0.021401657385,
+		rank=0.00107008286925];
+	"[1]ep3_inta" -> "[1]inta_ep";
+	"[1]ep10_inta"	 [complexity=20,
+		importance=0.021401657385,
+		rank=0.00107008286925];
+	"[1]ep10_inta" -> "[1]inta_ep";
+	"[1]attach"	 [complexity=7,
+		importance=0.0337513321781,
+		rank=0.00482161888259];
+	"[1]attach" -> "[1]int_srcb";
+	"[1]ep6_inta"	 [complexity=20,
+		importance=0.021401657385,
+		rank=0.00107008286925];
+	"[1]ep6_inta" -> "[1]inta_ep";
+	"[1]we"	 [complexity=8,
+		importance=0.0186480568778,
+		rank=0.00233100710972];
+	"[1]we" -> "[1]inta_msk";
+	"[1]rx_err_r"	 [complexity=7,
+		importance=0.0337316505244,
+		rank=0.00481880721777];
+	"[1]rx_err_r" -> "[1]int_srcb";
+	"[1]inta_rf" -> inta;
+	"[1]ep1_inta"	 [complexity=20,
+		importance=0.021401657385,
+		rank=0.00107008286925];
+	"[1]ep1_inta" -> "[1]inta_ep";
+	"[1]ep13_inta"	 [complexity=20,
+		importance=0.021401657385,
+		rank=0.00107008286925];
+	"[1]ep13_inta" -> "[1]inta_ep";
+	"[1]u0.iena"	 [complexity=35,
+		importance=0.0312364338409,
+		rank=0.000892469538311];
+	"[1]u0.iena" -> "[1]u0.inta";
+	"[1]nse_err_r"	 [complexity=7,
+		importance=0.0337316505244,
+		rank=0.00481880721777];
+	"[1]nse_err_r" -> "[1]int_srcb";
+	"[1]crc5_err_r"	 [complexity=7,
+		importance=0.0337316505244,
+		rank=0.00481880721777];
+	"[1]crc5_err_r" -> "[1]int_srcb";
+	"[1]inta_msk" -> "[1]inta_rf";
+	"[1]pid_cs_err_r"	 [complexity=7,
+		importance=0.0337316505244,
+		rank=0.00481880721777];
+	"[1]pid_cs_err_r" -> "[1]int_srcb";
+	"[1]ep4_inta"	 [complexity=20,
+		importance=0.021401657385,
+		rank=0.00107008286925];
+	"[1]ep4_inta" -> "[1]inta_ep";
+	"[1]usb_reset_r"	 [complexity=7,
+		importance=0.0337316505244,
+		rank=0.00481880721777];
+	"[1]usb_reset_r" -> "[1]int_srcb";
+	"[1]deattach"	 [complexity=7,
+		importance=0.0337513321781,
+		rank=0.00482161888259];
+	"[1]deattach" -> "[1]int_srcb";
+	"[1]ep2_inta"	 [complexity=20,
+		importance=0.021401657385,
+		rank=0.00107008286925];
+	"[1]ep2_inta" -> "[1]inta_ep";
+	"[1]ep12_inta"	 [complexity=20,
+		importance=0.021401657385,
+		rank=0.00107008286925];
+	"[1]ep12_inta" -> "[1]inta_ep";
+	"[1]inta_ep" -> inta;
+	"[1]suspend_start"	 [complexity=7,
+		importance=0.0337513321781,
+		rank=0.00482161888259];
+	"[1]suspend_start" -> "[1]int_srcb";
+	"[1]ep11_inta"	 [complexity=20,
+		importance=0.021401657385,
+		rank=0.00107008286925];
+	"[1]ep11_inta" -> "[1]inta_ep";
+	"[1]int_src_re"	 [complexity=15,
+		importance=0.558157737298,
+		rank=0.0372105158198];
+	"[1]int_src_re" -> "[1]int_srcb";
+}

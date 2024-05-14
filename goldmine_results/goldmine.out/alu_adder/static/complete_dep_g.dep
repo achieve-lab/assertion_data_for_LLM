@@ -1,0 +1,17 @@
+ORsel	carry_out	8.0
+XorY	or_result	1.0
+XorY	carry_out	8.0
+XORsel	z	8.0
+carry_out	z	8.0
+carry_out	carry_out	8.0
+XandY	and_result	1.0
+XandY	carry_out	8.0
+XxorY	z	8.0
+XxorY	xor_result	1.0
+carry_in	carry_out	1.0
+y	XorY	1.0
+y	XxorY	1.0
+y	XandY	1.0
+x	XorY	1.0
+x	XxorY	1.0
+x	XandY	1.0

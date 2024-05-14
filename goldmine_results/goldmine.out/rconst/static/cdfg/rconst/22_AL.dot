@@ -1,0 +1,40 @@
+strict digraph "" {
+	node [label="\N"];
+	"22:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f58fbf50cd0>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="22:AL",
+		sens="['i']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['i']"];
+	"23:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f58fbf50e90>",
+		fillcolor=turquoise,
+		label="23:BL
+rc = 0;
+rc[0] = i[0] | i[4] | i[5] | i[6] | i[7] | i[10] | i[12] | i[13] | i[14] | i[15] | i[20] | i[22];
+rc[1] = i[1] | i[\
+2] | i[4] | i[8] | i[11] | i[12] | i[13] | i[15] | i[16] | i[18] | i[19];
+rc[3] = i[2] | i[4] | i[7] | i[8] | i[9] | i[10] | i[11] | \
+i[12] | i[13] | i[14] | i[18] | i[19] | i[23];
+rc[7] = i[1] | i[2] | i[4] | i[6] | i[8] | i[9] | i[12] | i[13] | i[14] | i[17] | \
+i[20] | i[21];
+rc[15] = i[1] | i[2] | i[3] | i[4] | i[6] | i[7] | i[10] | i[12] | i[14] | i[15] | i[16] | i[18] | i[20] | i[21] | \
+i[23];
+rc[31] = i[3] | i[5] | i[6] | i[10] | i[11] | i[12] | i[19] | i[20] | i[22] | i[23];
+rc[63] = i[2] | i[3] | i[6] | i[7] | \
+i[13] | i[14] | i[15] | i[16] | i[17] | i[19] | i[20] | i[21] | i[23];",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7f58fbf50ed0>, <pyverilog.vparser.ast.BlockingSubstitution object at 0x7f58fbf77090>, <\
+pyverilog.vparser.ast.BlockingSubstitution object at 0x7f58fbf77dd0>, <pyverilog.vparser.ast.BlockingSubstitution object at 0x7f58fbf7ca50>, <\
+pyverilog.vparser.ast.BlockingSubstitution object at 0x7f58fbf6d850>, <pyverilog.vparser.ast.BlockingSubstitution object at 0x7f58fbf5b5d0>, <\
+pyverilog.vparser.ast.BlockingSubstitution object at 0x7f58fba57650>, <pyverilog.vparser.ast.BlockingSubstitution object at 0x7f58fba501d0>]",
+		style=filled,
+		typ=Block];
+	"22:AL" -> "23:BL"	 [cond="[]",
+		lineno=None];
+	"Leaf_22:AL"	 [def_var="['rc']",
+		label="Leaf_22:AL"];
+	"23:BL" -> "Leaf_22:AL"	 [cond="[]",
+		lineno=None];
+}

@@ -1,0 +1,8 @@
+cclk_master	cclk_O
+enable_internal_cclk	cclk_O
+prescaler	cclk_master
+[1]internal_reset	enable_internal_cclk
+[1]prog_b	[1]internal_reset
+[1]M_latched	enable_internal_cclk
+[1]prescaler	prescaler
+[1]por	[1]internal_reset

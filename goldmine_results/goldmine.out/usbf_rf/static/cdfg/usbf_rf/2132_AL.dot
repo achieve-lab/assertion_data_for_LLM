@@ -1,0 +1,25 @@
+strict digraph "" {
+	node [label="\N"];
+	"2133:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f0a38dc9490>",
+		fillcolor=firebrick,
+		label="2133:NS
+usb_reset_r <= usb_reset;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f0a38dc9490>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"Leaf_2132:AL"	 [def_var="['usb_reset_r']",
+		label="Leaf_2132:AL"];
+	"2133:NS" -> "Leaf_2132:AL"	 [cond="[]",
+		lineno=None];
+	"2132:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f0a38dc9610>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="2132:AL",
+		sens="['wclk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['usb_reset']"];
+	"2132:AL" -> "2133:NS"	 [cond="[]",
+		lineno=None];
+}

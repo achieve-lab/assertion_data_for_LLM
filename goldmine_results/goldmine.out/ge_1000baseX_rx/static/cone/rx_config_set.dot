@@ -1,0 +1,39 @@
+strict digraph "" {
+	"[1]ebi_K_d3"	 [complexity=3,
+		importance=0.0175742084751,
+		rank=0.00585806949169];
+	"[1]rx_config_hi_read"	 [complexity=1,
+		importance=0.0129714329077,
+		rank=0.0129714329077];
+	"[1]ebi_K_d3" -> "[1]rx_config_hi_read";
+	"[1]rx_config_lo_read"	 [complexity=1,
+		importance=0.0129714329077,
+		rank=0.0129714329077];
+	"[1]ebi_K_d3" -> "[1]rx_config_lo_read";
+	"[1]rx_config_lo"	 [complexity=5,
+		importance=0.021888365346,
+		rank=0.0043776730692];
+	"[1]rx_config_tmp"	 [complexity=2,
+		importance=0.0161845523882,
+		rank=0.00809227619408];
+	"[1]rx_config_lo" -> "[1]rx_config_tmp";
+	"[1]pcs_rx_present"	 [complexity=2,
+		importance=0.0598396449447,
+		rank=0.0299198224723];
+	"[1]pcs_rx_present" -> "[1]rx_config_hi_read";
+	"[1]pcs_rx_present" -> "[1]rx_config_lo_read";
+	rx_config_set	 [complexity=0,
+		importance=0.0081503286615,
+		rank=0.0];
+	"[1]rx_config_tmp" -> rx_config_set;
+	"[1]ebi_rxd_d3"	 [complexity=5,
+		importance=0.0207886477915,
+		rank=0.00415772955831];
+	"[1]ebi_rxd_d3" -> "[1]rx_config_tmp";
+	"[1]rx_config_hi_read" -> rx_config_set;
+	"[1]rx_config_lo_read" -> rx_config_set;
+	"[1]reset"	 [complexity=1,
+		importance=0.0207155738984,
+		rank=0.0207155738984];
+	"[1]reset" -> rx_config_set;
+}

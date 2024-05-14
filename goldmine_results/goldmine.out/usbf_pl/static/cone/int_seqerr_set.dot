@@ -1,0 +1,94 @@
+strict digraph "" {
+	"[1]rx_err"	 [complexity=7,
+		importance=0.0180808958201,
+		rank=0.00258298511716];
+	"[1]u0.rx_err"	 [complexity=7,
+		importance=0.016754426506,
+		rank=0.00239348950086];
+	"[1]rx_err" -> "[1]u0.rx_err";
+	"[1]u0.state"	 [complexity=6,
+		importance=0.0189754613807,
+		rank=0.00316257689678];
+	"[1]u0.data_done"	 [complexity=5,
+		importance=0.0147647536595,
+		rank=0.00295295073191];
+	"[1]u0.state" -> "[1]u0.data_done";
+	"[1]u3.pid_seq_err"	 [complexity=3,
+		importance=0.0110971932566,
+		rank=0.00369906441886];
+	"[1]u3.int_seqerr_set_d"	 [complexity=2,
+		importance=0.00781491971904,
+		rank=0.00390745985952];
+	"[1]u3.pid_seq_err" -> "[1]u3.int_seqerr_set_d";
+	"[1]crc16_err"	 [complexity=5,
+		importance=0.0130086385173,
+		rank=0.00260172770346];
+	"[1]u3.crc16_err"	 [complexity=5,
+		importance=0.0104305605652,
+		rank=0.00208611211304];
+	"[1]crc16_err" -> "[1]u3.crc16_err";
+	"[1]u3.csr"	 [complexity=5,
+		importance=0.0111404471124,
+		rank=0.00222808942248];
+	"[1]u3.txfr_iso"	 [complexity=3,
+		importance=0.00915077426591,
+		rank=0.00305025808864];
+	"[1]u3.csr" -> "[1]u3.txfr_iso";
+	"[1]u3.tx_data_to"	 [complexity=5,
+		importance=0.0106379464098,
+		rank=0.00212758928196];
+	"[1]u3.tx_data_to" -> "[1]u3.int_seqerr_set_d";
+	"[1]csr"	 [complexity=5,
+		importance=0.0124669164265,
+		rank=0.0024933832853];
+	"[1]csr" -> "[1]u3.csr";
+	"[1]u0.crc16_err"	 [complexity=5,
+		importance=0.0155123396143,
+		rank=0.00310246792287];
+	"[1]u0.crc16_err" -> "[1]crc16_err";
+	"[1]rx_data_done"	 [complexity=3,
+		importance=0.0117460461646,
+		rank=0.00391534872153];
+	"[1]u3.rx_data_done"	 [complexity=3,
+		importance=0.00966230062346,
+		rank=0.00322076687449];
+	"[1]rx_data_done" -> "[1]u3.rx_data_done";
+	"[1]u3.abort"	 [complexity=5,
+		importance=0.0111721215771,
+		rank=0.00223442431542];
+	"[1]u3.abort" -> "[1]u3.int_seqerr_set_d";
+	int_seqerr_set	 [complexity=0,
+		importance=0.00263273165362,
+		rank=0.0];
+	"[1]u0.rx_active"	 [complexity=7,
+		importance=0.0164228247398,
+		rank=0.00234611781997];
+	"[1]u0.rx_active" -> "[1]u0.data_done";
+	"[1]u3.state"	 [complexity=3,
+		importance=0.0180954916216,
+		rank=0.00603183054052];
+	"[1]u3.state" -> "[1]u3.int_seqerr_set_d";
+	"[1]u0.crc16_sum"	 [complexity=8,
+		importance=0.0194635187174,
+		rank=0.00243293983967];
+	"[1]u0.crc16_sum" -> "[1]u0.crc16_err";
+	"[1]u0.rx_err" -> "[1]u0.data_done";
+	"u3.int_seqerr_set"	 [complexity=0,
+		importance=0.00524493380465,
+		rank=0.0];
+	"[1]u3.int_seqerr_set_d" -> "u3.int_seqerr_set";
+	"[1]u3.crc16_err" -> "[1]u3.int_seqerr_set_d";
+	"[1]u0.data_done" -> "[1]u0.crc16_err";
+	"[1]u0.rx_data_done"	 [complexity=3,
+		importance=0.0132605283484,
+		rank=0.00442017611614];
+	"[1]u0.data_done" -> "[1]u0.rx_data_done";
+	"[1]u3.rx_data_done" -> "[1]u3.int_seqerr_set_d";
+	"[1]u3.txfr_iso" -> "[1]u3.int_seqerr_set_d";
+	"[1]rx_active"	 [complexity=7,
+		importance=0.0177492940539,
+		rank=0.00253561343627];
+	"[1]rx_active" -> "[1]u0.rx_active";
+	"[1]u0.rx_data_done" -> "[1]rx_data_done";
+	"u3.int_seqerr_set" -> int_seqerr_set;
+}

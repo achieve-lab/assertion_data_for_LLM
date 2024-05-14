@@ -1,0 +1,81 @@
+strict digraph "" {
+	node [label="\N"];
+	"970:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f2e132e9f90>",
+		fillcolor=springgreen,
+		label="970:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"970:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f2e132e9710>",
+		fillcolor=turquoise,
+		label="970:BL
+store_transmit_pause_value <= FC_TRANS_PAUSEDATA;
+TXD_PAUSE_DEL1 <= { DEST_ADDR, SOURCE_ADDR[47:32] };
+TXD_PAUSE_DEL2 <= { \
+SOURCE_ADDR[31:0], PAUSE_FRAME_LENGTH, PAUSE_OPCODE, FC_TRANS_PAUSEDATA };
+TXC_PAUSE_DEL1 <= 8'hff;
+TXC_PAUSE_DEL2 <= 8'hff;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2e132e9090>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f2e132e9450>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2e132e9d10>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f2e132e9c10>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2e132e96d0>]",
+		style=filled,
+		typ=Block];
+	"970:IF" -> "970:BL"	 [cond="['FC_TRANS_PAUSEVAL']",
+		label=FC_TRANS_PAUSEVAL,
+		lineno=970];
+	"958:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f2e12ff0b50>",
+		fillcolor=turquoise,
+		label="958:BL
+TXD_PAUSE_DEL0 <= 0;
+TXD_PAUSE_DEL1 <= 0;
+TXD_PAUSE_DEL2 <= 0;
+TXC_PAUSE_DEL0 <= 0;
+TXC_PAUSE_DEL1 <= 0;
+TXC_PAUSE_DEL2 <= \
+0;
+store_transmit_pause_value <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2e12ff00d0>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f2e12ff0250>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2e12ff03d0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f2e12ff0550>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2e12ff06d0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f2e12ff0850>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2e12ff09d0>]",
+		style=filled,
+		typ=Block];
+	"Leaf_956:AL"	 [def_var="['TXD_PAUSE_DEL1', 'TXD_PAUSE_DEL0', 'TXD_PAUSE_DEL2', 'store_transmit_pause_value', 'TXC_PAUSE_DEL0', 'TXC_PAUSE_DEL1', 'TXC_PAUSE_\
+DEL2']",
+		label="Leaf_956:AL"];
+	"958:BL" -> "Leaf_956:AL"	 [cond="[]",
+		lineno=None];
+	"970:BL" -> "Leaf_956:AL"	 [cond="[]",
+		lineno=None];
+	"957:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f2e12ff0b90>",
+		fillcolor=turquoise,
+		label="957:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"958:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f2e12ff0bd0>",
+		fillcolor=springgreen,
+		label="958:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"957:BL" -> "958:IF"	 [cond="[]",
+		lineno=None];
+	"958:IF" -> "970:IF"	 [cond="['reset_int']",
+		label="!(reset_int)",
+		lineno=958];
+	"958:IF" -> "958:BL"	 [cond="['reset_int']",
+		label=reset_int,
+		lineno=958];
+	"956:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f2e12ff0c50>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="956:AL",
+		sens="['TX_CLK', 'reset_int']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['PAUSE_FRAME_LENGTH', 'reset_int', 'FC_TRANS_PAUSEDATA', 'SOURCE_ADDR', 'FC_TRANS_PAUSEVAL']"];
+	"956:AL" -> "957:BL"	 [cond="[]",
+		lineno=None];
+}

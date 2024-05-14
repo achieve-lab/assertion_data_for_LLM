@@ -1,0 +1,15 @@
+property a1;
+@(posedge clk) (instr_i[1] == 0) |-> (is_compressed_o == 1);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge clk) (instr_i[0] == 0) |-> (is_compressed_o == 1);
+endproperty
+assert_a0: assert property(a0);
+
+property a2;
+@(posedge clk) (instr_i[1] == 1 & instr_i[0] == 1) |-> (is_compressed_o == 0);
+endproperty
+assert_a2: assert property(a2);
+

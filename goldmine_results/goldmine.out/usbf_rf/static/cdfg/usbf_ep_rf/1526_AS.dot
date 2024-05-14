@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"1526:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0a38d97090>",
+		def_var="['dma_req_in_d']",
+		fillcolor=deepskyblue,
+		label="1526:AS
+dma_req_in_d = ep_in & (dma_in_cnt < buf0_orig[30:19]);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['ep_in', 'dma_in_cnt', 'buf0_orig']"];
+}

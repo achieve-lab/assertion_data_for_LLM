@@ -1,0 +1,19 @@
+strict digraph "" {
+	node [label="\N"];
+	"3634:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f44f6b37b10>",
+		def_var="['rst_tx_pointer']",
+		fillcolor=deepskyblue,
+		label="3634:AS
+rst_tx_pointer = ~bit_de_stuff_tx & tx_point & ~rx_data & extended_mode & r_tx_data_0[0] & (tx_pointer == 6'd38) | ~bit_\
+de_stuff_tx & tx_point & ~rx_data & extended_mode & ~r_tx_data_0[0] & (tx_pointer == 6'd18) | ~bit_de_stuff_tx & tx_point & ~rx_\
+data & ~extended_mode & (tx_pointer == 6'd18) | ~bit_de_stuff_tx & tx_point & rx_data & extended_mode & (tx_pointer == limited_tx_\
+cnt_ext) | ~bit_de_stuff_tx & tx_point & rx_data & ~extended_mode & (tx_pointer == limited_tx_cnt_std) | tx_point & rx_crc_lim | \
+go_rx_idle | reset_mode | overload_frame | error_frame;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['bit_de_stuff_tx', 'tx_point', 'rx_data', 'extended_mode', 'r_tx_data_0', 'tx_pointer', 'bit_de_stuff_tx', 'tx_point', 'rx_data', '\
+extended_mode', 'r_tx_data_0', 'tx_pointer', 'bit_de_stuff_tx', 'tx_point', 'rx_data', 'extended_mode', 'tx_pointer', 'bit_de_stuff_\
+tx', 'tx_point', 'rx_data', 'extended_mode', 'tx_pointer', 'limited_tx_cnt_ext', 'bit_de_stuff_tx', 'tx_point', 'rx_data', 'extended_\
+mode', 'tx_pointer', 'limited_tx_cnt_std', 'tx_point', 'rx_crc_lim', 'go_rx_idle', 'reset_mode', 'overload_frame', 'error_frame']"];
+}

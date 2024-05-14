@@ -1,0 +1,64 @@
+Report file generated at: Apr-10-2024 04:52:43 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a2: (RxAddressInvalid == 0) |=> (RxAbort == 0)
+IRank: : 0.05886
+Importance: : 0.17659
+Complexity: : 3
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (RxAddressInvalid == 1 & ByteCntEq7 == 1 & RxCheckEn == 1) |=> (RxAbort == 1)
+IRank: : 0.049
+Importance: : 0.44102
+Complexity: : 9
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (RxCheckEn == 0) |=> (RxAbort == 0)
+IRank: : 0.04549
+Importance: : 0.13646
+Complexity: : 3
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (ByteCntEq7 == 0) |=> (RxAbort == 0)
+IRank: : 0.04266
+Importance: : 0.12797
+Complexity: : 3
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a2        | 0.05886 |  0.17659   |     3      |  Unknown  | Unknown |   Unknown   
+      a3        |  0.049  |  0.44102   |     9      |  Unknown  | Unknown |   Unknown   
+      a1        | 0.04549 |  0.13646   |     3      |  Unknown  | Unknown |   Unknown   
+      a0        | 0.04266 |  0.12797   |     3      |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 4
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 4
+Hit rate: 0.0
+Miss rate: 1.0

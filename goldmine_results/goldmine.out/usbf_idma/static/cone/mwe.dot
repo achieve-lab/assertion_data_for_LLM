@@ -1,0 +1,13 @@
+strict digraph "" {
+	"[1]state"	 [complexity=3,
+		importance=0.374179686096,
+		rank=0.124726562032];
+	"[1]mwe_d"	 [complexity=2,
+		importance=0.0281799064264,
+		rank=0.0140899532132];
+	"[1]state" -> "[1]mwe_d";
+	mwe	 [complexity=0,
+		importance=0.0151068047326,
+		rank=0.0];
+	"[1]mwe_d" -> mwe;
+}

@@ -1,0 +1,25 @@
+strict digraph "" {
+	LatchedCrcError	 [complexity=0,
+		importance=0.0317677479853,
+		rank=0.0];
+	"[1]RxCrcError"	 [complexity=3,
+		importance=0.0457279666372,
+		rank=0.0152426555457];
+	"[1]RxCrcError" -> LatchedCrcError;
+	"[1]RxByteCntEq0"	 [complexity=3,
+		importance=0.0457279666372,
+		rank=0.0152426555457];
+	"[1]RxByteCntEq0" -> LatchedCrcError;
+	"[1]RxStateSFD"	 [complexity=1,
+		importance=0.0774957146224,
+		rank=0.0774957146224];
+	"[1]RxStateSFD" -> LatchedCrcError;
+	"[1]Reset"	 [complexity=1,
+		importance=0.109263462608,
+		rank=0.109263462608];
+	"[1]Reset" -> LatchedCrcError;
+	"[1]RxStateData"	 [complexity=1,
+		importance=0.0457279666372,
+		rank=0.0457279666372];
+	"[1]RxStateData" -> LatchedCrcError;
+}

@@ -1,0 +1,307 @@
+strict digraph "" {
+	node [label="\N"];
+	"272:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fcb433cda10>",
+		fillcolor=turquoise,
+		label="272:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"275:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fcb433cdf50>",
+		fillcolor=springgreen,
+		label="275:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"272:BL" -> "275:IF"	 [cond="[]",
+		lineno=None];
+	"273:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fcb433cda50>",
+		fillcolor=springgreen,
+		label="273:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"272:BL" -> "273:IF"	 [cond="[]",
+		lineno=None];
+	"275:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fcb433cdf90>",
+		fillcolor=turquoise,
+		label="275:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"275:IF" -> "275:BL"	 [cond="['RESET']",
+		label=RESET,
+		lineno=275];
+	"274:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb433cdb10>",
+		fillcolor=firebrick,
+		label="274:NS
+dirty[fnLM4550ToRealRegMap(adr_i[6:0])] <= 1'b1;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb433cdb10>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"273:IF" -> "274:NS"	 [cond="['cs', 'we_i']",
+		label="(cs & we_i)",
+		lineno=273];
+	"325:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fcb43384050>",
+		fillcolor=springgreen,
+		label="325:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"325:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fcb43377150>",
+		fillcolor=turquoise,
+		label="325:BL
+slot0[15] <= 1'b1;
+slot0[14] <= 1'b0;
+slot0[13] <= 1'b0;
+slot0[12] <= 1'b1;
+slot0[11] <= 1'b1;
+slot0[10:0] <= 11'd0;
+slot1 <= \
+20'd0;
+slot2 <= 20'd0;
+slot3[19:2] <= PSGout;
+slot3[1:0] <= 2'b00;
+slot4[19:2] <= PSGout;
+slot4[1:0] <= 2'b00;
+slot6 <= 20'd0;
+slot7 <= \
+20'd0;
+slot8 <= 20'd0;
+slot9 <= 20'd0;
+slot5 <= 20'd0;
+slot10 <= 20'd0;
+slot11 <= 20'd0;
+slot12 <= 20'd0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43377190>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7fcb43377350>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43377510>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb433776d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43377890>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb43377a50>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43377c50>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb43377d90>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43377ed0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb433a6110>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb433a6310>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb433a6510>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb433a6710>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb433a6850>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb433a6990>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb433a6ad0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb433a6c10>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb433a6d50>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb433a6e90>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb433a6fd0>]",
+		style=filled,
+		typ=Block];
+	"325:IF" -> "325:BL"	 [cond="['codecReady', 'pe_sync']",
+		label="(codecReady & pe_sync)",
+		lineno=325];
+	"349:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fcb43384090>",
+		fillcolor=springgreen,
+		label="349:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"325:IF" -> "349:IF"	 [cond="['codecReady', 'pe_sync']",
+		label="!((codecReady & pe_sync))",
+		lineno=325];
+	"349:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fcb433840d0>",
+		fillcolor=turquoise,
+		label="349:BL
+slot0 <= 0;
+slot1 <= 0;
+slot2 <= 0;
+slot3 <= 0;
+slot4 <= 0;
+slot5 <= 0;
+slot6 <= 0;
+slot7 <= 0;
+slot8 <= 0;
+slot9 <= 0;
+slot10 <= \
+0;
+slot11 <= 0;
+slot12 <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43384110>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7fcb43384250>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43384390>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb433844d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43384610>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb43384750>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43384890>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb433849d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43384b10>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb43384c50>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43384d90>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb43384e50>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43384f90>]",
+		style=filled,
+		typ=Block];
+	"Leaf_255:AL"	 [def_var="['slot11', 'slot10', 'slot12', 'slot9', 'slot8', 'dirty', 'slot1', 'slot0', 'slot3', 'slot2', 'slot5', 'slot4', 'slot7', 'slot6']",
+		label="Leaf_255:AL"];
+	"349:BL" -> "Leaf_255:AL"	 [cond="[]",
+		lineno=None];
+	"255:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fcb4335f850>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="255:AL",
+		sens="['clk_i']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['RESET', 'rst_i', 'codecReady', 'fnRealToLM4550RegMap', 'pe_sync', 'we_i', 'PSGout', 'rfrgno', 'doRead', 'cs', 'rgno', 'dirty']"];
+	"256:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fcb4335f950>",
+		fillcolor=springgreen,
+		label="256:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"255:AL" -> "256:IF"	 [cond="[]",
+		lineno=None];
+	"274:NS" -> "Leaf_255:AL"	 [cond="[]",
+		lineno=None];
+	"276:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fcb433b0210>",
+		fillcolor=turquoise,
+		label="276:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"277:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fcb433b0250>",
+		fillcolor=springgreen,
+		label="277:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"276:BL" -> "277:IF"	 [cond="[]",
+		lineno=None];
+	"256:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fcb4335f990>",
+		fillcolor=turquoise,
+		label="256:BL
+dirty <= 32'd0;
+slot0 <= 0;
+slot1 <= 0;
+slot2 <= 0;
+slot3 <= 0;
+slot4 <= 0;
+slot5 <= 0;
+slot6 <= 0;
+slot7 <= 0;
+slot8 <= \
+0;
+slot9 <= 0;
+slot10 <= 0;
+slot11 <= 0;
+slot12 <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4335f9d0>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7fcb4335fb10>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4335fc50>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb4335fd90>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4335fed0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb4336a050>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4336a190>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb4336a2d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4336a410>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb4336a550>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4336a690>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb4336a7d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4336a910>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb4336aa50>]",
+		style=filled,
+		typ=Block];
+	"256:BL" -> "Leaf_255:AL"	 [cond="[]",
+		lineno=None];
+	"300:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fcb433b0290>",
+		fillcolor=turquoise,
+		label="300:BL
+dirty[rgno] <= 1'b0;
+slot0[15] <= 1'b1;
+slot0[14] <= 1'b0;
+slot0[13] <= 1'b0;
+slot0[12] <= 1'b1;
+slot0[11] <= 1'b1;
+slot0[\
+10:0] <= 11'd0;
+slot1 <= 20'd0;
+slot2 <= 20'd0;
+slot3[19:2] <= PSGout;
+slot3[1:0] <= 2'b00;
+slot4[19:2] <= PSGout;
+slot4[1:0] <= \
+2'b00;
+slot6 <= 20'd0;
+slot7 <= 20'd0;
+slot8 <= 20'd0;
+slot9 <= 20'd0;
+slot5 <= 20'd0;
+slot10 <= 20'd0;
+slot11 <= 20'd0;
+slot12 <= \
+20'd0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb433b02d0>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7fcb433b0490>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb433b0650>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb433b0810>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb433b09d0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb433b0b90>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb433b0d50>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb433b0f50>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4333a0d0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb4333a210>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4333a410>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb4333a610>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4333a810>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb4333aa10>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4333ab50>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb4333ac90>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4333add0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb4333af10>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4334b090>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb4334b1d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4334b310>]",
+		style=filled,
+		typ=Block];
+	"277:IF" -> "300:BL"	 [cond="['rgno']",
+		label="!((rgno < 7'd27))",
+		lineno=277];
+	"277:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fcb4334b450>",
+		fillcolor=turquoise,
+		label="277:BL
+slot0[15] <= 1'b1;
+slot0[14] <= 1'b1;
+slot0[13] <= 1'b1;
+slot0[12:0] <= 13'd0;
+slot1[19] <= doRead;
+slot1[18:12] <= fnRealToLM4550RegMap(\
+rgno);
+slot1[11:0] <= 12'd0;
+slot2[19:4] <= (doRead)? 16'h0000 : rfrgno;
+slot2[3:0] <= 4'd0;
+slot3 <= 20'd0;
+slot4 <= 20'd0;
+slot6 <= \
+20'd0;
+slot7 <= 20'd0;
+slot8 <= 20'd0;
+slot9 <= 20'd0;
+slot5 <= 20'd0;
+slot10 <= 20'd0;
+slot11 <= 20'd0;
+slot12 <= 20'd0;
+dirty[\
+rgno] <= 1'b0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4334b490>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7fcb4334b650>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4334b810>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb4334b9d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4334bbd0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb4334bd90>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43355090>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb43355290>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43355550>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb43355750>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43355890>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb433559d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43355b10>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb43355c50>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb43355d90>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb43355ed0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4335f050>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb4335f190>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fcb4335f2d0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fcb4335f410>]",
+		style=filled,
+		typ=Block];
+	"277:IF" -> "277:BL"	 [cond="['rgno']",
+		label="(rgno < 7'd27)",
+		lineno=277];
+	"276:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fcb433cdfd0>",
+		fillcolor=springgreen,
+		label="276:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"276:IF" -> "325:IF"	 [cond="['codecReady', 'pe_sync', 'dirty']",
+		label="!((codecReady & pe_sync & |dirty))",
+		lineno=276];
+	"276:IF" -> "276:BL"	 [cond="['codecReady', 'pe_sync', 'dirty']",
+		label="(codecReady & pe_sync & |dirty)",
+		lineno=276];
+	"300:BL" -> "Leaf_255:AL"	 [cond="[]",
+		lineno=None];
+	"256:IF" -> "272:BL"	 [cond="['rst_i']",
+		label="!(rst_i)",
+		lineno=256];
+	"256:IF" -> "256:BL"	 [cond="['rst_i']",
+		label=rst_i,
+		lineno=256];
+	"275:BL" -> "276:IF"	 [cond="[]",
+		lineno=None];
+	"325:BL" -> "Leaf_255:AL"	 [cond="[]",
+		lineno=None];
+	"349:IF" -> "349:BL"	 [cond="['pe_sync']",
+		label=pe_sync,
+		lineno=349];
+	"277:BL" -> "Leaf_255:AL"	 [cond="[]",
+		lineno=None];
+}

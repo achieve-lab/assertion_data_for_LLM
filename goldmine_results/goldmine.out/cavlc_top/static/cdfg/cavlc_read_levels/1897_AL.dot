@@ -1,0 +1,56 @@
+strict digraph "" {
+	node [label="\N"];
+	"1901:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f204c59f090>",
+		fillcolor=turquoise,
+		label="1901:BL
+level_code_tmp <= (level_prefix << suffixLength) + level_suffix + (((suffixLength == 0) && (level_prefix == 15))? 4'd15 : \
+0);",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f204c598990>]",
+		style=filled,
+		typ=Block];
+	"Leaf_1897:AL"	 [def_var="['level_code_tmp']",
+		label="Leaf_1897:AL"];
+	"1901:BL" -> "Leaf_1897:AL"	 [cond="[]",
+		lineno=None];
+	"1898:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f204c6dd050>",
+		fillcolor=springgreen,
+		label="1898:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"1901:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f204c6dd0d0>",
+		fillcolor=springgreen,
+		label="1901:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"1898:IF" -> "1901:IF"	 [cond="['rst_n']",
+		label="!((!rst_n))",
+		lineno=1898];
+	"1898:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f204c6ddf50>",
+		fillcolor=turquoise,
+		label="1898:BL
+level_code_tmp <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f204c6dde50>]",
+		style=filled,
+		typ=Block];
+	"1898:IF" -> "1898:BL"	 [cond="['rst_n']",
+		label="(!rst_n)",
+		lineno=1898];
+	"1897:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f204c6dddd0>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="1897:AL",
+		sens="['clk', 'rst_n']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['rst_n', 'suffix_sel', 'ena', 'level_suffix', 'suffixLength', 'level_prefix']"];
+	"1897:AL" -> "1898:IF"	 [cond="[]",
+		lineno=None];
+	"1901:IF" -> "1901:BL"	 [cond="['suffix_sel', 'ena']",
+		label="(suffix_sel && ena)",
+		lineno=1901];
+	"1898:BL" -> "Leaf_1897:AL"	 [cond="[]",
+		lineno=None];
+}

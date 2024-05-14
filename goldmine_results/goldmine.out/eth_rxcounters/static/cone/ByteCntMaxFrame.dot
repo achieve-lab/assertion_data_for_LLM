@@ -1,0 +1,91 @@
+strict digraph "" {
+	"[1]Transmitting"	 [complexity=16,
+		importance=0.196894124362,
+		rank=0.0123058827727];
+	"[1]IncrementByteCounter"	 [complexity=5,
+		importance=0.179289159303,
+		rank=0.0358578318605];
+	"[1]Transmitting" -> "[1]IncrementByteCounter";
+	MaxFL	 [complexity=4,
+		importance=0.0552607671753,
+		rank=0.0138151917938];
+	ByteCntMaxFrame	 [complexity=0,
+		importance=0.0376558021154,
+		rank=0.0];
+	MaxFL -> ByteCntMaxFrame;
+	HugEn	 [complexity=4,
+		importance=0.0552607671753,
+		rank=0.0138151917938];
+	HugEn -> ByteCntMaxFrame;
+	ByteCnt	 [complexity=4,
+		importance=0.111025678966,
+		rank=0.0277564197416];
+	"[1]IncrementByteCounter" -> ByteCnt;
+	"[1]ByteCntMax"	 [complexity=16,
+		importance=0.199339862797,
+		rank=0.0124587414248];
+	"[1]ByteCntMax" -> "[1]IncrementByteCounter";
+	"[1]StatePreamble"	 [complexity=16,
+		importance=0.196894124362,
+		rank=0.0123058827727];
+	"[1]StatePreamble" -> "[1]IncrementByteCounter";
+	"[1]ByteCnt"	 [complexity=18,
+		importance=0.272709739648,
+		rank=0.0151505410915];
+	"[1]ByteCnt" -> "[1]ByteCntMax";
+	"[1]ByteCntMaxFrame"	 [complexity=22,
+		importance=0.266581934854,
+		rank=0.0121173606752];
+	"[1]ByteCnt" -> "[1]ByteCntMaxFrame";
+	"[1]ByteCnt" -> ByteCnt;
+	"[1]StateData"	 [complexity=22,
+		importance=0.246531097799,
+		rank=0.0112059589909];
+	"[1]StateData" -> "[1]IncrementByteCounter";
+	"[1]ResetByteCounter"	 [complexity=16,
+		importance=0.228926132739,
+		rank=0.0143078832962];
+	"[1]StateData" -> "[1]ResetByteCounter";
+	"[1]HugEn"	 [complexity=26,
+		importance=0.284186899914,
+		rank=0.0109302653813];
+	"[1]HugEn" -> "[1]ByteCntMaxFrame";
+	"[1]MaxFL"	 [complexity=26,
+		importance=0.284186899914,
+		rank=0.0109302653813];
+	"[1]MaxFL" -> "[1]ByteCntMaxFrame";
+	"[1]StateIdle"	 [complexity=16,
+		importance=0.196894124362,
+		rank=0.0123058827727];
+	"[1]StateIdle" -> "[1]IncrementByteCounter";
+	"[1]ResetByteCounter" -> "[1]IncrementByteCounter";
+	"[1]ResetByteCounter" -> ByteCnt;
+	"[1]MRxDEqD"	 [complexity=22,
+		importance=0.246531097799,
+		rank=0.0112059589909];
+	"[1]MRxDEqD" -> "[1]ResetByteCounter";
+	"[1]DlyCrcCnt"	 [complexity=16,
+		importance=0.229590238503,
+		rank=0.0143493899064];
+	"[1]DlyCrcCnt" -> "[1]IncrementByteCounter";
+	"[1]ByteCntMaxFrame" -> "[1]ResetByteCounter";
+	"[1]Reset"	 [complexity=5,
+		importance=0.350682001959,
+		rank=0.0701364003917];
+	"[1]Reset" -> ByteCnt;
+	ByteCnt -> ByteCntMaxFrame;
+	"[1]StateSFD"	 [complexity=22,
+		importance=0.246531097799,
+		rank=0.0112059589909];
+	"[1]StateSFD" -> "[1]IncrementByteCounter";
+	"[1]StateSFD" -> "[1]ResetByteCounter";
+	"[1]MRxDV"	 [complexity=22,
+		importance=0.246531097799,
+		rank=0.0112059589909];
+	"[1]MRxDV" -> "[1]IncrementByteCounter";
+	"[1]MRxDV" -> "[1]ResetByteCounter";
+	"[1]DlyCrcEn"	 [complexity=16,
+		importance=0.196894124362,
+		rank=0.0123058827727];
+	"[1]DlyCrcEn" -> "[1]IncrementByteCounter";
+}

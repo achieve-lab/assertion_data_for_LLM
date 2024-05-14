@@ -1,0 +1,30 @@
+strict digraph "" {
+	"[1]initialize"	 [complexity=1,
+		importance=1.1666692098,
+		rank=1.1666692098];
+	crc	 [complexity=0,
+		importance=0.361111958822,
+		rank=0.0];
+	"[1]initialize" -> crc;
+	"[1]crc_next"	 [complexity=1,
+		importance=0.937501271566,
+		rank=0.937501271566];
+	"[1]crc_next" -> crc;
+	"[1]crc"	 [complexity=8,
+		importance=1.25694656372,
+		rank=0.157118320465];
+	"[1]crc" -> "[1]crc_next";
+	"[1]crc_tmp"	 [complexity=6,
+		importance=0.895834604899,
+		rank=0.149305767483];
+	"[1]crc" -> "[1]crc_tmp";
+	"[1]data"	 [complexity=4,
+		importance=1.0208346049,
+		rank=0.255208651225];
+	"[1]data" -> "[1]crc_next";
+	"[1]crc_tmp" -> crc;
+	"[1]enable"	 [complexity=1,
+		importance=0.805557250977,
+		rank=0.805557250977];
+	"[1]enable" -> crc;
+}

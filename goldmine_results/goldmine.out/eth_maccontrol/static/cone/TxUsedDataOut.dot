@@ -1,0 +1,57 @@
+strict digraph "" {
+	"[1]transmitcontrol1.TxDoneIn"	 [complexity=4,
+		importance=0.0172281857605,
+		rank=0.00430704644012];
+	"transmitcontrol1.CtrlMux"	 [complexity=3,
+		importance=0.0140244158285,
+		rank=0.00467480527616];
+	"[1]transmitcontrol1.TxDoneIn" -> "transmitcontrol1.CtrlMux";
+	"[1]TxUsedDataOut"	 [complexity=5,
+		importance=0.0360656987281,
+		rank=0.00721313974562];
+	"[1]transmitcontrol1.TxUsedDataOut"	 [complexity=5,
+		importance=0.0320443777648,
+		rank=0.00640887555295];
+	"[1]TxUsedDataOut" -> "[1]transmitcontrol1.TxUsedDataOut";
+	"[1]transmitcontrol1.TxUsedDataOut" -> "transmitcontrol1.CtrlMux";
+	"[1]TxDoneIn"	 [complexity=4,
+		importance=0.0202183639062,
+		rank=0.00505459097655];
+	"[1]TxDoneIn" -> "[1]transmitcontrol1.TxDoneIn";
+	CtrlMux	 [complexity=3,
+		importance=0.00742404295625,
+		rank=0.00247468098542];
+	"transmitcontrol1.CtrlMux" -> CtrlMux;
+	"[1]TxReset"	 [complexity=4,
+		importance=0.0481470501834,
+		rank=0.0120367625458];
+	"[1]transmitcontrol1.TxReset"	 [complexity=4,
+		importance=0.0451568720377,
+		rank=0.0112892180094];
+	"[1]TxReset" -> "[1]transmitcontrol1.TxReset";
+	"[1]transmitcontrol1.TxReset" -> "transmitcontrol1.CtrlMux";
+	"[1]TxUsedDataIn"	 [complexity=8,
+		importance=0.0390558768738,
+		rank=0.00488198460923];
+	"[1]TxUsedDataIn" -> "[1]TxUsedDataOut";
+	TxUsedDataIn	 [complexity=3,
+		importance=0.00701149910908,
+		rank=0.00233716636969];
+	TxUsedDataOut	 [complexity=0,
+		importance=0.00402132096335,
+		rank=0.0];
+	TxUsedDataIn -> TxUsedDataOut;
+	CtrlMux -> TxUsedDataOut;
+	"[1]transmitcontrol1.WillSendControlFrame"	 [complexity=5,
+		importance=0.0383897151309,
+		rank=0.00767794302618];
+	"[1]transmitcontrol1.WillSendControlFrame" -> "transmitcontrol1.CtrlMux";
+	"[1]CtrlMux"	 [complexity=8,
+		importance=0.039468420721,
+		rank=0.00493355259013];
+	"[1]CtrlMux" -> "[1]TxUsedDataOut";
+	"[1]transmitcontrol1.CtrlMux"	 [complexity=8,
+		importance=0.0460687935932,
+		rank=0.00575859919915];
+	"[1]transmitcontrol1.CtrlMux" -> "[1]CtrlMux";
+}

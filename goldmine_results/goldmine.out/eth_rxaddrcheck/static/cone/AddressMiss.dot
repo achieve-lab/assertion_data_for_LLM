@@ -1,0 +1,53 @@
+strict digraph "" {
+	"[1]ByteCntEq7"	 [complexity=2,
+		importance=0.103145152506,
+		rank=0.0515725762532];
+	AddressMiss	 [complexity=0,
+		importance=0.0861737391836,
+		rank=0.0];
+	"[1]ByteCntEq7" -> AddressMiss;
+	"[1]r_Bro"	 [complexity=9,
+		importance=0.137087848153,
+		rank=0.0152319831281];
+	"[1]BroadcastOK"	 [complexity=6,
+		importance=0.12011643483,
+		rank=0.0200194058049];
+	"[1]r_Bro" -> "[1]BroadcastOK";
+	"[1]RxCheckEn"	 [complexity=2,
+		importance=0.111630793668,
+		rank=0.055815396834];
+	"[1]RxCheckEn" -> AddressMiss;
+	"[1]ByteCntEq0"	 [complexity=1,
+		importance=0.18931889169,
+		rank=0.18931889169];
+	"[1]ByteCntEq0" -> AddressMiss;
+	"[1]UnicastOK"	 [complexity=6,
+		importance=0.253074692636,
+		rank=0.0421791154393];
+	"[1]UnicastOK" -> AddressMiss;
+	"[1]ControlFrmAddressOK"	 [complexity=6,
+		importance=0.103145152506,
+		rank=0.0171908587511];
+	"[1]ControlFrmAddressOK" -> AddressMiss;
+	"[1]StateData"	 [complexity=4,
+		importance=0.128602206991,
+		rank=0.0321505517477];
+	"[1]StateData" -> "[1]RxCheckEn";
+	"[1]Broadcast"	 [complexity=9,
+		importance=0.137087848153,
+		rank=0.0152319831281];
+	"[1]Broadcast" -> "[1]BroadcastOK";
+	"[1]PassAll"	 [complexity=6,
+		importance=0.103145152506,
+		rank=0.0171908587511];
+	"[1]PassAll" -> AddressMiss;
+	"[1]MulticastOK"	 [complexity=6,
+		importance=0.165039602056,
+		rank=0.0275066003426];
+	"[1]MulticastOK" -> AddressMiss;
+	"[1]Reset"	 [complexity=1,
+		importance=0.275492630874,
+		rank=0.275492630874];
+	"[1]Reset" -> AddressMiss;
+	"[1]BroadcastOK" -> AddressMiss;
+}

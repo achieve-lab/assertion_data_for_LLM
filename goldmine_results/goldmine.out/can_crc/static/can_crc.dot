@@ -1,0 +1,9 @@
+strict digraph "" {
+	enable -> crc	 [weight=2.0];
+	crc -> crc_tmp	 [weight=1.0];
+	crc -> crc_next	 [weight=1.0];
+	crc_tmp -> crc	 [weight=2.0];
+	initialize -> crc	 [weight=3.0];
+	data -> crc_next	 [weight=1.0];
+	crc_next -> crc	 [weight=2.0];
+}

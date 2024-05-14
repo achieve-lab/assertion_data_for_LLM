@@ -1,0 +1,25 @@
+strict digraph "" {
+	node [label="\N"];
+	"2288:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f0a38e5c310>",
+		fillcolor=firebrick,
+		label="2288:NS
+intb <= intb_ep | intb_rf;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f0a38e5c310>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"Leaf_2287:AL"	 [def_var="['intb']",
+		label="Leaf_2287:AL"];
+	"2288:NS" -> "Leaf_2287:AL"	 [cond="[]",
+		lineno=None];
+	"2287:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f0a38e5c4d0>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="2287:AL",
+		sens="['wclk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['intb_rf', 'intb_ep']"];
+	"2287:AL" -> "2288:NS"	 [cond="[]",
+		lineno=None];
+}

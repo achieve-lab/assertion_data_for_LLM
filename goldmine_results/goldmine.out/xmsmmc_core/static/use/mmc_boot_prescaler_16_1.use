@@ -1,0 +1,13 @@
+{'mode_transfer': {'DefVars': ['mmc_clk'],
+                   'Lines': ['266:D'],
+                   'Sensitivities': [<pyverilog.vparser.ast.Assign object at 0x7f1146a54c10>]},
+ 'prescaler': {'DefVars': ['prescaler', 'mmc_clk'],
+               'Lines': ['260:D', '266:D'],
+               'Sensitivities': [<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f1146a54ad0>,
+                                 <pyverilog.vparser.ast.Assign object at 0x7f1146a54c10>]},
+ 'rst': {'DefVars': [None, None],
+         'Lines': ['257:C', '257:C'],
+         'Sensitivities': [['rst'], ['rst']]},
+ 'sys_clk': {'DefVars': ['mmc_clk'],
+             'Lines': ['266:D'],
+             'Sensitivities': [<pyverilog.vparser.ast.Assign object at 0x7f1146a54c10>]}}

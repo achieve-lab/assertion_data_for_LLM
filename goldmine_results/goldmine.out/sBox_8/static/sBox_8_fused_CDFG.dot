@@ -1,0 +1,88 @@
+strict digraph "compose( ,  )" {
+	node [label="\N"];
+	"326:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f8e3b115310>",
+		def_var="['sbox_out_enc']",
+		fillcolor=deepskyblue,
+		label="326:AS
+sbox_out_enc = ~isomorphism_inv(out_gf_inv8_1, ENC);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['isomorphism_inv', 'out_gf_inv8_1', 'ENC']"];
+	"313:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f8e3b1143d0>",
+		def_var="['base_new_enc']",
+		fillcolor=deepskyblue,
+		label="313:AS
+{ base_new_enc, base_new_dec } = isomorphism(sbox_in);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['isomorphism', 'sbox_in']"];
+	"315:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f8e3b1146d0>",
+		def_var="['base_new']",
+		fillcolor=deepskyblue,
+		label="315:AS
+base_new = ~((enc_dec)? base_new_enc : base_new_dec);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['enc_dec', 'base_new_enc', 'base_new_dec']"];
+	"313:AS" -> "315:AS";
+	"316:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f8e3b1148d0>",
+		def_var="['out_gf_inv8_stage1']",
+		fillcolor=deepskyblue,
+		label="316:AS
+out_gf_inv8_stage1 = gf_inv_8_stage1(base_new);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['gf_inv_8_stage1', 'base_new']"];
+	"318:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f8e3b114a90>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="318:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['base_new', 'out_gf_inv8_stage1']"];
+	"316:AS" -> "318:AL";
+	"Leaf_318:AL"	 [def_var="['out_gf_pp', 'base_new_pp']",
+		label="Leaf_318:AL"];
+	"324:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f8e3b114fd0>",
+		def_var="['out_gf_inv8_1']",
+		fillcolor=deepskyblue,
+		label="324:AS
+out_gf_inv8_1 = gf_inv_8_stage2(base_new_pp, out_gf_pp);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['gf_inv_8_stage2', 'base_new_pp', 'out_gf_pp']"];
+	"Leaf_318:AL" -> "324:AS";
+	"319:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f8e3b114bd0>",
+		fillcolor=turquoise,
+		label="319:BL
+out_gf_pp <= out_gf_inv8_stage1;
+base_new_pp <= base_new;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8e3b114b90>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f8e3b114d10>]",
+		style=filled,
+		typ=Block];
+	"318:AL" -> "319:BL"	 [cond="[]",
+		lineno=None];
+	"327:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f8e3b115610>",
+		def_var="['sbox_out_dec']",
+		fillcolor=deepskyblue,
+		label="327:AS
+sbox_out_dec = ~isomorphism_inv(out_gf_inv8_1, DEC);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['isomorphism_inv', 'out_gf_inv8_1', 'DEC']"];
+	"319:BL" -> "Leaf_318:AL"	 [cond="[]",
+		lineno=None];
+	"315:AS" -> "316:AS";
+	"315:AS" -> "318:AL";
+	"324:AS" -> "326:AS";
+	"324:AS" -> "327:AS";
+}

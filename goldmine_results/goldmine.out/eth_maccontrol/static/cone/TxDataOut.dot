@@ -1,0 +1,191 @@
+strict digraph "" {
+	"[1]transmitcontrol1.TxUsedDataOut"	 [complexity=8,
+		importance=0.0536933568623,
+		rank=0.00671166960778];
+	"transmitcontrol1.CtrlMux"	 [complexity=6,
+		importance=0.0248489053772,
+		rank=0.00414148422954];
+	"[1]transmitcontrol1.TxUsedDataOut" -> "transmitcontrol1.CtrlMux";
+	"[1]L2_UC_wrapper.L2_fifo.fifo"	 [complexity=13,
+		importance=0.119248489656,
+		rank=0.00917296074275];
+	"L2_UC_wrapper.L2_fifo.data_out"	 [complexity=8,
+		importance=0.055938165092,
+		rank=0.00699227063651];
+	"[1]L2_UC_wrapper.L2_fifo.fifo" -> "L2_UC_wrapper.L2_fifo.data_out";
+	"[1]transmitcontrol1.TxPauseTV"	 [complexity=12,
+		importance=0.103566605895,
+		rank=0.00863055049124];
+	"[1]transmitcontrol1.MuxedCtrlData"	 [complexity=8,
+		importance=0.0495406426226,
+		rank=0.00619258032782];
+	"[1]transmitcontrol1.TxPauseTV" -> "[1]transmitcontrol1.MuxedCtrlData";
+	"transmitcontrol1.ControlData"	 [complexity=6,
+		importance=0.0343052053498,
+		rank=0.00571753422497];
+	"[1]transmitcontrol1.MuxedCtrlData" -> "transmitcontrol1.ControlData";
+	TxData_wrapped_out	 [complexity=6,
+		importance=0.0250172584367,
+		rank=0.00416954307278];
+	TxDataOut	 [complexity=0,
+		importance=0.0148458105121,
+		rank=0.0];
+	TxData_wrapped_out -> TxDataOut;
+	"[1]transmitcontrol1.ByteCnt"	 [complexity=9,
+		importance=1.00362656632,
+		rank=0.111514062925];
+	"[1]transmitcontrol1.ByteCnt" -> "[1]transmitcontrol1.MuxedCtrlData";
+	"[1]transmitcontrol1.ByteCnt" -> "transmitcontrol1.ControlData";
+	"[1]transmitcontrol1.DlyCrcEn"	 [complexity=11,
+		importance=0.201900319888,
+		rank=0.0183545745353];
+	"[1]transmitcontrol1.DlyCrcEn" -> "[1]transmitcontrol1.MuxedCtrlData";
+	TxDataIn	 [complexity=6,
+		importance=0.0178359886578,
+		rank=0.00297266477631];
+	TxDataIn -> TxDataOut;
+	"[1]transmitcontrol1.WillSendControlFrame"	 [complexity=8,
+		importance=0.0600386942284,
+		rank=0.00750483677855];
+	"[1]transmitcontrol1.WillSendControlFrame" -> "transmitcontrol1.CtrlMux";
+	"L2_UC_wrapper.TxData_wrapped_out_wire"	 [complexity=8,
+		importance=0.0468917595048,
+		rank=0.0058614699381];
+	"L2_UC_wrapper.TxData_wrapped_out"	 [complexity=6,
+		importance=0.0393778161309,
+		rank=0.00656296935515];
+	"L2_UC_wrapper.TxData_wrapped_out_wire" -> "L2_UC_wrapper.TxData_wrapped_out";
+	"L2_UC_wrapper.StateLeftinQ"	 [complexity=9,
+		importance=0.556869545753,
+		rank=0.0618743939726];
+	"L2_UC_wrapper.StateLeftinQ" -> "L2_UC_wrapper.TxData_wrapped_out";
+	"[1]TxUsedDataOut"	 [complexity=8,
+		importance=0.0577146778256,
+		rank=0.0072143347282];
+	"[1]TxUsedDataOut" -> "[1]transmitcontrol1.TxUsedDataOut";
+	"[1]L2_UC_wrapper.ByteCnt"	 [complexity=9,
+		importance=0.519467234652,
+		rank=0.057718581628];
+	"L2_UC_wrapper.ByteCnt"	 [complexity=7,
+		importance=0.515689422177,
+		rank=0.0736699174538];
+	"[1]L2_UC_wrapper.ByteCnt" -> "L2_UC_wrapper.ByteCnt";
+	"[1]TxDoneIn"	 [complexity=7,
+		importance=0.031042853455,
+		rank=0.00443469335071];
+	"[1]transmitcontrol1.TxDoneIn"	 [complexity=7,
+		importance=0.0280526753092,
+		rank=0.00400752504418];
+	"[1]TxDoneIn" -> "[1]transmitcontrol1.TxDoneIn";
+	"[1]L2_UC_wrapper.L2_fifo.read_pointer"	 [complexity=11,
+		importance=0.0637858683035,
+		rank=0.00579871530032];
+	"[1]L2_UC_wrapper.L2_fifo.read_pointer" -> "L2_UC_wrapper.L2_fifo.data_out";
+	"[1]TxReset"	 [complexity=7,
+		importance=0.0806205188297,
+		rank=0.0115172169757];
+	"[1]transmitcontrol1.TxReset"	 [complexity=7,
+		importance=0.0776303406839,
+		rank=0.0110900486691];
+	"[1]TxReset" -> "[1]transmitcontrol1.TxReset";
+	ControlData	 [complexity=6,
+		importance=0.0233265442609,
+		rank=0.00388775737682];
+	"transmitcontrol1.ControlData" -> ControlData;
+	"[1]MAC"	 [complexity=20,
+		importance=0.303722592862,
+		rank=0.0151861296431];
+	"[1]transmitcontrol1.MAC"	 [complexity=20,
+		importance=0.300732414716,
+		rank=0.0150366207358];
+	"[1]MAC" -> "[1]transmitcontrol1.MAC";
+	"L2_UC_wrapper.DMAC"	 [complexity=18,
+		importance=0.240752217435,
+		rank=0.0133751231908];
+	"L2_UC_wrapper.DMAC" -> "L2_UC_wrapper.TxData_wrapped_out";
+	"[1]transmitcontrol1.MAC" -> "[1]transmitcontrol1.MuxedCtrlData";
+	"[1]L2_UC_wrapper.TxStartFrmIn"	 [complexity=10,
+		importance=0.518845727267,
+		rank=0.0518845727267];
+	"[1]L2_UC_wrapper.TxStartFrmIn" -> "L2_UC_wrapper.ByteCnt";
+	"[1]L2_UC_wrapper.PreNib15State"	 [complexity=9,
+		importance=0.51939727223,
+		rank=0.0577108080255];
+	"[1]L2_UC_wrapper.PreNib15State" -> "L2_UC_wrapper.ByteCnt";
+	"L2_UC_wrapper.TxStartFrmIn"	 [complexity=9,
+		importance=0.554445730924,
+		rank=0.0616050812137];
+	"L2_UC_wrapper.TxStartFrmIn" -> "L2_UC_wrapper.TxData_wrapped_out";
+	"[1]transmitcontrol1.TxDoneIn" -> "transmitcontrol1.CtrlMux";
+	DMAC	 [complexity=18,
+		importance=0.243742395581,
+		rank=0.0135412441989];
+	DMAC -> "L2_UC_wrapper.DMAC";
+	L2_wrap_en	 [complexity=6,
+		importance=0.0178359886578,
+		rank=0.00297266477631];
+	L2_wrap_en -> TxDataOut;
+	"L2_UC_wrapper.MAC"	 [complexity=18,
+		importance=0.239755455766,
+		rank=0.0133197475426];
+	"L2_UC_wrapper.MAC" -> "L2_UC_wrapper.TxData_wrapped_out";
+	CtrlMux	 [complexity=6,
+		importance=0.018248532505,
+		rank=0.00304142208417];
+	"transmitcontrol1.CtrlMux" -> CtrlMux;
+	ControlData -> TxDataOut;
+	"[1]transmitcontrol1.TxReset" -> "transmitcontrol1.ControlData";
+	"[1]transmitcontrol1.TxReset" -> "transmitcontrol1.CtrlMux";
+	"[1]TxUsedDataIn"	 [complexity=11,
+		importance=0.0607048559714,
+		rank=0.00551862327012];
+	"[1]TxUsedDataIn" -> "[1]TxUsedDataOut";
+	"[1]L2_UC_wrapper.StateLeftinQ"	 [complexity=10,
+		importance=0.521269542097,
+		rank=0.0521269542097];
+	"[1]L2_UC_wrapper.StateLeftinQ" -> "L2_UC_wrapper.ByteCnt";
+	"L2_UC_wrapper.L2_fifo.data_out" -> "L2_UC_wrapper.TxData_wrapped_out_wire";
+	"L2_UC_wrapper.StateCount"	 [complexity=9,
+		importance=0.555619914699,
+		rank=0.0617355460777];
+	"L2_UC_wrapper.StateCount" -> "L2_UC_wrapper.TxData_wrapped_out";
+	"[1]CtrlMux"	 [complexity=11,
+		importance=0.0611173998185,
+		rank=0.00555612725623];
+	"[1]CtrlMux" -> "[1]TxUsedDataOut";
+	"[1]TxPauseTV"	 [complexity=12,
+		importance=0.106556784041,
+		rank=0.00887973200338];
+	"[1]TxPauseTV" -> "[1]transmitcontrol1.TxPauseTV";
+	TxStartFrmIn	 [complexity=9,
+		importance=0.557435909069,
+		rank=0.0619373232299];
+	TxStartFrmIn -> "L2_UC_wrapper.TxStartFrmIn";
+	"[1]L2_UC_wrapper.L2_fifo.clear"	 [complexity=9,
+		importance=0.116361650834,
+		rank=0.0129290723149];
+	"[1]L2_UC_wrapper.L2_fifo.clear" -> "L2_UC_wrapper.L2_fifo.data_out";
+	"[1]DlyCrcEn"	 [complexity=11,
+		importance=0.204890498034,
+		rank=0.0186264089122];
+	"[1]DlyCrcEn" -> "[1]transmitcontrol1.DlyCrcEn";
+	"[1]transmitcontrol1.DlyCrcCnt"	 [complexity=11,
+		importance=0.106198872384,
+		rank=0.00965444294399];
+	"[1]transmitcontrol1.DlyCrcCnt" -> "[1]transmitcontrol1.MuxedCtrlData";
+	"L2_UC_wrapper.ByteCnt" -> "L2_UC_wrapper.TxData_wrapped_out";
+	MAC	 [complexity=18,
+		importance=0.242745633912,
+		rank=0.0134858685506];
+	MAC -> "L2_UC_wrapper.MAC";
+	CtrlMux -> TxDataOut;
+	"L2_UC_wrapper.TxData_wrapped_out" -> TxData_wrapped_out;
+	"[1]L2_UC_wrapper.StateCount"	 [complexity=12,
+		importance=1.03570933322,
+		rank=0.0863091111017];
+	"[1]L2_UC_wrapper.StateCount" -> "L2_UC_wrapper.ByteCnt";
+	"[1]transmitcontrol1.CtrlMux"	 [complexity=11,
+		importance=0.0677177726907,
+		rank=0.0061561611537];
+	"[1]transmitcontrol1.CtrlMux" -> "[1]CtrlMux";
+}

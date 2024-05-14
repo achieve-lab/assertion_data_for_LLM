@@ -1,0 +1,155 @@
+digraph "" {
+	"txstatem1.StatePAD"	 [complexity=12,
+		importance=0.0274680783753,
+		rank=0.00228900653127];
+	"txstatem1.StartJam"	 [complexity=14,
+		importance=0.0608266587533,
+		rank=0.00434476133952];
+	"txstatem1.StatePAD" -> "txstatem1.StartJam";
+	StateFCS	 [complexity=12,
+		importance=0.0338817859193,
+		rank=0.00282348215994];
+	ColWindow	 [complexity=4,
+		importance=0.0145993858694,
+		rank=0.00364984646734];
+	StateFCS -> ColWindow;
+	"txstatem1.StatePreamble"	 [complexity=12,
+		importance=0.0251719584409,
+		rank=0.0020976632034];
+	"txstatem1.StatePreamble" -> "txstatem1.StartJam";
+	"txcounters1.NibCnt"	 [complexity=16,
+		importance=0.066949518136,
+		rank=0.0041843448835];
+	"txcounters1.NibCnt" -> "txcounters1.NibCnt";
+	"txcounters1.NibCntEq15"	 [complexity=12,
+		importance=0.0290663135192,
+		rank=0.00242219279327];
+	"txcounters1.NibCnt" -> "txcounters1.NibCntEq15";
+	"txstatem1.StartFCS"	 [complexity=13,
+		importance=0.0347314830543,
+		rank=0.00267165254264];
+	"txstatem1.StartFCS" -> "txstatem1.StatePAD";
+	"txstatem1.StateFCS"	 [complexity=12,
+		importance=0.0253068420809,
+		rank=0.00210890350675];
+	"txstatem1.StartFCS" -> "txstatem1.StateFCS";
+	"txcounters1.Reset"	 [complexity=17,
+		importance=0.203716745253,
+		rank=0.011983337956];
+	"txcounters1.Reset" -> "txcounters1.NibCnt";
+	"txstatem1.StateData"	 [complexity=16,
+		importance=0.0319877421097,
+		rank=0.00199923388186];
+	StateData	 [complexity=16,
+		importance=0.0275555651919,
+		rank=0.00172222282449];
+	"txstatem1.StateData" -> StateData;
+	"txstatem1.StateData" -> "txstatem1.StartJam";
+	UnderRun	 [complexity=12,
+		importance=0.0243542934704,
+		rank=0.00202952445587];
+	StateData -> UnderRun;
+	StateData -> ColWindow;
+	"txstatem1.UnderRun"	 [complexity=12,
+		importance=0.0209480276912,
+		rank=0.00174566897427];
+	"txstatem1.UnderRun" -> "txstatem1.StartJam";
+	"txstatem1.StartDefer"	 [complexity=14,
+		importance=0.0751700829033,
+		rank=0.00536929163595];
+	"txstatem1.StartDefer" -> "txstatem1.StateFCS";
+	StateIdle	 [complexity=6,
+		importance=0.0181049636269,
+		rank=0.00301749393781];
+	StateIdle -> ColWindow;
+	"txstatem1.Reset"	 [complexity=17,
+		importance=0.546659806709,
+		rank=0.0321564592182];
+	"txstatem1.Reset" -> "txstatem1.StatePAD";
+	"txstatem1.Reset" -> "txstatem1.StatePreamble";
+	"txstatem1.Reset" -> "txstatem1.StateData";
+	"txstatem1.Reset" -> "txstatem1.StateFCS";
+	NibCntEq15	 [complexity=12,
+		importance=0.0250505371379,
+		rank=0.0020875447615];
+	"txstatem1.NibCntEq15"	 [complexity=12,
+		importance=0.0212147146048,
+		rank=0.00176789288374];
+	NibCntEq15 -> "txstatem1.NibCntEq15";
+	StartJam	 [complexity=4,
+		importance=0.00769027442473,
+		rank=0.00192256860618];
+	LateCollision	 [complexity=0,
+		importance=0.00422006902484,
+		rank=0.0];
+	StartJam -> LateCollision;
+	UnderRun -> "txstatem1.UnderRun";
+	UnderRun -> LateCollision;
+	"txstatem1.StartJam" -> "txstatem1.StatePAD";
+	"txstatem1.StartJam" -> "txstatem1.StatePreamble";
+	"txstatem1.StartJam" -> StartJam;
+	"txstatem1.StartJam" -> "txstatem1.StateFCS";
+	"txcounters1.ResetNibCnt"	 [complexity=17,
+		importance=0.151228049278,
+		rank=0.00889576760461];
+	"txcounters1.ResetNibCnt" -> "txcounters1.NibCnt";
+	StatePAD	 [complexity=12,
+		importance=0.0336253408613,
+		rank=0.00280211173844];
+	StatePAD -> ColWindow;
+	ColWindow -> LateCollision;
+	Reset	 [complexity=5,
+		importance=0.0466300417544,
+		rank=0.00932600835088];
+	Reset -> ColWindow;
+	TxUnderRun	 [complexity=16,
+		importance=0.0271861776167,
+		rank=0.00169913610105];
+	TxUnderRun -> UnderRun;
+	CollValid	 [complexity=12,
+		importance=0.032030655885,
+		rank=0.00266922132375];
+	CollValid -> ColWindow;
+	NibCnt	 [complexity=12,
+		importance=0.0624133198587,
+		rank=0.00520110998822];
+	NibCnt -> ColWindow;
+	"txstatem1.StartPAD"	 [complexity=13,
+		importance=0.0335280827324,
+		rank=0.00257908328711];
+	"txstatem1.StartPAD" -> "txstatem1.StatePAD";
+	StateIPG	 [complexity=6,
+		importance=0.0189811174096,
+		rank=0.00316351956827];
+	StateIPG -> ColWindow;
+	"txcounters1.NibCntEq15" -> NibCntEq15;
+	"txstatem1.StartPreamble"	 [complexity=13,
+		importance=0.0306789430049,
+		rank=0.00235991869269];
+	"txstatem1.StartPreamble" -> "txstatem1.StatePreamble";
+	"txstatem1.NibCntEq15" -> "txstatem1.StartJam";
+	"txstatem1.StateFCS" -> "txstatem1.StartJam";
+	Collision	 [complexity=16,
+		importance=0.0271861776167,
+		rank=0.00169913610105];
+	Collision -> UnderRun;
+	Collision -> ColWindow;
+	"txstatem1.Collision"	 [complexity=12,
+		importance=0.020971126701,
+		rank=0.00174759389175];
+	Collision -> "txstatem1.Collision";
+	"txstatem1.Collision" -> "txstatem1.StartJam";
+	"txstatem1.StartData"	 [complexity=18,
+		importance=0.0415935957726,
+		rank=0.0023107553207];
+	"txstatem1.StartData" -> "txstatem1.StatePreamble";
+	"txstatem1.StartData" -> "txstatem1.StateData";
+	ByteCnt	 [complexity=12,
+		importance=0.0336846986288,
+		rank=0.00280705821906];
+	ByteCnt -> ColWindow;
+	"txcounters1.IncrementNibCnt"	 [complexity=17,
+		importance=0.0785125238094,
+		rank=0.0046183837535];
+	"txcounters1.IncrementNibCnt" -> "txcounters1.NibCnt";
+}

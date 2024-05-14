@@ -1,0 +1,47 @@
+strict digraph "" {
+	"[1]CTRL_ep"	 [complexity=13,
+		importance=0.0206035229443,
+		rank=0.00158488638033];
+	int_upid_set	 [complexity=0,
+		importance=0.0158234161288,
+		rank=0.0];
+	"[1]CTRL_ep" -> int_upid_set;
+	"[1]OUT_ep"	 [complexity=13,
+		importance=0.0206035229443,
+		rank=0.00158488638033];
+	"[1]OUT_ep" -> int_upid_set;
+	"[1]pid_SETUP_r"	 [complexity=13,
+		importance=0.0208454006299,
+		rank=0.00160349235615];
+	"[1]pid_SETUP_r" -> int_upid_set;
+	"[1]pid_IN_r"	 [complexity=13,
+		importance=0.0206892115715,
+		rank=0.00159147781319];
+	"[1]pid_IN_r" -> int_upid_set;
+	"[1]pid_SOF"	 [complexity=13,
+		importance=0.0205810806849,
+		rank=0.00158316005268];
+	"[1]pid_SOF" -> int_upid_set;
+	"[1]pid_PING_r"	 [complexity=13,
+		importance=0.0208454006299,
+		rank=0.00160349235615];
+	"[1]pid_PING_r" -> int_upid_set;
+	"[1]pid_OUT_r"	 [complexity=13,
+		importance=0.0207062848693,
+		rank=0.0015927911438];
+	"[1]pid_OUT_r" -> int_upid_set;
+	"[1]csr"	 [complexity=15,
+		importance=0.0253611875003,
+		rank=0.00169074583336];
+	"[1]csr" -> "[1]CTRL_ep";
+	"[1]csr" -> "[1]OUT_ep";
+	"[1]IN_ep"	 [complexity=13,
+		importance=0.0206035229443,
+		rank=0.00158488638033];
+	"[1]csr" -> "[1]IN_ep";
+	"[1]IN_ep" -> int_upid_set;
+	"[1]match_r"	 [complexity=13,
+		importance=0.0210568565859,
+		rank=0.00161975819892];
+	"[1]match_r" -> int_upid_set;
+}

@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"62:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f71c7ce9a10>",
+		def_var="['mult_wo_sign']",
+		fillcolor=deepskyblue,
+		label="62:AS
+mult_wo_sign = b[N-2:0] * mult_constant;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['b', 'mult_constant']"];
+}

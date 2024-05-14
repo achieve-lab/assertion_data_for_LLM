@@ -1,0 +1,59 @@
+strict digraph "" {
+	node [label="\N"];
+	"1079:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f1f9673e110>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="1079:AL",
+		sens="['rbsp_4']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['rbsp_4']"];
+	"1080:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f1f9673e2d0>",
+		fillcolor=turquoise,
+		label="1080:BL
+len_4 <= 6;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f1f9673e410>]",
+		style=filled,
+		typ=Block];
+	"1079:AL" -> "1080:BL"	 [cond="[]",
+		lineno=None];
+	"Leaf_1079:AL"	 [def_var="['TrailingOnes_4', 'len_4', 'TotalCoeff_4']",
+		label="Leaf_1079:AL"];
+	"1082:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f1f9673e5d0>",
+		fillcolor=springgreen,
+		label="1082:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"1082:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f1f9673ebd0>",
+		fillcolor=turquoise,
+		label="1082:BL
+TrailingOnes_4 <= 0;
+TotalCoeff_4 <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f1f9673ec10>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f1f9673ed90>]",
+		style=filled,
+		typ=Block];
+	"1082:IF" -> "1082:BL"	 [cond="['rbsp_4']",
+		label="(rbsp_4[0:4] == 5'b00001)",
+		lineno=1082];
+	"1086:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f1f9673e650>",
+		fillcolor=turquoise,
+		label="1086:BL
+TrailingOnes_4 <= rbsp_4[4:5];
+TotalCoeff_4 <= rbsp_4[0:3] + 1'b1;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f1f9673e690>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f1f9673e8d0>]",
+		style=filled,
+		typ=Block];
+	"1082:IF" -> "1086:BL"	 [cond="['rbsp_4']",
+		label="!((rbsp_4[0:4] == 5'b00001))",
+		lineno=1082];
+	"1082:BL" -> "Leaf_1079:AL"	 [cond="[]",
+		lineno=None];
+	"1080:BL" -> "1082:IF"	 [cond="[]",
+		lineno=None];
+	"1086:BL" -> "Leaf_1079:AL"	 [cond="[]",
+		lineno=None];
+}

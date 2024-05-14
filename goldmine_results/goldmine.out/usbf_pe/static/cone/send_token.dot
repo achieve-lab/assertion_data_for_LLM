@@ -1,0 +1,107 @@
+strict digraph "" {
+	"[1]dma_out_buf_avail"	 [complexity=17,
+		importance=0.0720869521312,
+		rank=0.00424040894889];
+	"[1]no_buf0_dma"	 [complexity=11,
+		importance=0.0673292875752,
+		rank=0.00612084432502];
+	"[1]dma_out_buf_avail" -> "[1]no_buf0_dma";
+	"[1]dma_in_buf_sz1"	 [complexity=17,
+		importance=0.0720869521312,
+		rank=0.00424040894889];
+	"[1]dma_in_buf_sz1" -> "[1]no_buf0_dma";
+	"[1]to_small"	 [complexity=4,
+		importance=0.0928563006818,
+		rank=0.0232140751705];
+	"[1]send_token_d"	 [complexity=2,
+		importance=0.0283838042928,
+		rank=0.0141919021464];
+	"[1]to_small" -> "[1]send_token_d";
+	"[1]pid_IN"	 [complexity=11,
+		importance=0.0615252731417,
+		rank=0.00559320664924];
+	"[1]pid_IN" -> "[1]send_token_d";
+	"[1]dma_en"	 [complexity=17,
+		importance=0.0721796914899,
+		rank=0.00424586420529];
+	"[1]dma_en" -> "[1]no_buf0_dma";
+	"[1]ep_disabled"	 [complexity=5,
+		importance=0.089931519694,
+		rank=0.0179863039388];
+	"[1]ep_disabled" -> "[1]send_token_d";
+	"[1]csr"	 [complexity=22,
+		importance=0.0817174628614,
+		rank=0.00371443013006];
+	"[1]csr" -> "[1]dma_en";
+	"[1]csr" -> "[1]ep_disabled";
+	"[1]CTRL_ep"	 [complexity=20,
+		importance=0.0769597983054,
+		rank=0.00384798991527];
+	"[1]csr" -> "[1]CTRL_ep";
+	"[1]OUT_ep"	 [complexity=17,
+		importance=0.0721093943907,
+		rank=0.0042417290818];
+	"[1]csr" -> "[1]OUT_ep";
+	"[1]IN_ep"	 [complexity=17,
+		importance=0.0721093943907,
+		rank=0.0042417290818];
+	"[1]csr" -> "[1]IN_ep";
+	"[1]ep_stall"	 [complexity=3,
+		importance=0.089931519694,
+		rank=0.0299771732313];
+	"[1]csr" -> "[1]ep_stall";
+	"[1]to_large"	 [complexity=4,
+		importance=0.0928563006818,
+		rank=0.0232140751705];
+	"[1]to_large" -> "[1]send_token_d";
+	"[1]CTRL_ep" -> "[1]dma_en";
+	"[1]CTRL_ep" -> "[1]send_token_d";
+	"[1]abort"	 [complexity=3,
+		importance=0.0953513287458,
+		rank=0.0317837762486];
+	"[1]abort" -> "[1]send_token_d";
+	"[1]pid_OUT"	 [complexity=11,
+		importance=0.0615252731417,
+		rank=0.00559320664924];
+	"[1]pid_OUT" -> "[1]send_token_d";
+	send_token	 [complexity=0,
+		importance=0.0126336887579,
+		rank=0.0];
+	"[1]OUT_ep" -> "[1]no_buf0_dma";
+	"[1]IN_ep" -> "[1]no_buf0_dma";
+	"[1]mode_hs"	 [complexity=4,
+		importance=0.0331414688488,
+		rank=0.00828536721221];
+	"[1]mode_hs" -> "[1]send_token_d";
+	"[1]match_r"	 [complexity=5,
+		importance=0.0903848533356,
+		rank=0.0180769706671];
+	"[1]match_r" -> "[1]send_token_d";
+	"[1]send_token_d" -> send_token;
+	"[1]buf1_na"	 [complexity=11,
+		importance=0.120010970081,
+		rank=0.0109100881892];
+	"[1]buf1_na" -> "[1]send_token_d";
+	"[1]state"	 [complexity=3,
+		importance=0.200240541872,
+		rank=0.0667468472906];
+	"[1]state" -> "[1]send_token_d";
+	"[1]buf0_na"	 [complexity=11,
+		importance=0.119640918674,
+		rank=0.0108764471521];
+	"[1]buf0_na" -> "[1]send_token_d";
+	"[1]pid_PING"	 [complexity=4,
+		importance=0.0331414688488,
+		rank=0.00828536721221];
+	"[1]pid_PING" -> "[1]send_token_d";
+	"[1]ep_stall" -> "[1]send_token_d";
+	"[1]pid_SOF"	 [complexity=5,
+		importance=0.0899090774345,
+		rank=0.0179818154869];
+	"[1]pid_SOF" -> "[1]send_token_d";
+	"[1]pid_seq_err"	 [complexity=3,
+		importance=0.0955946074135,
+		rank=0.0318648691378];
+	"[1]pid_seq_err" -> "[1]send_token_d";
+	"[1]no_buf0_dma" -> "[1]send_token_d";
+}

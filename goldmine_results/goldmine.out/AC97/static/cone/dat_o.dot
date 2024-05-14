@@ -1,0 +1,43 @@
+strict digraph "" {
+	"[1]stb_i"	 [complexity=5,
+		importance=0.847422724303,
+		rank=0.169484544861];
+	"[1]cs"	 [complexity=1,
+		importance=0.828904308547,
+		rank=0.828904308547];
+	"[1]stb_i" -> "[1]cs";
+	"[1]rfadri"	 [complexity=2,
+		importance=0.115776184272,
+		rank=0.057888092136];
+	dat_o	 [complexity=0,
+		importance=0.0791025450751,
+		rank=0.0];
+	"[1]rfadri" -> dat_o;
+	"[1]dirty"	 [complexity=2,
+		importance=0.103803928153,
+		rank=0.0519019640763];
+	"[1]dirty" -> dat_o;
+	"[1]cs" -> dat_o;
+	"[1]cyc_i"	 [complexity=5,
+		importance=0.847422724303,
+		rank=0.169484544861];
+	"[1]cyc_i" -> "[1]cs";
+	"[1]reg26"	 [complexity=2,
+		importance=0.121162470155,
+		rank=0.0605812350773];
+	"[1]reg26" -> dat_o;
+	"[1]fnLM4550ToRealRegMap"	 [complexity=6,
+		importance=0.134294600029,
+		rank=0.0223824333382];
+	"[1]fnLM4550ToRealRegMap" -> "[1]rfadri";
+	"[1]adr_i"	 [complexity=6,
+		importance=0.134294600029,
+		rank=0.0223824333382];
+	"[1]adr_i" -> "[1]rfadri";
+	"[1]adr_i" -> "[1]cs";
+	"[1]adr_i" -> dat_o;
+	"[1]regfile"	 [complexity=6,
+		importance=0.147993180284,
+		rank=0.0246655300474];
+	"[1]regfile" -> "[1]rfadri";
+}

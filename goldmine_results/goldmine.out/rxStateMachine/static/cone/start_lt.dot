@@ -1,0 +1,46 @@
+strict digraph "" {
+	"[1]get_error_code"	 [complexity=8,
+		importance=0.93562567007,
+		rank=0.116953208759];
+	"[1]rxstate_next"	 [complexity=5,
+		importance=0.300844595357,
+		rank=0.0601689190714];
+	"[1]get_error_code" -> "[1]rxstate_next";
+	rxstate	 [complexity=2,
+		importance=0.146804625286,
+		rank=0.073402312643];
+	start_lt	 [complexity=0,
+		importance=0.0355113756053,
+		rank=0.0];
+	rxstate -> start_lt;
+	"[1]local_invalid"	 [complexity=8,
+		importance=0.93562567007,
+		rank=0.116953208759];
+	"[1]local_invalid" -> "[1]rxstate_next";
+	"[1]recv_enable"	 [complexity=11,
+		importance=1.83815945614,
+		rank=0.167105405104];
+	"[1]recv_enable" -> "[1]rxstate_next";
+	"[1]length_error"	 [complexity=8,
+		importance=0.93562567007,
+		rank=0.116953208759];
+	"[1]length_error" -> "[1]rxstate_next";
+	"[1]get_sfd"	 [complexity=11,
+		importance=1.83815945614,
+		rank=0.167105405104];
+	"[1]get_sfd" -> "[1]rxstate_next";
+	"[1]rxstate"	 [complexity=6,
+		importance=3.42058379861,
+		rank=0.570097299768];
+	"[1]rxstate" -> "[1]rxstate_next";
+	"[1]rxstate_next" -> rxstate;
+	"[1]reset"	 [complexity=6,
+		importance=3.64322702828,
+		rank=0.607204504714];
+	"[1]reset" -> rxstate;
+	"[1]reset" -> "[1]rxstate_next";
+	"[1]get_terminator"	 [complexity=6,
+		importance=0.634781074713,
+		rank=0.105796845785];
+	"[1]get_terminator" -> "[1]rxstate_next";
+}

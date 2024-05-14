@@ -1,0 +1,46 @@
+strict digraph "" {
+	node [label="\N"];
+	"566:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fbd1c2d4f90>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="566:AL",
+		sens="['Current_state_SYS', 'Next_state_SYS']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['SYS_wait_end', 'SYS_read', 'Current_state_SYS', 'Next_state_SYS']"];
+	"567:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fbd1c2e61d0>",
+		fillcolor=springgreen,
+		label="567:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"566:AL" -> "567:IF"	 [cond="[]",
+		lineno=None];
+	"568:BS"	 [ast="<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fbd1c2e63d0>",
+		fillcolor=cadetblue,
+		label="568:BS
+Packet_number_sub = 1;",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fbd1c2e63d0>]",
+		style=filled,
+		typ=BlockingSubstitution];
+	"567:IF" -> "568:BS"	 [cond="['Current_state_SYS', 'SYS_read', 'Next_state_SYS', 'SYS_wait_end']",
+		label="((Current_state_SYS == SYS_read) && (Next_state_SYS == SYS_wait_end))",
+		lineno=567];
+	"570:BS"	 [ast="<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fbd1c2e6210>",
+		fillcolor=cadetblue,
+		label="570:BS
+Packet_number_sub = 0;",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fbd1c2e6210>]",
+		style=filled,
+		typ=BlockingSubstitution];
+	"567:IF" -> "570:BS"	 [cond="['Current_state_SYS', 'SYS_read', 'Next_state_SYS', 'SYS_wait_end']",
+		label="!(((Current_state_SYS == SYS_read) && (Next_state_SYS == SYS_wait_end)))",
+		lineno=567];
+	"Leaf_566:AL"	 [def_var="['Packet_number_sub']",
+		label="Leaf_566:AL"];
+	"568:BS" -> "Leaf_566:AL"	 [cond="[]",
+		lineno=None];
+	"570:BS" -> "Leaf_566:AL"	 [cond="[]",
+		lineno=None];
+}

@@ -1,0 +1,50 @@
+strict digraph "" {
+	node [label="\N"];
+	"256:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f14ceedff90>",
+		fillcolor=springgreen,
+		label="256:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"257:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f14ceedfdd0>",
+		fillcolor=turquoise,
+		label="257:BL
+K_out <= 0;
+ebi[7:0] <= 8'b0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f14ceedfa50>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f14ceedfbd0>]",
+		style=filled,
+		typ=Block];
+	"256:IF" -> "257:BL"	 [cond="['reset']",
+		label=reset,
+		lineno=256];
+	"261:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f14ceede050>",
+		fillcolor=turquoise,
+		label="261:BL
+K_out <= K;
+ebi[7:0] <= { H, G, F, E, D, C, B, A };",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f14ceede090>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f14ceede1d0>]",
+		style=filled,
+		typ=Block];
+	"256:IF" -> "261:BL"	 [cond="['reset']",
+		label="!(reset)",
+		lineno=256];
+	"255:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f14ceedfe10>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="255:AL",
+		sens="['RBYTECLK', 'reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['reset', 'A', 'C', 'B', 'E', 'D', 'G', 'F', 'H', 'K']"];
+	"255:AL" -> "256:IF"	 [cond="[]",
+		lineno=None];
+	"Leaf_255:AL"	 [def_var="['ebi', 'K_out']",
+		label="Leaf_255:AL"];
+	"257:BL" -> "Leaf_255:AL"	 [cond="[]",
+		lineno=None];
+	"261:BL" -> "Leaf_255:AL"	 [cond="[]",
+		lineno=None];
+}

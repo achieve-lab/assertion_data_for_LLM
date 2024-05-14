@@ -1,0 +1,13 @@
+[1]we	[1]we_mode
+[1]we_mode	[1]MODE_REG0.we
+[1]rst	[1]MODE_REG0.rst
+[1]cs	[1]we_mode
+[1]MODE_REG0.rst	MODE_REG0.data_out
+[1]set_reset_mode	[1]MODE_REG0.rst_sync
+MODE_REG0.data_out	mode
+mode	reset_mode
+[1]addr	[1]we_mode
+[1]data_in	[1]MODE_REG0.data_in
+[1]MODE_REG0.data_in	MODE_REG0.data_out
+[1]MODE_REG0.we	MODE_REG0.data_out
+[1]MODE_REG0.rst_sync	MODE_REG0.data_out

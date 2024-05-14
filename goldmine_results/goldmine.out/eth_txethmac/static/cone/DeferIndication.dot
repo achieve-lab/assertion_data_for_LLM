@@ -1,0 +1,37 @@
+strict digraph "" {
+	"txstatem1.StartPreamble"	 [complexity=5,
+		importance=0.0394508936018,
+		rank=0.00789017872035];
+	"txstatem1.StateIdle"	 [complexity=3,
+		importance=0.0169719545188,
+		rank=0.00565731817295];
+	"txstatem1.StartPreamble" -> "txstatem1.StateIdle";
+	DeferIndication	 [complexity=0,
+		importance=0.0048503127152,
+		rank=0.0];
+	"txstatem1.DeferIndication"	 [complexity=0,
+		importance=0.00888687598475,
+		rank=0.0];
+	"txstatem1.DeferIndication" -> DeferIndication;
+	"txstatem1.Reset"	 [complexity=4,
+		importance=0.0537840544011,
+		rank=0.0134460136003];
+	"txstatem1.Reset" -> "txstatem1.StateIdle";
+	"txstatem1.StartIdle"	 [complexity=4,
+		importance=0.0275265628777,
+		rank=0.00688164071944];
+	"txstatem1.StartIdle" -> "txstatem1.StateIdle";
+	"txstatem1.StartDefer"	 [complexity=5,
+		importance=0.0585003077791,
+		rank=0.0117000615558];
+	"txstatem1.StartDefer" -> "txstatem1.StateIdle";
+	"txstatem1.StateIdle" -> "txstatem1.DeferIndication";
+	"txstatem1.CarrierSense"	 [complexity=3,
+		importance=0.0131347213628,
+		rank=0.00437824045427];
+	"txstatem1.CarrierSense" -> "txstatem1.DeferIndication";
+	CarrierSense	 [complexity=3,
+		importance=0.0159666055091,
+		rank=0.00532220183638];
+	CarrierSense -> "txstatem1.CarrierSense";
+}

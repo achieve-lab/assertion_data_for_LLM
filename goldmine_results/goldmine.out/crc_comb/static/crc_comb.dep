@@ -1,0 +1,10 @@
+crc_poly_size_reversed	crc_in_masked
+crc_poly	feedback
+feedback	crc_out
+crc_poly_size	crc_poly_size_reversed
+crc_in_masked	crc_out
+data_in	feedback
+CRC_SIZE	MASK_REVERSED
+MASK_REVERSED	crc_in_masked
+crc_in	feedback
+crc_in	crc_in_masked

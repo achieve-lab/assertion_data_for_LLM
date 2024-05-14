@@ -1,0 +1,125 @@
+strict digraph "" {
+	"[1]wb_rst_i"	 [complexity=1,
+		importance=0.088098936873,
+		rank=0.088098936873];
+	s2_wb_dat_o	 [complexity=0,
+		importance=0.0250247205964,
+		rank=0.0];
+	"[1]wb_rst_i" -> s2_wb_dat_o;
+	"[1]m2_wb_dat_i"	 [complexity=2,
+		importance=0.0380494956802,
+		rank=0.0190247478401];
+	"[1]m2_wb_dat_i" -> s2_wb_dat_o;
+	"[1]m1_wb_dat_i"	 [complexity=2,
+		importance=0.0380494956802,
+		rank=0.0190247478401];
+	"[1]m1_wb_dat_i" -> s2_wb_dat_o;
+	"[1]m2_req"	 [complexity=5,
+		importance=0.0684136635561,
+		rank=0.0136827327112];
+	"[1]m2_req" -> s2_wb_dat_o;
+	"[1]m_wb_access_finished"	 [complexity=5,
+		importance=0.110509647106,
+		rank=0.0221019294211];
+	"[1]m_wb_access_finished" -> s2_wb_dat_o;
+	"[1]m1_wb_adr_i"	 [complexity=16,
+		importance=0.0993475576606,
+		rank=0.00620922235379];
+	"[1]m1_addressed_s2"	 [complexity=15,
+		importance=0.436925689727,
+		rank=0.0291283793151];
+	"[1]m1_wb_adr_i" -> "[1]m1_addressed_s2";
+	"[1]m1_addressed_s1"	 [complexity=15,
+		importance=0.576597879962,
+		rank=0.0384398586641];
+	"[1]m1_wb_adr_i" -> "[1]m1_addressed_s1";
+	"[1]m2_in_progress"	 [complexity=11,
+		importance=0.580277641247,
+		rank=0.0527525128406];
+	"[1]m2_wb_err_o"	 [complexity=10,
+		importance=0.139672190235,
+		rank=0.0139672190235];
+	"[1]m2_in_progress" -> "[1]m2_wb_err_o";
+	"[1]m2_wb_ack_o"	 [complexity=10,
+		importance=0.128781633576,
+		rank=0.0128781633576];
+	"[1]m2_in_progress" -> "[1]m2_wb_ack_o";
+	"[1]m2_in_progress" -> s2_wb_dat_o;
+	"[1]m1_in_progress"	 [complexity=11,
+		importance=0.580277641247,
+		rank=0.0527525128406];
+	"[1]m1_wb_err_o"	 [complexity=10,
+		importance=0.139672190235,
+		rank=0.0139672190235];
+	"[1]m1_in_progress" -> "[1]m1_wb_err_o";
+	"[1]m1_wb_ack_o"	 [complexity=10,
+		importance=0.128781633576,
+		rank=0.0128781633576];
+	"[1]m1_in_progress" -> "[1]m1_wb_ack_o";
+	"[1]m1_in_progress" -> s2_wb_dat_o;
+	"[1]m2_wb_err_o" -> "[1]m_wb_access_finished";
+	"[1]MEMORY_WIDTH"	 [complexity=16,
+		importance=0.0993475576606,
+		rank=0.00620922235379];
+	"[1]m2_addressed_s2"	 [complexity=10,
+		importance=0.0863227825768,
+		rank=0.00863227825768];
+	"[1]MEMORY_WIDTH" -> "[1]m2_addressed_s2";
+	"[1]MEMORY_WIDTH" -> "[1]m1_addressed_s2";
+	"[1]m1_wb_stb_i"	 [complexity=14,
+		importance=0.292369155555,
+		rank=0.020883511111];
+	"[1]m1_req"	 [complexity=5,
+		importance=0.0684136635561,
+		rank=0.0136827327112];
+	"[1]m1_wb_stb_i" -> "[1]m1_req";
+	"[1]m1_wb_stb_i" -> "[1]m1_wb_err_o";
+	"[1]m2_wb_adr_i"	 [complexity=16,
+		importance=0.0993475576606,
+		rank=0.00620922235379];
+	"[1]m2_wb_adr_i" -> "[1]m2_addressed_s2";
+	"[1]m2_addressed_s1"	 [complexity=10,
+		importance=0.0863227825768,
+		rank=0.00863227825768];
+	"[1]m2_wb_adr_i" -> "[1]m2_addressed_s1";
+	"[1]m2_addressed_s2" -> "[1]m2_req";
+	"[1]m2_addressed_s2" -> "[1]m2_wb_err_o";
+	"[1]m2_addressed_s2" -> "[1]m2_wb_ack_o";
+	"[1]m2_addressed_s2" -> s2_wb_dat_o;
+	"[1]m1_req" -> s2_wb_dat_o;
+	"[1]m1_wb_err_o" -> "[1]m_wb_access_finished";
+	"[1]m1_wb_ack_o" -> "[1]m_wb_access_finished";
+	"[1]m1_wb_cyc_i"	 [complexity=14,
+		importance=0.292369155555,
+		rank=0.020883511111];
+	"[1]m1_wb_cyc_i" -> "[1]m1_req";
+	"[1]m1_wb_cyc_i" -> "[1]m1_wb_err_o";
+	"[1]m2_addressed_s1" -> "[1]m2_req";
+	"[1]m2_addressed_s1" -> "[1]m2_wb_err_o";
+	"[1]m2_addressed_s1" -> "[1]m2_wb_ack_o";
+	"[1]m2_addressed_s1" -> s2_wb_dat_o;
+	"[1]ETH_WIDTH"	 [complexity=16,
+		importance=0.0993475576606,
+		rank=0.00620922235379];
+	"[1]ETH_WIDTH" -> "[1]m2_addressed_s1";
+	"[1]ETH_WIDTH" -> "[1]m1_addressed_s1";
+	"[1]m1_addressed_s2" -> "[1]m1_req";
+	"[1]m1_addressed_s2" -> "[1]m1_wb_err_o";
+	"[1]m1_addressed_s2" -> "[1]m1_wb_ack_o";
+	"[1]m1_addressed_s2" -> s2_wb_dat_o;
+	"[1]m1_addressed_s1" -> "[1]m1_req";
+	"[1]m1_addressed_s1" -> "[1]m1_wb_err_o";
+	"[1]m1_addressed_s1" -> "[1]m1_wb_ack_o";
+	"[1]m1_addressed_s1" -> s2_wb_dat_o;
+	"[1]m2_wb_ack_o" -> "[1]m_wb_access_finished";
+	"[1]m2_wb_stb_i"	 [complexity=10,
+		importance=0.0814384386399,
+		rank=0.00814384386399];
+	"[1]m2_wb_stb_i" -> "[1]m2_req";
+	"[1]m2_wb_stb_i" -> "[1]m2_wb_err_o";
+	"[1]m2_wb_cyc_i"	 [complexity=10,
+		importance=0.0814384386399,
+		rank=0.00814384386399];
+	"[1]m2_wb_cyc_i" -> "[1]m2_req";
+	"[1]m2_wb_cyc_i" -> "[1]m2_wb_err_o";
+}

@@ -1,0 +1,33 @@
+strict digraph "" {
+	datao	 [complexity=0,
+		importance=0.146791395251,
+		rank=0.0];
+	"[1]rst_n"	 [complexity=3,
+		importance=1.03197400418,
+		rank=0.343991334726];
+	tdatao	 [complexity=2,
+		importance=0.324714937793,
+		rank=0.162357468897];
+	"[1]rst_n" -> tdatao;
+	tdatao -> datao;
+	"[1]io_i"	 [complexity=5,
+		importance=0.38254412859,
+		rank=0.076508825718];
+	"[1]io_i" -> tdatao;
+	"[1]sel"	 [complexity=7,
+		importance=1.68140387976,
+		rank=0.240200554252];
+	"[1]sel" -> tdatao;
+	"[1]w_n"	 [complexity=6,
+		importance=1.35668894197,
+		rank=0.226114823662];
+	"[1]w_n" -> tdatao;
+	"[1]addr"	 [complexity=3,
+		importance=0.707259066384,
+		rank=0.235753022128];
+	"[1]addr" -> tdatao;
+	"[1]io_mode"	 [complexity=7,
+		importance=0.750860163444,
+		rank=0.107265737635];
+	"[1]io_mode" -> tdatao;
+}

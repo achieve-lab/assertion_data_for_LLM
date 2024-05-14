@@ -1,0 +1,28 @@
+digraph "()" {
+	ResetterCounterMaxValue -> ResetterCounter	 [weight=3.0];
+	"inst_M_Filter.Negative" -> Down	 [weight=1.0];
+	Lead -> "inst_M_Filter.Lead"	 [weight=1.0];
+	Lead -> N_FilterCounter	 [weight=1.0];
+	"inst_M_Filter.Lead" -> "inst_M_Filter.FilterCounter"	 [weight=1.0];
+	N_FilterMinValue -> N_FilterCounter	 [weight=3.0];
+	N_FilterCounter -> Negative	 [weight=1.0];
+	N_FilterCounter -> Positive	 [weight=1.0];
+	N_FilterCounter -> N_FilterCounter	 [weight=8.0];
+	"inst_M_Filter.Positive" -> Up	 [weight=1.0];
+	Lag -> N_FilterCounter	 [weight=1.0];
+	Lag -> "inst_M_Filter.Lag"	 [weight=1.0];
+	ResetterCounterMinValue -> ResetterCounter	 [weight=3.0];
+	"inst_M_Filter.FilterMaxValue" -> "inst_M_Filter.FilterCounter"	 [weight=3.0];
+	ResetterValue -> N_FilterCounter	 [weight=1.0];
+	"inst_M_Filter.Lag" -> "inst_M_Filter.FilterCounter"	 [weight=1.0];
+	Up -> ResetterCounter	 [weight=2.0];
+	ResetterCounter -> ResetterValue	 [weight=8.0];
+	ResetterCounter -> ResetterCounter	 [weight=8.0];
+	"inst_M_Filter.FilterMinValue" -> "inst_M_Filter.FilterCounter"	 [weight=3.0];
+	"inst_M_Filter.FilterCounter" -> "inst_M_Filter.Negative"	 [weight=1.0];
+	"inst_M_Filter.FilterCounter" -> "inst_M_Filter.Positive"	 [weight=1.0];
+	"inst_M_Filter.FilterCounter" -> "inst_M_Filter.FilterCounter"	 [weight=8.0];
+	N_FilterMaxValue -> N_FilterCounter	 [weight=3.0];
+	MainClock -> "inst_M_Filter.MainClock"	 [weight=1.0];
+	Down -> ResetterCounter	 [weight=1.0];
+}

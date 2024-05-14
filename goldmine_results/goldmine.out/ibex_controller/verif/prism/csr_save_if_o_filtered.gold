@@ -1,0 +1,65 @@
+property a9;
+@(posedge clk) (illegal_insn_q == 0) |=> (csr_save_if_o == 0);
+endproperty
+assert_a9: assert property(a9);
+
+property a5;
+@(posedge clk) (stall_multdiv_i == 1) |=> (csr_save_if_o == 0);
+endproperty
+assert_a5: assert property(a5);
+
+property a1;
+@(posedge clk) (illegal_insn_d == 1) |=> (csr_save_if_o == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a6;
+@(posedge clk) (illegal_insn_i == 1) |=> (csr_save_if_o == 0);
+endproperty
+assert_a6: assert property(a6);
+
+property a0;
+@(posedge clk) (csr_mstatus_tw_i == 0) |=> (csr_save_if_o == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a12;
+@(posedge clk) (instr_valid_i == 0) ##1 (ctrl_fsm_cs[2] == 0) |-> (csr_save_if_o == 1);
+endproperty
+assert_a12: assert property(a12);
+
+property a8;
+@(posedge clk) (debug_single_step_i == 0) |-> (csr_save_if_o == 0);
+endproperty
+assert_a8: assert property(a8);
+
+property a2;
+@(posedge clk) (irq_pending_i == 0) |-> (csr_save_if_o == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a7;
+@(posedge clk) (mret_insn == 1) |=> (csr_save_if_o == 0);
+endproperty
+assert_a7: assert property(a7);
+
+property a11;
+@(posedge clk) (debug_mode_q == 1) |=> (csr_save_if_o == 0);
+endproperty
+assert_a11: assert property(a11);
+
+property a3;
+@(posedge clk) (load_err_q == 1) |=> (csr_save_if_o == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a4;
+@(posedge clk) (dret_insn_i == 0) |=> (csr_save_if_o == 0);
+endproperty
+assert_a4: assert property(a4);
+
+property a10;
+@(posedge clk) (csr_mstatus_mie_i == 1) |=> (csr_save_if_o == 0);
+endproperty
+assert_a10: assert property(a10);
+

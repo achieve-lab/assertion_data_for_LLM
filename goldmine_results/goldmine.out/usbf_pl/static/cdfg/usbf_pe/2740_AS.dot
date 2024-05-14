@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"2740:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f13b5542790>",
+		def_var="['size_next']",
+		fillcolor=deepskyblue,
+		label="2740:AS
+size_next = (buf_smaller)? buf_size : max_pl_sz;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['buf_smaller', 'buf_size', 'max_pl_sz']"];
+}

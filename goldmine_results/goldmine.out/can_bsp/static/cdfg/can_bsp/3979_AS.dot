@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"3979:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f44f6ae3490>",
+		def_var="['set_reset_mode']",
+		fillcolor=deepskyblue,
+		label="3979:AS
+set_reset_mode = node_bus_off & ~node_bus_off_q;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['node_bus_off', 'node_bus_off_q']"];
+}

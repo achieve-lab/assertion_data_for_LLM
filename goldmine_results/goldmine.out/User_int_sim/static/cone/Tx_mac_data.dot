@@ -1,0 +1,17 @@
+strict digraph "" {
+	Tx_mac_data	 [complexity=0,
+		importance=0.0850936202858,
+		rank=0.0];
+	"[1]Tx_mac_wa"	 [complexity=4,
+		importance=0.204478342431,
+		rank=0.0511195856077];
+	data	 [complexity=2,
+		importance=0.153676379277,
+		rank=0.0768381896385];
+	"[1]Tx_mac_wa" -> data;
+	data -> Tx_mac_data;
+	"[1]CPU_init_end"	 [complexity=4,
+		importance=0.204478342431,
+		rank=0.0511195856077];
+	"[1]CPU_init_end" -> data;
+}

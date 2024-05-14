@@ -1,0 +1,103 @@
+strict digraph "" {
+	"[1]u0.pid_ACK"	 [complexity=6,
+		importance=0.009611091178,
+		rank=0.00160184852967];
+	"[1]u0.token_le_1"	 [complexity=4,
+		importance=0.00820884390093,
+		rank=0.00205221097523];
+	"[1]u0.pid_ACK" -> "[1]u0.token_le_1";
+	"[1]rx_err"	 [complexity=10,
+		importance=0.0197338299625,
+		rank=0.00197338299625];
+	"[1]u0.rx_err"	 [complexity=10,
+		importance=0.0184073606484,
+		rank=0.00184073606484];
+	"[1]rx_err" -> "[1]u0.rx_err";
+	"u0.token1"	 [complexity=3,
+		importance=0.00580949412834,
+		rank=0.00193649804278];
+	"u0.token_endp"	 [complexity=0,
+		importance=0.00389494280493,
+		rank=0.0];
+	"u0.token1" -> "u0.token_endp";
+	"u0.token0"	 [complexity=3,
+		importance=0.00634981066297,
+		rank=0.00211660355432];
+	"u0.token0" -> "u0.token_endp";
+	"[1]u0.state"	 [complexity=5,
+		importance=0.0124195516221,
+		rank=0.00248391032442];
+	"[1]u0.token_le_2"	 [complexity=4,
+		importance=0.00736607915922,
+		rank=0.0018415197898];
+	"[1]u0.state" -> "[1]u0.token_le_2";
+	"[1]u0.state" -> "[1]u0.token_le_1";
+	ep_sel	 [complexity=0,
+		importance=0.0018401329672,
+		rank=0.0];
+	"[1]u0.rx_valid"	 [complexity=8,
+		importance=0.0101985167474,
+		rank=0.00127481459343];
+	"[1]u0.rx_valid" -> "[1]u0.token_le_2";
+	"[1]u0.rx_valid" -> "[1]u0.token_le_1";
+	"[1]u0.pid_IN"	 [complexity=14,
+		importance=0.0126903548789,
+		rank=0.000906453919922];
+	"[1]u0.pid_TOKEN"	 [complexity=8,
+		importance=0.0112881076018,
+		rank=0.00141101345023];
+	"[1]u0.pid_IN" -> "[1]u0.pid_TOKEN";
+	"[1]u0.token_le_2" -> "u0.token1";
+	"[1]u0.token_le_1" -> "u0.token0";
+	"[1]u0.pid_SETUP"	 [complexity=14,
+		importance=0.0126903548789,
+		rank=0.000906453919922];
+	"[1]u0.pid_SETUP" -> "[1]u0.pid_TOKEN";
+	"[1]u0.rx_active"	 [complexity=8,
+		importance=0.00986691498123,
+		rank=0.00123336437265];
+	"[1]u0.rx_active" -> "[1]u0.token_le_2";
+	"[1]u0.rx_active" -> "[1]u0.token_le_1";
+	"[1]u0.rx_data"	 [complexity=5,
+		importance=0.00833948350948,
+		rank=0.0016678967019];
+	"[1]u0.rx_data" -> "u0.token1";
+	"[1]u0.rx_data" -> "u0.token0";
+	"u0.token_endp" -> ep_sel;
+	"[1]u0.rx_err" -> "[1]u0.token_le_2";
+	"[1]u0.rx_err" -> "[1]u0.token_le_1";
+	"[1]u0.pid"	 [complexity=8,
+		importance=0.0123394956503,
+		rank=0.00154243695629];
+	"[1]u0.pid" -> "[1]u0.pid_ACK";
+	"[1]u0.pid" -> "[1]u0.pid_IN";
+	"[1]u0.pid" -> "[1]u0.pid_SETUP";
+	"[1]u0.pid_SOF"	 [complexity=14,
+		importance=0.0126903548789,
+		rank=0.000906453919922];
+	"[1]u0.pid" -> "[1]u0.pid_SOF";
+	"[1]u0.pid_OUT"	 [complexity=14,
+		importance=0.0126903548789,
+		rank=0.000906453919922];
+	"[1]u0.pid" -> "[1]u0.pid_OUT";
+	"[1]u0.pid_PING"	 [complexity=14,
+		importance=0.0126903548789,
+		rank=0.000906453919922];
+	"[1]u0.pid" -> "[1]u0.pid_PING";
+	"[1]rx_active"	 [complexity=8,
+		importance=0.0111933842953,
+		rank=0.00139917303691];
+	"[1]rx_active" -> "[1]u0.rx_active";
+	"[1]u0.pid_SOF" -> "[1]u0.pid_TOKEN";
+	"[1]u0.pid_TOKEN" -> "[1]u0.token_le_1";
+	"[1]rx_valid"	 [complexity=8,
+		importance=0.0115249860615,
+		rank=0.00144062325769];
+	"[1]rx_valid" -> "[1]u0.rx_valid";
+	"[1]rx_data"	 [complexity=5,
+		importance=0.00966595282356,
+		rank=0.00193319056471];
+	"[1]rx_data" -> "[1]u0.rx_data";
+	"[1]u0.pid_OUT" -> "[1]u0.pid_TOKEN";
+	"[1]u0.pid_PING" -> "[1]u0.pid_TOKEN";
+}

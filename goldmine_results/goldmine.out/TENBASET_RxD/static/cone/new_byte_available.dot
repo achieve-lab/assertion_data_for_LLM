@@ -1,0 +1,164 @@
+strict digraph "" {
+	"[3]RcvData"	 [complexity=12,
+		importance=0.416192748402,
+		rank=0.0346827290335];
+	"[2]sync1"	 [complexity=14,
+		importance=6.20328195886,
+		rank=0.44309156849];
+	"[3]RcvData" -> "[2]sync1";
+	"[2]RcvData"	 [complexity=9,
+		importance=0.347030080394,
+		rank=0.0385588978216];
+	"[3]RcvData" -> "[2]RcvData";
+	"[1]RcvData"	 [complexity=10,
+		importance=1.25678651016,
+		rank=0.125678651016];
+	"[3]RcvData" -> "[1]RcvData";
+	"[3]sync2"	 [complexity=16,
+		importance=30.5551967754,
+		rank=1.90969979846];
+	"[3]RcvData" -> "[3]sync2";
+	"[3]sync1"	 [complexity=18,
+		importance=30.6762594032,
+		rank=1.70423663351];
+	"[3]RcvData" -> "[3]sync1";
+	"[3]new_bit_available"	 [complexity=17,
+		importance=91.7246750102,
+		rank=5.39556911825];
+	"[3]new_bit_available" -> "[2]sync1";
+	"[3]new_bit_available" -> "[3]sync2";
+	"[3]new_bit_available" -> "[3]sync1";
+	"[2]new_bit_available"	 [complexity=13,
+		importance=18.3057426771,
+		rank=1.40813405209];
+	"[2]sync2"	 [complexity=12,
+		importance=6.08221933102,
+		rank=0.506851610918];
+	"[2]new_bit_available" -> "[2]sync2";
+	"[2]new_bit_available" -> "[2]sync1";
+	"[1]sync1"	 [complexity=10,
+		importance=1.30868646999,
+		rank=0.130868646999];
+	"[2]new_bit_available" -> "[1]sync1";
+	"[2]end_of_Ethernet_frame"	 [complexity=13,
+		importance=24.3961824226,
+		rank=1.87662941712];
+	"[2]end_of_Ethernet_frame" -> "[2]sync2";
+	"[2]end_of_Ethernet_frame" -> "[2]sync1";
+	"[2]end_of_Ethernet_frame" -> "[1]sync1";
+	"[1]new_bit_available"	 [complexity=9,
+		importance=3.62195621052,
+		rank=0.402439578946];
+	"[1]sync2"	 [complexity=8,
+		importance=1.18762384215,
+		rank=0.148452980269];
+	"[1]new_bit_available" -> "[1]sync2";
+	sync1	 [complexity=6,
+		importance=0.329767372217,
+		rank=0.0549612287028];
+	"[1]new_bit_available" -> sync1;
+	"[2]transition_timeout"	 [complexity=7,
+		importance=0.997687063204,
+		rank=0.142526723315];
+	end_of_Ethernet_frame	 [complexity=5,
+		importance=0.90212407603,
+		rank=0.180424815206];
+	"[2]transition_timeout" -> end_of_Ethernet_frame;
+	"[3]transition_timeout"	 [complexity=9,
+		importance=1.09325005038,
+		rank=0.12147222782];
+	"[3]transition_timeout" -> "[2]transition_timeout";
+	"[1]end_of_Ethernet_frame"	 [complexity=9,
+		importance=4.81780046713,
+		rank=0.535311163014];
+	"[3]transition_timeout" -> "[1]end_of_Ethernet_frame";
+	"[2]sync2" -> "[1]sync2";
+	"[2]sync1" -> "[2]sync2";
+	"[2]sync1" -> sync1;
+	"[1]sync1" -> "[1]sync2";
+	sync2	 [complexity=4,
+		importance=0.208704744379,
+		rank=0.0521761860946];
+	"[1]sync2" -> sync2;
+	"[3]in_data"	 [complexity=13,
+		importance=1.68894142286,
+		rank=0.129918570989];
+	"[3]in_data" -> "[3]transition_timeout";
+	"[3]cnt"	 [complexity=17,
+		importance=3.28026443273,
+		rank=0.192956731337];
+	"[3]in_data" -> "[3]cnt";
+	"[2]cnt"	 [complexity=12,
+		importance=1.60159873323,
+		rank=0.133466561102];
+	"[3]in_data" -> "[2]cnt";
+	"[3]in_data" -> "[2]RcvData";
+	"[3]in_data" -> "[1]RcvData";
+	"[2]in_data"	 [complexity=15,
+		importance=3.28540229441,
+		rank=0.219026819627];
+	"[3]in_data" -> "[2]in_data";
+	"[1]in_data"	 [complexity=10,
+		importance=1.60673659491,
+		rank=0.160673659491];
+	"[3]in_data" -> "[1]in_data";
+	"[3]cnt" -> "[3]RcvData";
+	"[3]cnt" -> "[1]new_bit_available";
+	"[3]cnt" -> "[3]transition_timeout";
+	"[1]cnt"	 [complexity=7,
+		importance=0.762265883473,
+		rank=0.10889512621];
+	"[3]cnt" -> "[1]cnt";
+	"[3]cnt" -> "[2]cnt";
+	"[3]cnt" -> "[2]RcvData";
+	end_of_Ethernet_frame -> sync2;
+	new_bit_available	 [complexity=5,
+		importance=0.685198917195,
+		rank=0.137039783439];
+	"[1]cnt" -> new_bit_available;
+	RcvData	 [complexity=6,
+		importance=0.277867412386,
+		rank=0.0463112353977];
+	"[1]cnt" -> RcvData;
+	"[2]cnt" -> "[2]transition_timeout";
+	"[2]cnt" -> "[1]cnt";
+	"[2]cnt" -> "[2]RcvData";
+	"[2]cnt" -> "[1]RcvData";
+	"[2]cnt" -> new_bit_available;
+	"[2]RcvData" -> "[2]sync2";
+	"[2]RcvData" -> "[2]sync1";
+	"[2]RcvData" -> "[1]sync1";
+	"[2]RcvData" -> RcvData;
+	new_byte_available	 [complexity=0,
+		importance=0.0646046241188,
+		rank=0.0];
+	"[1]end_of_Ethernet_frame" -> "[1]sync2";
+	"[1]end_of_Ethernet_frame" -> sync1;
+	"[1]RcvData" -> "[1]sync2";
+	"[1]RcvData" -> sync1;
+	"[3]manchester_data_in"	 [complexity=13,
+		importance=1.65811460318,
+		rank=0.127547277168];
+	"[3]manchester_data_in" -> "[2]in_data";
+	"[3]manchester_data_in" -> "[1]in_data";
+	new_bit_available -> new_byte_available;
+	new_bit_available -> sync2;
+	"[3]end_of_Ethernet_frame"	 [complexity=17,
+		importance=122.2880922,
+		rank=7.19341718823];
+	"[3]end_of_Ethernet_frame" -> "[2]sync1";
+	"[3]end_of_Ethernet_frame" -> "[3]sync2";
+	"[3]end_of_Ethernet_frame" -> "[3]sync1";
+	RcvData -> sync2;
+	sync2 -> new_byte_available;
+	"[2]in_data" -> "[2]transition_timeout";
+	"[2]in_data" -> "[1]cnt";
+	"[2]in_data" -> "[2]cnt";
+	"[2]in_data" -> RcvData;
+	sync1 -> sync2;
+	"[3]sync2" -> "[2]sync2";
+	"[3]sync1" -> "[2]sync1";
+	"[3]sync1" -> "[1]sync1";
+	"[3]sync1" -> "[3]sync2";
+	"[1]in_data" -> "[1]cnt";
+}

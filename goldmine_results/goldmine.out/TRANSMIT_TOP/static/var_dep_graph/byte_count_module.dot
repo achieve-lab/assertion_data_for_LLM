@@ -1,0 +1,6 @@
+digraph "" {
+	RESET -> counter	 [weight=2.0];
+	START -> counter	 [weight=1.0];
+	counter -> counter	 [weight=1.0];
+	counter -> BYTE_COUNTER	 [weight=1.0];
+}

@@ -1,0 +1,14 @@
+strict digraph "" {
+	node [label="\N"];
+	"90:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fa9cb950610>",
+		def_var="['Rx_clk']",
+		fillcolor=deepskyblue,
+		label="90:AS
+Rx_clk = (Speed[2])? Gtx_clk : 
+(Speed[1])? Clk_25m : 
+(Speed[0])? Clk_2_5m : 0;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Speed', 'Gtx_clk', 'Speed', 'Clk_25m', 'Speed', 'Clk_2_5m']"];
+}

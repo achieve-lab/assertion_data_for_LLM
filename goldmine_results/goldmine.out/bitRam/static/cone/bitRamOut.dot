@@ -1,0 +1,32 @@
+strict digraph "" {
+	"[1]bitRamRw"	 [complexity=4,
+		importance=0.619801511676,
+		rank=0.154950377919];
+	bitRam	 [complexity=3,
+		importance=0.524751889595,
+		rank=0.174917296532];
+	"[1]bitRamRw" -> bitRam;
+	bitRamOut	 [complexity=0,
+		importance=0.33069272173,
+		rank=0.0];
+	"[1]bitRamRw" -> bitRamOut;
+	bitRamIn	 [complexity=6,
+		importance=0.619801511676,
+		rank=0.103300251946];
+	bitRamIn -> bitRam;
+	bitRamAddr	 [complexity=3,
+		importance=0.425742343811,
+		rank=0.141914114604];
+	bitRamAddr -> bitRamOut;
+	bitRam -> bitRamOut;
+	"[1]bitRamEn"	 [complexity=4,
+		importance=0.619801511676,
+		rank=0.154950377919];
+	"[1]bitRamEn" -> bitRam;
+	"[1]bitRamEn" -> bitRamOut;
+	"[1]reset"	 [complexity=4,
+		importance=0.619801511676,
+		rank=0.154950377919];
+	"[1]reset" -> bitRam;
+	"[1]reset" -> bitRamOut;
+}

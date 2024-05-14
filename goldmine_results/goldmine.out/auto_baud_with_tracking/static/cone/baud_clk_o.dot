@@ -1,0 +1,51 @@
+strict digraph "" {
+	baud	 [complexity=5,
+		importance=0.124998621866,
+		rank=0.0249997243732];
+	baud_count_rollover	 [complexity=2,
+		importance=0.0873766296491,
+		rank=0.0436883148245];
+	baud -> baud_count_rollover;
+	"[1]measurement"	 [complexity=7,
+		importance=0.165405460127,
+		rank=0.0236293514467];
+	"[1]measurement" -> baud;
+	"[1]verify_good"	 [complexity=6,
+		importance=0.147054668307,
+		rank=0.0245091113844];
+	"[1]verify_good" -> baud;
+	"[1]run"	 [complexity=6,
+		importance=0.337068773758,
+		rank=0.0561781289596];
+	baud_count	 [complexity=5,
+		importance=0.154774238508,
+		rank=0.0309548477016];
+	"[1]run" -> baud_count;
+	baud_clk_o	 [complexity=0,
+		importance=0.0305903148329,
+		rank=0.0];
+	baud_count_rollover -> baud_clk_o;
+	"[1]baud_count_rollover"	 [complexity=6,
+		importance=0.366334791832,
+		rank=0.0610557986387];
+	"[1]baud_count_rollover" -> baud_count;
+	"[1]baud"	 [complexity=9,
+		importance=0.403956784049,
+		rank=0.0448840871166];
+	"[1]baud" -> "[1]baud_count_rollover";
+	"[1]m1_state"	 [complexity=7,
+		importance=0.215869558569,
+		rank=0.030838508367];
+	"[1]m1_state" -> "[1]verify_good";
+	"[1]reset_i"	 [complexity=6,
+		importance=0.485448774197,
+		rank=0.0809081290329];
+	"[1]reset_i" -> baud;
+	"[1]reset_i" -> baud_count;
+	baud_count -> baud_count_rollover;
+	"[1]baud_count"	 [complexity=9,
+		importance=0.433732400691,
+		rank=0.0481924889656];
+	"[1]baud_count" -> "[1]baud_count_rollover";
+	"[1]baud_count" -> baud_count;
+}

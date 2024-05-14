@@ -1,0 +1,17 @@
+strict digraph "" {
+	"[1]wb_ack_s2"	 [complexity=8,
+		importance=0.155498726475,
+		rank=0.0194373408094];
+	wb_ack_o	 [complexity=4,
+		importance=0.113004916349,
+		rank=0.0282512290872];
+	"[1]wb_ack_s2" -> wb_ack_o;
+	"[1]wb_ack_o"	 [complexity=8,
+		importance=0.226009832697,
+		rank=0.0282512290872];
+	"[1]wb_ack_o" -> wb_ack_o;
+	"[1]wb_ack_s1"	 [complexity=8,
+		importance=0.154585219099,
+		rank=0.0193231523873];
+	"[1]wb_ack_s1" -> wb_ack_o;
+}

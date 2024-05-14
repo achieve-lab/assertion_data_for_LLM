@@ -1,0 +1,159 @@
+strict digraph "" {
+	"[1]rxcounters1.ByteCnt"	 [complexity=24,
+		importance=0.0620311405036,
+		rank=0.00258463085432];
+	"[1]rxcounters1.ByteCntMaxFrame"	 [complexity=20,
+		importance=0.0492428311301,
+		rank=0.00246214155651];
+	"[1]rxcounters1.ByteCnt" -> "[1]rxcounters1.ByteCntMaxFrame";
+	"[1]rxcounters1.ByteCntMax"	 [complexity=14,
+		importance=0.037094299732,
+		rank=0.002649592838];
+	"[1]rxcounters1.ByteCnt" -> "[1]rxcounters1.ByteCntMax";
+	"rxcounters1.ByteCnt"	 [complexity=2,
+		importance=0.0209587659337,
+		rank=0.0104793829669];
+	"[1]rxcounters1.ByteCnt" -> "rxcounters1.ByteCnt";
+	"[1]Transmitting"	 [complexity=14,
+		importance=0.0404335258433,
+		rank=0.00288810898881];
+	"[1]rxcounters1.Transmitting"	 [complexity=14,
+		importance=0.0374211296263,
+		rank=0.00267293783045];
+	"[1]Transmitting" -> "[1]rxcounters1.Transmitting";
+	"[1]rxstatem1.StateData"	 [complexity=20,
+		importance=0.055179151621,
+		rank=0.00275895758105];
+	"[1]StateData"	 [complexity=20,
+		importance=0.048985104774,
+		rank=0.0024492552387];
+	"[1]rxstatem1.StateData" -> "[1]StateData";
+	"[1]StatePreamble"	 [complexity=14,
+		importance=0.0429343567724,
+		rank=0.00306673976945];
+	"[1]rxcounters1.StatePreamble"	 [complexity=14,
+		importance=0.0387567489581,
+		rank=0.00276833921129];
+	"[1]StatePreamble" -> "[1]rxcounters1.StatePreamble";
+	"[1]rxcounters1.MaxFL"	 [complexity=24,
+		importance=0.0537614498525,
+		rank=0.00224006041052];
+	"[1]rxcounters1.MaxFL" -> "[1]rxcounters1.ByteCntMaxFrame";
+	"[1]rxcounters1.StateData"	 [complexity=20,
+		importance=0.0444245363967,
+		rank=0.00222122681984];
+	"[1]rxcounters1.IncrementByteCounter"	 [complexity=3,
+		importance=0.0336556221566,
+		rank=0.0112185407189];
+	"[1]rxcounters1.StateData" -> "[1]rxcounters1.IncrementByteCounter";
+	"[1]rxcounters1.ResetByteCounter"	 [complexity=14,
+		importance=0.0412854505706,
+		rank=0.00294896075504];
+	"[1]rxcounters1.StateData" -> "[1]rxcounters1.ResetByteCounter";
+	"[1]rxcounters1.ByteCntMaxFrame" -> "[1]rxcounters1.ResetByteCounter";
+	"[1]rxcounters1.StatePreamble" -> "[1]rxcounters1.IncrementByteCounter";
+	"[1]rxcounters1.Reset"	 [complexity=3,
+		importance=0.0659283314525,
+		rank=0.0219761104842];
+	"[1]rxcounters1.Reset" -> "rxcounters1.ByteCnt";
+	"[1]rxstatem1.StateData1"	 [complexity=23,
+		importance=0.0627912348905,
+		rank=0.00273005369089];
+	"[1]rxstatem1.StateData1" -> "[1]rxstatem1.StateData";
+	"[1]rxcounters1.MRxDEqD"	 [complexity=20,
+		importance=0.0451047529679,
+		rank=0.0022552376484];
+	"[1]rxcounters1.MRxDEqD" -> "[1]rxcounters1.ResetByteCounter";
+	"[1]MaxFL"	 [complexity=24,
+		importance=0.0567738460696,
+		rank=0.00236557691956];
+	"[1]MaxFL" -> "[1]rxcounters1.MaxFL";
+	"[1]rxstatem1.StateData0"	 [complexity=23,
+		importance=0.0628501552955,
+		rank=0.00273261544763];
+	"[1]rxstatem1.StateData0" -> "[1]rxstatem1.StateData";
+	"[1]rxcounters1.IncrementByteCounter" -> "rxcounters1.ByteCnt";
+	"[1]rxstatem1.StateIdle"	 [complexity=14,
+		importance=0.0484508293185,
+		rank=0.00346077352275];
+	"[1]StateIdle"	 [complexity=14,
+		importance=0.0412348189448,
+		rank=0.00294534421034];
+	"[1]rxstatem1.StateIdle" -> "[1]StateIdle";
+	"[1]StateSFD"	 [complexity=20,
+		importance=0.0494069661685,
+		rank=0.00247034830842];
+	"[1]rxcounters1.StateSFD"	 [complexity=20,
+		importance=0.0453195933159,
+		rank=0.0022659796658];
+	"[1]StateSFD" -> "[1]rxcounters1.StateSFD";
+	"[1]MRxDV"	 [complexity=20,
+		importance=0.0476114875057,
+		rank=0.00238057437529];
+	"[1]rxcounters1.MRxDV"	 [complexity=20,
+		importance=0.0445990912887,
+		rank=0.00222995456443];
+	"[1]MRxDV" -> "[1]rxcounters1.MRxDV";
+	"[1]rxcounters1.MRxDV" -> "[1]rxcounters1.IncrementByteCounter";
+	"[1]rxcounters1.MRxDV" -> "[1]rxcounters1.ResetByteCounter";
+	"[1]rxcounters1.StateSFD" -> "[1]rxcounters1.IncrementByteCounter";
+	"[1]rxcounters1.StateSFD" -> "[1]rxcounters1.ResetByteCounter";
+	"[1]rxstatem1.StateSFD"	 [complexity=20,
+		importance=0.0580065691924,
+		rank=0.00290032845962];
+	"[1]rxstatem1.StateSFD" -> "[1]StateSFD";
+	"[1]rxstatem1.StatePreamble"	 [complexity=14,
+		importance=0.049925569694,
+		rank=0.003566112121];
+	"[1]rxstatem1.StatePreamble" -> "[1]StatePreamble";
+	"[1]HugEn"	 [complexity=24,
+		importance=0.0567738460696,
+		rank=0.00236557691956];
+	"[1]rxcounters1.HugEn"	 [complexity=24,
+		importance=0.0537614498525,
+		rank=0.00224006041052];
+	"[1]HugEn" -> "[1]rxcounters1.HugEn";
+	"rxcounters1.ByteCntEq0"	 [complexity=0,
+		importance=0.00817045656025,
+		rank=0.0];
+	ByteCntEq0	 [complexity=0,
+		importance=0.0047317789848,
+		rank=0.0];
+	"rxcounters1.ByteCntEq0" -> ByteCntEq0;
+	"[1]rxcounters1.StateIdle"	 [complexity=14,
+		importance=0.0373204055579,
+		rank=0.00266574325413];
+	"[1]StateIdle" -> "[1]rxcounters1.StateIdle";
+	"[1]MRxDEqD"	 [complexity=20,
+		importance=0.0483323238286,
+		rank=0.00241661619143];
+	"[1]MRxDEqD" -> "[1]rxcounters1.MRxDEqD";
+	"[1]rxcounters1.DlyCrcEn"	 [complexity=14,
+		importance=0.0371700925421,
+		rank=0.00265500661015];
+	"[1]rxcounters1.DlyCrcEn" -> "[1]rxcounters1.IncrementByteCounter";
+	"[1]Reset"	 [complexity=3,
+		importance=0.0689407276696,
+		rank=0.0229802425565];
+	"[1]Reset" -> "[1]rxcounters1.Reset";
+	"[1]rxcounters1.ResetByteCounter" -> "[1]rxcounters1.IncrementByteCounter";
+	"[1]rxcounters1.ResetByteCounter" -> "rxcounters1.ByteCnt";
+	"[1]rxcounters1.StateIdle" -> "[1]rxcounters1.IncrementByteCounter";
+	"[1]DlyCrcEn"	 [complexity=14,
+		importance=0.0401824887591,
+		rank=0.00287017776851];
+	"[1]DlyCrcEn" -> "[1]rxcounters1.DlyCrcEn";
+	"[1]MRxD"	 [complexity=22,
+		importance=0.0513447200456,
+		rank=0.00233385091117];
+	"[1]MRxD" -> "[1]MRxDEqD";
+	"[1]StateData" -> "[1]rxcounters1.StateData";
+	"[1]rxcounters1.HugEn" -> "[1]rxcounters1.ByteCntMaxFrame";
+	"[1]rxcounters1.ByteCntMax" -> "[1]rxcounters1.IncrementByteCounter";
+	"rxcounters1.ByteCnt" -> "rxcounters1.ByteCntEq0";
+	"[1]rxcounters1.DlyCrcCnt"	 [complexity=14,
+		importance=0.0419772817743,
+		rank=0.00299837726959];
+	"[1]rxcounters1.DlyCrcCnt" -> "[1]rxcounters1.IncrementByteCounter";
+	"[1]rxcounters1.Transmitting" -> "[1]rxcounters1.IncrementByteCounter";
+}

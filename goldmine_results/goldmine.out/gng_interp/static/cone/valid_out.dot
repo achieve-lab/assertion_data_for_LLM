@@ -1,0 +1,13 @@
+strict digraph "" {
+	"[1]rstn"	 [complexity=1,
+		importance=0.0304485119019,
+		rank=0.0304485119019];
+	valid_out	 [complexity=0,
+		importance=0.0114983200373,
+		rank=0.0];
+	"[1]rstn" -> valid_out;
+	"[1]valid_in_r"	 [complexity=2,
+		importance=0.0267226000659,
+		rank=0.013361300033];
+	"[1]valid_in_r" -> valid_out;
+}

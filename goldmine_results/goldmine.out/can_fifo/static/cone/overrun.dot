@@ -1,0 +1,63 @@
+strict digraph "" {
+	"[1]fifo_full"	 [complexity=10,
+		importance=0.114993225928,
+		rank=0.0114993225928];
+	overrun_info	 [complexity=3,
+		importance=0.0871077294354,
+		rank=0.0290359098118];
+	"[1]fifo_full" -> overrun_info;
+	rd_info_pointer	 [complexity=3,
+		importance=0.0697076827624,
+		rank=0.0232358942541];
+	overrun	 [complexity=0,
+		importance=0.0438527599579,
+		rank=0.0];
+	rd_info_pointer -> overrun;
+	"[1]rst"	 [complexity=4,
+		importance=0.158408552414,
+		rank=0.0396021381035];
+	"[1]rst" -> rd_info_pointer;
+	"[1]wr"	 [complexity=9,
+		importance=0.136754850444,
+		rank=0.0151949833827];
+	"[1]write_length_info"	 [complexity=6,
+		importance=0.117761663555,
+		rank=0.0196269439259];
+	"[1]wr" -> "[1]write_length_info";
+	"[1]wr" -> overrun_info;
+	"[1]wr_q"	 [complexity=9,
+		importance=0.139622095267,
+		rank=0.0155135661408];
+	"[1]wr_q" -> "[1]write_length_info";
+	"[1]rd_info_pointer"	 [complexity=6,
+		importance=0.0955626055669,
+		rank=0.0159271009278];
+	"[1]rd_info_pointer" -> rd_info_pointer;
+	"[1]info_full"	 [complexity=5,
+		importance=0.0961716173843,
+		rank=0.0192343234769];
+	"[1]info_full" -> rd_info_pointer;
+	"[1]info_full" -> overrun_info;
+	"[1]write_length_info" -> overrun_info;
+	"[1]release_buffer"	 [complexity=5,
+		importance=0.0887008696515,
+		rank=0.0177401739303];
+	"[1]release_buffer" -> rd_info_pointer;
+	"[1]info_cnt"	 [complexity=7,
+		importance=0.155936278962,
+		rank=0.0222766112803];
+	"[1]info_cnt" -> "[1]info_full";
+	"[1]latch_overrun"	 [complexity=10,
+		importance=0.113304090428,
+		rank=0.0113304090428];
+	"[1]latch_overrun" -> overrun_info;
+	"[1]fifo_cnt"	 [complexity=12,
+		importance=0.203915648653,
+		rank=0.0169929707211];
+	"[1]fifo_cnt" -> "[1]fifo_full";
+	"[1]initialize_memories"	 [complexity=13,
+		importance=0.205925709718,
+		rank=0.0158404392091];
+	"[1]initialize_memories" -> overrun_info;
+	overrun_info -> overrun;
+}

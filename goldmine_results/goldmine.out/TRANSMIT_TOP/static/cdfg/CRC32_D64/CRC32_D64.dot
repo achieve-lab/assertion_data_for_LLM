@@ -1,0 +1,110 @@
+strict digraph "compose( ,  )" {
+	node [label="\N"];
+	"Leaf_40:AL"	 [def_var="['CRC_OUT', 'CRC_REG']",
+		label="Leaf_40:AL"];
+	"40:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f2df2094e10>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="40:AL",
+		sens="['CLK', 'RESET']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['RESET', 'CRC_OUT', 'startCRC', 'nextCRC32_D64', 'data_del']"];
+	"Leaf_40:AL" -> "40:AL";
+	"42:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f2df249e1d0>",
+		fillcolor=springgreen,
+		label="42:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"47:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f2df249e310>",
+		fillcolor=springgreen,
+		label="47:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"42:IF" -> "47:IF"	 [cond="['RESET']",
+		label="!(RESET)",
+		lineno=42];
+	"42:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f2df2094f90>",
+		fillcolor=turquoise,
+		label="42:BL
+CRC_OUT <= 0;
+CRC_REG <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2df2094fd0>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f2df249e150>]",
+		style=filled,
+		typ=Block];
+	"42:IF" -> "42:BL"	 [cond="['RESET']",
+		label=RESET,
+		lineno=42];
+	"24:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f2df2094810>",
+		def_var="['data_del']",
+		fillcolor=deepskyblue,
+		label="24:AS
+data_del = { DATA_IN[0], DATA_IN[1], DATA_IN[2], DATA_IN[3], DATA_IN[4], DATA_IN[5], DATA_IN[6], DATA_IN[7], DATA_IN[8], DATA_\
+IN[9], DATA_IN[10], DATA_IN[11], DATA_IN[12], DATA_IN[13], DATA_IN[14], DATA_IN[15], DATA_IN[16], DATA_IN[17], DATA_IN[18], DATA_\
+IN[19], DATA_IN[20], DATA_IN[21], DATA_IN[22], DATA_IN[23], DATA_IN[24], DATA_IN[25], DATA_IN[26], DATA_IN[27], DATA_IN[28], DATA_\
+IN[29], DATA_IN[30], DATA_IN[31], DATA_IN[32], DATA_IN[33], DATA_IN[34], DATA_IN[35], DATA_IN[36], DATA_IN[37], DATA_IN[38], DATA_\
+IN[39], DATA_IN[40], DATA_IN[41], DATA_IN[42], DATA_IN[43], DATA_IN[44], DATA_IN[45], DATA_IN[46], DATA_IN[47], DATA_IN[48], DATA_\
+IN[49], DATA_IN[50], DATA_IN[51], DATA_IN[52], DATA_IN[53], DATA_IN[54], DATA_IN[55], DATA_IN[56], DATA_IN[57], DATA_IN[58], DATA_\
+IN[59], DATA_IN[60], DATA_IN[61], DATA_IN[62], DATA_IN[63] };",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_\
+IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_\
+IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_\
+IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_\
+IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_\
+IN', 'DATA_IN', 'DATA_IN', 'DATA_IN', 'DATA_IN']"];
+	"24:AS" -> "40:AL";
+	"47:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f2df249e350>",
+		fillcolor=turquoise,
+		label="47:BL
+CRC_OUT <= nextCRC32_D64(data_del, CRC_OUT);",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2df249e590>]",
+		style=filled,
+		typ=Block];
+	"47:IF" -> "47:BL"	 [cond="['startCRC']",
+		label="(startCRC == 1)",
+		lineno=47];
+	"47:BL" -> "Leaf_40:AL"	 [cond="[]",
+		lineno=None];
+	"35:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f2df2094a90>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="35:AL",
+		sens="['START']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['START']"];
+	"36:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f2df2094950>",
+		fillcolor=turquoise,
+		label="36:BL
+startCRC <= START;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2df2094b50>]",
+		style=filled,
+		typ=Block];
+	"35:AL" -> "36:BL"	 [cond="[]",
+		lineno=None];
+	"41:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f2df2094dd0>",
+		fillcolor=turquoise,
+		label="41:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"41:BL" -> "42:IF"	 [cond="[]",
+		lineno=None];
+	"40:AL" -> "41:BL"	 [cond="[]",
+		lineno=None];
+	"Leaf_35:AL"	 [def_var="['startCRC']",
+		label="Leaf_35:AL"];
+	"Leaf_35:AL" -> "40:AL";
+	"36:BL" -> "Leaf_35:AL"	 [cond="[]",
+		lineno=None];
+	"42:BL" -> "Leaf_40:AL"	 [cond="[]",
+		lineno=None];
+}

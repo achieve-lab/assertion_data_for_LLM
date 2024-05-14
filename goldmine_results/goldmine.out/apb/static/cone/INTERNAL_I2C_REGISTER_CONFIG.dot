@@ -1,0 +1,55 @@
+strict digraph "" {
+	"[1]PWDATA"	 [complexity=4,
+		importance=0.217067382414,
+		rank=0.0542668456034];
+	INTERNAL_I2C_REGISTER_CONFIG	 [complexity=2,
+		importance=0.184251201367,
+		rank=0.0921256006834];
+	"[1]PWDATA" -> INTERNAL_I2C_REGISTER_CONFIG;
+	"[1]PSELx"	 [complexity=22,
+		importance=0.716190280539,
+		rank=0.0325541036609];
+	"[1]RD_ENA"	 [complexity=17,
+		importance=0.683374099492,
+		rank=0.0401984764407];
+	"[1]PSELx" -> "[1]RD_ENA";
+	"[1]PREADY"	 [complexity=10,
+		importance=0.639052675588,
+		rank=0.0639052675588];
+	"[1]PSELx" -> "[1]PREADY";
+	"[1]PSELx" -> INTERNAL_I2C_REGISTER_CONFIG;
+	"[1]WR_ENA"	 [complexity=17,
+		importance=0.683374099492,
+		rank=0.0401984764407];
+	"[1]PSELx" -> "[1]WR_ENA";
+	"[1]PWRITE"	 [complexity=22,
+		importance=0.716190280539,
+		rank=0.0325541036609];
+	"[1]PWRITE" -> "[1]RD_ENA";
+	"[1]PWRITE" -> INTERNAL_I2C_REGISTER_CONFIG;
+	"[1]PWRITE" -> "[1]WR_ENA";
+	"[1]INTERNAL_I2C_REGISTER_CONFIG"	 [complexity=4,
+		importance=0.368502402733,
+		rank=0.0921256006834];
+	"[1]INTERNAL_I2C_REGISTER_CONFIG" -> INTERNAL_I2C_REGISTER_CONFIG;
+	"[1]PENABLE"	 [complexity=22,
+		importance=0.716190280539,
+		rank=0.0325541036609];
+	"[1]PENABLE" -> "[1]RD_ENA";
+	"[1]PENABLE" -> "[1]PREADY";
+	"[1]PENABLE" -> "[1]WR_ENA";
+	"[1]RD_ENA" -> "[1]PREADY";
+	"[1]PRESETn"	 [complexity=3,
+		importance=0.585569785147,
+		rank=0.195189928382];
+	"[1]PRESETn" -> INTERNAL_I2C_REGISTER_CONFIG;
+	"[1]PREADY" -> INTERNAL_I2C_REGISTER_CONFIG;
+	"[1]WR_ENA" -> "[1]PREADY";
+	"[1]PADDR"	 [complexity=22,
+		importance=0.716190280539,
+		rank=0.0325541036609];
+	"[1]PADDR" -> "[1]RD_ENA";
+	"[1]PADDR" -> "[1]PREADY";
+	"[1]PADDR" -> INTERNAL_I2C_REGISTER_CONFIG;
+	"[1]PADDR" -> "[1]WR_ENA";
+}

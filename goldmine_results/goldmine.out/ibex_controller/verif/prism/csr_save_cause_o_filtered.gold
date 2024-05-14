@@ -1,0 +1,85 @@
+property a3;
+@(posedge clk) (ctrl_fsm_ns[0] == 1) |=> (csr_save_cause_o == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a0;
+@(posedge clk) (special_req == 0) |=> (csr_save_cause_o == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a2;
+@(posedge clk) (id_in_ready_o == 1) |=> (csr_save_cause_o == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a13;
+@(posedge clk) (ctrl_fsm_ns[1] == 1) ##1 (debug_req_i == 0) |-> (csr_save_cause_o == 1);
+endproperty
+assert_a13: assert property(a13);
+
+property a6;
+@(posedge clk) (illegal_insn_d == 0 & exc_req_q == 1) ##1 (ebrk_insn == 1 & instr_fetch_err == 0) |-> (csr_save_cause_o == 0);
+endproperty
+assert_a6: assert property(a6);
+
+property a5;
+@(posedge clk) (exc_req_d == 0 & exc_req_lsu == 0) |=> (csr_save_cause_o == 0);
+endproperty
+assert_a5: assert property(a5);
+
+property a9;
+@(posedge clk) (ctrl_fsm_ns[1] == 1) ##1 (ebrk_insn_i == 0) |-> (csr_save_cause_o == 1);
+endproperty
+assert_a9: assert property(a9);
+
+property a16;
+@(posedge clk) (ctrl_fsm_ns[1] == 1 & stall_jump_i == 0) ##1 (debug_ebreakm_i == 0) |-> (csr_save_cause_o == 1);
+endproperty
+assert_a16: assert property(a16);
+
+property a14;
+@(posedge clk) (ctrl_fsm_ns[1] == 1 & load_err_q == 1 & dret_insn_i == 1) |=> (csr_save_cause_o == 1);
+endproperty
+assert_a14: assert property(a14);
+
+property a10;
+@(posedge clk) (ctrl_fsm_ns[1] == 1) ##1 (nmi_mode_q == 0) |-> (csr_save_cause_o == 1);
+endproperty
+assert_a10: assert property(a10);
+
+property a8;
+@(posedge clk) (ctrl_fsm_ns[1] == 1 & debug_mode_d == 0) |=> (csr_save_cause_o == 1);
+endproperty
+assert_a8: assert property(a8);
+
+property a12;
+@(posedge clk) (ctrl_fsm_ns[1] == 1 & illegal_insn_d == 1) |=> (csr_save_cause_o == 1);
+endproperty
+assert_a12: assert property(a12);
+
+property a11;
+@(posedge clk) (ctrl_fsm_ns[1] == 1 & ecall_insn == 1) |=> (csr_save_cause_o == 1);
+endproperty
+assert_a11: assert property(a11);
+
+property a7;
+@(posedge clk) (stall == 0 & ecall_insn == 0 & dret_insn_i == 0) ##1 (ebrk_insn == 1) |-> (csr_save_cause_o == 0);
+endproperty
+assert_a7: assert property(a7);
+
+property a15;
+@(posedge clk) (ctrl_fsm_ns[0] == 0 & instr_valid_i == 0) |=> (csr_save_cause_o == 1);
+endproperty
+assert_a15: assert property(a15);
+
+property a1;
+@(posedge clk) (ctrl_fsm_cs[2] == 0) |=> (csr_save_cause_o == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a4;
+@(posedge clk) (ctrl_fsm_cs[0] == 0 & instr_valid_i == 1) |=> (csr_save_cause_o == 0);
+endproperty
+assert_a4: assert property(a4);
+

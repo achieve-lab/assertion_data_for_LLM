@@ -1,0 +1,773 @@
+strict digraph "" {
+	"[1]u3.ep_stall"	 [complexity=8,
+		importance=0.294371446636,
+		rank=0.0367964308295];
+	"[1]u3.send_token_d"	 [complexity=6,
+		importance=0.0478899844272,
+		rank=0.0079816640712];
+	"[1]u3.ep_stall" -> "[1]u3.send_token_d";
+	"[1]u3.send_zero_length"	 [complexity=9,
+		importance=0.107566003882,
+		rank=0.0119517782091];
+	"[1]u3.ep_stall" -> "[1]u3.send_zero_length";
+	"[1]u3.token_pid_sel_d"	 [complexity=7,
+		importance=0.0976785306964,
+		rank=0.0139540758138];
+	"[1]u3.ep_stall" -> "[1]u3.token_pid_sel_d";
+	"u1.crc_sel2"	 [complexity=8,
+		importance=0.0897685848127,
+		rank=0.0112210731016];
+	"u1.tx_spec_data"	 [complexity=6,
+		importance=0.029407205621,
+		rank=0.00490120093684];
+	"u1.crc_sel2" -> "u1.tx_spec_data";
+	"[1]u2.rx_data_valid_r"	 [complexity=17,
+		importance=1.15659215117,
+		rank=0.0680348324217];
+	"[1]u2.adr_incb"	 [complexity=14,
+		importance=1.15426117493,
+		rank=0.0824472267805];
+	"[1]u2.rx_data_valid_r" -> "[1]u2.adr_incb";
+	"u1.crc_sel1"	 [complexity=9,
+		importance=0.149044011299,
+		rank=0.0165604456999];
+	"u1.crc_sel1" -> "u1.tx_spec_data";
+	"[1]u1.tx_ready"	 [complexity=13,
+		importance=1.19904456707,
+		rank=0.092234197467];
+	"u1.send_token_r"	 [complexity=4,
+		importance=0.0352348223673,
+		rank=0.00880870559182];
+	"[1]u1.tx_ready" -> "u1.send_token_r";
+	"[1]u1.next_state"	 [complexity=8,
+		importance=0.399018298075,
+		rank=0.0498772872593];
+	"[1]u1.tx_ready" -> "[1]u1.next_state";
+	"[1]u1.rd_next"	 [complexity=17,
+		importance=0.21522392286,
+		rank=0.0126602307565];
+	"[1]u1.tx_ready" -> "[1]u1.rd_next";
+	"[1]u1.crc_sel1"	 [complexity=49,
+		importance=1.01485990968,
+		rank=0.0207114267282];
+	"[1]u1.tx_ready" -> "[1]u1.crc_sel1";
+	"[1]send_data"	 [complexity=14,
+		importance=1.60207004712,
+		rank=0.114433574794];
+	"[1]u1.send_data"	 [complexity=14,
+		importance=1.59895660163,
+		rank=0.11421118583];
+	"[1]send_data" -> "[1]u1.send_data";
+	"[1]u1.crc16"	 [complexity=144,
+		importance=39.5787417175,
+		rank=0.274852373038];
+	"[1]u1.u1.crc_in"	 [complexity=144,
+		importance=39.5733009794,
+		rank=0.274814590135];
+	"[1]u1.crc16" -> "[1]u1.u1.crc_in";
+	"[1]u3.uc_dpd"	 [complexity=19,
+		importance=3.83514578467,
+		rank=0.20184977814];
+	"u3.this_dpid"	 [complexity=11,
+		importance=0.141992960375,
+		rank=0.0129084509432];
+	"[1]u3.uc_dpd" -> "u3.this_dpid";
+	"[1]u3.mode_hs"	 [complexity=11,
+		importance=0.294693663169,
+		rank=0.0267903330154];
+	"[1]u3.tr_fr_d"	 [complexity=15,
+		importance=3.12590326419,
+		rank=0.208393550946];
+	"[1]u3.mode_hs" -> "[1]u3.tr_fr_d";
+	"[1]u3.mode_hs" -> "[1]u3.send_token_d";
+	"[1]u3.mode_hs" -> "[1]u3.send_zero_length";
+	"[1]u3.mode_hs" -> "[1]u3.token_pid_sel_d";
+	"u1.tx_data"	 [complexity=0,
+		importance=0.00899291732675,
+		rank=0.0];
+	tx_data	 [complexity=0,
+		importance=0.00388091323258,
+		rank=0.0];
+	"u1.tx_data" -> tx_data;
+	"[1]rd_next"	 [complexity=17,
+		importance=0.213480732866,
+		rank=0.0125576901686];
+	"[1]u2.rd_next"	 [complexity=17,
+		importance=0.211718522276,
+		rank=0.0124540307221];
+	"[1]rd_next" -> "[1]u2.rd_next";
+	"[1]mdin"	 [complexity=16,
+		importance=0.147493000897,
+		rank=0.00921831255606];
+	"[1]u2.mdin"	 [complexity=16,
+		importance=0.146166531583,
+		rank=0.00913540822393];
+	"[1]mdin" -> "[1]u2.mdin";
+	"u2.send_zero_length_r"	 [complexity=14,
+		importance=0.208481525621,
+		rank=0.0148915375444];
+	"u2.send_data"	 [complexity=11,
+		importance=0.206173365002,
+		rank=0.018743033182];
+	"u2.send_zero_length_r" -> "u2.send_data";
+	"[1]u3.buf0_na"	 [complexity=16,
+		importance=0.392538004012,
+		rank=0.0245336252508];
+	"[1]u3.buf0_na" -> "[1]u3.send_token_d";
+	"[1]u3.buf0_na" -> "[1]u3.send_zero_length";
+	"[1]u3.buf0_na" -> "[1]u3.token_pid_sel_d";
+	"[1]u3.pid_DATA2"	 [complexity=17,
+		importance=0.58428728259,
+		rank=0.0343698401523];
+	"[1]u3.allow_pid"	 [complexity=13,
+		importance=0.145530580695,
+		rank=0.0111946600535];
+	"[1]u3.pid_DATA2" -> "[1]u3.allow_pid";
+	"[1]u3.pid_DATA0"	 [complexity=17,
+		importance=0.58428728259,
+		rank=0.0343698401523];
+	"[1]u3.pid_DATA0" -> "[1]u3.allow_pid";
+	"[1]u3.pid_DATA1"	 [complexity=17,
+		importance=0.58428728259,
+		rank=0.0343698401523];
+	"[1]u3.pid_DATA1" -> "[1]u3.allow_pid";
+	"[1]u3.to_small"	 [complexity=9,
+		importance=0.392942213557,
+		rank=0.0436602459508];
+	"[1]u3.to_small" -> "[1]u3.send_token_d";
+	"[1]u3.to_small" -> "[1]u3.token_pid_sel_d";
+	"[1]tx_ready"	 [complexity=13,
+		importance=1.20037103638,
+		rank=0.0923362335681];
+	"[1]tx_ready" -> "[1]u1.tx_ready";
+	"[1]u1.send_token"	 [complexity=5,
+		importance=0.0733981751549,
+		rank=0.014679635031];
+	"[1]u1.send_token" -> "u1.send_token_r";
+	"[1]u2.mack_r"	 [complexity=16,
+		importance=0.423643147486,
+		rank=0.0264776967179];
+	"[1]u2.rd_first"	 [complexity=15,
+		importance=0.420538896597,
+		rank=0.0280359264398];
+	"[1]u2.mack_r" -> "[1]u2.rd_first";
+	"[1]u2.fill_buf0"	 [complexity=15,
+		importance=0.146129809459,
+		rank=0.00974198729726];
+	"[1]u2.mack_r" -> "[1]u2.fill_buf0";
+	"[1]u2.fill_buf1"	 [complexity=15,
+		importance=0.146129809459,
+		rank=0.00974198729726];
+	"[1]u2.mack_r" -> "[1]u2.fill_buf1";
+	"u1.dsel"	 [complexity=5,
+		importance=0.0491509414541,
+		rank=0.00983018829083];
+	"u1.tx_data_data"	 [complexity=4,
+		importance=0.0231981776774,
+		rank=0.00579954441936];
+	"u1.dsel" -> "u1.tx_data_data";
+	"[1]u0.rx_data_valid"	 [complexity=13,
+		importance=0.582770970254,
+		rank=0.0448285361734];
+	"[1]rx_data_valid"	 [complexity=13,
+		importance=0.579966580875,
+		rank=0.0446128139134];
+	"[1]u0.rx_data_valid" -> "[1]rx_data_valid";
+	"[1]u3.no_bufs"	 [complexity=9,
+		importance=0.199505750492,
+		rank=0.0221673056102];
+	"[1]u3.no_bufs" -> "[1]u3.token_pid_sel_d";
+	"u1.tx_ready"	 [complexity=8,
+		importance=0.0511406143007,
+		rank=0.00639257678758];
+	"u1.tx_ready" -> "u1.crc_sel2";
+	"u1.tx_ready" -> "u1.crc_sel1";
+	"u1.tx_ready" -> "u1.dsel";
+	"u1.rd_next"	 [complexity=11,
+		importance=0.578610939398,
+		rank=0.0526009944907];
+	"u1.tx_ready" -> "u1.rd_next";
+	"[1]u1.send_data_r2"	 [complexity=49,
+		importance=1.01441445846,
+		rank=0.0207023358869];
+	"[1]u1.crc16_add"	 [complexity=43,
+		importance=1.01285192649,
+		rank=0.0235546959649];
+	"[1]u1.send_data_r2" -> "[1]u1.crc16_add";
+	"[1]u3.IN_ep"	 [complexity=22,
+		importance=0.200293892663,
+		rank=0.0091042678483];
+	"[1]u3.no_buf0_dma"	 [complexity=16,
+		importance=0.198958038116,
+		rank=0.0124348773822];
+	"[1]u3.IN_ep" -> "[1]u3.no_buf0_dma";
+	"[1]u3.IN_ep" -> "[1]u3.send_zero_length";
+	"[1]u3.in_op"	 [complexity=15,
+		importance=0.711838094017,
+		rank=0.0474558729344];
+	"[1]u3.IN_ep" -> "[1]u3.in_op";
+	"[1]u1.tx_data_st"	 [complexity=134,
+		importance=31.4599182747,
+		rank=0.234775509512];
+	"[1]u1.u1.din"	 [complexity=134,
+		importance=31.4566600686,
+		rank=0.234751194542];
+	"[1]u1.tx_data_st" -> "[1]u1.u1.din";
+	"[1]u3.tr_fr_d" -> "u3.this_dpid";
+	"[1]u1.rst"	 [complexity=7,
+		importance=0.793669279165,
+		rank=0.113381325595];
+	"[1]u1.rst" -> "u1.send_token_r";
+	"u1.state"	 [complexity=6,
+		importance=0.396143771445,
+		rank=0.0660239619075];
+	"[1]u1.rst" -> "u1.state";
+	"u2.adr_incb"	 [complexity=8,
+		importance=0.572897958737,
+		rank=0.0716122448421];
+	"u2.adrb_next"	 [complexity=7,
+		importance=0.285574868433,
+		rank=0.0407964097762];
+	"u2.adr_incb" -> "u2.adrb_next";
+	"[1]u2.tx_data_st"	 [complexity=134,
+		importance=31.4688473193,
+		rank=0.234842144174];
+	"[1]tx_data_st"	 [complexity=134,
+		importance=31.4637786514,
+		rank=0.234804318294];
+	"[1]u2.tx_data_st" -> "[1]tx_data_st";
+	"[1]u2.adr_cw"	 [complexity=18,
+		importance=0.151100194253,
+		rank=0.00839445523628];
+	"[1]u2.adr_cw" -> "[1]u2.fill_buf0";
+	"[1]u2.adr_cw" -> "[1]u2.fill_buf1";
+	"[1]u3.pid_IN"	 [complexity=16,
+		importance=0.197522021202,
+		rank=0.0123451263251];
+	"[1]u3.pid_IN" -> "[1]u3.send_token_d";
+	"[1]u3.pid_IN" -> "[1]u3.send_zero_length";
+	"[1]u3.pid_IN" -> "[1]u3.token_pid_sel_d";
+	"[1]u2.rd_next" -> "[1]u2.adr_incb";
+	"u2.send_data_r"	 [complexity=14,
+		importance=0.209510942199,
+		rank=0.0149650672999];
+	"[1]u2.rd_next" -> "u2.send_data_r";
+	"[1]u2.send_zero_length"	 [complexity=16,
+		importance=0.210445128199,
+		rank=0.0131528205125];
+	"[1]u2.send_zero_length" -> "u2.send_zero_length_r";
+	"[1]u2.adr_cb"	 [complexity=17,
+		importance=1.15512825117,
+		rank=0.067948720657];
+	"[1]u2.adrb_next"	 [complexity=13,
+		importance=0.576256476529,
+		rank=0.0443274212714];
+	"[1]u2.adr_cb" -> "[1]u2.adrb_next";
+	"[1]u2.send_data"	 [complexity=14,
+		importance=1.60564279148,
+		rank=0.11468877082];
+	"[1]u2.send_data" -> "[1]send_data";
+	"u1.tx_data_d"	 [complexity=2,
+		importance=0.0165741038912,
+		rank=0.00828705194562];
+	"u1.tx_data_data" -> "u1.tx_data_d";
+	send_data	 [complexity=11,
+		importance=0.20260062064,
+		rank=0.01841823824];
+	"u2.send_data" -> send_data;
+	"u2.rx_data_valid_r"	 [complexity=11,
+		importance=0.57522893498,
+		rank=0.0522935395436];
+	"u2.rx_data_valid_r" -> "u2.adr_incb";
+	"[1]rst"	 [complexity=7,
+		importance=0.794995748479,
+		rank=0.113570821211];
+	"[1]rst" -> "[1]u1.rst";
+	"[1]u2.rst"	 [complexity=15,
+		importance=0.629914562872,
+		rank=0.0419943041915];
+	"[1]rst" -> "[1]u2.rst";
+	"[1]u3.CTRL_ep"	 [complexity=25,
+		importance=0.201649391208,
+		rank=0.0080659756483];
+	"[1]u3.CTRL_ep" -> "[1]u3.send_token_d";
+	"[1]u3.CTRL_ep" -> "[1]u3.send_zero_length";
+	"[1]u3.CTRL_ep" -> "[1]u3.token_pid_sel_d";
+	"[1]u3.dma_en"	 [complexity=22,
+		importance=0.200313536661,
+		rank=0.00910516075731];
+	"[1]u3.CTRL_ep" -> "[1]u3.dma_en";
+	"[1]u3.CTRL_ep" -> "[1]u3.in_op";
+	"[1]u3.out_op"	 [complexity=15,
+		importance=0.712395896248,
+		rank=0.0474930597499];
+	"[1]u3.CTRL_ep" -> "[1]u3.out_op";
+	"[1]u2.state"	 [complexity=16,
+		importance=0.426414517387,
+		rank=0.0266509073367];
+	"[1]u2.state" -> "[1]u2.rd_first";
+	"[1]u3.dma_in_buf_sz1"	 [complexity=22,
+		importance=0.200947710962,
+		rank=0.00913398686192];
+	"[1]u3.dma_in_buf_sz1" -> "[1]u3.no_buf0_dma";
+	"[1]u1.tx_valid_r"	 [complexity=11,
+		importance=0.401322445192,
+		rank=0.0364838586538];
+	"[1]u1.tx_valid_r" -> "[1]u1.next_state";
+	"[1]u1.tx_valid_r" -> "[1]u1.rd_next";
+	"[1]u1.tx_valid_r" -> "[1]u1.crc_sel1";
+	"[1]u3.no_buf0_dma" -> "[1]u3.send_token_d";
+	"[1]u3.no_buf0_dma" -> "[1]u3.send_zero_length";
+	"[1]u3.no_buf0_dma" -> "[1]u3.token_pid_sel_d";
+	"[1]pid_DATA0"	 [complexity=17,
+		importance=0.585964310781,
+		rank=0.0344684888695];
+	"[1]pid_DATA0" -> "[1]u3.pid_DATA0";
+	token_pid_sel	 [complexity=5,
+		importance=0.0852182918324,
+		rank=0.0170436583665];
+	"u1.token_pid_sel"	 [complexity=5,
+		importance=0.0813701310064,
+		rank=0.0162740262013];
+	token_pid_sel -> "u1.token_pid_sel";
+	"[1]pid_DATA2"	 [complexity=17,
+		importance=0.585964310781,
+		rank=0.0344684888695];
+	"[1]pid_DATA2" -> "[1]u3.pid_DATA2";
+	"[1]csr"	 [complexity=12,
+		importance=0.297687588797,
+		rank=0.0248072990664];
+	"[1]u3.csr"	 [complexity=12,
+		importance=0.296361119482,
+		rank=0.0246967599569];
+	"[1]csr" -> "[1]u3.csr";
+	"[1]u3.pid_PING"	 [complexity=9,
+		importance=0.099424245258,
+		rank=0.011047138362];
+	"[1]u3.pid_PING" -> "[1]u3.send_token_d";
+	"[1]u3.pid_PING" -> "[1]u3.send_zero_length";
+	"[1]u3.pid_PING" -> "[1]u3.token_pid_sel_d";
+	"u1.send_token_r" -> "u1.tx_data_d";
+	"u1.token_pid"	 [complexity=4,
+		importance=0.0195297534326,
+		rank=0.00488243835815];
+	"u1.token_pid" -> "u1.tx_data_d";
+	"[1]pid_OUT"	 [complexity=16,
+		importance=0.199199049393,
+		rank=0.0124499405871];
+	"[1]u3.pid_OUT"	 [complexity=16,
+		importance=0.197522021202,
+		rank=0.0123451263251];
+	"[1]pid_OUT" -> "[1]u3.pid_OUT";
+	"u1.send_token"	 [complexity=4,
+		importance=0.0360767382029,
+		rank=0.00901918455072];
+	"u1.send_token" -> "u1.tx_data_d";
+	data_pid_sel	 [complexity=9,
+		importance=0.133651879743,
+		rank=0.0148502088604];
+	"u1.data_pid_sel"	 [complexity=9,
+		importance=0.130960768467,
+		rank=0.0145511964963];
+	data_pid_sel -> "u1.data_pid_sel";
+	"u1.tx_valid_r"	 [complexity=8,
+		importance=0.0514550885712,
+		rank=0.00643188607141];
+	"u1.tx_valid_r" -> "u1.crc_sel1";
+	"u1.tx_valid_r" -> "u1.dsel";
+	"u1.tx_valid_r" -> "u1.rd_next";
+	"[1]u2.rx_dma_en_r"	 [complexity=13,
+		importance=1.15019044489,
+		rank=0.0884761880685];
+	"u2.adr_cb"	 [complexity=11,
+		importance=0.573765034979,
+		rank=0.0521604577254];
+	"[1]u2.rx_dma_en_r" -> "u2.adr_cb";
+	"[1]u3.send_token"	 [complexity=5,
+		importance=0.0803573215066,
+		rank=0.0160714643013];
+	"[1]send_token"	 [complexity=5,
+		importance=0.0766025771478,
+		rank=0.0153205154296];
+	"[1]u3.send_token" -> "[1]send_token";
+	"u1.send_data"	 [complexity=11,
+		importance=0.199487175145,
+		rank=0.0181351977404];
+	send_data -> "u1.send_data";
+	"u1.data_pid"	 [complexity=8,
+		importance=0.0320721523731,
+		rank=0.00400901904663];
+	"u1.data_pid_sel" -> "u1.data_pid";
+	"u3.send_token"	 [complexity=4,
+		importance=0.0430358845545,
+		rank=0.0107589711386];
+	send_token	 [complexity=4,
+		importance=0.0392811401958,
+		rank=0.00982028504894];
+	"u3.send_token" -> send_token;
+	"[1]u3.pid_MDATA"	 [complexity=17,
+		importance=0.58428728259,
+		rank=0.0343698401523];
+	"[1]u3.pid_MDATA" -> "[1]u3.allow_pid";
+	"[1]u2.rx_data_valid"	 [complexity=13,
+		importance=0.577237805317,
+		rank=0.0444029081013];
+	"[1]rx_data_valid" -> "[1]u2.rx_data_valid";
+	"[1]adr"	 [complexity=13,
+		importance=0.57779758436,
+		rank=0.0444459680277];
+	"[1]u2.adr"	 [complexity=13,
+		importance=0.575993511414,
+		rank=0.0443071931857];
+	"[1]adr" -> "[1]u2.adr";
+	"[1]u3.state"	 [complexity=8,
+		importance=0.694030286777,
+		rank=0.0867537858471];
+	"[1]u3.state" -> "[1]u3.send_token_d";
+	"[1]u3.state" -> "[1]u3.send_zero_length";
+	"[1]u3.state" -> "[1]u3.token_pid_sel_d";
+	"[1]u3.tr_fr"	 [complexity=18,
+		importance=3.12723911874,
+		rank=0.173735506597];
+	"[1]u3.tr_fr" -> "[1]u3.tr_fr_d";
+	"[1]u0.pid"	 [complexity=18,
+		importance=0.203329701143,
+		rank=0.0112960945079];
+	"[1]u0.pid_DATA1"	 [complexity=17,
+		importance=0.587366558058,
+		rank=0.0345509740034];
+	"[1]u0.pid" -> "[1]u0.pid_DATA1";
+	"[1]u0.pid_DATA0"	 [complexity=17,
+		importance=0.587366558058,
+		rank=0.0345509740034];
+	"[1]u0.pid" -> "[1]u0.pid_DATA0";
+	"[1]u0.pid_DATA2"	 [complexity=17,
+		importance=0.587366558058,
+		rank=0.0345509740034];
+	"[1]u0.pid" -> "[1]u0.pid_DATA2";
+	"[1]u0.pid_IN"	 [complexity=16,
+		importance=0.20060129667,
+		rank=0.0125375810419];
+	"[1]u0.pid" -> "[1]u0.pid_IN";
+	"[1]u0.pid_SOF"	 [complexity=10,
+		importance=0.297860582119,
+		rank=0.0297860582119];
+	"[1]u0.pid" -> "[1]u0.pid_SOF";
+	"[1]u0.pid_PING"	 [complexity=9,
+		importance=0.102503520726,
+		rank=0.0113892800807];
+	"[1]u0.pid" -> "[1]u0.pid_PING";
+	"[1]u0.pid_MDATA"	 [complexity=17,
+		importance=0.587366558058,
+		rank=0.0345509740034];
+	"[1]u0.pid" -> "[1]u0.pid_MDATA";
+	"[1]u0.pid_OUT"	 [complexity=16,
+		importance=0.20060129667,
+		rank=0.0125375810419];
+	"[1]u0.pid" -> "[1]u0.pid_OUT";
+	"u1.crc16"	 [complexity=42,
+		importance=1.00862819007,
+		rank=0.0240149569064];
+	"[1]u1.crc16_add" -> "u1.crc16";
+	"[1]u1.zero_length_r"	 [complexity=49,
+		importance=1.01540571488,
+		rank=0.0207225656098];
+	"[1]u1.zero_length_r" -> "[1]u1.crc16_add";
+	"u1.send_data" -> "u1.crc_sel1";
+	"u1.send_data" -> "u1.dsel";
+	"[1]u3.pid_OUT" -> "[1]u3.send_token_d";
+	"[1]u3.pid_OUT" -> "[1]u3.send_zero_length";
+	"[1]u3.pid_OUT" -> "[1]u3.token_pid_sel_d";
+	"u1.tx_data_d" -> "u1.tx_data";
+	"[1]pid_DATA1"	 [complexity=17,
+		importance=0.585964310781,
+		rank=0.0344684888695];
+	"[1]u0.pid_DATA1" -> "[1]pid_DATA1";
+	"[1]u0.pid_DATA0" -> "[1]pid_DATA0";
+	"[1]u0.pid_DATA2" -> "[1]pid_DATA2";
+	tx_data_st	 [complexity=6,
+		importance=0.0303167604566,
+		rank=0.00505279340943];
+	"u1.tx_data_st"	 [complexity=6,
+		importance=0.0264563836854,
+		rank=0.0044093972809];
+	tx_data_st -> "u1.tx_data_st";
+	"[1]pid_PING"	 [complexity=9,
+		importance=0.101101273449,
+		rank=0.0112334748277];
+	"[1]pid_PING" -> "[1]u3.pid_PING";
+	"[1]pid_SOF"	 [complexity=10,
+		importance=0.296458334842,
+		rank=0.0296458334842];
+	"[1]u3.pid_SOF"	 [complexity=10,
+		importance=0.294781306651,
+		rank=0.0294781306651];
+	"[1]pid_SOF" -> "[1]u3.pid_SOF";
+	"[1]u1.next_state" -> "u1.state";
+	"[1]mode_hs"	 [complexity=11,
+		importance=0.296020132483,
+		rank=0.0269109211349];
+	"[1]mode_hs" -> "[1]u3.mode_hs";
+	"[1]u3.pid_SOF" -> "[1]u3.send_token_d";
+	"[1]u3.pid_SOF" -> "[1]u3.send_zero_length";
+	"[1]u3.pid_SOF" -> "[1]u3.token_pid_sel_d";
+	"[1]u3.dma_out_buf_avail"	 [complexity=22,
+		importance=0.200947710962,
+		rank=0.00913398686192];
+	"[1]u3.dma_out_buf_avail" -> "[1]u3.no_buf0_dma";
+	"[1]u1.send_data" -> "[1]u1.next_state";
+	"[1]u1.send_data" -> "[1]u1.crc_sel1";
+	"[1]u1.crc16_clr"	 [complexity=43,
+		importance=2.01890907192,
+		rank=0.0469513737655];
+	"[1]u1.send_data" -> "[1]u1.crc16_clr";
+	"[1]u1.rd_next" -> "[1]rd_next";
+	"[1]u1.rd_next" -> "[1]u1.crc16_add";
+	"[1]u2.rd_buf0"	 [complexity=142,
+		importance=125.878024423,
+		rank=0.886464960723];
+	"[1]u2.rd_buf0" -> "[1]u2.tx_data_st";
+	"[1]u3.setup_token"	 [complexity=15,
+		importance=0.711810693872,
+		rank=0.0474540462582];
+	"[1]u3.setup_token" -> "u3.this_dpid";
+	"[1]u2.rd_first" -> "u2.send_data_r";
+	"[1]dma_in_buf_sz1"	 [complexity=22,
+		importance=0.202274180276,
+		rank=0.00919428092165];
+	"[1]dma_in_buf_sz1" -> "[1]u3.dma_in_buf_sz1";
+	"[1]u3.ep_disabled"	 [complexity=10,
+		importance=0.294371446636,
+		rank=0.0294371446636];
+	"[1]u3.ep_disabled" -> "[1]u3.send_token_d";
+	"[1]u3.ep_disabled" -> "[1]u3.send_zero_length";
+	"[1]u3.ep_disabled" -> "[1]u3.token_pid_sel_d";
+	"u1.crc16_rev"	 [complexity=10,
+		importance=0.0626992157462,
+		rank=0.00626992157462];
+	"u1.crc16_rev" -> "u1.tx_spec_data";
+	"[1]u3.pid_seq_err"	 [complexity=8,
+		importance=0.296317865627,
+		rank=0.0370397332033];
+	"[1]u3.pid_seq_err" -> "[1]u3.send_token_d";
+	"[1]u3.pid_seq_err" -> "[1]u3.token_pid_sel_d";
+	"[1]u2.sizd_c"	 [complexity=19,
+		importance=0.21747205976,
+		rank=0.0114458978821];
+	"[1]u2.sizd_is_zero_d"	 [complexity=17,
+		importance=0.211574797083,
+		rank=0.012445576299];
+	"[1]u2.sizd_c" -> "[1]u2.sizd_is_zero_d";
+	"[1]u2.sizd_c" -> "u2.send_data_r";
+	"u2.rd_buf0"	 [complexity=14,
+		importance=0.144176858736,
+		rank=0.0102983470526];
+	"[1]u2.fill_buf0" -> "u2.rd_buf0";
+	"u2.rd_buf1"	 [complexity=14,
+		importance=0.144176858736,
+		rank=0.0102983470526];
+	"[1]u2.fill_buf1" -> "u2.rd_buf1";
+	"[1]u2.adrb_next" -> "[1]u2.tx_data_st";
+	"[1]u2.adrb_next" -> "u2.adr_cb";
+	"u3.data_pid_sel"	 [complexity=9,
+		importance=0.136381365529,
+		rank=0.0151534850588];
+	"u3.this_dpid" -> "u3.data_pid_sel";
+	"[1]u1.crc16_next"	 [complexity=44,
+		importance=1.01152393034,
+		rank=0.022989180235];
+	"[1]u1.crc16_next" -> "u1.crc16";
+	"[1]u2.send_data_r"	 [complexity=17,
+		importance=1.60898036868,
+		rank=0.0946459040401];
+	"[1]u2.send_data_r" -> "[1]u2.send_data";
+	"[1]u1.send_data_r"	 [complexity=46,
+		importance=2.02032570104,
+		rank=0.0439201239357];
+	"[1]u1.send_data_r" -> "[1]u1.crc16_add";
+	"[1]u1.send_data_r" -> "[1]u1.crc16_clr";
+	"[1]pid_IN"	 [complexity=16,
+		importance=0.199199049393,
+		rank=0.0124499405871];
+	"[1]u0.pid_IN" -> "[1]pid_IN";
+	"[1]u3.adr"	 [complexity=13,
+		importance=0.579708052951,
+		rank=0.0445929271501];
+	"[1]u3.adr" -> "[1]adr";
+	"u3.token_pid_sel"	 [complexity=5,
+		importance=0.0902572201328,
+		rank=0.0180514440266];
+	"u3.token_pid_sel" -> token_pid_sel;
+	"[1]u3.send_token_d" -> "u3.send_token";
+	"[1]u3.no_bufs1"	 [complexity=12,
+		importance=0.202220179124,
+		rank=0.0168516815937];
+	"[1]u3.no_bufs1" -> "[1]u3.no_bufs";
+	"[1]u3.no_bufs0"	 [complexity=12,
+		importance=0.202435683485,
+		rank=0.0168696402904];
+	"[1]u3.no_bufs0" -> "[1]u3.no_bufs";
+	"[1]u3.buf1_na"	 [complexity=16,
+		importance=0.392648537582,
+		rank=0.0245405335989];
+	"[1]u3.buf1_na" -> "[1]u3.send_token_d";
+	"[1]u3.buf1_na" -> "[1]u3.send_zero_length";
+	"[1]u3.buf1_na" -> "[1]u3.token_pid_sel_d";
+	"[1]pid_IN" -> "[1]u3.pid_IN";
+	"[1]u3.max_pl_sz"	 [complexity=10,
+		importance=0.108901858429,
+		rank=0.0108901858429];
+	"[1]u3.max_pl_sz" -> "[1]u3.send_zero_length";
+	"[1]u3.match_r"	 [complexity=10,
+		importance=0.294794229825,
+		rank=0.0294794229825];
+	"[1]u3.match_r" -> "[1]u3.send_token_d";
+	"[1]u3.match_r" -> "[1]u3.send_zero_length";
+	"[1]u3.match_r" -> "[1]u3.token_pid_sel_d";
+	"[1]u2.adr" -> "u2.adr_cb";
+	"[1]u3.allow_pid" -> "u3.this_dpid";
+	"[1]u1.crc_sel1" -> "[1]u1.crc16_add";
+	"[1]u2.rx_data_valid" -> "u2.rx_data_valid_r";
+	"[1]u2.rst" -> "u2.adr_cb";
+	"[1]u2.rst" -> "u2.send_data_r";
+	"[1]pid_DATA1" -> "[1]u3.pid_DATA1";
+	"u2.tx_data_st"	 [complexity=6,
+		importance=0.0353854283605,
+		rank=0.00589757139342];
+	"u2.tx_data_st" -> tx_data_st;
+	"[1]send_zero_length"	 [complexity=9,
+		importance=0.105122238115,
+		rank=0.0116802486794];
+	"[1]send_zero_length" -> "[1]u2.send_zero_length";
+	"[1]u1.send_zero_length"	 [complexity=9,
+		importance=0.102573646105,
+		rank=0.0113970717895];
+	"[1]send_zero_length" -> "[1]u1.send_zero_length";
+	"[1]u0.pid_SOF" -> "[1]pid_SOF";
+	"[1]u3.send_zero_length" -> "[1]send_zero_length";
+	"[1]u3.token_pid_sel_d" -> "u3.token_pid_sel";
+	"[1]u0.pid_PING" -> "[1]pid_PING";
+	"[1]u2.send_zero_length_r"	 [complexity=17,
+		importance=1.6079509521,
+		rank=0.0945853501237];
+	"[1]u2.send_zero_length_r" -> "[1]u2.send_data";
+	"[1]u3.OUT_ep"	 [complexity=22,
+		importance=0.200293892663,
+		rank=0.0091042678483];
+	"[1]u3.OUT_ep" -> "[1]u3.no_buf0_dma";
+	"[1]u3.OUT_ep" -> "[1]u3.out_op";
+	"[1]send_token" -> "[1]u1.send_token";
+	"[1]u3.in_token"	 [complexity=19,
+		importance=0.71361291708,
+		rank=0.0375585745832];
+	"[1]u3.in_token" -> "[1]u3.in_op";
+	"u1.data_pid" -> "u1.tx_spec_data";
+	"u3.data_pid_sel" -> data_pid_sel;
+	"[1]u2.adr_incb" -> "[1]u2.adrb_next";
+	"[1]u2.tx_dma_en_r"	 [complexity=13,
+		importance=1.14928740272,
+		rank=0.0884067232859];
+	"[1]u2.tx_dma_en_r" -> "u2.adr_cb";
+	"[1]u3.dma_en" -> "[1]u3.no_buf0_dma";
+	"[1]u1.send_zero_length_r"	 [complexity=10,
+		importance=0.800344756768,
+		rank=0.0800344756768];
+	"[1]u1.send_zero_length_r" -> "[1]u1.next_state";
+	"[1]u3.csr" -> "[1]u3.ep_stall";
+	"[1]u3.csr" -> "[1]u3.uc_dpd";
+	"[1]u3.csr" -> "[1]u3.IN_ep";
+	"[1]u3.csr" -> "[1]u3.CTRL_ep";
+	"[1]u3.csr" -> "[1]u3.tr_fr";
+	"[1]u3.csr" -> "[1]u3.ep_disabled";
+	"[1]u3.csr" -> "u3.this_dpid";
+	"[1]u3.csr" -> "[1]u3.max_pl_sz";
+	"[1]u3.csr" -> "[1]u3.OUT_ep";
+	"[1]u3.csr" -> "[1]u3.dma_en";
+	"[1]u3.out_token"	 [complexity=19,
+		importance=0.714298758486,
+		rank=0.0375946714993];
+	"[1]u3.out_token" -> "[1]u3.out_op";
+	"u2.rd_buf1" -> "u2.tx_data_st";
+	"u2.rd_buf0" -> "u2.tx_data_st";
+	"[1]u1.u1.crc_out"	 [complexity=44,
+		importance=1.01466191318,
+		rank=0.0230604980269];
+	"[1]u1.u1.din" -> "[1]u1.u1.crc_out";
+	"u1.crc16" -> "u1.crc16_rev";
+	"[1]u1.u1.crc_out" -> "[1]u1.crc16_next";
+	"[1]u2.mdin" -> "u2.rd_buf1";
+	"[1]u2.mdin" -> "u2.rd_buf0";
+	send_token -> "u1.send_token";
+	"[1]u3.in_op" -> "u3.this_dpid";
+	"u2.adr_cb" -> "u2.adrb_next";
+	"[1]u3.to_large"	 [complexity=9,
+		importance=0.392942213557,
+		rank=0.0436602459508];
+	"[1]u3.to_large" -> "[1]u3.send_token_d";
+	"[1]u3.to_large" -> "[1]u3.token_pid_sel_d";
+	"[1]u2.sizd_is_zero_d" -> "u2.send_data_r";
+	tx_ready	 [complexity=8,
+		importance=0.0524670836147,
+		rank=0.00655838545184];
+	tx_ready -> "u1.tx_ready";
+	"[1]u1.tx_valid_r1"	 [complexity=10,
+		importance=0.0534100129911,
+		rank=0.00534100129911];
+	"[1]u1.tx_valid_r1" -> "u1.tx_valid_r";
+	"[1]u3.abort"	 [complexity=8,
+		importance=0.394071324643,
+		rank=0.0492589155804];
+	"[1]u3.abort" -> "[1]u3.send_token_d";
+	"[1]u3.abort" -> "[1]u3.token_pid_sel_d";
+	"[1]u3.out_op" -> "u3.this_dpid";
+	"[1]u1.u1.crc_in" -> "[1]u1.u1.crc_out";
+	"u1.state" -> "u1.crc_sel2";
+	"u1.state" -> "u1.crc_sel1";
+	"u1.state" -> "u1.dsel";
+	"u1.state" -> "u1.rd_next";
+	"[1]dma_out_buf_avail"	 [complexity=22,
+		importance=0.202274180276,
+		rank=0.00919428092165];
+	"[1]dma_out_buf_avail" -> "[1]u3.dma_out_buf_avail";
+	"[1]tx_data_st" -> "[1]u1.tx_data_st";
+	"u1.tx_spec_data" -> "u1.tx_data_data";
+	"[1]u1.crc16_clr" -> "u1.crc16";
+	"[1]pid_MDATA"	 [complexity=17,
+		importance=0.585964310781,
+		rank=0.0344684888695];
+	"[1]pid_MDATA" -> "[1]u3.pid_MDATA";
+	"[1]u0.data_valid0"	 [complexity=15,
+		importance=0.585726306668,
+		rank=0.0390484204446];
+	"[1]u0.data_valid0" -> "[1]u0.rx_data_valid";
+	rd_next	 [complexity=11,
+		importance=0.576867749404,
+		rank=0.0524425226731];
+	"u1.rd_next" -> rd_next;
+	"u2.adrb_next" -> "u2.tx_data_st";
+	"u1.send_zero_length_r"	 [complexity=7,
+		importance=0.100610043527,
+		rank=0.014372863361];
+	"[1]u1.send_zero_length" -> "u1.send_zero_length_r";
+	"[1]u0.pid_MDATA" -> "[1]pid_MDATA";
+	"u2.rd_next"	 [complexity=11,
+		importance=0.575105538813,
+		rank=0.0522823217103];
+	rd_next -> "u2.rd_next";
+	"u2.send_data_r" -> "u2.send_data";
+	"u1.send_zero_length_r" -> "u1.dsel";
+	"[1]u1.state"	 [complexity=11,
+		importance=2.79606432633,
+		rank=0.25418766603];
+	"[1]u1.state" -> "[1]u1.next_state";
+	"[1]u1.state" -> "[1]u1.rd_next";
+	"[1]u1.state" -> "[1]u1.crc_sel1";
+	"u2.rd_next" -> "u2.adr_incb";
+	"[1]u2.rd_buf1"	 [complexity=142,
+		importance=125.878024423,
+		rank=0.886464960723];
+	"[1]u2.rd_buf1" -> "[1]u2.tx_data_st";
+	"u1.tx_data_st" -> "u1.tx_data_data";
+	"[1]u0.pid_OUT" -> "[1]pid_OUT";
+	"u1.token_pid_sel" -> "u1.token_pid";
+}

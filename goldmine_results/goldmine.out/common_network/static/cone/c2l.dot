@@ -1,0 +1,69 @@
+strict digraph "" {
+	"node_u1.data_lo"	 [complexity=5,
+		importance=0.212796204929,
+		rank=0.0425592409858];
+	node_u1_lo	 [complexity=5,
+		importance=0.203100203055,
+		rank=0.0406200406111];
+	"node_u1.data_lo" -> node_u1_lo;
+	"node_u5.data_a"	 [complexity=5,
+		importance=0.194059965461,
+		rank=0.0388119930921];
+	node_u1_lo -> "node_u5.data_a";
+	"node_u1.data_a"	 [complexity=8,
+		importance=1.29774161361,
+		rank=0.162217701701];
+	"node_u1.data_a" -> "node_u1.data_lo";
+	"node_u1.sel0"	 [complexity=6,
+		importance=0.645726111674,
+		rank=0.107621018612];
+	"node_u1.data_a" -> "node_u1.sel0";
+	"node_u5.data_lo"	 [complexity=2,
+		importance=0.0282435514168,
+		rank=0.0141217757084];
+	node_u5_lo	 [complexity=2,
+		importance=0.0180933172955,
+		rank=0.00904665864774];
+	"node_u5.data_lo" -> node_u5_lo;
+	"node_u1.data_b"	 [complexity=8,
+		importance=1.29774161361,
+		rank=0.162217701701];
+	"node_u1.data_b" -> "node_u1.data_lo";
+	"node_u1.data_b" -> "node_u1.sel0";
+	"node_u5.data_b"	 [complexity=5,
+		importance=0.191636901261,
+		rank=0.0383273802521];
+	"node_u5.data_b" -> "node_u5.data_lo";
+	"node_u5.sel0"	 [complexity=3,
+		importance=0.0926737555011,
+		rank=0.0308912518337];
+	"node_u5.data_b" -> "node_u5.sel0";
+	"node_u1.LOW_MUX"	 [complexity=7,
+		importance=0.429785158206,
+		rank=0.0613978797437];
+	"node_u1.LOW_MUX" -> "node_u1.data_lo";
+	"node_u5.data_a" -> "node_u5.data_lo";
+	"node_u5.data_a" -> "node_u5.sel0";
+	x1_ym1	 [complexity=5,
+		importance=0.195829649608,
+		rank=0.0391659299217];
+	x1_ym1 -> "node_u5.data_b";
+	"node_u1.sel0" -> "node_u1.data_lo";
+	"node_u5.LOW_MUX"	 [complexity=4,
+		importance=0.0606798511814,
+		rank=0.0151699627953];
+	"node_u5.LOW_MUX" -> "node_u5.data_lo";
+	"node_u5.sel0" -> "node_u5.data_lo";
+	x1_y0	 [complexity=8,
+		importance=1.30193436195,
+		rank=0.162741795244];
+	x1_y0 -> "node_u1.data_b";
+	x1_y1	 [complexity=8,
+		importance=1.30193436195,
+		rank=0.162741795244];
+	x1_y1 -> "node_u1.data_a";
+	c2l	 [complexity=0,
+		importance=0.00882621385921,
+		rank=0.0];
+	node_u5_lo -> c2l;
+}

@@ -1,0 +1,25 @@
+strict digraph "" {
+	node [label="\N"];
+	"Leaf_2831:AL"	 [def_var="['idin']",
+		label="Leaf_2831:AL"];
+	"2832:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f13b554cb90>",
+		fillcolor=firebrick,
+		label="2832:NS
+idin[SSRAM_HADR+2:4] <= (out_to_small_r)? buf0_adr[SSRAM_HADR+2:4] : new_adr[SSRAM_HADR+2:4];",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f13b554cb90>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"2832:NS" -> "Leaf_2831:AL"	 [cond="[]",
+		lineno=None];
+	"2831:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f13b555d1d0>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="2831:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['new_adr', 'out_to_small_r', 'buf0_adr']"];
+	"2831:AL" -> "2832:NS"	 [cond="[]",
+		lineno=None];
+}

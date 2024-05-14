@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"505:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fefacf079d0>",
+		def_var="['instr_fetch_err']",
+		fillcolor=deepskyblue,
+		label="505:AS
+instr_fetch_err = instr_fetch_err_i & instr_valid_i;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['instr_fetch_err_i', 'instr_valid_i']"];
+}

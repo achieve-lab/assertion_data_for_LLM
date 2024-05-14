@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"184:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f01262d9b10>",
+		def_var="['data_reversed']",
+		fillcolor=deepskyblue,
+		label="184:AS
+data_reversed[type][i] = data_in[DATA_SIZE / 4 * 2 ** (type - 1) * (i / (DATA_SIZE / 4 * 2 ** (type - 1)) + 1) - 1 - i];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['data_in', 'type', 'i', 'type', 'i']"];
+}

@@ -1,0 +1,10 @@
+strict digraph "" {
+	tmp11 -> path_1_bmc	 [weight=1.0];
+	rx_pair -> tmp11	 [weight=1.0];
+	rx_pair -> tmp10	 [weight=1.0];
+	rx_pair -> tmp00	 [weight=1.0];
+	rx_pair -> tmp01	 [weight=1.0];
+	tmp10 -> path_1_bmc	 [weight=1.0];
+	tmp00 -> path_0_bmc	 [weight=1.0];
+	tmp01 -> path_0_bmc	 [weight=1.0];
+}

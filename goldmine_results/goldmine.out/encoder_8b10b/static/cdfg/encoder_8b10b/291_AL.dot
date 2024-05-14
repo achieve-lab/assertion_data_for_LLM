@@ -1,0 +1,59 @@
+strict digraph "" {
+	node [label="\N"];
+	"299:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f9359e8c6d0>",
+		fillcolor=turquoise,
+		label="299:BL
+alt7 <= F & G & H & (K | ((disparity)? !E & D & L31 : E & !D & L13));
+tNFO <= F;
+tNGO <= G | !F & !G & !H;
+tNHO <= H;
+tNJO <= !\
+H & (G ^ F);",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f93384a3c90>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f9359ea2e10>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359ea2f50>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9359e8c310>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359e8c450>]",
+		style=filled,
+		typ=Block];
+	"Leaf_291:AL"	 [def_var="['alt7', 'tNGO', 'tNFO', 'tNJO', 'tNHO']",
+		label="Leaf_291:AL"];
+	"299:BL" -> "Leaf_291:AL"	 [cond="[]",
+		lineno=None];
+	"291:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f9359e8c710>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="291:AL",
+		sens="['SBYTECLK', 'reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['reset', 'E', 'D', 'G', 'F', 'H', 'K', 'L13', 'disparity', 'L31']"];
+	"292:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f9359e8c890>",
+		fillcolor=springgreen,
+		label="292:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"291:AL" -> "292:IF"	 [cond="[]",
+		lineno=None];
+	"292:IF" -> "299:BL"	 [cond="['reset']",
+		label="!(reset)",
+		lineno=292];
+	"292:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f9359e8c8d0>",
+		fillcolor=turquoise,
+		label="292:BL
+alt7 <= 0;
+tNFO <= 0;
+tNGO <= 0;
+tNHO <= 0;
+tNJO <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359e8c910>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f9359e8ca50>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359e8cb90>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9359e8ccd0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359e8ce10>]",
+		style=filled,
+		typ=Block];
+	"292:IF" -> "292:BL"	 [cond="['reset']",
+		label=reset,
+		lineno=292];
+	"292:BL" -> "Leaf_291:AL"	 [cond="[]",
+		lineno=None];
+}

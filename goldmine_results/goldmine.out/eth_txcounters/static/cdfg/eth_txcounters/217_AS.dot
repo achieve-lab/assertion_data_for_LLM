@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"217:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f469f2f13d0>",
+		def_var="['NibbleMinFl']",
+		fillcolor=deepskyblue,
+		label="217:AS
+NibbleMinFl = NibCnt >= (MinFL - 16'd4 << 1) - 1;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['NibCnt', 'MinFL']"];
+}

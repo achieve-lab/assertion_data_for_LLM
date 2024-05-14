@@ -1,0 +1,137 @@
+strict digraph "" {
+	"crcrx.CrcError"	 [complexity=0,
+		importance=0.00766195522591,
+		rank=0.0];
+	CrcError	 [complexity=0,
+		importance=0.00456228248442,
+		rank=0.0];
+	"crcrx.CrcError" -> CrcError;
+	Initialize_Crc	 [complexity=3,
+		importance=0.0560974275022,
+		rank=0.0186991425007];
+	"crcrx.Initialize"	 [complexity=3,
+		importance=0.0509600568777,
+		rank=0.0169866856259];
+	Initialize_Crc -> "crcrx.Initialize";
+	"[1]Enable_Crc"	 [complexity=196,
+		importance=1.07572830576,
+		rank=0.00548840972328];
+	"[1]crcrx.Enable"	 [complexity=196,
+		importance=1.07145435341,
+		rank=0.00546660384394];
+	"[1]Enable_Crc" -> "[1]crcrx.Enable";
+	"[1]rxstatem1.StateData"	 [complexity=200,
+		importance=1.08648292099,
+		rank=0.00543241460493];
+	"[1]StateData"	 [complexity=200,
+		importance=1.08028887414,
+		rank=0.0054014443707];
+	"[1]rxstatem1.StateData" -> "[1]StateData";
+	"[1]crcrx.CrcNext"	 [complexity=206,
+		importance=3.22933525201,
+		rank=0.0156763847185];
+	"[1]crcrx.Crc"	 [complexity=204,
+		importance=3.21394239237,
+		rank=0.0157546195704];
+	"[1]crcrx.CrcNext" -> "[1]crcrx.Crc";
+	"[1]DlyCrcCnt"	 [complexity=8,
+		importance=0.0597042478676,
+		rank=0.00746303098345];
+	"[1]DlyCrcCnt" -> Initialize_Crc;
+	"[1]rxcounters1.MaxFL"	 [complexity=204,
+		importance=1.09320605368,
+		rank=0.00535885320434];
+	"[1]rxcounters1.ByteCntMaxFrame"	 [complexity=200,
+		importance=1.08868743496,
+		rank=0.00544343717481];
+	"[1]rxcounters1.MaxFL" -> "[1]rxcounters1.ByteCntMaxFrame";
+	"crcrx.Crc"	 [complexity=2,
+		importance=0.0226894604472,
+		rank=0.0113447302236];
+	"crcrx.Initialize" -> "crcrx.Crc";
+	"[1]ByteCntMaxFrame"	 [complexity=200,
+		importance=1.0807300544,
+		rank=0.00540365027201];
+	"[1]rxcounters1.ByteCntMaxFrame" -> "[1]ByteCntMaxFrame";
+	"crcrx.CrcNext"	 [complexity=4,
+		importance=0.0380823200851,
+		rank=0.00952058002128];
+	"[1]crcrx.Crc" -> "crcrx.CrcNext";
+	"[1]MRxD"	 [complexity=204,
+		importance=8.56874038702,
+		rank=0.0420036293481];
+	"[1]Data_Crc"	 [complexity=196,
+		importance=2.1414319977,
+		rank=0.0109256734577];
+	"[1]MRxD" -> "[1]Data_Crc";
+	"crcrx.Reset"	 [complexity=3,
+		importance=0.0711204149929,
+		rank=0.0237068049976];
+	"crcrx.Reset" -> "crcrx.Crc";
+	"[1]MaxFL"	 [complexity=204,
+		importance=1.0962184499,
+		rank=0.00537361985246];
+	"[1]MaxFL" -> "[1]rxcounters1.MaxFL";
+	"[1]rxstatem1.StateData0"	 [complexity=203,
+		importance=1.09415392466,
+		rank=0.00538992081114];
+	"[1]rxstatem1.StateData0" -> "[1]rxstatem1.StateData";
+	"[1]rxstatem1.StateData1"	 [complexity=203,
+		importance=1.09409500426,
+		rank=0.00538963056284];
+	"[1]rxstatem1.StateData1" -> "[1]rxstatem1.StateData";
+	"[1]StateSFD"	 [complexity=8,
+		importance=0.0601848003548,
+		rank=0.00752310004435];
+	"[1]StateSFD" -> Initialize_Crc;
+	"[1]crcrx.Initialize"	 [complexity=205,
+		importance=6.43346592073,
+		rank=0.0313827605889];
+	"[1]crcrx.Initialize" -> "[1]crcrx.Crc";
+	"[1]MRxDV"	 [complexity=200,
+		importance=1.07874070198,
+		rank=0.0053937035099];
+	"[1]MRxDV" -> "[1]Enable_Crc";
+	Reset	 [complexity=3,
+		importance=0.07413281121,
+		rank=0.02471093707];
+	Reset -> "crcrx.Reset";
+	"[1]rxstatem1.StateSFD"	 [complexity=8,
+		importance=0.0687844033787,
+		rank=0.00859805042234];
+	"[1]rxstatem1.StateSFD" -> "[1]StateSFD";
+	"[1]crcrx.Data"	 [complexity=196,
+		importance=2.13755890291,
+		rank=0.0109059127699];
+	"[1]crcrx.Data" -> "crcrx.CrcNext";
+	"[1]HugEn"	 [complexity=204,
+		importance=1.0962184499,
+		rank=0.00537361985246];
+	"[1]rxcounters1.HugEn"	 [complexity=204,
+		importance=1.09320605368,
+		rank=0.00535885320434];
+	"[1]HugEn" -> "[1]rxcounters1.HugEn";
+	"[1]rxcounters1.ByteCnt"	 [complexity=204,
+		importance=1.10147574434,
+		rank=0.00539939090361];
+	"[1]rxcounters1.ByteCnt" -> "[1]rxcounters1.ByteCntMaxFrame";
+	"[1]Data_Crc" -> "[1]crcrx.Data";
+	"crcrx.CrcNext" -> "crcrx.Crc";
+	"[1]StateData" -> "[1]Enable_Crc";
+	"crcrx.Crc" -> "crcrx.CrcError";
+	"[1]rxcounters1.HugEn" -> "[1]rxcounters1.ByteCntMaxFrame";
+	"[1]crcrx.Enable" -> "crcrx.CrcNext";
+	"[1]ByteCntMaxFrame" -> "[1]Enable_Crc";
+	"[1]rxcounters1.DlyCrcCnt"	 [complexity=8,
+		importance=0.0680259074853,
+		rank=0.00850323843567];
+	"[1]rxcounters1.DlyCrcCnt" -> "[1]DlyCrcCnt";
+	"[1]DlyCrcEn"	 [complexity=8,
+		importance=0.0591098237193,
+		rank=0.00738872796491];
+	"[1]DlyCrcEn" -> Initialize_Crc;
+	"[1]crcrx.Reset"	 [complexity=205,
+		importance=9.64487921076,
+		rank=0.047048191272];
+	"[1]crcrx.Reset" -> "[1]crcrx.Crc";
+}

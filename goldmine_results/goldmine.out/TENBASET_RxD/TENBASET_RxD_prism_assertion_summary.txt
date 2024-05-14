@@ -1,0 +1,24 @@
+Assertion report generated on: 12-May-2024 04:27:35 PM
+
+Assertion summary report for design: TENBASET_RxD
+#################################################
+
+       Target         | Total | Passed | Failed | Vacuous | Hit | Miss
+--------------------- | ----- | ------ | ------ | ------- | --- | ----
+      RcvStart        |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+       RcvStop        |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+end_of_Ethernet_frame |   7   |   0    |   0    |    7    | 0.0 | 1.0 
+  new_bit_available   |   5   |   0    |   0    |    5    | 0.0 | 1.0 
+ new_byte_available   |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+
+
+Resource usage summary report for the desing: TENBASET_RxD
+##########################################################
+
+      Phase       | Time (in [H]H:MM:SS:UUUUUU) | Memory (in MB)
+----------------- | --------------------------- | --------------
+V Parse & Ranking |       0:00:02.149524        |     904.77    
+   Simulation     |       0:00:02.029943        |     969.27    
+     D Parse      |       0:01:12.532285        |    1005.78    
+     Mining       |       0:07:44.717301        |     1062.3    
+     Overall      |       0:09:15.824490        |     1062.3    

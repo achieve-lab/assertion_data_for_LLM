@@ -1,0 +1,25 @@
+strict digraph "" {
+	"[1]StateSendPauseFrame"	 [complexity=2,
+		importance=0.0681134679342,
+		rank=0.0340567339671];
+	Tx_pkt_type_rmon	 [complexity=0,
+		importance=0.0298411060023,
+		rank=0.0];
+	"[1]StateSendPauseFrame" -> Tx_pkt_type_rmon;
+	"[1]MAC_header_slot"	 [complexity=1,
+		importance=0.0513286720343,
+		rank=0.0513286720343];
+	"[1]MAC_header_slot" -> Tx_pkt_type_rmon;
+	"[1]TxD"	 [complexity=2,
+		importance=0.0489186185539,
+		rank=0.0244593092769];
+	"[1]TxD" -> Tx_pkt_type_rmon;
+	"[1]Current_state"	 [complexity=2,
+		importance=0.0759699082793,
+		rank=0.0379849541396];
+	"[1]Current_state" -> Tx_pkt_type_rmon;
+	"[1]Reset"	 [complexity=1,
+		importance=0.0979545739364,
+		rank=0.0979545739364];
+	"[1]Reset" -> Tx_pkt_type_rmon;
+}

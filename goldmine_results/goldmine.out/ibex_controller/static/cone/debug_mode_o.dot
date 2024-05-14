@@ -1,0 +1,66 @@
+strict digraph "" {
+	debug_mode_q	 [complexity=2,
+		importance=0.0141117151107,
+		rank=0.00705585755534];
+	debug_mode_o	 [complexity=0,
+		importance=0.00524392264192,
+		rank=0.0];
+	debug_mode_q -> debug_mode_o;
+	"[1]mret_insn_i"	 [complexity=8,
+		importance=0.0337982496491,
+		rank=0.00422478120614];
+	"[1]mret_insn"	 [complexity=5,
+		importance=0.0288006334825,
+		rank=0.0057601266965];
+	"[1]mret_insn_i" -> "[1]mret_insn";
+	"[1]dret_insn"	 [complexity=5,
+		importance=0.0288006334825,
+		rank=0.0057601266965];
+	"[1]debug_mode_d"	 [complexity=4,
+		importance=0.0211377898881,
+		rank=0.00528444747203];
+	"[1]dret_insn" -> "[1]debug_mode_d";
+	"[1]debug_single_step_i"	 [complexity=6,
+		importance=0.0472731959429,
+		rank=0.00787886599048];
+	"[1]debug_single_step_i" -> "[1]debug_mode_d";
+	"[1]exc_req_q"	 [complexity=7,
+		importance=0.0292276614397,
+		rank=0.00417538020568];
+	"[1]exc_req_q" -> "[1]debug_mode_d";
+	"[1]debug_mode_d" -> debug_mode_q;
+	"[1]dret_insn_i"	 [complexity=8,
+		importance=0.0337982496491,
+		rank=0.00422478120614];
+	"[1]dret_insn_i" -> "[1]dret_insn";
+	"[1]load_err_q"	 [complexity=7,
+		importance=0.0296157984922,
+		rank=0.00423082835603];
+	"[1]load_err_q" -> "[1]debug_mode_d";
+	"[1]debug_req_i"	 [complexity=6,
+		importance=0.0472731959429,
+		rank=0.00787886599048];
+	"[1]debug_req_i" -> "[1]debug_mode_d";
+	"[1]store_err_q"	 [complexity=7,
+		importance=0.0296157984922,
+		rank=0.00423082835603];
+	"[1]store_err_q" -> "[1]debug_mode_d";
+	"[1]mret_insn" -> "[1]debug_mode_d";
+	"[1]ctrl_fsm_cs"	 [complexity=5,
+		importance=0.11814378246,
+		rank=0.023628756492];
+	"[1]ctrl_fsm_cs" -> "[1]debug_mode_d";
+	"[1]rst_ni"	 [complexity=3,
+		importance=0.033221046388,
+		rank=0.0110736821293];
+	"[1]rst_ni" -> debug_mode_q;
+	"[1]instr_valid_i"	 [complexity=8,
+		importance=0.0337982496491,
+		rank=0.00422478120614];
+	"[1]instr_valid_i" -> "[1]dret_insn";
+	"[1]instr_valid_i" -> "[1]mret_insn";
+	"[1]debug_mode_q"	 [complexity=6,
+		importance=0.0300055823569,
+		rank=0.00500093039281];
+	"[1]debug_mode_q" -> "[1]debug_mode_d";
+}

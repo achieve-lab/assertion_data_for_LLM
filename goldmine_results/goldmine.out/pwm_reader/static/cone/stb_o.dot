@@ -1,0 +1,84 @@
+strict digraph "" {
+	"[1]pwm_ff_1"	 [complexity=7,
+		importance=0.281145184867,
+		rank=0.0401635978382];
+	"[1]rising_edge"	 [complexity=4,
+		importance=0.2602188531,
+		rank=0.065054713275];
+	"[1]pwm_ff_1" -> "[1]rising_edge";
+	"[1]pwm_ff_2"	 [complexity=7,
+		importance=0.282475227974,
+		rank=0.0403536039963];
+	"[1]pwm_ff_2" -> "[1]rising_edge";
+	"[1]divider_unit.clk_en_i"	 [complexity=4,
+		importance=0.627911258001,
+		rank=0.1569778145];
+	"divider_unit.done_o"	 [complexity=3,
+		importance=0.10205086809,
+		rank=0.0340169560299];
+	"[1]divider_unit.clk_en_i" -> "divider_unit.done_o";
+	"[1]stb_o"	 [complexity=4,
+		importance=0.278348601858,
+		rank=0.0695871504644];
+	"[1]divider_unit.divide_i"	 [complexity=4,
+		importance=0.228253012282,
+		rank=0.0570632530706];
+	"[1]stb_o" -> "[1]divider_unit.divide_i";
+	ack_r	 [complexity=3,
+		importance=0.0982758725177,
+		rank=0.0327586241726];
+	"[1]stb_o" -> ack_r;
+	divide_done	 [complexity=3,
+		importance=0.0708943665337,
+		rank=0.0236314555112];
+	stb_o	 [complexity=0,
+		importance=0.0500955895752,
+		rank=0.0];
+	divide_done -> stb_o;
+	"[1]divider_unit.S_PP"	 [complexity=7,
+		importance=0.219707785641,
+		rank=0.0313868265202];
+	"[1]divider_unit.S_PP" -> "divider_unit.done_o";
+	"[1]divider_unit.rst_i"	 [complexity=4,
+		importance=0.730671497065,
+		rank=0.182667874266];
+	"[1]divider_unit.rst_i" -> "divider_unit.done_o";
+	"[1]divider_unit.divide_i" -> "divider_unit.done_o";
+	"[1]divider_unit.R_PP"	 [complexity=7,
+		importance=0.219707785641,
+		rank=0.0313868265202];
+	"[1]divider_unit.R_PP" -> "divider_unit.done_o";
+	ack_r -> stb_o;
+	"[1]divider_unit.M_PP"	 [complexity=7,
+		importance=0.219707785641,
+		rank=0.0313868265202];
+	"[1]divider_unit.M_PP" -> "divider_unit.done_o";
+	"[1]ack_r"	 [complexity=7,
+		importance=0.3265288848,
+		rank=0.0466469835429];
+	"[1]ack_r" -> "[1]stb_o";
+	"divider_unit.done_o" -> divide_done;
+	"[1]rising_edge" -> "[1]divider_unit.divide_i";
+	"[1]rising_edge" -> ack_r;
+	"[1]ack_i"	 [complexity=5,
+		importance=0.113881921979,
+		rank=0.0227763843959];
+	"[1]ack_i" -> ack_r;
+	"[1]divider_unit.divide_count"	 [complexity=7,
+		importance=0.229201843692,
+		rank=0.0327431205274];
+	"[1]divider_unit.divide_count" -> "divider_unit.done_o";
+	"[1]divide_done"	 [complexity=7,
+		importance=0.299147378816,
+		rank=0.0427353398309];
+	"[1]divide_done" -> "[1]stb_o";
+	"[1]rst_i"	 [complexity=4,
+		importance=0.746277546526,
+		rank=0.186569386632];
+	"[1]rst_i" -> "[1]divider_unit.rst_i";
+	"[1]rst_i" -> ack_r;
+	"[1]divider_unit.done_o"	 [complexity=7,
+		importance=0.330303880372,
+		rank=0.0471862686246];
+	"[1]divider_unit.done_o" -> "[1]divide_done";
+}

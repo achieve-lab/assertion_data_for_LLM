@@ -1,0 +1,25 @@
+strict digraph "" {
+	"[1]Tx_odd_data_ptr"	 [complexity=4,
+		importance=0.395863472491,
+		rank=0.0989658681228];
+	Txd	 [complexity=0,
+		importance=0.0723123172574,
+		rank=0.0];
+	"[1]Tx_odd_data_ptr" -> Txd;
+	"[1]Speed"	 [complexity=2,
+		importance=0.3126707371,
+		rank=0.15633536855];
+	"[1]Speed" -> Txd;
+	"[1]MTxEn_dl1"	 [complexity=6,
+		importance=0.686528688956,
+		rank=0.114421448159];
+	"[1]MTxEn_dl1" -> Txd;
+	"[1]MTxD_dl1"	 [complexity=6,
+		importance=0.252654785412,
+		rank=0.042109130902];
+	"[1]MTxD_dl1" -> Txd;
+	"[1]Reset"	 [complexity=1,
+		importance=0.384983054357,
+		rank=0.384983054357];
+	"[1]Reset" -> Txd;
+}

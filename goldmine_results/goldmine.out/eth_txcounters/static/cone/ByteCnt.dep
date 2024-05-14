@@ -1,0 +1,15 @@
+[1]StatePAD	[1]IncrementByteCnt
+[1]ResetByteCnt	ByteCnt
+[1]PacketFinished_q	[1]ResetByteCnt
+[1]TxStartFrm	[1]ResetByteCnt
+[1]ByteCntMax	[1]IncrementByteCnt
+[1]ByteCnt	ByteCnt
+[1]ByteCnt	[1]ByteCntMax
+[1]StateData	[1]IncrementByteCnt
+[1]StartBackoff	[1]ResetByteCnt
+[1]StateBackOff	[1]IncrementByteCnt
+[1]StateIdle	[1]ResetByteCnt
+[1]StateFCS	[1]IncrementByteCnt
+[1]IncrementByteCnt	ByteCnt
+[1]NibCnt	[1]IncrementByteCnt
+[1]Reset	ByteCnt

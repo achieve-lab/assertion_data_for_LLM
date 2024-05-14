@@ -1,0 +1,16 @@
+digraph "" {
+	Reset -> Mdc	 [weight=2.0];
+	Reset -> Counter	 [weight=3.0];
+	CounterPreset -> Counter	 [weight=1.0];
+	Mdc -> Mdc	 [weight=1.0];
+	Mdc -> MdcEn_n	 [weight=1.0];
+	Mdc -> MdcEn	 [weight=1.0];
+	Counter -> Counter	 [weight=1.0];
+	Counter -> CountEq0	 [weight=1.0];
+	CountEq0 -> Mdc	 [weight=1.0];
+	CountEq0 -> Counter	 [weight=2.0];
+	CountEq0 -> MdcEn_n	 [weight=1.0];
+	CountEq0 -> MdcEn	 [weight=1.0];
+	Divider -> TempDivider	 [weight=1.0];
+	TempDivider -> CounterPreset	 [weight=1.0];
+}

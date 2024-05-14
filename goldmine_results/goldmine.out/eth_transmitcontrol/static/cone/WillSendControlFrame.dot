@@ -1,0 +1,25 @@
+strict digraph "" {
+	"[1]TxCtrlEndFrm"	 [complexity=2,
+		importance=0.155903316629,
+		rank=0.0779516583143];
+	WillSendControlFrame	 [complexity=0,
+		importance=0.0606169198376,
+		rank=0.0];
+	"[1]TxCtrlEndFrm" -> WillSendControlFrame;
+	"[1]TxReset"	 [complexity=1,
+		importance=0.20019120626,
+		rank=0.20019120626];
+	"[1]TxReset" -> WillSendControlFrame;
+	"[1]TPauseRq"	 [complexity=2,
+		importance=0.0789573665847,
+		rank=0.0394786832924];
+	"[1]TPauseRq" -> WillSendControlFrame;
+	"[1]TxFlow"	 [complexity=2,
+		importance=0.0789573665847,
+		rank=0.0394786832924];
+	"[1]TxFlow" -> WillSendControlFrame;
+	"[1]CtrlMux"	 [complexity=2,
+		importance=0.161020918842,
+		rank=0.0805104594212];
+	"[1]CtrlMux" -> WillSendControlFrame;
+}

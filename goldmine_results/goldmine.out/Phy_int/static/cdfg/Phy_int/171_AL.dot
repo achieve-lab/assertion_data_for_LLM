@@ -1,0 +1,65 @@
+strict digraph "" {
+	node [label="\N"];
+	"171:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f88749c9cd0>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="171:AL",
+		sens="['MAC_rx_clk', 'Reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['Reset', 'Crs', 'Rx_dv', 'Rxd_dl1', 'Rxd', 'Rx_er', 'Col', 'Rx_dv_dl1']"];
+	"172:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f88749b46d0>",
+		fillcolor=springgreen,
+		label="172:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"171:AL" -> "172:IF"	 [cond="[]",
+		lineno=None];
+	"183:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f88749b4910>",
+		fillcolor=turquoise,
+		label="183:BL
+Rx_er_dl1 <= Rx_er;
+Rx_dv_dl1 <= Rx_dv;
+Rx_dv_dl2 <= Rx_dv_dl1;
+Rxd_dl1 <= Rxd;
+Rxd_dl2 <= Rxd_dl1;
+Crs_dl1 <= Crs;
+Col_dl1 <= \
+Col;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f88749b4950>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f88749b4ad0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f88749b4c10>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f88749b4d50>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f88749b4e90>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f88749b4fd0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f88749d9150>]",
+		style=filled,
+		typ=Block];
+	"Leaf_171:AL"	 [def_var="['Rxd_dl1', 'Rxd_dl2', 'Col_dl1', 'Rx_er_dl1', 'Crs_dl1', 'Rx_dv_dl2', 'Rx_dv_dl1']",
+		label="Leaf_171:AL"];
+	"183:BL" -> "Leaf_171:AL"	 [cond="[]",
+		lineno=None];
+	"172:IF" -> "183:BL"	 [cond="['Reset']",
+		label="!(Reset)",
+		lineno=172];
+	"173:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f88749d92d0>",
+		fillcolor=turquoise,
+		label="173:BL
+Rx_er_dl1 <= 0;
+Rx_dv_dl1 <= 0;
+Rx_dv_dl2 <= 0;
+Rxd_dl1 <= 0;
+Rxd_dl2 <= 0;
+Crs_dl1 <= 0;
+Col_dl1 <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f88749d9310>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f88749d9450>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f88749d9590>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f88749d96d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f88749d9810>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f88749d9950>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f88749d9a90>]",
+		style=filled,
+		typ=Block];
+	"172:IF" -> "173:BL"	 [cond="['Reset']",
+		label=Reset,
+		lineno=172];
+	"173:BL" -> "Leaf_171:AL"	 [cond="[]",
+		lineno=None];
+}

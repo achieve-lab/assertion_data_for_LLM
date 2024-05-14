@@ -1,0 +1,21 @@
+strict digraph "" {
+	"[1]StateDefer"	 [complexity=3,
+		importance=0.0303545693034,
+		rank=0.0101181897678];
+	xon_gen_complete	 [complexity=0,
+		importance=0.0109616566869,
+		rank=0.0];
+	"[1]StateDefer" -> xon_gen_complete;
+	"[1]Reset"	 [complexity=1,
+		importance=0.0413162259904,
+		rank=0.0413162259904];
+	"[1]Reset" -> xon_gen_complete;
+	"[1]Current_state"	 [complexity=3,
+		importance=0.0382110096486,
+		rank=0.0127370032162];
+	"[1]Current_state" -> xon_gen_complete;
+	"[1]xon_gen"	 [complexity=3,
+		importance=0.0303545693034,
+		rank=0.0101181897678];
+	"[1]xon_gen" -> xon_gen_complete;
+}

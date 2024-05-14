@@ -1,0 +1,29 @@
+strict digraph "" {
+	"[1]CurrentState"	 [complexity=3,
+		importance=0.0709703909145,
+		rank=0.0236567969715];
+	CPU_rd_dout	 [complexity=0,
+		importance=0.0335319268335,
+		rank=0.0];
+	"[1]CurrentState" -> CPU_rd_dout;
+	"[1]Pipeline"	 [complexity=3,
+		importance=0.0621505072803,
+		rank=0.0207168357601];
+	"[1]Pipeline" -> CPU_rd_dout;
+	"[1]Douta"	 [complexity=2,
+		importance=0.0546357427374,
+		rank=0.0273178713687];
+	"[1]Douta" -> CPU_rd_dout;
+	"[1]Reset"	 [complexity=1,
+		importance=0.0881676695709,
+		rank=0.0881676695709];
+	"[1]Reset" -> CPU_rd_dout;
+	"[1]StateCPU"	 [complexity=3,
+		importance=0.0546357427374,
+		rank=0.0182119142458];
+	"[1]StateCPU" -> CPU_rd_dout;
+	"[1]StepCounter"	 [complexity=7,
+		importance=0.553566982005,
+		rank=0.0790809974293];
+	"[1]StepCounter" -> "[1]Pipeline";
+}

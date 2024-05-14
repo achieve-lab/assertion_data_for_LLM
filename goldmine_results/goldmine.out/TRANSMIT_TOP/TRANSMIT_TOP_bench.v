@@ -1,0 +1,81 @@
+`timescale 1ns/1ps
+
+module TRANSMIT_TOP_bench();
+
+reg RESET;
+reg [7:0] TX_DATA_VALID;
+reg TX_CLK;
+reg [63:0] TX_DATA;
+reg [7:0] TX_IFG_DELAY;
+reg RXTXLINKFAULT;
+reg LOCALLINKFAULT;
+reg [15:0] FC_TX_PAUSEDATA;
+reg TX_START;
+reg FC_TX_PAUSEVALID;
+reg FC_TRANS_PAUSEVAL;
+reg TX_UNDERRUN;
+reg [31:0] TX_CFG_REG_VALUE;
+reg [15:0] FC_TRANS_PAUSEDATA;
+reg TX_CFG_REG_VALID;
+
+wire [24:0] TXSTATREGPLUS;
+wire [7:0] TXC;
+wire [63:0] TXD;
+wire TX_ACK;
+wire TX_STATS_VALID;
+
+TRANSMIT_TOP TRANSMIT_TOP_ (
+	.RESET(RESET),
+	.TX_DATA_VALID(TX_DATA_VALID),
+	.TX_CLK(TX_CLK),
+	.TX_DATA(TX_DATA),
+	.TX_IFG_DELAY(TX_IFG_DELAY),
+	.RXTXLINKFAULT(RXTXLINKFAULT),
+	.LOCALLINKFAULT(LOCALLINKFAULT),
+	.FC_TX_PAUSEDATA(FC_TX_PAUSEDATA),
+	.TX_START(TX_START),
+	.FC_TX_PAUSEVALID(FC_TX_PAUSEVALID),
+	.FC_TRANS_PAUSEVAL(FC_TRANS_PAUSEVAL),
+	.TX_UNDERRUN(TX_UNDERRUN),
+	.TX_CFG_REG_VALUE(TX_CFG_REG_VALUE),
+	.FC_TRANS_PAUSEDATA(FC_TRANS_PAUSEDATA),
+	.TX_CFG_REG_VALID(TX_CFG_REG_VALID),
+	.TXSTATREGPLUS(TXSTATREGPLUS),
+	.TXC(TXC),
+	.TXD(TXD),
+	.TX_ACK(TX_ACK),
+	.TX_STATS_VALID(TX_STATS_VALID));
+
+	initial begin
+		$dumpfile("/data/vpulav2/Work/GoldMine/Runtime/goldmine.out/TRANSMIT_TOP/TRANSMIT_TOP.vcd");
+		$dumpvars(0, TRANSMIT_TOP_bench.TRANSMIT_TOP_);
+		TX_CLK = 1;
+		RESET = 1;
+		#26;
+		RESET = 0;
+		#50000 $finish;
+	end
+
+	always begin
+		#25 TX_CLK = ~TX_CLK;
+	end
+
+	always begin
+		#24;
+		TX_DATA_VALID = $random;
+		TX_DATA = $random;
+		TX_IFG_DELAY = $random;
+		RXTXLINKFAULT = $random;
+		LOCALLINKFAULT = $random;
+		FC_TX_PAUSEDATA = $random;
+		TX_START = $random;
+		FC_TX_PAUSEVALID = $random;
+		FC_TRANS_PAUSEVAL = $random;
+		TX_UNDERRUN = $random;
+		TX_CFG_REG_VALUE = $random;
+		FC_TRANS_PAUSEDATA = $random;
+		TX_CFG_REG_VALID = $random;
+		#26;
+	end
+
+endmodule

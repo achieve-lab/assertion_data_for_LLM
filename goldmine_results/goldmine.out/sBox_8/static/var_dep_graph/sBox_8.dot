@@ -1,0 +1,20 @@
+strict digraph "" {
+	isomorphism -> base_new_enc	 [weight=1.0];
+	base_new_pp -> out_gf_inv8_1	 [weight=1.0];
+	base_new_enc -> base_new	 [weight=1.0];
+	out_gf_inv8_stage1 -> out_gf_pp	 [weight=1.0];
+	base_new_dec -> base_new	 [weight=1.0];
+	out_gf_inv8_1 -> sbox_out_dec	 [weight=1.0];
+	out_gf_inv8_1 -> sbox_out_enc	 [weight=1.0];
+	enc_dec -> base_new	 [weight=1.0];
+	sbox_in -> base_new_enc	 [weight=1.0];
+	base_new -> base_new_pp	 [weight=1.0];
+	base_new -> out_gf_inv8_stage1	 [weight=1.0];
+	out_gf_pp -> out_gf_inv8_1	 [weight=1.0];
+	ENC -> sbox_out_enc	 [weight=1.0];
+	isomorphism_inv -> sbox_out_dec	 [weight=1.0];
+	isomorphism_inv -> sbox_out_enc	 [weight=1.0];
+	gf_inv_8_stage1 -> out_gf_inv8_stage1	 [weight=1.0];
+	DEC -> sbox_out_dec	 [weight=1.0];
+	gf_inv_8_stage2 -> out_gf_inv8_1	 [weight=1.0];
+}

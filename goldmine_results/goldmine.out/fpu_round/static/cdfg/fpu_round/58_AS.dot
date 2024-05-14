@@ -1,0 +1,14 @@
+strict digraph "" {
+	node [label="\N"];
+	"58:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0fff3d2d10>",
+		def_var="['round_trigger']",
+		fillcolor=deepskyblue,
+		label="58:AS
+round_trigger = round_nearest & round_nearest_trigger | round_to_pos_inf & round_to_pos_inf_trigger | round_to_neg_inf & round_\
+to_neg_inf_trigger;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['round_nearest', 'round_nearest_trigger', 'round_to_pos_inf', 'round_to_pos_inf_trigger', 'round_to_neg_inf', 'round_to_neg_inf_\
+trigger']"];
+}

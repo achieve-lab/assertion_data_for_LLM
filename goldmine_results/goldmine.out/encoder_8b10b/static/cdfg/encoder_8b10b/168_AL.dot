@@ -1,0 +1,51 @@
+strict digraph "" {
+	node [label="\N"];
+	"170:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f9359f3e850>",
+		fillcolor=turquoise,
+		label="170:BL
+disparity <= 1'b0;
+{ a, b, c, d, e, i, f, g, h, j } <= 10'b0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359f3e090>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f9359f3e490>]",
+		style=filled,
+		typ=Block];
+	"Leaf_168:AL"	 [def_var="['a', 'disparity']",
+		label="Leaf_168:AL"];
+	"170:BL" -> "Leaf_168:AL"	 [cond="[]",
+		lineno=None];
+	"169:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f9359f3e890>",
+		fillcolor=springgreen,
+		label="169:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"169:IF" -> "170:BL"	 [cond="['reset']",
+		label=reset,
+		lineno=169];
+	"173:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f9359f3e910>",
+		fillcolor=turquoise,
+		label="173:BL
+disparity <= (PDOS4 | NDOS4) ^ DISPARITY6;
+{ a, b, c, d, e, i, f, g, h, j } <= { NAO ^ COMPLS6, NBO ^ COMPLS6, NCO ^ COMPLS6, \
+NDO ^ COMPLS6, NEO ^ COMPLS6, NIO ^ COMPLS6, NFO ^ COMPLS4, NGO ^ COMPLS4, NHO ^ COMPLS4, NJO ^ COMPLS4 };",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9359f3e950>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f9359f3eb90>]",
+		style=filled,
+		typ=Block];
+	"169:IF" -> "173:BL"	 [cond="['reset']",
+		label="!(reset)",
+		lineno=169];
+	"168:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f9359ea2790>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="168:AL",
+		sens="['SBYTECLK', 'reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['reset', 'NEO', 'NIO', 'NDO', 'COMPLS6', 'NFO', 'NHO', 'NGO', 'NJO', 'NAO', 'DISPARITY6', 'NBO', 'NCO', 'PDOS4', 'COMPLS4', 'NDOS4']"];
+	"168:AL" -> "169:IF"	 [cond="[]",
+		lineno=None];
+	"173:BL" -> "Leaf_168:AL"	 [cond="[]",
+		lineno=None];
+}

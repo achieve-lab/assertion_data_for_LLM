@@ -1,0 +1,14 @@
+strict digraph "" {
+	node [label="\N"];
+	"135:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff64a23e2d0>",
+		def_var="['rot_in']",
+		fillcolor=deepskyblue,
+		label="135:AS
+rot_in[k] = (enc_dec)? key[KEY_NUM - 1][WORD*(k+1)-1:WORD*k] : key[KEY_NUM - 1][WORD*(k+1)-1:WORD*k] ^ key[KEY_NUM - 2][WORD*(\
+k+1)-1:WORD*k];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['enc_dec', 'key', 'KEY_NUM', 'WORD', 'k', 'WORD', 'k', 'key', 'KEY_NUM', 'WORD', 'k', 'WORD', 'k', 'key', 'KEY_NUM', 'WORD', 'k', '\
+WORD', 'k']"];
+}

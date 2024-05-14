@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"227:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f9a3c9ca4d0>",
+		def_var="['IncrementIFGCounter']",
+		fillcolor=deepskyblue,
+		label="227:AS
+IncrementIFGCounter = ~ResetIFGCounter & (StateDrop | StateIdle | StatePreamble | StateSFD) & ~IFGCounterEq24;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['ResetIFGCounter', 'StateDrop', 'StateIdle', 'StatePreamble', 'StateSFD', 'IFGCounterEq24']"];
+}

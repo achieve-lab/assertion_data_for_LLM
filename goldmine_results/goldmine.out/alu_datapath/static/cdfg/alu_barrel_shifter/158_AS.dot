@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"158:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f030bfc8910>",
+		def_var="['Xreg']",
+		fillcolor=deepskyblue,
+		label="158:AS
+Xreg = (!direction)? { 1'b0, x } : Xrev;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['direction', 'x', 'Xrev']"];
+}

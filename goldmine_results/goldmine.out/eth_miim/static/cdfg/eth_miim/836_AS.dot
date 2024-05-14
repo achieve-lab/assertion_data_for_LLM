@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"836:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f4155411bd0>",
+		def_var="['ScanStatusOp']",
+		fillcolor=deepskyblue,
+		label="836:AS
+ScanStatusOp = SyncStatMdcEn & ~InProgress & ~InProgress_q1 & ~InProgress_q2;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['SyncStatMdcEn', 'InProgress', 'InProgress_q1', 'InProgress_q2']"];
+}

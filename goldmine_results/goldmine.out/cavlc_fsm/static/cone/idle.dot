@@ -1,0 +1,53 @@
+strict digraph "" {
+	"[1]state"	 [complexity=3,
+		importance=5.1684045612,
+		rank=1.7228015204];
+	state	 [complexity=2,
+		importance=0.32609495478,
+		rank=0.16304747739];
+	"[1]state" -> state;
+	"[1]TotalCoeff"	 [complexity=7,
+		importance=1.67446022725,
+		rank=0.239208603893];
+	"[1]TotalCoeff" -> state;
+	"[1]ZeroLeft"	 [complexity=4,
+		importance=0.696175362911,
+		rank=0.174043840728];
+	"[1]ZeroLeft" -> state;
+	"[1]max_coeff_num"	 [complexity=5,
+		importance=1.02227031769,
+		rank=0.204454063538];
+	"[1]max_coeff_num" -> state;
+	"[1]start"	 [complexity=3,
+		importance=0.696175362911,
+		rank=0.232058454304];
+	"[1]start" -> state;
+	idle	 [complexity=0,
+		importance=0.0491147152735,
+		rank=0.0];
+	state -> idle;
+	"[1]TotalCoeff_comb"	 [complexity=5,
+		importance=1.67446022725,
+		rank=0.33489204545];
+	"[1]TotalCoeff_comb" -> state;
+	"[1]ena"	 [complexity=3,
+		importance=4.93540977505,
+		rank=1.64513659168];
+	"[1]ena" -> state;
+	"[1]TrailingOnes_comb"	 [complexity=4,
+		importance=1.02227031769,
+		rank=0.255567579423];
+	"[1]TrailingOnes_comb" -> state;
+	"[1]i"	 [complexity=8,
+		importance=2.46619538786,
+		rank=0.308274423483];
+	"[1]i" -> state;
+	"[1]rst_n"	 [complexity=3,
+		importance=5.26150472983,
+		rank=1.75383490994];
+	"[1]rst_n" -> state;
+	"[1]TrailingOnes"	 [complexity=4,
+		importance=0.696175362911,
+		rank=0.174043840728];
+	"[1]TrailingOnes" -> state;
+}
