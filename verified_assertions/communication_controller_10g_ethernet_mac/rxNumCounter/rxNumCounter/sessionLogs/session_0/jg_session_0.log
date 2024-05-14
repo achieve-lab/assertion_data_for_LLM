@@ -1,0 +1,1831 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-05-12 17:38:58 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 85965
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:41491' '-nowindow' '-style' 'windows' '-data' 'AAABHHicdY7NDgFBEIS/ITbi4OwRRMIT7E3iaInEVcRfCGYzLOLCo3qTUSNWMgfVmf6p6uqMAdKH954PqnelhIyB4gfz+japIUaYKzEzfkYVaqW5XEn0mnQ5YpmxoWArpiNmzl5huYovpJ+Uc4XFcWbFUnzGRNt1ba+lXNS39dcRU2mOG0N5DvTlCReCy9FTXegyNOTLxVh2mlp/HQFvEY4j4g==' '-proj' '/data/vpulav2/Work/Jasper/rxNumCounter/rxNumCounter/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper/rxNumCounter/rxNumCounter/.tmp/.initCmds.tcl' 'FPV_rxNumCounter.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper/rxNumCounter/rxNumCounter/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/rxNumCounter.v
+[-- (VERI-1482)] Analyzing Verilog file './/rxNumCounter.v'
+[INFO (VERI-1328)] .//rxNumCounter.v(53): analyzing included file './/timescale.v'
+[INFO (VERI-1328)] .//rxNumCounter.v(54): analyzing included file './/xgiga_define.v'
+[INFO (VERI-1328)] .//rxNumCounter.v(55): analyzing included file './/counter.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top rxNumCounter
+INFO (ISW003): Top module name is "rxNumCounter".
+[INFO (HIER-8002)] .//rxNumCounter.v(74): Disabling old hierarchical reference handler
+[WARN (VERI-1927)] .//bindings.sva(7): port 'en' remains unconnected for this instance
+[INFO (VERI-1018)] .//counter.v(54): compiling module 'counter'
+[WARN (VERI-1209)] .//counter.v(72): expression size 32 truncated to fit in target size 8
+[INFO (VERI-1018)] .//property.sva(1): compiling module 'i_rxNumCounter'
+[INFO (VERI-1018)] .//rxNumCounter.v(56): compiling module 'rxNumCounter'
+[WARN (VERI-1330)] .//rxNumCounter.v(71): actual bit length 12 differs from formal bit length 8 for port 'value'
+[WARN (VERI-8028)] .//bindings.sva(2): missing/open ports on instance v_rxNumCounter of module i_rxNumCounter
+[WARN (VDB-1013)] .//bindings.sva(7): input port 'en' is not connected on this instance
+INFO (INL208): Elaboration synthesis summary:
+  Number of synthesized netlists          4 (1 packages)
+  Single run mode                         On
+  Pipeline                                On (3 pipelined netlists)
+  Late hierarchical reference connection  On
+  Number of analyzed Verilog modules      4 (4 synthesized)
+  Number of analyzed VHDL entities        0 (0 synthesized)
+INFO (INL003): Clearing all state information (assumes, stopats, and so forth).
+rxNumCounter
+[<embedded>] % 
+[<embedded>] % # Set up Clocks and Resets
+[<embedded>] % clock rxclk
+[<embedded>] % reset reset
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "reset".
+[<embedded>] % 
+[<embedded>] % # Get design information to check general complexity
+[<embedded>] % get_design_info
+Statistics [for instance "rxNumCounter"]
+---------------------------
+# Flops:         1 (812) (804 property flop bits)
+# Latches:       0 (0)
+# Gates:         4637 (40868)
+# Nets:          4672
+# Ports:         4
+# RTL Lines:     278
+# RTL Instances: 3
+# Embedded Assumptions: 0
+# Embedded Assertions:  226
+# Embedded Covers:      226
+812
+[<embedded>] % 
+[<embedded>] % # Prove properties
+[<embedded>] % prove -all
+Ncustom1: Custom engine code is hT3Ng7hPPfiYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSl+CwjiTMAQA
+Bcustom2: Custom engine code is hT3Nm7hPr1Vp3Di1Ra2USNIGL4JypRnLKLAdF6JAyuavO2JfGCiY9OZJhcAcOUnLx5xwNdhILGrAWX9s+z2WDkKwNR7tAfClBEjRFVQeq6DU54boFgEA
+AMcustom3: Custom engine code is hT3Ng7hP/feYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSmmqwm7g9AQA
+Mpcustom4: Custom engine code is hT3NZbhP9fmY2AbBQnsjfOxn6c+6e6yL+/e8fZFmaQrnlgEA
+INFO (IPF036): Starting proof on task: "<embedded>", 452 properties to prove with 0 already proven/unreachable
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis: phase 2 of 4.
+INFO (IRS031): Running reset analysis: phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 4 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 iterations. Assigned values for 8 of 8 design flops, 0 of 0 design latches, 1256 of 1256 internal elements.
+INFO (IRS039): Reset analysis complete.
+INFO (IPF031): Settings used for proof thread 0:
+    orchestration                 = on
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = auto
+    proofgrid_per_engine_max_jobs = 1
+    max engine jobs               = auto
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_24" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_24:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_26" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_26:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_27" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_27:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_30" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_30:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_34" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_39" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_44" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_44:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_45" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_45:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_48" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_48:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_50" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_50:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_52" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_52:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_53" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_53:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_54" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_54:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_57" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_57:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_60" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_60:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_62" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_62:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_64" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_64:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_65" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_65:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_66" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_66:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_70" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_70:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_72" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_72:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_73" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_73:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_74" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_74:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_78" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_78:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_80" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_80:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_83" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_83:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_84" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_84:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_86" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_86:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_88" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_88:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_90" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_90:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_92" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_92:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_93" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_93:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_95" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_95:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_98" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_98:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_100" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_100:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_101" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_101:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_103" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_103:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_106" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_106:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_108" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_108:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_122" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_122:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_125" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_125:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_126" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_126:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_132" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_132:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_175" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_175:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_177" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_177:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_186" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_186:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_195" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_195:precondition1" was proven unreachable in 0.00 s.
+0: Found proofs for 92 properties in preprocessing
+0: Using multistage preprocessing
+0: Starting reduce
+0: Finished reduce in 0.001s
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_109" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_109:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_110" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_110:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_111" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_111:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_112" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_112:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_113" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_113:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_114" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_114:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_115" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_115:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_116" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_116:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_117" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_117:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_118" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_118:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_119" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_119:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_120" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_120:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_121" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_121:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_123" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_123:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_124" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_124:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_128" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_128:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_129" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_129:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_131" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_131:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_203" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_203:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_204" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_204:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_205" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_205:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_206" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_206:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_207" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_207:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_208" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_208:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_209" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_209:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_210" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_210:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_211" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_211:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_212" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_212:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_213" was proven in 0.00 s.
+AMcustom5: Custom engine code is hT3N1rhP11/52HrFRS21ROp2LOjVTgPvT8L8BGXHgLhaIuqtT4nARFjUqrBL+7pLmaTOzBepZW/Jm8SSrHDybSQtoNiO3y43wk+dEoWlsZizu97Fih6O6lPVG/LpWP5SsUPwlGagLNa1FKEFvwVXyX7//8prySbvSxIHXr5er+z4RAEA
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+Ncustom6: Custom engine code is hT3OXrhPByJp3TrFSTLhUmMH4KVtJgmTCnNDF46yMXOKY48m4LS5nE7yBzFjA7kDuwO/GhGUpEPiky3p3wmPn3dJZHxFMsafSoObRzSC+tn7sEY0WbTdZ/FV4hL3MYH/b1CIUvXSWR4wqEoVLsmMOD4xIPT4lI1LO6ZCO7PnnWQuLwetnvKlrXx6wCW/A+x+enqslg1YPobi4wEF/EvbzOvcTYdJvl2s4H2yZg2b2ofAVN5WvhWk1HoBAA
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_213:precondition1" was proven unreachable in 0.00 s.
+ADcustom7: Custom engine code is hT3Nv7hPv1752HrFRa2kROx2f/ECJeZB2AZsLdlO8VwmIuqtT4nIDFXclhg+O+o+DMmQCekbheGk0kK28laA9gaOFDXsQp29J3X615HY1IPHJWd6FUFvCHjO+p1k652b5JJvZlShNpGlGSXAiQe/mEAj6tEBAA
+Tricustom8: Custom engine code is hT3Nu7hPt1752DvFRa0kNDiyIV97VyejwM9C/jCLJjdPvusZONHY42VYUy0Q1ZotnhcVtNc56tJ5wbxv6V2+XpdsaSlHck5vfnbYjdwj1OECy9U+7oSQ0SZE3g5ayD+Phuh4odCJTjeKa2k4elM9ldQfkAEA
+Gcustom9: Custom engine code is hT3NibhPDfeYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncipMGcUXqAadachREE9F2PwhBUZUNw5kHnd4JdXkamORRgEA
+C2custom10: Custom engine code is hT3NirhPjfWYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncgkrYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuG86XYVV00BAA
+AGcustom11: Custom engine code is hT3NirhP/fmYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInnckcwYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuHEZnZByh0BAA
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+Bcustom12: Custom engine code is hT3NjrhPDfiYQADBZnYcglOvK9PfWxFtenjIyBqfrgr7if/jL/yPOuK1BAflEcW0DxNH2eDIoezN2gxlQFg81RZtiWXh7aiTAidvAQA
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_214" was proven in 0.00 s.
+Ncustom13: Custom engine code is hT3NR7hPByFp3TrFSTLhUmMH4KWtJglTyV/c51BHEeZWamnJv767nE6PCak26bd3gf3XGN3rIRheufhDieCJQVISo+gNYUKhiUedBKGtsP/a18svAnlMJZudHxDFwK5ufsyoxsIyiAeSY2oi3tEuoDHr5gw42DFKAG3PqO3CEsl8Azzdt3pl5nGA1Ifv2H02eYsFzWb/nfp8PMb3F0krE/EgBcm8TD9Div8BAA
+Tricustom14: Custom engine code is hT3Nu7hP3fiYQADBZnYcglNHp9bfd7EOeniIqP/ji8sGLQu8yhsFO+wxJ+O+R0bU8g/IewXFomyos+viQnWc2xYNYmMqpo3i40O7DaZR7qfp4YqNx26KRvQ/qx0BAA
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_214:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_215" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_215:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_216" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_216:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_217" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_217:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_218" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_218:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_219" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_219:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_220" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_220:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_221" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_221:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_222" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_222:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_223" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_223:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_224" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_224:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_225" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_225:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_226" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_226:precondition1" was proven unreachable in 0.00 s.
+0: Found proofs for 84 properties in preprocessing
+0.0.PRE: Performing Proof Simplification...
+0.0.N: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: Proof Simplification Iteration 1	[0.00 s]
+0.0.PRE: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_13:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_14:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_15:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_17:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_18:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_1:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_3:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_4:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_6:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_8:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_9:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_10" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_10:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_11" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_11:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_12" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_12:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_16" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_16:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_19" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_19:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_20:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_21" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_21:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_32" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_32:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_34:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_35:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_36:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_39:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_42" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "rxNumCounter.v_rxNumCounter._assert_42:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.N: Proof Simplification Iteration 2	[0.02 s]
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rxNumCounter.v_rxNumCounter._assert_94" was proven in 0.00 s.
+0.0.N: Proof Simplification Iteration 3	[0.02 s]
+0.0.N: Proof Simplification Iteration 4	[0.02 s]
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property ":noDeadEnd" was proven in 0.00 s.
+    Use check_assumptions -show -dead_end to show this property in the property table.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property ":noConflict" was proven in 0.00 s.
+    Use check_assumptions -show to show this property in the property table.
+INFO (IPF047): 0.0.PRE: The cover property ":live" was covered in 1 cycles in 0.00 s.
+    Use check_assumptions -show -live to show this property in the property table.
+0.0.PRE: Proof Simplification completed in 0.05 s
+0.0.N: Identified and disabled 128 duplicated targets.
+0: About to start ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+0: =============================== ProofGrid start ===============================
+0: ProofGrid usable level: 146
+0: Initial ProofGrid level: 1
+0: ProofGrid is starting event handling
+0.0.Hp: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.N: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.N: Proofgrid shell started at 86029@pal-achieve-06(local) jg_85965_pal-achieve-06_1
+0.0.N: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_1" in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_8" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_1".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_102" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_1".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_102:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_1".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_104" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_1".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_104:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_1".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_1"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_2"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_2" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_2" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_2:precondition1" was covered in 2 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_7" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_17" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_18" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_22" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_22:precondition1" was covered in 2 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_31" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_31:precondition1" was covered in 2 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_40" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_5:precondition1" was covered in 2 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_7:precondition1" was covered in 2 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_41" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_33:precondition1" was covered in 2 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_37:precondition1" was covered in 2 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_38:precondition1" was covered in 2 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_40:precondition1" was covered in 2 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_41:precondition1" was covered in 2 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_2".
+0: ProofGrid usable level: 133
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_2"	[0.01 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_3"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_15"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_35"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_3" in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_4" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_3".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_15" in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_35" in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_14" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_3".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_36" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_3".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_3"	[0.00 s].
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_15"	[0.00 s].
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_35"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_5"	[0.00 s].
+0: ProofGrid usable level: 131
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_5" in 0.02 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_5" in 0.02 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_13" in 0.02 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_5".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_37" in 0.02 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_5".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_5"	[0.02 s].
+0.0.Hp: Proofgrid shell started at 86030@pal-achieve-06(local) jg_85965_pal-achieve-06_1
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_6"	[0.00 s].
+0: ProofGrid usable level: 128
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_6" in 0.03 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 1 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_9" in 0.03 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_6".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_6"	[0.03 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_20"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_20" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_20" in 0.00 s.
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_20"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_23"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_23" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: A trace with 3 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 3 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_23" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_23:precondition1" was covered in 3 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 3 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_29" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 3 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_46" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_46:precondition1" was covered in 3 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_25:precondition1" was covered in 3 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_28:precondition1" was covered in 3 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_29:precondition1" was covered in 3 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_47:precondition1" was covered in 3 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_23".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_23"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_25"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_25" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  6	[0.00 s]
+0.0.N: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.N: The property "rxNumCounter.v_rxNumCounter._assert_25" was proven in 0.00 s.
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_25"	[0.00 s].
+0.0.Hp: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0: ProofGrid usable level: 119
+0.0.Hp: A proof was found: No trace exists. [0.04 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_33" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.04 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_38" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.04 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_47" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.04 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_49" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.04 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_55" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.04 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_59" was proven in 0.02 s.
+0.0.Hp: A proof was found: No trace exists. [0.04 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_63" was proven in 0.02 s.
+0.0.Hp: A proof was found: No trace exists. [0.04 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_68" was proven in 0.02 s.
+0.0.Hp: A proof was found: No trace exists. [0.04 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_69" was proven in 0.02 s.
+0.0.Hp: A proof was found: No trace exists. [0.04 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_76" was proven in 0.02 s.
+0.0.Hp: A proof was found: No trace exists. [0.04 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_77" was proven in 0.02 s.
+0.0.Hp: A proof was found: No trace exists. [0.04 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_81" was proven in 0.02 s.
+0.0.Hp: A proof was found: No trace exists. [0.04 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_87" was proven in 0.02 s.
+0.0.Hp: A proof was found: No trace exists. [0.04 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_89" was proven in 0.02 s.
+0.0.Hp: A proof was found: No trace exists. [0.05 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_99" was proven in 0.02 s.
+0.0.Hp: A proof was found: No trace exists. [0.05 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_105" was proven in 0.02 s.
+0.0.Hp: A proof was found: No trace exists. [0.05 s]
+INFO (IPF057): 0.0.Hp: The property "rxNumCounter.v_rxNumCounter._assert_138" was proven in 0.02 s.
+0.0.Hp: Trace Attempt  1	[0.05 s]
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_28"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_28" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: A trace with 3 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 3 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_28" in 0.00 s.
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_28"	[0.00 s].
+0.0.Hp: Trace Attempt  2	[0.06 s]
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_43"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_43:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_43" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_43:precondition1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: A trace with 4 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 4 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_43" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_55:precondition1" was covered in 4 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_43".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_43:precondition1" was covered in 4 cycles in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 4 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_56" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_43".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_56:precondition1" was covered in 4 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_43".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_43"	[0.00 s].
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_43:precondition1"	[0.00 s].
+0.0.Hp: Trace Attempt  3	[0.09 s]
+INFO (IPF054): 0.0.Hp: A min_length bound of 4 was found for the property "rxNumCounter.v_rxNumCounter._assert_55:precondition1" in 0.04 s.
+INFO (IPF054): 0.0.Hp: A min_length bound of 4 was found for the property "rxNumCounter.v_rxNumCounter._assert_56" in 0.04 s.
+INFO (IPF054): 0.0.Hp: A min_length bound of 4 was found for the property "rxNumCounter.v_rxNumCounter._assert_56:precondition1" in 0.04 s.
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_49:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_51"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_51:precondition1"	[0.00 s].
+0.0.Hp: Trace Attempt  4	[0.11 s]
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_49:precondition1" in 0.01 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_51" in 0.01 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_51:precondition1" in 0.01 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: A trace with 5 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_49:precondition1" was covered in 5 cycles in 0.01 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 5 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_58" in 0.01 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_49:precondition1".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 5 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_61" in 0.01 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_49:precondition1".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 5 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_51" in 0.01 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_51:precondition1" was covered in 5 cycles in 0.01 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_58:precondition1" was covered in 5 cycles in 0.01 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_49:precondition1".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_59:precondition1" was covered in 5 cycles in 0.01 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_49:precondition1".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_61:precondition1" was covered in 5 cycles in 0.01 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_49:precondition1".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_63:precondition1" was covered in 5 cycles in 0.01 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_49:precondition1".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_49:precondition1"	[0.01 s].
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_51"	[0.01 s].
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_51:precondition1"	[0.01 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_67"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_67:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_68:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_67" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_67:precondition1" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_68:precondition1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  6	[0.00 s]
+0.0.N: A trace with 6 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 6 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_67" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_69:precondition1" was covered in 6 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_67".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_67:precondition1" was covered in 6 cycles in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_68:precondition1" was covered in 6 cycles in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 6 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_71" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_67".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_71:precondition1" was covered in 6 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_67".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_67"	[0.00 s].
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_67:precondition1"	[0.00 s].
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_68:precondition1"	[0.00 s].
+0.0.Ht: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_75"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_75:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_76:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_75" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_75:precondition1" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_76:precondition1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  7	[0.00 s]
+0.0.N: A trace with 7 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_75" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_77:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_75".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_85" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_75".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_75:precondition1" was covered in 7 cycles in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_76:precondition1" was covered in 7 cycles in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_79" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_75".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_79:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_75".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_85:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_75".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_87:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_75".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_75"	[0.00 s].
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_75:precondition1"	[0.00 s].
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_76:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_81:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_82"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_82:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_81:precondition1" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_82" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_82:precondition1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  8	[0.00 s]
+0.0.N: A trace with 8 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_81:precondition1" was covered in 8 cycles in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_89:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_81:precondition1".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_82" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_82:precondition1" was covered in 8 cycles in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_91" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_81:precondition1".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_91:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_81:precondition1".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_81:precondition1"	[0.00 s].
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_82"	[0.00 s].
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_82:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_94:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_96"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_96:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_94:precondition1" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_96" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_96:precondition1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  9	[0.00 s]
+0.0.N: A trace with 9 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_94:precondition1" was covered in 9 cycles in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_97" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_94:precondition1".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_96" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_96:precondition1" was covered in 9 cycles in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_97:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_94:precondition1".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_99:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_94:precondition1".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_94:precondition1"	[0.01 s].
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_96"	[0.01 s].
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_96:precondition1"	[0.01 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_105:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_107"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_107:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_105:precondition1" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_107" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "rxNumCounter.v_rxNumCounter._assert_107:precondition1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 10	[0.00 s]
+0.0.N: A trace with 10 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_105:precondition1" was covered in 10 cycles in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 10 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_107" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_107:precondition1" was covered in 10 cycles in 0.00 s.
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_105:precondition1"	[0.01 s].
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_107"	[0.01 s].
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_107:precondition1"	[0.01 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_127"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "rxNumCounter.v_rxNumCounter._assert_127" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 13	[0.00 s]
+0.0.N: A trace with 13 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_127" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_127:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_130" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_130:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_133" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_133:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_134" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_134:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_146" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_146:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_148" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_148:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_157" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_157:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_163" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_167" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_174" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_180" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_180:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_183" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_183:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_184" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_191" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_193" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_194" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_196" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_201" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_140:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_145:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_138:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_147:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_136:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_137:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_142:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_143:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_150:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_152:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_149:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_151:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_163:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_167:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_174:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_191:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_194:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_196:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_184:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_193:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_201:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_127".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_127"	[0.01 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_135"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "rxNumCounter.v_rxNumCounter._assert_135" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 13	[0.00 s]
+0.0.N: A trace with 13 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_135" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_135:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_135".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_182" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_135".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_182:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_135".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_188" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_135".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_199" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_135".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_200" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_135".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_141:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_135".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_144:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_135".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_188:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_135".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_199:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_135".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_200:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_135".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_135"	[0.01 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_136"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "rxNumCounter.v_rxNumCounter._assert_136" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 13	[0.00 s]
+0.0.N: A trace with 13 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_136" in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_137" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_136".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_142" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_136".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_143" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_136".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_149" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_136".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_150" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_136".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_151" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_136".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_152" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_136".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_161:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_136".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_172" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_136".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_169:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_136".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_170:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_136".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_172:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_136".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_136"	[0.01 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_139"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "rxNumCounter.v_rxNumCounter._assert_139" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 13	[0.00 s]
+0.0.N: A trace with 13 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_139" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_139:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_153" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_156" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_156:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_169" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_173" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_176:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_185" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_189" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_153:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_154:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_162:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_168:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_173:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_185:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_189:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_197:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_139".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_139"	[0.01 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_140"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "rxNumCounter.v_rxNumCounter._assert_140" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 13	[0.00 s]
+0.0.N: A trace with 13 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_140" in 0.00 s.
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_140"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_141"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "rxNumCounter.v_rxNumCounter._assert_141" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 13	[0.00 s]
+0.0.N: A trace with 13 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_141" in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_161" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_141".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_141"	[0.00 s].
+0.0.Hp: Trace Attempt  5	[0.21 s]
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_144"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "rxNumCounter.v_rxNumCounter._assert_144" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 13	[0.00 s]
+0.0.N: A trace with 13 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_144" in 0.00 s.
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_144"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_145"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "rxNumCounter.v_rxNumCounter._assert_145" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 13	[0.00 s]
+0.0.N: A trace with 13 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_145" in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_147" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_145".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_145"	[0.01 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_154"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "rxNumCounter.v_rxNumCounter._assert_154" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 13	[0.00 s]
+0.0.N: A trace with 13 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_154" in 0.00 s.
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_154"	[0.01 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_155"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "rxNumCounter.v_rxNumCounter._assert_155" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 13	[0.00 s]
+0.0.N: A trace with 13 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_155" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_155:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_155".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_160" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_155".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_171" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_155".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_159:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_155".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_160:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_155".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_171:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_155".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_155"	[0.00 s].
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_158"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "rxNumCounter.v_rxNumCounter._assert_158" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 13	[0.00 s]
+0.0.N: A trace with 13 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_158" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_158:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_158".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_165" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_158".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_170" in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_158".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_164:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_158".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_165:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_158".
+INFO (IPF047): 0.0.N: The cover property "rxNumCounter.v_rxNumCounter._assert_166:precondition1" was covered in 13 cycles in 0.00 s by the incidental trace "rxNumCounter.v_rxNumCounter._assert_158".
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_158"	[0.00 s].
+0.0.Ht: Proofgrid shell started at 86066@pal-achieve-06(local) jg_85965_pal-achieve-06_1
+0.0.N: Starting proof for property "rxNumCounter.v_rxNumCounter._assert_159"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "rxNumCounter.v_rxNumCounter._assert_159" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.Ht: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Ht: Trace Attempt  1	[0.00 s]
+0.0.Ht: Trace Attempt  2	[0.00 s]
+0.0.Ht: Trace Attempt  3	[0.00 s]
+0.0.Ht: Trace Attempt  4	[0.00 s]
+0.0.Ht: Trace Attempt  5	[0.00 s]
+0.0.Ht: Trace Attempt 13	[0.00 s]
+0.0.Ht: A trace with 13 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_159" in 0.00 s.
+INFO (IPF047): 0.0.Ht: The cover property "rxNumCounter.v_rxNumCounter._assert_181:precondition1" was covered in 13 cycles in 0.00 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_190" in 0.00 s.
+INFO (IPF047): 0.0.Ht: The cover property "rxNumCounter.v_rxNumCounter._assert_190:precondition1" was covered in 13 cycles in 0.00 s.
+INFO (IPF047): 0.0.Ht: The cover property "rxNumCounter.v_rxNumCounter._assert_198:precondition1" was covered in 13 cycles in 0.00 s.
+INFO (IPF047): 0.0.Ht: The cover property "rxNumCounter.v_rxNumCounter._assert_202:precondition1" was covered in 13 cycles in 0.00 s.
+0.0.Ht: A trace with 13 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_162" in 0.01 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_164" in 0.01 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_197" in 0.01 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_202" in 0.01 s.
+0.0.Ht: A trace with 13 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_166" in 0.01 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_198" in 0.01 s.
+0.0.Ht: A trace with 13 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_168" in 0.01 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_176" in 0.01 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 13 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_181" in 0.01 s.
+0.0.Ht: Trace Attempt 14	[0.00 s]
+0.0.Ht: A trace with 14 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 14 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_178" in 0.01 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 14 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.Ht: The cover property "rxNumCounter.v_rxNumCounter._assert_178:precondition1" was covered in 14 cycles in 0.02 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 14 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_192" in 0.02 s.
+INFO (IPF047): 0.0.Ht: The cover property "rxNumCounter.v_rxNumCounter._assert_179:precondition1" was covered in 14 cycles in 0.02 s.
+INFO (IPF047): 0.0.Ht: The cover property "rxNumCounter.v_rxNumCounter._assert_187:precondition1" was covered in 14 cycles in 0.02 s.
+INFO (IPF047): 0.0.Ht: The cover property "rxNumCounter.v_rxNumCounter._assert_192:precondition1" was covered in 14 cycles in 0.02 s.
+0.0.Ht: A trace with 14 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 14 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_179" in 0.03 s.
+0.0.N: Requesting engine job to stop
+0.0.Hp: Requesting engine job to terminate
+0.0.Ht: Requesting engine job to terminate
+INFO (IPF144): 0: Initiating shutdown of proof [0.33 s]
+0.0.Ht: A trace with 14 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 14 cycles was found for the property "rxNumCounter.v_rxNumCounter._assert_187" in 0.03 s.
+0.0.Ht: All properties determined. [0.00 s]
+0.0.Mpcustom4: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.N: Trace Attempt 13	[0.00 s]
+0.0.N: Stopped processing property "rxNumCounter.v_rxNumCounter._assert_159"	[0.03 s].
+0.0.Hp: Trace Attempt 14	[0.27 s]
+0.0.Hp: All properties determined. [0.27 s]
+0.0.Ht: Exited with Success (@ 0.33 s)
+0: ProofGrid usable level: 0
+0.0.Hp: Exited with Success (@ 0.33 s)
+0.0.Bm: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Oh: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.N: Interrupted. [0.02 s]
+0.0.N: Exited with Success (@ 0.33 s)
+0.0.AM: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.L: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.B: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Mpcustom4: Proofgrid shell started at 86075@pal-achieve-06(local) jg_85965_pal-achieve-06_1
+0.0.Mpcustom4: Requesting engine job to terminate
+0.0.Mpcustom4: Preventing job from starting because proof is shutting down.
+0.0.Mpcustom4: Requesting engine job to terminate
+0.0.Mpcustom4: Interrupted. [0.00 s]
+0.0.Mpcustom4: Exited with Success (@ 0.36 s)
+0.0.Bm: Proofgrid shell started at 86074@pal-achieve-06(local) jg_85965_pal-achieve-06_1
+0.0.Bm: Requesting engine job to terminate
+0.0.Bm: Preventing job from starting because proof is shutting down.
+0.0.Bm: Requesting engine job to terminate
+0.0.Bm: Interrupted. [0.00 s]
+0.0.Bm: Exited with Success (@ 0.37 s)
+0.0.Oh: Proofgrid shell started at 86076@pal-achieve-06(local) jg_85965_pal-achieve-06_1
+0.0.Oh: Requesting engine job to terminate
+0.0.Oh: Preventing job from starting because proof is shutting down.
+0.0.Oh: Requesting engine job to terminate
+0.0.Oh: Interrupted. [0.00 s]
+0.0.Oh: Exited with Success (@ 0.39 s)
+0.0.AM: Proofgrid shell started at 86086@pal-achieve-06(local) jg_85965_pal-achieve-06_1
+0.0.AM: Requesting engine job to terminate
+0.0.AM: Preventing job from starting because proof is shutting down.
+0.0.AM: Requesting engine job to terminate
+0.0.AM: Interrupted. [0.00 s]
+0.0.AM: Exited with Success (@ 0.39 s)
+0.0.L: Proofgrid shell started at 86077@pal-achieve-06(local) jg_85965_pal-achieve-06_1
+0.0.L: Requesting engine job to terminate
+0.0.L: Preventing job from starting because proof is shutting down.
+0.0.L: Requesting engine job to terminate
+0.0.L: Interrupted. [0.00 s]
+0.0.B: Proofgrid shell started at 86078@pal-achieve-06(local) jg_85965_pal-achieve-06_1
+0.0.B: Requesting engine job to terminate
+0.0.L: Exited with Success (@ 0.41 s)
+0.0.B: Preventing job from starting because proof is shutting down.
+0.0.B: Requesting engine job to terminate
+0.0.B: Interrupted. [0.00 s]
+0.0.B: Exited with Success (@ 0.42 s)
+0: --------------------------------------------------------------
+ProofGrid Summary (utilization 17.10 %)
+--------------------------------------------------------------
+     engines started                               :     9
+     engine jobs started                           :     9
+
+    Average time in state (seconds)
+    ------------------------------------------------------
+    Engine  Pending     Running        Dead    Utilization
+    ------------------------------------------------------
+      N        0.17        0.33        0.00       65.89 %
+     Hp        0.20        0.24        0.00       54.48 %
+     Ht        0.35        0.02        0.00        4.88 %
+     Bm        0.37        0.00        0.00        0.00 %
+    Mpcustom4        0.36        0.00        0.00        0.00 %
+     Oh        0.37        0.00        0.00        0.00 %
+      L        0.37        0.00        0.00        0.00 %
+      B        0.36        0.00        0.00        0.00 %
+     AM        0.28        0.00        0.00        0.00 %
+    all        0.32        0.07        0.00       17.10 %
+
+    Total time in state (seconds)
+    -----------------------------------------
+            Pending     Running        Dead  
+    -----------------------------------------
+               2.85        0.59        0.00
+
+    Data read    : 88.06 kiB
+    Data written : 21.73 kiB
+
+0: All pending notifications were processed.
+INFO (IPF059): 0: Completed proof on task: "<embedded>"
+
+==============================================================
+SUMMARY
+==============================================================
+           Properties Considered              : 452
+                 assertions                   : 226
+                  - proven                    : 108 (47.7876%)
+                  - bounded_proven (user)     : 0 (0%)
+                  - bounded_proven (auto)     : 0 (0%)
+                  - marked_proven             : 0 (0%)
+                  - cex                       : 118 (52.2124%)
+                  - ar_cex                    : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+                 covers                       : 226
+                  - unreachable               : 87 (38.4956%)
+                  - bounded_unreachable (user): 0 (0%)
+                  - covered                   : 139 (61.5044%)
+                  - ar_covered                : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+determined
+[<embedded>] % 
+[<embedded>] % # Report proof results
+[<embedded>] % report
+
+==============================================================
+    Jasper Verification Results
+==============================================================
+    2024.03 FCS 64 bits for Linux64 3.10.0-1160.21.1.el7.x86_64
+    Host Name: pal-achieve-06.uic.edu
+    User Name: vpulav2
+    Printed on: Sunday, May12, 2024 05:39:01 PM CDT
+    Working Directory: /data/vpulav2/Work/Jasper/rxNumCounter
+
+
+==============================================================
+RESULTS
+==============================================================
+
+------------------------------------------------------------------------------------------------------------------
+       Name                                                      |    Result    |  Engine  |  Bound  |  Time    
+------------------------------------------------------------------------------------------------------------------
+
+---[ <embedded> ]-------------------------------------------------------------------------------------------------
+[1]   rxNumCounter.v_rxNumCounter._assert_1                           cex             N             1    0.001 s      
+[2]   rxNumCounter.v_rxNumCounter._assert_1:precondition1             covered         PRE           1    0.000 s      
+[3]   rxNumCounter.v_rxNumCounter._assert_2                           cex             N             2    0.002 s      
+[4]   rxNumCounter.v_rxNumCounter._assert_2:precondition1             covered         N             2    0.002 s      
+[5]   rxNumCounter.v_rxNumCounter._assert_3                           cex             N             1    0.001 s      
+[6]   rxNumCounter.v_rxNumCounter._assert_3:precondition1             covered         PRE           1    0.000 s      
+[7]   rxNumCounter.v_rxNumCounter._assert_4                           cex             N             1    0.001 s      
+[8]   rxNumCounter.v_rxNumCounter._assert_4:precondition1             covered         PRE           1    0.000 s      
+[9]   rxNumCounter.v_rxNumCounter._assert_5                           cex             N             2    0.020 s      
+[10]  rxNumCounter.v_rxNumCounter._assert_5:precondition1             covered         N             2    0.002 s      
+[11]  rxNumCounter.v_rxNumCounter._assert_6                           cex             N             1    0.034 s      
+[12]  rxNumCounter.v_rxNumCounter._assert_6:precondition1             covered         PRE           1    0.000 s      
+[13]  rxNumCounter.v_rxNumCounter._assert_7                           cex             N             2    0.002 s      
+[14]  rxNumCounter.v_rxNumCounter._assert_7:precondition1             covered         N             2    0.002 s      
+[15]  rxNumCounter.v_rxNumCounter._assert_8                           cex             N             1    0.001 s      
+[16]  rxNumCounter.v_rxNumCounter._assert_8:precondition1             covered         PRE           1    0.000 s      
+[17]  rxNumCounter.v_rxNumCounter._assert_9                           cex             N             1    0.034 s      
+[18]  rxNumCounter.v_rxNumCounter._assert_9:precondition1             covered         PRE           1    0.000 s      
+[19]  rxNumCounter.v_rxNumCounter._assert_10                          cex             PRE           1    0.000 s      
+[20]  rxNumCounter.v_rxNumCounter._assert_10:precondition1            covered         PRE           1    0.000 s      
+[21]  rxNumCounter.v_rxNumCounter._assert_11                          cex             PRE           1    0.000 s      
+[22]  rxNumCounter.v_rxNumCounter._assert_11:precondition1            covered         PRE           1    0.000 s      
+[23]  rxNumCounter.v_rxNumCounter._assert_12                          cex             PRE           1    0.000 s      
+[24]  rxNumCounter.v_rxNumCounter._assert_12:precondition1            covered         PRE           1    0.000 s      
+[25]  rxNumCounter.v_rxNumCounter._assert_13                          cex             N             2    0.020 s      
+[26]  rxNumCounter.v_rxNumCounter._assert_13:precondition1            covered         PRE           1    0.000 s      
+[27]  rxNumCounter.v_rxNumCounter._assert_14                          cex             N             1    0.001 s      
+[28]  rxNumCounter.v_rxNumCounter._assert_14:precondition1            covered         PRE           1    0.000 s      
+[29]  rxNumCounter.v_rxNumCounter._assert_15                          cex             N             1    0.001 s      
+[30]  rxNumCounter.v_rxNumCounter._assert_15:precondition1            covered         PRE           1    0.000 s      
+[31]  rxNumCounter.v_rxNumCounter._assert_16                          cex             PRE           1    0.000 s      
+[32]  rxNumCounter.v_rxNumCounter._assert_16:precondition1            covered         PRE           1    0.000 s      
+[33]  rxNumCounter.v_rxNumCounter._assert_17                          cex             N             2    0.002 s      
+[34]  rxNumCounter.v_rxNumCounter._assert_17:precondition1            covered         PRE           1    0.000 s      
+[35]  rxNumCounter.v_rxNumCounter._assert_18                          cex             N             2    0.002 s      
+[36]  rxNumCounter.v_rxNumCounter._assert_18:precondition1            covered         PRE           1    0.000 s      
+[37]  rxNumCounter.v_rxNumCounter._assert_19                          cex             PRE           1    0.000 s      
+[38]  rxNumCounter.v_rxNumCounter._assert_19:precondition1            covered         PRE           1    0.000 s      
+[39]  rxNumCounter.v_rxNumCounter._assert_20                          cex             N             2    0.001 s      
+[40]  rxNumCounter.v_rxNumCounter._assert_20:precondition1            covered         PRE           1    0.000 s      
+[41]  rxNumCounter.v_rxNumCounter._assert_21                          cex             PRE           1    0.000 s      
+[42]  rxNumCounter.v_rxNumCounter._assert_21:precondition1            covered         PRE           1    0.000 s      
+[43]  rxNumCounter.v_rxNumCounter._assert_22                          cex             N             2    0.002 s      
+[44]  rxNumCounter.v_rxNumCounter._assert_22:precondition1            covered         N             2    0.002 s      
+[45]  rxNumCounter.v_rxNumCounter._assert_23                          cex             N             3    0.001 s      
+[46]  rxNumCounter.v_rxNumCounter._assert_23:precondition1            covered         N         2 - 3    0.001 s      
+[47]  rxNumCounter.v_rxNumCounter._assert_24                          proven          PRE    Infinite    0.000 s      
+[48]  rxNumCounter.v_rxNumCounter._assert_24:precondition1            unreachable     PRE    Infinite    0.000 s      
+[49]  rxNumCounter.v_rxNumCounter._assert_25                          proven          N      Infinite    0.000 s      
+[50]  rxNumCounter.v_rxNumCounter._assert_25:precondition1            covered         N         2 - 3    0.001 s      
+[51]  rxNumCounter.v_rxNumCounter._assert_26                          proven          PRE    Infinite    0.000 s      
+[52]  rxNumCounter.v_rxNumCounter._assert_26:precondition1            unreachable     PRE    Infinite    0.000 s      
+[53]  rxNumCounter.v_rxNumCounter._assert_27                          proven          PRE    Infinite    0.000 s      
+[54]  rxNumCounter.v_rxNumCounter._assert_27:precondition1            unreachable     PRE    Infinite    0.000 s      
+[55]  rxNumCounter.v_rxNumCounter._assert_28                          cex             N             3    0.001 s      
+[56]  rxNumCounter.v_rxNumCounter._assert_28:precondition1            covered         N         2 - 3    0.001 s      
+[57]  rxNumCounter.v_rxNumCounter._assert_29                          cex             N         2 - 3    0.001 s      
+[58]  rxNumCounter.v_rxNumCounter._assert_29:precondition1            covered         N         2 - 3    0.001 s      
+[59]  rxNumCounter.v_rxNumCounter._assert_30                          proven          PRE    Infinite    0.000 s      
+[60]  rxNumCounter.v_rxNumCounter._assert_30:precondition1            unreachable     PRE    Infinite    0.000 s      
+[61]  rxNumCounter.v_rxNumCounter._assert_31                          cex             N             2    0.002 s      
+[62]  rxNumCounter.v_rxNumCounter._assert_31:precondition1            covered         N             2    0.002 s      
+[63]  rxNumCounter.v_rxNumCounter._assert_32                          cex             PRE           1    0.000 s      
+[64]  rxNumCounter.v_rxNumCounter._assert_32:precondition1            covered         PRE           1    0.000 s      
+[65]  rxNumCounter.v_rxNumCounter._assert_33                          proven          Hp     Infinite    0.014 s      
+[66]  rxNumCounter.v_rxNumCounter._assert_33:precondition1            covered         N             2    0.002 s      
+[67]  rxNumCounter.v_rxNumCounter._assert_34                          proven          PRE    Infinite    0.000 s      
+[68]  rxNumCounter.v_rxNumCounter._assert_34:precondition1            covered         PRE           1    0.000 s      
+[69]  rxNumCounter.v_rxNumCounter._assert_35                          cex             N             1    0.001 s      
+[70]  rxNumCounter.v_rxNumCounter._assert_35:precondition1            covered         PRE           1    0.000 s      
+[71]  rxNumCounter.v_rxNumCounter._assert_36                          cex             N             1    0.001 s      
+[72]  rxNumCounter.v_rxNumCounter._assert_36:precondition1            covered         PRE           1    0.000 s      
+[73]  rxNumCounter.v_rxNumCounter._assert_37                          cex             N             2    0.020 s      
+[74]  rxNumCounter.v_rxNumCounter._assert_37:precondition1            covered         N             2    0.002 s      
+[75]  rxNumCounter.v_rxNumCounter._assert_38                          proven          Hp     Infinite    0.014 s      
+[76]  rxNumCounter.v_rxNumCounter._assert_38:precondition1            covered         N             2    0.002 s      
+[77]  rxNumCounter.v_rxNumCounter._assert_39                          proven          PRE    Infinite    0.000 s      
+[78]  rxNumCounter.v_rxNumCounter._assert_39:precondition1            covered         PRE           1    0.000 s      
+[79]  rxNumCounter.v_rxNumCounter._assert_40                          cex             N             2    0.002 s      
+[80]  rxNumCounter.v_rxNumCounter._assert_40:precondition1            covered         N             2    0.002 s      
+[81]  rxNumCounter.v_rxNumCounter._assert_41                          cex             N             2    0.002 s      
+[82]  rxNumCounter.v_rxNumCounter._assert_41:precondition1            covered         N             2    0.002 s      
+[83]  rxNumCounter.v_rxNumCounter._assert_42                          cex             PRE           1    0.000 s      
+[84]  rxNumCounter.v_rxNumCounter._assert_42:precondition1            covered         PRE           1    0.000 s      
+[85]  rxNumCounter.v_rxNumCounter._assert_43                          cex             N             4    0.001 s      
+[86]  rxNumCounter.v_rxNumCounter._assert_43:precondition1            covered         N             4    0.001 s      
+[87]  rxNumCounter.v_rxNumCounter._assert_44                          proven          PRE    Infinite    0.000 s      
+[88]  rxNumCounter.v_rxNumCounter._assert_44:precondition1            unreachable     PRE    Infinite    0.000 s      
+[89]  rxNumCounter.v_rxNumCounter._assert_45                          proven          PRE    Infinite    0.000 s      
+[90]  rxNumCounter.v_rxNumCounter._assert_45:precondition1            unreachable     PRE    Infinite    0.000 s      
+[91]  rxNumCounter.v_rxNumCounter._assert_46                          cex             N         2 - 3    0.001 s      
+[92]  rxNumCounter.v_rxNumCounter._assert_46:precondition1            covered         N         2 - 3    0.001 s      
+[93]  rxNumCounter.v_rxNumCounter._assert_47                          proven          Hp     Infinite    0.015 s      
+[94]  rxNumCounter.v_rxNumCounter._assert_47:precondition1            covered         N         2 - 3    0.001 s      
+[95]  rxNumCounter.v_rxNumCounter._assert_48                          proven          PRE    Infinite    0.000 s      
+[96]  rxNumCounter.v_rxNumCounter._assert_48:precondition1            unreachable     PRE    Infinite    0.000 s      
+[97]  rxNumCounter.v_rxNumCounter._assert_49                          proven          Hp     Infinite    0.015 s      
+[98]  rxNumCounter.v_rxNumCounter._assert_49:precondition1            covered         N             5    0.011 s      
+[99]  rxNumCounter.v_rxNumCounter._assert_50                          proven          PRE    Infinite    0.000 s      
+[100] rxNumCounter.v_rxNumCounter._assert_50:precondition1            unreachable     PRE    Infinite    0.000 s      
+[101] rxNumCounter.v_rxNumCounter._assert_51                          cex             N             5    0.011 s      
+[102] rxNumCounter.v_rxNumCounter._assert_51:precondition1            covered         N             5    0.011 s      
+[103] rxNumCounter.v_rxNumCounter._assert_52                          proven          PRE    Infinite    0.000 s      
+[104] rxNumCounter.v_rxNumCounter._assert_52:precondition1            unreachable     PRE    Infinite    0.000 s      
+[105] rxNumCounter.v_rxNumCounter._assert_53                          proven          PRE    Infinite    0.000 s      
+[106] rxNumCounter.v_rxNumCounter._assert_53:precondition1            unreachable     PRE    Infinite    0.000 s      
+[107] rxNumCounter.v_rxNumCounter._assert_54                          proven          PRE    Infinite    0.000 s      
+[108] rxNumCounter.v_rxNumCounter._assert_54:precondition1            unreachable     PRE    Infinite    0.000 s      
+[109] rxNumCounter.v_rxNumCounter._assert_55                          proven          Hp     Infinite    0.015 s      
+[110] rxNumCounter.v_rxNumCounter._assert_55:precondition1            covered         N             4    0.001 s      
+[111] rxNumCounter.v_rxNumCounter._assert_56                          cex             N             4    0.001 s      
+[112] rxNumCounter.v_rxNumCounter._assert_56:precondition1            covered         N             4    0.001 s      
+[113] rxNumCounter.v_rxNumCounter._assert_57                          proven          PRE    Infinite    0.000 s      
+[114] rxNumCounter.v_rxNumCounter._assert_57:precondition1            unreachable     PRE    Infinite    0.000 s      
+[115] rxNumCounter.v_rxNumCounter._assert_58                          cex             N             5    0.011 s      
+[116] rxNumCounter.v_rxNumCounter._assert_58:precondition1            covered         N             5    0.011 s      
+[117] rxNumCounter.v_rxNumCounter._assert_59                          proven          Hp     Infinite    0.015 s      
+[118] rxNumCounter.v_rxNumCounter._assert_59:precondition1            covered         N             5    0.011 s      
+[119] rxNumCounter.v_rxNumCounter._assert_60                          proven          PRE    Infinite    0.000 s      
+[120] rxNumCounter.v_rxNumCounter._assert_60:precondition1            unreachable     PRE    Infinite    0.000 s      
+[121] rxNumCounter.v_rxNumCounter._assert_61                          cex             N             5    0.011 s      
+[122] rxNumCounter.v_rxNumCounter._assert_61:precondition1            covered         N             5    0.011 s      
+[123] rxNumCounter.v_rxNumCounter._assert_62                          proven          PRE    Infinite    0.000 s      
+[124] rxNumCounter.v_rxNumCounter._assert_62:precondition1            unreachable     PRE    Infinite    0.000 s      
+[125] rxNumCounter.v_rxNumCounter._assert_63                          proven          Hp     Infinite    0.015 s      
+[126] rxNumCounter.v_rxNumCounter._assert_63:precondition1            covered         N             5    0.011 s      
+[127] rxNumCounter.v_rxNumCounter._assert_64                          proven          PRE    Infinite    0.000 s      
+[128] rxNumCounter.v_rxNumCounter._assert_64:precondition1            unreachable     PRE    Infinite    0.000 s      
+[129] rxNumCounter.v_rxNumCounter._assert_65                          proven          PRE    Infinite    0.000 s      
+[130] rxNumCounter.v_rxNumCounter._assert_65:precondition1            unreachable     PRE    Infinite    0.000 s      
+[131] rxNumCounter.v_rxNumCounter._assert_66                          proven          PRE    Infinite    0.000 s      
+[132] rxNumCounter.v_rxNumCounter._assert_66:precondition1            unreachable     PRE    Infinite    0.000 s      
+[133] rxNumCounter.v_rxNumCounter._assert_67                          cex             N             6    0.001 s      
+[134] rxNumCounter.v_rxNumCounter._assert_67:precondition1            covered         N             6    0.001 s      
+[135] rxNumCounter.v_rxNumCounter._assert_68                          proven          Hp     Infinite    0.015 s      
+[136] rxNumCounter.v_rxNumCounter._assert_68:precondition1            covered         N             6    0.001 s      
+[137] rxNumCounter.v_rxNumCounter._assert_69                          proven          Hp     Infinite    0.016 s      
+[138] rxNumCounter.v_rxNumCounter._assert_69:precondition1            covered         N         5 - 6    0.001 s      
+[139] rxNumCounter.v_rxNumCounter._assert_70                          proven          PRE    Infinite    0.000 s      
+[140] rxNumCounter.v_rxNumCounter._assert_70:precondition1            unreachable     PRE    Infinite    0.000 s      
+[141] rxNumCounter.v_rxNumCounter._assert_71                          cex             N         5 - 6    0.001 s      
+[142] rxNumCounter.v_rxNumCounter._assert_71:precondition1            covered         N         5 - 6    0.001 s      
+[143] rxNumCounter.v_rxNumCounter._assert_72                          proven          PRE    Infinite    0.000 s      
+[144] rxNumCounter.v_rxNumCounter._assert_72:precondition1            unreachable     PRE    Infinite    0.000 s      
+[145] rxNumCounter.v_rxNumCounter._assert_73                          proven          PRE    Infinite    0.000 s      
+[146] rxNumCounter.v_rxNumCounter._assert_73:precondition1            unreachable     PRE    Infinite    0.000 s      
+[147] rxNumCounter.v_rxNumCounter._assert_74                          proven          PRE    Infinite    0.000 s      
+[148] rxNumCounter.v_rxNumCounter._assert_74:precondition1            unreachable     PRE    Infinite    0.000 s      
+[149] rxNumCounter.v_rxNumCounter._assert_75                          cex             N             7    0.001 s      
+[150] rxNumCounter.v_rxNumCounter._assert_75:precondition1            covered         N             7    0.001 s      
+[151] rxNumCounter.v_rxNumCounter._assert_76                          proven          Hp     Infinite    0.016 s      
+[152] rxNumCounter.v_rxNumCounter._assert_76:precondition1            covered         N             7    0.001 s      
+[153] rxNumCounter.v_rxNumCounter._assert_77                          proven          Hp     Infinite    0.016 s      
+[154] rxNumCounter.v_rxNumCounter._assert_77:precondition1            covered         N         5 - 7    0.001 s      
+[155] rxNumCounter.v_rxNumCounter._assert_78                          proven          PRE    Infinite    0.000 s      
+[156] rxNumCounter.v_rxNumCounter._assert_78:precondition1            unreachable     PRE    Infinite    0.000 s      
+[157] rxNumCounter.v_rxNumCounter._assert_79                          cex             N         5 - 7    0.001 s      
+[158] rxNumCounter.v_rxNumCounter._assert_79:precondition1            covered         N         5 - 7    0.001 s      
+[159] rxNumCounter.v_rxNumCounter._assert_80                          proven          PRE    Infinite    0.000 s      
+[160] rxNumCounter.v_rxNumCounter._assert_80:precondition1            unreachable     PRE    Infinite    0.000 s      
+[161] rxNumCounter.v_rxNumCounter._assert_81                          proven          Hp     Infinite    0.016 s      
+[162] rxNumCounter.v_rxNumCounter._assert_81:precondition1            covered         N             8    0.002 s      
+[163] rxNumCounter.v_rxNumCounter._assert_82                          cex             N             8    0.002 s      
+[164] rxNumCounter.v_rxNumCounter._assert_82:precondition1            covered         N             8    0.002 s      
+[165] rxNumCounter.v_rxNumCounter._assert_83                          proven          PRE    Infinite    0.000 s      
+[166] rxNumCounter.v_rxNumCounter._assert_83:precondition1            unreachable     PRE    Infinite    0.000 s      
+[167] rxNumCounter.v_rxNumCounter._assert_84                          proven          PRE    Infinite    0.000 s      
+[168] rxNumCounter.v_rxNumCounter._assert_84:precondition1            unreachable     PRE    Infinite    0.000 s      
+[169] rxNumCounter.v_rxNumCounter._assert_85                          cex             N         5 - 7    0.001 s      
+[170] rxNumCounter.v_rxNumCounter._assert_85:precondition1            covered         N         5 - 7    0.001 s      
+[171] rxNumCounter.v_rxNumCounter._assert_86                          proven          PRE    Infinite    0.000 s      
+[172] rxNumCounter.v_rxNumCounter._assert_86:precondition1            unreachable     PRE    Infinite    0.000 s      
+[173] rxNumCounter.v_rxNumCounter._assert_87                          proven          Hp     Infinite    0.016 s      
+[174] rxNumCounter.v_rxNumCounter._assert_87:precondition1            covered         N         5 - 7    0.001 s      
+[175] rxNumCounter.v_rxNumCounter._assert_88                          proven          PRE    Infinite    0.000 s      
+[176] rxNumCounter.v_rxNumCounter._assert_88:precondition1            unreachable     PRE    Infinite    0.000 s      
+[177] rxNumCounter.v_rxNumCounter._assert_89                          proven          Hp     Infinite    0.016 s      
+[178] rxNumCounter.v_rxNumCounter._assert_89:precondition1            covered         N         5 - 8    0.002 s      
+[179] rxNumCounter.v_rxNumCounter._assert_90                          proven          PRE    Infinite    0.000 s      
+[180] rxNumCounter.v_rxNumCounter._assert_90:precondition1            unreachable     PRE    Infinite    0.000 s      
+[181] rxNumCounter.v_rxNumCounter._assert_91                          cex             N         5 - 8    0.002 s      
+[182] rxNumCounter.v_rxNumCounter._assert_91:precondition1            covered         N         5 - 8    0.002 s      
+[183] rxNumCounter.v_rxNumCounter._assert_92                          proven          PRE    Infinite    0.000 s      
+[184] rxNumCounter.v_rxNumCounter._assert_92:precondition1            unreachable     PRE    Infinite    0.000 s      
+[185] rxNumCounter.v_rxNumCounter._assert_93                          proven          PRE    Infinite    0.000 s      
+[186] rxNumCounter.v_rxNumCounter._assert_93:precondition1            unreachable     PRE    Infinite    0.000 s      
+[187] rxNumCounter.v_rxNumCounter._assert_94                          proven          PRE    Infinite    0.000 s      
+[188] rxNumCounter.v_rxNumCounter._assert_94:precondition1            covered         N             9    0.002 s      
+[189] rxNumCounter.v_rxNumCounter._assert_95                          proven          PRE    Infinite    0.000 s      
+[190] rxNumCounter.v_rxNumCounter._assert_95:precondition1            unreachable     PRE    Infinite    0.000 s      
+[191] rxNumCounter.v_rxNumCounter._assert_96                          cex             N             9    0.002 s      
+[192] rxNumCounter.v_rxNumCounter._assert_96:precondition1            covered         N             9    0.002 s      
+[193] rxNumCounter.v_rxNumCounter._assert_97                          cex             N         5 - 9    0.002 s      
+[194] rxNumCounter.v_rxNumCounter._assert_97:precondition1            covered         N         5 - 9    0.002 s      
+[195] rxNumCounter.v_rxNumCounter._assert_98                          proven          PRE    Infinite    0.000 s      
+[196] rxNumCounter.v_rxNumCounter._assert_98:precondition1            unreachable     PRE    Infinite    0.000 s      
+[197] rxNumCounter.v_rxNumCounter._assert_99                          proven          Hp     Infinite    0.017 s      
+[198] rxNumCounter.v_rxNumCounter._assert_99:precondition1            covered         N         5 - 9    0.002 s      
+[199] rxNumCounter.v_rxNumCounter._assert_100                         proven          PRE    Infinite    0.000 s      
+[200] rxNumCounter.v_rxNumCounter._assert_100:precondition1           unreachable     PRE    Infinite    0.000 s      
+[201] rxNumCounter.v_rxNumCounter._assert_101                         proven          PRE    Infinite    0.000 s      
+[202] rxNumCounter.v_rxNumCounter._assert_101:precondition1           unreachable     PRE    Infinite    0.000 s      
+[203] rxNumCounter.v_rxNumCounter._assert_102                         cex             N             1    0.001 s      
+[204] rxNumCounter.v_rxNumCounter._assert_102:precondition1           covered         N             1    0.001 s      
+[205] rxNumCounter.v_rxNumCounter._assert_103                         proven          PRE    Infinite    0.000 s      
+[206] rxNumCounter.v_rxNumCounter._assert_103:precondition1           unreachable     PRE    Infinite    0.000 s      
+[207] rxNumCounter.v_rxNumCounter._assert_104                         cex             N             1    0.001 s      
+[208] rxNumCounter.v_rxNumCounter._assert_104:precondition1           covered         N             1    0.001 s      
+[209] rxNumCounter.v_rxNumCounter._assert_105                         proven          Hp     Infinite    0.017 s      
+[210] rxNumCounter.v_rxNumCounter._assert_105:precondition1           covered         N            10    0.001 s      
+[211] rxNumCounter.v_rxNumCounter._assert_106                         proven          PRE    Infinite    0.000 s      
+[212] rxNumCounter.v_rxNumCounter._assert_106:precondition1           unreachable     PRE    Infinite    0.000 s      
+[213] rxNumCounter.v_rxNumCounter._assert_107                         cex             N            10    0.001 s      
+[214] rxNumCounter.v_rxNumCounter._assert_107:precondition1           covered         N            10    0.001 s      
+[215] rxNumCounter.v_rxNumCounter._assert_108                         proven          PRE    Infinite    0.000 s      
+[216] rxNumCounter.v_rxNumCounter._assert_108:precondition1           unreachable     PRE    Infinite    0.000 s      
+[217] rxNumCounter.v_rxNumCounter._assert_109                         proven          PRE    Infinite    0.000 s      
+[218] rxNumCounter.v_rxNumCounter._assert_109:precondition1           unreachable     PRE    Infinite    0.000 s      
+[219] rxNumCounter.v_rxNumCounter._assert_110                         proven          PRE    Infinite    0.000 s      
+[220] rxNumCounter.v_rxNumCounter._assert_110:precondition1           unreachable     PRE    Infinite    0.000 s      
+[221] rxNumCounter.v_rxNumCounter._assert_111                         proven          PRE    Infinite    0.000 s      
+[222] rxNumCounter.v_rxNumCounter._assert_111:precondition1           unreachable     PRE    Infinite    0.000 s      
+[223] rxNumCounter.v_rxNumCounter._assert_112                         proven          PRE    Infinite    0.000 s      
+[224] rxNumCounter.v_rxNumCounter._assert_112:precondition1           unreachable     PRE    Infinite    0.000 s      
+[225] rxNumCounter.v_rxNumCounter._assert_113                         proven          PRE    Infinite    0.000 s      
+[226] rxNumCounter.v_rxNumCounter._assert_113:precondition1           unreachable     PRE    Infinite    0.000 s      
+[227] rxNumCounter.v_rxNumCounter._assert_114                         proven          PRE    Infinite    0.000 s      
+[228] rxNumCounter.v_rxNumCounter._assert_114:precondition1           unreachable     PRE    Infinite    0.000 s      
+[229] rxNumCounter.v_rxNumCounter._assert_115                         proven          PRE    Infinite    0.000 s      
+[230] rxNumCounter.v_rxNumCounter._assert_115:precondition1           unreachable     PRE    Infinite    0.000 s      
+[231] rxNumCounter.v_rxNumCounter._assert_116                         proven          PRE    Infinite    0.000 s      
+[232] rxNumCounter.v_rxNumCounter._assert_116:precondition1           unreachable     PRE    Infinite    0.000 s      
+[233] rxNumCounter.v_rxNumCounter._assert_117                         proven          PRE    Infinite    0.000 s      
+[234] rxNumCounter.v_rxNumCounter._assert_117:precondition1           unreachable     PRE    Infinite    0.000 s      
+[235] rxNumCounter.v_rxNumCounter._assert_118                         proven          PRE    Infinite    0.000 s      
+[236] rxNumCounter.v_rxNumCounter._assert_118:precondition1           unreachable     PRE    Infinite    0.000 s      
+[237] rxNumCounter.v_rxNumCounter._assert_119                         proven          PRE    Infinite    0.000 s      
+[238] rxNumCounter.v_rxNumCounter._assert_119:precondition1           unreachable     PRE    Infinite    0.000 s      
+[239] rxNumCounter.v_rxNumCounter._assert_120                         proven          PRE    Infinite    0.000 s      
+[240] rxNumCounter.v_rxNumCounter._assert_120:precondition1           unreachable     PRE    Infinite    0.000 s      
+[241] rxNumCounter.v_rxNumCounter._assert_121                         proven          PRE    Infinite    0.000 s      
+[242] rxNumCounter.v_rxNumCounter._assert_121:precondition1           unreachable     PRE    Infinite    0.000 s      
+[243] rxNumCounter.v_rxNumCounter._assert_122                         proven          PRE    Infinite    0.000 s      
+[244] rxNumCounter.v_rxNumCounter._assert_122:precondition1           unreachable     PRE    Infinite    0.000 s      
+[245] rxNumCounter.v_rxNumCounter._assert_123                         proven          PRE    Infinite    0.000 s      
+[246] rxNumCounter.v_rxNumCounter._assert_123:precondition1           unreachable     PRE    Infinite    0.000 s      
+[247] rxNumCounter.v_rxNumCounter._assert_124                         proven          PRE    Infinite    0.000 s      
+[248] rxNumCounter.v_rxNumCounter._assert_124:precondition1           unreachable     PRE    Infinite    0.000 s      
+[249] rxNumCounter.v_rxNumCounter._assert_125                         proven          PRE    Infinite    0.000 s      
+[250] rxNumCounter.v_rxNumCounter._assert_125:precondition1           unreachable     PRE    Infinite    0.000 s      
+[251] rxNumCounter.v_rxNumCounter._assert_126                         proven          PRE    Infinite    0.000 s      
+[252] rxNumCounter.v_rxNumCounter._assert_126:precondition1           unreachable     PRE    Infinite    0.000 s      
+[253] rxNumCounter.v_rxNumCounter._assert_127                         cex             N            13    0.002 s      
+[254] rxNumCounter.v_rxNumCounter._assert_127:precondition1           covered         N        5 - 13    0.002 s      
+[255] rxNumCounter.v_rxNumCounter._assert_128                         proven          PRE    Infinite    0.000 s      
+[256] rxNumCounter.v_rxNumCounter._assert_128:precondition1           unreachable     PRE    Infinite    0.000 s      
+[257] rxNumCounter.v_rxNumCounter._assert_129                         proven          PRE    Infinite    0.000 s      
+[258] rxNumCounter.v_rxNumCounter._assert_129:precondition1           unreachable     PRE    Infinite    0.000 s      
+[259] rxNumCounter.v_rxNumCounter._assert_130                         cex             N        5 - 13    0.002 s      
+[260] rxNumCounter.v_rxNumCounter._assert_130:precondition1           covered         N        5 - 13    0.002 s      
+[261] rxNumCounter.v_rxNumCounter._assert_131                         proven          PRE    Infinite    0.000 s      
+[262] rxNumCounter.v_rxNumCounter._assert_131:precondition1           unreachable     PRE    Infinite    0.000 s      
+[263] rxNumCounter.v_rxNumCounter._assert_132                         proven          PRE    Infinite    0.000 s      
+[264] rxNumCounter.v_rxNumCounter._assert_132:precondition1           unreachable     PRE    Infinite    0.000 s      
+[265] rxNumCounter.v_rxNumCounter._assert_133                         cex             N        5 - 13    0.002 s      
+[266] rxNumCounter.v_rxNumCounter._assert_133:precondition1           covered         N        5 - 13    0.002 s      
+[267] rxNumCounter.v_rxNumCounter._assert_134                         cex             N        5 - 13    0.002 s      
+[268] rxNumCounter.v_rxNumCounter._assert_134:precondition1           covered         N        5 - 13    0.002 s      
+[269] rxNumCounter.v_rxNumCounter._assert_135                         cex             N            13    0.001 s      
+[270] rxNumCounter.v_rxNumCounter._assert_135:precondition1           covered         N        5 - 13    0.001 s      
+[271] rxNumCounter.v_rxNumCounter._assert_136                         cex             N            13    0.001 s      
+[272] rxNumCounter.v_rxNumCounter._assert_136:precondition1           covered         N        5 - 13    0.002 s      
+[273] rxNumCounter.v_rxNumCounter._assert_137                         cex             N        5 - 13    0.001 s      
+[274] rxNumCounter.v_rxNumCounter._assert_137:precondition1           covered         N        5 - 13    0.002 s      
+[275] rxNumCounter.v_rxNumCounter._assert_138                         proven          Hp     Infinite    0.017 s      
+[276] rxNumCounter.v_rxNumCounter._assert_138:precondition1           covered         N        5 - 13    0.002 s      
+[277] rxNumCounter.v_rxNumCounter._assert_139                         cex             N            13    0.002 s      
+[278] rxNumCounter.v_rxNumCounter._assert_139:precondition1           covered         N        5 - 13    0.002 s      
+[279] rxNumCounter.v_rxNumCounter._assert_140                         cex             N            13    0.001 s      
+[280] rxNumCounter.v_rxNumCounter._assert_140:precondition1           covered         N        5 - 13    0.002 s      
+[281] rxNumCounter.v_rxNumCounter._assert_141                         cex             N            13    0.001 s      
+[282] rxNumCounter.v_rxNumCounter._assert_141:precondition1           covered         N        5 - 13    0.001 s      
+[283] rxNumCounter.v_rxNumCounter._assert_142                         cex             N        5 - 13    0.001 s      
+[284] rxNumCounter.v_rxNumCounter._assert_142:precondition1           covered         N        5 - 13    0.002 s      
+[285] rxNumCounter.v_rxNumCounter._assert_143                         cex             N        5 - 13    0.001 s      
+[286] rxNumCounter.v_rxNumCounter._assert_143:precondition1           covered         N        5 - 13    0.002 s      
+[287] rxNumCounter.v_rxNumCounter._assert_144                         cex             N            13    0.001 s      
+[288] rxNumCounter.v_rxNumCounter._assert_144:precondition1           covered         N        5 - 13    0.001 s      
+[289] rxNumCounter.v_rxNumCounter._assert_145                         cex             N            13    0.001 s      
+[290] rxNumCounter.v_rxNumCounter._assert_145:precondition1           covered         N        5 - 13    0.002 s      
+[291] rxNumCounter.v_rxNumCounter._assert_146                         cex             N        5 - 13    0.002 s      
+[292] rxNumCounter.v_rxNumCounter._assert_146:precondition1           covered         N        5 - 13    0.002 s      
+[293] rxNumCounter.v_rxNumCounter._assert_147                         cex             N        6 - 13    0.001 s      
+[294] rxNumCounter.v_rxNumCounter._assert_147:precondition1           covered         N        5 - 13    0.002 s      
+[295] rxNumCounter.v_rxNumCounter._assert_148                         cex             N        5 - 13    0.002 s      
+[296] rxNumCounter.v_rxNumCounter._assert_148:precondition1           covered         N        5 - 13    0.002 s      
+[297] rxNumCounter.v_rxNumCounter._assert_149                         cex             N        5 - 13    0.001 s      
+[298] rxNumCounter.v_rxNumCounter._assert_149:precondition1           covered         N        5 - 13    0.002 s      
+[299] rxNumCounter.v_rxNumCounter._assert_150                         cex             N        5 - 13    0.001 s      
+[300] rxNumCounter.v_rxNumCounter._assert_150:precondition1           covered         N        5 - 13    0.002 s      
+[301] rxNumCounter.v_rxNumCounter._assert_151                         cex             N        5 - 13    0.001 s      
+[302] rxNumCounter.v_rxNumCounter._assert_151:precondition1           covered         N        5 - 13    0.002 s      
+[303] rxNumCounter.v_rxNumCounter._assert_152                         cex             N        5 - 13    0.001 s      
+[304] rxNumCounter.v_rxNumCounter._assert_152:precondition1           covered         N        5 - 13    0.002 s      
+[305] rxNumCounter.v_rxNumCounter._assert_153                         cex             N        5 - 13    0.002 s      
+[306] rxNumCounter.v_rxNumCounter._assert_153:precondition1           covered         N        5 - 13    0.002 s      
+[307] rxNumCounter.v_rxNumCounter._assert_154                         cex             N            13    0.001 s      
+[308] rxNumCounter.v_rxNumCounter._assert_154:precondition1           covered         N        5 - 13    0.002 s      
+[309] rxNumCounter.v_rxNumCounter._assert_155                         cex             N            13    0.002 s      
+[310] rxNumCounter.v_rxNumCounter._assert_155:precondition1           covered         N        7 - 13    0.002 s      
+[311] rxNumCounter.v_rxNumCounter._assert_156                         cex             N        5 - 13    0.002 s      
+[312] rxNumCounter.v_rxNumCounter._assert_156:precondition1           covered         N        5 - 13    0.002 s      
+[313] rxNumCounter.v_rxNumCounter._assert_157                         cex             N        5 - 13    0.002 s      
+[314] rxNumCounter.v_rxNumCounter._assert_157:precondition1           covered         N        5 - 13    0.002 s      
+[315] rxNumCounter.v_rxNumCounter._assert_158                         cex             N            13    0.001 s      
+[316] rxNumCounter.v_rxNumCounter._assert_158:precondition1           covered         N        7 - 13    0.001 s      
+[317] rxNumCounter.v_rxNumCounter._assert_159                         cex             Ht           13    0.002 s      
+[318] rxNumCounter.v_rxNumCounter._assert_159:precondition1           covered         N        7 - 13    0.002 s      
+[319] rxNumCounter.v_rxNumCounter._assert_160                         cex             N        7 - 13    0.002 s      
+[320] rxNumCounter.v_rxNumCounter._assert_160:precondition1           covered         N        7 - 13    0.002 s      
+[321] rxNumCounter.v_rxNumCounter._assert_161                         cex             N        6 - 13    0.001 s      
+[322] rxNumCounter.v_rxNumCounter._assert_161:precondition1           covered         N        5 - 13    0.001 s      
+[323] rxNumCounter.v_rxNumCounter._assert_162                         cex             Ht           13    0.006 s      
+[324] rxNumCounter.v_rxNumCounter._assert_162:precondition1           covered         N        5 - 13    0.002 s      
+[325] rxNumCounter.v_rxNumCounter._assert_163                         cex             N        5 - 13    0.002 s      
+[326] rxNumCounter.v_rxNumCounter._assert_163:precondition1           covered         N        5 - 13    0.002 s      
+[327] rxNumCounter.v_rxNumCounter._assert_164                         cex             Ht           13    0.006 s      
+[328] rxNumCounter.v_rxNumCounter._assert_164:precondition1           covered         N        7 - 13    0.001 s      
+[329] rxNumCounter.v_rxNumCounter._assert_165                         cex             N        7 - 13    0.001 s      
+[330] rxNumCounter.v_rxNumCounter._assert_165:precondition1           covered         N        7 - 13    0.001 s      
+[331] rxNumCounter.v_rxNumCounter._assert_166                         cex             Ht           13    0.009 s      
+[332] rxNumCounter.v_rxNumCounter._assert_166:precondition1           covered         N        7 - 13    0.001 s      
+[333] rxNumCounter.v_rxNumCounter._assert_167                         cex             N        5 - 13    0.002 s      
+[334] rxNumCounter.v_rxNumCounter._assert_167:precondition1           covered         N        5 - 13    0.002 s      
+[335] rxNumCounter.v_rxNumCounter._assert_168                         cex             Ht           13    0.012 s      
+[336] rxNumCounter.v_rxNumCounter._assert_168:precondition1           covered         N        5 - 13    0.002 s      
+[337] rxNumCounter.v_rxNumCounter._assert_169                         cex             N        5 - 13    0.002 s      
+[338] rxNumCounter.v_rxNumCounter._assert_169:precondition1           covered         N        5 - 13    0.001 s      
+[339] rxNumCounter.v_rxNumCounter._assert_170                         cex             N        7 - 13    0.001 s      
+[340] rxNumCounter.v_rxNumCounter._assert_170:precondition1           covered         N        5 - 13    0.001 s      
+[341] rxNumCounter.v_rxNumCounter._assert_171                         cex             N        7 - 13    0.002 s      
+[342] rxNumCounter.v_rxNumCounter._assert_171:precondition1           covered         N        7 - 13    0.002 s      
+[343] rxNumCounter.v_rxNumCounter._assert_172                         cex             N        5 - 13    0.001 s      
+[344] rxNumCounter.v_rxNumCounter._assert_172:precondition1           covered         N        5 - 13    0.001 s      
+[345] rxNumCounter.v_rxNumCounter._assert_173                         cex             N        5 - 13    0.002 s      
+[346] rxNumCounter.v_rxNumCounter._assert_173:precondition1           covered         N        5 - 13    0.002 s      
+[347] rxNumCounter.v_rxNumCounter._assert_174                         cex             N        5 - 13    0.002 s      
+[348] rxNumCounter.v_rxNumCounter._assert_174:precondition1           covered         N        5 - 13    0.002 s      
+[349] rxNumCounter.v_rxNumCounter._assert_175                         proven          PRE    Infinite    0.000 s      
+[350] rxNumCounter.v_rxNumCounter._assert_175:precondition1           unreachable     PRE    Infinite    0.000 s      
+[351] rxNumCounter.v_rxNumCounter._assert_176                         cex             Ht           13    0.012 s      
+[352] rxNumCounter.v_rxNumCounter._assert_176:precondition1           covered         N        5 - 13    0.002 s      
+[353] rxNumCounter.v_rxNumCounter._assert_177                         proven          PRE    Infinite    0.000 s      
+[354] rxNumCounter.v_rxNumCounter._assert_177:precondition1           unreachable     PRE    Infinite    0.000 s      
+[355] rxNumCounter.v_rxNumCounter._assert_178                         cex             Ht           14    0.015 s      
+[356] rxNumCounter.v_rxNumCounter._assert_178:precondition1           covered         Ht           14    0.024 s      
+[357] rxNumCounter.v_rxNumCounter._assert_179                         cex             Ht           14    0.026 s      
+[358] rxNumCounter.v_rxNumCounter._assert_179:precondition1           covered         Ht           14    0.024 s      
+[359] rxNumCounter.v_rxNumCounter._assert_180                         cex             N        5 - 13    0.002 s      
+[360] rxNumCounter.v_rxNumCounter._assert_180:precondition1           covered         N        5 - 13    0.002 s      
+[361] rxNumCounter.v_rxNumCounter._assert_181                         cex             Ht           13    0.012 s      
+[362] rxNumCounter.v_rxNumCounter._assert_181:precondition1           covered         Ht           13    0.002 s      
+[363] rxNumCounter.v_rxNumCounter._assert_182                         cex             N        5 - 13    0.001 s      
+[364] rxNumCounter.v_rxNumCounter._assert_182:precondition1           covered         N        5 - 13    0.001 s      
+[365] rxNumCounter.v_rxNumCounter._assert_183                         cex             N        5 - 13    0.002 s      
+[366] rxNumCounter.v_rxNumCounter._assert_183:precondition1           covered         N        5 - 13    0.002 s      
+[367] rxNumCounter.v_rxNumCounter._assert_184                         cex             N        5 - 13    0.002 s      
+[368] rxNumCounter.v_rxNumCounter._assert_184:precondition1           covered         N        5 - 13    0.002 s      
+[369] rxNumCounter.v_rxNumCounter._assert_185                         cex             N        5 - 13    0.002 s      
+[370] rxNumCounter.v_rxNumCounter._assert_185:precondition1           covered         N        5 - 13    0.002 s      
+[371] rxNumCounter.v_rxNumCounter._assert_186                         proven          PRE    Infinite    0.000 s      
+[372] rxNumCounter.v_rxNumCounter._assert_186:precondition1           unreachable     PRE    Infinite    0.000 s      
+[373] rxNumCounter.v_rxNumCounter._assert_187                         cex             Ht           14    0.028 s      
+[374] rxNumCounter.v_rxNumCounter._assert_187:precondition1           covered         Ht           14    0.024 s      
+[375] rxNumCounter.v_rxNumCounter._assert_188                         cex             N        5 - 13    0.001 s      
+[376] rxNumCounter.v_rxNumCounter._assert_188:precondition1           covered         N        5 - 13    0.001 s      
+[377] rxNumCounter.v_rxNumCounter._assert_189                         cex             N        5 - 13    0.002 s      
+[378] rxNumCounter.v_rxNumCounter._assert_189:precondition1           covered         N        5 - 13    0.002 s      
+[379] rxNumCounter.v_rxNumCounter._assert_190                         cex             Ht           13    0.002 s      
+[380] rxNumCounter.v_rxNumCounter._assert_190:precondition1           covered         Ht           13    0.002 s      
+[381] rxNumCounter.v_rxNumCounter._assert_191                         cex             N        5 - 13    0.002 s      
+[382] rxNumCounter.v_rxNumCounter._assert_191:precondition1           covered         N        5 - 13    0.002 s      
+[383] rxNumCounter.v_rxNumCounter._assert_192                         cex             Ht           14    0.024 s      
+[384] rxNumCounter.v_rxNumCounter._assert_192:precondition1           covered         Ht           14    0.024 s      
+[385] rxNumCounter.v_rxNumCounter._assert_193                         cex             N        5 - 13    0.002 s      
+[386] rxNumCounter.v_rxNumCounter._assert_193:precondition1           covered         N        5 - 13    0.002 s      
+[387] rxNumCounter.v_rxNumCounter._assert_194                         cex             N        5 - 13    0.002 s      
+[388] rxNumCounter.v_rxNumCounter._assert_194:precondition1           covered         N        5 - 13    0.002 s      
+[389] rxNumCounter.v_rxNumCounter._assert_195                         proven          PRE    Infinite    0.000 s      
+[390] rxNumCounter.v_rxNumCounter._assert_195:precondition1           unreachable     PRE    Infinite    0.000 s      
+[391] rxNumCounter.v_rxNumCounter._assert_196                         cex             N        5 - 13    0.002 s      
+[392] rxNumCounter.v_rxNumCounter._assert_196:precondition1           covered         N        5 - 13    0.002 s      
+[393] rxNumCounter.v_rxNumCounter._assert_197                         cex             Ht           13    0.006 s      
+[394] rxNumCounter.v_rxNumCounter._assert_197:precondition1           covered         N        5 - 13    0.002 s      
+[395] rxNumCounter.v_rxNumCounter._assert_198                         cex             Ht           13    0.009 s      
+[396] rxNumCounter.v_rxNumCounter._assert_198:precondition1           covered         Ht           13    0.002 s      
+[397] rxNumCounter.v_rxNumCounter._assert_199                         cex             N        5 - 13    0.001 s      
+[398] rxNumCounter.v_rxNumCounter._assert_199:precondition1           covered         N        5 - 13    0.001 s      
+[399] rxNumCounter.v_rxNumCounter._assert_200                         cex             N        5 - 13    0.001 s      
+[400] rxNumCounter.v_rxNumCounter._assert_200:precondition1           covered         N        5 - 13    0.001 s      
+[401] rxNumCounter.v_rxNumCounter._assert_201                         cex             N        5 - 13    0.002 s      
+[402] rxNumCounter.v_rxNumCounter._assert_201:precondition1           covered         N        5 - 13    0.002 s      
+[403] rxNumCounter.v_rxNumCounter._assert_202                         cex             Ht           13    0.006 s      
+[404] rxNumCounter.v_rxNumCounter._assert_202:precondition1           covered         Ht           13    0.002 s      
+[405] rxNumCounter.v_rxNumCounter._assert_203                         proven          PRE    Infinite    0.000 s      
+[406] rxNumCounter.v_rxNumCounter._assert_203:precondition1           unreachable     PRE    Infinite    0.000 s      
+[407] rxNumCounter.v_rxNumCounter._assert_204                         proven          PRE    Infinite    0.000 s      
+[408] rxNumCounter.v_rxNumCounter._assert_204:precondition1           unreachable     PRE    Infinite    0.000 s      
+[409] rxNumCounter.v_rxNumCounter._assert_205                         proven          PRE    Infinite    0.000 s      
+[410] rxNumCounter.v_rxNumCounter._assert_205:precondition1           unreachable     PRE    Infinite    0.000 s      
+[411] rxNumCounter.v_rxNumCounter._assert_206                         proven          PRE    Infinite    0.000 s      
+[412] rxNumCounter.v_rxNumCounter._assert_206:precondition1           unreachable     PRE    Infinite    0.000 s      
+[413] rxNumCounter.v_rxNumCounter._assert_207                         proven          PRE    Infinite    0.000 s      
+[414] rxNumCounter.v_rxNumCounter._assert_207:precondition1           unreachable     PRE    Infinite    0.000 s      
+[415] rxNumCounter.v_rxNumCounter._assert_208                         proven          PRE    Infinite    0.000 s      
+[416] rxNumCounter.v_rxNumCounter._assert_208:precondition1           unreachable     PRE    Infinite    0.000 s      
+[417] rxNumCounter.v_rxNumCounter._assert_209                         proven          PRE    Infinite    0.000 s      
+[418] rxNumCounter.v_rxNumCounter._assert_209:precondition1           unreachable     PRE    Infinite    0.000 s      
+[419] rxNumCounter.v_rxNumCounter._assert_210                         proven          PRE    Infinite    0.000 s      
+[420] rxNumCounter.v_rxNumCounter._assert_210:precondition1           unreachable     PRE    Infinite    0.000 s      
+[421] rxNumCounter.v_rxNumCounter._assert_211                         proven          PRE    Infinite    0.000 s      
+[422] rxNumCounter.v_rxNumCounter._assert_211:precondition1           unreachable     PRE    Infinite    0.000 s      
+[423] rxNumCounter.v_rxNumCounter._assert_212                         proven          PRE    Infinite    0.000 s      
+[424] rxNumCounter.v_rxNumCounter._assert_212:precondition1           unreachable     PRE    Infinite    0.000 s      
+[425] rxNumCounter.v_rxNumCounter._assert_213                         proven          PRE    Infinite    0.000 s      
+[426] rxNumCounter.v_rxNumCounter._assert_213:precondition1           unreachable     PRE    Infinite    0.000 s      
+[427] rxNumCounter.v_rxNumCounter._assert_214                         proven          PRE    Infinite    0.000 s      
+[428] rxNumCounter.v_rxNumCounter._assert_214:precondition1           unreachable     PRE    Infinite    0.000 s      
+[429] rxNumCounter.v_rxNumCounter._assert_215                         proven          PRE    Infinite    0.000 s      
+[430] rxNumCounter.v_rxNumCounter._assert_215:precondition1           unreachable     PRE    Infinite    0.000 s      
+[431] rxNumCounter.v_rxNumCounter._assert_216                         proven          PRE    Infinite    0.000 s      
+[432] rxNumCounter.v_rxNumCounter._assert_216:precondition1           unreachable     PRE    Infinite    0.000 s      
+[433] rxNumCounter.v_rxNumCounter._assert_217                         proven          PRE    Infinite    0.000 s      
+[434] rxNumCounter.v_rxNumCounter._assert_217:precondition1           unreachable     PRE    Infinite    0.000 s      
+[435] rxNumCounter.v_rxNumCounter._assert_218                         proven          PRE    Infinite    0.000 s      
+[436] rxNumCounter.v_rxNumCounter._assert_218:precondition1           unreachable     PRE    Infinite    0.000 s      
+[437] rxNumCounter.v_rxNumCounter._assert_219                         proven          PRE    Infinite    0.000 s      
+[438] rxNumCounter.v_rxNumCounter._assert_219:precondition1           unreachable     PRE    Infinite    0.000 s      
+[439] rxNumCounter.v_rxNumCounter._assert_220                         proven          PRE    Infinite    0.000 s      
+[440] rxNumCounter.v_rxNumCounter._assert_220:precondition1           unreachable     PRE    Infinite    0.000 s      
+[441] rxNumCounter.v_rxNumCounter._assert_221                         proven          PRE    Infinite    0.000 s      
+[442] rxNumCounter.v_rxNumCounter._assert_221:precondition1           unreachable     PRE    Infinite    0.000 s      
+[443] rxNumCounter.v_rxNumCounter._assert_222                         proven          PRE    Infinite    0.000 s      
+[444] rxNumCounter.v_rxNumCounter._assert_222:precondition1           unreachable     PRE    Infinite    0.000 s      
+[445] rxNumCounter.v_rxNumCounter._assert_223                         proven          PRE    Infinite    0.000 s      
+[446] rxNumCounter.v_rxNumCounter._assert_223:precondition1           unreachable     PRE    Infinite    0.000 s      
+[447] rxNumCounter.v_rxNumCounter._assert_224                         proven          PRE    Infinite    0.000 s      
+[448] rxNumCounter.v_rxNumCounter._assert_224:precondition1           unreachable     PRE    Infinite    0.000 s      
+[449] rxNumCounter.v_rxNumCounter._assert_225                         proven          PRE    Infinite    0.000 s      
+[450] rxNumCounter.v_rxNumCounter._assert_225:precondition1           unreachable     PRE    Infinite    0.000 s      
+[451] rxNumCounter.v_rxNumCounter._assert_226                         proven          PRE    Infinite    0.000 s      
+[452] rxNumCounter.v_rxNumCounter._assert_226:precondition1           unreachable     PRE    Infinite    0.000 s      
+
+==============================================================
+ASSUMPTIONS
+==============================================================
+
+-------------------------------------------------------------------------------
+       Name    |  Expression  |  Location     |  Status      |  Dependencies                  
+-------------------------------------------------------------------------------
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.
+INFO (IPL018): The peak resident set memory use for this session was 0.388 GB.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

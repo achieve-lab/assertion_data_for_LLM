@@ -1,0 +1,22 @@
+bind rxLenTypChecker
+ i_rxLenTypChecker v_rxLenTypChecker(
+.length_65_127(length_65_127),
+.length_1024_max(length_1024_max),
+.large_error(large_error),
+.vlan_enable(vlan_enable),
+.length_512_1023(length_512_1023),
+.frame_cnt(frame_cnt),
+.length_128_255(length_128_255),
+.jumbo_enable(jumbo_enable),
+.length_error(length_error),
+.small_error(small_error),
+.rxclk(rxclk),
+.location_reg(location_reg),
+.length_256_511(length_256_511),
+.tagged_frame(tagged_frame),
+.reset(reset),
+.get_terminator(get_terminator),
+.jumbo_frame(jumbo_frame),
+.padded_frame(padded_frame),
+.terminator_location(terminator_location)
+);

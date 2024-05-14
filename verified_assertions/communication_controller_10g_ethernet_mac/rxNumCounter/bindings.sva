@@ -1,0 +1,7 @@
+bind rxNumCounter
+ i_rxNumCounter v_rxNumCounter(
+.rxclk(rxclk),
+.frame_cnt(frame_cnt),
+.receiving(receiving),
+.reset(reset)
+);

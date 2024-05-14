@@ -1,0 +1,1594 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-05-13 13:03:49 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 111273
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:38917' '-nowindow' '-style' 'windows' '-data' 'AAABCHicVY5NCsIwEIW/WCzSRY/gAQQ9Qdduqwhui9QfFDGltgpu9Ki9SXwpVsgbMpO8+SaJAbK3c45e0UspJmep+Mt0v01mCOXPo9BZf4IK42F4QGKtlDk3LAUnWs5yZnJ2XBWWp/xW/btypbDUNBzYy8/ZiJ6IPqrz0H6qv67YqleK9HOerVmolroPEtGVHMulfzvkvL5Ivx/a' '-proj' '/data/vpulav2/Work/Jasper/counter/counter/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper/counter/counter/.tmp/.initCmds.tcl' 'FPV_counter.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper/counter/counter/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/counter.v
+[-- (VERI-1482)] Analyzing Verilog file './/counter.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top counter
+INFO (ISW003): Top module name is "counter".
+[WARN (VERI-2418)] .//property.sva(1): parameter 'WIDTH' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[INFO (HIER-8002)] .//counter.v(75): Disabling old hierarchical reference handler
+[INFO (VERI-1018)] .//property.sva(2): compiling module 'i_counter'
+[INFO (VERI-1018)] .//counter.v(54): compiling module 'counter'
+[WARN (VERI-1209)] .//counter.v(72): expression size 32 truncated to fit in target size 8
+INFO (INL208): Elaboration synthesis summary:
+  Number of synthesized netlists          3 (1 packages)
+  Single run mode                         On
+  Pipeline                                On (2 pipelined netlists)
+  Late hierarchical reference connection  On
+  Number of analyzed Verilog modules      3 (3 synthesized)
+  Number of analyzed VHDL entities        0 (0 synthesized)
+INFO (INL003): Clearing all state information (assumes, stopats, and so forth).
+counter
+[<embedded>] % 
+[<embedded>] % # Set up Clocks and Resets
+[<embedded>] % clock clk
+[<embedded>] % reset reset
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "reset".
+[<embedded>] % 
+[<embedded>] % # Get design information to check general complexity
+[<embedded>] % get_design_info
+Statistics [for instance "counter"]
+--------------------------
+# Flops:         1 (846) (838 property flop bits)
+# Latches:       0 (0)
+# Gates:         4394 (34025)
+# Nets:          4422
+# Ports:         5
+# RTL Lines:     225
+# RTL Instances: 2
+# Embedded Assumptions: 0
+# Embedded Assertions:  194
+# Embedded Covers:      194
+846
+[<embedded>] % 
+[<embedded>] % # Prove properties
+[<embedded>] % prove -all
+Ncustom1: Custom engine code is hT3Ng7hPPfiYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSl+CwjiTMAQA
+Bcustom2: Custom engine code is hT3Nm7hPr1Vp3Di1Ra2USNIGL4JypRnLKLAdF6JAyuavO2JfGCiY9OZJhcAcOUnLx5xwNdhILGrAWX9s+z2WDkKwNR7tAfClBEjRFVQeq6DU54boFgEA
+AMcustom3: Custom engine code is hT3Ng7hP/feYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSmmqwm7g9AQA
+Mpcustom4: Custom engine code is hT3NZbhP9fmY2AbBQnsjfOxn6c+6e6yL+/e8fZFmaQrnlgEA
+INFO (IPF036): Starting proof on task: "<embedded>", 388 properties to prove with 0 already proven/unreachable
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis: phase 2 of 4.
+INFO (IRS031): Running reset analysis: phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 4 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 iterations. Assigned values for 8 of 8 design flops, 0 of 0 design latches, 1226 of 1226 internal elements.
+INFO (IRS039): Reset analysis complete.
+INFO (IPF031): Settings used for proof thread 0:
+    orchestration                 = on
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = auto
+    proofgrid_per_engine_max_jobs = 1
+    max engine jobs               = auto
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "counter.v_counter._assert_189" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "counter.v_counter._assert_189:precondition1" was proven unreachable in 0.00 s.
+0: Found proofs for 2 properties in preprocessing
+0: Using multistage preprocessing
+0: Starting reduce
+0: Finished reduce in 0.002s
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "counter.v_counter._assert_132" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "counter.v_counter._assert_132:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "counter.v_counter._assert_133" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "counter.v_counter._assert_133:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "counter.v_counter._assert_152" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "counter.v_counter._assert_152:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "counter.v_counter._assert_165" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "counter.v_counter._assert_165:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "counter.v_counter._assert_166" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "counter.v_counter._assert_166:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "counter.v_counter._assert_169" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "counter.v_counter._assert_169:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "counter.v_counter._assert_177" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "counter.v_counter._assert_177:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "counter.v_counter._assert_178" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "counter.v_counter._assert_178:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "counter.v_counter._assert_179" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "counter.v_counter._assert_179:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "counter.v_counter._assert_187" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "counter.v_counter._assert_187:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "counter.v_counter._assert_188" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "counter.v_counter._assert_188:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "counter.v_counter._assert_190" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "counter.v_counter._assert_190:precondition1" was proven unreachable in 0.00 s.
+0: Found proofs for 24 properties in preprocessing
+0.0.PRE: Performing Proof Simplification...
+0.0.N: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: Proof Simplification Iteration 1	[0.00 s]
+0.0.PRE: A trace with 1 cycles was found. [0.00 s]
+AMcustom5: Custom engine code is hT3N1rhP11/52HrFRS21ROp2LOjVTgPvT8L8BGXHgLhaIuqtT4nARFjUqrBL+7pLmaTOzBepZW/Jm8SSrHDybSQtoNiO3y43wk+dEoWlsZizu97Fih6O6lPVG/LpWP5SsUPwlGagLNa1FKEFvwVXyX7//8prySbvSxIHXr5er+z4RAEA
+Ncustom6: Custom engine code is hT3OXrhPByJp3TrFSTLhUmMH4KVtJgmTCnNDF46yMXOKY48m4LS5nE7yBzFjA7kDuwO/GhGUpEPiky3p3wmPn3dJZHxFMsafSoObRzSC+tn7sEY0WbTdZ/FV4hL3MYH/b1CIUvXSWR4wqEoVLsmMOD4xIPT4lI1LO6ZCO7PnnWQuLwetnvKlrXx6wCW/A+x+enqslg1YPobi4wEF/EvbzOvcTYdJvl2s4H2yZg2b2ofAVN5WvhWk1HoBAA
+ADcustom7: Custom engine code is hT3Nv7hPv1752HrFRa2kROx2f/ECJeZB2AZsLdlO8VwmIuqtT4nIDFXclhg+O+o+DMmQCekbheGk0kK28laA9gaOFDXsQp29J3X615HY1IPHJWd6FUFvCHjO+p1k652b5JJvZlShNpGlGSXAiQe/mEAj6tEBAA
+Tricustom8: Custom engine code is hT3Nu7hPt1752DvFRa0kNDiyIV97VyejwM9C/jCLJjdPvusZONHY42VYUy0Q1ZotnhcVtNc56tJ5wbxv6V2+XpdsaSlHck5vfnbYjdwj1OECy9U+7oSQ0SZE3g5ayD+Phuh4odCJTjeKa2k4elM9ldQfkAEA
+Gcustom9: Custom engine code is hT3NibhPDfeYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncipMGcUXqAadachREE9F2PwhBUZUNw5kHnd4JdXkamORRgEA
+C2custom10: Custom engine code is hT3NirhPjfWYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncgkrYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuG86XYVV00BAA
+AGcustom11: Custom engine code is hT3NirhP/fmYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInnckcwYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuHEZnZByh0BAA
+Bcustom12: Custom engine code is hT3NjrhPDfiYQADBZnYcglOvK9PfWxFtenjIyBqfrgr7if/jL/yPOuK1BAflEcW0DxNH2eDIoezN2gxlQFg81RZtiWXh7aiTAidvAQA
+Ncustom13: Custom engine code is hT3NR7hPByFp3TrFSTLhUmMH4KWtJglTyV/c51BHEeZWamnJv767nE6PCak26bd3gf3XGN3rIRheufhDieCJQVISo+gNYUKhiUedBKGtsP/a18svAnlMJZudHxDFwK5ufsyoxsIyiAeSY2oi3tEuoDHr5gw42DFKAG3PqO3CEsl8Azzdt3pl5nGA1Ifv2H02eYsFzWb/nfp8PMb3F0krE/EgBcm8TD9Div8BAA
+Tricustom14: Custom engine code is hT3Nu7hP3fiYQADBZnYcglNHp9bfd7EOeniIqP/ji8sGLQu8yhsFO+wxJ+O+R0bU8g/IewXFomyos+viQnWc2xYNYmMqpo3i40O7DaZR7qfp4YqNx26KRvQ/qx0BAA
+INFO (IPF047): 0.0.PRE: The cover property "counter.v_counter._assert_1:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.N: Proof Simplification Iteration 2	[0.02 s]
+0.0.N: Proof Simplification Iteration 3	[0.02 s]
+0.0.N: Proof Simplification Iteration 4	[0.02 s]
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property ":noDeadEnd" was proven in 0.00 s.
+    Use check_assumptions -show -dead_end to show this property in the property table.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property ":noConflict" was proven in 0.00 s.
+    Use check_assumptions -show to show this property in the property table.
+INFO (IPF047): 0.0.PRE: The cover property ":live" was covered in 1 cycles in 0.00 s.
+    Use check_assumptions -show -live to show this property in the property table.
+0.0.PRE: Proof Simplification completed in 0.05 s
+0.0.N: Identified and disabled 83 duplicated targets.
+0: About to start ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+0: =============================== ProofGrid start ===============================
+0: ProofGrid usable level: 278
+0: Initial ProofGrid level: 1
+0: ProofGrid is starting event handling
+0.0.Hp: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.N: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Hp: Proofgrid shell started at 111360@pal-achieve-06(local) jg_111273_pal-achieve-06_1
+0.0.N: Proofgrid shell started at 111359@pal-achieve-06(local) jg_111273_pal-achieve-06_1
+0.0.N: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.N: Starting proof for property "counter.v_counter._assert_1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "counter.v_counter._assert_1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "counter.v_counter._assert_1" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_2:precondition1" was covered in 2 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_3:precondition1" was covered in 2 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_4:precondition1" was covered in 2 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_1".
+0.0.N: Stopped processing property "counter.v_counter._assert_1"	[0.00 s].
+0.0.Hp: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hp: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_2" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_3" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_4" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_5" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_6" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_7" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_8" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_9" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_10" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_11" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_12" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_13" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_15" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_16" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_17" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_18" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_22" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_24" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_26" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_28" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_35" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_36" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_41" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_42" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_43" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_45" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_49" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_51" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_52" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_56" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_67" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_81" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_91" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_110" was proven in 0.04 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_112" was proven in 0.06 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_144" was proven in 0.06 s.
+0.0.Hp: A proof was found: No trace exists. [0.01 s]
+INFO (IPF057): 0.0.Hp: The property "counter.v_counter._assert_149" was proven in 0.06 s.
+0.0.N: Starting proof for property "counter.v_counter._assert_5:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "counter.v_counter._assert_5:precondition1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: A trace with 3 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_5:precondition1" was covered in 3 cycles in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_6:precondition1" was covered in 3 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_5:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_7:precondition1" was covered in 3 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_5:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_8:precondition1" was covered in 3 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_5:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_9:precondition1" was covered in 3 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_5:precondition1".
+0.0.N: Stopped processing property "counter.v_counter._assert_5:precondition1"	[0.00 s].
+0: ProofGrid usable level: 235
+0.0.N: Starting proof for property "counter.v_counter._assert_10:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "counter.v_counter._assert_10:precondition1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: A trace with 4 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_10:precondition1" was covered in 4 cycles in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_11:precondition1" was covered in 4 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_10:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_12:precondition1" was covered in 4 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_10:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_13:precondition1" was covered in 4 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_10:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_14:precondition1" was covered in 4 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_10:precondition1".
+0.0.N: Stopped processing property "counter.v_counter._assert_10:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_14"	[0.00 s].
+0: ProofGrid usable level: 233
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "counter.v_counter._assert_14" in 0.02 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: A trace with 4 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 4 cycles was found for the property "counter.v_counter._assert_14" in 0.02 s.
+0.0.N: Stopped processing property "counter.v_counter._assert_14"	[0.02 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_15:precondition1"	[0.00 s].
+0: ProofGrid usable level: 232
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "counter.v_counter._assert_15:precondition1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: A trace with 5 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_15:precondition1" was covered in 5 cycles in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_26:precondition1" was covered in 5 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_15:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_28:precondition1" was covered in 5 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_15:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_30:precondition1" was covered in 5 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_15:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_32:precondition1" was covered in 5 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_15:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_154:precondition1" was covered in 5 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_15:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_41:precondition1" was covered in 5 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_15:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_51:precondition1" was covered in 5 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_15:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_157:precondition1" was covered in 5 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_15:precondition1".
+0.0.N: Stopped processing property "counter.v_counter._assert_15:precondition1"	[0.00 s].
+0.0.Hp: Trace Attempt  1	[0.12 s]
+0.0.Hp: Trace Attempt  2	[0.12 s]
+0.0.N: Starting proof for property "counter.v_counter._assert_16:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "counter.v_counter._assert_16:precondition1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  6	[0.00 s]
+0.0.N: A trace with 6 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_16:precondition1" was covered in 6 cycles in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_22:precondition1" was covered in 6 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_16:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_52:precondition1" was covered in 6 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_16:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_60:precondition1" was covered in 6 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_16:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_62:precondition1" was covered in 6 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_16:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_67:precondition1" was covered in 6 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_16:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_156:precondition1" was covered in 6 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_16:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_63:precondition1" was covered in 6 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_16:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_84:precondition1" was covered in 6 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_16:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_64:precondition1" was covered in 6 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_16:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_83:precondition1" was covered in 6 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_16:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_81:precondition1" was covered in 6 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_16:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_110:precondition1" was covered in 6 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_16:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_149:precondition1" was covered in 6 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_16:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_175:precondition1" was covered in 6 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_16:precondition1".
+0.0.N: Stopped processing property "counter.v_counter._assert_16:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_17:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_18:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "counter.v_counter._assert_17:precondition1" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "counter.v_counter._assert_18:precondition1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  7	[0.00 s]
+0.0.N: A trace with 7 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_17:precondition1" was covered in 7 cycles in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_20:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_17:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_24:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_17:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_56:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_17:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_57:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_17:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_58:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_17:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_59:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_17:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_61:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_17:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_18:precondition1" was covered in 7 cycles in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_91:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_17:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_112:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_17:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_144:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_17:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_168:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_17:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_66:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_17:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_94:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_17:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_108:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_17:precondition1".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_142:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_17:precondition1".
+0.0.N: Stopped processing property "counter.v_counter._assert_17:precondition1"	[0.00 s].
+0.0.N: Stopped processing property "counter.v_counter._assert_18:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_19"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 1024 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 1024 was found for the property "counter.v_counter._assert_19" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  8	[0.00 s]
+0.0.N: A trace with 8 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_19" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_19:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_29" in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_29:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_38" in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_47:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "counter.v_counter._assert_57" in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "counter.v_counter._assert_58" in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "counter.v_counter._assert_59" in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_85" in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_85:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "counter.v_counter._assert_94" in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_95" in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_101:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_102:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_127" in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_127:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_138" in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 6 cycles was found for the property "counter.v_counter._assert_154" in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_155" in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 6 cycles was found for the property "counter.v_counter._assert_156" in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "counter.v_counter._assert_170" in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_170:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 6 cycles was found for the property "counter.v_counter._assert_175" in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_21:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_38:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_155:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_95:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_104:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_138:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_19".
+0.0.N: Stopped processing property "counter.v_counter._assert_19"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_20"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 512 was found for the property "counter.v_counter._assert_20" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.N: Trace Attempt  7	[0.00 s]
+0.0.N: A trace with 7 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "counter.v_counter._assert_20" in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "counter.v_counter._assert_61" in 0.00 s by the incidental trace "counter.v_counter._assert_20".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "counter.v_counter._assert_66" in 0.00 s by the incidental trace "counter.v_counter._assert_20".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "counter.v_counter._assert_108" in 0.00 s by the incidental trace "counter.v_counter._assert_20".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "counter.v_counter._assert_142" in 0.00 s by the incidental trace "counter.v_counter._assert_20".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_171:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_20".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_173:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_20".
+0.0.N: Stopped processing property "counter.v_counter._assert_20"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_21"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 1024 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 1024 was found for the property "counter.v_counter._assert_21" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  8	[0.00 s]
+0.0.N: A trace with 8 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_21" in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_101" in 0.00 s by the incidental trace "counter.v_counter._assert_21".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_104" in 0.00 s by the incidental trace "counter.v_counter._assert_21".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_128:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_21".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_131:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_21".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "counter.v_counter._assert_171" in 0.00 s by the incidental trace "counter.v_counter._assert_21".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "counter.v_counter._assert_173" in 0.00 s by the incidental trace "counter.v_counter._assert_21".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_135:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_21".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_136:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_21".
+0.0.N: Stopped processing property "counter.v_counter._assert_21"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_23"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "counter.v_counter._assert_23" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  9	[0.00 s]
+0.0.N: A trace with 9 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_23" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_23:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_46" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_46:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_47" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 6 cycles was found for the property "counter.v_counter._assert_62" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 6 cycles was found for the property "counter.v_counter._assert_64" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 6 cycles was found for the property "counter.v_counter._assert_83" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_93" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_93:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_96" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_96:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_99" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_99:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_102" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_113" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_113:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_117" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_117:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_118" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_118:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_120" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_124" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_125" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_130" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_130:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_131" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_134" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_136" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 5 cycles was found for the property "counter.v_counter._assert_154" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 5 cycles was found for the property "counter.v_counter._assert_157" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "counter.v_counter._assert_172" in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_172:precondition1" was covered in 7 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_125:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_120:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_124:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_134:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_23".
+0.0.N: Stopped processing property "counter.v_counter._assert_23"	[0.01 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_25"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 512 was found for the property "counter.v_counter._assert_25" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  8	[0.00 s]
+0.0.N: A trace with 8 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_25" in 0.01 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_25:precondition1" was covered in 8 cycles in 0.01 s by the incidental trace "counter.v_counter._assert_25".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_77" in 0.01 s by the incidental trace "counter.v_counter._assert_25".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_77:precondition1" was covered in 8 cycles in 0.01 s by the incidental trace "counter.v_counter._assert_25".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_100" in 0.01 s by the incidental trace "counter.v_counter._assert_25".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_100:precondition1" was covered in 8 cycles in 0.01 s by the incidental trace "counter.v_counter._assert_25".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_106" in 0.01 s by the incidental trace "counter.v_counter._assert_25".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_129" in 0.01 s by the incidental trace "counter.v_counter._assert_25".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_129:precondition1" was covered in 8 cycles in 0.01 s by the incidental trace "counter.v_counter._assert_25".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_137" in 0.01 s by the incidental trace "counter.v_counter._assert_25".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_141" in 0.01 s by the incidental trace "counter.v_counter._assert_25".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 7 cycles was found for the property "counter.v_counter._assert_168" in 0.01 s by the incidental trace "counter.v_counter._assert_25".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_106:precondition1" was covered in 8 cycles in 0.01 s by the incidental trace "counter.v_counter._assert_25".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_141:precondition1" was covered in 8 cycles in 0.01 s by the incidental trace "counter.v_counter._assert_25".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_137:precondition1" was covered in 8 cycles in 0.01 s by the incidental trace "counter.v_counter._assert_25".
+0.0.N: Stopped processing property "counter.v_counter._assert_25"	[0.01 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_27"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 1024 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 1024 was found for the property "counter.v_counter._assert_27" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  9	[0.00 s]
+0.0.N: A trace with 9 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_27" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_27:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_36:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_39" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_39:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_40" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_40:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_48" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_65" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_65:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_69" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_69:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_70" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_70:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_71" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_71:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_72" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_72:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_73" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_73:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_74" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_74:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_75" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_75:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_90" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_92" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_92:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_97" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_105" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_111" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_114" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_114:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_123" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_143" in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_42:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_45:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_48:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_97:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_105:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_143:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_90:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_111:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_123:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_27".
+0.0.N: Stopped processing property "counter.v_counter._assert_27"	[0.01 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_30"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 512 was found for the property "counter.v_counter._assert_30" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: A trace with 5 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 5 cycles was found for the property "counter.v_counter._assert_30" in 0.00 s.
+0.0.N: Stopped processing property "counter.v_counter._assert_30"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_31"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "counter.v_counter._assert_31" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Validation of fixpoint was successful. Time = 0.00
+0.0.N: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.N: The property "counter.v_counter._assert_31" was proven in 0.00 s.
+0.0.N: Stopped processing property "counter.v_counter._assert_31"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_31:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "counter.v_counter._assert_31:precondition1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Validation of fixpoint was successful. Time = 0.00
+0.0.N: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.N: The cover property "counter.v_counter._assert_31:precondition1" was proven unreachable in 0.00 s.
+0.0.N: Stopped processing property "counter.v_counter._assert_31:precondition1"	[0.02 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_32"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "counter.v_counter._assert_32" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: A trace with 5 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 5 cycles was found for the property "counter.v_counter._assert_32" in 0.00 s.
+0.0.N: Stopped processing property "counter.v_counter._assert_32"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_33"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 1024 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 1024 was found for the property "counter.v_counter._assert_33" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 10	[0.00 s]
+0.0.N: A trace with 10 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 10 cycles was found for the property "counter.v_counter._assert_33" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_33:precondition1" was covered in 10 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 10 cycles was found for the property "counter.v_counter._assert_34" in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_34:precondition1" was covered in 10 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 10 cycles was found for the property "counter.v_counter._assert_37" in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 10 cycles was found for the property "counter.v_counter._assert_44" in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 10 cycles was found for the property "counter.v_counter._assert_50" in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_55" in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_55:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 10 cycles was found for the property "counter.v_counter._assert_76" in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_76:precondition1" was covered in 10 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 10 cycles was found for the property "counter.v_counter._assert_78" in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_78:precondition1" was covered in 10 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 10 cycles was found for the property "counter.v_counter._assert_88" in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 10 cycles was found for the property "counter.v_counter._assert_98" in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 10 cycles was found for the property "counter.v_counter._assert_103" in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 10 cycles was found for the property "counter.v_counter._assert_107" in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 10 cycles was found for the property "counter.v_counter._assert_145" in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 10 cycles was found for the property "counter.v_counter._assert_148" in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 10 cycles was found for the property "counter.v_counter._assert_162" in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 10 cycles was found for the property "counter.v_counter._assert_163" in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_37:precondition1" was covered in 10 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_44:precondition1" was covered in 10 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_50:precondition1" was covered in 10 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_98:precondition1" was covered in 10 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_107:precondition1" was covered in 10 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_148:precondition1" was covered in 10 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_162:precondition1" was covered in 10 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_88:precondition1" was covered in 10 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_103:precondition1" was covered in 10 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_145:precondition1" was covered in 10 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_163:precondition1" was covered in 10 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_33".
+0.0.N: Stopped processing property "counter.v_counter._assert_33"	[0.01 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_35:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_43:precondition1"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_49:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "counter.v_counter._assert_35:precondition1" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "counter.v_counter._assert_43:precondition1" in 0.00 s.
+0.0.N: A max_length bound was found. The shortest trace is no longer than 256 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 256 was found for the property "counter.v_counter._assert_49:precondition1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  9	[0.00 s]
+0.0.N: A trace with 9 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_35:precondition1" was covered in 9 cycles in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_43:precondition1" was covered in 9 cycles in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_49:precondition1" was covered in 9 cycles in 0.00 s.
+0.0.N: Stopped processing property "counter.v_counter._assert_35:precondition1"	[0.02 s].
+0.0.N: Stopped processing property "counter.v_counter._assert_43:precondition1"	[0.02 s].
+0.0.N: Stopped processing property "counter.v_counter._assert_49:precondition1"	[0.02 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_53"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "counter.v_counter._assert_53" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  8	[0.00 s]
+0.0.N: A trace with 8 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_53" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_53:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_53".
+0.0.N: Stopped processing property "counter.v_counter._assert_53"	[0.00 s].
+0.0.Ht: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.N: Starting proof for property "counter.v_counter._assert_54"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "counter.v_counter._assert_54" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  8	[0.00 s]
+0.0.N: A trace with 8 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_54" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_54:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_54".
+0.0.N: Stopped processing property "counter.v_counter._assert_54"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_60"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 512 was found for the property "counter.v_counter._assert_60" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  6	[0.00 s]
+0.0.N: A trace with 6 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 6 cycles was found for the property "counter.v_counter._assert_60" in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 6 cycles was found for the property "counter.v_counter._assert_63" in 0.00 s by the incidental trace "counter.v_counter._assert_60".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 6 cycles was found for the property "counter.v_counter._assert_84" in 0.00 s by the incidental trace "counter.v_counter._assert_60".
+0.0.N: Stopped processing property "counter.v_counter._assert_60"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_68"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "counter.v_counter._assert_68" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.N: Trace Attempt 11	[0.00 s]
+0.0.N: A trace with 11 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_68" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_68:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_68".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_89" in 0.00 s by the incidental trace "counter.v_counter._assert_68".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_109" in 0.00 s by the incidental trace "counter.v_counter._assert_68".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_147" in 0.00 s by the incidental trace "counter.v_counter._assert_68".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_89:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_68".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_109:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_68".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_147:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_68".
+0.0.N: Stopped processing property "counter.v_counter._assert_68"	[0.00 s].
+0.0.Hp: Trace Attempt  3	[0.26 s]
+0.0.N: Starting proof for property "counter.v_counter._assert_79"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 2048 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 2048 was found for the property "counter.v_counter._assert_79" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 11	[0.00 s]
+0.0.N: A trace with 11 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_79" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_79:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_79".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_82" in 0.00 s by the incidental trace "counter.v_counter._assert_79".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_82:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_79".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_86" in 0.00 s by the incidental trace "counter.v_counter._assert_79".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_86:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_79".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_180" in 0.00 s by the incidental trace "counter.v_counter._assert_79".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_180:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_79".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_182" in 0.00 s by the incidental trace "counter.v_counter._assert_79".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_182:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_79".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_191" in 0.00 s by the incidental trace "counter.v_counter._assert_79".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_193" in 0.00 s by the incidental trace "counter.v_counter._assert_79".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_140:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_79".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_139:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_79".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_146:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_79".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_191:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_79".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_193:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_79".
+0.0.N: Stopped processing property "counter.v_counter._assert_79"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_80"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 2048 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 2048 was found for the property "counter.v_counter._assert_80" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 11	[0.00 s]
+0.0.N: A trace with 11 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_80" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_80:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_80".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_167" in 0.00 s by the incidental trace "counter.v_counter._assert_80".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_167:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_80".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_194" in 0.00 s by the incidental trace "counter.v_counter._assert_80".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_150:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_80".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_194:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_80".
+0.0.N: Stopped processing property "counter.v_counter._assert_80"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_87"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 2048 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 2048 was found for the property "counter.v_counter._assert_87" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 11	[0.00 s]
+0.0.N: A trace with 11 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_87" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_87:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_87".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_146" in 0.00 s by the incidental trace "counter.v_counter._assert_87".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_150" in 0.00 s by the incidental trace "counter.v_counter._assert_87".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_151" in 0.00 s by the incidental trace "counter.v_counter._assert_87".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_164:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_87".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_174:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_87".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_192:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_87".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_151:precondition1" was covered in 11 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_87".
+0.0.N: Stopped processing property "counter.v_counter._assert_87"	[0.00 s].
+0.0.Oh: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.N: Starting proof for property "counter.v_counter._assert_115"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "counter.v_counter._assert_115" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  9	[0.00 s]
+0.0.N: A trace with 9 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_115" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_115:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_115".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_121" in 0.00 s by the incidental trace "counter.v_counter._assert_115".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_128" in 0.00 s by the incidental trace "counter.v_counter._assert_115".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "counter.v_counter._assert_135" in 0.00 s by the incidental trace "counter.v_counter._assert_115".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_121:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_115".
+0.0.N: Stopped processing property "counter.v_counter._assert_115"	[0.00 s].
+0.0.Ht: Proofgrid shell started at 111383@pal-achieve-06(local) jg_111273_pal-achieve-06_1
+0.0.N: Starting proof for property "counter.v_counter._assert_116"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4096 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4096 was found for the property "counter.v_counter._assert_116" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  9	[0.00 s]
+0.0.N: A trace with 9 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_116" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_116:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_116".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_122" in 0.00 s by the incidental trace "counter.v_counter._assert_116".
+INFO (IPF047): 0.0.N: The cover property "counter.v_counter._assert_122:precondition1" was covered in 9 cycles in 0.00 s by the incidental trace "counter.v_counter._assert_116".
+0.0.N: Stopped processing property "counter.v_counter._assert_116"	[0.00 s].
+0.0.Ht: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Ht: Trace Attempt  1	[0.01 s]
+0.0.Ht: Trace Attempt  2	[0.01 s]
+0.0.Ht: Trace Attempt  3	[0.01 s]
+0.0.Ht: Trace Attempt  4	[0.01 s]
+0.0.Ht: Trace Attempt  5	[0.01 s]
+0.0.Ht: Trace Attempt  9	[0.01 s]
+0.0.Ht: A trace with 9 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_119" in 0.00 s.
+0.0.Ht: A trace with 9 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.Ht: The cover property "counter.v_counter._assert_119:precondition1" was covered in 9 cycles in 0.00 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 9 cycles was found for the property "counter.v_counter._assert_126" in 0.00 s.
+INFO (IPF047): 0.0.Ht: The cover property "counter.v_counter._assert_126:precondition1" was covered in 9 cycles in 0.00 s.
+0.0.Ht: Trace Attempt 10	[0.01 s]
+0.0.Ht: Trace Attempt 11	[0.01 s]
+0.0.Ht: A trace with 11 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_139" in 0.01 s.
+0.0.Ht: A trace with 11 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_140" in 0.01 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_164" in 0.01 s.
+0.0.Ht: A trace with 11 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_160" in 0.02 s.
+INFO (IPF047): 0.0.Ht: The cover property "counter.v_counter._assert_160:precondition1" was covered in 11 cycles in 0.02 s.
+INFO (IPF047): 0.0.Ht: The cover property "counter.v_counter._assert_185:precondition1" was covered in 11 cycles in 0.02 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 11 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_174" in 0.02 s.
+0.0.Ht: A trace with 11 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_185" in 0.03 s.
+0.0.Ht: A trace with 11 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 11 cycles was found for the property "counter.v_counter._assert_192" in 0.03 s.
+0.0.Ht: Trace Attempt 12	[0.01 s]
+0.0.Ht: A trace with 12 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 12 cycles was found for the property "counter.v_counter._assert_153" in 0.03 s.
+INFO (IPF047): 0.0.Ht: The cover property "counter.v_counter._assert_153:precondition1" was covered in 12 cycles in 0.03 s.
+INFO (IPF047): 0.0.Ht: The cover property "counter.v_counter._assert_158:precondition1" was covered in 12 cycles in 0.03 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 12 cycles was found for the property "counter.v_counter._assert_161" in 0.03 s.
+INFO (IPF047): 0.0.Ht: The cover property "counter.v_counter._assert_186:precondition1" was covered in 12 cycles in 0.03 s.
+INFO (IPF047): 0.0.Ht: The cover property "counter.v_counter._assert_183:precondition1" was covered in 12 cycles in 0.03 s.
+INFO (IPF047): 0.0.Ht: The cover property "counter.v_counter._assert_161:precondition1" was covered in 12 cycles in 0.03 s.
+INFO (IPF047): 0.0.Ht: The cover property "counter.v_counter._assert_184:precondition1" was covered in 12 cycles in 0.03 s.
+0.0.Ht: A trace with 12 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 12 cycles was found for the property "counter.v_counter._assert_158" in 0.03 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 12 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 12 cycles was found for the property "counter.v_counter._assert_176" in 0.04 s.
+INFO (IPF047): 0.0.Ht: The cover property "counter.v_counter._assert_176:precondition1" was covered in 12 cycles in 0.04 s.
+0.0.Ht: A trace with 12 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 12 cycles was found for the property "counter.v_counter._assert_181" in 0.04 s.
+INFO (IPF047): 0.0.Ht: The cover property "counter.v_counter._assert_181:precondition1" was covered in 12 cycles in 0.04 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 12 cycles was found for the property "counter.v_counter._assert_183" in 0.04 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 12 cycles was found for the property "counter.v_counter._assert_184" in 0.04 s.
+0.0.Ht: A trace with 12 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 12 cycles was found for the property "counter.v_counter._assert_186" in 0.04 s.
+0.0.N: Requesting engine job to stop
+0.0.Hp: Requesting engine job to terminate
+0.0.Ht: Requesting engine job to terminate
+INFO (IPF144): 0: Initiating shutdown of proof [0.34 s]
+0.0.Ht: Trace Attempt 13	[0.01 s]
+0.0.Ht: A trace with 13 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 13 cycles was found for the property "counter.v_counter._assert_159" in 0.04 s.
+INFO (IPF047): 0.0.Ht: The cover property "counter.v_counter._assert_159:precondition1" was covered in 13 cycles in 0.04 s.
+0.0.Ht: All properties determined. [0.01 s]
+0.0.Bm: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Mpcustom4: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Oh: Proofgrid shell started at 111392@pal-achieve-06(local) jg_111273_pal-achieve-06_1
+0.0.Oh: Requesting engine job to terminate
+0.0.Oh: Preventing job from starting because proof is shutting down.
+0.0.Oh: Requesting engine job to terminate
+0.0.L: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.N: Starting proof for property "counter.v_counter._assert_153"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 12	[0.00 s]
+0.0.N: Stopped processing property "counter.v_counter._assert_153"	[0.00 s].
+0.0.N: Starting proof for property "counter.v_counter._assert_159"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt 13	[0.00 s]
+0.0.N: Stopped processing property "counter.v_counter._assert_159"	[0.00 s].
+0.0.Ht: Exited with Success (@ 0.35 s)
+0: ProofGrid usable level: 0
+0.0.Oh: Interrupted. [0.00 s]
+0.0.Hp: Interrupted (multi)
+0.0.Hp: Interrupted. [0.34 s]
+0.0.Oh: Exited with Success (@ 0.35 s)
+0.0.Hp: Exited with Success (@ 0.35 s)
+0.0.Bm: Proofgrid shell started at 111390@pal-achieve-06(local) jg_111273_pal-achieve-06_1
+0.0.Bm: Requesting engine job to terminate
+0.0.Bm: Preventing job from starting because proof is shutting down.
+0.0.Bm: Requesting engine job to terminate
+0.0.Bm: Interrupted. [0.00 s]
+0.0.N: Interrupted. [0.01 s]
+0.0.Bm: Exited with Success (@ 0.36 s)
+0.0.N: Exited with Success (@ 0.36 s)
+0.0.Mpcustom4: Proofgrid shell started at 111391@pal-achieve-06(local) jg_111273_pal-achieve-06_1
+0.0.Mpcustom4: Requesting engine job to terminate
+0.0.Mpcustom4: Preventing job from starting because proof is shutting down.
+0.0.Mpcustom4: Requesting engine job to terminate
+0.0.Mpcustom4: Interrupted. [0.00 s]
+0.0.Mpcustom4: Exited with Success (@ 0.38 s)
+0.0.B: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.AM: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.L: Proofgrid shell started at 111393@pal-achieve-06(local) jg_111273_pal-achieve-06_1
+0.0.L: Requesting engine job to terminate
+0.0.L: Preventing job from starting because proof is shutting down.
+0.0.L: Requesting engine job to terminate
+0.0.L: Interrupted. [0.00 s]
+0.0.L: Exited with Success (@ 0.39 s)
+0.0.B: Proofgrid shell started at 111394@pal-achieve-06(local) jg_111273_pal-achieve-06_1
+0.0.B: Requesting engine job to terminate
+0.0.B: Preventing job from starting because proof is shutting down.
+0.0.B: Requesting engine job to terminate
+0.0.B: Interrupted. [0.00 s]
+0.0.AM: Proofgrid shell started at 111395@pal-achieve-06(local) jg_111273_pal-achieve-06_1
+0.0.AM: Requesting engine job to terminate
+0.0.B: Exited with Success (@ 0.42 s)
+0.0.AM: Preventing job from starting because proof is shutting down.
+0.0.AM: Requesting engine job to terminate
+0.0.AM: Interrupted. [0.00 s]
+0.0.AM: Exited with Success (@ 0.42 s)
+0: --------------------------------------------------------------
+ProofGrid Summary (utilization 21.05 %)
+--------------------------------------------------------------
+     engines started                               :     9
+     engine jobs started                           :     9
+
+    Average time in state (seconds)
+    ------------------------------------------------------
+    Engine  Pending     Running        Dead    Utilization
+    ------------------------------------------------------
+      N        0.19        0.34        0.00       64.99 %
+     Hp        0.18        0.34        0.00       65.28 %
+     Ht        0.36        0.05        0.00       12.37 %
+     Bm        0.35        0.00        0.00        0.00 %
+    Mpcustom4        0.38        0.00        0.00        0.00 %
+     Oh        0.34        0.00        0.00        0.00 %
+      L        0.34        0.00        0.00        0.00 %
+      B        0.32        0.00        0.00        0.00 %
+     AM        0.31        0.00        0.00        0.00 %
+    all        0.31        0.08        0.00       21.05 %
+
+    Total time in state (seconds)
+    -----------------------------------------
+            Pending     Running        Dead  
+    -----------------------------------------
+               2.77        0.74        0.00
+
+    Data read    : 131.03 kiB
+    Data written : 35.75 kiB
+
+0: All pending notifications were processed.
+INFO (IPF059): 0: Completed proof on task: "<embedded>"
+
+==============================================================
+SUMMARY
+==============================================================
+           Properties Considered              : 388
+                 assertions                   : 194
+                  - proven                    : 51 (26.2887%)
+                  - bounded_proven (user)     : 0 (0%)
+                  - bounded_proven (auto)     : 0 (0%)
+                  - marked_proven             : 0 (0%)
+                  - cex                       : 143 (73.7113%)
+                  - ar_cex                    : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+                 covers                       : 194
+                  - unreachable               : 14 (7.21649%)
+                  - bounded_unreachable (user): 0 (0%)
+                  - covered                   : 180 (92.7835%)
+                  - ar_covered                : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+determined
+[<embedded>] % 
+[<embedded>] % # Report proof results
+[<embedded>] % report
+
+==============================================================
+    Jasper Verification Results
+==============================================================
+    2024.03 FCS 64 bits for Linux64 3.10.0-1160.21.1.el7.x86_64
+    Host Name: pal-achieve-06.uic.edu
+    User Name: vpulav2
+    Printed on: Monday, May13, 2024 01:03:52 PM CDT
+    Working Directory: /data/vpulav2/Work/Jasper/counter
+
+
+==============================================================
+RESULTS
+==============================================================
+
+--------------------------------------------------------------------------------------------------------
+       Name                                            |    Result    |  Engine  |  Bound  |  Time    
+--------------------------------------------------------------------------------------------------------
+
+---[ <embedded> ]---------------------------------------------------------------------------------------
+[1]   counter.v_counter._assert_1                           cex             N             2    0.001 s      
+[2]   counter.v_counter._assert_1:precondition1             covered         PRE           1    0.000 s      
+[3]   counter.v_counter._assert_2                           proven          Hp     Infinite    0.039 s      
+[4]   counter.v_counter._assert_2:precondition1             covered         N             2    0.001 s      
+[5]   counter.v_counter._assert_3                           proven          Hp     Infinite    0.040 s      
+[6]   counter.v_counter._assert_3:precondition1             covered         N             2    0.001 s      
+[7]   counter.v_counter._assert_4                           proven          Hp     Infinite    0.040 s      
+[8]   counter.v_counter._assert_4:precondition1             covered         N             2    0.001 s      
+[9]   counter.v_counter._assert_5                           proven          Hp     Infinite    0.040 s      
+[10]  counter.v_counter._assert_5:precondition1             covered         N             3    0.001 s      
+[11]  counter.v_counter._assert_6                           proven          Hp     Infinite    0.040 s      
+[12]  counter.v_counter._assert_6:precondition1             covered         N         2 - 3    0.001 s      
+[13]  counter.v_counter._assert_7                           proven          Hp     Infinite    0.040 s      
+[14]  counter.v_counter._assert_7:precondition1             covered         N         2 - 3    0.001 s      
+[15]  counter.v_counter._assert_8                           proven          Hp     Infinite    0.040 s      
+[16]  counter.v_counter._assert_8:precondition1             covered         N         2 - 3    0.001 s      
+[17]  counter.v_counter._assert_9                           proven          Hp     Infinite    0.040 s      
+[18]  counter.v_counter._assert_9:precondition1             covered         N         2 - 3    0.001 s      
+[19]  counter.v_counter._assert_10                          proven          Hp     Infinite    0.041 s      
+[20]  counter.v_counter._assert_10:precondition1            covered         N             4    0.001 s      
+[21]  counter.v_counter._assert_11                          proven          Hp     Infinite    0.041 s      
+[22]  counter.v_counter._assert_11:precondition1            covered         N         2 - 4    0.001 s      
+[23]  counter.v_counter._assert_12                          proven          Hp     Infinite    0.041 s      
+[24]  counter.v_counter._assert_12:precondition1            covered         N         2 - 4    0.001 s      
+[25]  counter.v_counter._assert_13                          proven          Hp     Infinite    0.041 s      
+[26]  counter.v_counter._assert_13:precondition1            covered         N         2 - 4    0.001 s      
+[27]  counter.v_counter._assert_14                          cex             N             4    0.024 s      
+[28]  counter.v_counter._assert_14:precondition1            covered         N         2 - 4    0.001 s      
+[29]  counter.v_counter._assert_15                          proven          Hp     Infinite    0.041 s      
+[30]  counter.v_counter._assert_15:precondition1            covered         N             5    0.001 s      
+[31]  counter.v_counter._assert_16                          proven          Hp     Infinite    0.041 s      
+[32]  counter.v_counter._assert_16:precondition1            covered         N             6    0.001 s      
+[33]  counter.v_counter._assert_17                          proven          Hp     Infinite    0.042 s      
+[34]  counter.v_counter._assert_17:precondition1            covered         N             7    0.001 s      
+[35]  counter.v_counter._assert_18                          proven          Hp     Infinite    0.042 s      
+[36]  counter.v_counter._assert_18:precondition1            covered         N             7    0.001 s      
+[37]  counter.v_counter._assert_19                          cex             N             8    0.001 s      
+[38]  counter.v_counter._assert_19:precondition1            covered         N         4 - 8    0.001 s      
+[39]  counter.v_counter._assert_20                          cex             N             7    0.001 s      
+[40]  counter.v_counter._assert_20:precondition1            covered         N         3 - 7    0.001 s      
+[41]  counter.v_counter._assert_21                          cex             N             8    0.001 s      
+[42]  counter.v_counter._assert_21:precondition1            covered         N         4 - 8    0.001 s      
+[43]  counter.v_counter._assert_22                          proven          Hp     Infinite    0.042 s      
+[44]  counter.v_counter._assert_22:precondition1            covered         N         3 - 6    0.001 s      
+[45]  counter.v_counter._assert_23                          cex             N             9    0.003 s      
+[46]  counter.v_counter._assert_23:precondition1            covered         N         6 - 9    0.003 s      
+[47]  counter.v_counter._assert_24                          proven          Hp     Infinite    0.042 s      
+[48]  counter.v_counter._assert_24:precondition1            covered         N         3 - 7    0.001 s      
+[49]  counter.v_counter._assert_25                          cex             N             8    0.008 s      
+[50]  counter.v_counter._assert_25:precondition1            covered         N         3 - 8    0.008 s      
+[51]  counter.v_counter._assert_26                          proven          Hp     Infinite    0.042 s      
+[52]  counter.v_counter._assert_26:precondition1            covered         N         3 - 5    0.001 s      
+[53]  counter.v_counter._assert_27                          cex             N             9    0.002 s      
+[54]  counter.v_counter._assert_27:precondition1            covered         N         4 - 9    0.002 s      
+[55]  counter.v_counter._assert_28                          proven          Hp     Infinite    0.042 s      
+[56]  counter.v_counter._assert_28:precondition1            covered         N         3 - 5    0.001 s      
+[57]  counter.v_counter._assert_29                          cex             N         3 - 8    0.001 s      
+[58]  counter.v_counter._assert_29:precondition1            covered         N         4 - 8    0.001 s      
+[59]  counter.v_counter._assert_30                          cex             N             5    0.001 s      
+[60]  counter.v_counter._assert_30:precondition1            covered         N         3 - 5    0.001 s      
+[61]  counter.v_counter._assert_31                          proven          N      Infinite    0.001 s      
+[62]  counter.v_counter._assert_31:precondition1            unreachable     N      Infinite    0.000 s      
+[63]  counter.v_counter._assert_32                          cex             N             5    0.001 s      
+[64]  counter.v_counter._assert_32:precondition1            covered         N         3 - 5    0.001 s      
+[65]  counter.v_counter._assert_33                          cex             N            10    0.001 s      
+[66]  counter.v_counter._assert_33:precondition1            covered         N        4 - 10    0.001 s      
+[67]  counter.v_counter._assert_34                          cex             N        3 - 10    0.001 s      
+[68]  counter.v_counter._assert_34:precondition1            covered         N        6 - 10    0.001 s      
+[69]  counter.v_counter._assert_35                          proven          Hp     Infinite    0.042 s      
+[70]  counter.v_counter._assert_35:precondition1            covered         N             9    0.002 s      
+[71]  counter.v_counter._assert_36                          proven          Hp     Infinite    0.043 s      
+[72]  counter.v_counter._assert_36:precondition1            covered         N         3 - 8    0.002 s      
+[73]  counter.v_counter._assert_37                          cex             N        3 - 10    0.001 s      
+[74]  counter.v_counter._assert_37:precondition1            covered         N        4 - 10    0.001 s      
+[75]  counter.v_counter._assert_38                          cex             N         3 - 8    0.001 s      
+[76]  counter.v_counter._assert_38:precondition1            covered         N         4 - 8    0.001 s      
+[77]  counter.v_counter._assert_39                          cex             N         3 - 9    0.002 s      
+[78]  counter.v_counter._assert_39:precondition1            covered         N         5 - 9    0.002 s      
+[79]  counter.v_counter._assert_40                          cex             N         3 - 9    0.002 s      
+[80]  counter.v_counter._assert_40:precondition1            covered         N         3 - 9    0.002 s      
+[81]  counter.v_counter._assert_41                          proven          Hp     Infinite    0.043 s      
+[82]  counter.v_counter._assert_41:precondition1            covered         N         3 - 5    0.001 s      
+[83]  counter.v_counter._assert_42                          proven          Hp     Infinite    0.043 s      
+[84]  counter.v_counter._assert_42:precondition1            covered         N         3 - 8    0.002 s      
+[85]  counter.v_counter._assert_43                          proven          Hp     Infinite    0.043 s      
+[86]  counter.v_counter._assert_43:precondition1            covered         N             9    0.002 s      
+[87]  counter.v_counter._assert_44                          cex             N        3 - 10    0.001 s      
+[88]  counter.v_counter._assert_44:precondition1            covered         N        4 - 10    0.001 s      
+[89]  counter.v_counter._assert_45                          proven          Hp     Infinite    0.043 s      
+[90]  counter.v_counter._assert_45:precondition1            covered         N         3 - 8    0.002 s      
+[91]  counter.v_counter._assert_46                          cex             N         3 - 9    0.003 s      
+[92]  counter.v_counter._assert_46:precondition1            covered         N         6 - 9    0.003 s      
+[93]  counter.v_counter._assert_47                          cex             N         3 - 8    0.003 s      
+[94]  counter.v_counter._assert_47:precondition1            covered         N         5 - 8    0.001 s      
+[95]  counter.v_counter._assert_48                          cex             N         3 - 9    0.002 s      
+[96]  counter.v_counter._assert_48:precondition1            covered         N         3 - 9    0.002 s      
+[97]  counter.v_counter._assert_49                          proven          Hp     Infinite    0.043 s      
+[98]  counter.v_counter._assert_49:precondition1            covered         N             9    0.002 s      
+[99]  counter.v_counter._assert_50                          cex             N        3 - 10    0.001 s      
+[100] counter.v_counter._assert_50:precondition1            covered         N        6 - 10    0.001 s      
+[101] counter.v_counter._assert_51                          proven          Hp     Infinite    0.044 s      
+[102] counter.v_counter._assert_51:precondition1            covered         N         3 - 5    0.001 s      
+[103] counter.v_counter._assert_52                          proven          Hp     Infinite    0.044 s      
+[104] counter.v_counter._assert_52:precondition1            covered         N         3 - 6    0.001 s      
+[105] counter.v_counter._assert_53                          cex             N             8    0.002 s      
+[106] counter.v_counter._assert_53:precondition1            covered         N         3 - 8    0.002 s      
+[107] counter.v_counter._assert_54                          cex             N             8    0.001 s      
+[108] counter.v_counter._assert_54:precondition1            covered         N         3 - 8    0.001 s      
+[109] counter.v_counter._assert_55                          cex             N         3 - 9    0.001 s      
+[110] counter.v_counter._assert_55:precondition1            covered         N         3 - 9    0.001 s      
+[111] counter.v_counter._assert_56                          proven          Hp     Infinite    0.044 s      
+[112] counter.v_counter._assert_56:precondition1            covered         N         3 - 7    0.001 s      
+[113] counter.v_counter._assert_57                          cex             N         3 - 7    0.001 s      
+[114] counter.v_counter._assert_57:precondition1            covered         N         3 - 7    0.001 s      
+[115] counter.v_counter._assert_58                          cex             N         3 - 7    0.001 s      
+[116] counter.v_counter._assert_58:precondition1            covered         N         3 - 7    0.001 s      
+[117] counter.v_counter._assert_59                          cex             N         3 - 7    0.001 s      
+[118] counter.v_counter._assert_59:precondition1            covered         N         3 - 7    0.001 s      
+[119] counter.v_counter._assert_60                          cex             N             6    0.001 s      
+[120] counter.v_counter._assert_60:precondition1            covered         N         3 - 6    0.001 s      
+[121] counter.v_counter._assert_61                          cex             N         3 - 7    0.001 s      
+[122] counter.v_counter._assert_61:precondition1            covered         N         3 - 7    0.001 s      
+[123] counter.v_counter._assert_62                          cex             N         3 - 6    0.003 s      
+[124] counter.v_counter._assert_62:precondition1            covered         N         3 - 6    0.001 s      
+[125] counter.v_counter._assert_63                          cex             N         3 - 6    0.001 s      
+[126] counter.v_counter._assert_63:precondition1            covered         N         3 - 6    0.001 s      
+[127] counter.v_counter._assert_64                          cex             N         3 - 6    0.003 s      
+[128] counter.v_counter._assert_64:precondition1            covered         N         3 - 6    0.001 s      
+[129] counter.v_counter._assert_65                          cex             N         3 - 9    0.002 s      
+[130] counter.v_counter._assert_65:precondition1            covered         N         3 - 9    0.002 s      
+[131] counter.v_counter._assert_66                          cex             N         3 - 7    0.001 s      
+[132] counter.v_counter._assert_66:precondition1            covered         N         3 - 7    0.001 s      
+[133] counter.v_counter._assert_67                          proven          Hp     Infinite    0.044 s      
+[134] counter.v_counter._assert_67:precondition1            covered         N         3 - 6    0.001 s      
+[135] counter.v_counter._assert_68                          cex             N            11    0.001 s      
+[136] counter.v_counter._assert_68:precondition1            covered         N        6 - 11    0.001 s      
+[137] counter.v_counter._assert_69                          cex             N         3 - 9    0.002 s      
+[138] counter.v_counter._assert_69:precondition1            covered         N         3 - 9    0.002 s      
+[139] counter.v_counter._assert_70                          cex             N         3 - 9    0.002 s      
+[140] counter.v_counter._assert_70:precondition1            covered         N         3 - 9    0.002 s      
+[141] counter.v_counter._assert_71                          cex             N         3 - 9    0.002 s      
+[142] counter.v_counter._assert_71:precondition1            covered         N         3 - 9    0.002 s      
+[143] counter.v_counter._assert_72                          cex             N         3 - 9    0.002 s      
+[144] counter.v_counter._assert_72:precondition1            covered         N         3 - 9    0.002 s      
+[145] counter.v_counter._assert_73                          cex             N         3 - 9    0.002 s      
+[146] counter.v_counter._assert_73:precondition1            covered         N         3 - 9    0.002 s      
+[147] counter.v_counter._assert_74                          cex             N         3 - 9    0.002 s      
+[148] counter.v_counter._assert_74:precondition1            covered         N         5 - 9    0.002 s      
+[149] counter.v_counter._assert_75                          cex             N         3 - 9    0.002 s      
+[150] counter.v_counter._assert_75:precondition1            covered         N         4 - 9    0.002 s      
+[151] counter.v_counter._assert_76                          cex             N        3 - 10    0.001 s      
+[152] counter.v_counter._assert_76:precondition1            covered         N        6 - 10    0.001 s      
+[153] counter.v_counter._assert_77                          cex             N         3 - 8    0.008 s      
+[154] counter.v_counter._assert_77:precondition1            covered         N         3 - 8    0.008 s      
+[155] counter.v_counter._assert_78                          cex             N        3 - 10    0.001 s      
+[156] counter.v_counter._assert_78:precondition1            covered         N        5 - 10    0.001 s      
+[157] counter.v_counter._assert_79                          cex             N            11    0.001 s      
+[158] counter.v_counter._assert_79:precondition1            covered         N        4 - 11    0.001 s      
+[159] counter.v_counter._assert_80                          cex             N            11    0.001 s      
+[160] counter.v_counter._assert_80:precondition1            covered         N        5 - 11    0.001 s      
+[161] counter.v_counter._assert_81                          proven          Hp     Infinite    0.044 s      
+[162] counter.v_counter._assert_81:precondition1            covered         N         3 - 6    0.001 s      
+[163] counter.v_counter._assert_82                          cex             N        4 - 11    0.001 s      
+[164] counter.v_counter._assert_82:precondition1            covered         N        4 - 11    0.001 s      
+[165] counter.v_counter._assert_83                          cex             N         3 - 6    0.003 s      
+[166] counter.v_counter._assert_83:precondition1            covered         N         3 - 6    0.001 s      
+[167] counter.v_counter._assert_84                          cex             N         3 - 6    0.001 s      
+[168] counter.v_counter._assert_84:precondition1            covered         N         3 - 6    0.001 s      
+[169] counter.v_counter._assert_85                          cex             N         3 - 8    0.001 s      
+[170] counter.v_counter._assert_85:precondition1            covered         N         4 - 8    0.001 s      
+[171] counter.v_counter._assert_86                          cex             N        4 - 11    0.001 s      
+[172] counter.v_counter._assert_86:precondition1            covered         N        4 - 11    0.001 s      
+[173] counter.v_counter._assert_87                          cex             N            11    0.001 s      
+[174] counter.v_counter._assert_87:precondition1            covered         N        4 - 11    0.001 s      
+[175] counter.v_counter._assert_88                          cex             N        3 - 10    0.001 s      
+[176] counter.v_counter._assert_88:precondition1            covered         N        5 - 10    0.001 s      
+[177] counter.v_counter._assert_89                          cex             N        3 - 11    0.001 s      
+[178] counter.v_counter._assert_89:precondition1            covered         N        6 - 11    0.001 s      
+[179] counter.v_counter._assert_90                          cex             N         3 - 9    0.002 s      
+[180] counter.v_counter._assert_90:precondition1            covered         N         4 - 9    0.002 s      
+[181] counter.v_counter._assert_91                          proven          Hp     Infinite    0.044 s      
+[182] counter.v_counter._assert_91:precondition1            covered         N         3 - 7    0.001 s      
+[183] counter.v_counter._assert_92                          cex             N         3 - 9    0.002 s      
+[184] counter.v_counter._assert_92:precondition1            covered         N         5 - 9    0.002 s      
+[185] counter.v_counter._assert_93                          cex             N         3 - 9    0.003 s      
+[186] counter.v_counter._assert_93:precondition1            covered         N         3 - 9    0.003 s      
+[187] counter.v_counter._assert_94                          cex             N         3 - 7    0.001 s      
+[188] counter.v_counter._assert_94:precondition1            covered         N         3 - 7    0.001 s      
+[189] counter.v_counter._assert_95                          cex             N         3 - 8    0.001 s      
+[190] counter.v_counter._assert_95:precondition1            covered         N         4 - 8    0.001 s      
+[191] counter.v_counter._assert_96                          cex             N         3 - 9    0.003 s      
+[192] counter.v_counter._assert_96:precondition1            covered         N         4 - 9    0.003 s      
+[193] counter.v_counter._assert_97                          cex             N         3 - 9    0.002 s      
+[194] counter.v_counter._assert_97:precondition1            covered         N         5 - 9    0.002 s      
+[195] counter.v_counter._assert_98                          cex             N        3 - 10    0.001 s      
+[196] counter.v_counter._assert_98:precondition1            covered         N        6 - 10    0.001 s      
+[197] counter.v_counter._assert_99                          cex             N         3 - 9    0.003 s      
+[198] counter.v_counter._assert_99:precondition1            covered         N         5 - 9    0.003 s      
+[199] counter.v_counter._assert_100                         cex             N         3 - 8    0.008 s      
+[200] counter.v_counter._assert_100:precondition1           covered         N         4 - 8    0.008 s      
+[201] counter.v_counter._assert_101                         cex             N         3 - 8    0.001 s      
+[202] counter.v_counter._assert_101:precondition1           covered         N         3 - 8    0.001 s      
+[203] counter.v_counter._assert_102                         cex             N         3 - 8    0.003 s      
+[204] counter.v_counter._assert_102:precondition1           covered         N         4 - 8    0.001 s      
+[205] counter.v_counter._assert_103                         cex             N        3 - 10    0.001 s      
+[206] counter.v_counter._assert_103:precondition1           covered         N        5 - 10    0.001 s      
+[207] counter.v_counter._assert_104                         cex             N         3 - 8    0.001 s      
+[208] counter.v_counter._assert_104:precondition1           covered         N         4 - 8    0.001 s      
+[209] counter.v_counter._assert_105                         cex             N         3 - 9    0.002 s      
+[210] counter.v_counter._assert_105:precondition1           covered         N         5 - 9    0.002 s      
+[211] counter.v_counter._assert_106                         cex             N         3 - 8    0.008 s      
+[212] counter.v_counter._assert_106:precondition1           covered         N         3 - 8    0.008 s      
+[213] counter.v_counter._assert_107                         cex             N        3 - 10    0.001 s      
+[214] counter.v_counter._assert_107:precondition1           covered         N        6 - 10    0.001 s      
+[215] counter.v_counter._assert_108                         cex             N         3 - 7    0.001 s      
+[216] counter.v_counter._assert_108:precondition1           covered         N         3 - 7    0.001 s      
+[217] counter.v_counter._assert_109                         cex             N        3 - 11    0.001 s      
+[218] counter.v_counter._assert_109:precondition1           covered         N        6 - 11    0.001 s      
+[219] counter.v_counter._assert_110                         proven          Hp     Infinite    0.045 s      
+[220] counter.v_counter._assert_110:precondition1           covered         N         3 - 6    0.001 s      
+[221] counter.v_counter._assert_111                         cex             N         3 - 9    0.002 s      
+[222] counter.v_counter._assert_111:precondition1           covered         N         4 - 9    0.002 s      
+[223] counter.v_counter._assert_112                         proven          Hp     Infinite    0.056 s      
+[224] counter.v_counter._assert_112:precondition1           covered         N         3 - 7    0.001 s      
+[225] counter.v_counter._assert_113                         cex             N         3 - 9    0.003 s      
+[226] counter.v_counter._assert_113:precondition1           covered         N         5 - 9    0.003 s      
+[227] counter.v_counter._assert_114                         cex             N         3 - 9    0.002 s      
+[228] counter.v_counter._assert_114:precondition1           covered         N         3 - 9    0.002 s      
+[229] counter.v_counter._assert_115                         cex             N             9    0.001 s      
+[230] counter.v_counter._assert_115:precondition1           covered         N         5 - 9    0.001 s      
+[231] counter.v_counter._assert_116                         cex             N             9    0.001 s      
+[232] counter.v_counter._assert_116:precondition1           covered         N         4 - 9    0.001 s      
+[233] counter.v_counter._assert_117                         cex             N         3 - 9    0.003 s      
+[234] counter.v_counter._assert_117:precondition1           covered         N         5 - 9    0.003 s      
+[235] counter.v_counter._assert_118                         cex             N         3 - 9    0.003 s      
+[236] counter.v_counter._assert_118:precondition1           covered         N         4 - 9    0.003 s      
+[237] counter.v_counter._assert_119                         cex             Ht            9    0.002 s      
+[238] counter.v_counter._assert_119:precondition1           covered         Ht            9    0.004 s      
+[239] counter.v_counter._assert_120                         cex             N         3 - 9    0.003 s      
+[240] counter.v_counter._assert_120:precondition1           covered         N         5 - 9    0.003 s      
+[241] counter.v_counter._assert_121                         cex             N         4 - 9    0.001 s      
+[242] counter.v_counter._assert_121:precondition1           covered         N         5 - 9    0.001 s      
+[243] counter.v_counter._assert_122                         cex             N         4 - 9    0.001 s      
+[244] counter.v_counter._assert_122:precondition1           covered         N         4 - 9    0.001 s      
+[245] counter.v_counter._assert_123                         cex             N         3 - 9    0.002 s      
+[246] counter.v_counter._assert_123:precondition1           covered         N         3 - 9    0.002 s      
+[247] counter.v_counter._assert_124                         cex             N         3 - 9    0.003 s      
+[248] counter.v_counter._assert_124:precondition1           covered         N         4 - 9    0.003 s      
+[249] counter.v_counter._assert_125                         cex             N         3 - 9    0.003 s      
+[250] counter.v_counter._assert_125:precondition1           covered         N         5 - 9    0.003 s      
+[251] counter.v_counter._assert_126                         cex             Ht            9    0.004 s      
+[252] counter.v_counter._assert_126:precondition1           covered         Ht            9    0.004 s      
+[253] counter.v_counter._assert_127                         cex             N         3 - 8    0.001 s      
+[254] counter.v_counter._assert_127:precondition1           covered         N         4 - 8    0.001 s      
+[255] counter.v_counter._assert_128                         cex             N         4 - 8    0.001 s      
+[256] counter.v_counter._assert_128:precondition1           covered         N         4 - 8    0.001 s      
+[257] counter.v_counter._assert_129                         cex             N         3 - 8    0.008 s      
+[258] counter.v_counter._assert_129:precondition1           covered         N         3 - 8    0.008 s      
+[259] counter.v_counter._assert_130                         cex             N         3 - 8    0.003 s      
+[260] counter.v_counter._assert_130:precondition1           covered         N         4 - 8    0.003 s      
+[261] counter.v_counter._assert_131                         cex             N         3 - 8    0.003 s      
+[262] counter.v_counter._assert_131:precondition1           covered         N         3 - 8    0.001 s      
+[263] counter.v_counter._assert_132                         proven          PRE    Infinite    0.000 s      
+[264] counter.v_counter._assert_132:precondition1           unreachable     PRE    Infinite    0.000 s      
+[265] counter.v_counter._assert_133                         proven          PRE    Infinite    0.000 s      
+[266] counter.v_counter._assert_133:precondition1           unreachable     PRE    Infinite    0.000 s      
+[267] counter.v_counter._assert_134                         cex             N         3 - 8    0.003 s      
+[268] counter.v_counter._assert_134:precondition1           covered         N         4 - 8    0.003 s      
+[269] counter.v_counter._assert_135                         cex             N         4 - 8    0.001 s      
+[270] counter.v_counter._assert_135:precondition1           covered         N         4 - 8    0.001 s      
+[271] counter.v_counter._assert_136                         cex             N         3 - 8    0.003 s      
+[272] counter.v_counter._assert_136:precondition1           covered         N         3 - 8    0.001 s      
+[273] counter.v_counter._assert_137                         cex             N         3 - 8    0.008 s      
+[274] counter.v_counter._assert_137:precondition1           covered         N         3 - 8    0.008 s      
+[275] counter.v_counter._assert_138                         cex             N         3 - 8    0.001 s      
+[276] counter.v_counter._assert_138:precondition1           covered         N         4 - 8    0.001 s      
+[277] counter.v_counter._assert_139                         cex             Ht           11    0.007 s      
+[278] counter.v_counter._assert_139:precondition1           covered         N        4 - 11    0.001 s      
+[279] counter.v_counter._assert_140                         cex             Ht           11    0.008 s      
+[280] counter.v_counter._assert_140:precondition1           covered         N        4 - 11    0.001 s      
+[281] counter.v_counter._assert_141                         cex             N         3 - 8    0.008 s      
+[282] counter.v_counter._assert_141:precondition1           covered         N         3 - 8    0.008 s      
+[283] counter.v_counter._assert_142                         cex             N         3 - 7    0.001 s      
+[284] counter.v_counter._assert_142:precondition1           covered         N         3 - 7    0.001 s      
+[285] counter.v_counter._assert_143                         cex             N         3 - 9    0.002 s      
+[286] counter.v_counter._assert_143:precondition1           covered         N         5 - 9    0.002 s      
+[287] counter.v_counter._assert_144                         proven          Hp     Infinite    0.057 s      
+[288] counter.v_counter._assert_144:precondition1           covered         N         3 - 7    0.001 s      
+[289] counter.v_counter._assert_145                         cex             N        3 - 10    0.001 s      
+[290] counter.v_counter._assert_145:precondition1           covered         N        5 - 10    0.001 s      
+[291] counter.v_counter._assert_146                         cex             N        4 - 11    0.001 s      
+[292] counter.v_counter._assert_146:precondition1           covered         N        4 - 11    0.001 s      
+[293] counter.v_counter._assert_147                         cex             N        3 - 11    0.001 s      
+[294] counter.v_counter._assert_147:precondition1           covered         N        6 - 11    0.001 s      
+[295] counter.v_counter._assert_148                         cex             N        3 - 10    0.001 s      
+[296] counter.v_counter._assert_148:precondition1           covered         N        6 - 10    0.001 s      
+[297] counter.v_counter._assert_149                         proven          Hp     Infinite    0.057 s      
+[298] counter.v_counter._assert_149:precondition1           covered         N         3 - 6    0.001 s      
+[299] counter.v_counter._assert_150                         cex             N        4 - 11    0.001 s      
+[300] counter.v_counter._assert_150:precondition1           covered         N        5 - 11    0.001 s      
+[301] counter.v_counter._assert_151                         cex             N        4 - 11    0.001 s      
+[302] counter.v_counter._assert_151:precondition1           covered         N        4 - 11    0.001 s      
+[303] counter.v_counter._assert_152                         proven          PRE    Infinite    0.000 s      
+[304] counter.v_counter._assert_152:precondition1           unreachable     PRE    Infinite    0.000 s      
+[305] counter.v_counter._assert_153                         cex             Ht           12    0.027 s      
+[306] counter.v_counter._assert_153:precondition1           covered         Ht           12    0.027 s      
+[307] counter.v_counter._assert_154                         cex             N         3 - 5    0.001 s      
+[308] counter.v_counter._assert_154:precondition1           covered         N         3 - 5    0.001 s      
+[309] counter.v_counter._assert_155                         cex             N         3 - 8    0.001 s      
+[310] counter.v_counter._assert_155:precondition1           covered         N         5 - 8    0.001 s      
+[311] counter.v_counter._assert_156                         cex             N         3 - 6    0.001 s      
+[312] counter.v_counter._assert_156:precondition1           covered         N         3 - 6    0.001 s      
+[313] counter.v_counter._assert_157                         cex             N         3 - 5    0.003 s      
+[314] counter.v_counter._assert_157:precondition1           covered         N         3 - 5    0.001 s      
+[315] counter.v_counter._assert_158                         cex             Ht           12    0.029 s      
+[316] counter.v_counter._assert_158:precondition1           covered         Ht           12    0.027 s      
+[317] counter.v_counter._assert_159                         cex             Ht           13    0.044 s      
+[318] counter.v_counter._assert_159:precondition1           covered         Ht           13    0.044 s      
+[319] counter.v_counter._assert_160                         cex             Ht           11    0.018 s      
+[320] counter.v_counter._assert_160:precondition1           covered         Ht           11    0.018 s      
+[321] counter.v_counter._assert_161                         cex             Ht           12    0.027 s      
+[322] counter.v_counter._assert_161:precondition1           covered         Ht           12    0.027 s      
+[323] counter.v_counter._assert_162                         cex             N        3 - 10    0.001 s      
+[324] counter.v_counter._assert_162:precondition1           covered         N        6 - 10    0.001 s      
+[325] counter.v_counter._assert_163                         cex             N        3 - 10    0.001 s      
+[326] counter.v_counter._assert_163:precondition1           covered         N        5 - 10    0.001 s      
+[327] counter.v_counter._assert_164                         cex             Ht           11    0.008 s      
+[328] counter.v_counter._assert_164:precondition1           covered         N        4 - 11    0.001 s      
+[329] counter.v_counter._assert_165                         proven          PRE    Infinite    0.000 s      
+[330] counter.v_counter._assert_165:precondition1           unreachable     PRE    Infinite    0.000 s      
+[331] counter.v_counter._assert_166                         proven          PRE    Infinite    0.000 s      
+[332] counter.v_counter._assert_166:precondition1           unreachable     PRE    Infinite    0.000 s      
+[333] counter.v_counter._assert_167                         cex             N        4 - 11    0.001 s      
+[334] counter.v_counter._assert_167:precondition1           covered         N        4 - 11    0.001 s      
+[335] counter.v_counter._assert_168                         cex             N         3 - 7    0.008 s      
+[336] counter.v_counter._assert_168:precondition1           covered         N         3 - 7    0.001 s      
+[337] counter.v_counter._assert_169                         proven          PRE    Infinite    0.000 s      
+[338] counter.v_counter._assert_169:precondition1           unreachable     PRE    Infinite    0.000 s      
+[339] counter.v_counter._assert_170                         cex             N         3 - 7    0.001 s      
+[340] counter.v_counter._assert_170:precondition1           covered         N         3 - 7    0.001 s      
+[341] counter.v_counter._assert_171                         cex             N         3 - 7    0.001 s      
+[342] counter.v_counter._assert_171:precondition1           covered         N         3 - 7    0.001 s      
+[343] counter.v_counter._assert_172                         cex             N         3 - 7    0.003 s      
+[344] counter.v_counter._assert_172:precondition1           covered         N         3 - 7    0.003 s      
+[345] counter.v_counter._assert_173                         cex             N         3 - 7    0.001 s      
+[346] counter.v_counter._assert_173:precondition1           covered         N         3 - 7    0.001 s      
+[347] counter.v_counter._assert_174                         cex             Ht           11    0.024 s      
+[348] counter.v_counter._assert_174:precondition1           covered         N        4 - 11    0.001 s      
+[349] counter.v_counter._assert_175                         cex             N         3 - 6    0.001 s      
+[350] counter.v_counter._assert_175:precondition1           covered         N         3 - 6    0.001 s      
+[351] counter.v_counter._assert_176                         cex             Ht           12    0.039 s      
+[352] counter.v_counter._assert_176:precondition1           covered         Ht           12    0.039 s      
+[353] counter.v_counter._assert_177                         proven          PRE    Infinite    0.000 s      
+[354] counter.v_counter._assert_177:precondition1           unreachable     PRE    Infinite    0.000 s      
+[355] counter.v_counter._assert_178                         proven          PRE    Infinite    0.000 s      
+[356] counter.v_counter._assert_178:precondition1           unreachable     PRE    Infinite    0.000 s      
+[357] counter.v_counter._assert_179                         proven          PRE    Infinite    0.000 s      
+[358] counter.v_counter._assert_179:precondition1           unreachable     PRE    Infinite    0.000 s      
+[359] counter.v_counter._assert_180                         cex             N        4 - 11    0.001 s      
+[360] counter.v_counter._assert_180:precondition1           covered         N        5 - 11    0.001 s      
+[361] counter.v_counter._assert_181                         cex             Ht           12    0.041 s      
+[362] counter.v_counter._assert_181:precondition1           covered         Ht           12    0.041 s      
+[363] counter.v_counter._assert_182                         cex             N        4 - 11    0.001 s      
+[364] counter.v_counter._assert_182:precondition1           covered         N        4 - 11    0.001 s      
+[365] counter.v_counter._assert_183                         cex             Ht           12    0.041 s      
+[366] counter.v_counter._assert_183:precondition1           covered         Ht           12    0.027 s      
+[367] counter.v_counter._assert_184                         cex             Ht           12    0.041 s      
+[368] counter.v_counter._assert_184:precondition1           covered         Ht           12    0.027 s      
+[369] counter.v_counter._assert_185                         cex             Ht           11    0.025 s      
+[370] counter.v_counter._assert_185:precondition1           covered         Ht           11    0.018 s      
+[371] counter.v_counter._assert_186                         cex             Ht           12    0.043 s      
+[372] counter.v_counter._assert_186:precondition1           covered         Ht           12    0.027 s      
+[373] counter.v_counter._assert_187                         proven          PRE    Infinite    0.000 s      
+[374] counter.v_counter._assert_187:precondition1           unreachable     PRE    Infinite    0.000 s      
+[375] counter.v_counter._assert_188                         proven          PRE    Infinite    0.000 s      
+[376] counter.v_counter._assert_188:precondition1           unreachable     PRE    Infinite    0.000 s      
+[377] counter.v_counter._assert_189                         proven          PRE    Infinite    0.000 s      
+[378] counter.v_counter._assert_189:precondition1           unreachable     PRE    Infinite    0.000 s      
+[379] counter.v_counter._assert_190                         proven          PRE    Infinite    0.000 s      
+[380] counter.v_counter._assert_190:precondition1           unreachable     PRE    Infinite    0.000 s      
+[381] counter.v_counter._assert_191                         cex             N        4 - 11    0.001 s      
+[382] counter.v_counter._assert_191:precondition1           covered         N        5 - 11    0.001 s      
+[383] counter.v_counter._assert_192                         cex             Ht           11    0.026 s      
+[384] counter.v_counter._assert_192:precondition1           covered         N        4 - 11    0.001 s      
+[385] counter.v_counter._assert_193                         cex             N        4 - 11    0.001 s      
+[386] counter.v_counter._assert_193:precondition1           covered         N        4 - 11    0.001 s      
+[387] counter.v_counter._assert_194                         cex             N        4 - 11    0.001 s      
+[388] counter.v_counter._assert_194:precondition1           covered         N        4 - 11    0.001 s      
+
+==============================================================
+ASSUMPTIONS
+==============================================================
+
+-------------------------------------------------------------------------------
+       Name    |  Expression  |  Location     |  Status      |  Dependencies                  
+-------------------------------------------------------------------------------
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.
+INFO (IPL018): The peak resident set memory use for this session was 0.380 GB.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

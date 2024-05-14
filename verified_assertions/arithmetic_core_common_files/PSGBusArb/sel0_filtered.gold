@@ -1,0 +1,40 @@
+property a87;
+@(posedge clk) (req0 == 0 & ce == 1 & ack == 1) |=> (sel0 == 0);
+endproperty
+assert_a87: assert property(a87);
+
+property a91;
+@(posedge clk) (req0 == 1 & ce == 1 & ack == 1) |=> (sel0 == 1);
+endproperty
+assert_a91: assert property(a91);
+
+property a86;
+@(posedge clk) (sel0 == 0 & req0 == 0) |=> (sel0 == 0);
+endproperty
+assert_a86: assert property(a86);
+
+property a90;
+@(posedge clk) (sel0 == 1 & req0 == 1) |=> (sel0 == 1);
+endproperty
+assert_a90: assert property(a90);
+
+property a85;
+@(posedge clk) (sel0 == 0 & ack == 0) |=> (sel0 == 0);
+endproperty
+assert_a85: assert property(a85);
+
+property a84;
+@(posedge clk) (sel0 == 0 & ce == 0) |=> (sel0 == 0);
+endproperty
+assert_a84: assert property(a84);
+
+property a89;
+@(posedge clk) (sel0 == 1 & ack == 0) |=> (sel0 == 1);
+endproperty
+assert_a89: assert property(a89);
+
+property a88;
+@(posedge clk) (sel0 == 1 & ce == 0) |=> (sel0 == 1);
+endproperty
+assert_a88: assert property(a88);
+
