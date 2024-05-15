@@ -1,5 +1,0 @@
-property a0;
-@(posedge clk) (aes_mode[0] == 1) |-> (mode_ctr == 0);
-endproperty
-assert_a0: assert property(a0);
-
