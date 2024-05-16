@@ -5,10 +5,10 @@
 # version   : 2024.03 FCS 64 bits
 # build date: 2024.03.27 15:42:27 UTC
 # ----------------------------------------
-# started   : 2024-05-16 15:10:19 CDT
+# started   : 2024-05-16 15:26:37 CDT
 # hostname  : pal-achieve-06.(none)
-# pid       : 12761
-# arguments : '-label' 'session_0' '-console' '//127.0.0.1:41695' '-nowindow' '-style' 'windows' '-data' 'AAABCHicVY5BCsIwEEVfLBZx0SN4AEFP0LXbKgW3UqyKIqaoUehGj+pN4k+xQv6Qmcn/fyYxQP7y3tMhaZVSChaKP8zn1+SGGOE+iJnVO6ow7Id7S6qTMeOCZcMBx1HMVEzFWWF5infSb8qNwnLlzo5afEEp90juvZSH+on+umQtLTBOtZKzZq6ZrfbBWO5GOyyn7u3YF/AFPqcfgA==' '-proj' '/data/vpulav2/Work/Temp_Assertion_Data/verified_assertions/arithmetic_core_double_fpu_verilog/fpu_add/fpu_add/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Temp_Assertion_Data/verified_assertions/arithmetic_core_double_fpu_verilog/fpu_add/fpu_add/.tmp/.initCmds.tcl' 'FPV_fpu_add.tcl'
+# pid       : 13770
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:43727' '-nowindow' '-style' 'windows' '-data' 'AAABGnicXY5NDgFBEIW/JiZi4QhiLeEEs7YdIrGViUaImZ6gSWw4qpu012Ik41W6fl69qi4DpI8QAh+073IJGVPZD+b1TVJDE7FuNZn5sxGhUw/XkkSvz5gSx4odnr2YkZico8xxE+/VP8tXMseJCxus+IyF1F2pt+pclQ9064ylepHxirmUlolm1toHPakr7XAcVA3/dPEGJ52l0CWl/ol4A6uxI0A=' '-proj' '/data/vpulav2/Work/Temp_Assertion_Data/verified_assertions/arithmetic_core_double_fpu_verilog/fpu_add/fpu_add_goldmine/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Temp_Assertion_Data/verified_assertions/arithmetic_core_double_fpu_verilog/fpu_add/fpu_add_goldmine/.tmp/.initCmds.tcl' 'FPV_fpu_add.tcl'
 # ----------------------------------------
 #  Copyright (c) 2017 Cadence Design Systems, Inc. All Rights
 #  Reserved.  Unpublished -- rights reserved under the copyright 
@@ -31,7 +31,7 @@ analyze -v2k \
 # Analyze property files
 analyze -sva \
   ${RTL_PATH}/bindings.sva \
-  ${RTL_PATH}/property.sva
+  ${RTL_PATH}/property_goldmine.sva
   
 # Elaborate design and properties
 elaborate -top fpu_add
