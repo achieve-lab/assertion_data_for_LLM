@@ -11,7 +11,7 @@ analyze -v2k \
 # Analyze property files
 analyze -sva \
   ${RTL_PATH}/bindings.sva \
-  ${RTL_PATH}/property.sva
+  ${RTL_PATH}/property_goldmine.sva
 
 # Elaborate design and properties
 elaborate -top ge_1000baseX_sync
