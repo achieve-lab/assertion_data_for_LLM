@@ -1,5 +1,11 @@
 #  AssertionBench
-This is AssertionBench, 
+
+## Description
+Assertions have been the de facto collateral for simulation-based and formal verification of hardware designs for over a decade. The quality of hardware verification,i.e., detection and diagnosis of corner-case design bugs, is critically dependent on the quality of the assertions. There has been a considerable amount of research
+leveraging a blend of data-driven statistical analysis and static analysis to generate high-quality assertions from hardware design source code and design execution trace data. Despite such concerted effort, all prior research struggles to scale to industrial-scale large designs, generates too many low-quality assertions, often fails
+to capture subtle and non-trivial design functionality, and does not produce any easy-to-comprehend explanations of the generated assertions to understand assertions’ suitability to different downstream validation tasks. Recently, with the advent of Large-Language Models (LLMs), there has been a widespread effort to model assertion generation as a sequence-to-sequence translation (S2St) and leverage prompt engineering to generate assertions. However, there is little effort to quantitatively establish the effectiveness and suitability of various LLMs for assertion generation. In this paper, we present AssertionBench, a novel benchmark to evaluate LLMs’
+effectiveness for assertion generation quantitatively. AssertionBench contains 100 curated Verilog hardware designs from OpenCores and formally verified assertions for each design generated from G OLD M INE and HARM. We use AssertionBench to compare state-of-the-art LLMs, e.g., GPT-3.5, GPT-4o, CodeLLaMa 2, and
+LLaMa3-70B, to assess their effectiveness in inferring functionally correct assertions for hardware designs. Our experiments comprehensively demonstrate how LLMs perform relative to each other, the benefits of using more in-context exemplars in generating a higher fraction of functionally correct assertions, and the significant room for improvement for LLM-based assertion generators.
 
 ## Softwares Used
 
@@ -187,7 +193,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzkxMzM0MDIsNTM4NTI2NjUwLC01MT
+eyJoaXN0b3J5IjpbLTEzNjg2MTIzNjksNTM4NTI2NjUwLC01MT
 c1MjksMjUyMTExNjE1LDcyMTE4MDI0MCwtMTk5Mjg4NDQ5Nywx
 MTUxMDgxMTMwLC0yMTM2NDg1NiwtNTM2MDQzMzE2LDEwNjcxMD
 AwNywtMzA3MjY5NTQsMjAzMjIwMTkwNiw1MDE3OTgyMjBdfQ==
