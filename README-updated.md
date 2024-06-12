@@ -36,10 +36,9 @@ The command for arbiter2 would be
 1-shot and 5-shot learning is perfomed on GPT-3.5, GPT-4, LLaMA3-70B and CodeLLaMa2-70B model, and the responses are saved in a json format. 
 
 ## Syntax Correcter using GPT-3.5
-We;ve observed s
+We;ve observed errors from the responses recevied and corrected the syntax errors using GPT 3.5. 
 
-
-
+After correcting the errors, these assertions are formally verified using Jasper. 
 
 
 
@@ -188,8 +187,9 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgxMzc4NTg5NSw1Mzg1MjY2NTAsLTUxNz
-UyOSwyNTIxMTE2MTUsNzIxMTgwMjQwLC0xOTkyODg0NDk3LDEx
-NTEwODExMzAsLTIxMzY0ODU2LC01MzYwNDMzMTYsMTA2NzEwMD
-A3LC0zMDcyNjk1NCwyMDMyMjAxOTA2LDUwMTc5ODIyMF19
+eyJoaXN0b3J5IjpbLTIwMzkxMzM0MDIsNTM4NTI2NjUwLC01MT
+c1MjksMjUyMTExNjE1LDcyMTE4MDI0MCwtMTk5Mjg4NDQ5Nywx
+MTUxMDgxMTMwLC0yMTM2NDg1NiwtNTM2MDQzMzE2LDEwNjcxMD
+AwNywtMzA3MjY5NTQsMjAzMjIwMTkwNiw1MDE3OTgyMjBdfQ==
+
 -->
