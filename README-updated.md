@@ -28,7 +28,7 @@ The command for arbiter2 is
     ./harm --vcd <path_to_.vcd_file> --conf <path_to_conf_file> --generate-config --vcd-r 2 --vcd-ss arb2_bench 
     ./harm --vcd <path_to_.vcd_file> --conf <path_to_conf_file> --sva --dump-to <path-to-dump-text-file> --vcd-r <no.of > --vcd-ss <top_module_name>
     
- The commands to  generate config file and generate assertions using HARM on arbiter2 .vcd file would be 
+ The commands to  generate config file and generate assertions using HARM on arb2.vcd file is
 
     ./harm --vcd ../verilog/arb2/arb2.vcd --conf ../verilog/arb2/arb2.xml --generate-config --vcd-r 2 --vcd-ss arb2_bench 
     ./harm --vcd ../verilog/arb2/arb2.vcd --conf ../verilog/arb2/arb2.xml --sva --dump-to ../verilog/arb2/ --vcd-r 2 --vcd-ss arb2_bench  
@@ -51,7 +51,7 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA5NDU3ODA5NywtMTg2MTMyOTI5MSwxNT
+eyJoaXN0b3J5IjpbMTIxNTkwNDI2MywtMTg2MTMyOTI5MSwxNT
 g1NTQzNzQsNTM4NTI2NjUwLC01MTc1MjksMjUyMTExNjE1LDcy
 MTE4MDI0MCwtMTk5Mjg4NDQ5NywxMTUxMDgxMTMwLC0yMTM2ND
 g1NiwtNTM2MDQzMzE2LDEwNjcxMDAwNywtMzA3MjY5NTQsMjAz
