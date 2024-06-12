@@ -9,13 +9,11 @@ This is AssertionBench,
 ### GOLDMINE
 [GoldMine](https://bitbucket.org/debjitp/goldminer/src/master/) is one of the assertion miner tools used to mine the assertions from the verilog HDL design. Goldmine is written in both Python2 and Python3. We have utilised this software in Python2 version. The configuration file is updated with the iverilog executable path. 
 
- Example command would be 
-
     python2 ../src/goldmine.py -m <module_name> -u ../ -c <clock>:1 -r <reset>:1 -VS -F <path_to_vfile>
 
 Example would be
 
-    python2 ../src/goldmine.py -m <module_name> -u ../ -c <clock>:1 -r <reset>:1 -VS -F <path_to_vfile>
+    python2 ../src/goldmine.py -m arb2 -u ../ -c clk:1 -r rst:1 -VS -F ../vfiles/
 
 ### HARM
 
@@ -180,7 +178,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzMjcwNTc0NywtMjEzNjQ4NTYsLTUzNj
+eyJoaXN0b3J5IjpbLTkxMDA5NDM4NCwtMjEzNjQ4NTYsLTUzNj
 A0MzMxNiwxMDY3MTAwMDcsLTMwNzI2OTU0LDIwMzIyMDE5MDYs
 NTAxNzk4MjIwXX0=
 -->
