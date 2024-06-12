@@ -33,12 +33,10 @@ The command for arbiter2 would be
     jg -no_gui -allow_unsupported_OS -fpv FPV_arb2.tcl -proj arb2
 
 ## Responses from Models
-1-shot and 5-shot learning is perfomed on LLaMA3-70B and CodeLLaMa2-70B model, and the re
-
-
-
+1-shot and 5-shot learning is perfomed on GPT-3.5, GPT-4, LLaMA3-70B and CodeLLaMa2-70B model, and the responses are saved in a json format. 
 
 ## Syntax Correcter using GPT-3.5
+We;ve observed s
 
 
 
@@ -190,7 +188,7 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAyMDkyODM4Myw1Mzg1MjY2NTAsLTUxNz
+eyJoaXN0b3J5IjpbLTgxMzc4NTg5NSw1Mzg1MjY2NTAsLTUxNz
 UyOSwyNTIxMTE2MTUsNzIxMTgwMjQwLC0xOTkyODg0NDk3LDEx
 NTEwODExMzAsLTIxMzY0ODU2LC01MzYwNDMzMTYsMTA2NzEwMD
 A3LC0zMDcyNjk1NCwyMDMyMjAxOTA2LDUwMTc5ODIyMF19
