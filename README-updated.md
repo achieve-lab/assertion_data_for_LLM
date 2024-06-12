@@ -25,9 +25,7 @@ The command for arbiter2 would be
  The commands to  generate config file and generate assertions using HARM on arbiter2 .vcd file would be 
 
     ./harm --vcd ../verilog/arb2/arb2.vcd --conf ../verilog/arb2/arb2.xml --generate-config --vcd-r 2 --vcd-ss arb2_bench 
-    ./harm --vcd ../verilog/arb2/arb2.vcd --conf ../verilog/arb2/arb2.xml --sva --dump-to ../verilog/arb2/ --vcd-r 2 --vcd-ss arb2_bench
-
-   
+    ./harm --vcd ../verilog/arb2/arb2.vcd --conf ../verilog/arb2/arb2.xml --sva --dump-to ../verilog/arb2/ --vcd-r 2 --vcd-ss arb2_bench  
 
 ### JasperGold
 [Jasper](https://www.cadence.com/en_US/home/tools/system-design-and-verification/formal-and-static-verification.html) is the formal functional verification software. Jasper’s solution achieves 100% Actual Coverage – improving the quality of electronic design, predictably and within verification schedule constraints. Jasper has unique and valuable technology that changes the verification game and “makes formal verification real”.
@@ -192,8 +190,8 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwMzI0NzY2MywyNTIxMTE2MTUsNzIxMT
-gwMjQwLC0xOTkyODg0NDk3LDExNTEwODExMzAsLTIxMzY0ODU2
-LC01MzYwNDMzMTYsMTA2NzEwMDA3LC0zMDcyNjk1NCwyMDMyMj
-AxOTA2LDUwMTc5ODIyMF19
+eyJoaXN0b3J5IjpbLTUxNzUyOSwyNTIxMTE2MTUsNzIxMTgwMj
+QwLC0xOTkyODg0NDk3LDExNTEwODExMzAsLTIxMzY0ODU2LC01
+MzYwNDMzMTYsMTA2NzEwMDA3LC0zMDcyNjk1NCwyMDMyMjAxOT
+A2LDUwMTc5ODIyMF19
 -->
