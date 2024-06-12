@@ -28,27 +28,18 @@ arguments:
  -a, --aggregate  :  Aggregate rankings for assertion importance, complexity, coverage and complexity (BETA phase) 
   -m TOP, --module TOP :  Top module of the design (Mandatory arguments)
   -c CLOCK, --clock CLOCK  : Clock signal
-  -r RESET, --reset RESET
-                        Reset signal
-  -p, --parse           Parse the verilog file(s) and exit
-  -e ENGINE, --engine ENGINE
-                        Assertion mining engine (Default engine is PRISM)
-  -u CONFIG_LOC, --configuration_file_loc CONFIG_LOC
-                        GoldMine configuration file location (Mandatory arguments)
-  -v VCD, --vcd VCD     VCD File(s)
-  -t TARGETV, --targets TARGETV
-                        Target variables seperated by comma for assertions
-                        mining*
-  -I INCLUDE, --include INCLUDE
-                        Include Path for Verilog `include files
-  -V, --verification    Specify to skip formal verification
-  -S, --static_dump     Specify to dump static analysis results
-  -N, --inter_modular   Specify to mine inter modular assertions
-                        (significantly slow)
-  -M MAN_ASSERTION_FILE, --manual_assertion MAN_ASSERTION_FILE
-                        File containing user specified assertions
-  -f FILE_LOC, --files FILE_LOC
-                        Location containing source Verilog files
+  -r RESET, --reset RESET : Reset signal
+  -p, --parse  :  Parse the verilog file(s) and exit
+  -e ENGINE, --engine ENGINE  : Assertion mining engine (Default engine is PRISM)
+  -u CONFIG_LOC, --configuration_file_loc CONFIG_LOC  :  GoldMine configuration file location (Mandatory arguments)
+  -v VCD, --vcd VCD : VCD File(s)
+  -t TARGETV, --targets TARGETV  :  Target variables seperated by comma for assertions mining*
+  -I INCLUDE, --include INCLUDE  :  Include Path for Verilog `include files
+  -V, --verification  :  Specify to skip formal verification
+  -S, --static_dump   :  Specify to dump static analysis results
+  -N, --inter_modular :  Specify to mine inter modular assertions  (significantly slow)
+  -M MAN_ASSERTION_FILE, --manual_assertion MAN_ASSERTION_FILE  :  File containing user specified assertions
+  -f FILE_LOC, --files FILE_LOC  : Location containing source Verilog files
   -F LFILE, --file_list LFILE
                         A file containing name of verilog files with absolute
                         path, one file in every line
@@ -90,11 +81,11 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTQzMzA4MDYsLTc5MTA3ODI0Myw4ND
-UzNDY5ODIsLTEzMzYzMzM0NDAsLTE1MjI0NTcxOTAsODc0MzEz
-MDc5LDE4NTgwODc1MjEsLTEzMDc2NTAyOTMsNDQ0NDY0NDUzLD
-EyMTU5MDQyNjMsLTE4NjEzMjkyOTEsMTU4NTU0Mzc0LDUzODUy
-NjY1MCwtNTE3NTI5LDI1MjExMTYxNSw3MjExODAyNDAsLTE5OT
-I4ODQ0OTcsMTE1MTA4MTEzMCwtMjEzNjQ4NTYsLTUzNjA0MzMx
-Nl19
+eyJoaXN0b3J5IjpbMTgxNTc2NDgwMCwtNzkxMDc4MjQzLDg0NT
+M0Njk4MiwtMTMzNjMzMzQ0MCwtMTUyMjQ1NzE5MCw4NzQzMTMw
+NzksMTg1ODA4NzUyMSwtMTMwNzY1MDI5Myw0NDQ0NjQ0NTMsMT
+IxNTkwNDI2MywtMTg2MTMyOTI5MSwxNTg1NTQzNzQsNTM4NTI2
+NjUwLC01MTc1MjksMjUyMTExNjE1LDcyMTE4MDI0MCwtMTk5Mj
+g4NDQ5NywxMTUxMDgxMTMwLC0yMTM2NDg1NiwtNTM2MDQzMzE2
+XX0=
 -->
