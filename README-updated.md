@@ -37,7 +37,7 @@ The command for arbiter2 is
 [JasperGold](https://www.cadence.com/en_US/home/tools/system-design-and-verification/formal-and-static-verification.html) is the formal functional verification software. Jasper verifies the assertions provided and reports if they're proven and covered. We used **Jasper 2022.06 version**.  This is an example to run the command for arbiter2.
 
     jg -no_gui -allow_unsupported_OS -fpv FPV_arb2.tcl -proj arb2
- >Note: The flag `-allow_unsupported_OS`  is not required for 
+ >Note: The flag `-allow_unsupported_OS`  is required if JasperGold is not run on RHEL (Red Hat Enterprise Linux).
 
 ## Responses from Models
 1-shot and 5-shot learning is perfomed on GPT-3.5, GPT-4, LLaMA3-70B and CodeLLaMa2-70B model, and the responses are saved in a json format. All the models are set to their default hyperparameters with only the following changed: `max_new_tokens = 1024; temperature = 1.0; seed = 50;`
@@ -55,11 +55,11 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2NTIxMTY2MCwtMTMzNjMzMzQ0MCwtMT
-UyMjQ1NzE5MCw4NzQzMTMwNzksMTg1ODA4NzUyMSwtMTMwNzY1
-MDI5Myw0NDQ0NjQ0NTMsMTIxNTkwNDI2MywtMTg2MTMyOTI5MS
-wxNTg1NTQzNzQsNTM4NTI2NjUwLC01MTc1MjksMjUyMTExNjE1
-LDcyMTE4MDI0MCwtMTk5Mjg4NDQ5NywxMTUxMDgxMTMwLC0yMT
-M2NDg1NiwtNTM2MDQzMzE2LDEwNjcxMDAwNywtMzA3MjY5NTRd
-fQ==
+eyJoaXN0b3J5IjpbODQ1MzQ2OTgyLC0xMzM2MzMzNDQwLC0xNT
+IyNDU3MTkwLDg3NDMxMzA3OSwxODU4MDg3NTIxLC0xMzA3NjUw
+MjkzLDQ0NDQ2NDQ1MywxMjE1OTA0MjYzLC0xODYxMzI5MjkxLD
+E1ODU1NDM3NCw1Mzg1MjY2NTAsLTUxNzUyOSwyNTIxMTE2MTUs
+NzIxMTgwMjQwLC0xOTkyODg0NDk3LDExNTEwODExMzAsLTIxMz
+Y0ODU2LC01MzYwNDMzMTYsMTA2NzEwMDA3LC0zMDcyNjk1NF19
+
 -->
