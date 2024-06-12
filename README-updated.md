@@ -44,6 +44,7 @@ The command for arbiter2 would be
 ## Syntax Correcter using GPT-3.5
 We;ve observed errors from the responses recevied and corrected the syntax errors using GPT 3.5. 
 
+## Formal Verificatio
 After correcting the errors, these assertions are formally verified using Jasper. 
 
 
@@ -193,9 +194,8 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjg2MTIzNjksNTM4NTI2NjUwLC01MT
-c1MjksMjUyMTExNjE1LDcyMTE4MDI0MCwtMTk5Mjg4NDQ5Nywx
-MTUxMDgxMTMwLC0yMTM2NDg1NiwtNTM2MDQzMzE2LDEwNjcxMD
-AwNywtMzA3MjY5NTQsMjAzMjIwMTkwNiw1MDE3OTgyMjBdfQ==
-
+eyJoaXN0b3J5IjpbLTMwMDIxMDQzLDUzODUyNjY1MCwtNTE3NT
+I5LDI1MjExMTYxNSw3MjExODAyNDAsLTE5OTI4ODQ0OTcsMTE1
+MTA4MTEzMCwtMjEzNjQ4NTYsLTUzNjA0MzMxNiwxMDY3MTAwMD
+csLTMwNzI2OTU0LDIwMzIyMDE5MDYsNTAxNzk4MjIwXX0=
 -->
