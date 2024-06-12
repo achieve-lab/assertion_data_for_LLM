@@ -50,11 +50,13 @@ The command for arbiter2 is
 After correcting the errors, these assertions are formally verified using Jasper. We've followed the same process used to verify the assertions generated from GoldMine and HARM. 
 
 
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI5MjQyMjIyNSw0NDQ0NjQ0NTMsMTIxNT
-kwNDI2MywtMTg2MTMyOTI5MSwxNTg1NTQzNzQsNTM4NTI2NjUw
-LC01MTc1MjksMjUyMTExNjE1LDcyMTE4MDI0MCwtMTk5Mjg4ND
-Q5NywxMTUxMDgxMTMwLC0yMTM2NDg1NiwtNTM2MDQzMzE2LDEw
-NjcxMDAwNywtMzA3MjY5NTQsMjAzMjIwMTkwNiw1MDE3OTgyMj
-BdfQ==
+eyJoaXN0b3J5IjpbLTEzMDc2NTAyOTMsNDQ0NDY0NDUzLDEyMT
+U5MDQyNjMsLTE4NjEzMjkyOTEsMTU4NTU0Mzc0LDUzODUyNjY1
+MCwtNTE3NTI5LDI1MjExMTYxNSw3MjExODAyNDAsLTE5OTI4OD
+Q0OTcsMTE1MTA4MTEzMCwtMjEzNjQ4NTYsLTUzNjA0MzMxNiwx
+MDY3MTAwMDcsLTMwNzI2OTU0LDIwMzIyMDE5MDYsNTAxNzk4Mj
+IwXX0=
 -->
