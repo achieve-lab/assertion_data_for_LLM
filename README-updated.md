@@ -17,7 +17,7 @@ LLaMa3-70B, to assess their effectiveness in inferring functionally correct asse
 
     python2 ../src/goldmine.py -m <module_name> -u ../ -c <clock>:1 -r <reset>:1 -VS -F <path_to_vfile>
 
-The command for arbiter2 would be
+The command for arbiter2 is
 
     python2 ../src/goldmine.py -m arb2 -u ../ -c clk:1 -r rst:1 -VS -F ../vfiles/vfile_arb2
 
@@ -51,9 +51,9 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjEzMjkyOTEsMTU4NTU0Mzc0LDUzOD
-UyNjY1MCwtNTE3NTI5LDI1MjExMTYxNSw3MjExODAyNDAsLTE5
-OTI4ODQ0OTcsMTE1MTA4MTEzMCwtMjEzNjQ4NTYsLTUzNjA0Mz
-MxNiwxMDY3MTAwMDcsLTMwNzI2OTU0LDIwMzIyMDE5MDYsNTAx
-Nzk4MjIwXX0=
+eyJoaXN0b3J5IjpbMjA5NDU3ODA5NywtMTg2MTMyOTI5MSwxNT
+g1NTQzNzQsNTM4NTI2NjUwLC01MTc1MjksMjUyMTExNjE1LDcy
+MTE4MDI0MCwtMTk5Mjg4NDQ5NywxMTUxMDgxMTMwLC0yMTM2ND
+g1NiwtNTM2MDQzMzE2LDEwNjcxMDAwNywtMzA3MjY5NTQsMjAz
+MjIwMTkwNiw1MDE3OTgyMjBdfQ==
 -->
