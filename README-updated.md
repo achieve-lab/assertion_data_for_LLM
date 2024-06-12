@@ -37,6 +37,7 @@ To run JasperGold after installation,
 
 ## Responses from LLAMA
 
+
 ## Responses from GPT
 
 ## Syntax Correcter using GPT-3.5
@@ -191,8 +192,8 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjUyMTExNjE1LDcyMTE4MDI0MCwtMTk5Mj
-g4NDQ5NywxMTUxMDgxMTMwLC0yMTM2NDg1NiwtNTM2MDQzMzE2
-LDEwNjcxMDAwNywtMzA3MjY5NTQsMjAzMjIwMTkwNiw1MDE3OT
-gyMjBdfQ==
+eyJoaXN0b3J5IjpbLTUwMzI0NzY2MywyNTIxMTE2MTUsNzIxMT
+gwMjQwLC0xOTkyODg0NDk3LDExNTEwODExMzAsLTIxMzY0ODU2
+LC01MzYwNDMzMTYsMTA2NzEwMDA3LC0zMDcyNjk1NCwyMDMyMj
+AxOTA2LDUwMTc5ODIyMF19
 -->
