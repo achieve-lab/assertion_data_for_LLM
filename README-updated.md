@@ -43,7 +43,7 @@ The command for arbiter2 is
   -f FILE_LOC, --files FILE_LOC  : Location containing source Verilog files
   -F LFILE, --file_list LFILE  :  A file containing name of verilog files with absolute path, one file in every line.
 
-You can find more about GoldMine [here](https://sites.google.com/view/goldmine-illinois/publications).
+You can find more about [GoldMine](https://ieeexplore.ieee.org/document/5457129) in this [website](https://ieeexplore.ieee.org/document/5457129) containing the list of publications.
 
 ### HARM
 
@@ -81,11 +81,11 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjM1NDQ1NDM1LDE1Mjg0MTM2MDYsLTE2ND
-Y0MzY1ODcsNzA1MzA3NzExLC04MDQyNTg1NzUsLTc5MTA3ODI0
-Myw4NDUzNDY5ODIsLTEzMzYzMzM0NDAsLTE1MjI0NTcxOTAsOD
-c0MzEzMDc5LDE4NTgwODc1MjEsLTEzMDc2NTAyOTMsNDQ0NDY0
-NDUzLDEyMTU5MDQyNjMsLTE4NjEzMjkyOTEsMTU4NTU0Mzc0LD
-UzODUyNjY1MCwtNTE3NTI5LDI1MjExMTYxNSw3MjExODAyNDBd
-fQ==
+eyJoaXN0b3J5IjpbMjA3MTgyMjcyMCwxNTI4NDEzNjA2LC0xNj
+Q2NDM2NTg3LDcwNTMwNzcxMSwtODA0MjU4NTc1LC03OTEwNzgy
+NDMsODQ1MzQ2OTgyLC0xMzM2MzMzNDQwLC0xNTIyNDU3MTkwLD
+g3NDMxMzA3OSwxODU4MDg3NTIxLC0xMzA3NjUwMjkzLDQ0NDQ2
+NDQ1MywxMjE1OTA0MjYzLC0xODYxMzI5MjkxLDE1ODU1NDM3NC
+w1Mzg1MjY2NTAsLTUxNzUyOSwyNTIxMTE2MTUsNzIxMTgwMjQw
+XX0=
 -->
