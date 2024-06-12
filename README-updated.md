@@ -13,14 +13,15 @@ Below is the evaluation framework.
 [IVerilog](https://github.com/steveicarus/iverilog) is the compiler used to complie and run verilog HDL designs, as described in the IEEE-1364 standard. 
  
 ### GOLDMINE
-[GoldMine](https://bitbucket.org/debjitp/goldminer/src/master/) is one of the assertion miner tools used to mine the assertions from the verilog HDL design. Goldmine is written in both Python2 and Python3. We have utilised this software in Python2 version. The configuration file is updated with the iverilog executable path. To run goldmine, the command will be
+[GoldMine](https://bitbucket.org/debjitp/goldminer/src/master/) is one of the assertion miner tools used to mine the assertions from the verilog HDL design. Goldmine is written in both Python2 and Python3. We have utilised this software in Python2 version. The configuration file is updated with the iverilog executable path. To run goldmine, the command is
 
     python2 ../src/goldmine.py -m <module_name> -u ../ -c <clock>:1 -r <reset>:1 -VS -F <path_to_vfile>
 
 The command for arbiter2 is
 
     python2 ../src/goldmine.py -m arb2 -u ../ -c clk:1 -r rst:1 -VS -F ../vfiles/vfile_arb2
-> **Note**: vfile_arb2 here contains the path of the verilog HDL design file. 
+    
+> **Note**: vfile_arb2 here contains the path of the verilog HDL design file. "../verilog/arb2/arb2.v"
 
 >**usage**: goldmine.py [-h] [-a] -m TOP -c CLOCK -r RESET [-p] [-e ENGINE] -u                   CONFIG_LOC [-v VCD] [-t TARGETV] [-T] [-I INCLUDE] [-V]  [-S] [-M MAN_ASSERTION_FILE] [-f FILE_LOC | -F LFILE]     
 **arguments**:
@@ -76,11 +77,11 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgwNDI1ODU3NSwtNzkxMDc4MjQzLDg0NT
-M0Njk4MiwtMTMzNjMzMzQ0MCwtMTUyMjQ1NzE5MCw4NzQzMTMw
-NzksMTg1ODA4NzUyMSwtMTMwNzY1MDI5Myw0NDQ0NjQ0NTMsMT
-IxNTkwNDI2MywtMTg2MTMyOTI5MSwxNTg1NTQzNzQsNTM4NTI2
-NjUwLC01MTc1MjksMjUyMTExNjE1LDcyMTE4MDI0MCwtMTk5Mj
-g4NDQ5NywxMTUxMDgxMTMwLC0yMTM2NDg1NiwtNTM2MDQzMzE2
+eyJoaXN0b3J5IjpbMTAyMjUyMjA4MywtODA0MjU4NTc1LC03OT
+EwNzgyNDMsODQ1MzQ2OTgyLC0xMzM2MzMzNDQwLC0xNTIyNDU3
+MTkwLDg3NDMxMzA3OSwxODU4MDg3NTIxLC0xMzA3NjUwMjkzLD
+Q0NDQ2NDQ1MywxMjE1OTA0MjYzLC0xODYxMzI5MjkxLDE1ODU1
+NDM3NCw1Mzg1MjY2NTAsLTUxNzUyOSwyNTIxMTE2MTUsNzIxMT
+gwMjQwLC0xOTkyODg0NDk3LDExNTEwODExMzAsLTIxMzY0ODU2
 XX0=
 -->
