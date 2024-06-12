@@ -6,6 +6,7 @@ This is AssertionBench,
 
 ## HARM
 
+HARM (Hint-based AsseRtion Miner) is one of the tools used to mine assertions from the .vcd 
 
 ## JasperGold
 
@@ -164,5 +165,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTAxMjA3Ml19
+eyJoaXN0b3J5IjpbLTE2Nzk0MDcyNTBdfQ==
 -->
