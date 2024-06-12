@@ -11,7 +11,11 @@ This is AssertionBench,
 
  Example command would be 
 
-  python2 ../src/goldmine.py -m <module_name> -u ../ -c <clock>:1 -r <reset>:1
+    python2 ../src/goldmine.py -m <module_name> -u ../ -c <clock>:1 -r <reset>:1 -VS -F <path_to_vfile>
+
+Example would be
+
+    python2 ../src/goldmine.py -m <module_name> -u ../ -c <clock>:1 -r <reset>:1 -VS -F <path_to_vfile>
 
 ### HARM
 
@@ -174,8 +178,9 @@ A --> C(Round Rect)
 B --> D{Rhombus}
 C --> D
 ```
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMzY0ODU2LC01MzYwNDMzMTYsMTA2Nz
-EwMDA3LC0zMDcyNjk1NCwyMDMyMjAxOTA2LDUwMTc5ODIyMF19
 
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTQzMjcwNTc0NywtMjEzNjQ4NTYsLTUzNj
+A0MzMxNiwxMDY3MTAwMDcsLTMwNzI2OTU0LDIwMzIyMDE5MDYs
+NTAxNzk4MjIwXX0=
 -->
