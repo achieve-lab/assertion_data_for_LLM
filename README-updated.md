@@ -12,7 +12,7 @@ goldmine.cfg is updated with the iverilog executable path.
 
  Example command would be 
 
-  python2 ../src/goldmine/
+  python2 ../src/goldmine.py -m <module_name> 
 
 ### HARM
 
@@ -176,6 +176,6 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA2NzEwMDA3LC0zMDcyNjk1NCwyMDMyMj
-AxOTA2LDUwMTc5ODIyMF19
+eyJoaXN0b3J5IjpbMTU3MDE5ODMzOSwxMDY3MTAwMDcsLTMwNz
+I2OTU0LDIwMzIyMDE5MDYsNTAxNzk4MjIwXX0=
 -->
