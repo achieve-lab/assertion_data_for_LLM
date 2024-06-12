@@ -20,10 +20,9 @@ Below is the evaluation framework.
 The command for arbiter2 is
 
     python2 ../src/goldmine.py -m arb2 -u ../ -c clk:1 -r rst:1 -VS -F ../vfiles/vfile_arb2
->usage: goldmine.py [-h] [-a] -m TOP -c CLOCK -r RESET [-p] [-e ENGINE] -u
-                   CONFIG_LOC [-v VCD] [-t TARGETV] [-T] [-I INCLUDE] [-V]
-                   [-S] [-M MAN_ASSERTION_FILE] [-f FILE_LOC | -F LFILE]     
-arguments:
+    
+>**usage**: goldmine.py [-h] [-a] -m TOP -c CLOCK -r RESET [-p] [-e ENGINE] -u                   CONFIG_LOC [-v VCD] [-t TARGETV] [-T] [-I INCLUDE] [-V]  [-S] [-M MAN_ASSERTION_FILE] [-f FILE_LOC | -F LFILE]     
+**arguments**:
  -h, --help :  Gives list of arguments and exits
  -a, --aggregate  :  Aggregate rankings for assertion importance, complexity, coverage and complexity (BETA phase) 
   -m TOP, --module TOP :  Top module of the design (Mandatory arguments)
@@ -40,12 +39,7 @@ arguments:
   -N, --inter_modular :  Specify to mine inter modular assertions  (significantly slow)
   -M MAN_ASSERTION_FILE, --manual_assertion MAN_ASSERTION_FILE  :  File containing user specified assertions
   -f FILE_LOC, --files FILE_LOC  : Location containing source Verilog files
-  -F LFILE, --file_list LFILE
-                        A file containing name of verilog files with absolute
-                        path, one file in every line
-
-
-
+  -F LFILE, --file_list LFILE  :  A file containing name of verilog files with absolute path, one file in every line.
 
 ### HARM
 
@@ -81,7 +75,7 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxNTc2NDgwMCwtNzkxMDc4MjQzLDg0NT
+eyJoaXN0b3J5IjpbMTI4OTkxNTY5MiwtNzkxMDc4MjQzLDg0NT
 M0Njk4MiwtMTMzNjMzMzQ0MCwtMTUyMjQ1NzE5MCw4NzQzMTMw
 NzksMTg1ODA4NzUyMSwtMTMwNzY1MDI5Myw0NDQ0NjQ0NTMsMT
 IxNTkwNDI2MywtMTg2MTMyOTI5MSwxNTg1NTQzNzQsNTM4NTI2
