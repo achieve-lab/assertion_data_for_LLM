@@ -25,7 +25,7 @@ The command for arbiter2 is
 
 >**usage**: goldmine.py [-h] [-a] -m TOP -c CLOCK -r RESET [-p] [-e ENGINE] -u                   CONFIG_LOC [-v VCD] [-t TARGETV] [-T] [-I INCLUDE] [-V]  [-S] [-M MAN_ASSERTION_FILE] [-f FILE_LOC | -F LFILE]     
 **arguments**:
- -h, --help :  Gives list of arguments and exits
+ -h, --help :  Gives list of arguments and exits\n
  -a, --aggregate  :  Aggregate rankings for assertion importance, complexity, coverage and complexity (BETA phase) 
   -m TOP, --module TOP :  Top module of the design (Mandatory arguments)
   -c CLOCK, --clock CLOCK  : Clock signal
@@ -81,11 +81,11 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM3MDQ2NjI2OSwyMDcxODIyNzIwLDE1Mj
-g0MTM2MDYsLTE2NDY0MzY1ODcsNzA1MzA3NzExLC04MDQyNTg1
-NzUsLTc5MTA3ODI0Myw4NDUzNDY5ODIsLTEzMzYzMzM0NDAsLT
-E1MjI0NTcxOTAsODc0MzEzMDc5LDE4NTgwODc1MjEsLTEzMDc2
-NTAyOTMsNDQ0NDY0NDUzLDEyMTU5MDQyNjMsLTE4NjEzMjkyOT
-EsMTU4NTU0Mzc0LDUzODUyNjY1MCwtNTE3NTI5LDI1MjExMTYx
-NV19
+eyJoaXN0b3J5IjpbMzM4MjM3MDksMjA3MTgyMjcyMCwxNTI4ND
+EzNjA2LC0xNjQ2NDM2NTg3LDcwNTMwNzcxMSwtODA0MjU4NTc1
+LC03OTEwNzgyNDMsODQ1MzQ2OTgyLC0xMzM2MzMzNDQwLC0xNT
+IyNDU3MTkwLDg3NDMxMzA3OSwxODU4MDg3NTIxLC0xMzA3NjUw
+MjkzLDQ0NDQ2NDQ1MywxMjE1OTA0MjYzLC0xODYxMzI5MjkxLD
+E1ODU1NDM3NCw1Mzg1MjY2NTAsLTUxNzUyOSwyNTIxMTE2MTVd
+fQ==
 -->
