@@ -39,21 +39,8 @@ The command for arbiter2 is
 1-shot and 5-shot learning is perfomed on GPT-3.5, GPT-4, LLaMA3-70B and CodeLLaMa2-70B model, and the responses are saved in a json format. The syntax errors are corrected using GPT-3.5. `final_data_*.json` files containt the responses from the models. An example of the response from CodeLLaMa2-70B for 5-shot learning is 
 
        "file_name": "rptr_handler.v",
-       "verilog_design": "module rptr_handler #(parameter PTR_WIDTH=3) (input rclk, rrst_n, r_en, input [PTR_WIDTH:0] g_wptr_sync, output reg [PTR_WIDTH:0] b_rptr, g_rptr, output reg empty ); wire [PTR_WIDTH:0] b_rptr_next; wire [PTR_WIDTH:0] g_rptr_next; assign b_rptr_next = b_rptr + (r_en & !empty); assign g_rptr_next = (b_rptr_next >>1)^b_rptr_next; assign rempty = (g_wptr_sync ==       g_rptr_next); always@(posedge rclk or negedge rrst_n) begin if(!rrst_n)       begin b_rptr <= 0; g_rptr <= 0; end else begin b_rptr <= b_rptr_next;        g_rptr <= g_rptr_next; end end always@(posedge rclk or negedge rrst_n) begin if(!rrst_n) empty <= 1; else empty <= rempty; end endmodule",      "assertions_codellama2_70b_5shot": " (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= g_wptr_sync); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_wptr_sync); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!=b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!=b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!=   g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= 
-        b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |->
-         (g_rptr!= g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); 
-         (r_en &&!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> 
-         (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty)
-          |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); 
-          (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> 
-          (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en 
-          &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= 
-          g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); (r_en 
-          &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= 
-          b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); 
-          (r_en &&!empty) |-> (g_rptr!= b_rptr); 
-          (r_en &&!empty) |-> (b_rptr!= g_rptr_next);
-           (r_en &&!empty) |-> (g_rptr!= g"
+       "verilog_design": "module rptr_handler #(parameter PTR_WIDTH=3) (input rclk, rrst_n, r_en, input [PTR_WIDTH:0] g_wptr_sync, output reg [PTR_WIDTH:0] b_rptr, g_rptr, output reg empty ); wire [PTR_WIDTH:0] b_rptr_next; wire [PTR_WIDTH:0] g_rptr_next; assign b_rptr_next = b_rptr + (r_en & !empty); assign g_rptr_next = (b_rptr_next >>1)^b_rptr_next; assign rempty = (g_wptr_sync ==       g_rptr_next); always@(posedge rclk or negedge rrst_n) begin if(!rrst_n)       begin b_rptr <= 0; g_rptr <= 0; end else begin b_rptr <= b_rptr_next;        g_rptr <= g_rptr_next; end end always@(posedge rclk or negedge rrst_n) begin if(!rrst_n) empty <= 1; else empty <= rempty; end endmodule", 
+       "assertions_codellama2_70b_5shot": " (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= g_wptr_sync); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_wptr_sync); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!=b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!=b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!=   g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en&&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en&&!empty) |-> (g_rptr!= g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en&&!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en&&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); (r_en   &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!=     b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g"
 
 
 ## Formal Verification of generated assertions
@@ -63,11 +50,10 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTczMjY1OTAzMyw4NzQzMTMwNzksMTg1OD
-A4NzUyMSwtMTMwNzY1MDI5Myw0NDQ0NjQ0NTMsMTIxNTkwNDI2
-MywtMTg2MTMyOTI5MSwxNTg1NTQzNzQsNTM4NTI2NjUwLC01MT
-c1MjksMjUyMTExNjE1LDcyMTE4MDI0MCwtMTk5Mjg4NDQ5Nywx
-MTUxMDgxMTMwLC0yMTM2NDg1NiwtNTM2MDQzMzE2LDEwNjcxMD
-AwNywtMzA3MjY5NTQsMjAzMjIwMTkwNiw1MDE3OTgyMjBdfQ==
-
+eyJoaXN0b3J5IjpbMTg3Nzk5ODI1LDg3NDMxMzA3OSwxODU4MD
+g3NTIxLC0xMzA3NjUwMjkzLDQ0NDQ2NDQ1MywxMjE1OTA0MjYz
+LC0xODYxMzI5MjkxLDE1ODU1NDM3NCw1Mzg1MjY2NTAsLTUxNz
+UyOSwyNTIxMTE2MTUsNzIxMTgwMjQwLC0xOTkyODg0NDk3LDEx
+NTEwODExMzAsLTIxMzY0ODU2LC01MzYwNDMzMTYsMTA2NzEwMD
+A3LC0zMDcyNjk1NCwyMDMyMjAxOTA2LDUwMTc5ODIyMF19
 -->
