@@ -2,7 +2,7 @@
 This is AssertionBench, 
 
 ## IVerilog
-(https://github.com/steveicarus/iverilog)
+[IVerilog](https://github.com/steveicarus/iverilog) is the compiler used to complie and run verilog HDL designs, as described in the IEEE-1364 standard.
 
 ## Goldmine
 
@@ -168,5 +168,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY5MjU5MTExNF19
+eyJoaXN0b3J5IjpbLTQ1ODYyNTc5NF19
 -->
