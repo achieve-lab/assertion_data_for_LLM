@@ -21,7 +21,7 @@ The command for arbiter2 is
 
     python2 ../src/goldmine.py -m arb2 -u ../ -c clk:1 -r rst:1 -VS -F ../vfiles/vfile_arb2
     
-> **Note**: vfile_arb2 here contains the path of the verilog HDL design file. "../verilog/arb2/arb2.v"
+> **Note**: vfile_arb2 contains the path of the verilog HDL design file. Here it is "../verilog/arb2/arb2.v".
 
 >**usage**: goldmine.py [-h] [-a] -m TOP -c CLOCK -r RESET [-p] [-e ENGINE] -u                   CONFIG_LOC [-v VCD] [-t TARGETV] [-T] [-I INCLUDE] [-V]  [-S] [-M MAN_ASSERTION_FILE] [-f FILE_LOC | -F LFILE]     
 **arguments**:
@@ -81,11 +81,11 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3MTgyMjcyMCwxNTI4NDEzNjA2LC0xNj
-Q2NDM2NTg3LDcwNTMwNzcxMSwtODA0MjU4NTc1LC03OTEwNzgy
-NDMsODQ1MzQ2OTgyLC0xMzM2MzMzNDQwLC0xNTIyNDU3MTkwLD
-g3NDMxMzA3OSwxODU4MDg3NTIxLC0xMzA3NjUwMjkzLDQ0NDQ2
-NDQ1MywxMjE1OTA0MjYzLC0xODYxMzI5MjkxLDE1ODU1NDM3NC
-w1Mzg1MjY2NTAsLTUxNzUyOSwyNTIxMTE2MTUsNzIxMTgwMjQw
-XX0=
+eyJoaXN0b3J5IjpbMTM3MDQ2NjI2OSwyMDcxODIyNzIwLDE1Mj
+g0MTM2MDYsLTE2NDY0MzY1ODcsNzA1MzA3NzExLC04MDQyNTg1
+NzUsLTc5MTA3ODI0Myw4NDUzNDY5ODIsLTEzMzYzMzM0NDAsLT
+E1MjI0NTcxOTAsODc0MzEzMDc5LDE4NTgwODc1MjEsLTEzMDc2
+NTAyOTMsNDQ0NDY0NDUzLDEyMTU5MDQyNjMsLTE4NjEzMjkyOT
+EsMTU4NTU0Mzc0LDUzODUyNjY1MCwtNTE3NTI5LDI1MjExMTYx
+NV19
 -->
