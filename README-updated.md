@@ -27,7 +27,7 @@ The command for arbiter2 is
 **arguments**:
  -h, --help :  Gives list of arguments and exits. <br> -a, --aggregate  :  Aggregate rankings for assertion importance, complexity, coverage and complexity (BETA phase) <br>  -m TOP, --module TOP :  Top module of the design (Mandatory arguments) <br> -c CLOCK, --clock CLOCK  : Clock signal <br> -r RESET, --reset RESET : Reset signal <br> -p, --parse  :  Parse the verilog file(s) and exit <br> -e ENGINE, --engine ENGINE  : Assertion mining engine (Default engine is PRISM) <br> -u CONFIG_LOC, --configuration_file_loc CONFIG_LOC  :  GoldMine configuration file location (Mandatory arguments) <br> -v VCD, --vcd VCD : VCD File(s) <br>  -t TARGETV, --targets TARGETV  :  Target variables seperated by comma for assertions mining <br> -I INCLUDE, --include INCLUDE  :  Include Path for Verilog `include files <br>  -V, --verification  :  Specify to skip formal verification <br> -S, --static_dump   :  Specify to dump static analysis results <br>  -N, --inter_modular :  Specify to mine inter modular assertions  (significantly slow) <br> -M MAN_ASSERTION_FILE, --manual_assertion MAN_ASSERTION_FILE  :  File containing user specified assertions <br> -f FILE_LOC, --files FILE_LOC  : Location containing source Verilog files <br> -F LFILE, --file_list LFILE  :  A file containing name of verilog files with absolute path, one file in every line.
 
-You can find more about [GoldMine](https://ieeexplore.ieee.org/document/5457129) in this [website](https://ieeexplore.ieee.org/document/5457129) containing the list of publications.
+You can find more about [GoldMine](https://ieeexplore.ieee.org/document/5457129) in this [website](https://sites.google.com/view/goldmine-illinois/publications?authuser=0) containing the list of publications.
 
 ### HARM
 
@@ -65,11 +65,11 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzY2NDk3ODgyLC04NTYxOTY3ODgsMjA3MT
-gyMjcyMCwxNTI4NDEzNjA2LC0xNjQ2NDM2NTg3LDcwNTMwNzcx
-MSwtODA0MjU4NTc1LC03OTEwNzgyNDMsODQ1MzQ2OTgyLC0xMz
-M2MzMzNDQwLC0xNTIyNDU3MTkwLDg3NDMxMzA3OSwxODU4MDg3
-NTIxLC0xMzA3NjUwMjkzLDQ0NDQ2NDQ1MywxMjE1OTA0MjYzLC
-0xODYxMzI5MjkxLDE1ODU1NDM3NCw1Mzg1MjY2NTAsLTUxNzUy
-OV19
+eyJoaXN0b3J5IjpbMzM3MDQzNTcxLDc2NjQ5Nzg4MiwtODU2MT
+k2Nzg4LDIwNzE4MjI3MjAsMTUyODQxMzYwNiwtMTY0NjQzNjU4
+Nyw3MDUzMDc3MTEsLTgwNDI1ODU3NSwtNzkxMDc4MjQzLDg0NT
+M0Njk4MiwtMTMzNjMzMzQ0MCwtMTUyMjQ1NzE5MCw4NzQzMTMw
+NzksMTg1ODA4NzUyMSwtMTMwNzY1MDI5Myw0NDQ0NjQ0NTMsMT
+IxNTkwNDI2MywtMTg2MTMyOTI5MSwxNTg1NTQzNzQsNTM4NTI2
+NjUwXX0=
 -->
