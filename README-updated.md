@@ -64,20 +64,34 @@ The command for arbiter2 is
         &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= 
         g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); (r_en &&!empty) 
         |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= b_rptr_next); 
-        (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g"
+        (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= 
+        b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |->
+         (g_rptr!= g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); 
+         (r_en &&!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> 
+         (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty)
+          |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); 
+          (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> 
+          (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en 
+          &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= 
+          g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); (r_en 
+          &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= 
+          b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); 
+          (r_en &&!empty) |-> (g_rptr!= b_rptr); 
+          (r_en &&!empty) |-> (b_rptr!= g_rptr_next);
+           (r_en &&!empty) |-> (g_rptr!= g"
 
 
 ## Formal Verification of generated assertions
-After correcting the errors, these assertions are formally verified using Jasper. We've followed the same process used to verify the assertions generated from GoldMine and HARM. 
+After correcting the errors, these assertions are formally verified using JasperGold. We've followed the same process used to verify the assertions generated from GoldMine and HARM. 
 
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwMDcxNTg1MywxODU4MDg3NTIxLC0xMz
-A3NjUwMjkzLDQ0NDQ2NDQ1MywxMjE1OTA0MjYzLC0xODYxMzI5
-MjkxLDE1ODU1NDM3NCw1Mzg1MjY2NTAsLTUxNzUyOSwyNTIxMT
-E2MTUsNzIxMTgwMjQwLC0xOTkyODg0NDk3LDExNTEwODExMzAs
-LTIxMzY0ODU2LC01MzYwNDMzMTYsMTA2NzEwMDA3LC0zMDcyNj
-k1NCwyMDMyMjAxOTA2LDUwMTc5ODIyMF19
+eyJoaXN0b3J5IjpbODc0MzEzMDc5LDE4NTgwODc1MjEsLTEzMD
+c2NTAyOTMsNDQ0NDY0NDUzLDEyMTU5MDQyNjMsLTE4NjEzMjky
+OTEsMTU4NTU0Mzc0LDUzODUyNjY1MCwtNTE3NTI5LDI1MjExMT
+YxNSw3MjExODAyNDAsLTE5OTI4ODQ0OTcsMTE1MTA4MTEzMCwt
+MjEzNjQ4NTYsLTUzNjA0MzMxNiwxMDY3MTAwMDcsLTMwNzI2OT
+U0LDIwMzIyMDE5MDYsNTAxNzk4MjIwXX0=
 -->
