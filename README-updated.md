@@ -47,13 +47,13 @@ The command for arbiter2 is
 
 
 ## Formal Verification of generated assertions
-After correcting the errors, these assertions are formally verified using Jasper. We've followed the same process used to verify the assertions generated from GoldMine and HARM.
+After correcting the errors, these assertions are formally verified using Jasper. We've followed the same process used to verify the assertions generated from GoldMine and HARM. 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIxNTkwNDI2MywtMTg2MTMyOTI5MSwxNT
-g1NTQzNzQsNTM4NTI2NjUwLC01MTc1MjksMjUyMTExNjE1LDcy
-MTE4MDI0MCwtMTk5Mjg4NDQ5NywxMTUxMDgxMTMwLC0yMTM2ND
-g1NiwtNTM2MDQzMzE2LDEwNjcxMDAwNywtMzA3MjY5NTQsMjAz
-MjIwMTkwNiw1MDE3OTgyMjBdfQ==
+eyJoaXN0b3J5IjpbNDQ0NDY0NDUzLDEyMTU5MDQyNjMsLTE4Nj
+EzMjkyOTEsMTU4NTU0Mzc0LDUzODUyNjY1MCwtNTE3NTI5LDI1
+MjExMTYxNSw3MjExODAyNDAsLTE5OTI4ODQ0OTcsMTE1MTA4MT
+EzMCwtMjEzNjQ4NTYsLTUzNjA0MzMxNiwxMDY3MTAwMDcsLTMw
+NzI2OTU0LDIwMzIyMDE5MDYsNTAxNzk4MjIwXX0=
 -->
