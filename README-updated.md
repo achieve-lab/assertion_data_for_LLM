@@ -57,7 +57,7 @@ You can find more about GoldMine here.
     ./harm --vcd ../verilog/arb2/arb2.vcd --conf ../verilog/arb2/arb2.xml --generate-config --vcd-r 2 --vcd-ss arb2_bench 
     ./harm --vcd ../verilog/arb2/arb2.vcd --conf ../verilog/arb2/arb2.xml --sva --dump-to ../verilog/arb2/ --vcd-r 2 --vcd-ss arb2_bench  
 
-You can find more about HARM here.
+See the paper below to know more about how the procedure is carried out in [harm](https://ieeexplore.ieee.org/document/9939640).
 
 ### JasperGold
 [JasperGold](https://www.cadence.com/en_US/home/tools/system-design-and-verification/formal-and-static-verification.html) is the formal functional verification software. Jasper verifies the assertions provided and reports if they're proven and covered. We used **Jasper 2022.06 version**.  This is an example to run the command for arbiter2.
@@ -81,11 +81,11 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxMTg2NzIyLDcwNTMwNzcxMSwtODA0Mj
-U4NTc1LC03OTEwNzgyNDMsODQ1MzQ2OTgyLC0xMzM2MzMzNDQw
-LC0xNTIyNDU3MTkwLDg3NDMxMzA3OSwxODU4MDg3NTIxLC0xMz
-A3NjUwMjkzLDQ0NDQ2NDQ1MywxMjE1OTA0MjYzLC0xODYxMzI5
-MjkxLDE1ODU1NDM3NCw1Mzg1MjY2NTAsLTUxNzUyOSwyNTIxMT
-E2MTUsNzIxMTgwMjQwLC0xOTkyODg0NDk3LDExNTEwODExMzBd
-fQ==
+eyJoaXN0b3J5IjpbLTE2NDY0MzY1ODcsNzA1MzA3NzExLC04MD
+QyNTg1NzUsLTc5MTA3ODI0Myw4NDUzNDY5ODIsLTEzMzYzMzM0
+NDAsLTE1MjI0NTcxOTAsODc0MzEzMDc5LDE4NTgwODc1MjEsLT
+EzMDc2NTAyOTMsNDQ0NDY0NDUzLDEyMTU5MDQyNjMsLTE4NjEz
+MjkyOTEsMTU4NTU0Mzc0LDUzODUyNjY1MCwtNTE3NTI5LDI1Mj
+ExMTYxNSw3MjExODAyNDAsLTE5OTI4ODQ0OTcsMTE1MTA4MTEz
+MF19
 -->
