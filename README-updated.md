@@ -3,6 +3,7 @@ This is AssertionBench,
 
 ## Goldmine
 
+
 ## HARM
 
 ## JasperGold
@@ -11,7 +12,8 @@ This is AssertionBench,
 
 ## Responses from GPT
 
-## Syntax Correcter using GPT3.5
+## Syntax Correcter using GPT-3.5
+
 
 
 
@@ -161,5 +163,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQwMjgyNTUxXX0=
+eyJoaXN0b3J5IjpbLTMxMDU5NTk2Ml19
 -->
