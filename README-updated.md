@@ -25,10 +25,7 @@ The command for arbiter2 is
 
 >**usage**: goldmine.py [-h] [-a] -m TOP -c CLOCK -r RESET [-p] [-e ENGINE] -u                   CONFIG_LOC [-v VCD] [-t TARGETV] [-T] [-I INCLUDE] [-V]  [-S] [-M MAN_ASSERTION_FILE] [-f FILE_LOC | -F LFILE]     
 **arguments**:
- -h, --help :  Gives list of arguments and exits. <br> -a, --aggregate  :  Aggregate rankings for assertion importance, complexity, coverage and complexity (BETA phase) <br>  -m TOP, --module TOP :  Top module of the design (Mandatory arguments) <br> -c CLOCK, --clock CLOCK  : Clock signal <br> -r RESET, --reset RESET : Reset signal <br> -p, --parse  :  Parse the verilog file(s) and exit <br> -e ENGINE, --engine ENGINE  : Assertion mining engine (Default engine is PRISM) <br> -u CONFIG_LOC, --configuration_file_loc CONFIG_LOC  :  GoldMine configuration file location (Mandatory arguments) <br> -v VCD, --vcd VCD : VCD File(s) <br>  -t TARGETV, --targets TARGETV  :  Target variables seperated by comma for assertions mining <br> -I INCLUDE, --include INCLUDE  :  Include Path for Verilog `include files <br>  -V, --verification  :  Specify to skip formal verification <br> -S, --static_dump   :  Specify to dump static analysis results<br>  -N, --inter_modular :  Specify to mine inter modular assertions  (significantly slow)
-  -M MAN_ASSERTION_FILE, --manual_assertion MAN_ASSERTION_FILE  :  File containing user specified assertions
-  -f FILE_LOC, --files FILE_LOC  : Location containing source Verilog files
-  -F LFILE, --file_list LFILE  :  A file containing name of verilog files with absolute path, one file in every line.
+ -h, --help :  Gives list of arguments and exits. <br> -a, --aggregate  :  Aggregate rankings for assertion importance, complexity, coverage and complexity (BETA phase) <br>  -m TOP, --module TOP :  Top module of the design (Mandatory arguments) <br> -c CLOCK, --clock CLOCK  : Clock signal <br> -r RESET, --reset RESET : Reset signal <br> -p, --parse  :  Parse the verilog file(s) and exit <br> -e ENGINE, --engine ENGINE  : Assertion mining engine (Default engine is PRISM) <br> -u CONFIG_LOC, --configuration_file_loc CONFIG_LOC  :  GoldMine configuration file location (Mandatory arguments) <br> -v VCD, --vcd VCD : VCD File(s) <br>  -t TARGETV, --targets TARGETV  :  Target variables seperated by comma for assertions mining <br> -I INCLUDE, --include INCLUDE  :  Include Path for Verilog `include files <br>  -V, --verification  :  Specify to skip formal verification <br> -S, --static_dump   :  Specify to dump static analysis results <br>  -N, --inter_modular :  Specify to mine inter modular assertions  (significantly slow) <br> -M MAN_ASSERTION_FILE, --manual_assertion MAN_ASSERTION_FILE  :  File containing user specified assertions <br> -f FILE_LOC, --files FILE_LOC  : Location containing source Verilog files <br> -F LFILE, --file_list LFILE  :  A file containing name of verilog files with absolute path, one file in every line.
 
 You can find more about [GoldMine](https://ieeexplore.ieee.org/document/5457129) in this [website](https://ieeexplore.ieee.org/document/5457129) containing the list of publications.
 
@@ -68,11 +65,11 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg0NTcwMTM5MSwyMDcxODIyNzIwLDE1Mj
-g0MTM2MDYsLTE2NDY0MzY1ODcsNzA1MzA3NzExLC04MDQyNTg1
-NzUsLTc5MTA3ODI0Myw4NDUzNDY5ODIsLTEzMzYzMzM0NDAsLT
-E1MjI0NTcxOTAsODc0MzEzMDc5LDE4NTgwODc1MjEsLTEzMDc2
-NTAyOTMsNDQ0NDY0NDUzLDEyMTU5MDQyNjMsLTE4NjEzMjkyOT
-EsMTU4NTU0Mzc0LDUzODUyNjY1MCwtNTE3NTI5LDI1MjExMTYx
-NV19
+eyJoaXN0b3J5IjpbLTE1Njc3MDM2NjMsMjA3MTgyMjcyMCwxNT
+I4NDEzNjA2LC0xNjQ2NDM2NTg3LDcwNTMwNzcxMSwtODA0MjU4
+NTc1LC03OTEwNzgyNDMsODQ1MzQ2OTgyLC0xMzM2MzMzNDQwLC
+0xNTIyNDU3MTkwLDg3NDMxMzA3OSwxODU4MDg3NTIxLC0xMzA3
+NjUwMjkzLDQ0NDQ2NDQ1MywxMjE1OTA0MjYzLC0xODYxMzI5Mj
+kxLDE1ODU1NDM3NCw1Mzg1MjY2NTAsLTUxNzUyOSwyNTIxMTE2
+MTVdfQ==
 -->
