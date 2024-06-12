@@ -39,7 +39,10 @@ The command for arbiter2 would be
     jg -no_gui -allow_unsupported_OS -fpv FPV_arb2.tcl -proj arb2
 
 ## Responses from Models
-1-shot and 5-shot learning is perfomed on GPT-3.5, GPT-4, LLaMA3-70B and CodeLLaMa2-70B model, and the responses are saved in a json format. The syntax errors are corrected using GPT-3.5. `final_data_*.json` files containt the responses from the models. One of 
+1-shot and 5-shot learning is perfomed on GPT-3.5, GPT-4, LLaMA3-70B and CodeLLaMa2-70B model, and the responses are saved in a json format. The syntax errors are corrected using GPT-3.5. `final_data_*.json` files containt the responses from the models. One of the responses is 
+
+    enter code here
+    
 
 ## Syntax Correcter using GPT-3.5
 We;ve observed errors from the responses recevied and corrected the syntax errors using GPT 3.5. 
@@ -194,8 +197,8 @@ C --> D
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI2MjQ2NDM1NCw1Mzg1MjY2NTAsLTUxNz
-UyOSwyNTIxMTE2MTUsNzIxMTgwMjQwLC0xOTkyODg0NDk3LDEx
-NTEwODExMzAsLTIxMzY0ODU2LC01MzYwNDMzMTYsMTA2NzEwMD
-A3LC0zMDcyNjk1NCwyMDMyMjAxOTA2LDUwMTc5ODIyMF19
+eyJoaXN0b3J5IjpbNTQ5NzE3MzU4LDUzODUyNjY1MCwtNTE3NT
+I5LDI1MjExMTYxNSw3MjExODAyNDAsLTE5OTI4ODQ0OTcsMTE1
+MTA4MTEzMCwtMjEzNjQ4NTYsLTUzNjA0MzMxNiwxMDY3MTAwMD
+csLTMwNzI2OTU0LDIwMzIyMDE5MDYsNTAxNzk4MjIwXX0=
 -->
