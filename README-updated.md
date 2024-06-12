@@ -24,10 +24,10 @@ The command for arbiter2 is
                    CONFIG_LOC [-v VCD] [-t TARGETV] [-T] [-I INCLUDE] [-V]
                    [-S] [-M MAN_ASSERTION_FILE] [-f FILE_LOC | -F LFILE]     
 arguments:
- -h, --help                  Gives list of arguments and exits
- -a, --aggregate         Aggregate rankings for assertion importance, complexity, coverage and complexity (BETA phase) 
-  -m TOP, --module TOP      Top module of the design (Mandatory arguments)
-  -c CLOCK, --clock CLOCK   Clock signal
+ -h, --help :  Gives list of arguments and exits
+ -a, --aggregate  :  Aggregate rankings for assertion importance, complexity, coverage and complexity (BETA phase) 
+  -m TOP, --module TOP :  Top module of the design (Mandatory arguments)
+  -c CLOCK, --clock CLOCK  : Clock signal
   -r RESET, --reset RESET
                         Reset signal
   -p, --parse           Parse the verilog file(s) and exit
@@ -90,11 +90,11 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzczODM3MjgwLC03OTEwNzgyNDMsODQ1Mz
-Q2OTgyLC0xMzM2MzMzNDQwLC0xNTIyNDU3MTkwLDg3NDMxMzA3
-OSwxODU4MDg3NTIxLC0xMzA3NjUwMjkzLDQ0NDQ2NDQ1MywxMj
-E1OTA0MjYzLC0xODYxMzI5MjkxLDE1ODU1NDM3NCw1Mzg1MjY2
-NTAsLTUxNzUyOSwyNTIxMTE2MTUsNzIxMTgwMjQwLC0xOTkyOD
-g0NDk3LDExNTEwODExMzAsLTIxMzY0ODU2LC01MzYwNDMzMTZd
-fQ==
+eyJoaXN0b3J5IjpbLTE3MTQzMzA4MDYsLTc5MTA3ODI0Myw4ND
+UzNDY5ODIsLTEzMzYzMzM0NDAsLTE1MjI0NTcxOTAsODc0MzEz
+MDc5LDE4NTgwODc1MjEsLTEzMDc2NTAyOTMsNDQ0NDY0NDUzLD
+EyMTU5MDQyNjMsLTE4NjEzMjkyOTEsMTU4NTU0Mzc0LDUzODUy
+NjY1MCwtNTE3NTI5LDI1MjExMTYxNSw3MjExODAyNDAsLTE5OT
+I4ODQ0OTcsMTE1MTA4MTEzMCwtMjEzNjQ4NTYsLTUzNjA0MzMx
+Nl19
 -->
