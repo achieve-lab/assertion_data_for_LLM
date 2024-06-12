@@ -31,7 +31,7 @@ The command for arbiter2 is
     ./harm --vcd ../verilog/arb2/arb2.vcd --conf ../verilog/arb2/arb2.xml --sva --dump-to ../verilog/arb2/ --vcd-r 2 --vcd-ss arb2_bench  
 
 ### JasperGold
-[Jasper](https://www.cadence.com/en_US/home/tools/system-design-and-verification/formal-and-static-verification.html) is the formal functional verification software. Jasper verifies the assertions provided and reports if they're proven and covered. We used **Jasper 2022.06 version**.  This is an example to run the command for arbiter2.
+[JasperGold](https://www.cadence.com/en_US/home/tools/system-design-and-verification/formal-and-static-verification.html) is the formal functional verification software. Jasper verifies the assertions provided and reports if they're proven and covered. We used **Jasper 2022.06 version**.  This is an example to run the command for arbiter2.
 
     jg -no_gui -allow_unsupported_OS -fpv FPV_arb2.tcl -proj arb2
 
@@ -50,10 +50,10 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg1ODA4NzUyMSwtMTMwNzY1MDI5Myw0ND
-Q0NjQ0NTMsMTIxNTkwNDI2MywtMTg2MTMyOTI5MSwxNTg1NTQz
-NzQsNTM4NTI2NjUwLC01MTc1MjksMjUyMTExNjE1LDcyMTE4MD
-I0MCwtMTk5Mjg4NDQ5NywxMTUxMDgxMTMwLC0yMTM2NDg1Niwt
-NTM2MDQzMzE2LDEwNjcxMDAwNywtMzA3MjY5NTQsMjAzMjIwMT
-kwNiw1MDE3OTgyMjBdfQ==
+eyJoaXN0b3J5IjpbMjAwMTk1OTY0OSwxODU4MDg3NTIxLC0xMz
+A3NjUwMjkzLDQ0NDQ2NDQ1MywxMjE1OTA0MjYzLC0xODYxMzI5
+MjkxLDE1ODU1NDM3NCw1Mzg1MjY2NTAsLTUxNzUyOSwyNTIxMT
+E2MTUsNzIxMTgwMjQwLC0xOTkyODg0NDk3LDExNTEwODExMzAs
+LTIxMzY0ODU2LC01MzYwNDMzMTYsMTA2NzEwMDA3LC0zMDcyNj
+k1NCwyMDMyMjAxOTA2LDUwMTc5ODIyMF19
 -->
