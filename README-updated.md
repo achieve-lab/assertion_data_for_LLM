@@ -3,8 +3,8 @@ This is AssertionBench,
 
 ## IVerilog
 [IVerilog](https://github.com/steveicarus/iverilog) is the compiler used to complie and run verilog HDL designs, as described in the IEEE-1364 standard. 
-## Goldmine
-
+## GOLDMINE
+[GoldMine](https://bitbucket.org/debjitp/goldminer/src/master/) is one of the assertion miner tools used to mine the 
 
 ## HARM
 
@@ -167,5 +167,5 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTk5NzEzOF19
+eyJoaXN0b3J5IjpbNTAxNzk4MjIwXX0=
 -->
