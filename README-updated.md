@@ -20,7 +20,8 @@ Below is the evaluation framework.
 The command for arbiter2 is
 
     python2 ../src/goldmine.py -m arb2 -u ../ -c clk:1 -r rst:1 -VS -F ../vfiles/vfile_arb2
-    
+> **Note**: vfile_arb2 here contains the path of the verilog HDL design file. 
+
 >**usage**: goldmine.py [-h] [-a] -m TOP -c CLOCK -r RESET [-p] [-e ENGINE] -u                   CONFIG_LOC [-v VCD] [-t TARGETV] [-T] [-I INCLUDE] [-V]  [-S] [-M MAN_ASSERTION_FILE] [-f FILE_LOC | -F LFILE]     
 **arguments**:
  -h, --help :  Gives list of arguments and exits
@@ -75,7 +76,7 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4OTkxNTY5MiwtNzkxMDc4MjQzLDg0NT
+eyJoaXN0b3J5IjpbLTgwNDI1ODU3NSwtNzkxMDc4MjQzLDg0NT
 M0Njk4MiwtMTMzNjMzMzQ0MCwtMTUyMjQ1NzE5MCw4NzQzMTMw
 NzksMTg1ODA4NzUyMSwtMTMwNzY1MDI5Myw0NDQ0NjQ0NTMsMT
 IxNTkwNDI2MywtMTg2MTMyOTI5MSwxNTg1NTQzNzQsNTM4NTI2
