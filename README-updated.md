@@ -4,15 +4,14 @@ This is AssertionBench,
 ## Softwares Used
 
 ### IVerilog
-[IVerilog](https://github.com/steveicarus/iverilog) is the compiler used to complie and run verilog HDL designs, as described in the IEEE-1364 standard.
+[IVerilog](https://github.com/steveicarus/iverilog) is the compiler used to complie and run verilog HDL designs, as described in the IEEE-1364 standard. 
  
 ### GOLDMINE
-[GoldMine](https://bitbucket.org/debjitp/goldminer/src/master/) is one of the assertion miner tools used to mine the assertions from the verilog HDL design. Goldmine is written in both Python2 and Python3. We have utilised this software in Python2 version.
-goldmine.cfg is updated with the iverilog executable path. 
+[GoldMine](https://bitbucket.org/debjitp/goldminer/src/master/) is one of the assertion miner tools used to mine the assertions from the verilog HDL design. Goldmine is written in both Python2 and Python3. We have utilised this software in Python2 version. The configuration file is updated with the iverilog executable path. 
 
  Example command would be 
 
-  python2 ../src/goldmine.py -m <module_name> -u ../ 
+  python2 ../src/goldmine.py -m <module_name> -u ../ -c <clock>:1 -r <reset>:1
 
 ### HARM
 
@@ -176,6 +175,7 @@ B --> D{Rhombus}
 C --> D
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUzNjA0MzMxNiwxMDY3MTAwMDcsLTMwNz
-I2OTU0LDIwMzIyMDE5MDYsNTAxNzk4MjIwXX0=
+eyJoaXN0b3J5IjpbLTIxMzY0ODU2LC01MzYwNDMzMTYsMTA2Nz
+EwMDA3LC0zMDcyNjk1NCwyMDMyMjAxOTA2LDUwMTc5ODIyMF19
+
 -->
