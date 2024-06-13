@@ -58,7 +58,7 @@ See the paper below to know more about how the procedure is carried out in [harm
     jg -no_gui -allow_unsupported_OS -fpv FPV_arb2.tcl -proj arb2
  >Note: The flag `-allow_unsupported_OS`  is required if JasperGold is not run on RHEL (Red Hat Enterprise Linux).
 
-Due to the kimit of 
+Due to the kimit of 100MB, all teh results of Goldmine, HARM, formal verification of Jaspergold is 
 
 ## Responses from Models
 1-shot and 5-shot learning is perfomed on GPT-3.5, GPT-4, LLaMA3-70B and CodeLLaMa2-70B model, and the responses are saved in a json format. All the models are set to their default hyperparameters with the following changed: `max_new_tokens = 1024; temperature = 1.0; seed = 50;`
@@ -76,7 +76,7 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjk1NjE1NzgwLC03OTc1MTU3NzEsLTc5Nz
+eyJoaXN0b3J5IjpbNTgzMjIxMjQ0LC03OTc1MTU3NzEsLTc5Nz
 UxNTc3MSwxMTk1MzQ3MjQ1LC01MjkzNjg2MDMsMzM3MDQzNTcx
 LDc2NjQ5Nzg4MiwtODU2MTk2Nzg4LDIwNzE4MjI3MjAsMTUyOD
 QxMzYwNiwtMTY0NjQzNjU4Nyw3MDUzMDc3MTEsLTgwNDI1ODU3
