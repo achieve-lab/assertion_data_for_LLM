@@ -15,7 +15,7 @@ To replicate the environment for GPT -3.5/GPT-4 and run 1-shot and 5-shot learni
 To replicate the environment for LLaMA3-70B and CodeLLaMa2-70B and run 1-shot and 5-shot learning, you can use requirements_llama.txt.
 
     pip install -r requirements_llama.txt
-
+    
 ## Softwares Used
 
 ### IVerilog
@@ -58,6 +58,8 @@ See the paper below to know more about how the procedure is carried out in [harm
     jg -no_gui -allow_unsupported_OS -fpv FPV_arb2.tcl -proj arb2
  >Note: The flag `-allow_unsupported_OS`  is required if JasperGold is not run on RHEL (Red Hat Enterprise Linux).
 
+Due to the kimit of 
+
 ## Responses from Models
 1-shot and 5-shot learning is perfomed on GPT-3.5, GPT-4, LLaMA3-70B and CodeLLaMa2-70B model, and the responses are saved in a json format. All the models are set to their default hyperparameters with the following changed: `max_new_tokens = 1024; temperature = 1.0; seed = 50;`
 
@@ -74,11 +76,11 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5NzUxNTc3MSwtNzk3NTE1NzcxLDExOT
-UzNDcyNDUsLTUyOTM2ODYwMywzMzcwNDM1NzEsNzY2NDk3ODgy
-LC04NTYxOTY3ODgsMjA3MTgyMjcyMCwxNTI4NDEzNjA2LC0xNj
-Q2NDM2NTg3LDcwNTMwNzcxMSwtODA0MjU4NTc1LC03OTEwNzgy
-NDMsODQ1MzQ2OTgyLC0xMzM2MzMzNDQwLC0xNTIyNDU3MTkwLD
-g3NDMxMzA3OSwxODU4MDg3NTIxLC0xMzA3NjUwMjkzLDQ0NDQ2
-NDQ1M119
+eyJoaXN0b3J5IjpbMjk1NjE1NzgwLC03OTc1MTU3NzEsLTc5Nz
+UxNTc3MSwxMTk1MzQ3MjQ1LC01MjkzNjg2MDMsMzM3MDQzNTcx
+LDc2NjQ5Nzg4MiwtODU2MTk2Nzg4LDIwNzE4MjI3MjAsMTUyOD
+QxMzYwNiwtMTY0NjQzNjU4Nyw3MDUzMDc3MTEsLTgwNDI1ODU3
+NSwtNzkxMDc4MjQzLDg0NTM0Njk4MiwtMTMzNjMzMzQ0MCwtMT
+UyMjQ1NzE5MCw4NzQzMTMwNzksMTg1ODA4NzUyMSwtMTMwNzY1
+MDI5M119
 -->
