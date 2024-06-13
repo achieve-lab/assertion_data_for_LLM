@@ -63,8 +63,6 @@ See the paper below to know more about how the procedure is carried out in [harm
 
 The syntax errors are corrected using GPT-3.5. `final_data_*.json` files contains the responses from the models. An example of the response from CodeLLaMa2-70B for 5-shot learning is 
 
-To run 1-shot and 5-shot lean
-
        "file_name": "rptr_handler.v",
        "verilog_design": "module rptr_handler #(parameter PTR_WIDTH=3) (input rclk, rrst_n, r_en, input [PTR_WIDTH:0] g_wptr_sync, output reg [PTR_WIDTH:0] b_rptr, g_rptr, output reg empty ); wire [PTR_WIDTH:0] b_rptr_next; wire [PTR_WIDTH:0] g_rptr_next; assign b_rptr_next = b_rptr + (r_en & !empty); assign g_rptr_next = (b_rptr_next >>1)^b_rptr_next; assign rempty = (g_wptr_sync ==       g_rptr_next); always@(posedge rclk or negedge rrst_n) begin if(!rrst_n)       begin b_rptr <= 0; g_rptr <= 0; end else begin b_rptr <= b_rptr_next;        g_rptr <= g_rptr_next; end end always@(posedge rclk or negedge rrst_n) begin if(!rrst_n) empty <= 1; else empty <= rempty; end endmodule", 
        "assertions_codellama2_70b_5shot": " (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= g_wptr_sync); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_wptr_sync); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!=b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!=b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!=   g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en&&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en&&!empty) |-> (g_rptr!= g_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en&&!empty) |-> (g_rptr!= b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en&&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g_rptr_next); (r_en   &&!empty) |-> (b_rptr!= g_wptr_sync); (r_en &&!empty) |-> (g_rptr!=     b_rptr_next); (r_en &&!empty) |-> (b_rptr!= g_rptr); (r_en &&!empty) |-> (g_rptr!= b_rptr); (r_en &&!empty) |-> (b_rptr!= g_rptr_next); (r_en &&!empty) |-> (g_rptr!= g"
@@ -76,7 +74,7 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxNjU5NDg2NCwtNTI5MzY4NjAzLDMzNz
+eyJoaXN0b3J5IjpbMTE5NTM0NzI0NSwtNTI5MzY4NjAzLDMzNz
 A0MzU3MSw3NjY0OTc4ODIsLTg1NjE5Njc4OCwyMDcxODIyNzIw
 LDE1Mjg0MTM2MDYsLTE2NDY0MzY1ODcsNzA1MzA3NzExLC04MD
 QyNTg1NzUsLTc5MTA3ODI0Myw4NDUzNDY5ODIsLTEzMzYzMzM0
