@@ -61,6 +61,8 @@ See the paper below to know more about how the procedure is carried out in [harm
 ## Responses from Models
 1-shot and 5-shot learning is perfomed on GPT-3.5, GPT-4, LLaMA3-70B and CodeLLaMa2-70B model, and the responses are saved in a json format. All the models are set to their default hyperparameters with the following changed: `max_new_tokens = 1024; temperature = 1.0; seed = 50;`
 
+To run 1-shot or 5-shot learning, go to the directories gpt_results/llama_results into the appropriate direcotry and run the python script.
+
 The syntax errors are corrected using GPT-3.5. `final_data_*.json` files contains the responses from the models. An example of the response from CodeLLaMa2-70B for 5-shot learning is 
 
        "file_name": "rptr_handler.v",
@@ -74,11 +76,11 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5NzUxNTc3MSwxMTk1MzQ3MjQ1LC01Mj
-kzNjg2MDMsMzM3MDQzNTcxLDc2NjQ5Nzg4MiwtODU2MTk2Nzg4
-LDIwNzE4MjI3MjAsMTUyODQxMzYwNiwtMTY0NjQzNjU4Nyw3MD
-UzMDc3MTEsLTgwNDI1ODU3NSwtNzkxMDc4MjQzLDg0NTM0Njk4
-MiwtMTMzNjMzMzQ0MCwtMTUyMjQ1NzE5MCw4NzQzMTMwNzksMT
-g1ODA4NzUyMSwtMTMwNzY1MDI5Myw0NDQ0NjQ0NTMsMTIxNTkw
-NDI2M119
+eyJoaXN0b3J5IjpbMTU2NTI3MjkzMywtNzk3NTE1NzcxLDExOT
+UzNDcyNDUsLTUyOTM2ODYwMywzMzcwNDM1NzEsNzY2NDk3ODgy
+LC04NTYxOTY3ODgsMjA3MTgyMjcyMCwxNTI4NDEzNjA2LC0xNj
+Q2NDM2NTg3LDcwNTMwNzcxMSwtODA0MjU4NTc1LC03OTEwNzgy
+NDMsODQ1MzQ2OTgyLC0xMzM2MzMzNDQwLC0xNTIyNDU3MTkwLD
+g3NDMxMzA3OSwxODU4MDg3NTIxLC0xMzA3NjUwMjkzLDQ0NDQ2
+NDQ1M119
 -->
