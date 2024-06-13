@@ -8,7 +8,9 @@ Below is the evaluation framework.
 <img class="center-block" src="https://github.com/achieve-lab/assertion_data_for_LLM/blob/main/AssertionBench_Eval_page.jpg"></img>
 
 ## Requirements
-To run the 
+To replicate the environment for GPT and run 1-shot and 5-shot learning, you can use requirements_gpt.txt
+
+    pip install -r requirements_gpt.txt
 
 ## Softwares Used
 
@@ -68,11 +70,11 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzUyMzM0ODgsLTUyOTM2ODYwMywzMz
-cwNDM1NzEsNzY2NDk3ODgyLC04NTYxOTY3ODgsMjA3MTgyMjcy
-MCwxNTI4NDEzNjA2LC0xNjQ2NDM2NTg3LDcwNTMwNzcxMSwtOD
-A0MjU4NTc1LC03OTEwNzgyNDMsODQ1MzQ2OTgyLC0xMzM2MzMz
-NDQwLC0xNTIyNDU3MTkwLDg3NDMxMzA3OSwxODU4MDg3NTIxLC
-0xMzA3NjUwMjkzLDQ0NDQ2NDQ1MywxMjE1OTA0MjYzLC0xODYx
-MzI5MjkxXX0=
+eyJoaXN0b3J5IjpbLTEwMzI2NzA5NywtNTI5MzY4NjAzLDMzNz
+A0MzU3MSw3NjY0OTc4ODIsLTg1NjE5Njc4OCwyMDcxODIyNzIw
+LDE1Mjg0MTM2MDYsLTE2NDY0MzY1ODcsNzA1MzA3NzExLC04MD
+QyNTg1NzUsLTc5MTA3ODI0Myw4NDUzNDY5ODIsLTEzMzYzMzM0
+NDAsLTE1MjI0NTcxOTAsODc0MzEzMDc5LDE4NTgwODc1MjEsLT
+EzMDc2NTAyOTMsNDQ0NDY0NDUzLDEyMTU5MDQyNjMsLTE4NjEz
+MjkyOTFdfQ==
 -->
