@@ -8,9 +8,13 @@ Below is the evaluation framework.
 <img class="center-block" src="https://github.com/achieve-lab/assertion_data_for_LLM/blob/main/AssertionBench_Eval_page.jpg"></img>
 
 ## Requirements
-To replicate the environment for GPT and run 1-shot and 5-shot learning, you can use requirements_gpt.txt
+To replicate the environment for GPT -3.5/GPT-4 and run 1-shot and 5-shot learning, you can use requirements_gpt.txt
 
     pip install -r requirements_gpt.txt
+
+To replicate the environment for LLaMA3-70B and CodeLLaMa2-70B and run 1-shot and 5-shot learning, you can use requirements_llama.txt
+
+    pip install -r requirements_llama.txt
 
 ## Softwares Used
 
@@ -70,7 +74,7 @@ After correcting the errors, these assertions are formally verified using Jasper
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMzI2NzA5NywtNTI5MzY4NjAzLDMzNz
+eyJoaXN0b3J5IjpbMTE5NTM0NzI0NSwtNTI5MzY4NjAzLDMzNz
 A0MzU3MSw3NjY0OTc4ODIsLTg1NjE5Njc4OCwyMDcxODIyNzIw
 LDE1Mjg0MTM2MDYsLTE2NDY0MzY1ODcsNzA1MzA3NzExLC04MD
 QyNTg1NzUsLTc5MTA3ODI0Myw4NDUzNDY5ODIsLTEzMzYzMzM0
