@@ -1,9 +1,0 @@
-m1_addressed_s1	m1_wb_ack_o
-[1]MEMORY_WIDTH	m1_addressed_s2
-m1_addressed_s2	m1_wb_ack_o
-m1_in_progress	m1_wb_ack_o
-[1]m1_wb_adr_i	m1_addressed_s1
-[1]m1_wb_adr_i	m1_addressed_s2
-[1]ETH_WIDTH	m1_addressed_s1
-[1]s1_wb_ack_i	m1_wb_ack_o
-[1]s2_wb_ack_i	m1_wb_ack_o

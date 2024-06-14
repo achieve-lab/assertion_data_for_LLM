@@ -1,9 +1,0 @@
-digraph "" {
-	Lead -> FilterCounter	 [weight=1.0];
-	Lag -> FilterCounter	 [weight=1.0];
-	FilterMaxValue -> FilterCounter	 [weight=3.0];
-	FilterMinValue -> FilterCounter	 [weight=3.0];
-	FilterCounter -> Positive	 [weight=1.0];
-	FilterCounter -> Negative	 [weight=1.0];
-	FilterCounter -> FilterCounter	 [weight=8.0];
-}

@@ -1,7 +1,0 @@
-strict digraph "" {
-	i -> data_reversed	 [weight=4.0];
-	rev_type -> data_out	 [weight=1.0];
-	data_reversed -> data_out	 [weight=1.0];
-	data_in -> data_reversed	 [weight=3.0];
-	type -> data_reversed	 [weight=5.0];
-}

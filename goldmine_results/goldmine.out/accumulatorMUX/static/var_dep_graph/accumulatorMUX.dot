@@ -1,9 +1,0 @@
-strict digraph "" {
-	immData -> accMuxOut	 [weight=1.0];
-	uartStatIn -> accMuxOut	 [weight=1.0];
-	uartDataIn -> accMuxOut	 [weight=1.0];
-	tcLoadIn -> accMuxOut	 [weight=1.0];
-	tcAccIn -> accMuxOut	 [weight=1.0];
-	aluOut -> accMuxOut	 [weight=1.0];
-	accMuxSel -> accMuxOut	 [weight=7.0];
-}

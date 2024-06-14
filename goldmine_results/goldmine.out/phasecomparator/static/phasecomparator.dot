@@ -1,9 +1,0 @@
-digraph "" {
-	OutputSignal -> Lag	 [weight=1.0];
-	OutputSignal -> Lead	 [weight=1.0];
-	InputSignal -> InputSignalEdgeDet	 [weight=1.0];
-	InputSignalEdgeDet -> InputSignalEdgeDet	 [weight=1.0];
-	InputSignalEdgeDet -> InputSignalEdge	 [weight=1.0];
-	InputSignalEdge -> Lag	 [weight=1.0];
-	InputSignalEdge -> Lead	 [weight=1.0];
-}

@@ -1,5 +1,0 @@
-property a0;
-@(posedge clk) (RxStateSFD == 1) |=> (DribbleNibble == 0);
-endproperty
-assert_a0: assert property(a0);
-

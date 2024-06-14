@@ -1,8 +1,0 @@
-digraph "" {
-	DividerMaxValue -> DividerCounter	 [weight=4.0];
-	FrequencyOut -> FrequencyOut	 [weight=1.0];
-	DividerCounter -> FrequencyOut	 [weight=1.0];
-	DividerCounter -> DividerCounter	 [weight=7.0];
-	Negative -> DividerCounter	 [weight=3.0];
-	Positive -> DividerCounter	 [weight=2.0];
-}
