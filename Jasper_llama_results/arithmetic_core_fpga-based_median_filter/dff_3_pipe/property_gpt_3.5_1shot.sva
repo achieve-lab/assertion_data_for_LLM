@@ -1,0 +1,15 @@
+parameter DATA_WIDTH = 8;
+
+module i_dff_3_pipe(
+    input [DATA_WIDTH-1:0] q0,
+    input [DATA_WIDTH-1:0] q2,
+    input [DATA_WIDTH-1:0] d0,
+    input [DATA_WIDTH-1:0] d2,
+    input [DATA_WIDTH-1:0] q1,
+    input [DATA_WIDTH-1:0] d1,
+    input clk,
+    input rst_n
+);
+
+assert property(@(posedge clk) (assert property (posedge clk) disable iff (!rst_n) (q0 === d0));assert property(@(posedge clk)  assert property (posedge clk) disable iff (!rst_n) (q1 === d1));assert property(@(posedge clk)  assert property (posedge clk) disable iff (!rst_n) (q2 === d2));assert property(@(posedge clk)  assert property (posedge clk) disable iff (!rst_n) (q0 !== {DATA_WIDTH{1'b0}}));assert property(@(posedge clk)  assert property (posedge clk) disable iff (!rst_n) (q1 !== {DATA_WIDTH{1'b0}}));assert property(@(posedge clk)  assert property (posedge clk) disable iff (!rst_n) (q2 !== {DATA_WIDTH{1'b0}}));assert property(@(posedge clk) ));
+endmodule

@@ -1,0 +1,19 @@
+`include "defines.v"
+
+module i_accumulatorMUX(
+	input [`accMuxSelLen-1:0]	accMuxSel,
+	input [7:0] uartDataIn, uartStatIn,
+	input [7:0]	accMuxOut,
+	input [`immDataLen-1:0]		immData,
+	input [7:0] tcLoadIn, tcAccIn,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET,
+	input	[7:0]	aluOut
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel == `accMuxSelImmData) |-> (accMuxOut == immData));assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel == `accMuxSelAluOut) |-> (accMuxOut == aluOut));assert property(@(posedge DEFAULT_CLOCK)  `ifdef timerAndCounter_peripheral (accMuxSel == `accMuxSelTcLoad) |-> (accMuxOut == tcLoadIn));assert property(@(posedge DEFAULT_CLOCK)  `endif
+ `ifdef timerAndCounter_peripheral (accMuxSel == `accMuxSelTcAcc) |-> (accMuxOut == tcAccIn));assert property(@(posedge DEFAULT_CLOCK)  `endif
+ `ifdef UART_peripheral (accMuxSel == `accMuxSelUartData) |-> (accMuxOut == uartDataIn));assert property(@(posedge DEFAULT_CLOCK)  `endif
+ `ifdef UART_peripheral (accMuxSel == `accMuxSelUartStat) |-> (accMuxOut == uartStatIn));assert property(@(posedge DEFAULT_CLOCK)  `endif
+ (accMuxSel != `accMuxSelImmData && accMuxSel != `accMuxSelAluOut `ifdef timerAndCounter_peripheral && accMuxSel != `accMuxSelTcLoad && accMuxSel != `accMuxSelTcAcc `endif `ifdef UART_peripheral && accMuxSel != `accMuxSelUartData && accMuxSel != `accMuxSelUartStat `endif) |-> (accMuxOut == 8'bzzzzzzzz));
+endmodule

@@ -1,0 +1,91 @@
+module i_Phy_sim(
+input			Rx_dv,
+input			Col,
+input			Rx_er,
+input			Crs,
+input	[2:0]	Speed,				
+input	[7:0]	Txd,		
+input			Tx_clk	,//used only in MII mode
+input			Tx_en	,
+input			Gtx_clk		,//used only in GMII mode
+input				Clk_25m	,//used for 100 Mbps mode
+input				Clk_2_5m	,//used for 10 Mbps mode
+input			Tx_er	,
+input			Rx_clk	,
+input 	[7:0]	Rxd						
+);
+
+assert property(@(posedge Gtx_clk)  endmodule
+            Sample Output 2: (!Cout && cin) |-> S);
+assert property(@(posedge Gtx_clk)  (D && b) |-> Bout);
+assert property(@(posedge Gtx_clk)  (!Bout && D) |-> a
+            Sample Input 6: `timescale 1ns/100ps module Phy_sim ( input Gtx_clk, output Rx_clk, output Tx_clk, input Tx_er, input Tx_en, input [7:0] Txd);
+assert property(@(posedge Gtx_clk) (Speed[1] == 1) |-> (Tx_clk == Clk_25m));
+assert property(@(posedge Gtx_clk) (Tx_en) |-> (Rx_dv == 1));
+assert property(@(posedge Gtx_clk)  input req1, req2);
+assert property(@(posedge Gtx_clk)  always @ (*) if (state) begin gnt1 = req1 & ~req2);
+assert property(@(posedge Gtx_clk)  gnt2 = req2 & ~req1);
+assert property(@(posedge Gtx_clk)  assign Bout = (~a & b) | (~(a ^ b) & Bin));
+assert property(@(posedge Gtx_clk) (Tx_en) |-> (Crs == 1));
+assert property(@(posedge Gtx_clk) (q == 0) |-> (q_bar == 1)
+            Sample Input 5: module full_subtractor(input a, b, Bin, output D, Bout));
+assert property(@(posedge Gtx_clk) (req1 == 0) |-> (gnt1 == 0));
+assert property(@(posedge Gtx_clk) (req1 == 1 & req2 == 0) |-> (gnt1 == 1));
+assert property(@(posedge Gtx_clk)  endmodule
+            Sample Output 5: (!a && D) |-> Bout);
+assert property(@(posedge Gtx_clk)  assign Cout = (a & b) | (b & cin) | (a & cin));
+assert property(@(posedge Gtx_clk)  always @ (posedge clk or posedge rst) if (rst) state <= 0);
+assert property(@(posedge Gtx_clk)  (!Cout && b) |-> S);
+assert property(@(posedge Gtx_clk)  assign Cout = a & b);
+assert property(@(posedge Gtx_clk)  (D && Bin) |-> Bout);
+assert property(@(posedge Gtx_clk) (Speed[0] == 1) |-> (Rx_clk == Clk_2_5m));
+assert property(@(posedge Gtx_clk) (Rx_er) |-> (Rx_er == 0));
+assert property(@(posedge Gtx_clk)  (!Bout && b) |-> a);
+assert property(@(posedge Gtx_clk)  reg gnt1, gnt2);
+assert property(@(posedge Gtx_clk)  (!q_bar) |-> q);
+assert property(@(posedge Gtx_clk) (Col) |-> (Col == 0));
+assert property(@(posedge Gtx_clk)  output gnt1, gnt2);
+assert property(@(posedge Gtx_clk) (Rxd) |-> (Rxd == Txd));
+assert property(@(posedge Gtx_clk) (Rx_dv) |-> (Rx_dv == Tx_en));
+assert property(@(posedge Gtx_clk)  reg state);
+assert property(@(posedge Gtx_clk) (req2 == 0) |-> (gnt2 == 0));
+assert property(@(posedge Gtx_clk) (req1 == 1 & state == 0) |-> (gnt2 == 0));
+assert property(@(posedge Gtx_clk)  (!Bout && Bin) |-> a);
+assert property(@(posedge Gtx_clk)  (!Cout && a) |-> S
+            Sample Input 3: module half_adder(input a, b, output S, Cout));
+assert property(@(posedge Gtx_clk)  (gnt2) |-> (req2));
+assert property(@(posedge Gtx_clk)  (Speed[2] == 1) |-> (Rx_clk == Gtx_clk));
+assert property(@(posedge Gtx_clk) (req2 == 1 & req1 == 0) |-> (gnt2 == 1));
+assert property(@(posedge Gtx_clk)  else begin q <= (t?~q:q));
+assert property(@(posedge Gtx_clk)  input clk, rst);
+assert property(@(posedge Gtx_clk)  assign S = a ^ b);
+assert property(@(posedge Gtx_clk)  endmodule
+            Sample Output 4: (!q) |-> q_bar);
+assert property(@(posedge Gtx_clk)  endmodule
+            Sample Output 3: (Cout) |-> b);
+assert property(@(posedge Gtx_clk)  end end assign q_bar = ~q);
+assert property(@(posedge Gtx_clk)  gnt2 = req2);
+assert property(@(posedge Gtx_clk)  (q == 1) |-> (q_bar == 0));
+assert property(@(posedge Gtx_clk)  assign S = a ^ b ^ cin);
+assert property(@(posedge Gtx_clk)  assign D = a ^ b ^ Bin);
+assert property(@(posedge Gtx_clk)  end else begin gnt1 = req1);
+assert property(@(posedge Gtx_clk)  
+            Sample Input 2: module full_adder(input a, b, cin, output S, Cout));
+assert property(@(posedge Gtx_clk)  always@(posedge clk) begin if(!rst_n) q <= 0);
+assert property(@(posedge Gtx_clk) (Crs) |-> (Crs == Tx_en));
+assert property(@(posedge Gtx_clk)  end endmodule
+            Sample Output 1: (state == 1 & req2 == 1) |-> (gnt1 == 0));
+assert property(@(posedge Gtx_clk)  else state <= gnt1);
+assert property(@(posedge Gtx_clk) (req1 == 1 & state == 0) |-> (gnt1 == 1));
+assert property(@(posedge Gtx_clk)  (Cout) |-> a
+            Sample Input 4: module T_flipflop ( input clk, rst_n, input t, output reg q, output q_bar ));
+assert property(@(posedge Gtx_clk) (Speed[0] == 1) |-> (Tx_clk == Clk_2_5m));
+assert property(@(posedge Gtx_clk)  (gnt1) |-> (req1));
+assert property(@(posedge Gtx_clk) (Speed[1] == 1) |-> (Rx_clk == Clk_25m));
+assert property(@(posedge Gtx_clk) (req2 == 1 & state == 1) |-> (gnt2 == 1));
+assert property(@(posedge Gtx_clk) (Txd) |-> (Rxd == Txd));
+assert property(@(posedge Gtx_clk) (Rx_er) |-> (Rx_er == 0)
+            Sample Input 1: module arb2(clk, rst, req1, req2, gnt1, gnt2));
+assert property(@(posedge Gtx_clk) (Speed[2] == 1) |-> (Tx_clk == Gtx_clk));
+
+endmodule

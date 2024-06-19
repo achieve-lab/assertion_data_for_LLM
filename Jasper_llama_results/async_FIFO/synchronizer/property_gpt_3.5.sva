@@ -1,0 +1,9 @@
+module i_synchronizer#(parameter WIDTH=3)(
+	input clk, input rst_n, input [WIDTH:0] d_in,
+  input [WIDTH:0] q1,
+       	input  [WIDTH:0] d_out
+);
+
+assert property(@(posedge clk) (gnt1) |-> (req1));
+assert property(@(posedge clk) (gnt2) |-> (req2));
+endmodule

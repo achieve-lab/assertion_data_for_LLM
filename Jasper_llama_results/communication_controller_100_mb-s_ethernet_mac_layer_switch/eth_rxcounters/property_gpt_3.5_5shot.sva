@@ -1,0 +1,41 @@
+module i_eth_rxcounters(
+input         DlyCrcEn,
+input        ByteCntEq1,               // Byte counter ,
+input         StateDrop,
+input        ByteCntEq0,               // Byte counter ,
+input        ByteCntEq6,               // Byte counter ,
+input   [15:0]  ByteCnt,
+input [15:0] ByteCntOut,               // Byte counter
+input        ByteCntEq4,               // Byte counter ,
+input         StateIdle,
+input        IFGCounterEq24,           // IFG counter reaches 9600 ns (960 ns)
+input        ByteCntEq3,               // Byte counter ,
+input        ByteCntGreat2,            // Byte counter > 2
+input        ByteCntMaxFrame,          // Byte counter ,
+input        ByteCntEq2,               // Byte counter ,
+input          ByteCntMax,
+input  [15:0]  ByteCntDelayed,
+input         MRxDV,
+input         r_IFG,
+input         HugEn,
+input         StatePreamble,
+input [15:0]  MaxFL,
+input        ByteCntSmall7,            // Byte counter < 7
+input         MRxDEqD,
+input         StateSFD,
+input         Transmitting,
+input [3:0]  DlyCrcCnt,                // Delayed CRC counter
+input          ResetByteCounter,
+input         MRxClk,
+input          IncrementByteCounter,
+input          ResetIFGCounter,
+input [1:0]   StateData,
+input        ByteCntEq7,               // Byte counter ,
+input        ByteCntEq5,               // Byte counter ,
+input   [4:0]   IFGCounter,
+input         Reset,
+input          IncrementIFGCounter
+);
+
+assert property(@(posedge MRxClk) (ByteCnt == 16'd0) |-> ByteCntEq0);assert property(@(posedge MRxClk)  (ByteCnt == 16'd1) |-> ByteCntEq1);assert property(@(posedge MRxClk)  (ByteCnt == 16'd2) |-> ByteCntEq2);assert property(@(posedge MRxClk)  (ByteCnt == 16'd3) |-> ByteCntEq3);assert property(@(posedge MRxClk)  (ByteCnt == 16'd4) |-> ByteCntEq4);assert property(@(posedge MRxClk)  (ByteCnt == 16'd5) |-> ByteCntEq5);assert property(@(posedge MRxClk)  (ByteCnt == 16'd6) |-> ByteCntEq6);assert property(@(posedge MRxClk)  (ByteCnt == 16'd7) |-> ByteCntEq7);assert property(@(posedge MRxClk)  (ByteCnt > 16'd2) |-> ByteCntGreat2);assert property(@(posedge MRxClk)  (ByteCnt < 16'd7) |-> ByteCntSmall7);assert property(@(posedge MRxClk)  (ByteCnt == 16'hffff) |-> ByteCntMaxFrame);assert property(@(posedge MRxClk)  (IFGCounter[4:0] == 5'h18) |-> IFGCounterEq24);
+endmodule

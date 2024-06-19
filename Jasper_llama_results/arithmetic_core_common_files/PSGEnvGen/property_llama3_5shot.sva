@@ -1,0 +1,121 @@
+parameter pChannels = 4;
+parameter pPrescalerBits = 8;
+module i_PSGEnvGen(
+	input [19:0] envDvn [3:0],
+	input [19:0] envStepPeriod1 ,
+	input [7:0] sustain3,
+	input [15:0] envStepPeriod,	// determines the length of one step of the envelope generator
+	input [17:0] decay,
+	input [19:0] envDvnx,
+	input [11:0] relese_x,
+	input [11:0] relese2,
+	input [15:0] attack0,
+	input [7:0] envCtr2 [3:0],
+	input [15:0] attack1,
+    input [1:0] sel ,
+	input [15:0] attack,
+	input [7:0] sustain0,
+	input [7:0] sustain2,
+	input rst,							// reset
+	input [7:0] sustain_x,
+	input [11:0] relese1,
+	input [7:0] sustain1,
+	input [15:0] attack_x,
+	input [7:0] envCtr [3:0],
+	input [11:0] decay2,
+	input [11:0] decay_x,
+	input clk,							// core clock
+	input [15:0] attack2,
+	input [7:0] sustain,
+	input [15:0] attack3,
+	input [2:0] icnt [3:0],		// interval count
+	input [2:0] envStateNxt,
+	input [11:0] decay3,
+	input [11:0] decay0,
+	input [17:0] relese,
+	input [7:0] envCtrx,
+	input [11:0] relese0,
+	input [3:0] gate,
+	input [7:0] iv [3:0],			// interval value for decay/release
+	input [11:0] decay1,
+	input [11:0] relese3,
+	input [pPrescalerBits-1:0] cnt,		// clock rate prescaler
+	input [7:0] o,
+	input [2:0] envState [3:0],
+        
+	input [1:0] s,
+	input [4:1] i1,
+	input e,
+	input [4:1] i2,
+	input [4:1] i0,
+	input [4:1] z,
+	input [4:1] i3
+);
+
+assert property(@(posedge clk)  (cnt==8'd0) |-> (tap[1] == tap[0]));
+assert property(@(posedge clk)  end else begin if (push & ~full) begin head <= head + 1);
+assert property(@(posedge clk)  (rst) |-> (o == 0));
+assert property(@(posedge clk)  (cnt==8'd0) |-> (tap[7] == tap[6]));
+assert property(@(posedge clk)  (rst) |-> (tap[1] == tap[0]));
+assert property(@(posedge clk)  (rst) |-> (acc == 0));
+assert property(@(posedge clk)  (rst) |-> (tap[11] == tap[10]));
+assert property(@(posedge clk)  end if (pop & ~empty) begin tail <= tail + 1);
+assert property(@(posedge clk)  (rst) |-> (full == 0));
+assert property(@(posedge clk)  (rst) |-> (tap[7] == tap[6]));
+assert property(@(posedge clk)  (cnt==8'd0) |-> (tap[9] == tap[8]));
+assert property(@(posedge clk)  (head == tail) |-> (empty)
+            Program 7: module shift_reg(input clk, rst, input [);
+assert property(@(posedge clk)  assign empty = head == tail);
+assert property(@(posedge clk)  (cnt==8'd0) |-> (tap[10] == tap[9]));
+assert property(@(posedge clk)  (full) |-> (head == tail + 1));
+assert property(@(posedge clk)  (rst) |-> (tap[9] == tap[8]));
+assert property(@(posedge clk)  (rst) |-> (tap[4] == tap[3]));
+assert property(@(posedge clk)  (rst) |-> (tap[5] == tap[4]));
+assert property(@(posedge clk)  (pop & ~empty) |-> (tail == tail + 1));
+assert property(@(posedge clk)  (cnt==8'd0) |-> (o == acc[30:16]));
+assert property(@(posedge clk)  (cnt==8'd0) |-> (tap[3] == tap[2]));
+assert property(@(posedge clk)  (cnt==8'd0) |-> (tap[6] == tap[5]));
+assert property(@(posedge clk)  (cnt==8'd0) |-> (tap[2] == tap[1]));
+assert property(@(posedge clk)  (wr) |-> (coeff[adr] == din[11:0]));
+assert property(@(posedge clk)  (rst) |-> (empty == 1));
+assert property(@(posedge clk)  (cnt < pTaps) |-> (acc == sgn[cnt[3:0]]? acc - mult : acc + mult));
+assert property(@(posedge clk)  (cnt==8'd0) |-> (tap[11] == tap[10]));
+assert property(@(posedge clk)  tail <= 0);
+assert property(@(posedge clk)  mem[head] <= data_in);
+assert property(@(posedge clk)  (push & ~full) |-> (head == head + 1));
+assert property(@(posedge clk)  (rst) |-> (tap[14] == tap[13]));
+assert property(@(posedge clk)  reg [7:0] mem [0:15]);
+assert property(@(posedge clk)  (cnt==8'd0) |-> (tap[14] == tap[13]));
+assert property(@(posedge clk)  (cnt==8'd0) |-> (tap[12] == tap[11]));
+assert property(@(posedge clk)  end end end assign full = head == tail + 1);
+assert property(@(posedge clk)  (rst) |-> (tap[8] == tap[7]));
+assert property(@(posedge clk)  always @(posedge clk) begin if (rst) begin head <= 0);
+assert property(@(posedge clk)  (rst) |-> (tap[0] == i));
+assert property(@(posedge clk)  (wr) |-> (sgn[adr] == din[12]));
+assert property(@(posedge clk)  (cnt==8'd0) |-> (tap[5] == tap[4]));
+assert property(@(posedge clk)  (cnt==8'd0) |-> (acc == sgn[cnt[3:0]]? 0 - mult : 0 + mult));
+assert property(@(posedge clk)  (rst) |-> (tap[6] == tap[5]));
+assert property(@(posedge clk)  (rst) |-> (tap[15] == tap[14]));
+assert property(@(posedge clk)  (rst) |-> (tap[2] == tap[1]));
+assert property(@(posedge clk)  (push & ~full) |-> (mem[head] == data_in));
+assert property(@(posedge clk)  (rst) |-> (tap[3] == tap[2]));
+assert property(@(posedge clk)  (rst) |-> (tap[13] == tap[12]));
+assert property(@(posedge clk)  (cnt==8'd0) |-> (tap[13] == tap[12]));
+assert property(@(posedge clk)  reg [3:0] head, tail);
+assert property(@(posedge clk)  (cnt==8'd0) |-> (tap[4] == tap[3]));
+assert property(@(posedge clk)  (cnt < pTaps) |-> (o == acc[30:16])
+            Program 6: module fifo(input clk, rst, input push, input pop, input [7:0] data_in, output [7:0] data_out, output full, output empty));
+assert property(@(posedge clk)  (cnt==8'd0) |-> (tap[8] == tap[7]));
+assert property(@(posedge clk)  data_out <= mem[tail]);
+assert property(@(posedge clk)  endmodule
+            Assertions 6: (rst) |-> (head == 0));
+assert property(@(posedge clk)  (head == tail + 1) |-> (full));
+assert property(@(posedge clk)  (rst) |-> (tap[10] == tap[9]));
+assert property(@(posedge clk)  (rst) |-> (tail == 0));
+assert property(@(posedge clk)  (cnt==8'd0) |-> (tap[15] == tap[14]));
+assert property(@(posedge clk)  (cnt==8'd0) |-> (tap[0] == i));
+assert property(@(posedge clk)  (empty) |-> (head == tail));
+assert property(@(posedge clk)  (pop & ~empty) |-> (data_out == mem[tail]));
+assert property(@(posedge clk)  (rst) |-> (tap[12] == tap[11]));
+
+endmodule

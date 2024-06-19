@@ -1,0 +1,35 @@
+module i_Phy_int(
+input             Rx_er_dl1           ,
+input   [2:0]   Speed               ,
+input          MCrs_dv             ,       
+input             Col_dl1             ,
+input             Crs_dl1             ,
+input             Tx_en               ,
+input           Crs                 ,
+input             Tx_odd_data_ptr     ,  
+input             Rx_odd_data_ptr     ,
+input     [7:0]   Rxd_dl1             ,
+input             MTxEn_dl1           ,
+input   [7:0]   MTxD                ,
+input           MAC_tx_clk          ,
+input           MTxEn               ,   
+input          Tx_er               ,
+input     [7:0]   Rxd_dl2             ,
+input     [7:0]   MRxD                ,
+input             Rx_dv_dl1           ,
+input          MCRS                ,
+input           Col                 ,
+input           MAC_rx_clk          ,
+input   [7:0]   Rxd                 ,
+input           Rx_dv               ,
+input           Line_loop_en        ,
+input           Rx_er               ,
+input           Reset               ,
+input             Rx_dv_dl2           ,
+input          MRxErr              ,       
+input     [7:0]   Txd                 ,
+input     [7:0]   MTxD_dl1            
+);
+
+assert property(@(posedge MAC_rx_clk)  (Reset) |=> (MTxD_dl1 == 0 && MTxEn_dl1 == 0));assert property(@(posedge MAC_rx_clk)  (!MTxD_dl1) |=> (Tx_odd_data_ptr == 0));assert property(@(posedge MAC_rx_clk)  (MTxEn_dl1 && Speed[2]) |=> (Txd == MTxD_dl1));assert property(@(posedge MAC_rx_clk)  (MTxEn_dl1 && !Tx_odd_data_ptr) |=> (Txd == {4'b0, MTxD_dl1[3:0]}));assert property(@(posedge MAC_rx_clk)  (MTxEn_dl1 && Tx_odd_data_ptr) |=> (Txd == {4'b0, MTxD_dl1[7:4]}));assert property(@(posedge MAC_rx_clk)  (MTxEn_dl1) |=> (Tx_en == 1));assert property(@(posedge MAC_rx_clk)  (!MTxEn_dl1) |=> (Tx_en == 0));assert property(@(posedge MAC_rx_clk)  (Reset) |=> (Rx_er_dl1 == 0 && Rx_dv_dl1 == 0 && Rx_dv_dl2 == 0 && Rxd_dl1 == 0 && Rxd_dl2 == 0 && Crs_dl1 == 0 && Col_dl1 == 0));assert property(@(posedge MAC_rx_clk)  (Rx_er) |=> (MRxErr == 1));assert property(@(posedge MAC_rx_clk)  (Crs) |=> (MCRS == 1));assert property(@(posedge MAC_rx_clk)  (Line_loop_en) |=> (MCrs_dv == Tx_en));assert property(@(posedge MAC_rx_clk)  (Rx_dv_dl2) |=> (MCrs_dv == 1));assert property(@(posedge MAC_rx_clk)  (!Rx_dv_dl1) |=> (Rx_odd_data_ptr == 0));assert property(@(posedge MAC_rx_clk)  (Line_loop_en) |=> (MRxD == Txd));assert property(@(posedge MAC_rx_clk)  (Speed[2] && Rx_dv_dl2) |=> (MRxD == Rxd_dl2));assert property(@(posedge MAC_rx_clk)  (Rx_dv_dl1 && Rx_odd_data_ptr) |=> (MRxD == {Rxd_dl1[3:0], Rxd_dl2[3:0]}));
+endmodule

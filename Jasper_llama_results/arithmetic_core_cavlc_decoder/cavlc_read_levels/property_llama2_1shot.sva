@@ -1,0 +1,60 @@
+module i_cavlc_read_levels(
+input  [8:0]   level_4,
+input   [3:0]   i,
+input  [8:0]   level_14,
+input  [8:0]   level_5,
+input   [4:0]   TotalCoeff,
+input     [3:0]   level_prefix_comb,
+input    [2:0]   tmp1,
+input   t1s_sel,
+input     [4:0]   len_comb,
+input  [8:0]   level_3,
+input   prefix_sel,
+input   clk,
+input  [8:0]   level_1,
+input  [8:0]   level_15,
+input level_abs_refresh,
+input first_level,
+input   ena,
+input  [8:0]   level_9,
+input  [8:0]   level_6,
+input  [8:0]   level_8,
+input   rst_n,
+input  [8:0]   level_2,
+input     [8:0]   level_suffix,
+input   [0:15]  rbsp,
+input     [8:0]   level,
+input   suffix_sel,
+input   [1:0]   TrailingOnes,
+input  [8:0]   level_12,
+input  [8:0]   level_13,
+input  [8:0]   level_10,
+input     [3:0]   level_prefix,
+input     [8:0]   level_abs,
+input  [8:0]   level_0,
+input     [0:15]  rbsp_internal,        // reduce toggle rate
+input  [8:0]   level_7,
+input     [8:0]   level_code_tmp,
+input   calc_sel,
+input  [8:0]   level_11,
+input     [2:0]   suffixLength   // range from 0 to 6
+);
+assert property(@(posedge clk)(t1s_sel) |-> (level_0 == 1));
+assert property(@(posedge clk)(t1s_sel) |-> (level_1 == 1));
+assert property(@(posedge clk)(t1s_sel) |-> (level_2 == 1));
+assert property(@(posedge clk)(t1s_sel) |-> (level_3 == 1));
+assert property(@(posedge clk)(t1s_sel) |-> (level_4 == 1));
+assert property(@(posedge clk)(t1s_sel) |-> (level_5 == 1));
+assert property(@(posedge clk)(t1s_sel) |-> (level_6 == 1));
+assert property(@(posedge clk)(t1s_sel) |-> (level_7 == 1));
+assert property(@(posedge clk)(t1s_sel) |-> (level_8 == 1));
+assert property(@(posedge clk)(t1s_sel) |-> (level_9 == 1));
+assert property(@(posedge clk)(t1s_sel) |-> (level_10 == 1));
+assert property(@(posedge clk)(t1s_sel) |-> (level_11 == 1));
+assert property(@(posedge clk)(t1s_sel) |-> (level_12 == 1));
+assert property(@(posedge clk)(t1s_sel) |-> (level_13 == 1));
+assert property(@(posedge clk)(t1s_sel) |-> (level_14 == 1));
+assert property(@(posedge clk)(t1s_sel) |-> (level_15 == 1));
+
+assert property(@(posedge clk) (level_abs_refresh) |-> (level_abs == level));
+endmodule

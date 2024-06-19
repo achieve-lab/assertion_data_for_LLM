@@ -1,0 +1,50 @@
+module i_Phy_int(
+input             Rx_er_dl1           ,
+input   [2:0]   Speed               ,
+input          MCrs_dv             ,       
+input             Col_dl1             ,
+input             Crs_dl1             ,
+input             Tx_en               ,
+input           Crs                 ,
+input             Tx_odd_data_ptr     ,  
+input             Rx_odd_data_ptr     ,
+input     [7:0]   Rxd_dl1             ,
+input             MTxEn_dl1           ,
+input   [7:0]   MTxD                ,
+input           MAC_tx_clk          ,
+input           MTxEn               ,   
+input          Tx_er               ,
+input     [7:0]   Rxd_dl2             ,
+input     [7:0]   MRxD                ,
+input             Rx_dv_dl1           ,
+input          MCRS                ,
+input           Col                 ,
+input           MAC_rx_clk          ,
+input   [7:0]   Rxd                 ,
+input           Rx_dv               ,
+input           Line_loop_en        ,
+input           Rx_er               ,
+input           Reset               ,
+input             Rx_dv_dl2           ,
+input          MRxErr              ,       
+input     [7:0]   Txd                 ,
+input     [7:0]   MTxD_dl1            
+);
+
+assert property(@(posedge MAC_rx_clk) (Reset |-> (MCrs_dv == 0));
+assert property(@(posedge MAC_rx_clk) ((Rx_dv_dl2 && !Line_loop_en) |-> (MCrs_dv == 1));
+assert property(@(posedge MAC_rx_clk) ((Rx_dv_dl1 && Rx_odd_data_ptr) |-> (MRxD == {Rxd_dl1[3:0], Rxd_dl2[3:0]}));
+assert property(@(posedge MAC_tx_clk) ((MTxEn_dl1 && !Tx_odd_data_ptr) |-> (Txd == {4'b0, MTxD_dl1[7:4]}));
+assert property(@(posedge MAC_tx_clk) ((MTxEn_dl1 && Tx_odd_data_ptr) |-> (Txd == {4'b0, MTxD_dl1[3:0]}));
+assert property(@(posedge MAC_tx_clk) ((Speed[2] && MTxEn_dl1) |-> (Txd == MTxD_dl1));
+assert property(@(posedge clk) ((state == 1 && req2 == 1) |-> (gnt1 == 0));
+assert property(@(posedge clk) ((req1 == 1 && state == 0) |-> (gnt1 == 1));
+assert property(@(posedge clk) ((req1 == 0) |-> (gnt1 == 0));
+assert property(@(posedge clk) ((req1 == 1 && req2 == 0) |-> (gnt1 == 1));
+assert property(@(posedge clk) ((req1 == 1 && state == 0) |-> (gnt2 == 0));
+assert property(@(posedge clk) ((req2 == 1 && state == 1) |-> (gnt2 == 1));
+assert property(@(posedge clk) ((req2 == 0) |-> (gnt2 == 0));
+assert property(@(posedge clk) ((req2 == 1 && req1 == 0) |-> (gnt2 == 1));
+assert property(@(posedge clk) (gnt2 |-> req2));
+assert property(@(posedge clk) (gnt1 |-> req1);
+endmodule

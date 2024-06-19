@@ -1,0 +1,31 @@
+`include "defines.v"
+module i_tcLoad(
+	input [`tcAddrLen-1:0] tcAddr,
+	input [`tcNumbers-1:0] dnIn, ttIn, cuIn, cdIn,
+	input dnSel, ttSel, cuSel, cdSel,
+	input [7:0] tcLoadOut,
+	input DEFAULT_CLOCK, DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (!dnIn[tcAddr] && ttIn[tcAddr] && cuIn[tcAddr] && cdIn[tcAddr]) |-> (tcLoadOut == {4'b0, 1, 1, 1, 0}));
+assert property(@(posedge DEFAULT_CLOCK)  (!dnIn[tcAddr] &&!ttIn[tcAddr] && cuIn[tcAddr] && cdIn[tcAddr]) |-> (tcLoadOut == {4'b0, 1, 1, 0, 0}));
+assert property(@(posedge DEFAULT_CLOCK)  (dnIn[tcAddr] && ttIn[tcAddr] && cuIn[tcAddr] &&!cdIn[tcAddr]) |-> (tcLoadOut == {4'b0, 0, 1, 1, 1}));
+assert property(@(posedge DEFAULT_CLOCK)  (dnIn[tcAddr] && ttIn[tcAddr] && cuIn[tcAddr] && cdIn[tcAddr]) |-> (tcLoadOut == {4'b0, 1, 1, 1, 1}));
+assert property(@(posedge DEFAULT_CLOCK)  (dnIn[tcAddr] &&!ttIn[tcAddr] &&!cuIn[tcAddr] &&!cdIn[tcAddr]) |-> (tcLoadOut == {4'b0, 0, 0, 0, 1}));
+assert property(@(posedge DEFAULT_CLOCK)  (!dnIn[tcAddr] &&!ttIn[tcAddr] &&!cuIn[tcAddr] && cdIn[tcAddr]) |-> (tcLoadOut == {4'b0, 1, 0, 0, 0}));
+assert property(@(posedge DEFAULT_CLOCK)  (!dnIn[tcAddr] &&!ttIn[tcAddr] &&!cuIn[tcAddr] &&!cdIn[tcAddr]) |-> (tcLoadOut == {4'b0, 0, 0, 0, 0}));
+assert property(@(posedge DEFAULT_CLOCK)  (!dnIn[tcAddr] && ttIn[tcAddr] &&!cuIn[tcAddr] &&!cdIn[tcAddr]) |-> (tcLoadOut == {4'b0, 0, 0, 1, 0}));
+assert property(@(posedge DEFAULT_CLOCK)  (tcLoadOut == {4'b0, 1, 1, 1, 1}) |-> (dnIn[tcAddr] && ttIn[tcAddr] && cuIn[tcAddr] && cdIn[tcAddr]));
+assert property(@(posedge DEFAULT_CLOCK)  (!dnIn[tcAddr] &&!ttIn[tcAddr] && cuIn[tcAddr] &&!cdIn[tcAddr]) |-> (tcLoadOut == {4'b0, 0, 1, 0, 0}));
+assert property(@(posedge DEFAULT_CLOCK)  (tcLoadOut == {4'b0, 1, 0, 1, 1}) |-> (dnIn[tcAddr] && ttIn[tcAddr] &&!cuIn[tcAddr] && cdIn[tcAddr]));
+assert property(@(posedge DEFAULT_CLOCK)  (tcLoadOut == {4'b0,);
+assert property(@(posedge DEFAULT_CLOCK)  (!dnIn[tcAddr] && ttIn[tcAddr] && cuIn[tcAddr] &&!cdIn[tcAddr]) |-> (tcLoadOut == {4'b0, 0, 1, 1, 0}));
+assert property(@(posedge DEFAULT_CLOCK)  (dnIn[tcAddr] &&!ttIn[tcAddr] && cuIn[tcAddr] &&!cdIn[tcAddr]) |-> (tcLoadOut == {4'b0, 0, 1, 0, 1}));
+assert property(@(posedge DEFAULT_CLOCK)  (tcLoadOut == {4'b0, 0, 1, 1, 1}) |-> (dnIn[tcAddr] && ttIn[tcAddr] && cuIn[tcAddr] &&!cdIn[tcAddr]));
+assert property(@(posedge DEFAULT_CLOCK)  (!dnIn[tcAddr] && ttIn[tcAddr] &&!cuIn[tcAddr] && cdIn[tcAddr]) |-> (tcLoadOut == {4'b0, 1, 0, 1, 0}));
+assert property(@(posedge DEFAULT_CLOCK)  (dnIn[tcAddr] && ttIn[tcAddr] &&!cuIn[tcAddr] &&!cdIn[tcAddr]) |-> (tcLoadOut == {4'b0, 0, 0, 1, 1}));
+assert property(@(posedge DEFAULT_CLOCK)  (dnIn[tcAddr] &&!ttIn[tcAddr] && cuIn[tcAddr] && cdIn[tcAddr]) |-> (tcLoadOut == {4'b0, 1, 1, 0, 1}));
+assert property(@(posedge DEFAULT_CLOCK)  (dnIn[tcAddr] && ttIn[tcAddr] &&!cuIn[tcAddr] && cdIn[tcAddr]) |-> (tcLoadOut == {4'b0, 1, 0, 1, 1}));
+assert property(@(posedge DEFAULT_CLOCK)  (dnIn[tcAddr] &&!ttIn[tcAddr] &&!cuIn[tcAddr] && cdIn[tcAddr]) |-> (tcLoadOut == {4'b0, 1, 0, 0, 1}));
+
+endmodule

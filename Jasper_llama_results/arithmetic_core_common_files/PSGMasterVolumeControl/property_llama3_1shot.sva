@@ -1,0 +1,31 @@
+module i_PSGMasterVolumeControl(
+input [15:0] i,
+input rst_i,
+input [3:0] volume,
+input clk_i,
+input [19:0] o,
+input [19:0] v2 ,
+input [19:0] v1 ,
+input [19:0] vo ,
+input [19:0] v3 
+);
+
+assert property(@(posedge clk_i)  endmoduleTest Assertions:             (o == 0) |-> (volume == 4'd0));
+assert property(@(posedge clk_i)  (o == {i,7'b0} + {i,6'b0} + {i,5'b0} + {i,4'b0} + {i,3'b0} + {i,2'b0} + {i,1'b0} + i) |-> (volume == 4'd8));
+assert property(@(posedge clk_i)  (o == {i,10'b0} + {i,9'b0} + {i,8'b0} + {i,7'b0} + {i,6'b0} + {i,5'b0} + {i,4'b0} + {i,3'b0} + {i,2'b0} + {i,1'b0} + i) |-> (volume == 4'd11));
+assert property(@(posedge clk_i)  (o == {i,11'b0} + {i,10'b0} + {i,9'b0} + {i,8'b0} + {i,7'b0} + {i,6'b0} + {i,5'b0} + {i,4'b0} + {i,3'b0} + {i,2'b0} + {i,1'b0} + i) |-> (volume == 4'd12));
+assert property(@(posedge clk_i)  (o == {i,13'b0} + {i,12'b0} + {i,11'b0} + {i,10'b0} + {i,9'b0} + {i,8'b0} + {i,7'b0} + {i,6'b0} + {i,5'b0} + {i,4'b0} + {i,3'b0} + {i,2'b0} + {i,1'b0} + i) |-> (volume == 4'd14));
+assert property(@(posedge clk_i)  (o == i) |-> (volume == 4'd1));
+assert property(@(posedge clk_i)  (o == {i,5'b0} + {i,4'b0} + {i,3'b0} + {i,2'b0} + {i,1'b0} + i) |-> (volume == 4'd6));
+assert property(@(posedge clk_i)  (o == {i,4'b0} + {i,3'b0} + {i,2'b0} + {i,1'b0} + i) |-> (volume == 4'd5));
+assert property(@(posedge clk_i)  (o == {i,2'b0} + {i,1'b0} + i) |-> (volume == 4'd3));
+assert property(@(posedge clk_i)  (o == {i,12'b0} + {i,11'b0} + {i,10'b0} + {i,9'b0} + {i,8'b0} + {i,7'b0} + {i,6'b0} + {i,5'b0} + {i,4'b0} + {i,3'b0} + {i,2'b0} + {i,1'b0} + i) |-> (volume == 4'd13));
+assert property(@(posedge clk_i)  (o == {i,9'b0} + {i,8'b0} + {i,7'b0} + {i,6'b0} + {i,5'b0} + {i,4'b0} + {i,3'b0} + {i,2'b0} + {i,1'b0} + i) |-> (volume == 4'd10));
+assert property(@(posedge clk_i)  (o == {i,6'b0} + {i,5'b0} + {i,4'b0} + {i,3'b0} + {i,2'b0} + {i,1'b0} + i) |-> (volume == 4'd7));
+assert property(@(posedge clk_i)  (o == {i,14'b0} + {i,13'b0} + {i,12'b0} + {i,11'b0} + {i,10'b0} + {i,9'b0} + {i,8'b0} + {i,7'b0} + {i,6'b0} + {i,5'b0} + {i,4'b0} + {i,3'b0} + {i,2'b0} + {i,1'b0} + i) |-> (volume == 4'd15));
+assert property(@(posedge clk_i)  (o == {i,1'b0} + i) |-> (volume == 4'd2));
+assert property(@(posedge clk_i)  (o == {i,3'b0} + {i,2'b0} + {i,1'b0} + i) |-> (volume == 4'd4));
+assert property(@(posedge clk_i)              (o == 0) |-> (volume == 4'd0));
+assert property(@(posedge clk_i)  (o == {i,8'b0} + {i,7'b0} + {i,6'b0} + {i,5'b0} + {i,4'b0} + {i,3'b0} + {i,2'b0} + {i,1'b0} + i) |-> (volume == 4'd9));
+
+endmodule

@@ -1,0 +1,15 @@
+   parameter DATA_WIDTH = 32;
+   parameter ADDR_WIDTH = 14;
+module i_dual_port_ram(
+   input clk, 
+   input r_ena,
+   input [DATA_WIDTH-1:0] w_data, 
+   input w_ena, 
+input [DATA_WIDTH-1:0] mem[0:2**ADDR_WIDTH-1],
+   input  [DATA_WIDTH-1:0] r_data ,
+   input [ADDR_WIDTH-1:0] r_addr,
+   input [ADDR_WIDTH-1:0] w_addr 
+);
+
+
+endmodule

@@ -1,0 +1,26 @@
+bind crc_control_unit
+ i_crc_control_unit v_crc_control_unit(
+.write(write),
+.bypass_byte0(bypass_byte0),
+.state_byte(state_byte),
+.read_wait(read_wait),
+.clear_crc_init_sel(clear_crc_init_sel),
+.state_reset(state_reset),
+.last_byte(last_byte),
+.size_in(size_in),
+.next_state_full(next_state_full),
+.reset_pending(reset_pending),
+.reset_chain(reset_chain),
+.crc_out_en(crc_out_en),
+.set_crc_init_sel(set_crc_init_sel),
+.clk(clk),
+.rst_n(rst_n),
+.has_data(has_data),
+.next_state_byte(next_state_byte),
+.byte_sel(byte_sel),
+.buffer_full(buffer_full),
+.bypass_size(bypass_size),
+.state_full(state_full),
+.byte_en(byte_en),
+.next_state_reset(next_state_reset)
+);

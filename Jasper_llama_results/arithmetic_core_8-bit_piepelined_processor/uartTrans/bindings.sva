@@ -1,0 +1,20 @@
+bind uartTrans
+ i_uartTrans v_uartTrans(
+.reset(reset),
+.stateNext(stateNext),
+.tx(tx),
+.nReg(nReg),
+.clk(clk),
+.sNext(sNext),
+.txReg(txReg),
+.bNext(bNext),
+.sReg(sReg),
+.txDoneTick(txDoneTick),
+.nNext(nNext),
+.bReg(bReg),
+.sTick(sTick),
+.txStart(txStart),
+.txNext(txNext),
+.stateReg(stateReg),
+.din(din)
+);

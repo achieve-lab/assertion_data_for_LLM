@@ -1,0 +1,127 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-06-03 13:51:59 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 600461
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:44815' '-nowindow' '-style' 'windows' '-data' 'AAABYHiclY/BCsIwEESnikU8+CGCgoi3nou3KoLXIlWrUm2xrYIX/VT/pL5EK/ToLtlkZ2cmiSPJe1RVJRvtO8VVIJ/8hfP6HjxHzTB9q4ksno1d6tTimuKy+hrqrFShYpU6gAxA1krIVDfwknlOzchUFxXaagMeaAm7C3vH5GqNfc21YpbjFKP7ME+oE3ShIhyMmzkbVcxNI7qIudTDK+OGVEe62V8u5v2ZRSY4TtnHMPYwC/vXN/DnMVs=' '-proj' '/data/vpulav2/Work/Jasper_corrected/arithmetic_core_2d_fht/signed_mult_const_fpga/signed_mult_const_fpga_gpt_3.5_1shot/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper_corrected/arithmetic_core_2d_fht/signed_mult_const_fpga/signed_mult_const_fpga_gpt_3.5_1shot/.tmp/.initCmds.tcl' 'FPV_signed_mult_const_fpga.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper_corrected/arithmetic_core_2d_fht/signed_mult_const_fpga/signed_mult_const_fpga_gpt_3.5_1shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/signed_mult_const_fpga.v
+[-- (VERI-1482)] Analyzing Verilog file './/signed_mult_const_fpga.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_gpt_3.5_1shot.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_gpt_3.5_1shot.sva'
+[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near 'assert'
+[ERROR (VERI-2344)] .//property_gpt_3.5_1shot.sva(14): SystemVerilog 2005 keyword 'assert' used in incorrect context
+[WARN (VERI-2053)] .//property_gpt_3.5_1shot.sva(14): implication operator can be used only in constraint expression in SystemVerilog 1800-2005 dialect
+[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near ')'
+[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near 'assert'
+[ERROR (VERI-2344)] .//property_gpt_3.5_1shot.sva(14): SystemVerilog 2005 keyword 'assert' used in incorrect context
+[WARN (VERI-2053)] .//property_gpt_3.5_1shot.sva(14): implication operator can be used only in constraint expression in SystemVerilog 1800-2005 dialect
+[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near ')'
+[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near 'assert'
+[ERROR (VERI-2344)] .//property_gpt_3.5_1shot.sva(14): SystemVerilog 2005 keyword 'assert' used in incorrect context
+[WARN (VERI-2053)] .//property_gpt_3.5_1shot.sva(14): implication operator can be used only in constraint expression in SystemVerilog 1800-2005 dialect
+[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near ')'
+[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near 'assert'
+[ERROR (VERI-2344)] .//property_gpt_3.5_1shot.sva(14): SystemVerilog 2005 keyword 'assert' used in incorrect context
+[WARN (VERI-2053)] .//property_gpt_3.5_1shot.sva(14): implication operator can be used only in constraint expression in SystemVerilog 1800-2005 dialect
+[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near ')'
+[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near ')'
+[ERROR (VERI-1128)] .//property_gpt_3.5_1shot.sva(14): 'posedge_clk' is not declared
+[WARN (VERI-1763)] .//property_gpt_3.5_1shot.sva(14): SVA directive is not sensitive to any clock. The directive will be sampled on the posedge of the fastest clock.
+[ERROR (VERI-1128)] .//property_gpt_3.5_1shot.sva(14): 'posedge_clk' is not declared
+[WARN (VERI-1763)] .//property_gpt_3.5_1shot.sva(14): SVA directive is not sensitive to any clock. The directive will be sampled on the posedge of the fastest clock.
+[ERROR (VERI-1128)] .//property_gpt_3.5_1shot.sva(14): 'posedge_clk' is not declared
+[WARN (VERI-1763)] .//property_gpt_3.5_1shot.sva(14): SVA directive is not sensitive to any clock. The directive will be sampled on the posedge of the fastest clock.
+[ERROR (VERI-1128)] .//property_gpt_3.5_1shot.sva(14): 'posedge_clk' is not declared
+[WARN (VERI-1763)] .//property_gpt_3.5_1shot.sva(14): SVA directive is not sensitive to any clock. The directive will be sampled on the posedge of the fastest clock.
+[ERROR (VERI-1072)] .//property_gpt_3.5_1shot.sva(15): module 'i_signed_mult_const_fpga' is ignored due to previous errors
+[WARN (VERI-2418)] .//property_gpt_3.5_1shot.sva(1): parameter 'N' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_gpt_3.5_1shot.sva(2): parameter 'mult_constant' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+Summary of errors detected:
+	[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near 'assert'
+	[ERROR (VERI-2344)] .//property_gpt_3.5_1shot.sva(14): SystemVerilog 2005 keyword 'assert' used in incorrect context
+	[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near ')'
+	[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near 'assert'
+	[ERROR (VERI-2344)] .//property_gpt_3.5_1shot.sva(14): SystemVerilog 2005 keyword 'assert' used in incorrect context
+	[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near ')'
+	[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near 'assert'
+	[ERROR (VERI-2344)] .//property_gpt_3.5_1shot.sva(14): SystemVerilog 2005 keyword 'assert' used in incorrect context
+	[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near ')'
+	[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near 'assert'
+	[ERROR (VERI-2344)] .//property_gpt_3.5_1shot.sva(14): SystemVerilog 2005 keyword 'assert' used in incorrect context
+	[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near ')'
+	[ERROR (VERI-1137)] .//property_gpt_3.5_1shot.sva(14): syntax error near ')'
+	[ERROR (VERI-1128)] .//property_gpt_3.5_1shot.sva(14): 'posedge_clk' is not declared
+	[ERROR (VERI-1128)] .//property_gpt_3.5_1shot.sva(14): 'posedge_clk' is not declared
+	[ERROR (VERI-1128)] .//property_gpt_3.5_1shot.sva(14): 'posedge_clk' is not declared
+	[ERROR (VERI-1128)] .//property_gpt_3.5_1shot.sva(14): 'posedge_clk' is not declared
+	[ERROR (VERI-1072)] .//property_gpt_3.5_1shot.sva(15): module 'i_signed_mult_const_fpga' is ignored due to previous errors
+ERROR (ENL034): 18 errors detected in the design file(s).
+
+ERROR: problem encountered at line 12 in file FPV_signed_mult_const_fpga.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.408 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

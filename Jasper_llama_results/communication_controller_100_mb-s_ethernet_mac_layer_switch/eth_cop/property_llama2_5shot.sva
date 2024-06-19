@@ -1,0 +1,43 @@
+module i_eth_cop(
+input         s1_wb_ack_i, s1_wb_err_i,
+input           m1_in_progress,
+input m1_addressed_s2 ,
+input m1_addressed_s1 ,
+input         m1_wb_cyc_i, m1_wb_stb_i, m1_wb_we_i,
+input     [3:0] s1_wb_sel_o,
+input m_wb_access_finished,
+input m2_req ,
+input  [31:0] m1_wb_adr_i, m1_wb_dat_i,
+input         m2_wb_cyc_i, m2_wb_stb_i, m2_wb_we_i,
+input    [31:0] m1_wb_dat_o,
+input m2_addressed_s1 ,
+input        s1_wb_we_o,  s1_wb_cyc_o, s1_wb_stb_o,
+input  [31:0] m2_wb_adr_i, m2_wb_dat_i,
+input [31:0] s2_wb_adr_o, s2_wb_dat_o,
+input  [31:0] s1_wb_dat_i,
+input        s2_wb_we_o,  s2_wb_cyc_o, s2_wb_stb_o,
+input wb_clk_i, wb_rst_i,
+input         s2_wb_ack_i, s2_wb_err_i,
+input    [31:0] m2_wb_dat_o,
+input  [3:0] s2_wb_sel_o,
+input m2_addressed_s2 ,
+input m1_req ,
+input   [3:0] m1_wb_sel_i,
+input           m2_wb_err_o,
+input           m2_wb_ack_o,
+input  [31:0] s2_wb_dat_i,
+input        m1_wb_ack_o, m1_wb_err_o,
+input           m2_in_progress,
+input    [31:0] s1_wb_adr_o,
+input   [3:0] m2_wb_sel_i,
+input [31:0] s1_wb_dat_o
+);
+
+assert property(@(posedge wb_clk_i) (m2_in_progress) |-> (m2_wb_err_o == 0));
+assert property(@(posedge wb_clk_i) (m2_in_progress) |-> (m2_wb_ack_o == 0));
+assert property(@(posedge wb_clk_i) (m2_in_progress) |-> (m2_wb_dat_o == 0));
+assert property(@(posedge wb_clk_i) (m1_in_progress) |-> (m1_wb_err_o == 0));
+assert property(@(posedge wb_clk_i) (m1_in_progress) |-> (m1_wb_ack_o == 0));
+assert property(@(posedge wb_clk_i) (m1_in_progress) |-> (m1_wb_dat_o == 0));
+
+endmodule

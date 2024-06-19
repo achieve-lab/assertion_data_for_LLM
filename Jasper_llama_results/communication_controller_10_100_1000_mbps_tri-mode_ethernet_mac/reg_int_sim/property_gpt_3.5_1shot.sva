@@ -1,0 +1,44 @@
+module i_reg_int_sim(
+input	[5:0]	CPU_rd_addr				,
+input			tx_pause_en				,
+input			broadcast_filter_en	    ,
+input			Reset					,
+input        	Nvalid             		,// Invalid Status (qualifier for the valid scan result)
+input	[7:0]	MAC_tx_add_prom_data	,
+input	[5:0]	RX_IFG_SET	  			,
+input        	Busy               		,// Busy Signal
+input			FullDuplex         		,
+input	[31:0]	CPU_rd_dout				,
+input	[4:0]	Tx_Lwmark				,	
+input        	LinkFail           		,// Link Integrity Signal
+input			CRC_chk_en				,				
+input			MAC_tx_add_en			,				
+input	[5:0]	IFGset					,
+input			RX_APPEND_CRC			,
+input        	UpdateMIIRX_DATAReg,		// Updates MII RX_DATA inputister with read data
+input	[15:0]	RX_MAX_LENGTH 			,//	1518
+input			xon_cpu	            	,
+input	[2:0]	Speed					,
+input	[2:0]	MAC_rx_add_prom_add		,   
+input			Clk_input					,
+input	[3:0]	MaxRetry	        	,
+input			pause_frame_send_en		,				
+input			CPU_rd_apply			,
+input			CPU_rd_grant			,
+input			Line_loop_en			,
+input	[2:0]	MAC_tx_add_prom_add		,
+input	[6:0]	RX_MIN_LENGTH			,//	64
+input			MAC_rx_add_chk_en		,	
+input			xoff_cpu	        	,
+input	[15:0]	broadcast_MAX	        ,				        
+input 	[15:0] 	Prsd               		,// Read Status Data (data read from the PHY)
+input	[4:0]	Tx_Hwmark				,
+input	[7:0]	MAC_rx_add_prom_data	,	
+input			MAC_tx_add_prom_wr		,
+input			MAC_rx_add_prom_wr		,   
+input	[15:0]	pause_quanta_set		,
+input Clk_reg
+);
+
+assert property(@(posedge Clk_reg) (assert property (Reset |-> (Tx_Hwmark == 5'h1e)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (Tx_Lwmark == 5'h19)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (pause_frame_send_en == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (pause_quanta_set == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (MAC_tx_add_en == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (FullDuplex == 1)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (MaxRetry == 2)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (IFGset == 10)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (MAC_tx_add_prom_data == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (MAC_tx_add_prom_add == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (MAC_tx_add_prom_wr == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (tx_pause_en == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (xoff_cpu == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (xon_cpu == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (MAC_rx_add_chk_en == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (MAC_rx_add_prom_data == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (MAC_rx_add_prom_add == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (MAC_rx_add_prom_wr == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (broadcast_filter_en == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (broadcast_MAX == 10)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (RX_APPEND_CRC == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (CRC_chk_en == 1)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (RX_IFG_SET == 10)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (RX_MAX_LENGTH == 1518)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (RX_MIN_LENGTH == 64)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (CPU_rd_addr == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (CPU_rd_apply == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (Line_loop_en == 0)));assert property(@(posedge Clk_reg)  assert property (Reset |-> (Speed == 3'b001)));assert property(@(posedge Clk_reg) ));
+endmodule

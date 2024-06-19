@@ -1,0 +1,10 @@
+module i_byteNegator(
+	input byteN,
+	input [7:0] byteOut,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET,
+	input [7:0]	byteIn
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (byteN == 1) |-> (byteOut == ~byteIn));assert property(@(posedge DEFAULT_CLOCK)  (byteN == 0) |-> (byteOut == byteIn));assert property(@(posedge DEFAULT_CLOCK)  (byteOut == ~byteIn) |-> byteN);assert property(@(posedge DEFAULT_CLOCK)  (byteOut == byteIn) |-> !byteN);
+endmodule

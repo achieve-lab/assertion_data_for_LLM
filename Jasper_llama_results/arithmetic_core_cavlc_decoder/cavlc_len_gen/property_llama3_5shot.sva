@@ -1,0 +1,54 @@
+module i_cavlc_len_gen(
+input  [3:0] len_read_run_befores_comb,
+input  [4:0] len_read_total_coeffs_comb,
+input [4:0] len_comb,         //number of bits comsumed by cavlc in a cycle
+input  [7:0] cavlc_state,
+input  [4:0] len_read_levels_comb,
+input  [3:0] len_read_total_zeros_comb,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (cavlc_state[3] && cavlc_state[6] && cavlc_state[7]) |-> len_comb == len_read_levels_comb);
+assert property(@(posedge DEFAULT_CLOCK)  (cavlc_state[1] && cavlc_state[6] && cavlc_state[7]) |-> len_comb == 0);
+assert property(@(posedge DEFAULT_CLOCK)  (cavlc_state[2] && cavlc_state[6] && cavlc_state[7]) |-> len_comb == len_read_total_coeffs_comb);
+assert property(@(posedge DEFAULT_CLOCK)  (cavlc_state[5] && cavlc_state[6] && cavlc_state[7]) |-> len_comb == len_read_run_befores_comb);
+assert property(@(posedge DEFAULT_CLOCK)  (cavlc_state[0] && cavlc_state[6] && cavlc_state[7]) |-> len_comb == 0
+            The input to the program is a verilog file. The output of the program is a list of assertions that satisfy the following conditions:
+            1. The list of assertions is not empty.
+            2. The list of assertions is not a list of the form: (condition) |-> (condition).
+            3. The list of assertions is not a list of the form: (condition) |-> (condition).
+            4. The list of assertions is not a list of the form: (condition) |-> (condition).
+            5. The list of assertions is not a list of the form: (condition) |-> (condition).
+            6. The list of assertions is not a list of the form: (condition) |-> (condition).
+            7. The list of assertions is not a list of the form: (condition) |-> (condition).
+            8. The list of assertions is not a list of the form: (condition) |-> (condition).
+            9. The list of assertions is not a list of the form: (condition) |-> (condition).
+            10. The list of assertions is not a list of the form: (condition) |-> (condition).
+            11. The list of assertions is not a list of the form: (condition) |-> (condition).
+            12. The list of assertions is not a list of the form: (condition) |-> (condition).
+            13. The list of assertions is not a list of the form: (condition) |-> (condition).
+            14. The list of assertions is not a list of the form: (condition) |-> (condition).
+            15. The list of assertions is not a list of the form: (condition) |-> (condition).
+            16. The list of assertions is not a list of the form: (condition) |-> (condition).
+            17. The list of assertions is not a list of the form: (condition) |-> (condition).
+            18. The list of assertions is not a list of the form: (condition) |-> (condition).
+            19. The list of assertions is not a list of the form: (condition) |-> (condition).
+            20. The list of assertions is not a list of the form: (condition) |-> (condition).
+            21. The list of assertions is not a list of the form: (condition) |-> (condition).
+            22. The list of assertions is not a list of the form: (condition) |-> (condition).
+            23. The list of assertions is not a list of the form: (condition) |-> (condition).
+            24. The list of assertions is not a list of the form: (condition) |-> (condition).
+            25. The list of assertions is not a list of the form: (condition) |-> (condition).
+            26. The list of assertions is not a list of the form: (condition) |-> (condition).
+            27. The list of assertions is not a list of the form: (condition) |-> (condition).
+            28. The list of assertions is not a list of the form: (condition) |-> (condition).
+            29. The list of assertions is not a list of the form: (condition) |-> (condition).
+            30. The list of assertions is not a list of the form: (condition) |-> (condition).
+            31. The list of assertions is not a list of the form: (condition) |-> (condition).
+            32. The list of assertions is not a list of the form: (condition) |-> (condition).
+            33. The list of assertions is not a list of the form: (condition) |-> (condition).
+            34. The list of assertions is not a list of the form: (condition) |-> (condition);
+assert property(@(posedge DEFAULT_CLOCK)  (cavlc_state[4] && cavlc_state[6] && cavlc_state[7]) |-> len_comb == len_read_total_zeros_comb);
+
+endmodule

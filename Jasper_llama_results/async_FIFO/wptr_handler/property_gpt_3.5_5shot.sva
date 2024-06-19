@@ -1,0 +1,13 @@
+module i_wptr_handler #(parameter PTR_WIDTH=3)(
+  input [PTR_WIDTH:0] b_wptr, g_wptr,
+  input wrap_around,
+  input [PTR_WIDTH:0] b_wptr_next,
+  input wclk, wrst_n, w_en,
+  input [PTR_WIDTH:0] g_rptr_sync,
+  input wfull,
+  input [PTR_WIDTH:0] g_wptr_next,
+  input full
+);
+
+assert property(@(posedge wclk) (g_wptr_next == {~g_rptr_sync[PTR_WIDTH:PTR_WIDTH-1], g_rptr_sync[PTR_WIDTH-2:0]}) |-> (wfull == 1));assert property(@(posedge wclk)  (!wrst_n) |-> (b_wptr == 0));assert property(@(posedge wclk)  (!wrst_n) |-> (g_wptr == 0));assert property(@(posedge wclk)  (w_en && !full) |-> (b_wptr_next == b_wptr + 1));assert property(@(posedge wclk)  (b_wptr_next >> 1) ^ b_wptr_next |-> g_wptr_next);assert property(@(posedge wclk)  (w_en && !full) |-> (g_wptr_next == (b_wptr + 1) >> 1) ^ (b_wptr + 1));
+endmodule

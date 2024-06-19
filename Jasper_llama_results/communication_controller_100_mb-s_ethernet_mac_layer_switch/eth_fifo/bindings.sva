@@ -1,0 +1,19 @@
+bind eth_fifo
+ i_eth_fifo v_eth_fifo(
+.full(full),
+.cnt(cnt),
+.write(write),
+.almost_full(almost_full),
+.write_pointer(write_pointer),
+.reset(reset),
+.empty(empty),
+.fifo(fifo),
+.fifo(fifo),
+.data_out(data_out),
+.clear(clear),
+.almost_empty(almost_empty),
+.data_in(data_in),
+.read_pointer(read_pointer),
+.read(read),
+.clk(clk)
+);

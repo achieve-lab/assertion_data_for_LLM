@@ -1,0 +1,62 @@
+module i_cavlc_read_total_coeffs(
+input   [0:15]   rbsp,
+input     [1:0]   TrailingOnes_3,
+input     [4:0]   TotalCoeff,
+input     [4:0]   len_5,
+input     [4:0]   TotalCoeff_5,
+input     [4:0]   len_1,
+input     [1:0]   TrailingOnes,
+input   sel,
+input     [4:0]   len_2,
+input   start,
+input     [4:0]   TotalCoeff_comb,
+input     [1:0]   TrailingOnes_4,
+input     [4:0]   TotalCoeff_1,
+input     [4:0]   len_3,
+input     [4:0]   TotalCoeff_4,
+input     [4:0]   TotalCoeff_3,
+input     [0:15]  rbsp_1,         
+input     [4:0]   len_4,
+input     [4:0]   len_comb,
+input     [0:9]   rbsp_3,
+input     [0:5]   rbsp_4,
+input   rst_n,
+input     [1:0]   TrailingOnes_comb,
+input     [0:7]   rbsp_5,
+input   ena,
+input   signed   [5:0]   nC,
+input     [1:0]   TrailingOnes_5,
+input     [1:0]   TrailingOnes_1,
+input     [0:13]  rbsp_2,
+input     [4:0]   TotalCoeff_2,
+input     [1:0]   TrailingOnes_2,
+input DEFAULT_RESET,
+input   clk
+);
+
+assert property(@(posedge clk) (state == 1 & rbsp_2[0] == 'b1) |-> (TrailingOnes_2 == 0));
+assert property(@(posedge clk) (TrailingOnes_2 == 0) |-> (TrailingOnes_2 == 3));
+assert property(@(posedge clk) (state == 1 & rbsp_1[14] == 'b1) |-> (TrailingOnes_1 == 0));
+assert property(@(posedge clk) (state == 1 & rbsp_1[4] == 'b1) |-> (TrailingOnes_1 == 3));
+assert property(@(posedge clk) (TrailingOnes2 == 0) |-> (TrailingOnes2 == 0) |-> (TrailingOnes2 == 0) |-> (TrailingOnes2 == 0) |-> (TrailingOnes2 == 0) |-> (TrailingOnes2 == 0) |-> (TrailingOnes2 == 0) |-> (TrailingOnes2 == 0));
+assert property(@(posedge clk) (state == 1 & rbsp_1[9] == 'b1) |-> (TrailingOnes_1 == 0));
+assert property(@(posedge clk) (state == 1 & rbsp_1[7] == 'b1) |-> (TrailingOnes_1 == 0));
+assert property(@(posedge clk) (TrailingOnes_2 == 0) |-> (TrailingOnes_2 == 2));
+assert property(@(posedge clk) (state == 1 & rbsp_1[6] == 'b1) |-> (TrailingOnes_1 == 0));
+assert property(@(posedge clk)      (state == 1 & rbsp_1[0] == 'b1) |-> (TrailingOnes_1 == 0));
+assert property(@(posedge clk) (TrailingOnes_2 == 0) |-> (TrailingOnes_2 == 1));
+assert property(@(posedge clk) (state == 1 & rbsp_1[8] == 'b1) |-> (TrailingOnes_1 == 0));
+assert property(@(posedge clk) (state == 1 & rbsp_1[1] == 'b1) |-> (TrailingOnes_1 == 1));
+assert property(@(posedge clk) (state == 1 & rbsp_2[2] == 'b1) |-> (TrailingOnes_2 == 2));
+assert property(@(posedge clk) (state == 1 & rbsp_1[5] == 'b1) |-> (TrailingOnes_1 == 0));
+assert property(@(posedge clk) (state == 1 & rbsp_1[11] == 'b1) |-> (TrailingOnes_1 == 0));
+assert property(@(posedge clk) (state == 1 & rbsp_1[12] == 'b1) |-> (TrailingOnes_1 == 0));
+assert property(@(posedge clk) (TrailingOnes_2 == 0) |-> (TrailingOnes_2 == 0) |-> (TrailingOnes2 == 0));
+assert property(@(posedge clk) (state == 1 & rbsp_1[2] == 'b1) |-> (TrailingOnes_1 == 2));
+assert property(@(posedge clk) (state == 1 & rbsp_1[13] == 'b1) |-> (TrailingOnes_1 == 0));
+assert property(@(posedge clk) (state == 1 & rbsp_2[1] == 'b1) |-> (TrailingOnes_2 == 1));
+assert property(@(posedge clk) (state == 1 & rbsp_1[15] == 'b1) |-> (TrailingOnes_1 == 0));
+assert property(@(posedge clk) (state == 1 & rbsp_1[3] == 'b1) |-> (TrailingOnes_1 == 3));
+assert property(@(posedge clk) (state == 1 & rbsp_1[10] == 'b1) |-> (TrailingOnes_1 == 0));
+
+endmodule

@@ -1,0 +1,25 @@
+
+parameter N_FilterLength      = 8;
+parameter N_FilterResetValue  = 8;
+parameter N_FilterMaxValue    = N_FilterResetValue;
+parameter ResetterCounterLength   = 4;
+
+module i_variableresetrandomwalkfilter(
+input Up, Down,
+ input  MainClock, Lead, Lag, // System Clock and Phase Comparator signals
+ input Positive, Negative,   // "positive shift" and "negative shift" inputs
+input [N_FilterLength-1 : 0] N_FilterCounter,
+input [ResetterCounterLength-1 : 0] ResetterCounter,
+input DEFAULT_RESET,
+input [N_FilterLength-1 : 0] ResetterValue
+);
+
+assert property1 @(posedge MainClock) disable iff (!Up) (ResetterCounter < ResetterCounterMaxValue || ResetterCounter >= ResetterCounterMinValue) |-> (ResetterCounter == ResetterCounter + 1);
+assert property2 @(posedge MainClock) disable iff (!Down) (ResetterCounter <= ResetterCounterMaxValue || ResetterCounter > ResetterCounterMinValue) |-> (ResetterCounter == ResetterCounter - 1);
+assert property3 @(posedge MainClock) (ResetterCounter > ResetterCounterMaxValue && ResetterCounter < ResetterCounterMinValue) |-> (ResetterCounter == 0);
+assert property4 @(posedge MainClock) (N_FilterCounter == N_FilterMaxValue || N_FilterCounter == N_FilterMinValue) |-> (N_FilterCounter == ResetterValue);
+assert property5 @(posedge MainClock) (Lead) |-> (N_FilterCounter == N_FilterCounter + 1);
+assert property6 @(posedge MainClock) (Lag) |-> (N_FilterCounter == N_FilterCounter - 1);
+assert property7 @(posedge MainClock) (N_FilterCounter == N_FilterMaxValue) |-> (Positive);
+assert property8 @(posedge MainClock) (N_FilterCounter == N_FilterMinValue) |-> (Negative);
+endmodule

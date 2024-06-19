@@ -1,0 +1,76 @@
+module i_decoder_8b10b(
+   input coding_err,
+   input DISPARITY6b, DISPARITY6a2, DISPARITY6a0,
+   // Registered Coding error input
+   input RBYTECLK,
+   input 	AEQB, CEQD, P22, P13, P31,
+   input 	  xerr,
+   input 	P22_b_c_eeqi, P22_bn_cn_eeqi, an_bn_en_in,
+   input 	P22_a_c_eeqi, P22_an_cn_eeqi,
+   input disparity_err,
+   input disparity,
+   input derr12, derr34, derr56, derr78,
+   input 	OR12_1, OR12_2, OR12_3, OR12_4, OR12_5, OR12_6, OR12_7,
+   input reset,
+   input   zerr1, zerr2, zerr3,
+   input 	eeqi, c_d_e_i, cn_dn_en_in,
+   input 	a_b_e_i, P13_d_e_i, P13_in, P13_en, P31_i,
+   // Registered 8B input
+   input   xerr1, xerr2, xerr3, xerr4,
+   input 	A, B, C, D, E,
+   input cerr1, cerr2, cerr3, cerr4, cerr5, cerr6, cerr7, cerr8, cerr9,
+   input 	  cerr,
+   input  	K, F, G, H, K28p, KA, KB, KC,
+   input heqj, fghjP13, fghjP31, fghj22,
+   input [4:0] decoder_8b_X,  input [2:0] decoder_8b_Y,
+   // Register disparity and disparity_err input
+   input DISPARITY6p, DISPARITY6n, DISPARITY4p, DISPARITY4n,
+   input   a,b,c,d,e,i,f,g,h,j,  // 10 Bit inputs
+   input [9:0] tbi,
+   input 	  zerr,
+   // --- TBI (Ten Bit Interface) input bus
+   input [7:0] ebi,
+   input K_out,
+   input 	derr1,derr2,derr3,derr4,derr5,derr6,derr7,derr8,
+   input feqg,
+   input DISPARITY6a
+   // -- Eight bit input bus
+);
+
+assert property(@(posedge RBYTECLK)  (reset) |-> (K_out == 0 && ebi == 8'b0)
+ (!reset && K) |-> (K_out == 1)
+ (!reset && !K) |-> (K_out == 0)
+ (!reset && (ebi == {H, G, F, E, D, C, B, A})) |-> (K_out == K)
+ (disparity && DISPARITY6p) |-> (disparity_err)
+ (DISPARITY6n && !disparity) |-> (disparity_err)
+ (disparity && !DISPARITY6n && f && g) |-> (disparity_err)
+ (disparity && a && b && c) |-> (disparity_err)
+ (disparity && !DISPARITY6n && DISPARITY4p) |-> (disparity_err)
+ (!disparity && !DISPARITY6p && !f && !g) |-> (disparity_err)
+ (!disparity && !a && !b && !c) |-> (disparity_err)
+ (!disparity && !DISPARITY6p && DISPARITY4n) |-> (disparity_err)
+ (DISPARITY6p && DISPARITY4p) |-> (disparity_err)
+ (DISPARITY6n && DISPARITY4n) |-> (disparity_err)
+ (a && b && c && d) |-> (coding_err)
+ (!a && !b && !c && !d) |-> (coding_err)
+ (P13 && !e && !i) |-> (coding_err)
+ (P31 && e && i) |-> (coding_err)
+ (f && g && h && j) |-> (coding_err)
+ (!f && !g && !h && !j) |-> (coding_err)
+ (e && i && f && g && h) |-> (coding_err)
+ (!e && !i && !f && !g && !h) |-> (coding_err)
+ (e && !i && g && h && j) |-> (coding_err)
+ (!e && i && !g && !h && !j) |-> (coding_err)
+ (((e && i && !g && !h && !j) || (!e && !i && g && h && j)) && !((c && d && e) || (!c && !d && !e))) |-> (coding_err)
+ (!P31 && e && !i && !g && !h && !j) |-> (coding_err)
+ (!P13 && !e && i && g && h && j) |-> (coding_err)
+ (DISPARITY6p && DISPARITY4p) |-> (zerr)
+ (DISPARITY6n && DISPARITY4n) |-> (zerr)
+ (f && g && !h && !j && DISPARITY6p) |-> (zerr)
+ (!f && !g && h && j && DISPARITY6n) |-> (zerr)
+ (a && b && c && !e && !i && ((!f && !g) || fghjP13)) |-> (xerr)
+ (!a && !b && !c && e && i && ((f && g) || fghjP31)) |-> (xerr)
+ (c && d && e && i && !f && !g && !h) |-> (xerr)
+ (!c && !d && !e && !i && f && g && h) |-> (xerr)
+ (cerr || zerr || xerr) |-> (coding_err));
+endmodule

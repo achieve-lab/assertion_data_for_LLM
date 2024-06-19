@@ -1,0 +1,29 @@
+module i_Ramdon_gen(
+input           Reset           ,
+input [9:0]       Ramdom          ,
+input   [3:0]   RetryCnt        ,
+input [9:0]       Ramdom_counter  ,
+input [9:0]       Random_sequence ,
+input [7:0]       Slot_time_counter, //256*2,
+input           Clk             ,
+input           Init            ,
+input          Random_time_meet   
+);
+
+assert property(@(posedge Clk)  (RetryCnt == 4'h9) |-> (Ramdom == { Random_sequence[9:0]}));
+assert property(@(posedge Clk)  (RetryCnt == 4'h1) |-> (Ramdom == {8'b0,Random_sequence[1:0]}));
+assert property(@(posedge Clk)  (RetryCnt == 4'h7) |-> (Ramdom == {2'b0,Random_sequence[7:0]}));
+assert property(@(posedge Clk)  (Random_time_meet == 1) |-> (Ramdom_counter == 0));
+assert property(@(posedge Clk)  (RetryCnt == 4'h3) |-> (Ramdom == {6'b0,Random_sequence[3:0]}));
+assert property(@(posedge Clk)  (Ramdom_counter!= 0 && Slot_time_counter == 255) |-> (Ramdom_counter == Ramdom_counter -1 ));
+assert property(@(posedge Clk)  (RetryCnt == 4'h0) |-> (Ramdom == {9'b0,Random_sequence[0]}));
+assert property(@(posedge Clk)  (RetryCnt == 4'h5) |-> (Ramdom == {4'b0,Random_sequence[5:0]}));
+assert property(@(posedge Clk)  (Slot_time_counter == 255) |-> (Random_time_meet == 1));
+assert property(@(posedge Clk)  (Random_sequence[2] ^ Random_sequence[9]) |-> (Random_sequence[0] ^ Random_sequence[1] ^ Random_sequence[2] ^ Random_sequence[3] ^ Random_sequence[4] ^ Random_sequence[5] ^ Random_sequence[6] ^ Random_sequence[7] ^ Random_sequence[8] ^ Random_sequence[9]));
+assert property(@(posedge Clk)  (RetryCnt == 4'h4) |-> (Ramdom == {5'b0,Random_sequence[4:0]}));
+assert property(@(posedge Clk)  (RetryCnt == 4'h8) |-> (Ramdom == {1'b0,Random_sequence[8:0]}));
+assert property(@(posedge Clk)              (Slot_time_counter == 255) |-> (Random_time_meet == 1));
+assert property(@(posedge Clk)  (RetryCnt == 4'h2) |-> (Ramdom == {7'b0,Random_sequence[2:0]}));
+assert property(@(posedge Clk)  (RetryCnt == 4'h6) |-> (Ramdom == {3'b0,Random_sequence[6:0]}));
+
+endmodule

@@ -1,0 +1,109 @@
+
+
+
+parameter DATA_WIDTH    = 32;
+parameter DEPTH         = 8;
+parameter CNT_WIDTH     = 4;
+
+module i_eth_fifo(
+    input     [DATA_WIDTH-1:0]  fifo  [0:DEPTH-1],
+input     [CNT_WIDTH-2:0]   write_pointer,
+input                     read,
+input                    almost_empty,
+input   [DATA_WIDTH-1:0]  data_in,
+input                     clear,
+input     [CNT_WIDTH-2:0]   read_pointer,
+input                    almost_full,
+input     [CNT_WIDTH-1:0]   cnt,
+input                    full,
+input                    empty,
+input                     clk,
+input                     write,
+input                     reset,
+input  [DATA_WIDTH-1:0]  data_out
+);
+
+
+property a13;
+@(posedge clk) (clear == 1) ##1 (cnt[0] == 0) |-> (empty == 1);
+endproperty
+assert_a13: assert property(a13);
+
+property a16;
+@(posedge clk) (clear == 0 & cnt[0] == 1) ##1 (cnt[1] == 0) |-> (empty == 0);
+endproperty
+assert_a16: assert property(a16);
+
+property a17;
+@(posedge clk) (clear == 0 & cnt[0] == 1) ##1 (cnt[2] == 0) |-> (empty == 0);
+endproperty
+assert_a17: assert property(a17);
+
+property a15;
+@(posedge clk) (cnt[0] == 1) |-> (empty == 0);
+endproperty
+assert_a15: assert property(a15);
+
+property a14;
+@(posedge clk) (cnt[0] == 0) ##1 (cnt[0] == 0 & cnt[1] == 0) |-> (empty == 1);
+endproperty
+assert_a14: assert property(a14);
+property a12;
+@(posedge clk) (clear == 1) |=> (almost_full == 0);
+endproperty
+assert_a12: assert property(a12);
+
+property a11;
+@(posedge clk) (clear == 0 & write == 0 & cnt[0] == 0 & cnt[2] == 0) ##1 (cnt[0] == 1 & cnt[1] == 1 & cnt[2] == 1) |-> (almost_full == 1);
+endproperty
+assert_a11: assert property(a11);
+
+property a10;
+@(posedge clk) (clear == 0 & write == 0 & cnt[0] == 0 & cnt[1] == 0) ##1 (cnt[0] == 1 & cnt[1] == 1 & cnt[2] == 1) |-> (almost_full == 1);
+endproperty
+assert_a10: assert property(a10);
+
+property a7;
+@(posedge clk) (cnt[0] == 0) |-> (almost_full == 0);
+endproperty
+assert_a7: assert property(a7);
+
+property a9;
+@(posedge clk) (cnt[2] == 0) |-> (almost_full == 0);
+endproperty
+assert_a9: assert property(a9);
+
+property a8;
+@(posedge clk) (cnt[1] == 0) |-> (almost_full == 0);
+endproperty
+assert_a8: assert property(a8);
+property a4;
+@(posedge clk) (clear == 1) ##1 (cnt[0] == 1) |-> (almost_empty == 1);
+endproperty
+assert_a4: assert property(a4);
+
+property a1;
+@(posedge clk) (clear == 0 & write == 0 & cnt[0] == 0) ##1 (cnt[1] == 0) |-> (almost_empty == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a2;
+@(posedge clk) (clear == 0 & write == 0 & cnt[0] == 0 & cnt[1] == 0) |=> (almost_empty == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a3;
+@(posedge clk) (clear == 0 & write == 0 & cnt[0] == 0 & cnt[2] == 0) ##1 (cnt[2] == 1) |-> (almost_empty == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a0;
+@(posedge clk) (cnt[0] == 0) |-> (almost_empty == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a5;
+@(posedge clk) (cnt[0] == 1 & write == 1) ##1 (cnt[0] == 1 & cnt[2] == 0) |-> (almost_empty == 1);
+endproperty
+assert_a5: assert property(a5);
+endmodule

@@ -1,0 +1,66 @@
+
+parameter pTaps = 16;
+
+module i_PSGFilter(
+input [7:0] cnt,
+input [14:0] o,
+input wr,
+input [11:0] coeff [0:pTaps-1],   // magnitude of coefficient
+input clk,
+input [14:0] tap [0:pTaps-1],     // tap inputisters
+input [14:0] i,
+input [12:0] din,
+input [pTaps-1:0] sgn,            // sign of coefficient
+input [26:0] mult ,
+input [30:0] acc,                 // accumulator
+input rst,
+input [3:0] adr
+);
+
+
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[7] == tap[6]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[23] == tap[22]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (acc == 0));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[35] == tap[34]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[20] == tap[19]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[11] == tap[10]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[27] == tap[26]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[33] == tap[32]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[36] == tap[35]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[26] == tap[25]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[10] == tap[9]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (o == 0));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[39] == tap[38]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[15] == tap[14]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[21] == tap[20]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[25] == tap[24]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[3] == tap[2]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[32] == tap[31]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[8] == tap[7]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[18] == tap[17]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[0] == i));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[24] == tap[23]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[12] == tap[11]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[34] == tap[33]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[30] == tap[29]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[37] == tap[36]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[19] == tap[18]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[38] == tap[37]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[14] == tap[13]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[9] == tap[8]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[1] == tap[0]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[29] == tap[28]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[40] == tap[39]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[22] == tap[21]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[2] == tap[1]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[5] == tap[4]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[41] == tap[40]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[31] == tap[30]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[4] == tap[3]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[28] == tap[27]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[6] == tap[5]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[16] == tap[15]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[13] == tap[12]));
+assert property(@(posedge clk) (cnt == 8'd0) |-> (tap[17] == tap[16]));
+
+endmodule

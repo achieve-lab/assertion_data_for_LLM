@@ -1,0 +1,51 @@
+
+parameter CRC_SIZE      = 8;         // Define the size of CRC Code
+parameter MASK          = 8'hff ;
+module i_crc_comb(
+input [CRC_SIZE - 2 : 0] MASK_REVERSED,
+input [CRC_SIZE - 2 : 0] crc_in_masked,
+	input                    data_in,    // One bit of data block
+	input [CRC_SIZE - 1 : 0] crc_in,     // In cascated mode, this input is the previous calculated CRC code
+	input [CRC_SIZE - 1 : 0] crc_poly,   // Generator Polynomial
+input [CRC_SIZE - 2 : 0] crc_poly_size_reversed,
+  input [CRC_SIZE - 2 : 0] crc_poly_size,
+	input [CRC_SIZE - 1 : 0] crc_out,   // CRC code after one round of calculation
+  input DEFAULT_CLOCK,
+  input DEFAULT_RESET,
+input [CRC_SIZE - 1 : 0] feedback
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 5]) |-> (crc_out[CRC_SIZE - 5]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 18]) |-> (crc_out[CRC_SIZE - 18]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 25]) |-> (crc_out[CRC_SIZE - 25]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 3]) |-> (crc_out[CRC_SIZE - 3]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 28]) |-> (crc_out[CRC_SIZE - 28]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 17]) |-> (crc_out[CRC_SIZE - 17]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 14]) |-> (crc_out[CRC_SIZE - 14]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 22]) |-> (crc_out[CRC_SIZE - 22]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 20]) |-> (crc_out[CRC_SIZE - 20]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 6]) |-> (crc_out[CRC_SIZE - 6]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 16]) |-> (crc_out[CRC_SIZE - 16]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 19]) |-> (crc_out[CRC_SIZE - 19]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 8]) |-> (crc_out[CRC_SIZE - 8]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 32]) |-> (crc_out[CRC_SIZE - 32]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 11]) |-> (crc_out[CRC_SIZE - 11]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 30]) |-> (crc_out[CRC_SIZE - 30]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 7]) |-> (crc_out[CRC_SIZE - 7]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 1]) |-> (crc_out[CRC_SIZE - 1]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 10]) |-> (crc_out[CRC_SIZE - 10]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 31]) |-> (crc_out[CRC_SIZE - 31]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 12]) |-> (crc_out[CRC_SIZE - 12]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 24]) |-> (crc_out[CRC_SIZE - 24]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 26]) |-> (crc_out[CRC_SIZE - 26]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 29]) |-> (crc_out[CRC_SIZE - 29]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 9]) |-> (crc_out[CRC_SIZE - 9]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 13]) |-> (crc_out[CRC_SIZE - 13]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 15]) |-> (crc_out[CRC_SIZE - 15]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 4]) |-> (crc_out[CRC_SIZE - 4]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 27]) |-> (crc_out[CRC_SIZE - 27]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 21]) |-> (crc_out[CRC_SIZE - 21]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 23]) |-> (crc_out[CRC_SIZE - 23]));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[CRC_SIZE - 2]) |-> (crc_out[CRC_SIZE - 2]));
+
+endmodule

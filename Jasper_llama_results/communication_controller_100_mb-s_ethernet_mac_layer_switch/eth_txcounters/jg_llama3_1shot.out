@@ -1,0 +1,2958 @@
+Jasper Apps 2024.03 FCS 64 bits 2024.03.27 15:42:27 UTC
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper_llama/communication_controller_100_mb-s_ethernet_mac_layer_switch/eth_txcounters/eth_txcounters_llama3_1shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/eth_txcounters.v
+[-- (VERI-1482)] Analyzing Verilog file './/eth_txcounters.v'
+[INFO (VERI-1328)] .//eth_txcounters.v(85): analyzing included file './/timescale.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_llama3_1shot.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_llama3_1shot.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top eth_txcounters
+INFO (ISW003): Top module name is "eth_txcounters".
+[INFO (HIER-8002)] .//eth_txcounters.v(219): Disabling old hierarchical reference handler
+[INFO (VERI-1018)] .//property_llama3_1shot.sva(1): compiling module 'i_eth_txcounters'
+[INFO (VERI-1018)] .//eth_txcounters.v(88): compiling module 'eth_txcounters'
+INFO (INL208): Elaboration synthesis summary:
+  Number of synthesized netlists          3 (1 packages)
+  Single run mode                         On
+  Pipeline                                On (2 pipelined netlists)
+  Late hierarchical reference connection  On
+  Number of analyzed Verilog modules      3 (3 synthesized)
+  Number of analyzed VHDL entities        0 (0 synthesized)
+INFO (INL003): Clearing all state information (assumes, stopats, and so forth).
+eth_txcounters
+[<embedded>] % 
+[<embedded>] % # Set up Clocks and Resets
+[<embedded>] % clock MTxClk
+[<embedded>] % reset Reset
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "Reset".
+[<embedded>] % 
+[<embedded>] % # Get design information to check general complexity
+[<embedded>] % get_design_info
+Statistics [for instance "eth_txcounters"]
+---------------------------
+# Flops:         3 (35) (0 property flop bits)
+# Latches:       0 (0)
+# Gates:         194 (1333)
+# Nets:          275
+# Ports:         32
+# RTL Lines:     187
+# RTL Instances: 2
+# Embedded Assumptions: 0
+# Embedded Assertions:  12
+# Embedded Covers:      12
+35
+[<embedded>] % 
+[<embedded>] % # Prove properties
+[<embedded>] % prove -all
+Ncustom1: Custom engine code is hT3Ng7hPPfiYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSl+CwjiTMAQA
+Bcustom2: Custom engine code is hT3Nm7hPr1Vp3Di1Ra2USNIGL4JypRnLKLAdF6JAyuavO2JfGCiY9OZJhcAcOUnLx5xwNdhILGrAWX9s+z2WDkKwNR7tAfClBEjRFVQeq6DU54boFgEA
+AMcustom3: Custom engine code is hT3Ng7hP/feYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSmmqwm7g9AQA
+Mpcustom4: Custom engine code is hT3NZbhP9fmY2AbBQnsjfOxn6c+6e6yL+/e8fZFmaQrnlgEA
+INFO (IPF036): Starting proof on task: "<embedded>", 24 properties to prove with 0 already proven/unreachable
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis: phase 2 of 4.
+INFO (IRS031): Running reset analysis: phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 2 iterations. Assigned values for 35 of 35 design flops, 0 of 0 design latches, 24 of 24 internal elements.
+INFO (IRS039): Reset analysis complete.
+INFO (IPF031): Settings used for proof thread 0:
+    orchestration                 = on
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = auto
+    proofgrid_per_engine_max_jobs = 1
+    max engine jobs               = auto
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "eth_txcounters.v_eth_txcounters._assert_3" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "eth_txcounters.v_eth_txcounters._assert_5" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "eth_txcounters.v_eth_txcounters._assert_6" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "eth_txcounters.v_eth_txcounters._assert_8" was proven in 0.00 s.
+AMcustom5: Custom engine code is hT3N1rhP11/52HrFRS21ROp2LOjVTgPvT8L8BGXHgLhaIuqtT4nARFjUqrBL+7pLmaTOzBepZW/Jm8SSrHDybSQtoNiO3y43wk+dEoWlsZizu97Fih6O6lPVG/LpWP5SsUPwlGagLNa1FKEFvwVXyX7//8prySbvSxIHXr5er+z4RAEA
+Ncustom6: Custom engine code is hT3OXrhPByJp3TrFSTLhUmMH4KVtJgmTCnNDF46yMXOKY48m4LS5nE7yBzFjA7kDuwO/GhGUpEPiky3p3wmPn3dJZHxFMsafSoObRzSC+tn7sEY0WbTdZ/FV4hL3MYH/b1CIUvXSWR4wqEoVLsmMOD4xIPT4lI1LO6ZCO7PnnWQuLwetnvKlrXx6wCW/A+x+enqslg1YPobi4wEF/EvbzOvcTYdJvl2s4H2yZg2b2ofAVN5WvhWk1HoBAA
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+ADcustom7: Custom engine code is hT3Nv7hPv1752HrFRa2kROx2f/ECJeZB2AZsLdlO8VwmIuqtT4nIDFXclhg+O+o+DMmQCekbheGk0kK28laA9gaOFDXsQp29J3X615HY1IPHJWd6FUFvCHjO+p1k652b5JJvZlShNpGlGSXAiQe/mEAj6tEBAA
+INFO (IPF057): 0.0.PRE: The property "eth_txcounters.v_eth_txcounters._assert_10" was proven in 0.00 s.
+Tricustom8: Custom engine code is hT3Nu7hPt1752DvFRa0kNDiyIV97VyejwM9C/jCLJjdPvusZONHY42VYUy0Q1ZotnhcVtNc56tJ5wbxv6V2+XpdsaSlHck5vfnbYjdwj1OECy9U+7oSQ0SZE3g5ayD+Phuh4odCJTjeKa2k4elM9ldQfkAEA
+Gcustom9: Custom engine code is hT3NibhPDfeYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncipMGcUXqAadachREE9F2PwhBUZUNw5kHnd4JdXkamORRgEA
+0: Found proofs for 5 properties in preprocessing
+0: Using multistage preprocessing
+C2custom10: Custom engine code is hT3NirhPjfWYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncgkrYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuG86XYVV00BAA
+0: Starting reduce
+AGcustom11: Custom engine code is hT3NirhP/fmYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInnckcwYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuHEZnZByh0BAA
+Bcustom12: Custom engine code is hT3NjrhPDfiYQADBZnYcglOvK9PfWxFtenjIyBqfrgr7if/jL/yPOuK1BAflEcW0DxNH2eDIoezN2gxlQFg81RZtiWXh7aiTAidvAQA
+Ncustom13: Custom engine code is hT3NR7hPByFp3TrFSTLhUmMH4KWtJglTyV/c51BHEeZWamnJv767nE6PCak26bd3gf3XGN3rIRheufhDieCJQVISo+gNYUKhiUedBKGtsP/a18svAnlMJZudHxDFwK5ufsyoxsIyiAeSY2oi3tEuoDHr5gw42DFKAG3PqO3CEsl8Azzdt3pl5nGA1Ifv2H02eYsFzWb/nfp8PMb3F0krE/EgBcm8TD9Div8BAA
+Tricustom14: Custom engine code is hT3Nu7hP3fiYQADBZnYcglNHp9bfd7EOeniIqP/ji8sGLQu8yhsFO+wxJ+O+R0bU8g/IewXFomyos+viQnWc2xYNYmMqpo3i40O7DaZR7qfp4YqNx26KRvQ/qx0BAA
+0: Finished reduce in 0s
+0.0.PRE: Performing Proof Simplification...
+0.0.N: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: Proof Simplification Iteration 1	[0.00 s]
+0.0.PRE: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.PRE: The cover property "eth_txcounters.v_eth_txcounters._assert_10:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.N: Proof Simplification Iteration 2	[0.01 s]
+0.0.N: Proof Simplification Iteration 3	[0.01 s]
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property ":noDeadEnd" was proven in 0.00 s.
+    Use check_assumptions -show -dead_end to show this property in the property table.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property ":noConflict" was proven in 0.00 s.
+    Use check_assumptions -show to show this property in the property table.
+INFO (IPF047): 0.0.PRE: The cover property ":live" was covered in 1 cycles in 0.00 s.
+    Use check_assumptions -show -live to show this property in the property table.
+0.0.PRE: Proof Simplification completed in 0.02 s
+0.0.N: Identified and disabled 4 duplicated targets.
+0: About to start ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+0: =============================== ProofGrid start ===============================
+0: ProofGrid usable level: 14
+0: Initial ProofGrid level: 1
+0: ProofGrid is starting event handling
+0.0.Hp: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.N: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Hp: Proofgrid shell started at 174881@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0.0.N: Proofgrid shell started at 174880@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0.0.Hp: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hp: Trace Attempt  1	[0.00 s]
+0.0.Hp: A trace with 1 cycles was found. [0.00 s]
+INFO (IPF047): 0.0.Hp: The cover property "eth_txcounters.v_eth_txcounters._assert_8:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.Hp: Trace Attempt  2	[0.01 s]
+0.0.Hp: A trace with 2 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.Hp: The cover property "eth_txcounters.v_eth_txcounters._assert_2:precondition1" was covered in 2 cycles in 0.01 s.
+0.0.N: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.N: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 16384 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 16384 was found for the property "eth_txcounters.v_eth_txcounters._assert_1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  8	[0.00 s]
+0.0.N: A trace with 8 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "eth_txcounters.v_eth_txcounters._assert_1" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "eth_txcounters.v_eth_txcounters._assert_1:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "eth_txcounters.v_eth_txcounters._assert_1".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 8 cycles was found for the property "eth_txcounters.v_eth_txcounters._assert_7" in 0.00 s by the incidental trace "eth_txcounters.v_eth_txcounters._assert_1".
+INFO (IPF047): 0.0.N: The cover property "eth_txcounters.v_eth_txcounters._assert_4:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "eth_txcounters.v_eth_txcounters._assert_1".
+INFO (IPF047): 0.0.N: The cover property "eth_txcounters.v_eth_txcounters._assert_7:precondition1" was covered in 8 cycles in 0.00 s by the incidental trace "eth_txcounters.v_eth_txcounters._assert_1".
+0.0.N: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_1"	[0.00 s].
+0.0.Hp: Trace Attempt  3	[0.03 s]
+0.0.Hp: Trace Attempt  4	[0.04 s]
+0.0.Hp: Trace Attempt  5	[0.06 s]
+0.0.N: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0: ProofGrid usable level: 9
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 65536 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 65536 was found for the property "eth_txcounters.v_eth_txcounters._assert_2" in 0.02 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.Hp: Trace Attempt  8	[0.15 s]
+0.0.Hp: A trace with 8 cycles was found. [0.15 s]
+INFO (IPF055): 0.0.Hp: A counterexample (cex) with 8 cycles was found for the property "eth_txcounters.v_eth_txcounters._assert_4" in 0.09 s.
+0: ProofGrid usable level: 8
+0.0.Hp: Trace Attempt  9	[0.18 s]
+0.0.Mpcustom4: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Oh: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Ht: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Bm: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.L: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Oh: Proofgrid shell started at 174913@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0.0.Oh: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Oh: bwd trail(1): 1 0.00480713s
+0.0.Oh: All properties either determined or skipped. [0.01 s]
+0.0.Oh: Exited with Success (@ 0.35 s)
+0.0.Oh: Completed, Restart ignored.
+0: ProofGrid usable level: 8
+0.0.Mpcustom4: Proofgrid shell started at 174912@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0.0.B: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Ht: Proofgrid shell started at 174903@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0.0.Mpcustom4: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Mpcustom4: Trace Attempt  1	[0.01 s]
+0.0.Mpcustom4: Trace Attempt  2	[0.01 s]
+0.0.Ht: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Ht: Trace Attempt  1	[0.00 s]
+0.0.Ht: Trace Attempt  2	[0.00 s]
+0.0.Ht: Trace Attempt  3	[0.00 s]
+0.0.Ht: Trace Attempt  4	[0.00 s]
+0.0.Ht: Trace Attempt  5	[0.00 s]
+0.0.Ht: Trace Attempt 16	[0.01 s]
+0.0.Ht: A trace with 16 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 16 cycles was found for the property "eth_txcounters.v_eth_txcounters._assert_9" in 0.00 s.
+0.0.Ht: A trace with 16 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.Ht: The cover property "eth_txcounters.v_eth_txcounters._assert_9:precondition1" was covered in 16 cycles in 0.00 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 16 cycles was found for the property "eth_txcounters.v_eth_txcounters._assert_12" in 0.00 s.
+INFO (IPF047): 0.0.Ht: The cover property "eth_txcounters.v_eth_txcounters._assert_11:precondition1" was covered in 16 cycles in 0.00 s.
+INFO (IPF047): 0.0.Ht: The cover property "eth_txcounters.v_eth_txcounters._assert_12:precondition1" was covered in 16 cycles in 0.00 s.
+0.0.Ht: A trace with 16 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 16 cycles was found for the property "eth_txcounters.v_eth_txcounters._assert_11" in 0.00 s.
+0.0.Ht: Trace Attempt 17	[0.01 s]
+0.0.Mpcustom4: Trace Attempt  3	[0.02 s]
+0.0.Mpcustom4: Trace Attempt  4	[0.02 s]
+0.0.Mpcustom4: Trace Attempt  5	[0.02 s]
+0.0.Mpcustom4: Trace Attempt  3	[0.02 s]
+0.0.Mpcustom4: Trace Attempt  4	[0.03 s]
+0.0.Mpcustom4: Trace Attempt  5	[0.03 s]
+0.0.Mpcustom4: Trace Attempt  4	[0.03 s]
+0.0.Mpcustom4: Trace Attempt  5	[0.03 s]
+0.0.Bm: Proofgrid shell started at 174911@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0.0.L: Proofgrid shell started at 174914@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0.0.B: Proofgrid shell started at 174917@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0: Running jobs with 5 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 5 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 6 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 6 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 7 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 7 threads on "pal-achieve-06" with 4 cores.
+0.0.L: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.L: Using trace diversification with seed 1 (0.05)
+0.0.L: Using LRU state removal heuristic
+0.0.L: Using states from traces to { (reset) }
+0.0.L: Trace Attempt  3	[0.01 s]
+0.0.L: Using states from traces to { eth_txcounters.v_eth_txcounters._assert_2:precondition1 (2) }
+0.0.L: Trace Attempt  3	[0.01 s]
+0.0.L: Trace Attempt  4	[0.01 s]
+0.0.L: Trace Attempt  5	[0.01 s]
+0.0.L: Using states from traces to { eth_txcounters.v_eth_txcounters._assert_1 <7> }
+0.0.L: Trace Attempt  3	[0.02 s]
+0.0.L: Using states from traces to { eth_txcounters.v_eth_txcounters._assert_4 <8> }
+0.0.L: Trace Attempt  3	[0.02 s]
+0.0.L: Trace Attempt  4	[0.02 s]
+0.0.L: Trace Attempt  5	[0.02 s]
+0.0.B: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.B: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.B: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.Bm: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Bm: Trace Attempt  1	[0.02 s]
+0.0.Bm: Trace Attempt  2	[0.02 s]
+0.0.Bm: Trace Attempt  3	[0.02 s]
+0.0.Bm: Trace Attempt  4	[0.02 s]
+0.0.Bm: Trace Attempt  5	[0.02 s]
+0.0.AM: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.L: Using states from traces to { eth_txcounters.v_eth_txcounters._assert_9 <16> }
+0.0.L: Trace Attempt  3	[0.05 s]
+0.0.L: Using states from traces to { eth_txcounters.v_eth_txcounters._assert_11 <17> }
+0.0.L: Trace Attempt  3	[0.05 s]
+0.0.L: Trace Attempt  4	[0.06 s]
+0.0.L: Trace Attempt  5	[0.06 s]
+0.0.AM: Proofgrid shell started at 174921@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0: Running jobs with 8 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 8 threads on "pal-achieve-06" with 4 cores.
+0.0.AM: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.AM: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.AM: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  4	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.01 s]
+0.0.AM: Trace Attempt  3	[0.01 s]
+0.0.AM: Trace Attempt  5	[0.01 s]
+0.0.AM: Trace Attempt  1	[0.01 s]
+0.0.AM: Trace Attempt  2	[0.02 s]
+0.0.AM: Trace Attempt  3	[0.02 s]
+0.0.AM: Trace Attempt  5	[0.02 s]
+0.0.AM: Trace Attempt  1	[0.04 s]
+0.0.AM: Trace Attempt  2	[0.04 s]
+0.0.AM: Trace Attempt  3	[0.04 s]
+0.0.AM: Trace Attempt  5	[0.04 s]
+0: ProofGrid usable level: 4
+0.0.B: Trace Attempt 90	[0.60 s]
+0.0.B: Per property time limit expired (0.62 s) [0.62 s]
+0.0.B: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[0.61 s].
+0.0.AM: Trace Attempt 55	[0.40 s]
+0.0.AM: Per property time limit expired (0.42 s) [0.42 s]
+0.0.AM: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[0.44 s].
+0.0.AM: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  4	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.01 s]
+0.0.AM: Trace Attempt  2	[0.01 s]
+0.0.AM: Trace Attempt  3	[0.01 s]
+0.0.AM: Trace Attempt  5	[0.01 s]
+0.0.B: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.B: A max_length bound was found. The shortest trace is no longer than 1073741824 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 1073741824 was found for the property "eth_txcounters.v_eth_txcounters._assert_3:precondition1" in 0.00 s.
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.01 s]
+0.0.AM: Trace Attempt  2	[0.01 s]
+0.0.AM: Trace Attempt  3	[0.01 s]
+0.0.AM: Trace Attempt  5	[0.01 s]
+0.0.N: Trace Attempt 44	[0.99 s]
+0.0.N: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[1.04 s].
+0.0.N: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  1	[0.01 s]
+0.0.N: Trace Attempt  2	[0.01 s]
+0.0.N: Trace Attempt  3	[0.01 s]
+0.0.N: Trace Attempt  5	[0.01 s]
+0.0.AM: Trace Attempt 188	[0.98 s]
+0.0.AM: Per property time limit expired (1.00 s) [1.00 s]
+0.0.AM: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.98 s].
+0.0.N: Trace Attempt 90	[0.98 s]
+0.0.N: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.00 s].
+0.0.N: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 16384 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 16384 was found for the property "eth_txcounters.v_eth_txcounters._assert_5:precondition1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt 134	[0.99 s]
+0.0.B: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.00 s].
+0.0.B: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.AM: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  4	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.01 s]
+0.0.AM: Trace Attempt  2	[0.01 s]
+0.0.AM: Trace Attempt  3	[0.01 s]
+0.0.AM: Trace Attempt  5	[0.01 s]
+0.0.N: Trace Attempt  1	[0.06 s]
+0.0.N: Trace Attempt  2	[0.06 s]
+0.0.N: Trace Attempt  3	[0.06 s]
+0.0.N: Trace Attempt  5	[0.07 s]
+0.0.AM: Trace Attempt  1	[0.06 s]
+0.0.AM: Trace Attempt  2	[0.06 s]
+0.0.AM: Trace Attempt  3	[0.06 s]
+0.0.AM: Trace Attempt  5	[0.06 s]
+0.0.N: Trace Attempt 80	[0.90 s]
+0.0.N: Per property time limit expired (1.00 s) [1.02 s]
+0.0.N: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[1.02 s].
+0.0.B: Trace Attempt 128	[0.99 s]
+0.0.B: Per property time limit expired (1.00 s) [1.01 s]
+0.0.B: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[1.03 s].
+0.0.B: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.00 s].
+0.0.B: A max_length bound was found. The shortest trace is no longer than 16384 cycles. [0.00 s]
+INFO (IPF008): 0.0.B: A max_length bound of 16384 was found for the property "eth_txcounters.v_eth_txcounters._assert_6:precondition1" in 0.00 s.
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt 144	[0.99 s]
+0.0.AM: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[1.01 s].
+0.0.AM: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.00 s].
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  4	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.01 s]
+0.0.AM: Trace Attempt  2	[0.01 s]
+0.0.AM: Trace Attempt  3	[0.01 s]
+0.0.AM: Trace Attempt  5	[0.01 s]
+0.0.N: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.05 s]
+0.0.AM: Trace Attempt  2	[0.05 s]
+0.0.AM: Trace Attempt  3	[0.05 s]
+0.0.AM: Trace Attempt  5	[0.05 s]
+0.0.N: Trace Attempt  1	[0.12 s]
+0.0.N: Trace Attempt  2	[0.12 s]
+0.0.N: Trace Attempt  3	[0.12 s]
+0.0.N: Trace Attempt  5	[0.12 s]
+0.0.B: Trace Attempt 127	[0.98 s]
+0.0.B: Per property time limit expired (1.00 s) [1.00 s]
+0.0.B: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.98 s].
+0.0.AM: Trace Attempt 151	[0.83 s]
+0.0.AM: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[1.01 s].
+0.0.AM: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+0.0.AM: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  4	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.02 s]
+0.0.AM: Trace Attempt  3	[0.02 s]
+0.0.AM: Trace Attempt  5	[0.03 s]
+0.0.N: Trace Attempt 71	[0.99 s]
+0.0.N: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[1.01 s].
+0.0.N: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+0.0.N: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.B: Next scan (1) will use per property time limit: 1s * 10 ^ 1 = 10s
+0.0.B: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.03 s]
+0.0.AM: Trace Attempt  2	[0.05 s]
+0.0.AM: Trace Attempt  3	[0.05 s]
+0.0.AM: Trace Attempt  5	[0.06 s]
+0.0.AM: Trace Attempt  1	[0.09 s]
+0.0.AM: Trace Attempt  2	[0.11 s]
+0.0.AM: Trace Attempt  3	[0.11 s]
+0.0.AM: Trace Attempt  5	[0.11 s]
+0.0.L: Trace Attempt 146	[4.09 s]
+0.0.Ht: Trace Attempt 150	[4.20 s]
+0.0.Mpcustom4: Trace Attempt 53	[4.23 s]
+0.0.Bm: Trace Attempt 189	[4.14 s]
+0.0.B: Trace Attempt 165	[4.03 s]
+0.0.AM: Trace Attempt 203	[4.30 s]
+0.0.L: Trace Attempt 187	[8.11 s]
+0.0.N: Trace Attempt 76	[4.42 s]
+0.0.Ht: Trace Attempt 195	[8.22 s]
+0.0.Mpcustom4: Trace Attempt 50	[8.39 s]
+0.0.Bm: Trace Attempt 199	[8.36 s]
+0.0.B: Trace Attempt 193	[8.08 s]
+0.0.AM: Trace Attempt 111	[8.36 s]
+0.0.L: Trace Attempt 195	[12.11 s]
+0.0.Ht: Trace Attempt 221	[12.29 s]
+0.0.Bm: Trace Attempt 223	[12.38 s]
+0.0.Mpcustom4: Trace Attempt 87	[12.55 s]
+0.0.N: Trace Attempt 120	[9.24 s]
+0.0.AM: Trace Attempt 130	[9.16 s]
+0.0.AM: Per property time limit expired (10.00 s) [10.02 s]
+0.0.AM: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[9.99 s].
+0.0.N: Trace Attempt 124	[9.49 s]
+0.0.N: Per property time limit expired (10.00 s) [10.02 s]
+0.0.N: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[9.99 s].
+0.0.B: Trace Attempt 196	[9.81 s]
+0.0.B: Per property time limit expired (10.00 s) [10.01 s]
+0.0.B: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[10.02 s].
+0.0.B: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.AM: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  4	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.01 s]
+0.0.AM: Trace Attempt  2	[0.01 s]
+0.0.AM: Trace Attempt  3	[0.01 s]
+0.0.AM: Trace Attempt  5	[0.01 s]
+0.0.N: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.N: Trace Attempt 11	[0.00 s]
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.Ht: Trace Attempt 240	[16.34 s]
+0.0.Bm: Trace Attempt 241	[16.40 s]
+0.0.Mpcustom4: Trace Attempt 79	[16.65 s]
+0.0.L: Trace Attempt 207	[16.56 s]
+0.0.AM: Trace Attempt 118	[4.01 s]
+0.0.N: Trace Attempt 177	[4.02 s]
+0.0.B: Trace Attempt 223	[4.22 s]
+0.0.Mpcustom4: Trace Attempt 93	[21.11 s]
+0.0.Ht: Trace Attempt 260	[21.48 s]
+0.0.Bm: Trace Attempt 260	[21.50 s]
+0.0.N: Trace Attempt 254	[8.16 s]
+0.0.AM: Trace Attempt 242	[8.29 s]
+0.0.AM: Trace Attempt  1	[8.75 s]
+0.0.AM: Trace Attempt  2	[8.75 s]
+0.0.AM: Trace Attempt  3	[8.75 s]
+0.0.AM: Trace Attempt  5	[8.75 s]
+0.0.B: Trace Attempt 262	[8.96 s]
+0.0.L: Trace Attempt 215	[23.39 s]
+0.0.AM: Trace Attempt 153	[9.99 s]
+0.0.AM: Per property time limit expired (10.00 s) [10.00 s]
+0.0.AM: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[9.99 s].
+0.0.N: Trace Attempt 308	[9.98 s]
+0.0.N: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[10.02 s].
+0.0.N: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.N: Trace Attempt 37	[0.00 s]
+0.0.AM: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  4	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.01 s]
+0.0.AM: Trace Attempt  2	[0.01 s]
+0.0.AM: Trace Attempt  3	[0.01 s]
+0.0.AM: Trace Attempt  5	[0.01 s]
+0.0.B: Trace Attempt 322	[9.98 s]
+0.0.B: Per property time limit expired (10.00 s) [10.05 s]
+0.0.B: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[10.04 s].
+0.0.B: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.04 s]
+0.0.AM: Trace Attempt  2	[0.04 s]
+0.0.AM: Trace Attempt  3	[0.04 s]
+0.0.AM: Trace Attempt  5	[0.04 s]
+0.0.N: Trace Attempt  1	[0.04 s]
+0.0.N: Trace Attempt  2	[0.04 s]
+0.0.N: Trace Attempt  3	[0.04 s]
+0.0.N: Trace Attempt  5	[0.04 s]
+0.0.Ht: Trace Attempt 286	[25.55 s]
+0.0.Bm: Trace Attempt 287	[25.55 s]
+0.0.Mpcustom4: Trace Attempt 93	[26.09 s]
+0.0.AM: Trace Attempt 309	[4.05 s]
+0.0.L: Trace Attempt 219	[27.80 s]
+0.0.B: Trace Attempt 162	[4.08 s]
+0.0.N: Trace Attempt 165	[4.23 s]
+0.0.Ht: Trace Attempt 313	[30.15 s]
+0.0.Bm: Trace Attempt 313	[30.17 s]
+0.0.Mpcustom4: Trace Attempt 89	[30.58 s]
+0.0.AM: Trace Attempt 172	[8.07 s]
+0.0.L: Trace Attempt 221	[31.98 s]
+0.0.B: Trace Attempt 177	[8.22 s]
+0.0.N: Trace Attempt 285	[9.16 s]
+0.0.AM: Trace Attempt 207	[10.00 s]
+0.0.AM: Per property time limit expired (10.00 s) [10.03 s]
+0.0.AM: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[10.01 s].
+0.0.B: Trace Attempt 186	[9.79 s]
+0.0.B: Per property time limit expired (10.00 s) [10.00 s]
+0.0.B: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[10.01 s].
+0.0.B: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.00 s].
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.AM: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.00 s].
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  4	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.01 s]
+0.0.AM: Trace Attempt  2	[0.01 s]
+0.0.AM: Trace Attempt  3	[0.01 s]
+0.0.AM: Trace Attempt  5	[0.01 s]
+0.0.N: Trace Attempt 370	[9.76 s]
+0.0.N: Per property time limit expired (10.00 s) [10.07 s]
+0.0.N: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[10.06 s].
+0.0.N: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.00 s].
+0.0.N: Trace Attempt 31	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.04 s]
+0.0.AM: Trace Attempt  2	[0.04 s]
+0.0.AM: Trace Attempt  3	[0.04 s]
+0.0.AM: Trace Attempt  5	[0.04 s]
+0.0.N: Trace Attempt  1	[0.04 s]
+0.0.N: Trace Attempt  2	[0.04 s]
+0.0.N: Trace Attempt  3	[0.04 s]
+0.0.N: Trace Attempt  5	[0.04 s]
+0.0.Mpcustom4: Trace Attempt 93	[34.77 s]
+0.0.Ht: Trace Attempt 323	[35.91 s]
+0.0.Bm: Trace Attempt 323	[35.86 s]
+0.0.B: Trace Attempt 182	[4.12 s]
+0.0.AM: Trace Attempt 298	[4.14 s]
+0.0.N: Trace Attempt 219	[4.41 s]
+0.0.L: Trace Attempt 223	[38.68 s]
+0.0.Mpcustom4: Trace Attempt 113	[38.84 s]
+0.0.Ht: Trace Attempt 324	[41.33 s]
+0.0.AM: Trace Attempt 203	[8.18 s]
+0.0.Bm: Trace Attempt 325	[42.17 s]
+0.0.B: Trace Attempt 190	[8.72 s]
+0.0.L: Trace Attempt 226	[42.86 s]
+0.0.N: Trace Attempt 305	[9.11 s]
+0.0.Mpcustom4: Trace Attempt 91	[43.71 s]
+0.0.B: Trace Attempt 191	[9.61 s]
+0.0.B: Per property time limit expired (10.00 s) [10.00 s]
+0.0.B: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[9.99 s].
+0.0.AM: Trace Attempt 249	[9.94 s]
+0.0.AM: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[10.02 s].
+0.0.AM: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+0.0.AM: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  4	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.01 s]
+0.0.B: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+0.0.B: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.01 s]
+0.0.AM: Trace Attempt  5	[0.01 s]
+0.0.N: Trace Attempt 343	[9.84 s]
+0.0.N: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[10.01 s].
+0.0.N: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+0.0.N: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.AM: Trace Attempt  1	[0.02 s]
+0.0.AM: Trace Attempt  2	[0.02 s]
+0.0.AM: Trace Attempt  3	[0.02 s]
+0.0.AM: Trace Attempt  5	[0.02 s]
+0.0.AM: Trace Attempt  1	[0.04 s]
+0.0.AM: Trace Attempt  2	[0.04 s]
+0.0.AM: Trace Attempt  3	[0.04 s]
+0.0.AM: Trace Attempt  5	[0.05 s]
+0.0.N: Trace Attempt  2	[0.08 s]
+0.0.N: Trace Attempt  3	[0.08 s]
+0.0.N: Trace Attempt  4	[0.08 s]
+0.0.N: Trace Attempt  5	[0.08 s]
+0.0.N: Trace Attempt  1	[0.08 s]
+0.0.N: Trace Attempt  2	[0.08 s]
+0.0.N: Trace Attempt  3	[0.08 s]
+0.0.Ht: Trace Attempt 330	[45.83 s]
+0.0.AM: Trace Attempt 220	[4.07 s]
+0.0.B: Trace Attempt 160	[4.09 s]
+0.0.Mpcustom4: Trace Attempt 135	[48.17 s]
+0.0.N: Trace Attempt 76	[4.50 s]
+0.0.Bm: Trace Attempt 334	[49.94 s]
+0.0.L: Trace Attempt 229	[51.85 s]
+0.0.Ht: Trace Attempt 334	[52.03 s]
+0.0.B: Trace Attempt 193	[8.48 s]
+0.0.Mpcustom4: Trace Attempt 91	[52.48 s]
+0.0.AM: Trace Attempt 131	[8.66 s]
+0.0.N: Trace Attempt 131	[8.79 s]
+0.0.Bm: Trace Attempt 335	[54.28 s]
+0.0.Ht: Trace Attempt 338	[56.33 s]
+0.0.B: Trace Attempt 197	[12.69 s]
+0.0.AM: Trace Attempt 219	[12.73 s]
+0.0.Mpcustom4: Trace Attempt 145	[56.73 s]
+0.0.N: Trace Attempt 149	[12.97 s]
+0.0.Bm: Trace Attempt 341	[58.28 s]
+0.0.L: Trace Attempt 232	[59.36 s]
+0.0.Ht: Trace Attempt 344	[60.62 s]
+0.0.N: Trace Attempt 169	[17.02 s]
+0.0.Mpcustom4: Trace Attempt 92	[61.08 s]
+0.0.AM: Trace Attempt 259	[17.65 s]
+0.0.B: Trace Attempt 201	[17.92 s]
+0.0.AM: Trace Attempt  1	[18.04 s]
+0.0.AM: Trace Attempt  2	[18.04 s]
+0.0.AM: Trace Attempt  3	[18.04 s]
+0.0.AM: Trace Attempt  5	[18.05 s]
+0.0.Bm: Trace Attempt 347	[62.44 s]
+0.0.Ht: Trace Attempt 352	[65.56 s]
+0.0.N: Trace Attempt 184	[21.67 s]
+0.0.L: Trace Attempt 234	[65.69 s]
+0.0.AM: Trace Attempt 111	[22.16 s]
+0.0.Mpcustom4: Trace Attempt 148	[66.38 s]
+0.0.B: Trace Attempt 204	[22.86 s]
+0.0.Bm: Trace Attempt 353	[66.72 s]
+0.0.Ht: Trace Attempt 358	[69.87 s]
+0.0.AM: Trace Attempt 177	[26.17 s]
+0.0.N: Trace Attempt 223	[26.62 s]
+0.0.Mpcustom4: Trace Attempt 113	[71.41 s]
+0.0.Bm: Trace Attempt 361	[71.35 s]
+0.0.B: Trace Attempt 206	[27.94 s]
+0.0.AM: Trace Attempt 215	[30.36 s]
+0.0.L: Trace Attempt 236	[74.70 s]
+0.0.N: Trace Attempt 230	[31.15 s]
+0.0.Ht: Trace Attempt 369	[75.56 s]
+0.0.Bm: Trace Attempt 369	[75.65 s]
+0.0.Mpcustom4: Trace Attempt 149	[76.60 s]
+0.0.B: Trace Attempt 209	[33.92 s]
+0.0.AM: Trace Attempt 387	[34.37 s]
+0.0.N: Trace Attempt 235	[35.27 s]
+0.0.L: Trace Attempt 237	[79.51 s]
+0.0.Ht: Trace Attempt 371	[79.65 s]
+0.0.Bm: Trace Attempt 372	[80.50 s]
+0.0.Mpcustom4: Trace Attempt 124	[81.39 s]
+0.0.AM: Trace Attempt 418	[38.47 s]
+0.0.B: Trace Attempt 211	[38.50 s]
+0.0.Ht: Trace Attempt 380	[83.77 s]
+0.0.N: Trace Attempt 239	[41.15 s]
+0.0.Bm: Trace Attempt 382	[84.97 s]
+0.0.L: Trace Attempt 238	[85.12 s]
+0.0.Mpcustom4: Trace Attempt 158	[85.65 s]
+0.0.B: Trace Attempt 214	[43.23 s]
+0.0.AM: Trace Attempt 440	[43.59 s]
+0.0.Ht: Trace Attempt 387	[87.85 s]
+0.0.N: Trace Attempt 271	[45.18 s]
+0.0.Mpcustom4: Trace Attempt 207	[89.74 s]
+0.0.L: Trace Attempt 239	[90.09 s]
+0.0.Bm: Trace Attempt 388	[90.44 s]
+0.0.B: Trace Attempt 216	[47.97 s]
+0.0.Ht: Trace Attempt 392	[92.43 s]
+0.0.N: Trace Attempt 279	[49.71 s]
+0.0.Mpcustom4: Trace Attempt 137	[93.86 s]
+0.0.Bm: Trace Attempt 395	[94.60 s]
+0.0.B: Trace Attempt 218	[52.04 s]
+0.0.L: Trace Attempt 240	[96.87 s]
+0.0.Ht: Trace Attempt 400	[97.92 s]
+0.0.Mpcustom4: Trace Attempt 214	[98.62 s]
+0.0.Bm: Trace Attempt 404	[98.78 s]
+0.0.N: Trace Attempt 320	[55.09 s]
+0.0.L: Using states from traces to { eth_txcounters.v_eth_txcounters._assert_9 <16> }
+0.0.L: Trace Attempt  3	[100.09 s]
+0.0.L: Trace Attempt  4	[100.13 s]
+0.0.L: Trace Attempt  5	[100.13 s]
+0.0.AM: Trace Attempt 261	[58.47 s]
+0.0.Mpcustom4: Trace Attempt 190	[102.62 s]
+0.0.B: Trace Attempt 220	[59.12 s]
+0.0.Ht: Trace Attempt 410	[103.12 s]
+0.0.Bm: Trace Attempt 410	[103.12 s]
+0.0.N: Trace Attempt 321	[59.98 s]
+0.0.L: Trace Attempt 157	[104.18 s]
+0.0.Mpcustom4: Trace Attempt 149	[107.05 s]
+0.0.B: Trace Attempt 221	[63.99 s]
+0.0.Ht: Trace Attempt 417	[107.98 s]
+0.0.Bm: Trace Attempt 417	[108.13 s]
+0.0.L: Trace Attempt 189	[108.46 s]
+0.0.N: Trace Attempt 322	[65.56 s]
+0.0.Mpcustom4: Trace Attempt 154	[111.39 s]
+0.0.AM: Trace Attempt 393	[68.11 s]
+0.0.L: Trace Attempt 199	[112.51 s]
+0.0.B: Trace Attempt 223	[69.25 s]
+0.0.Ht: Trace Attempt 423	[113.62 s]
+0.0.Bm: Trace Attempt 423	[113.63 s]
+0.0.Mpcustom4: Trace Attempt 220	[115.86 s]
+0.0.AM: Trace Attempt 420	[72.14 s]
+0.0.L: Trace Attempt 207	[116.93 s]
+0.0.Bm: Trace Attempt 424	[117.87 s]
+0.0.Ht: Trace Attempt 427	[118.00 s]
+0.0.B: Trace Attempt 225	[74.18 s]
+0.0.Mpcustom4: Trace Attempt 220	[120.56 s]
+0.0.AM: Trace Attempt 471	[76.75 s]
+0.0.N: Trace Attempt 327	[76.84 s]
+0.0.Bm: Trace Attempt 429	[121.90 s]
+0.0.Ht: Trace Attempt 430	[123.09 s]
+0.0.L: Trace Attempt 215	[123.55 s]
+0.0.B: Trace Attempt 227	[79.90 s]
+0.0.AM: Trace Attempt 477	[80.88 s]
+0.0.Mpcustom4: Trace Attempt 164	[124.77 s]
+0.0.N: Trace Attempt 378	[81.08 s]
+0.0.Ht: Trace Attempt 438	[127.11 s]
+0.0.Bm: Trace Attempt 438	[127.03 s]
+0.0.L: Trace Attempt 219	[127.89 s]
+0.0.B: Trace Attempt 229	[84.81 s]
+0.0.AM: Trace Attempt 501	[84.98 s]
+0.0.N: Trace Attempt 392	[85.24 s]
+0.0.Mpcustom4: Trace Attempt 165	[129.91 s]
+0.0.AM: Trace Attempt  1	[87.47 s]
+0.0.AM: Trace Attempt  2	[87.47 s]
+0.0.AM: Trace Attempt  3	[87.47 s]
+0.0.AM: Trace Attempt  5	[87.47 s]
+0.0.Ht: Trace Attempt 446	[132.05 s]
+0.0.L: Trace Attempt 221	[131.98 s]
+0.0.Bm: Trace Attempt 446	[131.99 s]
+0.0.N: Trace Attempt 406	[89.43 s]
+0.0.B: Trace Attempt 231	[90.58 s]
+0.0.Mpcustom4: Trace Attempt 166	[135.21 s]
+0.0.AM: Trace Attempt 88	[91.55 s]
+0.0.Ht: Trace Attempt 447	[137.34 s]
+0.0.N: Trace Attempt 481	[93.53 s]
+0.0.Bm: Trace Attempt 447	[137.39 s]
+0.0.L: Trace Attempt 223	[138.74 s]
+0.0.Mpcustom4: Trace Attempt 223	[139.25 s]
+0.0.B: Trace Attempt 233	[95.78 s]
+0.0.AM: Trace Attempt 136	[96.91 s]
+0.0.Ht: Trace Attempt 448	[142.10 s]
+0.0.N: Trace Attempt 539	[98.23 s]
+0.0.Bm: Trace Attempt 448	[142.09 s]
+0.0.Mpcustom4: Trace Attempt 233	[143.64 s]
+0.0.B: Trace Attempt 234	[97.95 s]
+0.0.B: Per property time limit expired (100.00 s) [100.03 s]
+0.0.B: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[100.00 s].
+0.0.B: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt 177	[99.89 s]
+0.0.AM: Per property time limit expired (100.00 s) [100.05 s]
+0.0.AM: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[100.05 s].
+0.0.AM: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  4	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.00 s]
+0.0.AM: Trace Attempt  3	[0.00 s]
+0.0.AM: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt  1	[0.00 s]
+0.0.AM: Trace Attempt  2	[0.01 s]
+0.0.AM: Trace Attempt  3	[0.01 s]
+0.0.AM: Trace Attempt  5	[0.01 s]
+0.0.AM: Trace Attempt  1	[0.02 s]
+0.0.AM: Trace Attempt  2	[0.02 s]
+0.0.AM: Trace Attempt  3	[0.02 s]
+0.0.AM: Trace Attempt  5	[0.02 s]
+0.0.N: Trace Attempt 548	[99.65 s]
+0.0.N: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[100.36 s].
+0.0.N: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.N: Trace Attempt 11	[0.00 s]
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.L: Trace Attempt 226	[144.32 s]
+0.0.Ht: Trace Attempt 456	[146.30 s]
+0.0.Bm: Trace Attempt 456	[146.33 s]
+0.0.Mpcustom4: Trace Attempt 249	[147.84 s]
+0.0.B: Trace Attempt 249	[4.02 s]
+0.0.AM: Trace Attempt 70	[4.03 s]
+0.0.N: Trace Attempt 168	[4.04 s]
+0.0.Ht: Trace Attempt 467	[150.84 s]
+0.0.Bm: Trace Attempt 467	[150.77 s]
+0.0.B: Trace Attempt 379	[8.04 s]
+0.0.AM: Trace Attempt 241	[8.07 s]
+0.0.Mpcustom4: Trace Attempt 172	[152.03 s]
+0.0.N: Trace Attempt 219	[8.05 s]
+0.0.L: Trace Attempt 229	[152.60 s]
+0.0.AM: Trace Attempt  1	[8.80 s]
+0.0.AM: Trace Attempt  2	[8.80 s]
+0.0.AM: Trace Attempt  3	[8.80 s]
+0.0.AM: Trace Attempt  5	[8.80 s]
+0.0.Ht: Trace Attempt 472	[155.17 s]
+0.0.Bm: Trace Attempt 472	[155.21 s]
+0.0.Mpcustom4: Trace Attempt 259	[156.14 s]
+0.0.N: Trace Attempt 455	[12.05 s]
+0.0.AM: Trace Attempt 168	[12.81 s]
+0.0.B: Trace Attempt 413	[13.79 s]
+0.0.N: Trace Attempt 614	[16.15 s]
+0.0.Mpcustom4: Trace Attempt 276	[160.44 s]
+0.0.L: Trace Attempt 232	[160.42 s]
+0.0.AM: Trace Attempt 365	[16.84 s]
+0.0.B: Trace Attempt 437	[17.95 s]
+0.0.Mpcustom4: Trace Attempt 277	[164.47 s]
+0.0.N: Trace Attempt 725	[20.22 s]
+0.0.AM: Trace Attempt 424	[20.94 s]
+0.0.Ht: Trace Attempt 476	[164.89 s]
+0.0.Bm: Trace Attempt 476	[165.16 s]
+0.0.B: Trace Attempt 466	[22.09 s]
+0.0.L: Trace Attempt 234	[168.26 s]
+0.0.Mpcustom4: Trace Attempt 282	[168.64 s]
+0.0.N: Trace Attempt 772	[24.55 s]
+0.0.Ht: Trace Attempt 492	[169.03 s]
+0.0.Bm: Trace Attempt 495	[169.31 s]
+0.0.AM: Trace Attempt 260	[26.60 s]
+0.0.Mpcustom4: Trace Attempt 287	[172.74 s]
+0.0.N: Trace Attempt 799	[28.57 s]
+0.0.L: Trace Attempt 235	[172.78 s]
+0.0.Ht: Trace Attempt 513	[173.03 s]
+0.0.Bm: Trace Attempt 520	[173.62 s]
+0.0.AM: Trace Attempt 322	[30.64 s]
+0.0.B: Trace Attempt 470	[32.18 s]
+0.0.Mpcustom4: Trace Attempt 296	[177.06 s]
+0.0.Ht: Trace Attempt 532	[177.22 s]
+0.0.N: Trace Attempt 822	[33.15 s]
+0.0.Bm: Trace Attempt 533	[177.71 s]
+0.0.L: Trace Attempt 236	[177.96 s]
+0.0.AM: Trace Attempt 370	[34.66 s]
+0.0.Mpcustom4: Trace Attempt 310	[181.14 s]
+0.0.B: Trace Attempt 486	[37.26 s]
+0.0.L: Requesting engine job to terminate
+0.0.L: Interrupted. [182.00 s]
+0.0.L: Exited with Success (@ 182.47 s)
+0.0.L: Engine should be restarted (starts=1, unexpected_terminations=0)
+   Last recorded data: 0.01 s ago
+   Last recorded RSS memory usage: 54.47 MiB, peak 66.56 MiB
+   Last recorded free memory: 2.17 GiB out of 4.43 GiB, nadir 2.16 GiB
+0.0.L: Restarting engine (local)
+0.0.U2: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.J: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.U: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.U2: Proofgrid shell started at 176976@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0: Running jobs with 8 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 8 threads on "pal-achieve-06" with 4 cores.
+0.0.U2: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.U2: Seed 1
+0.0.J: Proofgrid shell started at 176974@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0: Running jobs with 9 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 9 threads on "pal-achieve-06" with 4 cores.
+0.0.J: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  2	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  3	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  4	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  1	[0.02 s]
+0.0.J: Trace Attempt  1	[0.03 s]
+0.0.J: Trace Attempt  1	[0.03 s]
+0.0.J: Trace Attempt  1	[0.04 s]
+0.0.J: Trace Attempt  1	[0.04 s]
+0.0.U: Proofgrid shell started at 176975@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0.0.J: Trace Attempt  1	[0.08 s]
+0.0.J: Trace Attempt  1	[0.12 s]
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0.0.U: Reached length limit (100) [0.01 s]
+0.0.U: Exited with Success (@ 182.97 s)
+0.0.U: Completed, Restart ignored.
+0.0.AM: Trace Attempt 407	[38.71 s]
+0.0.J: Trace Attempt  1	[0.20 s]
+0.0.L: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.J: Trace Attempt  1	[0.28 s]
+0.0.L: Proofgrid shell started at 176993@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0.0.J: Trace Attempt  1	[0.42 s]
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0.0.L: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.L: Using trace diversification with seed 1 (0.05)
+0.0.L: Using LRU state removal heuristic
+0.0.L: Using states from traces to { (reset) }
+0.0.L: Trace Attempt  3	[0.02 s]
+0.0.L: Using states from traces to { eth_txcounters.v_eth_txcounters._assert_2:precondition1 (2) }
+0.0.L: Trace Attempt  3	[0.02 s]
+0.0.L: Trace Attempt  4	[0.02 s]
+0.0.L: Trace Attempt  5	[0.02 s]
+0.0.L: Using states from traces to { eth_txcounters.v_eth_txcounters._assert_1 <7> }
+0.0.L: Trace Attempt  3	[0.03 s]
+0.0.L: Using states from traces to { eth_txcounters.v_eth_txcounters._assert_4 <8> }
+0.0.L: Trace Attempt  3	[0.03 s]
+0.0.L: Trace Attempt  4	[0.03 s]
+0.0.L: Trace Attempt  5	[0.03 s]
+0.0.L: Using states from traces to { eth_txcounters.v_eth_txcounters._assert_9 <16> }
+0.0.L: Trace Attempt  3	[0.03 s]
+0.0.L: Using states from traces to { eth_txcounters.v_eth_txcounters._assert_11 <17> }
+0.0.L: Trace Attempt  3	[0.04 s]
+0.0.L: Trace Attempt  4	[0.05 s]
+0.0.L: Trace Attempt  5	[0.05 s]
+0.0.U2: Trace Attempt  1	[0.62 s]
+0.0.U2: Restart 1, Seed 15e9ecd54
+0.0.U2: Trace Attempt  1	[0.66 s]
+0.0.U2: Restart 2, Seed 107a0fffb
+0.0.U2: Trace Attempt  1	[0.68 s]
+0.0.U2: Restart 3, Seed 14e04819c
+0.0.U2: Trace Attempt  1	[0.72 s]
+0.0.U2: Restart 4, Seed 15117f568
+0.0.U2: Trace Attempt  1	[0.77 s]
+0.0.J: Trace Attempt  1	[0.74 s]
+0.0.U2: Restart 5, Seed 14da73416
+0.0.U2: Trace Attempt  1	[0.84 s]
+0.0.U2: Restart 6, Seed 16a5c07b5
+0.0.U2: Trace Attempt  1	[0.93 s]
+0.0.J: Trace Attempt  1	[1.16 s]
+0.0.U2: Restart 7, Seed 11783d93f
+0.0.U2: Trace Attempt  1	[1.29 s]
+0.0.U2: Restart 8, Seed 145e83c83
+0.0.U2: Trace Attempt  1	[1.78 s]
+0.0.J: Trace Attempt  1	[1.97 s]
+0.0.U2: Restart 9, Seed 13e8d72fb
+0.0.U2: Trace Attempt  1	[2.73 s]
+0.0.B: Trace Attempt 499	[41.35 s]
+0.0.J: Trace Attempt  1	[2.94 s]
+0.0.N: Trace Attempt 826	[41.62 s]
+0.0.Mpcustom4: Trace Attempt 296	[186.62 s]
+0.0.U2: Restart 10, Seed 150bee546
+0.0.AM: Trace Attempt 424	[42.72 s]
+0.0.U2: Trace Attempt  1	[4.29 s]
+0.0.J: Trace Attempt  1	[4.35 s]
+0.0.L: Trace Attempt 137	[4.16 s]
+0.0.J: Trace Attempt  1	[5.94 s]
+0.0.U2: Restart 11, Seed 17d7e89bf
+0.0.U2: Trace Attempt  1	[6.53 s]
+0.0.N: Trace Attempt 855	[45.79 s]
+0.0.AM: Trace Attempt 451	[47.07 s]
+0.0.J: Trace Attempt  1	[8.54 s]
+0.0.L: Trace Attempt 181	[8.22 s]
+0.0.U2: Restart 12, Seed 121f8bdc2
+0.0.U2: Trace Attempt  1	[8.76 s]
+0.0.Mpcustom4: Trace Attempt 318	[191.27 s]
+0.0.U2: Restart 13, Seed 167c9178f
+0.0.U2: Trace Attempt  1	[11.13 s]
+0.0.J: Trace Attempt  1	[11.57 s]
+0.0.N: Trace Attempt 873	[49.87 s]
+0.0.AM: Trace Attempt 471	[51.17 s]
+0.0.U2: Restart 14, Seed 17fcf8ee9
+0.0.U2: Trace Attempt  1	[12.76 s]
+0.0.L: Trace Attempt 192	[13.56 s]
+0.0.U2: Restart 15, Seed 11c0fc9c6
+0.0.U2: Trace Attempt  1	[14.29 s]
+0.0.Mpcustom4: Trace Attempt 321	[197.98 s]
+0.0.U2: Restart 16, Seed 10e9cd277
+0.0.U2: Trace Attempt  1	[15.61 s]
+0.0.J: Trace Attempt 1050624	[15.60 s]
+0.0.B: Trace Attempt 503	[54.92 s]
+0.0.J: Trace Attempt  1	[16.66 s]
+0.0.AM: Trace Attempt 499	[55.21 s]
+0.0.U2: Restart 17, Seed 117fa25db
+0.0.U2: Trace Attempt  1	[17.65 s]
+0.0.N: Trace Attempt 886	[57.47 s]
+0.0.U2: Restart 18, Seed 1677b336e
+0.0.U2: Trace Attempt  1	[19.45 s]
+0.0.U2: Restart 19, Seed 1272e31aa
+0.0.U2: Trace Attempt  1	[20.62 s]
+0.0.J: Trace Attempt 1462272	[20.68 s]
+0.0.L: Trace Attempt 207	[20.66 s]
+0.0.Mpcustom4: Trace Attempt 324	[203.92 s]
+0.0.AM: Trace Attempt 513	[60.00 s]
+0.0.B: Trace Attempt 504	[60.34 s]
+0.0.U2: Restart 20, Seed 10e039942
+0.0.AM: Trace Attempt  1	[60.62 s]
+0.0.AM: Trace Attempt  2	[60.62 s]
+0.0.AM: Trace Attempt  3	[60.62 s]
+0.0.AM: Trace Attempt  5	[60.62 s]
+0.0.U2: Trace Attempt  1	[22.14 s]
+0.0.U2: Restart 21, Seed 156fce80e
+0.0.U2: Trace Attempt  1	[23.07 s]
+0.0.J: Trace Attempt  1	[23.13 s]
+0.0.U2: Restart 22, Seed 1419e39be
+0.0.U2: Trace Attempt  1	[25.16 s]
+0.0.Ht: Trace Attempt 549	[208.34 s]
+0.0.Bm: Trace Attempt 549	[208.30 s]
+0.0.B: Trace Attempt 535	[64.51 s]
+0.0.Mpcustom4: Trace Attempt 296	[208.62 s]
+0.0.AM: Trace Attempt 82	[64.80 s]
+0.0.U2: Restart 23, Seed 13ed44121
+0.0.U2: Trace Attempt  1	[26.95 s]
+0.0.J: Trace Attempt 1067008	[27.13 s]
+0.0.U2: Restart 24, Seed 103c1fd62
+0.0.U2: Trace Attempt  1	[28.89 s]
+0.0.L: Trace Attempt 215	[29.28 s]
+0.0.U2: Restart 25, Seed 14ce53422
+0.0.U2: Trace Attempt  1	[30.20 s]
+0.0.Ht: Trace Attempt 553	[212.63 s]
+0.0.Bm: Trace Attempt 553	[212.57 s]
+0.0.AM: Trace Attempt 116	[69.17 s]
+0.0.Mpcustom4: Trace Attempt 295	[213.62 s]
+0.0.J: Trace Attempt 1961984	[31.18 s]
+0.0.U2: Restart 26, Seed 1468912eb
+0.0.U2: Trace Attempt  1	[31.45 s]
+0.0.U2: Restart 27, Seed 14f9e049d
+0.0.U2: Trace Attempt  1	[33.34 s]
+0.0.L: Trace Attempt 218	[33.52 s]
+0.0.Bm: Trace Attempt 566	[216.59 s]
+0.0.Ht: Trace Attempt 567	[216.97 s]
+0.0.AM: Trace Attempt 153	[73.19 s]
+0.0.U2: Restart 28, Seed 158285e07
+0.0.U2: Trace Attempt  1	[35.15 s]
+0.0.J: Trace Attempt 2875392	[35.20 s]
+0.0.U2: Restart 29, Seed 16bc3d9ab
+0.0.U2: Trace Attempt  1	[36.96 s]
+0.0.Mpcustom4: Trace Attempt 335	[219.93 s]
+0.0.J: Trace Attempt  1	[37.83 s]
+0.0.Bm: Trace Attempt 575	[220.74 s]
+0.0.L: Trace Attempt 220	[37.95 s]
+0.0.U2: Restart 30, Seed 175ee7d45
+0.0.U2: Trace Attempt  1	[38.88 s]
+0.0.Ht: Trace Attempt 576	[221.30 s]
+0.0.B: Trace Attempt 548	[79.44 s]
+0.0.U2: Restart 31, Seed 144ffec4c
+0.0.U2: Trace Attempt  1	[40.97 s]
+0.0.J: Trace Attempt 1058816	[41.83 s]
+0.0.Bm: Trace Attempt 582	[224.77 s]
+0.0.U2: Restart 32, Seed 11a48ab45
+0.0.U2: Trace Attempt  1	[42.95 s]
+0.0.Ht: Trace Attempt 584	[225.72 s]
+0.0.Mpcustom4: Trace Attempt 351	[225.93 s]
+0.0.L: Trace Attempt 222	[43.62 s]
+0.0.U2: Restart 33, Seed 1758fbcd8
+0.0.U2: Trace Attempt  1	[45.12 s]
+0.0.J: Trace Attempt 2394112	[45.85 s]
+0.0.U2: Restart 34, Seed 16446b7f1
+0.0.U2: Trace Attempt  1	[46.32 s]
+0.0.Bm: Trace Attempt 588	[229.13 s]
+0.0.AM: Trace Attempt 164	[85.42 s]
+0.0.U2: Restart 35, Seed 119d097d3
+0.0.U2: Trace Attempt  1	[48.09 s]
+0.0.Mpcustom4: Trace Attempt 352	[231.34 s]
+0.0.L: Trace Attempt 223	[48.57 s]
+0.0.U2: Restart 36, Seed 112ed28d1
+0.0.U2: Trace Attempt  1	[49.87 s]
+0.0.J: Trace Attempt 3485696	[49.86 s]
+0.0.U2: Restart 37, Seed 16d421514
+0.0.U2: Trace Attempt  1	[51.04 s]
+0.0.U2: Restart 38, Seed 132362185
+0.0.U2: Trace Attempt  1	[52.83 s]
+0.0.Mpcustom4: Trace Attempt 357	[235.43 s]
+0.0.L: Trace Attempt 225	[53.39 s]
+0.0.J: Trace Attempt 4538368	[53.86 s]
+0.0.B: Trace Attempt 549	[93.14 s]
+0.0.U2: Restart 39, Seed 13acab6fd
+0.0.U2: Trace Attempt  1	[55.02 s]
+0.0.Ht: Trace Attempt 589	[237.75 s]
+0.0.Bm: Trace Attempt 589	[237.78 s]
+0.0.AM: Trace Attempt 216	[95.08 s]
+0.0.Mpcustom4: Trace Attempt 296	[239.57 s]
+0.0.J: Trace Attempt  1	[57.19 s]
+0.0.U2: Restart 40, Seed 12e0ba4af
+0.0.U2: Trace Attempt  1	[57.28 s]
+0.0.U2: Restart 41, Seed 17cfb5873
+0.0.U2: Trace Attempt  1	[59.20 s]
+0.0.Hp: Requesting engine job to terminate
+0.0.Hp: Interrupted (multi)
+0.0.Hp: Trace Attempt 12	[0.34 s]
+0.0.Hp: Interrupted. [242.24 s]
+0.0.B: Trace Attempt 576	[95.90 s]
+0.0.B: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[98.16 s].
+0.0.B: Morphing to Bcustom2
+0.0.B: All properties determined. [0.00 s]
+0.0.B: Exited with Success (@ 0.00 s)
+0: Running jobs with 7 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 7 threads on "pal-achieve-06" with 4 cores.
+0.0.N: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[97.79 s].
+0.0.N: Morphing to Ncustom1
+0.0.N: All properties determined. [0.00 s]
+0.0.N: Exited with Success (@ 0.00 s)
+0: Running jobs with 8 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 8 threads on "pal-achieve-06" with 4 cores.
+0.0.Hp: Exited with Success (@ 242.44 s)
+0.0.Hp: Engine should be restarted (starts=1, unexpected_terminations=0)
+   Last recorded data: 0.18 s ago
+   Last recorded RSS memory usage: 106.69 MiB, peak 106.69 MiB
+   Last recorded free memory: 1.96 GiB out of 4.43 GiB, nadir 1.96 GiB
+0.0.Hp: Restarting engine (local)
+0.0.Ht: Trace Attempt 597	[242.06 s]
+0.0.Ncustom1: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Bcustom2: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Bcustom2: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Bcustom2: Trace Attempt  1	[0.00 s]
+0.0.Bcustom2: Trace Attempt  2	[0.00 s]
+0.0.Bcustom2: Trace Attempt  3	[0.00 s]
+0.0.Bcustom2: Trace Attempt  4	[0.00 s]
+0.0.Bcustom2: Trace Attempt  5	[0.00 s]
+0.0.AM: Trace Attempt 245	[97.86 s]
+0.0.AM: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[98.20 s].
+0.0.AM: Morphing to AMcustom3
+0.0.AM: All properties determined. [0.00 s]
+0.0.AM: Exited with Success (@ 0.00 s)
+0: Running jobs with 9 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 9 threads on "pal-achieve-06" with 4 cores.
+0.0.Bm: Trace Attempt 597	[242.05 s]
+0.0.AMcustom3: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.AMcustom3: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  4	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.01 s]
+0.0.AMcustom3: Trace Attempt  5	[0.01 s]
+0.0.AMcustom3: Trace Attempt  1	[0.01 s]
+0.0.AMcustom3: Trace Attempt  2	[0.01 s]
+0.0.AMcustom3: Trace Attempt  3	[0.01 s]
+0.0.AMcustom3: Trace Attempt  5	[0.01 s]
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.06 s].
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.Ncustom1: Trace Attempt  2	[0.00 s]
+0.0.Ncustom1: Trace Attempt  3	[0.00 s]
+0.0.Ncustom1: Trace Attempt  4	[0.00 s]
+0.0.Ncustom1: Trace Attempt  5	[0.00 s]
+0.0.Ncustom1: Trace Attempt  1	[0.00 s]
+0.0.Ncustom1: Trace Attempt  2	[0.00 s]
+0.0.Ncustom1: Trace Attempt  3	[0.00 s]
+0.0.Bcustom2: Trace Attempt 57	[0.07 s]
+0.0.Bcustom2: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.06 s].
+0.0.Bcustom2: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.Bcustom2: Trace Attempt  1	[0.00 s]
+0.0.Bcustom2: Trace Attempt  2	[0.00 s]
+0.0.Bcustom2: Trace Attempt  3	[0.00 s]
+0.0.Bcustom2: Trace Attempt  4	[0.00 s]
+0.0.Bcustom2: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.08 s]
+0.0.AMcustom3: Trace Attempt  2	[0.08 s]
+0.0.AMcustom3: Trace Attempt  3	[0.09 s]
+0.0.AMcustom3: Trace Attempt  5	[0.09 s]
+0.0.Tri: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Hp: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.L: Trace Attempt 227	[59.94 s]
+0.0.Hts: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Tri: Proofgrid shell started at 177747@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0.0.Tri: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hts: Proofgrid shell started at 177749@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0.0.Hts: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hts: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.Hts: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.Hts: Trace Attempt  1	[0.00 s]
+0.0.Hts: Trace Attempt  2	[0.00 s]
+0.0.Hts: Trace Attempt  3	[0.00 s]
+0.0.Hts: Trace Attempt  4	[0.00 s]
+0.0.Hts: Trace Attempt  5	[0.00 s]
+0.0.Hp: Proofgrid shell started at 177748@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0: Running jobs with 12 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 12 threads on "pal-achieve-06" with 4 cores.
+0.0.Hp: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hts: Trace Attempt 471	[0.10 s]
+0.0.Hts: Per property time limit expired (0.11 s) [0.11 s]
+0.0.Hts: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[0.11 s].
+0.0.AMcustom3: Trace Attempt 49	[0.87 s]
+0.0.AMcustom3: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[1.02 s].
+0.0.AMcustom3: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  4	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.Bcustom2: Trace Attempt 80	[0.92 s]
+0.0.Bcustom2: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[0.98 s].
+0.0.Bcustom2: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.Bcustom2: Trace Attempt  1	[0.00 s]
+0.0.Bcustom2: Trace Attempt  2	[0.00 s]
+0.0.Bcustom2: Trace Attempt  3	[0.00 s]
+0.0.Bcustom2: Trace Attempt  4	[0.00 s]
+0.0.Bcustom2: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.01 s]
+0.0.AMcustom3: Trace Attempt  2	[0.01 s]
+0.0.AMcustom3: Trace Attempt  3	[0.01 s]
+0.0.AMcustom3: Trace Attempt  5	[0.01 s]
+0.0.AMcustom3: Trace Attempt  1	[0.02 s]
+0.0.AMcustom3: Trace Attempt  2	[0.02 s]
+0.0.AMcustom3: Trace Attempt  3	[0.02 s]
+0.0.AMcustom3: Trace Attempt  5	[0.02 s]
+0.0.Hts: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.Hts: Trace Attempt  1	[0.00 s]
+0.0.Hts: Trace Attempt  2	[0.00 s]
+0.0.Hts: Trace Attempt  3	[0.00 s]
+0.0.Hts: Trace Attempt  4	[0.00 s]
+0.0.Hts: Trace Attempt  5	[0.00 s]
+0.0.Ncustom1: Trace Attempt 40	[0.95 s]
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[0.99 s].
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.Ncustom1: Trace Attempt 37	[0.00 s]
+0.0.Ncustom1: Trace Attempt  1	[0.14 s]
+0.0.Ncustom1: Trace Attempt  2	[0.14 s]
+0.0.Ncustom1: Trace Attempt  3	[0.14 s]
+0.0.Ncustom1: Trace Attempt  5	[0.14 s]
+0.0.Tri: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.Tri: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.Tri: Trace Attempt  1	[0.00 s]
+0.0.U2: Restart 42, Seed 103ca1119
+0.0.U2: Trace Attempt  1	[61.13 s]
+0.0.J: Trace Attempt 917504	[61.19 s]
+0.0.Mpcustom4: Trace Attempt 363	[243.92 s]
+0.0.AMcustom3: Trace Attempt 103	[0.98 s]
+0.0.AMcustom3: Per property time limit expired (1.00 s) [1.00 s]
+0.0.AMcustom3: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.98 s].
+0.0.Ncustom1: Trace Attempt 65	[0.95 s]
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.99 s].
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Bcustom2: Trace Attempt 77	[0.95 s]
+0.0.Bcustom2: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[1.00 s].
+0.0.Bcustom2: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Bcustom2: Trace Attempt  1	[0.00 s]
+0.0.Bcustom2: Trace Attempt  2	[0.00 s]
+0.0.Bcustom2: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  4	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.01 s]
+0.0.AMcustom3: Trace Attempt  3	[0.01 s]
+0.0.AMcustom3: Trace Attempt  5	[0.01 s]
+0.0.Bcustom2: Trace Attempt  4	[0.00 s]
+0.0.Bcustom2: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.03 s]
+0.0.AMcustom3: Trace Attempt  2	[0.03 s]
+0.0.AMcustom3: Trace Attempt  3	[0.03 s]
+0.0.AMcustom3: Trace Attempt  5	[0.03 s]
+0.0.Tri: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.85 s].
+0.0.Tri: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+0.0.Tri: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Tri: Trace Attempt  1	[0.00 s]
+0.0.Tri:    0.00" ---- Launching main thread ----
+0.0.Hts: Trace Attempt 598	[0.17 s]
+0.0.Hts: Per property time limit expired (1.00 s) [1.25 s]
+0.0.Hts: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[1.25 s].
+0.0.Hts: Next scan (2) will use per property time limit: 1s * 10 ^ 2 = 100s
+0.0.Hts: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Ncustom1: Trace Attempt 886	[0.31 s]
+0.0.Hts: Trace Attempt  1	[0.05 s]
+0.0.Hts: Trace Attempt  2	[0.05 s]
+0.0.Hts: Trace Attempt  3	[0.05 s]
+0.0.Hts: Trace Attempt  4	[0.05 s]
+0.0.Hts: Trace Attempt  5	[0.05 s]
+0.0.AMcustom3: Trace Attempt 139	[0.94 s]
+0.0.AMcustom3: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.98 s].
+0.0.AMcustom3: Morphing to D
+0.0.AMcustom3: All properties determined. [0.00 s]
+0.0.AMcustom3: Exited with Success (@ 0.00 s)
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0.0.D: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.D: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.00 s].
+0.0.D: Trace Attempt  1	[0.00 s]
+0.0.D: Trace Attempt  2	[0.00 s]
+0.0.D: Trace Attempt  4	[0.00 s]
+0.0.Tri: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.01 s].
+0.0.Bcustom2: Trace Attempt 70	[0.77 s]
+0.0.Bcustom2: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.03 s].
+0.0.Bcustom2: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.00 s].
+0.0.Bcustom2: Trace Attempt  1	[0.00 s]
+0.0.Bcustom2: Trace Attempt  2	[0.00 s]
+0.0.Bcustom2: Trace Attempt  3	[0.00 s]
+0.0.Bcustom2: Trace Attempt  4	[0.00 s]
+0.0.Bcustom2: Trace Attempt  5	[0.00 s]
+0.0.Tri: Morphing to M
+0.0.Tri: All properties determined. [0.00 s]
+0.0.Tri: Exited with Success (@ 0.00 s)
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.06 s].
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.00 s].
+0.0.M: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.M: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt  5	[0.00 s]
+0.0.Hts: Trace Attempt 886	[0.91 s]
+0.0.Hts: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.90 s].
+0.0.Hts: Morphing to K
+0.0.Hts: All properties determined. [0.00 s]
+0.0.Hts: Exited with Success (@ 0.00 s)
+0: Running jobs with 12 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 12 threads on "pal-achieve-06" with 4 cores.
+0.0.U2: Restart 43, Seed 144cda2e8
+0.0.U2: Trace Attempt  1	[62.94 s]
+0.0.K: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.K: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.00 s].
+0.0.K: Trace Attempt 31	[0.00 s]
+0.0.Ncustom1: Trace Attempt  1	[0.14 s]
+0.0.Ncustom1: Trace Attempt  2	[0.14 s]
+0.0.Ncustom1: Trace Attempt  3	[0.14 s]
+0.0.Ncustom1: Trace Attempt  5	[0.14 s]
+0.0.K: Trace Attempt  1	[0.06 s]
+0.0.K: Trace Attempt  2	[0.06 s]
+0.0.K: Trace Attempt  3	[0.06 s]
+0.0.K: Trace Attempt  4	[0.06 s]
+0.0.K: Trace Attempt  5	[0.06 s]
+0.0.Ht: Trace Attempt 603	[246.85 s]
+0.0.Bm: Trace Attempt 603	[247.00 s]
+0.0.M: Trace Attempt 83	[1.57 s]
+0.0.M: Per property time limit expired (1.93 s) [1.93 s]
+0.0.M: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[1.93 s].
+0.0.K: Trace Attempt 146	[1.80 s]
+0.0.K: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[1.85 s].
+0.0.K: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.K: Trace Attempt 37	[0.00 s]
+0.0.Ncustom1: Trace Attempt 95	[1.88 s]
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[1.96 s].
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.Ncustom1: Trace Attempt 37	[0.00 s]
+0.0.M: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt  5	[0.00 s]
+0.0.Bcustom2: Trace Attempt 107	[1.55 s]
+0.0.Bcustom2: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[2.00 s].
+0.0.Bcustom2: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.Bcustom2: Trace Attempt  1	[0.00 s]
+0.0.Bcustom2: Trace Attempt  2	[0.00 s]
+0.0.Bcustom2: Trace Attempt  3	[0.00 s]
+0.0.Bcustom2: Trace Attempt  4	[0.00 s]
+0.0.Bcustom2: Trace Attempt  5	[0.00 s]
+0.0.D: Trace Attempt 42	[0.62 s]
+0.0.D: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[2.05 s].
+0.0.D: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.D: Trace Attempt  1	[0.00 s]
+0.0.D: Trace Attempt  2	[0.00 s]
+0.0.D: Trace Attempt  4	[0.00 s]
+0.0.K: Trace Attempt  1	[0.07 s]
+0.0.K: Trace Attempt  2	[0.07 s]
+0.0.K: Trace Attempt  3	[0.07 s]
+0.0.K: Trace Attempt  4	[0.07 s]
+0.0.K: Trace Attempt  5	[0.07 s]
+0.0.Ncustom1: Trace Attempt  1	[0.12 s]
+0.0.Ncustom1: Trace Attempt  2	[0.12 s]
+0.0.Ncustom1: Trace Attempt  3	[0.12 s]
+0.0.Ncustom1: Trace Attempt  5	[0.12 s]
+0.0.J: Trace Attempt 2189312	[65.20 s]
+0.0.Mpcustom4: Trace Attempt 370	[247.99 s]
+0.0.U2: Restart 44, Seed 137e8fdcc
+0.0.U2: Trace Attempt  1	[65.72 s]
+0.0.L: Trace Attempt 229	[66.05 s]
+0.0.M: Trace Attempt 77	[2.00 s]
+0.0.M: Per property time limit expired (2.00 s) [2.00 s]
+0.0.M: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[2.00 s].
+0.0.K: Trace Attempt 142	[1.91 s]
+0.0.K: Per property time limit expired (2.00 s) [2.00 s]
+0.0.K: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[2.00 s].
+0.0.Bcustom2: Trace Attempt 109	[1.98 s]
+0.0.Bcustom2: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[1.97 s].
+0.0.Bcustom2: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Bcustom2: Trace Attempt  1	[0.00 s]
+0.0.Bcustom2: Trace Attempt  2	[0.00 s]
+0.0.Bcustom2: Trace Attempt  3	[0.00 s]
+0.0.Bcustom2: Trace Attempt  4	[0.00 s]
+0.0.Bcustom2: Trace Attempt  5	[0.00 s]
+0.0.K: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.D: Trace Attempt 42	[0.73 s]
+0.0.D: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[2.01 s].
+0.0.D: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.D: Trace Attempt  1	[0.00 s]
+0.0.D: Trace Attempt  2	[0.00 s]
+0.0.D: Trace Attempt  4	[0.00 s]
+0.0.M: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt  5	[0.00 s]
+0.0.Ncustom1: Trace Attempt 83	[1.74 s]
+0.0.Ncustom1: Per property time limit expired (2.00 s) [2.11 s]
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[2.12 s].
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.K: Trace Attempt 886	[0.22 s]
+0.0.Ncustom1: Trace Attempt 886	[0.38 s]
+0.0.M: Trace Attempt 38	[1.26 s]
+0.0.M: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.46 s].
+0.0.M: Morphing to Hts
+0.0.M: All properties determined. [0.00 s]
+0.0.M: Exited with Success (@ 0.00 s)
+0: Running jobs with 9 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 9 threads on "pal-achieve-06" with 4 cores.
+0.0.Hts: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hts: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Hts: Trace Attempt  1	[0.00 s]
+0.0.Hts: Trace Attempt  2	[0.00 s]
+0.0.Hts: Trace Attempt  3	[0.00 s]
+0.0.Hts: Trace Attempt  4	[0.00 s]
+0.0.Hts: Trace Attempt  5	[0.00 s]
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.41 s].
+0.0.Ncustom1: Morphing to AMcustom3
+0.0.Ncustom1: All properties determined. [0.00 s]
+0.0.Ncustom1: Exited with Success (@ 0.00 s)
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0.0.Bcustom2: Trace Attempt 91	[1.47 s]
+0.0.Bcustom2: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.53 s].
+0.0.Bcustom2: Morphing to Tri
+0.0.Bcustom2: All properties determined. [0.00 s]
+0.0.Bcustom2: Exited with Success (@ 0.00 s)
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0.0.U2: Restart 45, Seed 141fa6e5f
+0.0.AMcustom3: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.AMcustom3: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.00 s].
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  4	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.01 s]
+0.0.AMcustom3: Trace Attempt  2	[0.01 s]
+0.0.AMcustom3: Trace Attempt  3	[0.01 s]
+0.0.AMcustom3: Trace Attempt  5	[0.01 s]
+0.0.Tri: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.D: Trace Attempt 21	[0.03 s]
+0.0.D: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.52 s].
+0.0.D: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.00 s].
+0.0.D: Trace Attempt 42	[0.00 s]
+0.0.Hts: Trace Attempt 141	[0.01 s]
+0.0.Hts: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.06 s].
+0.0.Hts: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.00 s].
+0.0.Hts: Trace Attempt  1	[0.00 s]
+0.0.Hts: Trace Attempt  2	[0.00 s]
+0.0.Hts: Trace Attempt  3	[0.00 s]
+0.0.Hts: Trace Attempt  4	[0.00 s]
+0.0.Hts: Trace Attempt  5	[0.00 s]
+0.0.K: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.57 s].
+0.0.K: Morphing to I
+0.0.K: All properties determined. [0.00 s]
+0.0.K: Exited with Success (@ 0.00 s)
+0: Running jobs with 12 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 12 threads on "pal-achieve-06" with 4 cores.
+0.0.AMcustom3: Trace Attempt  1	[0.04 s]
+0.0.AMcustom3: Trace Attempt  2	[0.04 s]
+0.0.AMcustom3: Trace Attempt  3	[0.04 s]
+0.0.AMcustom3: Trace Attempt  5	[0.04 s]
+0.0.I: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.I: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.00 s].
+0.0.U2: Trace Attempt  1	[68.38 s]
+0.0.I: Trace Attempt  8	[0.00 s]
+0.0.I: Trace Attempt  1	[0.00 s]
+0.0.I: Trace Attempt  2	[0.00 s]
+0.0.I: Trace Attempt  5	[0.00 s]
+0.0.Ht: Trace Attempt 609	[250.95 s]
+0.0.Tri: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[0.00 s].
+0.0.Tri: Trace Attempt  1	[0.00 s]
+0.0.Bm: Trace Attempt 610	[251.29 s]
+0.0.Tri:    0.00" ---- Launching main thread ----
+0.0.J: Trace Attempt 2977792	[69.21 s]
+0.0.U2: Restart 46, Seed 10c925cdd
+0.0.U2: Trace Attempt  1	[70.90 s]
+0.0.Tri:    2.39" ---- Launching abstraction thread ----
+0.0.Tri:    2.71" ---- Launching multi-phase simplification thread ----
+0.0.Mpcustom4: Trace Attempt 296	[254.61 s]
+0.0.I: Trace Attempt 57	[1.82 s]
+0.0.I: Per property time limit expired (3.94 s) [3.94 s]
+0.0.I: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[3.94 s].
+0.0.Hts: Trace Attempt 608	[0.30 s]
+0.0.Hts: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[3.98 s].
+0.0.Hts: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.D: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[4.00 s].
+0.0.D: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.D: Trace Attempt  1	[0.00 s]
+0.0.D: Trace Attempt  2	[0.00 s]
+0.0.D: Trace Attempt  3	[0.00 s]
+0.0.Hts: Trace Attempt  1	[0.01 s]
+0.0.Hts: Trace Attempt  2	[0.01 s]
+0.0.Hts: Trace Attempt  3	[0.01 s]
+0.0.Hts: Trace Attempt  4	[0.01 s]
+0.0.Hts: Trace Attempt  5	[0.01 s]
+0.0.AMcustom3: Trace Attempt 287	[3.96 s]
+0.0.AMcustom3: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[4.02 s].
+0.0.AMcustom3: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.Tri: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_6:precondition1"	[3.54 s].
+0.0.Tri: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.Tri: Trace Attempt  1	[0.00 s]
+0.0.I: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.I: Trace Attempt  2	[0.00 s]
+0.0.I: Trace Attempt  3	[0.00 s]
+0.0.I: Trace Attempt  4	[0.00 s]
+0.0.I: Trace Attempt  5	[0.00 s]
+0.0.I: Trace Attempt  1	[0.00 s]
+0.0.I: Trace Attempt  2	[0.00 s]
+0.0.I: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  4	[0.03 s]
+0.0.AMcustom3: Trace Attempt  5	[0.03 s]
+0.0.Tri:    3.35" ---- Launching main thread ----
+0.0.AMcustom3: Trace Attempt  1	[0.03 s]
+0.0.AMcustom3: Trace Attempt  2	[0.04 s]
+0.0.AMcustom3: Trace Attempt  3	[0.04 s]
+0.0.AMcustom3: Trace Attempt  5	[0.04 s]
+0.0.AMcustom3: Trace Attempt  1	[0.04 s]
+0.0.AMcustom3: Trace Attempt  2	[0.04 s]
+0.0.AMcustom3: Trace Attempt  3	[0.05 s]
+0.0.AMcustom3: Trace Attempt  5	[0.05 s]
+0.0.AMcustom3: Trace Attempt  1	[0.11 s]
+0.0.AMcustom3: Trace Attempt  2	[0.11 s]
+0.0.AMcustom3: Trace Attempt  3	[0.11 s]
+0.0.AMcustom3: Trace Attempt  5	[0.14 s]
+0.0.Ht: Trace Attempt 619	[255.04 s]
+0.0.U2: Restart 47, Seed 131b05e19
+0.0.U2: Trace Attempt  1	[72.78 s]
+0.0.J: Trace Attempt 3721216	[73.21 s]
+0.0.Bm: Trace Attempt 620	[255.74 s]
+0.0.U2: Restart 48, Seed 1449c9ac6
+0.0.U2: Trace Attempt  1	[73.78 s]
+0.0.Tri:    6.08" ---- Launching abstraction thread ----
+0.0.Tri:    6.68" ---- Launching multi-phase simplification thread ----
+0.0.D: Trace Attempt 44	[1.94 s]
+0.0.D: Per property time limit expired (4.00 s) [4.00 s]
+0.0.D: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[3.99 s].
+0.0.AMcustom3: Trace Attempt 202	[3.90 s]
+0.0.AMcustom3: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[4.00 s].
+0.0.AMcustom3: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  4	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.D: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.D: Trace Attempt 21	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.01 s]
+0.0.AMcustom3: Trace Attempt  2	[0.01 s]
+0.0.AMcustom3: Trace Attempt  3	[0.01 s]
+0.0.AMcustom3: Trace Attempt  5	[0.01 s]
+0.0.I: Trace Attempt 58	[2.54 s]
+0.0.I: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[4.01 s].
+0.0.I: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.I: Trace Attempt 12	[0.00 s]
+0.0.I: Trace Attempt  1	[0.00 s]
+0.0.I: Trace Attempt  2	[0.00 s]
+0.0.I: Trace Attempt  3	[0.00 s]
+0.0.L: Trace Attempt 232	[75.92 s]
+0.0.Tri: Per property time limit expired (4.00 s) [4.17 s]
+0.0.Tri: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[4.18 s].
+0.0.Tri: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Tri: Trace Attempt  1	[0.00 s]
+0.0.Tri:    7.50" ---- Launching main thread ----
+0.0.U2: Restart 49, Seed 12576283f
+0.0.U2: Trace Attempt  1	[76.58 s]
+0.0.Hts: Trace Attempt 619	[0.39 s]
+0.0.Hts: Per property time limit expired (4.00 s) [4.30 s]
+0.0.Hts: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[4.30 s].
+0.0.Hts: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Hts: Trace Attempt  1	[0.03 s]
+0.0.Hts: Trace Attempt  2	[0.03 s]
+0.0.Hts: Trace Attempt  3	[0.03 s]
+0.0.Hts: Trace Attempt  4	[0.03 s]
+0.0.Hts: Trace Attempt  5	[0.03 s]
+0.0.Ht: Trace Attempt 627	[259.08 s]
+0.0.AMcustom3: Trace Attempt 75	[0.36 s]
+0.0.AMcustom3: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.40 s].
+0.0.AMcustom3: Morphing to Ncustom1
+0.0.AMcustom3: All properties determined. [0.00 s]
+0.0.AMcustom3: Exited with Success (@ 0.00 s)
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0.0.Hts: Trace Attempt 199	[0.09 s]
+0.0.Hts: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.13 s].
+0.0.Hts: Morphing to M
+0.0.Hts: All properties determined. [0.00 s]
+0.0.Hts: Exited with Success (@ 0.00 s)
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0.0.Ncustom1: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.D: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.43 s].
+0.0.D: Morphing to K
+0.0.D: All properties determined. [0.00 s]
+0.0.D: Exited with Success (@ 0.00 s)
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0.0.I: Trace Attempt 19	[0.01 s]
+0.0.I: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.40 s].
+0.0.I: Morphing to AD
+0.0.I: All properties determined. [0.00 s]
+0.0.I: Exited with Success (@ 0.00 s)
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.02 s].
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.Ncustom1: Trace Attempt  2	[0.00 s]
+0.0.Ncustom1: Trace Attempt  3	[0.00 s]
+0.0.Ncustom1: Trace Attempt  4	[0.00 s]
+0.0.Ncustom1: Trace Attempt  5	[0.00 s]
+0.0.Ncustom1: Trace Attempt  1	[0.00 s]
+0.0.K: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.K: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.K: Trace Attempt  2	[0.00 s]
+0.0.K: Trace Attempt  1	[0.00 s]
+0.0.K: Trace Attempt  2	[0.00 s]
+0.0.K: Trace Attempt  3	[0.00 s]
+0.0.K: Trace Attempt  4	[0.00 s]
+0.0.K: Trace Attempt  5	[0.00 s]
+0.0.M: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.M: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt  5	[0.00 s]
+0.0.AD: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.AD: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.AD: Trace Attempt  1	[0.00 s]
+0.0.AD: Trace Attempt  2	[0.00 s]
+0.0.AD: Trace Attempt  3	[0.00 s]
+0.0.AD: Trace Attempt  4	[0.00 s]
+0.0.AD: Trace Attempt  5	[0.00 s]
+0.0.AD: Trace Attempt  1	[0.00 s]
+0.0.AD: Trace Attempt  2	[0.00 s]
+0.0.AD: Trace Attempt  3	[0.00 s]
+0.0.AD: Trace Attempt  1	[0.03 s]
+0.0.Ncustom1: Trace Attempt  2	[0.04 s]
+0.0.Ncustom1: Trace Attempt  3	[0.04 s]
+0.0.AD: Trace Attempt  2	[0.07 s]
+0.0.AD: Trace Attempt  3	[0.07 s]
+0.0.Tri: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.41 s].
+0.0.Tri: Morphing to Bcustom2
+0.0.Tri: All properties determined. [0.00 s]
+0.0.Tri: Exited with Success (@ 0.00 s)
+0: Running jobs with 12 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 12 threads on "pal-achieve-06" with 4 cores.
+0.0.Bcustom2: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Bcustom2: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.Bcustom2: Trace Attempt  1	[0.00 s]
+0.0.Bcustom2: Trace Attempt  2	[0.00 s]
+0.0.Bcustom2: Trace Attempt  3	[0.00 s]
+0.0.Bcustom2: Trace Attempt  4	[0.00 s]
+0.0.Bcustom2: Trace Attempt  5	[0.00 s]
+0.0.AD: Trace Attempt  1	[0.30 s]
+0.0.AD: Trace Attempt  2	[0.30 s]
+0.0.AD: Trace Attempt  3	[0.30 s]
+0.0.J: Trace Attempt 4876288	[77.22 s]
+0.0.U2: Restart 50, Seed 1012035dd
+0.0.U2: Trace Attempt  1	[77.45 s]
+0.0.Bm: Trace Attempt 629	[259.89 s]
+0.0.U2: Restart 51, Seed 147890fb6
+0.0.U2: Trace Attempt  1	[79.12 s]
+0.0.Mpcustom4: Trace Attempt 295	[261.62 s]
+0.0.Ht: Trace Attempt 635	[263.11 s]
+0.0.K: Trace Attempt 185	[4.02 s]
+0.0.L: Trace Attempt 233	[80.39 s]
+0.0.U2: Restart 52, Seed 118510102
+0.0.U2: Trace Attempt  1	[80.93 s]
+0.0.Bcustom2: Trace Attempt 143	[4.22 s]
+0.0.J: Trace Attempt 6029312	[81.24 s]
+0.0.M: Trace Attempt 64	[4.80 s]
+0.0.Ncustom1: Trace Attempt 76	[4.83 s]
+0.0.Bm: Trace Attempt 637	[264.64 s]
+0.0.U2: Restart 53, Seed 1246dbbb8
+0.0.U2: Trace Attempt  1	[83.56 s]
+0.0.Bcustom2: Trace Attempt 233	[7.78 s]
+0.0.Bcustom2: Per property time limit expired (7.81 s) [7.81 s]
+0.0.Bcustom2: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[7.81 s].
+0.0.AD: Trace Attempt 39	[1.33 s]
+0.0.AD: Per property time limit expired (8.00 s) [8.00 s]
+0.0.AD: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[7.99 s].
+0.0.Ncustom1: Trace Attempt 100	[7.98 s]
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[8.01 s].
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.K: Trace Attempt 211	[7.96 s]
+0.0.K: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[8.01 s].
+0.0.K: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.M: Trace Attempt 97	[7.01 s]
+0.0.M: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[8.01 s].
+0.0.M: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.AD: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.AD: Trace Attempt  1	[0.00 s]
+0.0.AD: Trace Attempt  2	[0.00 s]
+0.0.AD: Trace Attempt  3	[0.00 s]
+0.0.AD: Trace Attempt  4	[0.00 s]
+0.0.AD: Trace Attempt  5	[0.00 s]
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.AD: Trace Attempt  1	[0.00 s]
+0.0.AD: Trace Attempt  2	[0.00 s]
+0.0.AD: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.AD: Trace Attempt  1	[0.01 s]
+0.0.AD: Trace Attempt  2	[0.01 s]
+0.0.AD: Trace Attempt  3	[0.01 s]
+0.0.Bcustom2: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Bcustom2: Trace Attempt  1	[0.00 s]
+0.0.Bcustom2: Trace Attempt  2	[0.00 s]
+0.0.Bcustom2: Trace Attempt  3	[0.00 s]
+0.0.Bcustom2: Trace Attempt  4	[0.00 s]
+0.0.Bcustom2: Trace Attempt  5	[0.00 s]
+0.0.M: Trace Attempt  5	[0.00 s]
+0.0.AD: Trace Attempt  1	[0.07 s]
+0.0.AD: Trace Attempt  2	[0.08 s]
+0.0.AD: Trace Attempt  3	[0.08 s]
+0.0.K: Trace Attempt 886	[0.23 s]
+0.0.Ncustom1: Trace Attempt 886	[0.36 s]
+0.0.J: Trace Attempt 6973440	[85.28 s]
+0.0.Ht: Trace Attempt 641	[268.14 s]
+0.0.U2: Restart 54, Seed 10d0d3d84
+0.0.U2: Trace Attempt  1	[86.41 s]
+0.0.Mpcustom4: Trace Attempt 378	[268.99 s]
+0.0.L: Trace Attempt 234	[86.70 s]
+0.0.Bm: Trace Attempt 644	[269.51 s]
+0.0.U2: Restart 55, Seed 10aa19073
+0.0.U2: Trace Attempt  1	[88.67 s]
+0.0.M: Trace Attempt 84	[4.06 s]
+0.0.J: Trace Attempt 7833600	[89.28 s]
+0.0.J: Trace Attempt  1	[90.00 s]
+0.0.Bcustom2: Trace Attempt 158	[5.29 s]
+0.0.Ht: Trace Attempt 646	[273.06 s]
+0.0.U2: Restart 56, Seed 104f0de61
+0.0.U2: Trace Attempt  1	[90.73 s]
+0.0.Bm: Trace Attempt 647	[273.89 s]
+0.0.AD: Trace Attempt 80	[7.59 s]
+0.0.M: Trace Attempt 96	[4.85 s]
+0.0.M: Per property time limit expired (8.00 s) [8.01 s]
+0.0.M: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[8.01 s].
+0.0.AD: Per property time limit expired (8.00 s) [8.01 s]
+0.0.AD: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[8.01 s].
+0.0.M: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt  5	[0.00 s]
+0.0.AD: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.AD: Trace Attempt  1	[0.00 s]
+0.0.AD: Trace Attempt  2	[0.00 s]
+0.0.AD: Trace Attempt  3	[0.00 s]
+0.0.AD: Trace Attempt  4	[0.00 s]
+0.0.AD: Trace Attempt  5	[0.00 s]
+0.0.AD: Trace Attempt  1	[0.00 s]
+0.0.AD: Trace Attempt  2	[0.00 s]
+0.0.AD: Trace Attempt  3	[0.00 s]
+0.0.AD: Trace Attempt  1	[0.01 s]
+0.0.AD: Trace Attempt  2	[0.01 s]
+0.0.AD: Trace Attempt  3	[0.01 s]
+0.0.K: Per property time limit expired (8.00 s) [8.05 s]
+0.0.K: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[8.06 s].
+0.0.K: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Bcustom2: Trace Attempt 177	[7.93 s]
+0.0.Bcustom2: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[8.09 s].
+0.0.Bcustom2: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Bcustom2: Trace Attempt  1	[0.00 s]
+0.0.Bcustom2: Trace Attempt  2	[0.00 s]
+0.0.Bcustom2: Trace Attempt  3	[0.00 s]
+0.0.Bcustom2: Trace Attempt  4	[0.00 s]
+0.0.Bcustom2: Trace Attempt  5	[0.00 s]
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[8.12 s].
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.AD: Trace Attempt  1	[0.12 s]
+0.0.AD: Trace Attempt  2	[0.12 s]
+0.0.AD: Trace Attempt  3	[0.12 s]
+0.0.U2: Restart 57, Seed 154c36919
+0.0.U2: Trace Attempt  1	[93.48 s]
+0.0.L: Trace Attempt 235	[93.00 s]
+0.0.Mpcustom4: Trace Attempt 296	[276.04 s]
+0.0.J: Trace Attempt 792576	[94.03 s]
+0.0.Bcustom2: Trace Attempt 70	[0.97 s]
+0.0.Bcustom2: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.37 s].
+0.0.Bcustom2: Morphing to Tri
+0.0.Bcustom2: All properties determined. [0.00 s]
+0.0.Bcustom2: Exited with Success (@ 0.00 s)
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0.0.M: Trace Attempt 56	[1.40 s]
+0.0.M: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.45 s].
+0.0.M: Morphing to Hts
+0.0.M: All properties determined. [0.00 s]
+0.0.M: Exited with Success (@ 0.00 s)
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0.0.Ncustom1: Trace Attempt 886	[0.40 s]
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.37 s].
+0.0.Ncustom1: Morphing to AMcustom3
+0.0.Ncustom1: All properties determined. [0.00 s]
+0.0.Ncustom1: Exited with Success (@ 0.00 s)
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0.0.Tri: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hts: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Hts: Trace Attempt  1	[0.00 s]
+0.0.Hts: Trace Attempt  2	[0.00 s]
+0.0.Hts: Trace Attempt  3	[0.00 s]
+0.0.Hts: Trace Attempt  4	[0.00 s]
+0.0.Hts: Trace Attempt  5	[0.00 s]
+0.0.AD: Trace Attempt 42	[0.90 s]
+0.0.AD: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.44 s].
+0.0.AD: Morphing to I
+0.0.AD: All properties determined. [0.00 s]
+0.0.AD: Exited with Success (@ 0.00 s)
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0.0.Hts: Trace Attempt 206	[0.01 s]
+0.0.Hts: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.03 s].
+0.0.Hts: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.Hts: Trace Attempt  1	[0.00 s]
+0.0.Hts: Trace Attempt  2	[0.00 s]
+0.0.Hts: Trace Attempt  3	[0.00 s]
+0.0.Hts: Trace Attempt  4	[0.00 s]
+0.0.Hts: Trace Attempt  5	[0.00 s]
+0.0.I: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.I: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.I: Trace Attempt  8	[0.00 s]
+0.0.I: Trace Attempt  1	[0.00 s]
+0.0.I: Trace Attempt  2	[0.00 s]
+0.0.I: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.AMcustom3: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  4	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.01 s]
+0.0.AMcustom3: Trace Attempt  2	[0.01 s]
+0.0.AMcustom3: Trace Attempt  3	[0.01 s]
+0.0.AMcustom3: Trace Attempt  5	[0.01 s]
+0.0.AMcustom3: Trace Attempt  1	[0.06 s]
+0.0.AMcustom3: Trace Attempt  2	[0.06 s]
+0.0.AMcustom3: Trace Attempt  3	[0.06 s]
+0.0.AMcustom3: Trace Attempt  5	[0.06 s]
+0.0.K: Trace Attempt 886	[0.21 s]
+0.0.K: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.63 s].
+0.0.K: Morphing to D
+0.0.K: All properties determined. [0.00 s]
+0.0.K: Exited with Success (@ 0.00 s)
+0: Running jobs with 12 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 12 threads on "pal-achieve-06" with 4 cores.
+0.0.D: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.D: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.Tri: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.Tri: Trace Attempt  1	[0.00 s]
+0.0.Tri:    0.00" ---- Launching main thread ----
+0.0.U2: Restart 58, Seed 17a621075
+0.0.U2: Trace Attempt  1	[96.09 s]
+0.0.Ht: Trace Attempt 650	[278.58 s]
+0.0.Bm: Trace Attempt 650	[278.73 s]
+0.0.Tri:    2.50" ---- Launching abstraction thread ----
+0.0.Tri:    2.96" ---- Launching multi-phase simplification thread ----
+0.0.J: Trace Attempt 2056192	[98.04 s]
+0.0.Mpcustom4: Trace Attempt 385	[280.70 s]
+0.0.U2: Restart 59, Seed 17cf62482
+0.0.U2: Trace Attempt  1	[98.42 s]
+0.0.AMcustom3: Trace Attempt 276	[4.24 s]
+0.0.Tri: Trace Attempt  2	[3.96 s]
+0.0.Tri: Trace Attempt  3	[3.96 s]
+0.0.Tri: Trace Attempt  4	[3.96 s]
+0.0.Tri: Trace Attempt  5	[3.96 s]
+0.0.U2: Restart 60, Seed 10113c564
+0.0.U2: Trace Attempt  1	[100.17 s]
+0.0.L: Using states from traces to { eth_txcounters.v_eth_txcounters._assert_9 <16> }
+0.0.L: Trace Attempt  3	[100.13 s]
+0.0.L: Trace Attempt  4	[100.13 s]
+0.0.L: Trace Attempt  5	[100.13 s]
+0.0.Ht: Trace Attempt 652	[283.35 s]
+0.0.I: Trace Attempt 81	[6.80 s]
+0.0.Bm: Trace Attempt 653	[283.55 s]
+0.0.Tri:    7.01" Simplification phase 1 complete
+0.0.U2: Restart 61, Seed 112ff0420
+0.0.U2: Trace Attempt  1	[101.94 s]
+0.0.J: Trace Attempt 2652160	[102.05 s]
+0.0.AMcustom3: Trace Attempt 96	[8.27 s]
+0.0.Tri:    7.95" Simplification phase 2 complete
+0.0.U2: Restart 62, Seed 12bb2089d
+0.0.U2: Trace Attempt  1	[102.98 s]
+0.0.Tri: Trace Attempt 3623	[8.46 s]
+0.0.L: Trace Attempt 134	[104.14 s]
+0.0.Ht: Trace Attempt 668	[287.57 s]
+0.0.Bm: Trace Attempt 668	[287.61 s]
+0.0.Mpcustom4: Trace Attempt 300	[288.24 s]
+0.0.U2: Restart 63, Seed 1154532a7
+0.0.U2: Trace Attempt  1	[105.89 s]
+0.0.J: Trace Attempt 3670016	[106.05 s]
+0.0.I: Trace Attempt 92	[12.01 s]
+0.0.AMcustom3: Trace Attempt 181	[12.30 s]
+0.0.Tri:   12.11" Simplification phase 3 complete
+  12.11" ---- Completed simplification thread ----
+  12.11" ---- Restarting main thread on simplified netlist ----
+0.0.D: Trace Attempt 77	[13.01 s]
+0.0.U2: Restart 64, Seed 1446d965b
+0.0.U2: Trace Attempt  1	[108.33 s]
+0.0.L: Trace Attempt 171	[108.48 s]
+0.0.J: Trace Attempt 4231168	[110.05 s]
+0.0.Mpcustom4: Trace Attempt 369	[292.70 s]
+0.0.I: Per property time limit expired (16.00 s) [16.00 s]
+0.0.I: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[16.01 s].
+0.0.I: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.I: Trace Attempt  1	[0.00 s]
+0.0.I: Trace Attempt  2	[0.00 s]
+0.0.I: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt 241	[15.93 s]
+0.0.AMcustom3: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[16.01 s].
+0.0.AMcustom3: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  4	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.D: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[15.85 s].
+0.0.D: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Tri: Trace Attempt 6072	[9.01 s]
+0.0.Tri: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[15.73 s].
+0.0.Tri: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Tri: Trace Attempt  1	[0.00 s]
+0.0.Tri:   15.62" ---- Launching main thread ----
+0.0.AMcustom3: Trace Attempt  1	[0.14 s]
+0.0.AMcustom3: Trace Attempt  2	[0.14 s]
+0.0.AMcustom3: Trace Attempt  3	[0.14 s]
+0.0.AMcustom3: Trace Attempt  5	[0.14 s]
+0.0.U2: Restart 65, Seed 118b9fd0e
+0.0.U2: Trace Attempt  1	[110.55 s]
+0.0.Hts: Trace Attempt 649	[0.26 s]
+0.0.Hts: Per property time limit expired (16.00 s) [16.26 s]
+0.0.Hts: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[16.26 s].
+0.0.Hts: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Hts: Trace Attempt  1	[0.00 s]
+0.0.Hts: Trace Attempt  2	[0.00 s]
+0.0.Hts: Trace Attempt  3	[0.01 s]
+0.0.Hts: Trace Attempt  4	[0.01 s]
+0.0.Hts: Trace Attempt  5	[0.01 s]
+0.0.Tri:   18.37" ---- Launching abstraction thread ----
+0.0.U2: Restart 66, Seed 1617a244b
+0.0.U2: Trace Attempt  1	[113.26 s]
+0.0.Tri:   18.56" ---- Launching multi-phase simplification thread ----
+0.0.L: Trace Attempt 187	[113.22 s]
+0.0.Tri: Trace Attempt  2	[3.49 s]
+0.0.Tri: Trace Attempt  3	[3.49 s]
+0.0.Tri: Trace Attempt  4	[3.49 s]
+0.0.Tri: Trace Attempt  5	[3.49 s]
+0.0.J: Trace Attempt 5208064	[114.06 s]
+0.0.AMcustom3: Trace Attempt 79	[4.15 s]
+0.0.Tri:   20.94" Simplification phase 1 complete
+0.0.U2: Restart 67, Seed 11325207e
+0.0.U2: Trace Attempt  1	[116.15 s]
+0.0.Tri:   21.77" Simplification phase 2 complete
+0.0.Mpcustom4: Trace Attempt 304	[299.58 s]
+0.0.J: Trace Attempt 6629376	[118.06 s]
+0.0.U2: Restart 68, Seed 16b1dfd0b
+0.0.U2: Trace Attempt  1	[118.41 s]
+0.0.AMcustom3: Trace Attempt 165	[8.15 s]
+0.0.L: Trace Attempt 192	[119.10 s]
+0.0.Tri: Trace Attempt 783	[9.80 s]
+0.0.Ht: Trace Attempt 671	[302.99 s]
+0.0.Tri:   26.00" Simplification phase 3 complete
+  26.00" ---- Completed simplification thread ----
+  26.00" ---- Restarting main thread on simplified netlist ----
+0.0.U2: Restart 69, Seed 116803f49
+0.0.U2: Trace Attempt  1	[120.90 s]
+0.0.Mpcustom4: Trace Attempt 397	[303.62 s]
+0.0.J: Trace Attempt 7706624	[122.08 s]
+0.0.AMcustom3: Trace Attempt 247	[12.18 s]
+0.0.Bm: Trace Attempt 671	[304.86 s]
+0.0.U2: Restart 70, Seed 1680d8f00
+0.0.U2: Trace Attempt  1	[123.06 s]
+0.0.AMcustom3: Trace Attempt  1	[13.26 s]
+0.0.AMcustom3: Trace Attempt  2	[13.26 s]
+0.0.AMcustom3: Trace Attempt  3	[13.26 s]
+0.0.AMcustom3: Trace Attempt  5	[13.26 s]
+0.0.U2: Restart 71, Seed 118e442ce
+0.0.U2: Trace Attempt  1	[123.76 s]
+0.0.Tri:   29.14" ---- Restarting abstraction thread on simplified netlist ----
+0.0.Ht: Trace Attempt 707	[307.34 s]
+0.0.Mpcustom4: Trace Attempt 305	[308.20 s]
+0.0.J: Trace Attempt 8951808	[126.08 s]
+0.0.L: Trace Attempt 207	[125.78 s]
+0.0.I: Trace Attempt 50	[1.13 s]
+0.0.I: Per property time limit expired (16.00 s) [16.08 s]
+0.0.I: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[16.07 s].
+0.0.AMcustom3: Trace Attempt 162	[15.73 s]
+0.0.AMcustom3: Per property time limit expired (16.00 s) [16.04 s]
+0.0.AMcustom3: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[16.05 s].
+0.0.I: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.AMcustom3: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  4	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.00 s]
+0.0.AMcustom3: Trace Attempt  5	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  2	[0.00 s]
+0.0.AMcustom3: Trace Attempt  3	[0.01 s]
+0.0.AMcustom3: Trace Attempt  5	[0.01 s]
+0.0.D: Trace Attempt 64	[4.72 s]
+0.0.D: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[16.07 s].
+0.0.D: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.D: Trace Attempt 64	[0.01 s]
+0.0.I: Trace Attempt 12	[0.00 s]
+0.0.I: Trace Attempt  1	[0.00 s]
+0.0.I: Trace Attempt  2	[0.00 s]
+0.0.I: Trace Attempt  3	[0.00 s]
+0.0.Tri: Trace Attempt 1917	[10.38 s]
+0.0.Tri: Per property time limit expired (16.00 s) [16.01 s]
+0.0.Tri: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[16.00 s].
+0.0.Tri: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Tri: Trace Attempt  1	[0.00 s]
+0.0.AMcustom3: Trace Attempt  1	[0.07 s]
+0.0.AMcustom3: Trace Attempt  2	[0.07 s]
+0.0.AMcustom3: Trace Attempt  3	[0.07 s]
+0.0.AMcustom3: Trace Attempt  5	[0.07 s]
+0.0.U2: Restart 72, Seed 14cfc5423
+0.0.U2: Trace Attempt  1	[126.52 s]
+0.0.Tri:   31.71" ---- Launching main thread ----
+0.0.Hts: Trace Attempt 886	[0.81 s]
+0.0.Hts: Per property time limit expired (16.00 s) [16.03 s]
+0.0.Hts: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[16.02 s].
+0.0.Hts: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Hts: Trace Attempt  1	[0.06 s]
+0.0.Hts: Trace Attempt  2	[0.06 s]
+0.0.Hts: Trace Attempt  3	[0.06 s]
+0.0.Hts: Trace Attempt  4	[0.06 s]
+0.0.Hts: Trace Attempt  5	[0.06 s]
+0.0.AMcustom3: Trace Attempt 36	[0.48 s]
+0.0.AMcustom3: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.52 s].
+0.0.AMcustom3: Morphing to Ncustom1
+0.0.AMcustom3: All properties determined. [0.00 s]
+0.0.AMcustom3: Exited with Success (@ 0.00 s)
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0.0.Ncustom1: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Hts: Trace Attempt 723	[0.34 s]
+0.0.Hts: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.44 s].
+0.0.Hts: Morphing to M
+0.0.Hts: All properties determined. [0.00 s]
+0.0.Hts: Exited with Success (@ 0.00 s)
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0.0.M: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.M: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt  5	[0.00 s]
+0.0.I: Trace Attempt 50	[0.56 s]
+0.0.I: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.68 s].
+0.0.I: Morphing to Tricustom14
+0.0.I: All properties determined. [0.00 s]
+0.0.I: Exited with Success (@ 0.00 s)
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0.0.Tricustom14: Starting clock optimization
+0.0.Tricustom14: Finished clock optimization
+0.0.Tricustom14: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.D: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.68 s].
+0.0.D: Morphing to AD
+0.0.D: All properties determined. [0.00 s]
+0.0.D: Exited with Success (@ 0.00 s)
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.07 s].
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.Ncustom1: Trace Attempt 37	[0.00 s]
+0.0.AD: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.AD: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.AD: Trace Attempt  1	[0.00 s]
+0.0.AD: Trace Attempt  2	[0.00 s]
+0.0.AD: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt 17	[0.01 s]
+0.0.M: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.09 s].
+0.0.M: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt  5	[0.00 s]
+0.0.Tri: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.70 s].
+0.0.AD: Trace Attempt  4	[0.00 s]
+0.0.AD: Trace Attempt  5	[0.00 s]
+0.0.AD: Trace Attempt  1	[0.00 s]
+0.0.AD: Trace Attempt  2	[0.00 s]
+0.0.AD: Trace Attempt  5	[0.00 s]
+0.0.AD: Trace Attempt  1	[0.01 s]
+0.0.AD: Trace Attempt  2	[0.01 s]
+0.0.Tri: Morphing to Bcustom2
+0.0.Tri: All properties determined. [0.00 s]
+0.0.Tri: Exited with Success (@ 0.00 s)
+0: Running jobs with 12 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 12 threads on "pal-achieve-06" with 4 cores.
+0.0.Ncustom1: Trace Attempt  1	[0.04 s]
+0.0.Ncustom1: Trace Attempt  2	[0.04 s]
+0.0.Ncustom1: Trace Attempt  3	[0.04 s]
+0.0.Ncustom1: Trace Attempt  5	[0.04 s]
+0.0.Bcustom2: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Bcustom2: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.Bcustom2: Trace Attempt  1	[0.00 s]
+0.0.Bcustom2: Trace Attempt  2	[0.00 s]
+0.0.Bcustom2: Trace Attempt  3	[0.00 s]
+0.0.Bcustom2: Trace Attempt  4	[0.00 s]
+0.0.Bcustom2: Trace Attempt  5	[0.00 s]
+0.0.AD: Trace Attempt  1	[0.31 s]
+0.0.AD: Trace Attempt  2	[0.31 s]
+0.0.AD: Trace Attempt  4	[0.31 s]
+0.0.Tricustom14: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[0.00 s].
+0.0.Tricustom14: Trace Attempt  4	[0.00 s]
+0.0.Bm: Trace Attempt 710	[310.76 s]
+0.0.Tricustom14:    0.00" ---- Launching main thread ----
+0.0.U2: Restart 73, Seed 16a507e21
+0.0.U2: Trace Attempt  1	[129.13 s]
+0.0.Ht: Trace Attempt 711	[311.70 s]
+0.0.J: Trace Attempt 10936320	[130.10 s]
+0.0.L: Trace Attempt 214	[130.01 s]
+0.0.U2: Restart 74, Seed 1258b6309
+0.0.U2: Trace Attempt  1	[130.80 s]
+0.0.Mpcustom4: Trace Attempt 369	[313.52 s]
+0.0.Bcustom2: Trace Attempt 159	[4.01 s]
+0.0.M: Trace Attempt 146	[4.04 s]
+0.0.Ncustom1: Trace Attempt 163	[4.26 s]
+0.0.Tricustom14:    3.16" ---- Launching abstraction thread ----
+0.0.AD: Trace Attempt 64	[4.60 s]
+0.0.Tricustom14:    3.78" ---- Launching multi-phase simplification thread ----
+0.0.Bm: Trace Attempt 728	[314.77 s]
+0.0.U2: Restart 75, Seed 132340150
+0.0.U2: Trace Attempt  1	[132.83 s]
+0.0.Tricustom14: Trace Attempt 12	[5.33 s]
+0.0.Ht: Trace Attempt 731	[315.84 s]
+0.0.U2: Restart 76, Seed 12ccde78e
+0.0.U2: Trace Attempt  1	[133.60 s]
+0.0.J: Trace Attempt 11812864	[134.10 s]
+0.0.Tricustom14:    6.27" Simplification phase 1 complete
+0.0.J: Trace Attempt  1	[135.04 s]
+0.0.Mpcustom4: Trace Attempt 407	[317.59 s]
+0.0.Bcustom2: Trace Attempt 214	[8.12 s]
+0.0.U2: Restart 77, Seed 108c538b5
+0.0.U2: Trace Attempt  1	[135.71 s]
+0.0.Ncustom1: Trace Attempt 224	[8.76 s]
+0.0.Bm: Trace Attempt 737	[318.84 s]
+0.0.M: Trace Attempt 152	[10.11 s]
+0.0.Ht: Trace Attempt 738	[319.92 s]
+0.0.L: Trace Attempt 215	[137.09 s]
+0.0.U2: Restart 78, Seed 13e914224
+0.0.U2: Trace Attempt  1	[138.28 s]
+0.0.Tricustom14:   10.24" Simplification phase 2 complete
+0.0.J: Trace Attempt 976896	[139.05 s]
+0.0.Mpcustom4: Trace Attempt 306	[321.67 s]
+0.0.Bcustom2: Trace Attempt 278	[12.23 s]
+0.0.U2: Restart 79, Seed 1199da0bc
+0.0.U2: Trace Attempt  1	[140.52 s]
+0.0.Tricustom14: Trace Attempt 6072	[6.95 s]
+0.0.Tricustom14: A trace with 6072 cycles was found. [12.41 s]
+INFO (IPF047): 0.0.Tricustom14: The cover property "eth_txcounters.v_eth_txcounters._assert_5:precondition1" was covered in 6072 cycles in 13.05 s.
+INFO (IPF047): 0.0.Tricustom14: The cover property "eth_txcounters.v_eth_txcounters._assert_6:precondition1" was covered in 6072 cycles in 13.05 s by the incidental trace "eth_txcounters.v_eth_txcounters._assert_5:precondition1".
+0.0.Ncustom1: Trace Attempt 283	[12.01 s]
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[13.58 s].
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.AD: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[13.58 s].
+0.0.AD: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.AD: Trace Attempt  1	[0.00 s]
+0.0.AD: Trace Attempt  2	[0.00 s]
+0.0.AD: Trace Attempt  3	[0.00 s]
+0.0.AD: Trace Attempt  4	[0.00 s]
+0.0.AD: Trace Attempt  5	[0.00 s]
+0.0.AD: Trace Attempt  1	[0.00 s]
+0.0.AD: Trace Attempt  2	[0.00 s]
+0.0.AD: Trace Attempt  3	[0.00 s]
+0.0.AD: Trace Attempt  1	[0.01 s]
+0.0.AD: Trace Attempt  2	[0.01 s]
+0.0.AD: Trace Attempt  3	[0.01 s]
+0.0.M: Trace Attempt 220	[12.94 s]
+0.0.M: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[13.57 s].
+0.0.M: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt  5	[0.00 s]
+0.0.Bcustom2: Trace Attempt 281	[13.27 s]
+0.0.Bcustom2: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[13.57 s].
+0.0.AD: Trace Attempt  1	[0.07 s]
+0.0.AD: Trace Attempt  2	[0.07 s]
+0.0.Bm: Trace Attempt 743	[323.09 s]
+0.0.AD: Trace Attempt  3	[0.07 s]
+0.0.Ncustom1: Trace Attempt 886	[0.12 s]
+0.0.Bcustom2: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Bcustom2: Trace Attempt  1	[0.00 s]
+0.0.Bcustom2: Trace Attempt  2	[0.00 s]
+0.0.Bcustom2: Trace Attempt  3	[0.00 s]
+0.0.Bcustom2: Trace Attempt  4	[0.00 s]
+0.0.Bcustom2: Trace Attempt  5	[0.00 s]
+0.0.Tricustom14: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_5:precondition1"	[13.21 s].
+0.0.Tricustom14: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Tricustom14: Trace Attempt  4	[0.00 s]
+0.0.Tricustom14:   12.40" ---- Launching main thread ----
+0: ProofGrid usable level: 2
+0.0.AD: Trace Attempt 16	[0.08 s]
+0.0.AD: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.68 s].
+0.0.AD: Morphing to K
+0.0.AD: All properties determined. [0.00 s]
+0.0.AD: Exited with Success (@ 0.00 s)
+0: Running jobs with 12 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 12 threads on "pal-achieve-06" with 4 cores.
+0.0.Bcustom2: Trace Attempt 68	[0.25 s]
+0.0.Bcustom2: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.61 s].
+0.0.Bcustom2: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Bcustom2: Trace Attempt  1	[0.00 s]
+0.0.Bcustom2: Trace Attempt  2	[0.00 s]
+0.0.Bcustom2: Trace Attempt  3	[0.00 s]
+0.0.Bcustom2: Trace Attempt  4	[0.00 s]
+0.0.Bcustom2: Trace Attempt  5	[0.00 s]
+0.0.K: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.K: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.M: Trace Attempt 35	[0.64 s]
+0.0.M: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.75 s].
+0.0.M: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt  5	[0.00 s]
+0.0.Tricustom14: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.64 s].
+0.0.Tricustom14: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Tricustom14: Trace Attempt  4	[0.00 s]
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.81 s].
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.K: Trace Attempt 886	[0.24 s]
+0.0.U2: Restart 80, Seed 1008d6e7a
+0.0.U2: Trace Attempt  1	[141.86 s]
+0.0.Ht: Trace Attempt 745	[324.39 s]
+0.0.J: Trace Attempt 1732608	[143.07 s]
+0.0.Tricustom14:   14.84" ---- Launching abstraction thread ----
+0.0.Mpcustom4: Trace Attempt 369	[325.74 s]
+0.0.U2: Restart 81, Seed 1720515ff
+0.0.U2: Trace Attempt  1	[143.46 s]
+0.0.Tricustom14:   15.00" ---- Launching multi-phase simplification thread ----
+0.0.Tricustom14:   15.31" ---- Launching main thread ----
+0.0.L: Trace Attempt 217	[143.42 s]
+0.0.Bm: Trace Attempt 755	[327.22 s]
+0.0.U2: Restart 82, Seed 11457c16f
+0.0.U2: Trace Attempt  1	[145.18 s]
+0.0.Bcustom2: Trace Attempt 128	[4.01 s]
+0.0.M: Trace Attempt 68	[4.22 s]
+0.0.Tricustom14:   17.95" ---- Launching abstraction thread ----
+0.0.Ht: Trace Attempt 756	[328.82 s]
+0.0.U2: Restart 83, Seed 1237670d8
+0.0.U2: Trace Attempt  1	[146.53 s]
+0.0.Tricustom14:   18.57" ---- Launching multi-phase simplification thread ----
+0.0.J: Trace Attempt 2336768	[147.12 s]
+0.0.Mpcustom4: Trace Attempt 414	[329.83 s]
+0.0.Tricustom14: Trace Attempt  8	[6.50 s]
+0.0.U2: Restart 84, Seed 17f0db69d
+0.0.U2: Trace Attempt  1	[148.66 s]
+0.0.Bcustom2: Trace Attempt 171	[8.40 s]
+0.0.Tricustom14:   22.03" Simplification phase 1 complete
+0.0.Ht: Trace Attempt 765	[333.19 s]
+0.0.Bm: Trace Attempt 765	[333.31 s]
+0.0.J: Trace Attempt 2959360	[151.14 s]
+0.0.L: Trace Attempt 220	[150.79 s]
+0.0.U2: Restart 85, Seed 16a97c4ed
+0.0.U2: Trace Attempt  1	[151.64 s]
+0.0.Mpcustom4: Trace Attempt 369	[335.03 s]
+0.0.Tricustom14:   24.80" Simplification phase 2 complete
+0.0.Tricustom14: Trace Attempt 120	[12.19 s]
+0.0.U2: Restart 86, Seed 10e258851
+0.0.U2: Trace Attempt  1	[153.71 s]
+0.0.Bcustom2: Trace Attempt 212	[12.55 s]
+0.0.Tricustom14: Trace Attempt 128	[12.20 s]
+0.0.Tricustom14: Per property time limit expired (13.00 s) [13.02 s]
+0.0.Tricustom14: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[13.01 s].
+0.0.M: Trace Attempt 96	[8.15 s]
+0.0.M: Per property time limit expired (13.00 s) [13.07 s]
+0.0.M: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[13.05 s].
+0.0.M: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.Tricustom14: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.Tricustom14: Trace Attempt  4	[0.00 s]
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt  5	[0.00 s]
+0.0.K: Per property time limit expired (13.00 s) [13.13 s]
+0.0.K: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[13.13 s].
+0.0.K: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.K: Trace Attempt  2	[0.00 s]
+0.0.K: Trace Attempt  1	[0.00 s]
+0.0.K: Trace Attempt  2	[0.00 s]
+0.0.K: Trace Attempt  3	[0.00 s]
+0.0.K: Trace Attempt  4	[0.00 s]
+0.0.K: Trace Attempt  5	[0.00 s]
+0.0.Tricustom14:   26.09" ---- Launching main thread ----
+0.0.Bcustom2: Per property time limit expired (13.00 s) [13.22 s]
+0.0.Bcustom2: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[13.22 s].
+0.0.Bcustom2: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.Bcustom2: Trace Attempt  1	[0.00 s]
+0.0.Bcustom2: Trace Attempt  2	[0.00 s]
+0.0.Bcustom2: Trace Attempt  3	[0.00 s]
+0.0.Bcustom2: Trace Attempt  4	[0.00 s]
+0.0.Bcustom2: Trace Attempt  5	[0.00 s]
+0.0.Ncustom1: Trace Attempt 886	[0.24 s]
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[13.16 s].
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.Ncustom1: Trace Attempt  2	[0.00 s]
+0.0.Ncustom1: Trace Attempt  3	[0.00 s]
+0.0.Ncustom1: Trace Attempt  4	[0.00 s]
+0.0.Ncustom1: Trace Attempt  5	[0.00 s]
+0.0.Ncustom1: Trace Attempt  1	[0.00 s]
+0.0.Ncustom1: Trace Attempt  2	[0.00 s]
+0.0.Ncustom1: Trace Attempt  3	[0.00 s]
+0.0.J: Trace Attempt 3823616	[155.18 s]
+0.0.U2: Restart 87, Seed 1009613f8
+0.0.U2: Trace Attempt  1	[155.81 s]
+0.0.Tricustom14:   28.24" ---- Launching abstraction thread ----
+0.0.Tricustom14:   28.49" ---- Launching multi-phase simplification thread ----
+0.0.U2: Restart 88, Seed 16c2de698
+0.0.U2: Trace Attempt  1	[157.87 s]
+0.0.L: Trace Attempt 222	[157.93 s]
+0.0.Ncustom1: Trace Attempt 69	[4.04 s]
+0.0.Bcustom2: Trace Attempt 143	[4.13 s]
+0.0.K: Trace Attempt 173	[4.32 s]
+0.0.M: Trace Attempt 56	[4.45 s]
+0.0.Tricustom14: Trace Attempt 56	[4.52 s]
+0.0.J: Trace Attempt 4761600	[159.23 s]
+0.0.Mpcustom4: Trace Attempt 368	[341.83 s]
+0.0.U2: Restart 89, Seed 10508fc22
+0.0.U2: Trace Attempt  1	[160.26 s]
+0.0.U2: Restart 90, Seed 177775ff8
+0.0.U2: Trace Attempt  1	[162.54 s]
+0.0.Ncustom1: Trace Attempt 83	[8.04 s]
+0.0.M: Trace Attempt 95	[8.47 s]
+0.0.Bcustom2: Trace Attempt 243	[8.55 s]
+0.0.J: Trace Attempt 5511168	[163.26 s]
+0.0.K: Trace Attempt 215	[8.85 s]
+0.0.Tricustom14: Trace Attempt 288	[9.79 s]
+0.0.L: Trace Attempt 223	[164.18 s]
+0.0.Mpcustom4: Trace Attempt 368	[347.55 s]
+0.0.Tricustom14:   36.70" Simplification phase 1 complete
+0.0.U2: Restart 91, Seed 11bb406b3
+0.0.U2: Trace Attempt  1	[165.65 s]
+0.0.Ht: Trace Attempt 774	[348.09 s]
+0.0.Bm: Trace Attempt 774	[348.15 s]
+0.0.U2: Restart 92, Seed 16b4e711b
+0.0.U2: Trace Attempt  1	[166.45 s]
+0.0.M: Trace Attempt 112	[12.64 s]
+0.0.Ncustom1: Trace Attempt 120	[12.51 s]
+0.0.J: Trace Attempt 6256640	[167.28 s]
+0.0.Bcustom2: Trace Attempt 302	[12.89 s]
+0.0.M: Trace Attempt 115	[12.96 s]
+0.0.M: Per property time limit expired (13.00 s) [13.02 s]
+0.0.M: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[13.03 s].
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[12.89 s].
+0.0.Ncustom1: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Bcustom2: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[12.95 s].
+0.0.Bcustom2: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Bcustom2: Trace Attempt  1	[0.00 s]
+0.0.Bcustom2: Trace Attempt  2	[0.00 s]
+0.0.Bcustom2: Trace Attempt  3	[0.00 s]
+0.0.Bcustom2: Trace Attempt  4	[0.00 s]
+0.0.Bcustom2: Trace Attempt  5	[0.00 s]
+0.0.K: Trace Attempt 218	[12.82 s]
+0.0.K: Per property time limit expired (13.00 s) [13.00 s]
+0.0.K: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[13.01 s].
+0.0.K: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.M: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.M: Trace Attempt  1	[0.00 s]
+0.0.M: Trace Attempt  2	[0.00 s]
+0.0.M: Trace Attempt  3	[0.00 s]
+0.0.M: Trace Attempt  5	[0.00 s]
+0.0.Tricustom14: Trace Attempt 328	[13.04 s]
+0.0.Tricustom14: Per property time limit expired (13.00 s) [13.07 s]
+0.0.Tricustom14: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[13.09 s].
+0.0.Tricustom14: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Tricustom14: Trace Attempt  4	[0.00 s]
+0.0.Tricustom14:   39.14" ---- Launching main thread ----
+0.0.K: Trace Attempt 886	[0.09 s]
+0.0.U2: Restart 93, Seed 13320536f
+0.0.U2: Trace Attempt  1	[167.78 s]
+0.0.L: Trace Attempt 224	[168.71 s]
+0.0.Bcustom2: Trace Attempt 80	[1.85 s]
+0.0.Bcustom2: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.86 s].
+0.0.Bcustom2: Morphing to D
+0.0.Bcustom2: All properties determined. [0.00 s]
+0.0.Bcustom2: Exited with Success (@ 0.00 s)
+0: Running jobs with 8 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 8 threads on "pal-achieve-06" with 4 cores.
+0.0.D: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.D: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.D: Trace Attempt  1	[0.00 s]
+0.0.D: Trace Attempt  2	[0.00 s]
+0.0.D: Trace Attempt  3	[0.00 s]
+0.0.Tricustom14: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.85 s].
+0.0.M: Trace Attempt 38	[1.49 s]
+0.0.M: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.93 s].
+0.0.M: Morphing to AD
+0.0.M: All properties determined. [0.00 s]
+0.0.M: Exited with Success (@ 0.00 s)
+0: Running jobs with 9 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 9 threads on "pal-achieve-06" with 4 cores.
+0.0.AD: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.AD: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.AD: Trace Attempt  1	[0.00 s]
+0.0.AD: Trace Attempt  2	[0.00 s]
+0.0.AD: Trace Attempt  3	[0.00 s]
+0.0.AD: Trace Attempt  4	[0.00 s]
+0.0.AD: Trace Attempt  5	[0.00 s]
+0.0.K: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.94 s].
+0.0.K: Morphing to Ncustom6
+0.0.K: All properties determined. [0.00 s]
+0.0.K: Exited with Success (@ 0.00 s)
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 10 threads on "pal-achieve-06" with 4 cores.
+0.0.AD: Trace Attempt  1	[0.00 s]
+0.0.AD: Trace Attempt  2	[0.00 s]
+0.0.AD: Trace Attempt  3	[0.01 s]
+0.0.Ncustom1: Trace Attempt 886	[0.36 s]
+0.0.Ncustom1: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[1.94 s].
+0.0.Ncustom1: Morphing to Hts
+0.0.Ncustom1: All properties determined. [0.00 s]
+0.0.Ncustom1: Exited with Success (@ 0.00 s)
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0.0.Ncustom6: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Ncustom6: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.Ncustom6: Trace Attempt  1	[0.00 s]
+0.0.Ncustom6: Trace Attempt  2	[0.00 s]
+0.0.Ncustom6: Trace Attempt  3	[0.00 s]
+0.0.Ncustom6: Trace Attempt  4	[0.00 s]
+0.0.Ncustom6: Trace Attempt  1	[0.00 s]
+0.0.Ncustom6: Trace Attempt  2	[0.00 s]
+0.0.Ncustom6: Trace Attempt  3	[0.00 s]
+0.0.Hts: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hts: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.Hts: Trace Attempt  1	[0.00 s]
+0.0.Hts: Trace Attempt  2	[0.00 s]
+0.0.Hts: Trace Attempt  3	[0.00 s]
+0.0.Hts: Trace Attempt  4	[0.00 s]
+0.0.Hts: Trace Attempt  5	[0.00 s]
+0.0.AD: Trace Attempt  1	[0.06 s]
+0.0.AD: Trace Attempt  2	[0.06 s]
+0.0.AD: Trace Attempt  3	[0.06 s]
+0.0.Tricustom14: Morphing to ADcustom7
+0.0.Tricustom14: All properties determined. [0.00 s]
+0.0.Tricustom14: Exited with Success (@ 0.00 s)
+0: Running jobs with 12 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 12 threads on "pal-achieve-06" with 4 cores.
+0.0.ADcustom7: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.ADcustom7: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_2"	[0.00 s].
+0.0.ADcustom7: Trace Attempt  1	[0.00 s]
+0.0.ADcustom7: Trace Attempt  2	[0.00 s]
+0.0.ADcustom7: Trace Attempt  3	[0.00 s]
+0.0.ADcustom7: Trace Attempt  4	[0.00 s]
+0.0.ADcustom7: Trace Attempt  5	[0.00 s]
+0.0.ADcustom7: Trace Attempt  1	[0.00 s]
+0.0.ADcustom7: Trace Attempt  2	[0.00 s]
+0.0.ADcustom7: Trace Attempt  3	[0.00 s]
+0.0.ADcustom7: Trace Attempt  1	[0.03 s]
+0.0.ADcustom7: Trace Attempt  2	[0.03 s]
+0.0.ADcustom7: Trace Attempt  3	[0.03 s]
+0.0.Ht: Trace Attempt 780	[352.12 s]
+0.0.AD: Trace Attempt  1	[0.30 s]
+0.0.AD: Trace Attempt  2	[0.30 s]
+0.0.AD: Trace Attempt  3	[0.30 s]
+0.0.ADcustom7: Trace Attempt  1	[0.25 s]
+0.0.ADcustom7: Trace Attempt  2	[0.25 s]
+0.0.ADcustom7: Trace Attempt  3	[0.25 s]
+0.0.U2: Restart 94, Seed 1009af23c
+0.0.U2: Trace Attempt  1	[170.77 s]
+0.0.Bm: Trace Attempt 781	[353.09 s]
+0.0.J: Trace Attempt 6848512	[171.30 s]
+0.0.U2: Restart 95, Seed 177924dbd
+0.0.U2: Trace Attempt  1	[172.52 s]
+0.0.Mpcustom4: Trace Attempt 368	[354.95 s]
+0.0.Ht: Trace Attempt 789	[356.18 s]
+0.0.Ncustom6: Trace Attempt 69	[4.37 s]
+0.0.Bm: Trace Attempt 791	[357.23 s]
+0.0.U2: Restart 96, Seed 10a0d6d8a
+0.0.U2: Trace Attempt  1	[175.08 s]
+0.0.L: Trace Attempt 226	[174.67 s]
+0.0.J: Trace Attempt 7903232	[175.31 s]
+0.0.U2: Restart 97, Seed 150aee034
+0.0.U2: Trace Attempt  1	[176.72 s]
+0.0.Mpcustom4: Trace Attempt 430	[359.36 s]
+0.0.Ht: Trace Attempt 795	[360.20 s]
+0.0.Ncustom6: Trace Attempt 84	[9.44 s]
+0.0.U2: Restart 98, Seed 177dd5547
+0.0.Bm: Trace Attempt 796	[361.33 s]
+0.0.U2: Trace Attempt  1	[179.09 s]
+0.0.J: Trace Attempt 8712192	[179.32 s]
+0.0.L: Trace Attempt 227	[178.99 s]
+0.0.U2: Restart 99, Seed 152176cab
+0.0.U2: Trace Attempt  1	[181.15 s]
+0.0.Mpcustom4: Trace Attempt 369	[363.91 s]
+0.0.Ht: Trace Attempt 798	[364.75 s]
+0.0.AD: Trace Attempt 78	[12.91 s]
+0.0.ADcustom7: Trace Attempt 78	[12.96 s]
+0.0.Ncustom6: Trace Attempt 124	[13.48 s]
+0.0.J: Trace Attempt 9588736	[183.32 s]
+0.0.U2: Restart 100, Seed 1310717ab
+0.0.U2: Trace Attempt  1	[183.38 s]
+0.0.Bm: Trace Attempt 800	[366.34 s]
+0.0.U2: Requesting engine job to terminate
+0.0.J: Requesting engine job to terminate
+0.0.J: Interrupted (multi)
+0.0.J: Trace Attempt 9995919	[185.40 s]
+0.0.J: Interrupted. [185.40 s]
+0.0.J: Exited with Success (@ 368.22 s)
+0.0.U2: Trace Attempt 9011	[185.26 s]
+0.0.U2: Interrupted. [185.57 s]
+0.0.U2: Exited with Success (@ 368.39 s)
+0.0.U2: Engine should be restarted (starts=1, unexpected_terminations=0)
+   Last recorded data: 0.04 s ago
+   Last recorded RSS memory usage: 58.99 MiB, peak 58.99 MiB
+   Last recorded free memory: 1.59 GiB out of 4.43 GiB, nadir 1.51 GiB
+0.0.U2: Restarting engine (local)
+0.0.L: Trace Attempt 229	[185.30 s]
+0.0.U2: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Mpcustom4: Trace Attempt 369	[368.85 s]
+0.0.U2: Proofgrid shell started at 180322@pal-achieve-06(local) jg_174831_pal-achieve-06_1
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 11 threads on "pal-achieve-06" with 4 cores.
+0.0.U2: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.U2: Seed 1
+0.0.Ht: Trace Attempt 802	[369.13 s]
+0.0.U2: Trace Attempt  1	[0.60 s]
+0.0.U2: Restart 1, Seed 15144fc18
+0.0.U2: Trace Attempt  1	[0.63 s]
+0.0.Ncustom6: Trace Attempt 136	[17.57 s]
+0.0.U2: Restart 2, Seed 14f0a4fa6
+0.0.U2: Trace Attempt  1	[0.72 s]
+0.0.U2: Restart 3, Seed 170ec4eae
+0.0.U2: Trace Attempt  1	[0.80 s]
+0.0.U2: Restart 4, Seed 11f6a82e3
+0.0.U2: Trace Attempt  1	[0.90 s]
+0.0.U2: Restart 5, Seed 17b213e1b
+0.0.U2: Trace Attempt  1	[1.08 s]
+0.0.U2: Restart 6, Seed 178e2dd94
+0.0.U2: Trace Attempt  1	[1.48 s]
+0.0.Bm: Trace Attempt 805	[370.36 s]
+0.0.U2: Restart 7, Seed 169abb1ab
+0.0.U2: Trace Attempt  1	[1.93 s]
+0.0.U2: Restart 8, Seed 10d52ecf2
+0.0.U2: Trace Attempt  1	[2.69 s]
+0.0.U2: Restart 9, Seed 13a904a66
+0.0.U2: Trace Attempt  1	[3.87 s]
+0.0.Ht: Trace Attempt 813	[373.34 s]
+0.0.Mpcustom4: Trace Attempt 369	[373.98 s]
+0.0.Ncustom6: Trace Attempt 153	[22.16 s]
+0.0.U2: Restart 10, Seed 1634c3170
+0.0.U2: Trace Attempt  1	[5.71 s]
+0.0.Bm: Trace Attempt 819	[374.74 s]
+0.0.U2: Restart 11, Seed 1575d9c99
+0.0.U2: Trace Attempt  1	[7.88 s]
+0.0.L: Trace Attempt 232	[194.62 s]
+0.0.Ht: Trace Attempt 828	[377.87 s]
+0.0.Ncustom6: Trace Attempt 169	[26.70 s]
+0.0.Bm: Trace Attempt 829	[378.78 s]
+0.0.U2: Restart 12, Seed 151d84677
+0.0.U2: Trace Attempt  1	[10.28 s]
+0.0.Mpcustom4: Trace Attempt 369	[379.47 s]
+0.0.U2: Restart 13, Seed 137205c60
+0.0.U2: Trace Attempt  1	[12.48 s]
+0.0.Ht: Trace Attempt 837	[382.57 s]
+0.0.D: Trace Attempt 85	[30.82 s]
+0.0.Ncustom6: Trace Attempt 183	[30.81 s]
+0.0.Bm: Trace Attempt 838	[383.01 s]
+0.0.L: Using states from traces to { eth_txcounters.v_eth_txcounters._assert_4 <8> }
+0.0.L: Trace Attempt  3	[200.23 s]
+0.0.L: Trace Attempt  4	[200.23 s]
+0.0.L: Trace Attempt  5	[200.23 s]
+0.0.U2: Restart 14, Seed 155c4137f
+0.0.U2: Trace Attempt  1	[14.53 s]
+0.0.Mpcustom4: Trace Attempt 369	[384.38 s]
+0.0.U2: Restart 15, Seed 15b5728f0
+0.0.U2: Trace Attempt  1	[16.34 s]
+0.0.Ncustom6: Trace Attempt 204	[34.93 s]
+0.0.L: Trace Attempt 119	[204.23 s]
+0.0.U2: Restart 16, Seed 13b3e95a6
+0.0.U2: Trace Attempt  1	[18.56 s]
+0.0.U2: Restart 17, Seed 10e44abc7
+0.0.U2: Trace Attempt  1	[20.00 s]
+0.0.Mpcustom4: Trace Attempt 390	[389.54 s]
+0.0.U2: Restart 18, Seed 14c2f9827
+0.0.U2: Trace Attempt  1	[21.90 s]
+0.0.L: Trace Attempt 140	[208.25 s]
+0.0.Ncustom6: Trace Attempt 223	[39.43 s]
+0.0.U2: Restart 19, Seed 10af5a7ce
+0.0.U2: Trace Attempt  1	[23.99 s]
+0.0.Mpcustom4: Trace Attempt 389	[393.67 s]
+0.0.U2: Restart 20, Seed 156d69971
+0.0.U2: Trace Attempt  1	[25.77 s]
+0.0.Ht: Trace Attempt 840	[394.93 s]
+0.0.Bm: Trace Attempt 840	[394.92 s]
+0.0.L: Trace Attempt 173	[212.34 s]
+0.0.Ncustom6: Trace Attempt 228	[43.45 s]
+0.0.U2: Restart 21, Seed 15a7fa3f6
+0.0.U2: Trace Attempt  1	[27.81 s]
+0.0.Mpcustom4: Trace Attempt 402	[398.55 s]
+0.0.Ht: Trace Attempt 847	[399.18 s]
+0.0.Bm: Trace Attempt 847	[399.15 s]
+0.0.U2: Restart 22, Seed 161299d27
+0.0.U2: Trace Attempt  1	[30.59 s]
+0.0.L: Trace Attempt 179	[216.63 s]
+0.0.Ncustom6: Trace Attempt 236	[47.66 s]
+0.0.U2: Restart 23, Seed 15abf63d2
+0.0.U2: Trace Attempt  1	[32.81 s]
+0.0.Ht: Trace Attempt 852	[403.41 s]
+0.0.Bm: Trace Attempt 852	[403.43 s]
+0.0.U2: Restart 24, Seed 14e6ea415
+0.0.U2: Trace Attempt  1	[34.91 s]
+0.0.Ncustom6: Trace Attempt 239	[52.54 s]
+0.0.L: Trace Attempt 182	[222.72 s]
+0.0.U2: Restart 25, Seed 115ad841a
+0.0.U2: Trace Attempt  1	[36.82 s]
+0.0.Mpcustom4: Trace Attempt 402	[406.83 s]
+0.0.U2: Restart 26, Seed 1108bceae
+0.0.U2: Trace Attempt  1	[38.17 s]
+0.0.Ht: Trace Attempt 859	[407.50 s]
+0.0.Bm: Trace Attempt 860	[408.04 s]
+0.0.Ncustom6: Trace Attempt 257	[56.93 s]
+0.0.U2: Restart 27, Seed 16a7ef074
+0.0.U2: Trace Attempt  1	[40.18 s]
+0.0.L: Trace Attempt 185	[227.27 s]
+0.0.U2: Restart 28, Seed 13adb4920
+0.0.U2: Trace Attempt  1	[42.77 s]
+0.0.Ht: Trace Attempt 873	[411.84 s]
+0.0.Bm: Trace Attempt 874	[412.06 s]
+0.0.Mpcustom4: Trace Attempt 402	[412.85 s]
+0.0.U2: Restart 29, Seed 12533f136
+0.0.U2: Trace Attempt  1	[44.99 s]
+0.0.Ncustom6: Trace Attempt 279	[63.63 s]
+0.0.ADcustom7: Per property time limit expired (63.84 s) [63.85 s]
+0.0.ADcustom7: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[63.84 s].
+0.0.ADcustom7: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.ADcustom7: Trace Attempt  1	[0.00 s]
+0.0.ADcustom7: Trace Attempt  2	[0.00 s]
+0.0.ADcustom7: Trace Attempt  3	[0.00 s]
+0.0.ADcustom7: Trace Attempt  4	[0.00 s]
+0.0.ADcustom7: Trace Attempt  5	[0.00 s]
+0.0.ADcustom7: Trace Attempt  1	[0.00 s]
+0.0.ADcustom7: Trace Attempt  2	[0.00 s]
+0.0.ADcustom7: Trace Attempt  3	[0.00 s]
+0.0.ADcustom7: Trace Attempt  1	[0.01 s]
+0.0.ADcustom7: Trace Attempt  2	[0.01 s]
+0.0.ADcustom7: Trace Attempt  3	[0.01 s]
+0.0.Ht: Trace Attempt 877	[415.90 s]
+0.0.D: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[64.06 s].
+0.0.D: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.D: Trace Attempt  1	[0.00 s]
+0.0.D: Trace Attempt  2	[0.00 s]
+0.0.D: Trace Attempt  4	[0.00 s]
+0.0.ADcustom7: Trace Attempt  1	[0.06 s]
+0.0.ADcustom7: Trace Attempt  2	[0.06 s]
+0.0.ADcustom7: Trace Attempt  3	[0.06 s]
+0.0.U2: Restart 30, Seed 13c11db5f
+0.0.U2: Trace Attempt  1	[47.10 s]
+0.0.Hts: Trace Attempt 780	[0.62 s]
+0.0.Hts: Per property time limit expired (63.92 s) [64.02 s]
+0.0.Hts: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[64.02 s].
+0.0.Hts: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.Hts: Trace Attempt  1	[0.01 s]
+0.0.Hts: Trace Attempt  2	[0.01 s]
+0.0.Hts: Trace Attempt  3	[0.01 s]
+0.0.Hts: Trace Attempt  4	[0.01 s]
+0.0.Hts: Trace Attempt  5	[0.01 s]
+0.0.Ncustom6: Trace Attempt 280	[63.88 s]
+0.0.Ncustom6: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[64.07 s].
+0.0.Ncustom6: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.AD: Stopped processing property "eth_txcounters.v_eth_txcounters._assert_2"	[64.12 s].
+0.0.AD: Starting proof for property "eth_txcounters.v_eth_txcounters._assert_3:precondition1"	[0.00 s].
+0.0.AD: Trace Attempt  1	[0.00 s]
+0.0.AD: Trace Attempt  2	[0.00 s]
+0.0.AD: Trace Attempt  3	[0.00 s]
+0.0.AD: Trace Attempt  4	[0.00 s]
+0.0.AD: Trace Attempt  5	[0.00 s]
+0.0.AD: Trace Attempt  1	[0.00 s]
+0.0.AD: Trace Attempt  2	[0.00 s]
+0.0.AD: Trace Attempt  3	[0.00 s]
+0.0.AD: Trace Attempt  1	[0.01 s]
+0.0.AD: Trace Attempt  2	[0.01 s]
+0.0.AD: Trace Attempt  3	[0.01 s]
+0.0.AD: Trace Attempt  1	[0.07 s]
+0.0.AD: Trace Attempt  2	[0.07 s]
+0.0.AD: Trace Attempt  3	[0.07 s]
+0.0.Ncustom6: Trace Attempt 886	[0.37 s]
+0.0.L: Trace Attempt 189	[233.88 s]
+0.0.Bm: Trace Attempt 878	[416.80 s]
+0.0.Mpcustom4: Trace Attempt 402	[417.13 s]
+0.0.U2: Restart 31, Seed 1304fa05e
+0.0.U2: Trace Attempt  1	[48.60 s]
+0.0.U2: Restart 32, Seed 15dff57f5
+0.0.U2: Trace Attempt  1	[50.77 s]
+0.0.Ht: Trace Attempt 893	[420.20 s]
+0.0.Bm: Trace Attempt 894	[420.80 s]
+0.0.Mpcustom4: Trace Attempt 403	[421.72 s]
+0.0.U2: Restart 33, Seed 1441a0db9
+0.0.U2: Trace Attempt  1	[52.88 s]
+0.0.D: Trace Attempt 64	[6.11 s]
+0.0.L: Trace Attempt 191	[239.53 s]
+0.0.AD: Trace Attempt 80	[6.64 s]
+0.0.U2: Restart 34, Seed 122f0ab87
+0.0.U2: Trace Attempt  1	[53.99 s]
+0.0.ADcustom7: Trace Attempt 80	[7.91 s]
+0.0.U2: Restart 35, Seed 16d561b2d
+0.0.U2: Trace Attempt  1	[55.77 s]
+0.0.Ht: Trace Attempt 896	[424.75 s]
+0.0.U2: Restart 36, Seed 127b235f1
+0.0.U2: Trace Attempt  1	[57.24 s]
+0.0.Mpcustom4: Trace Attempt 402	[426.14 s]
+0.0.Bm: Trace Attempt 897	[426.09 s]
+0.0.L: Trace Attempt 193	[243.70 s]
+0.0.U2: Restart 37, Seed 16e3e529e
+0.0.U2: Trace Attempt  1	[59.17 s]
+0.0.Ht: Trace Attempt 900	[429.06 s]
+0.0.U2: Restart 38, Seed 14059b549
+0.0.U2: Trace Attempt  1	[61.01 s]
+0.0.Bm: Trace Attempt 902	[430.33 s]
+0.0.Mpcustom4: Trace Attempt 403	[431.56 s]
+0.0.U2: Restart 39, Seed 1457934fd
+0.0.U2: Trace Attempt  1	[62.79 s]
+0.0.L: Trace Attempt 196	[249.50 s]
+0.0.U2: Restart 40, Seed 140720af0
+0.0.U2: Trace Attempt  1	[64.77 s]
+0.0.U2: Restart 41, Seed 146153bbd
+0.0.U2: Trace Attempt  1	[66.93 s]
+0.0.Mpcustom4: Trace Attempt 403	[436.87 s]
+0.0.U2: Restart 42, Seed 1272f1d77
+0.0.U2: Trace Attempt  1	[68.98 s]
+0.0.U2: Restart 43, Seed 1421397d4
+0.0.U2: Trace Attempt  1	[70.71 s]
+0.0.U2: Restart 44, Seed 16ce80601
+0.0.U2: Trace Attempt  1	[71.71 s]
+0.0.U2: Restart 45, Seed 12ff29796
+0.0.U2: Trace Attempt  1	[73.58 s]
+0.0.Mpcustom4: Trace Attempt 403	[442.72 s]
+0.0.L: Trace Attempt 199	[259.82 s]
+0.0.U2: Restart 46, Seed 1025ba58e
+0.0.U2: Trace Attempt  1	[76.14 s]
+0.0.L: Trace Attempt 200	[264.04 s]
+0.0.U2: Restart 47, Seed 129d2d2df
+0.0.U2: Trace Attempt  1	[78.22 s]
+0.0.ADcustom7: Trace Attempt 120	[31.60 s]
+0.0.AD: Trace Attempt 120	[32.38 s]
+0.0.U2: Restart 48, Seed 10075a67c
+0.0.U2: Trace Attempt  1	[80.06 s]
+0.0.Mpcustom4: Trace Attempt 403	[449.73 s]
+0.0.U2: Restart 49, Seed 12912843c
+0.0.U2: Trace Attempt  1	[82.32 s]
+0.0.L: Trace Attempt 201	[268.98 s]
+0.0.U2: Restart 50, Seed 1679447d8
+0.0.U2: Trace Attempt  1	[84.78 s]
+0.0.U2: Restart 51, Seed 15cbaf5c1
+0.0.U2: Trace Attempt  1	[86.36 s]
+0.0.Mpcustom4: Trace Attempt 403	[456.11 s]
+0.0.U2: Restart 52, Seed 1029404d6
+0.0.U2: Trace Attempt  1	[87.82 s]
+0.0.U2: Restart 53, Seed 1241b4c83
+0.0.U2: Trace Attempt  1	[89.92 s]

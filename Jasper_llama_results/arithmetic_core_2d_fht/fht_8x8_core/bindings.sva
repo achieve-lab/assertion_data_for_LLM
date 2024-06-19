@@ -1,0 +1,13 @@
+bind fht_8x8_core
+ i_fht_8x8_core v_fht_8x8_core(
+.fht_2d_data(fht_2d_data),
+.mem_data(mem_data),
+.x_data(x_data),
+.sclk(sclk),
+.x_valid(x_valid),
+.fht_1d_valid(fht_1d_valid),
+.fht_1d_data(fht_1d_data),
+.fht_2d_valid(fht_2d_valid),
+.mem_valid(mem_valid),
+.rstn(rstn)
+);

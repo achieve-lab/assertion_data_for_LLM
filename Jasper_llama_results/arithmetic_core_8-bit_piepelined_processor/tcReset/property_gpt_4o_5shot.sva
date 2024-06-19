@@ -1,0 +1,12 @@
+`include "defines.v"
+module i_tcReset(
+	input [`tcNumbers-1:0] resets,
+	input [`tcNumbers-1:0] resetOut,
+	input tcResetEn, resetIn,
+	input [`tcAddrLen-1:0] tcAddr,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (tcResetEn) |-> (resetOut == resets));assert property(@(posedge DEFAULT_CLOCK) (tcResetEn && resetIn) |-> (resetOut[tcAddr] == 1));assert property(@(posedge DEFAULT_CLOCK) (tcResetEn && !resetIn) |-> (resetOut[tcAddr] == 0));
+endmodule

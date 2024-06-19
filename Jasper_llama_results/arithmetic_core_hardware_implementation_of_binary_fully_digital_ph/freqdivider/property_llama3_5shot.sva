@@ -1,0 +1,15 @@
+parameter DividerLength   = 7;
+module i_freqdivider(
+ input Positive, Negative,    // signals Positive, Negative are synchronous with MainClock
+ input MainClock,                 // main clock
+input [DividerLength-1 : 0] DividerCounter,
+input FrequencyOut        // inputistered input
+);
+
+assert property(@(posedge MainClock)  (Positive == 1) |-> (DividerCounter >=);
+assert property(@(posedge MainClock)  (FrequencyOut == 1) |-> (DividerCounter == 0));
+assert property(@(posedge MainClock)  (FrequencyOut == 0) |-> (DividerCounter == 0));
+assert property(@(posedge MainClock)  (Negative == 1) |-> (DividerCounter >= (DividerMaxValue - 1)));
+assert property(@(posedge MainClock)  (Positive == 1) |-> (DividerCounter >= (DividerMaxValue - 1)));
+
+endmodule

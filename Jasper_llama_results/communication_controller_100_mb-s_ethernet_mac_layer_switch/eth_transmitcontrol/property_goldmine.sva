@@ -1,0 +1,141 @@
+module i_eth_transmitcontrol(
+input            write_fifo,
+input         TxFlow,
+input        TxCtrlEndFrm,
+input [7:0]  ControlData,
+input           ControlEnd_q,
+input         TxDoneIn,
+input          ResetByteCnt,
+input            clear,
+input           WillSendControlFrame,
+input         TxEndFrmOut_uc,
+input           TxUsedDataIn_q,
+input           TxCtrlStartFrm,
+input          TxReset,
+input     [7:0]  TxData_wrapped_out_input,
+input            TxBufferEmpty,
+input        CtrlMux,
+input  [47:0] MAC,
+input          EnableCnt,
+input            TxBufferAlmostFull,
+input         TxUsedDataIn,
+input            StateCount , StateLeftinQ,
+input            TxBufferFull,
+input      [8:0] PreNib15State,
+input     [7:0]  TxData_wrapped_out,
+input         MTxClk,
+input         TxUsedDataOutDetected,
+input    [3:0]  DlyCrcCnt,
+input           SendingCtrlFrm,
+input          TxEndFrmIn,
+input         TPauseRq,
+input          IncrementByteCntBy2,
+input   [7:0]  TxDataIn,
+input          IncrementDlyCrcCnt,
+input          TxStartFrmIn,
+input    [7:0]  MuxedCtrlData,
+input    [5:0]  ByteCnt,
+input          IncrementByteCnt,
+input            read_fifo,
+input           BlockTxDone,
+input    [4:0]  txfifo_cnt,
+input            Divided_2_MTxClk ,
+input            TxBufferAlmostEmpty,
+       //inputs: startFrm,EndFrm,bufferempty
+input          TxAbortIn,
+input         TxUsedDataOut,
+input          ControlEnd,
+input         DlyCrcEn,
+input           TxCtrlStartFrm_q,
+input  [15:0] TxPauseTV,
+input  [47:0] DMAC
+);
+
+
+property a1;
+@(posedge MTxClk) (TxUsedDataIn_q == 1 & CtrlMux == 1) |=> (TxCtrlStartFrm == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a6;
+@(posedge MTxClk) (CtrlMux == 0 & TxUsedDataOut == 0 & TxDoneIn == 1) |=> (TxCtrlStartFrm == 1);
+endproperty
+assert_a6: assert property(a6);
+
+property a3;
+@(posedge MTxClk) (TxUsedDataIn_q == 0 & TxUsedDataOut == 0 & TxAbortIn == 1) |=> (TxCtrlStartFrm == 1);
+endproperty
+assert_a3: assert property(a3);
+
+property a5;
+@(posedge MTxClk) (TxUsedDataIn_q == 0 & TxUsedDataOut == 0 & TxDoneIn == 1) |=> (TxCtrlStartFrm == 1);
+endproperty
+assert_a5: assert property(a5);
+
+property a4;
+@(posedge MTxClk) (TxUsedDataIn_q == 0 & TxUsedDataOut == 0 & TxUsedDataOutDetected == 0) |=> (TxCtrlStartFrm == 1);
+endproperty
+assert_a4: assert property(a4);
+
+property a7;
+@(posedge MTxClk) (TxUsedDataIn_q == 0 & TxUsedDataOut == 0 & TxStartFrmIn == 1) |=> (TxCtrlStartFrm == 1);
+endproperty
+assert_a7: assert property(a7);
+
+property a0;
+@(posedge MTxClk) (WillSendControlFrame == 0) |=> (TxCtrlStartFrm == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a2;
+@(posedge MTxClk) (TxUsedDataOut == 1 & TxUsedDataIn_q == 1 & TxUsedDataOutDetected == 0 & TxDoneIn == 0 & TxAbortIn == 0 & TxStartFrmIn == 1) |=> (TxCtrlStartFrm == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a10;
+@(posedge MTxClk) (CtrlMux == 1) |=> (WillSendControlFrame == 1);
+endproperty
+assert_a10: assert property(a10);
+
+property a9;
+@(posedge MTxClk) (TxFlow == 0) |=> (WillSendControlFrame == 1);
+endproperty
+assert_a9: assert property(a9);
+
+property a8;
+@(posedge MTxClk) (TPauseRq == 1) |=> (WillSendControlFrame == 1);
+endproperty
+assert_a8: assert property(a8);
+
+property a13;
+@(posedge MTxClk) (TxCtrlStartFrm == 1) |=> (SendingCtrlFrm == 1);
+endproperty
+assert_a13: assert property(a13);
+
+property a11;
+@(posedge MTxClk) (WillSendControlFrame == 0) |=> (SendingCtrlFrm == 0);
+endproperty
+assert_a11: assert property(a11);
+
+property a12;
+@(posedge MTxClk) (TxCtrlStartFrm == 0 & TxDoneIn == 1) |=> (SendingCtrlFrm == 0);
+endproperty
+assert_a12: assert property(a12);
+
+property a14;
+@(posedge MTxClk) (WillSendControlFrame == 0) |=> (CtrlMux == 0);
+endproperty
+assert_a14: assert property(a14);
+
+property a16;
+@(posedge MTxClk) (TxUsedDataOut == 0 & WillSendControlFrame == 1) |=> (CtrlMux == 1);
+endproperty
+assert_a16: assert property(a16);
+
+property a15;
+@(posedge MTxClk) (TxUsedDataOut == 1 & TxDoneIn == 1) |=> (CtrlMux == 0);
+endproperty
+assert_a15: assert property(a15);
+
+
+endmodule

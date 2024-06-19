@@ -1,0 +1,28 @@
+module i_Ramdon_gen(
+input           Reset           ,
+input [9:0]       Ramdom          ,
+input   [3:0]   RetryCnt        ,
+input [9:0]       Ramdom_counter  ,
+input [9:0]       Random_sequence ,
+input [7:0]       Slot_time_counter, //256*2,
+input           Clk             ,
+input           Init            ,
+input          Random_time_meet   
+);
+
+assert property1 @(posedge Clk) disable iff (Reset) (Random_sequence == 10'b0 || Random_sequence == {Random_sequence[8:0], ~(Random_sequence[2] ^ Random_sequence[9])});
+assert property2 @(posedge Clk) disable iff (Reset) (Ramdom == {9'b0, Random_sequence[0]}) |-> (RetryCnt == 4'h0);
+assert property3 @(posedge Clk) disable iff (Reset) (Ramdom == {8'b0, Random_sequence[1:0]}) |-> (RetryCnt == 4'h1);
+assert property4 @(posedge Clk) disable iff (Reset) (Ramdom == {7'b0, Random_sequence[2:0]}) |-> (RetryCnt == 4'h2);
+assert property5 @(posedge Clk) disable iff (Reset) (Ramdom == {6'b0, Random_sequence[3:0]}) |-> (RetryCnt == 4'h3);
+assert property6 @(posedge Clk) disable iff (Reset) (Ramdom == {5'b0, Random_sequence[4:0]}) |-> (RetryCnt == 4'h4);
+assert property7 @(posedge Clk) disable iff (Reset) (Ramdom == {4'b0, Random_sequence[5:0]}) |-> (RetryCnt == 4'h5);
+assert property8 @(posedge Clk) disable iff (Reset) (Ramdom == {3'b0, Random_sequence[6:0]}) |-> (RetryCnt == 4'h6);
+assert property9 @(posedge Clk) disable iff (Reset) (Ramdom == {2'b0, Random_sequence[7:0]}) |-> (RetryCnt == 4'h7);
+assert property10 @(posedge Clk) disable iff (Reset) (Ramdom == {1'b0, Random_sequence[8:0]}) |-> (RetryCnt == 4'h8);
+assert property11 @(posedge Clk) disable iff (Reset) (Ramdom == Random_sequence) |-> (RetryCnt == 4'h9);
+assert property12 @(posedge Clk) disable iff (Reset) (Slot_time_counter == 8'b0 || Slot_time_counter == Slot_time_counter + 1) disable iff (Init) disable iff (!Random_time_meet);
+assert property13 @(posedge Clk) disable iff (Reset) (Ramdom_counter == 10'b0 || Ramdom_counter == Ramdom || (Ramdom_counter != 10'b0 && Slot_time_counter == 8'hFF) |-> Ramdom_counter - 1);
+assert property14 @(posedge Clk) disable iff (Reset) (Random_time_meet == 1 || Random_time_meet == 0) |-> (Ramdom_counter == 10'b0);
+assert property15 @(posedge Clk) disable iff (Reset) (Random_time_meet == 1 || Random_time_meet == 0) |-> (Random_time_meet == 1);
+endmodule

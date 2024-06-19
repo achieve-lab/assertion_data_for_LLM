@@ -1,0 +1,45 @@
+parameter RESET_VALUE = 0;parameter WIDTH = 8;
+module i_can_register_asyn(
+input             clk,
+input             rst,
+input             we,
+input [WIDTH-1:0] data_out,
+input [WIDTH-1:0] data_in
+);
+
+assert property(@(posedge clk)  (clk) |-> data_out);
+assert property(@(posedge clk)  (data_out) |-> data_in);
+assert property(@(posedge clk)  (rst) |-> we);
+assert property(@(posedge clk)  (clk) |-> data_in
+Test Program:`include "timescale.v" module can_register_asyn ( data_in, data_out, we, clk, rst ));
+assert property(@(posedge clk)  (!we &&!rst) |-> data_out);
+assert property(@(posedge clk)  (rst) |-> data_in);
+assert property(@(posedge clk)  (data_out) |-> rst);
+assert property(@(posedge clk)  (!we && data_in) |-> data_out);
+assert property(@(posedge clk)  (data_out) |-> we);
+assert property(@(posedge clk)  (!we && rst) |-> data_out);
+assert property(@(posedge clk)  (data_in) |-> we);
+assert property(@(posedge clk)  input [WIDTH-1:0] data_in);
+assert property(@(posedge clk)  (rst) |-> data_out);
+assert property(@(posedge clk)  always @ (posedge clk or posedge rst) begin if (rst) data_out<=#1 RESET_VALUE);
+assert property(@(posedge clk)  (data_out) |-> clk);
+assert property(@(posedge clk)  input we);
+assert property(@(posedge clk)  (rst) |-> clk);
+assert property(@(posedge clk)  input clk);
+assert property(@(posedge clk)  (clk) |-> rst);
+assert property(@(posedge clk)  reg [WIDTH-1:0] data_out);
+assert property(@(posedge clk)  (clk) |);
+assert property(@(posedge clk)  (we) |-> data_out);
+assert property(@(posedge clk)  output [WIDTH-1:0] data_out);
+assert property(@(posedge clk)  input rst);
+assert property(@(posedge clk)  (data_in) |-> data_out);
+assert property(@(posedge clk)  (data_in) |-> rst);
+assert property(@(posedge clk)  parameter RESET_VALUE = 0);
+assert property(@(posedge clk)  else if (we) data_out<=#1 data_in);
+assert property(@(posedge clk)  (clk) |-> we);
+assert property(@(posedge clk)  parameter WIDTH = 8);
+assert property(@(posedge clk)  (data_in) |-> clk);
+assert property(@(posedge clk)  end endmodule
+Test Assertions: (we) |-> data_out);
+
+endmodule

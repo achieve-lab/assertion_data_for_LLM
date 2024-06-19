@@ -1,0 +1,141 @@
+
+module i_host_interface(
+	input HSElx,
+	input buffer_write_en,
+	input HREADYOUT,
+	input HRESP,
+	input rev_out_type,
+	input [31:0] HRDATA,
+	input [31:0] crc_poly_out,
+	input buffer_full,
+	input read_wait,
+input crc_idr_sel,
+input crc_poly_sel,
+	input [31:0] HADDR,
+	input HCLK,
+	input [ 1:0] crc_poly_size,
+input buffer_read_en,
+input crc_cr_sel,
+input ahb_enable,
+input write_en,
+	input [31:0] crc_init_out,
+	input crc_poly_en,
+	input reset_pending,
+	input [ 1:0] bus_size,
+input crc_init_sel,
+	input [ 1:0] rev_in_type,
+input [2:0] hsize_pp,
+input sample_bus,
+	input [ 7:0] crc_idr_out,
+	input [31:0] HWDATA,
+input crc_dr_sel,
+	input HREADY,
+	input [31:0] bus_wr,
+	input [ 2:0] HSIZE,
+	input [31:0] crc_out,
+	input crc_idr_en,
+	input crc_init_en,
+	input HRESETn,
+input hselx_pp,
+input read_en,
+input [4:0] crc_cr_ff,
+input [1:0] htrans_pp,
+	input [ 1:0] HTRANS,
+input [2:0] haddr_pp,
+input hwrite_pp,
+	input HWRITE,
+	input reset_chain,
+input crc_cr_en,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET,
+input [31:0] crc_cr_rd
+);
+
+
+
+property a1;
+@(posedge DEFAULT_CLOCK) (buffer_read_en == 0) |-> (HREADYOUT == 1);
+endproperty
+assert_a1: assert property(a1);
+
+property a3;
+@(posedge DEFAULT_CLOCK) (sample_bus == 1) |-> (HREADYOUT == 1);
+endproperty
+assert_a3: assert property(a3);
+
+property a5;
+@(posedge DEFAULT_CLOCK) (buffer_read_en == 1 & read_wait == 1) |-> (HREADYOUT == 0);
+endproperty
+assert_a5: assert property(a5);
+
+property a2;
+@(posedge DEFAULT_CLOCK) (reset_pending == 0) |-> (HREADYOUT == 1);
+endproperty
+assert_a2: assert property(a2);
+
+property a4;
+@(posedge DEFAULT_CLOCK) (read_wait == 0) |-> (HREADYOUT == 1);
+endproperty
+assert_a4: assert property(a4);
+
+property a0;
+@(posedge DEFAULT_CLOCK) (ahb_enable == 0) |-> (HREADYOUT == 1);
+endproperty
+assert_a0: assert property(a0);
+
+property a8;
+@(posedge DEFAULT_CLOCK) (write_en == 0) |-> (crc_idr_en == 0);
+endproperty
+assert_a8: assert property(a8);
+
+property a11;
+@(posedge DEFAULT_CLOCK) (write_en == 1 & crc_idr_sel == 1) |-> (crc_idr_en == 1);
+endproperty
+assert_a11: assert property(a11);
+
+property a10;
+@(posedge DEFAULT_CLOCK) (crc_idr_sel == 0) |-> (crc_idr_en == 0);
+endproperty
+assert_a10: assert property(a10);
+
+property a13;
+@(posedge DEFAULT_CLOCK) (hselx_pp == 0) |-> (crc_idr_en == 0);
+endproperty
+assert_a13: assert property(a13);
+
+property a12;
+@(posedge DEFAULT_CLOCK) (hwrite_pp == 0) |-> (crc_idr_en == 0);
+endproperty
+assert_a12: assert property(a12);
+
+property a9;
+@(posedge DEFAULT_CLOCK) (haddr_pp[1] == 0) |-> (crc_idr_en == 0);
+endproperty
+assert_a9: assert property(a9);
+
+property a16;
+@(posedge DEFAULT_CLOCK) (write_en == 0) |-> (crc_poly_en == 0);
+endproperty
+assert_a16: assert property(a16);
+
+property a18;
+@(posedge DEFAULT_CLOCK) (write_en == 1 & haddr_pp[1] == 0) |-> (crc_poly_en == 1);
+endproperty
+assert_a18: assert property(a18);
+
+property a15;
+@(posedge DEFAULT_CLOCK) (hselx_pp == 0) |-> (crc_poly_en == 0);
+endproperty
+assert_a15: assert property(a15);
+
+property a14;
+@(posedge DEFAULT_CLOCK) (hwrite_pp == 0) |-> (crc_poly_en == 0);
+endproperty
+assert_a14: assert property(a14);
+
+property a17;
+@(posedge DEFAULT_CLOCK) (haddr_pp[1] == 1) |-> (crc_poly_en == 0);
+endproperty
+assert_a17: assert property(a17);
+
+endmodule

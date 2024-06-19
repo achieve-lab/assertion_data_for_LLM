@@ -1,0 +1,80 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-06-01 16:12:30 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 267725
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:38321' '-nowindow' '-style' 'windows' '-data' 'AAABPHicfY+9CsJAEIQnikEsfBBBG4lV6rRRBNsgUaNBciE/Cjb6qL5J/HIYIY273M7t7Mxy50jyn03TyMbwQXEVKiB/4by/F99RP9p+0Gc2rx5Ko87cSVzOVHNlMoqUqNYFZgaz15U0usPXzEtqThoVqnTUAT7UFvUY9YnJzToDrbVjFrMhAwu0CVtL6yrABbeY3dIEZw5nlNKt/njat+V0kZb4PdCDPeOs7D8+FFsp0Q==' '-proj' '/data/vpulav2/Work/Jasper/communication_controller_can_protocol_controller/can_registers/can_registers_gpt_3.5_5shot/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper/communication_controller_can_protocol_controller/can_registers/can_registers_gpt_3.5_5shot/.tmp/.initCmds.tcl' 'FPV_can_registers.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper/communication_controller_can_protocol_controller/can_registers/can_registers_gpt_3.5_5shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/can_registers.v
+[-- (VERI-1482)] Analyzing Verilog file './/can_registers.v'
+[INFO (VERI-1328)] .//can_registers.v(171): analyzing included file './/can_register_asyn.v'
+[INFO (VERI-1328)] .//can_registers.v(172): analyzing included file './/can_register_asyn_syn.v'
+[INFO (VERI-1328)] .//can_registers.v(173): analyzing included file './/can_register.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_gpt_3.5_5shot.sva
+ERROR (ESW046): The file ".//property_gpt_3.5_5shot.sva" does not exist.
+
+ERROR: problem encountered at line 12 in file FPV_can_registers.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.404 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

@@ -1,0 +1,10 @@
+parameter WIDTH =8;
+module i_can_register (
+input [WIDTH-1:0] data_in,
+input             we,
+input    [WIDTH-1:0] data_out,
+input             clk
+);
+
+assert property(@(posedge clk) (data_out == data_in) |-> (we == 1));
+endmodule

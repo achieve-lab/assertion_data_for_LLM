@@ -1,0 +1,91 @@
+module i_eth_crc(
+input  [31:0] Crc,
+input Reset,
+input Enable,
+input CrcError,
+input Initialize,
+input [3:0] Data,
+input Clk,
+input [31:0] CrcNext
+);
+
+assert property(@(posedge Clk) (Data[3:0] == 4'hd) |-> (CrcNext[0] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[3] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[3] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[15] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[20] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hd) |-> (CrcNext[4] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hd) |-> (CrcNext[13] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hd) |-> (CrcNext[6] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[4] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[2] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[22] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[16] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[27] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[7] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hd) |-> (CrcNext[7] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hd) |-> (CrcNext[3] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[17] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[21] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[31] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[31] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[24] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[14] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[16] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[5] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[25] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hd) |-> (CrcNext[5] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[29] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hd) |-> (CrcNext[8] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[28] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[13] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[23] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[20] == 1));
+assert property(@(posedge Clk)              (Data[3:0] == 4'hf) |-> (CrcNext[0] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[7] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[9] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[12] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hd) |-> (CrcNext[9] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hd) |-> (CrcNext[11] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[30] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[8] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[11] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[19] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[6] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[10] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[18] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[26] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[9] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[26] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[13] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[0] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[30] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[11] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[1] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[12] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[17] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[25] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[15] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[28] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[29] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hd) |-> (CrcNext[2] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[4] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[10] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[24] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[27] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hd) |-> (CrcNext[1] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[23] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[6] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[2] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[14] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[8] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[1] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hd) |-> (CrcNext[10] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[19] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[18] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[21] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hf) |-> (CrcNext[5] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'he) |-> (CrcNext[22] == 1));
+assert property(@(posedge Clk) (Data[3:0] == 4'hd) |-> (CrcNext[12] == 1));
+
+endmodule

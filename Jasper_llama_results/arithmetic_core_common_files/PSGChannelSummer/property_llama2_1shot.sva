@@ -1,0 +1,57 @@
+module i_PSGChannelSummer(
+input [3:0] outctrl,	// channel input enable control
+input [21:0] o,		// summed input
+input [1:0] sel ,
+input clk_i,			// master clock
+input [19:0] tmc_i,		// time-multiplexed channel input
+input [7:0] cnt		// select counter
+);
+
+assert property(@(posedge clk_i) (cnt == 8'd21) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd44) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd42) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd2) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd23) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd43) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd3) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd41) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd18) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd35) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd0) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd17) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd11) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd29) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd19) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd15) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd33) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd7) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd12) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd39) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd32) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd40) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd45) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd4) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd27) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd14) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd28) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd9) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd20) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd34) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd10) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd13) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd16) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd30) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd5) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd37) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd24) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd8) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd25) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd26) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd22) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd6) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd38) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd31) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd36) |-> (o == 22'd0));
+assert property(@(posedge clk_i) (cnt == 8'd1) |-> (o == 22'd0));
+
+endmodule

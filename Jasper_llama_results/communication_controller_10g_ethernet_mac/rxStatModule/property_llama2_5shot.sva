@@ -1,0 +1,43 @@
+module i_rxStatModule(
+   input[17:0] rxStatRegPlus_tmp,
+   input jumbo_frame,
+   input multi_valid,
+   input padded_frame,
+   input get_error_code,
+   input crc_check_invalid,
+   input broad_valid,
+   input receiving,
+   input length_256_511,
+   input length_512_1023,
+   input good_frame_get, 
+   input large_error,
+   input rxclk,
+   input reset,
+   input length_65_127,
+   input length_128_255,
+   input pause_frame,
+   input [17:0] rxStatRegPlus,
+   input length_1024_max,
+   input small_error
+);
+
+assert property(@(posedge rxclk)  (rxStatRegPlus[12]) |-> (pause_frame & good_frame_get));
+assert property(@(posedge rxclk)  (rxStatRegPlus[7]) |-> (length_256_511 & good_frame_get));
+assert property(@(posedge rxclk)  (rxStatRegPlus[4]) |-> (padded_frame & good_frame_get));
+assert property(@(posedge rxclk)  (rxStatRegPlus[8]) |-> (length_512_1023 & good_frame_get));
+assert property(@(posedge rxclk)  (rxStatRegPlus[6]) |-> (length_128_255 & good_frame_get));
+assert property(@(posedge rxclk)  (rxStatRegPlus[16]) |-> (receiving & get_error_code));
+assert property(@(posedge rxclk)  (rxStatRegPlus[5]) |-> (length_65_127 & good_frame_get));
+assert property(@(posedge rxclk)  (rxStatRegPlus[3]) |-> (multi_valid & good_frame_get));
+assert property(@(posedge rxclk)  (rxStatRegPlus[11]) |-> (large_error));
+assert property(@(posedge rxclk)  (rxStatRegPlus[0]) |-> (good_frame_get));
+assert property(@(posedge rxclk)  (rxStatRegPlus[14]) |-> (jumbo_frame & good_frame_get));
+assert property(@(posedge rxclk)  (rxStatRegPlus[15]) |-> (small_error));
+assert property(@(posedge rxclk)  (rxStatRegPlus[1]) |-> (crc_check_invalid));
+assert property(@(posedge rxclk)  (rxStatRegPlus[9]) |-> (length_1024_max & good_frame_get));
+assert property(@(posedge rxclk)  (rxStatRegPlus[10]) |-> (pause_frame & good_frame_get));
+assert property(@(posedge rxclk)  (rxStatRegPlus[17]) |-> (receiving));
+assert property(@(posedge rxclk)  (rxStatRegPlus[2]) |-> (broad_valid & good_frame_get));
+assert property(@(posedge rxclk)  (rxStatRegPlus[13]) |-> (0));
+
+endmodule

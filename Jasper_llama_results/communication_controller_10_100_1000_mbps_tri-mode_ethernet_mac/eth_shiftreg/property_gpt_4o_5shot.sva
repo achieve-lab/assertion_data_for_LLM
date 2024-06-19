@@ -1,0 +1,19 @@
+module i_eth_shiftreg(
+input       Clk,              // Input clock (Host clock)
+input       Mdi,              // MII input data
+input   [15:0]Prsd,
+input [15:0]CtrlData,         // Control data (data to be written to the PHY)
+input       Reset,            // Reset signal
+input   [7:0] ShiftReg,         // Shift inputister for shifting the data in and out
+input       MdcEn_n,          // Enable signal is asserted for one Clk period before Mdc falls.
+input [4:0] Rgad,             // Register address (within the selected PHY)
+input       WriteOp,          // The current operation is a PHY inputister write operation
+input [3:0] ByteSelect,       // Byte select
+input [1:0] LatchByte,        // Byte select for latching (read operation)
+input [4:0] Fiad,             // PHY address
+input      LinkFail,         // Link Integrity Signal
+input      ShiftedBit       // Bit shifted out of the shift inputister
+);
+
+assert property(@(posedge Clk)  (Reset) |-> (ShiftReg == 8'h0 && Prsd == 16'h0 && LinkFail == 1'b0));assert property(@(posedge Clk)  (MdcEn_n && ByteSelect == 4'h1) |-> (ShiftReg == {2'b01, ~WriteOp, WriteOp, Fiad[4:1]}));assert property(@(posedge Clk)  (MdcEn_n && ByteSelect == 4'h2) |-> (ShiftReg == {Fiad[0], Rgad[4:0], 2'b10}));assert property(@(posedge Clk)  (MdcEn_n && ByteSelect == 4'h4) |-> (ShiftReg == CtrlData[15:8]));assert property(@(posedge Clk)  (MdcEn_n && ByteSelect == 4'h8) |-> (ShiftReg == CtrlData[7:0]));assert property(@(posedge Clk)  (MdcEn_n && ByteSelect == 4'h0) |-> (ShiftReg == {ShiftReg[6:0], Mdi}));assert property(@(posedge Clk)  (LatchByte[0]) |-> (Prsd[7:0] == {ShiftReg[6:0], Mdi}));assert property(@(posedge Clk)  (LatchByte[1]) |-> (Prsd[15:8] == {ShiftReg[6:0], Mdi}));assert property(@(posedge Clk)  (LatchByte[0] && Rgad == 5'h01) |-> (LinkFail == ~ShiftReg[1]));assert property(@(posedge Clk)  (ShiftedBit) |-> (ShiftReg[7] == 1'b1));
+endmodule

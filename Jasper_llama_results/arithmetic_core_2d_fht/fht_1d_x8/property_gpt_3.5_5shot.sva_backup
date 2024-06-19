@@ -1,0 +1,68 @@
+parameter N = 8;
+
+module i_fht_1d_x8(
+input			x_valid,
+input [N:0] stg1_sum2,
+input [N+1:0] stg2_sum1,
+input			rstn,
+input [N+1:0] stg2_sub1,
+// Data input [N-1:0] ,
+input [N+2:0] stg3_sum1,
+	// input data - x0,x1,x2,x3,x4,x5,x6,x7,x0,x1...
+input [N+2:0] stg3_sub3,
+input h6_valid,
+input	fht_valid_or,
+input h4_valid,
+input [N+1:0] stg2_sub3,
+input [N:0] mult_dat_1,
+input [N+2:0] stg3_sub1,
+input [13:0] xi_ready_d,
+	// 1D FHT input data - h0,h1,h2,h3,h4,h5,h6,h7,h0,h1...
+input [2:0] cnt,
+input [N+1:0] stg2_sum3,
+input h7_valid,
+input h0_valid,
+input [N+1:0] mult_res1,
+input [N:0] stg1_sum4,
+input x_valid_1d,
+input [N-1:0] x0,x1,x2,x3,x4,x5,x6,x7,
+input [N+2:0] stg3_sub2,
+input h2_valid,
+input h5_valid,
+input [N+2:0] h0_FF,h1_FF,h2_FF,h3_FF,h4_FF,h5_FF,h6_FF,h7_FF,
+input [N+1:0] mult_res2,
+input h3_valid,
+input [N:0] stg1_sub1,
+input [N:0] stg1_sub2,
+input [N+2:0] stg3_sum3,
+input	[N+2:0]	fht_data,
+input h1_valid,
+input [N+2:0] stg3_sum2,
+input xi_ready,
+input [N+2:0] stg3_sum4,
+input [N+2:0] stg3_sub4,
+input	[N-1:0]	x_data,
+input [N-1:0] x0_FF,x1_FF,x2_FF,x3_FF,x4_FF,x5_FF,x6_FF,x7_FF,
+input			sclk,
+input [N:0] stg1_sum3,
+input [N+1:0] stg2_sub2,
+input [N:0] stg1_sub3,
+input [N:0] stg1_sub4,
+input [N+1:0] stg2_sum2,
+input			fht_valid,
+input [N:0] mult_dat_2,
+input [N+2:0] h_or_data,
+input [N:0] stg1_sum1
+// On the input of the 1st bfly is [N:0] 
+);
+
+(fht_valid && fht_data[10]) |-> (fht_data[9] == 1));
+ (fht_valid && fht_data[9]) |-> (fht_data[8] == 1));
+ (fht_valid && fht_data[8]) |-> (fht_data[7] == 1));
+ (fht_valid && fht_data[7]) |-> (fht_data[6] == 1));
+ (fht_valid && fht_data[6]) |-> (fht_data[5] == 1));
+ (fht_valid && fht_data[5]) |-> (fht_data[4] == 1));
+ (fht_valid && fht_data[4]) |-> (fht_data[3] == 1));
+ (fht_valid && fht_data[3]) |-> (fht_data[2] == 1));
+
+endmodule

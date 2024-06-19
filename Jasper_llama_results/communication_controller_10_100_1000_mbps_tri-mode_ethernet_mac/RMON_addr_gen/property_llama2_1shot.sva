@@ -1,0 +1,53 @@
+parameter       StateIdle       =4'd0;
+parameter       StatePktLength  =4'd1;
+parameter       StatePktNumber  =4'd2;
+parameter       StatePktType    =4'd3;
+parameter       StatePktRange   =4'd4;
+module i_RMON_addr_gen(
+input [2:0]       Pkt_err_type_rmon_dl1   ,
+input           Clk                 ,
+input [2:0]       Pkt_type_rmon_dl1       ,
+input [3:0]       CurrentState /* synthesys syn_keep*/,
+input           Apply_rmon          ,//pluse signal looks like eop
+input          Reg_apply           ,
+input [15:0]      PktLengthReg    ,
+input          Reg_drop_apply      ,
+input   [2:0]   Pkt_type_rmon       ,
+input [4:0]       Reg_addr            ,
+input             Apply_rmon_pulse,
+input [2:0]       PktTypeReg      ,
+input   [2:0]   Pkt_err_type_rmon   ,
+input [15:0]      Reg_data            ,
+input           Reset               ,
+input           Reg_next            ,
+input   [15:0]  Pkt_length_rmon     ,
+input [3:0]       NextState,
+input [2:0]       PktErrTypeReg   ,
+input             Apply_rmon_dl2,
+input [15:0]      Pkt_length_rmon_dl1     ,
+input             Apply_rmon_dl1
+);
+
+assert property(@(posedge Clk) (Pkt_err_type_rmon_dl1 == 3'b010) |-> (Reg_data == 1));
+assert property(@(posedge Clk) (Pkt_type_rmon_dl1 == 3'b001) |-> (Reg_addr == 5'd3));
+assert property(@(posedge Clk) (Pkt_err_type_rmon_dl1 == 3'b100) |-> (Reg_addr == 5'd12));
+assert property(@(posedge Clk) (Pkt_err_type_rmon_dl1 == 3'b001) |-> (Reg_addr == 5'd5));
+assert property(@(posedge Clk) (Pkt_err_type_rmon_dl1 == 3'b100) |-> (Reg_addr == 5'd11));
+assert property(@(posedge Clk) (Pkt_type_rmon_dl1 == 3'b011) |-> (Reg_data == 1));
+assert property(@(posedge Clk) (Pkt_type_rmon_dl1 == 3'b011) |-> (Reg_addr == 5'd2));
+assert property(@(posedge Clk) (Pkt_err_type_rmon_dl1 == 3'b100) |-> (Reg_addr == 5'd15));
+assert property(@(posedge Clk) (Pkt_type_rmon_dl1 == 3'b001) |-> (Reg_data == 1));
+assert property(@(posedge Clk) (Pkt_type_rmon_dl1 == 3'b100) |-> (Reg_addr == 5'd16));
+assert property(@(posedge Clk) (Pkt_err_type_rmon_dl1 == 3'b100) |-> (Reg_addr == 5'd14));
+assert property(@(posedge Clk) (Pkt_err_type_rmon_dl1 == 3'b011) |-> (Reg_data == 1));
+assert property(@(posedge Clk) (Pkt_err_type_rmon_dl1 == 3'b100) |-> (Reg_addr == 5'd9));
+assert property(@(posedge Clk) (Pkt_err_type_rmon_dl1 == 3'b001) |-> (Reg_data == 1));
+assert property(@(posedge Clk) (Pkt_err_type_rmon_dl1 == 3'b100) |-> (Reg_addr == 5'd13));
+assert property(@(posedge Clk) (Pkt_err_type_rmon_dl1 == 3'b010) |-> (Reg_addr == 5'd6));
+assert property(@(posedge Clk) (Pkt_type_rmon_dl1 == 3'b100) |-> (Reg_data == 1));
+assert property(@(posedge Clk) (Pkt_err_type_rmon_dl1 == 3'b100) |-> (Reg_data == 1));
+assert property(@(posedge Clk) (Pkt_err_type_rmon_dl1 == 3'b011) |-> (Reg_addr == 5'd7));
+assert property(@(posedge Clk) (Pkt_err_type_rmon_dl1 == 3'b100) |-> (Reg_addr == 5'd8));
+assert property(@(posedge Clk) (Pkt_err_type_rmon_dl1 == 3'b100) |-> (Reg_addr == 5'd10));
+
+endmodule

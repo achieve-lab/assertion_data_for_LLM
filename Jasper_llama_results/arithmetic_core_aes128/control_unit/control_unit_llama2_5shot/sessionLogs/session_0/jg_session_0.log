@@ -1,0 +1,455 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-06-04 17:26:05 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 118454
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:37347' '-nowindow' '-style' 'windows' '-data' 'AAABNnicdY/NCoJQEIWPRRIteo4IaiG0c93WImgrYn+GecW0oE09am9iXxcNXDTD/J1z5jLXkeQ/67qWtf6D5CrQEv+Z824a31HXvnOvi6xfnSoN2uVW4hJjzZTJKNRRlRKQKUikFDe6g1fwV3KOGxUqtdcOPNAG9RD1AeZGP+HWlbZwMcoMZUFNmzcS5jkRg0gj9nLLn5m8vxuhvSTShfCYFtxyQlPaH3wAKPQpMg==' '-proj' '/data/vpulav2/Work/Jasper_llama/arithmetic_core_aes128/control_unit/control_unit_llama2_5shot/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper_llama/arithmetic_core_aes128/control_unit/control_unit_llama2_5shot/.tmp/.initCmds.tcl' 'FPV_control_unit.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper_llama/arithmetic_core_aes128/control_unit/control_unit_llama2_5shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% # ----------------------------------------
+% #  Copyright (c) 2017 Cadence Design Systems, Inc. All Rights
+% #  Reserved.  Unpublished -- rights reserved under the copyright 
+% #  laws of the United States.
+% # ----------------------------------------
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/control_unit.v
+[-- (VERI-1482)] Analyzing Verilog file './/control_unit.v'
+% #  ${RTL_PATH}/port_select.v \
+#  ${RTL_PATH}/bridge.v \
+#  ${RTL_PATH}/egress.v \
+#  ${RTL_PATH}/ingress.v \
+#  ${RTL_PATH}/top.v
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_llama2_5shot.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_llama2_5shot.sva'
+%   
+% # Elaborate design and properties
+% elaborate -top control_unit
+INFO (ISW003): Top module name is "control_unit".
+[INFO (HIER-8002)] .//control_unit.v(602): Disabling old hierarchical reference handler
+[INFO (VERI-1018)] .//property_llama2_5shot.sva(122): compiling module 'i_control_unit'
+[INFO (VERI-1018)] .//control_unit.v(76): compiling module 'control_unit'
+[WARN (VERI-1330)] .//bindings.sva(28): actual bit length 4 differs from formal bit length 1 for port 'state'
+[WARN (VERI-1330)] .//bindings.sva(29): actual bit length 4 differs from formal bit length 1 for port 'next_state'
+[WARN (VERI-1330)] .//bindings.sva(30): actual bit length 4 differs from formal bit length 1 for port 'rd_count'
+[WARN (VERI-1330)] .//bindings.sva(34): actual bit length 2 differs from formal bit length 1 for port 'op_mode'
+INFO (INL208): Elaboration synthesis summary:
+  Number of synthesized netlists          3 (1 packages)
+  Single run mode                         On
+  Pipeline                                On (2 pipelined netlists)
+  Late hierarchical reference connection  On
+  Number of analyzed Verilog modules      3 (3 synthesized)
+  Number of analyzed VHDL entities        0 (0 synthesized)
+INFO (INL003): Clearing all state information (assumes, stopats, and so forth).
+control_unit
+[<embedded>] % 
+[<embedded>] % # Set up Clocks and Resets
+[<embedded>] % clock clk
+[<embedded>] % reset rst_n
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "rst_n".
+[<embedded>] % 
+[<embedded>] % # Get design information to check general complexity
+[<embedded>] % get_design_info
+Statistics [for instance "control_unit"]
+---------------------------
+# Flops:         2 (8) (0 property flop bits)
+# Latches:       0 (0)
+# Gates:         746 (3058)
+# Nets:          805
+# Ports:         26
+# RTL Lines:     604
+# RTL Instances: 2
+# Embedded Assumptions: 0
+# Embedded Assertions:  38
+# Embedded Covers:      38
+8
+[<embedded>] % 
+[<embedded>] % # Prove properties
+[<embedded>] % prove -all
+Ncustom1: Custom engine code is hT3Ng7hPPfiYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSl+CwjiTMAQA
+Bcustom2: Custom engine code is hT3Nm7hPr1Vp3Di1Ra2USNIGL4JypRnLKLAdF6JAyuavO2JfGCiY9OZJhcAcOUnLx5xwNdhILGrAWX9s+z2WDkKwNR7tAfClBEjRFVQeq6DU54boFgEA
+AMcustom3: Custom engine code is hT3Ng7hP/feYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSmmqwm7g9AQA
+Mpcustom4: Custom engine code is hT3NZbhP9fmY2AbBQnsjfOxn6c+6e6yL+/e8fZFmaQrnlgEA
+INFO (IPF036): Starting proof on task: "<embedded>", 76 properties to prove with 0 already proven/unreachable
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis: phase 2 of 4.
+INFO (IRS031): Running reset analysis: phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 4 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 iterations. Assigned values for 0 of 8 design flops, 0 of 0 design latches, 76 of 76 internal elements.
+WARNING (WRS031): 8 of 8 design flop(s) with asynchronous reset condition, but not reset. Run "get_reset_info -x_value -with_reset_pin" to get a list of such flops.
+INFO (IRS039): Reset analysis complete.
+INFO (IPF031): Settings used for proof thread 0:
+    orchestration                 = on
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = auto
+    proofgrid_per_engine_max_jobs = 1
+    max engine jobs               = auto
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_1" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_1:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_2" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_2:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_3" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_3:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_4" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_4:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_5" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_5:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_6" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_6:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_7" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_7:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_8" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_8:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_9" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_9:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_10" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_10:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_11" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_11:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_12" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_12:precondition1" was proven unreachable in 0.00 s.
+AMcustom5: Custom engine code is hT3N1rhP11/52HrFRS21ROp2LOjVTgPvT8L8BGXHgLhaIuqtT4nARFjUqrBL+7pLmaTOzBepZW/Jm8SSrHDybSQtoNiO3y43wk+dEoWlsZizu97Fih6O6lPVG/LpWP5SsUPwlGagLNa1FKEFvwVXyX7//8prySbvSxIHXr5er+z4RAEA
+Ncustom6: Custom engine code is hT3OXrhPByJp3TrFSTLhUmMH4KVtJgmTCnNDF46yMXOKY48m4LS5nE7yBzFjA7kDuwO/GhGUpEPiky3p3wmPn3dJZHxFMsafSoObRzSC+tn7sEY0WbTdZ/FV4hL3MYH/b1CIUvXSWR4wqEoVLsmMOD4xIPT4lI1LO6ZCO7PnnWQuLwetnvKlrXx6wCW/A+x+enqslg1YPobi4wEF/EvbzOvcTYdJvl2s4H2yZg2b2ofAVN5WvhWk1HoBAA
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+ADcustom7: Custom engine code is hT3Nv7hPv1752HrFRa2kROx2f/ECJeZB2AZsLdlO8VwmIuqtT4nIDFXclhg+O+o+DMmQCekbheGk0kK28laA9gaOFDXsQp29J3X615HY1IPHJWd6FUFvCHjO+p1k652b5JJvZlShNpGlGSXAiQe/mEAj6tEBAA
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_13" was proven in 0.00 s.
+Tricustom8: Custom engine code is hT3Nu7hPt1752DvFRa0kNDiyIV97VyejwM9C/jCLJjdPvusZONHY42VYUy0Q1ZotnhcVtNc56tJ5wbxv6V2+XpdsaSlHck5vfnbYjdwj1OECy9U+7oSQ0SZE3g5ayD+Phuh4odCJTjeKa2k4elM9ldQfkAEA
+Gcustom9: Custom engine code is hT3NibhPDfeYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncipMGcUXqAadachREE9F2PwhBUZUNw5kHnd4JdXkamORRgEA
+C2custom10: Custom engine code is hT3NirhPjfWYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncgkrYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuG86XYVV00BAA
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+AGcustom11: Custom engine code is hT3NirhP/fmYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInnckcwYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuHEZnZByh0BAA
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_13:precondition1" was proven unreachable in 0.00 s.
+Bcustom12: Custom engine code is hT3NjrhPDfiYQADBZnYcglOvK9PfWxFtenjIyBqfrgr7if/jL/yPOuK1BAflEcW0DxNH2eDIoezN2gxlQFg81RZtiWXh7aiTAidvAQA
+Ncustom13: Custom engine code is hT3NR7hPByFp3TrFSTLhUmMH4KWtJglTyV/c51BHEeZWamnJv767nE6PCak26bd3gf3XGN3rIRheufhDieCJQVISo+gNYUKhiUedBKGtsP/a18svAnlMJZudHxDFwK5ufsyoxsIyiAeSY2oi3tEuoDHr5gw42DFKAG3PqO3CEsl8Azzdt3pl5nGA1Ifv2H02eYsFzWb/nfp8PMb3F0krE/EgBcm8TD9Div8BAA
+Tricustom14: Custom engine code is hT3Nu7hP3fiYQADBZnYcglNHp9bfd7EOeniIqP/ji8sGLQu8yhsFO+wxJ+O+R0bU8g/IewXFomyos+viQnWc2xYNYmMqpo3i40O7DaZR7qfp4YqNx26KRvQ/qx0BAA
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_14" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_14:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_16" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_16:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_17" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_17:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_18" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_18:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_19" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_19:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_20" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_20:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_21" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_21:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_22" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_22:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_23" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_23:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_24" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_24:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_25" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_25:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_26" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_26:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_27" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_27:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_28" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_28:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_29" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_29:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_30" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_30:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_31" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_31:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_32" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_32:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_33" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_33:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_34" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_34:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_35" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_35:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_36" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_36:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_37" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_37:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_38" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_38:precondition1" was proven unreachable in 0.00 s.
+0: Found proofs for 74 properties in preprocessing
+0: Using multistage preprocessing
+0: Starting reduce
+0: Finished reduce in 0s
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "control_unit.v_control_unit._assert_15" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "control_unit.v_control_unit._assert_15:precondition1" was proven unreachable in 0.00 s.
+0: Found proofs for 2 properties in preprocessing
+INFO (IPF059): 0: Completed proof on task: "<embedded>"
+
+==============================================================
+SUMMARY
+==============================================================
+           Properties Considered              : 76
+                 assertions                   : 38
+                  - proven                    : 38 (100%)
+                  - bounded_proven (user)     : 0 (0%)
+                  - bounded_proven (auto)     : 0 (0%)
+                  - marked_proven             : 0 (0%)
+                  - cex                       : 0 (0%)
+                  - ar_cex                    : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+                 covers                       : 38
+                  - unreachable               : 38 (100%)
+                  - bounded_unreachable (user): 0 (0%)
+                  - covered                   : 0 (0%)
+                  - ar_covered                : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+determined
+[<embedded>] % 
+[<embedded>] % # Report proof results
+[<embedded>] % report
+
+==============================================================
+    Jasper Verification Results
+==============================================================
+    2024.03 FCS 64 bits for Linux64 3.10.0-1160.21.1.el7.x86_64
+    Host Name: pal-achieve-06.uic.edu
+    User Name: vpulav2
+    Printed on: Tuesday, Jun 4, 2024 05:26:06 PM CDT
+    Working Directory: /data/vpulav2/Work/Jasper_llama/arithmetic_core_aes128/control_unit
+
+
+==============================================================
+RESULTS
+==============================================================
+
+-----------------------------------------------------------------------------------------------------------------
+       Name                                                     |    Result    |  Engine  |  Bound  |  Time    
+-----------------------------------------------------------------------------------------------------------------
+
+---[ <embedded> ]------------------------------------------------------------------------------------------------
+[1]   control_unit.v_control_unit._assert_1                          proven          PRE    Infinite    0.000 s      
+[2]   control_unit.v_control_unit._assert_1:precondition1            unreachable     PRE    Infinite    0.000 s      
+[3]   control_unit.v_control_unit._assert_2                          proven          PRE    Infinite    0.000 s      
+[4]   control_unit.v_control_unit._assert_2:precondition1            unreachable     PRE    Infinite    0.000 s      
+[5]   control_unit.v_control_unit._assert_3                          proven          PRE    Infinite    0.000 s      
+[6]   control_unit.v_control_unit._assert_3:precondition1            unreachable     PRE    Infinite    0.000 s      
+[7]   control_unit.v_control_unit._assert_4                          proven          PRE    Infinite    0.000 s      
+[8]   control_unit.v_control_unit._assert_4:precondition1            unreachable     PRE    Infinite    0.000 s      
+[9]   control_unit.v_control_unit._assert_5                          proven          PRE    Infinite    0.000 s      
+[10]  control_unit.v_control_unit._assert_5:precondition1            unreachable     PRE    Infinite    0.000 s      
+[11]  control_unit.v_control_unit._assert_6                          proven          PRE    Infinite    0.000 s      
+[12]  control_unit.v_control_unit._assert_6:precondition1            unreachable     PRE    Infinite    0.000 s      
+[13]  control_unit.v_control_unit._assert_7                          proven          PRE    Infinite    0.000 s      
+[14]  control_unit.v_control_unit._assert_7:precondition1            unreachable     PRE    Infinite    0.000 s      
+[15]  control_unit.v_control_unit._assert_8                          proven          PRE    Infinite    0.000 s      
+[16]  control_unit.v_control_unit._assert_8:precondition1            unreachable     PRE    Infinite    0.000 s      
+[17]  control_unit.v_control_unit._assert_9                          proven          PRE    Infinite    0.000 s      
+[18]  control_unit.v_control_unit._assert_9:precondition1            unreachable     PRE    Infinite    0.000 s      
+[19]  control_unit.v_control_unit._assert_10                         proven          PRE    Infinite    0.000 s      
+[20]  control_unit.v_control_unit._assert_10:precondition1           unreachable     PRE    Infinite    0.000 s      
+[21]  control_unit.v_control_unit._assert_11                         proven          PRE    Infinite    0.000 s      
+[22]  control_unit.v_control_unit._assert_11:precondition1           unreachable     PRE    Infinite    0.000 s      
+[23]  control_unit.v_control_unit._assert_12                         proven          PRE    Infinite    0.000 s      
+[24]  control_unit.v_control_unit._assert_12:precondition1           unreachable     PRE    Infinite    0.000 s      
+[25]  control_unit.v_control_unit._assert_13                         proven          PRE    Infinite    0.000 s      
+[26]  control_unit.v_control_unit._assert_13:precondition1           unreachable     PRE    Infinite    0.000 s      
+[27]  control_unit.v_control_unit._assert_14                         proven          PRE    Infinite    0.000 s      
+[28]  control_unit.v_control_unit._assert_14:precondition1           unreachable     PRE    Infinite    0.000 s      
+[29]  control_unit.v_control_unit._assert_15                         proven          PRE    Infinite    0.000 s      
+[30]  control_unit.v_control_unit._assert_15:precondition1           unreachable     PRE    Infinite    0.000 s      
+[31]  control_unit.v_control_unit._assert_16                         proven          PRE    Infinite    0.000 s      
+[32]  control_unit.v_control_unit._assert_16:precondition1           unreachable     PRE    Infinite    0.000 s      
+[33]  control_unit.v_control_unit._assert_17                         proven          PRE    Infinite    0.000 s      
+[34]  control_unit.v_control_unit._assert_17:precondition1           unreachable     PRE    Infinite    0.000 s      
+[35]  control_unit.v_control_unit._assert_18                         proven          PRE    Infinite    0.000 s      
+[36]  control_unit.v_control_unit._assert_18:precondition1           unreachable     PRE    Infinite    0.000 s      
+[37]  control_unit.v_control_unit._assert_19                         proven          PRE    Infinite    0.000 s      
+[38]  control_unit.v_control_unit._assert_19:precondition1           unreachable     PRE    Infinite    0.000 s      
+[39]  control_unit.v_control_unit._assert_20                         proven          PRE    Infinite    0.000 s      
+[40]  control_unit.v_control_unit._assert_20:precondition1           unreachable     PRE    Infinite    0.000 s      
+[41]  control_unit.v_control_unit._assert_21                         proven          PRE    Infinite    0.000 s      
+[42]  control_unit.v_control_unit._assert_21:precondition1           unreachable     PRE    Infinite    0.000 s      
+[43]  control_unit.v_control_unit._assert_22                         proven          PRE    Infinite    0.000 s      
+[44]  control_unit.v_control_unit._assert_22:precondition1           unreachable     PRE    Infinite    0.000 s      
+[45]  control_unit.v_control_unit._assert_23                         proven          PRE    Infinite    0.000 s      
+[46]  control_unit.v_control_unit._assert_23:precondition1           unreachable     PRE    Infinite    0.000 s      
+[47]  control_unit.v_control_unit._assert_24                         proven          PRE    Infinite    0.000 s      
+[48]  control_unit.v_control_unit._assert_24:precondition1           unreachable     PRE    Infinite    0.000 s      
+[49]  control_unit.v_control_unit._assert_25                         proven          PRE    Infinite    0.000 s      
+[50]  control_unit.v_control_unit._assert_25:precondition1           unreachable     PRE    Infinite    0.000 s      
+[51]  control_unit.v_control_unit._assert_26                         proven          PRE    Infinite    0.000 s      
+[52]  control_unit.v_control_unit._assert_26:precondition1           unreachable     PRE    Infinite    0.000 s      
+[53]  control_unit.v_control_unit._assert_27                         proven          PRE    Infinite    0.000 s      
+[54]  control_unit.v_control_unit._assert_27:precondition1           unreachable     PRE    Infinite    0.000 s      
+[55]  control_unit.v_control_unit._assert_28                         proven          PRE    Infinite    0.000 s      
+[56]  control_unit.v_control_unit._assert_28:precondition1           unreachable     PRE    Infinite    0.000 s      
+[57]  control_unit.v_control_unit._assert_29                         proven          PRE    Infinite    0.000 s      
+[58]  control_unit.v_control_unit._assert_29:precondition1           unreachable     PRE    Infinite    0.000 s      
+[59]  control_unit.v_control_unit._assert_30                         proven          PRE    Infinite    0.000 s      
+[60]  control_unit.v_control_unit._assert_30:precondition1           unreachable     PRE    Infinite    0.000 s      
+[61]  control_unit.v_control_unit._assert_31                         proven          PRE    Infinite    0.000 s      
+[62]  control_unit.v_control_unit._assert_31:precondition1           unreachable     PRE    Infinite    0.000 s      
+[63]  control_unit.v_control_unit._assert_32                         proven          PRE    Infinite    0.000 s      
+[64]  control_unit.v_control_unit._assert_32:precondition1           unreachable     PRE    Infinite    0.000 s      
+[65]  control_unit.v_control_unit._assert_33                         proven          PRE    Infinite    0.000 s      
+[66]  control_unit.v_control_unit._assert_33:precondition1           unreachable     PRE    Infinite    0.000 s      
+[67]  control_unit.v_control_unit._assert_34                         proven          PRE    Infinite    0.000 s      
+[68]  control_unit.v_control_unit._assert_34:precondition1           unreachable     PRE    Infinite    0.000 s      
+[69]  control_unit.v_control_unit._assert_35                         proven          PRE    Infinite    0.000 s      
+[70]  control_unit.v_control_unit._assert_35:precondition1           unreachable     PRE    Infinite    0.000 s      
+[71]  control_unit.v_control_unit._assert_36                         proven          PRE    Infinite    0.000 s      
+[72]  control_unit.v_control_unit._assert_36:precondition1           unreachable     PRE    Infinite    0.000 s      
+[73]  control_unit.v_control_unit._assert_37                         proven          PRE    Infinite    0.000 s      
+[74]  control_unit.v_control_unit._assert_37:precondition1           unreachable     PRE    Infinite    0.000 s      
+[75]  control_unit.v_control_unit._assert_38                         proven          PRE    Infinite    0.000 s      
+[76]  control_unit.v_control_unit._assert_38:precondition1           unreachable     PRE    Infinite    0.000 s      
+
+==============================================================
+ASSUMPTIONS
+==============================================================
+
+-------------------------------------------------------------------------------
+       Name    |  Expression  |  Location     |  Status      |  Dependencies                  
+-------------------------------------------------------------------------------
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % exit
+INFO (IPL005): Received request to exit from the console.
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.
+INFO (IPL018): The peak resident set memory use for this session was 0.000 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

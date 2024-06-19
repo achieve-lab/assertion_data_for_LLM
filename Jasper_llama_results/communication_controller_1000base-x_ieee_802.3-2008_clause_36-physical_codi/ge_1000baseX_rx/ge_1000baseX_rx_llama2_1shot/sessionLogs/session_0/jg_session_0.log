@@ -1,0 +1,130 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-06-04 15:24:18 CDT
+# hostname  : pal-achieve-07.(none)
+# pid       : 51807
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:36065' '-nowindow' '-style' 'windows' '-data' 'AAABQnichY/NDsFQEIW/Eo1YeBAJwcqia9sSidg1Rf0Ft+kPYsOjepM6blTSlTmZuTNnzkzmOoD3KIoCa/W7govPWPiZ8/omnkPVPnWtykyflRca5XApceVtupwxBGzJ2YvpiAk5Coar+Fz9VDEWDAkZEWvxPjOpm1Jv1Lko7+nWCXO7K1Ic0LdYal8qZiEu4SZdxkr7oaXpWJzhoGr0Zy6wV4Wc5EOrS9lpNrO/eQOH9SlK' '-proj' '/home/vpulav2/Work/Jasper_llama/communication_controller_1000base-x_ieee_802.3-2008_clause_36-physical_codi/ge_1000baseX_rx/ge_1000baseX_rx_llama2_1shot/sessionLogs/session_0' '-init' '-hidden' '/home/vpulav2/Work/Jasper_llama/communication_controller_1000base-x_ieee_802.3-2008_clause_36-physical_codi/ge_1000baseX_rx/ge_1000baseX_rx_llama2_1shot/.tmp/.initCmds.tcl' 'FPV_ge_1000baseX_rx.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /home/vpulav2/Work/Jasper_llama/communication_controller_1000base-x_ieee_802.3-2008_clause_36-physical_codi/ge_1000baseX_rx/ge_1000baseX_rx_llama2_1shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/ge_1000baseX_rx.v
+[-- (VERI-1482)] Analyzing Verilog file './/ge_1000baseX_rx.v'
+[INFO (VERI-1328)] .//ge_1000baseX_rx.v(54): analyzing included file './/timescale.v'
+[INFO (VERI-1328)] .//ge_1000baseX_rx.v(56): analyzing included file './/ge_1000baseX_regs.v'
+[INFO (VERI-1328)] .//ge_1000baseX_rx.v(57): analyzing included file './/ge_1000baseX_constants.v'
+[INFO (VERI-2561)] .//ge_1000baseX_rx.v(421): undeclared symbol 'ability_matched1', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_rx.v(422): undeclared symbol 'ability_matched2', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_rx.v(424): undeclared symbol 'ability_matched', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_rx.v(442): undeclared symbol 'rx_config_match1', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_rx.v(443): undeclared symbol 'rx_config_match2', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_rx.v(445): undeclared symbol 'rx_config_match', assumed default net type 'wire'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_llama2_1shot.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_llama2_1shot.sva'
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(108): 'req1' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(108): 'state' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(108): 'gnt2' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(109): 'state' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(109): 'req2' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(109): 'gnt1' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(110): 'req1' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(110): 'req2' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(110): 'gnt1' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(111): 'req1' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(111): 'gnt1' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(112): 'gnt2' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(112): 'req2' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(113): 'gnt1' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(113): 'req1' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(114): 'req2' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(114): 'gnt2' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(115): 'req2' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(115): 'req1' is not declared
+[-- (SYS-1004)] Too many errors. Further error messages will be suppressed.
+[INFO (VMSG-1000)] Too many errors. Further error messages will be suppressed.
+Summary of errors detected:
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(108): 'req1' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(108): 'state' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(108): 'gnt2' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(109): 'state' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(109): 'req2' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(109): 'gnt1' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(110): 'req1' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(110): 'req2' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(110): 'gnt1' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(111): 'req1' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(111): 'gnt1' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(112): 'gnt2' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(112): 'req2' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(113): 'gnt1' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(113): 'req1' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(114): 'req2' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(114): 'gnt2' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(115): 'req2' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(115): 'req1' is not declared
+ERROR (ENL034): 19 errors detected in the design file(s).
+
+ERROR: problem encountered at line 12 in file FPV_ge_1000baseX_rx.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.411 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

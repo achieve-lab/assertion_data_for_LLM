@@ -1,0 +1,52 @@
+module i_eth_clockgen(
+input      MdcEn_n,          // Enable signal is asserted for one Clk period before Mdc falls.
+input  [7:0] TempDivider,
+input      MdcEn,            // Enable signal is asserted for one Clk period before Mdc rises.
+input [7:0] Divider,          // Divider (input clock will be divided by the Divider[7:0])
+input  [7:0] CounterPreset,
+input         Mdc,
+input       Clk,              // Input clock (Host clock)
+input   [7:0] Counter,
+input       Reset,            // Reset signal
+input        CountEq0
+);
+
+assert property(@(posedge Clk)  output reg overflow);
+assert property(@(posedge Clk)  output reg out);
+assert property(@(posedge Clk)  input load);
+assert property(@(posedge Clk)  input [7:0] load_val);
+assert property(@(posedge Clk)  (Reset) |-> (Counter == 8'h1));
+assert property(@(posedge Clk)  end end else if (load) begin count <= load_val);
+assert property(@(posedge Clk)  always @ (posedge clk or posedge rst) if (rst) begin count <= 0);
+assert property(@(posedge Clk)  (MdcEn_n) |-> (CountEq0 == 1));
+assert property(@(posedge Clk)  count <= count + 1);
+assert property(@(posedge Clk)  (CountEq0 && Mdc) |-> (Mdc == 1));
+assert property(@(posedge Clk)  end end endmodule
+            Assertions 6: (en) |-> (out == 0));
+assert property(@(posedge Clk)  out <= 1);
+assert property(@(posedge Clk)  (count == max_val) |-> (out == 1));
+assert property(@(posedge Clk)  out <= 0);
+assert property(@(posedge Clk)  (CountEq0 && Mdc) |-> MdcEn_n);
+assert property(@(posedge Clk)  (!Mdc) |-> (MdcEn == 1));
+assert property(@(posedge Clk)  (count == max_val) |-> (count == 0));
+assert property(@(posedge Clk)  (load) |-> (overflow == 0));
+assert property(@(posedge Clk)  input [7:0] max_val);
+assert property(@(posedge Clk)  (count == max_val) |);
+assert property(@(posedge Clk)  input clk);
+assert property(@(posedge Clk)  (Mdc) |-> (MdcEn_n == 1));
+assert property(@(posedge Clk)  end else begin overflow <= 0);
+assert property(@(posedge Clk)  (CountEq0 &&!Mdc) |-> MdcEn);
+assert property(@(posedge Clk)  count <= 0);
+assert property(@(posedge Clk)  (load) |-> (out == 0));
+assert property(@(posedge Clk)  input rst);
+assert property(@(posedge Clk)  overflow <= 0);
+assert property(@(posedge Clk)  (count == max_val) |-> (overflow == 1));
+assert property(@(posedge Clk)  (CountEq0 &&!Mdc) |-> (Mdc == 0));
+assert property(@(posedge Clk)  (MdcEn) |-> (CountEq0 == 1));
+assert property(@(posedge Clk)  output reg [7:0] count);
+assert property(@(posedge Clk)  end else begin if (en) begin if (count == max_val) begin overflow <= 1);
+assert property(@(posedge Clk)  (Reset) |-> (Mdc == 0)
+            Program 6: module counter(clk, rst, en, load, load_val, count, max_val, out, overflow));
+assert property(@(posedge Clk)  input en);
+
+endmodule

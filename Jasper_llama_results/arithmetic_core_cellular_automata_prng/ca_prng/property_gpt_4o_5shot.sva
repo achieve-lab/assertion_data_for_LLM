@@ -1,0 +1,21 @@
+parameter [7 : 0] DEFAULT_RULE = 8'b00011110;
+module i_ca_prng(
+  input          ca_state_we,
+  input [31 : 0] ca_state_input,
+  input [31 : 0] ca_state_new,
+  input [31 : 0] tmp_ca_state_new,
+  input [7 : 0] update_rule_input,
+  input [31:0] init_pattern_data,
+  input [7:0] update_rule_reg,
+  input clk,
+  input reset_n,
+  input [31:0] ca_state_reg,
+  input [31:0] prng_data,
+  input [7:0] update_rule,
+  input load_update_rule,
+  input load_init_pattern,
+  input next_pattern
+);
+
+assert property(@(posedge clk)  (!reset_n) |-> (update_rule_reg == DEFAULT_RULE && ca_state_reg == 32'b00000000000000000000000000000000));assert property(@(posedge clk)  (load_update_rule) |-> (update_rule_reg == update_rule));assert property(@(posedge clk)  (ca_state_we) |-> (ca_state_reg == ca_state_new));assert property(@(posedge clk)  (load_init_pattern) |-> (ca_state_new == init_pattern_data));assert property(@(posedge clk)  (!load_init_pattern && !next_pattern) |-> (ca_state_we == 0));assert property(@(posedge clk)  (next_pattern) |-> (ca_state_we == 1));assert property(@(posedge clk)  (load_init_pattern) |-> (ca_state_we == 1));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000000000) |-> (tmp_ca_state_new[0] == update_rule_reg[0]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000000001) |-> (tmp_ca_state_new[0] == update_rule_reg[1]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000000010) |-> (tmp_ca_state_new[0] == update_rule_reg[2]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000000011) |-> (tmp_ca_state_new[0] == update_rule_reg[3]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000000100) |-> (tmp_ca_state_new[0] == update_rule_reg[4]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000000101) |-> (tmp_ca_state_new[0] == update_rule_reg[5]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000000110) |-> (tmp_ca_state_new[0] == update_rule_reg[6]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000000111) |-> (tmp_ca_state_new[0] == update_rule_reg[7]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000001000) |-> (tmp_ca_state_new[1] == update_rule_reg[0]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000001001) |-> (tmp_ca_state_new[1] == update_rule_reg[1]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000001010) |-> (tmp_ca_state_new[1] == update_rule_reg[2]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000001011) |-> (tmp_ca_state_new[1] == update_rule_reg[3]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000001100) |-> (tmp_ca_state_new[1] == update_rule_reg[4]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000001101) |-> (tmp_ca_state_new[1] == update_rule_reg[5]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000001110) |-> (tmp_ca_state_new[1] == update_rule_reg[6]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000001111) |-> (tmp_ca_state_new[1] == update_rule_reg[7]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000010000) |-> (tmp_ca_state_new[2] == update_rule_reg[0]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000010001) |-> (tmp_ca_state_new[2] == update_rule_reg[1]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000010010) |-> (tmp_ca_state_new[2] == update_rule_reg[2]));assert property(@(posedge clk)  (ca_state_reg[31:0] == 32'b00000000000000000000000000010011) |-> (tmp_ca_state_new[2] == update_rule_reg[3]));
+endmodule

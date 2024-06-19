@@ -1,0 +1,11 @@
+bind dual_port_ram
+ i_dual_port_ram v_dual_port_ram(
+.clk(clk),
+.r_addr(r_addr),
+.w_data(w_data),
+.r_ena(r_ena),
+.w_ena(w_ena),
+.r_data(r_data),
+.mem(mem),
+.w_addr(w_addr)
+);

@@ -1,0 +1,12 @@
+parameter WID = 12;
+module i_PSGNoteOutMux(
+input [WID-1:0] o1,o2,o3,o4,o5,
+input [WID-1:0] o,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET,
+input [4:0] s,
+input [WID-1:0] a,b,c,d,e
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (s[4] && !e) |-> (o == {WID{1'b1}}));assert property(@(posedge DEFAULT_CLOCK) (s[3] && !d) |-> (o == {WID{1'b1}}));assert property(@(posedge DEFAULT_CLOCK) (s[2] && !c) |-> (o == {WID{1'b1}}));assert property(@(posedge DEFAULT_CLOCK) (s[1] && !b) |-> (o == {WID{1'b1}}));assert property(@(posedge DEFAULT_CLOCK) (s[0] && !a) |-> (o == {WID{1'b1}}));
+endmodule

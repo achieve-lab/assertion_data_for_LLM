@@ -1,0 +1,103 @@
+localparam integer KEY_WIDTH = 32;
+localparam integer KEY_NUM   = 4;
+localparam integer WORD      = 8;
+localparam integer ROUNDS    = 10;
+module i_key_expander(
+	input add_w_out,
+	input  [ 31:0] g_out,
+input   [     8 - 1 : 0] rc_dir, rc_inv,
+input  [     8 - 1 : 0] rot_in[0 : 4 - 1],
+	input  [127:0] key_out,
+	input enc_dec,
+input  [32 - 1 : 0] g_func,
+	input  [  3:0] round,
+	input  [127:0] key_in,
+input  [     8 - 1 : 0] rc,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET,
+input  [32 - 1 : 0] key   [0 : 4 - 1],
+	input  [ 31:0] g_in
+
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[14]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[30]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[59]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[70]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[50]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[32]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[4]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[41]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[29]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[72]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[20]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[75]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[7]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[10]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[46]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[53]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[60]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[61]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[73]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[74]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[15]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[17]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[64]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[67]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[27]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[66]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[48]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[2]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[51]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[19]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[76]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[62]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[9]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[52]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[37]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[55]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[6]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[16]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[25]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[71]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[40]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[21]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[1]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[44]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[35]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[65]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[77]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[23]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[42]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[24]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[47]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[26]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[49]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[63]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[69]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[58]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[28]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[43]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[11]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[54]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[8]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[56]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[31]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[39]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[18]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[22]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[57]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[12]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[78]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[38]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[13]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[33]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[5]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[36]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[45]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[34]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[68]);
+assert property(@(posedge DEFAULT_CLOCK)  (!key_out[0]) |-> key_out[3]);
+
+endmodule

@@ -1,0 +1,19 @@
+
+parameter CRC_SIZE      = 8;         // Define the size of CRC Code
+parameter MASK          = 8'hff ;
+module i_crc_comb(
+input [CRC_SIZE - 2 : 0] MASK_REVERSED,
+input [CRC_SIZE - 2 : 0] crc_in_masked,
+	input                    data_in,    // One bit of data block
+	input [CRC_SIZE - 1 : 0] crc_in,     // In cascated mode, this input is the previous calculated CRC code
+	input [CRC_SIZE - 1 : 0] crc_poly,   // Generator Polynomial
+input [CRC_SIZE - 2 : 0] crc_poly_size_reversed,
+  input [CRC_SIZE - 2 : 0] crc_poly_size,
+	input [CRC_SIZE - 1 : 0] crc_out,   // CRC code after one round of calculation
+  input DEFAULT_CLOCK,
+  input DEFAULT_RESET,
+input [CRC_SIZE - 1 : 0] feedback
+);
+
+assert property(@(posedge DEFAULT_CLOCK) No assertions are provided in the given Verilog design.);
+endmodule

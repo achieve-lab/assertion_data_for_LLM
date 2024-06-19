@@ -1,0 +1,10 @@
+bind outputReg
+ i_outputReg v_outputReg(
+.outputReadOut(outputReadOut),
+.outputWriteIn(outputWriteIn),
+.reset(reset),
+.outputReg(outputReg),
+.outputRwAddr(outputRwAddr),
+.outputs(outputs),
+.outputRw(outputRw)
+);

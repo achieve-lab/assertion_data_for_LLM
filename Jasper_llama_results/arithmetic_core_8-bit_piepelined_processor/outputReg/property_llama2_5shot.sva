@@ -1,0 +1,20 @@
+`include "defines.v"
+
+module i_outputReg(
+input reset, outputRw,
+        input [`outputAddrLen-1:0] outputRwAddr,
+        input outputWriteIn,
+        input DEFAULT_CLOCK,
+        input outputReadOut,
+        input  [`outputNumber-1:0] outputs,
+        
+        input [`outputNumber-1 :0] outputReg 
+        
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (outputRw) |-> (outputReadOut == outputReg[outputRwAddr]));
+assert property(@(posedge DEFAULT_CLOCK)  (outputRw) |-> (outputReg[outputRwAddr] == outputWriteIn));
+assert property(@(posedge DEFAULT_CLOCK)  (outputRw) |-> (outputs == outputReg));
+assert property(@(posedge DEFAULT_CLOCK)  (reset) |-> (outputReadOut == 1'bz));
+
+endmodule

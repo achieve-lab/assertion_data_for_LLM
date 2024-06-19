@@ -1,0 +1,72 @@
+parameter N = 8;
+module i_signed_mult_const_asic(
+input			rstn,
+input			clk,
+input [N  :0] p, // product input
+input [N+7:0] mult_wo_sign, // mult without sign
+input [N-1:0] a_FF,
+input			valid,
+input  [N-1:0] a, // variable - positive/negative
+input [N-1:0] b,
+input [N-1:0] div256 // divided 256
+);
+
+assert property(@(posedge clk)  (a_FF[7] && div256[7]) |-> p[8]);
+assert property(@(posedge clk)  (a_FF[7] && div256[7]) |-> p[7]);
+assert property(@(posedge clk)  (a_FF[1] && div256[1]) |-> p[1]);
+assert property(@(posedge clk)  (a_FF[4] && div256[4]) |-> p[4]);
+assert property(@(posedge clk)  (a_FF[6] && div256[6]) |-> p[1]);
+assert property(@(posedge clk)  (a_FF[7] && div256[7]) |-> p[14]);
+assert property(@(posedge clk)  (!a_FF[0] && div256[0]) |-> p[8]);
+assert property(@(posedge clk)  (a_FF[4] && div256[4]) |-> p[11]);
+assert property(@(posedge clk)  (a_FF[6] && div256[6]) |-> p[9]);
+assert property(@(posedge clk)  (!a_FF[7] && div256[7]) |-> p[15]);
+assert property(@(posedge clk)  (a_FF[2] && div256[2]) |-> p[2]);
+assert property(@(posedge clk)  (a_FF[3] && div256[3]) |-> p[3]);
+assert property(@(posedge clk)  (!a_FF[3] && div256[3]) |-> p[11]);
+assert property(@(posedge clk)  (a_FF[3] && div256[3]) |-> p[);
+assert property(@(posedge clk)  (a_FF[6] && div256[6]) |-> p[13]);
+assert property(@(posedge clk)  (a_FF[3] && div256[3]) |-> p[15]);
+assert property(@(posedge clk)  (a_FF[3] && div256[3]) |-> p[12]);
+assert property(@(posedge clk)  (a_FF[2] && div256[2]) |-> p[14]);
+assert property(@(posedge clk)  (a_FF[7] && div256[7]) |-> p[10]);
+assert property(@(posedge clk)  (a_FF[7] && div256[7]) |-> p[13]);
+assert property(@(posedge clk)  (a_FF[7] && div256[7]) |-> p[9]);
+assert property(@(posedge clk)  (!a_FF[2] && div256[2]) |-> p[10]);
+assert property(@(posedge clk)  (a_FF[4] && div256[4]) |-> p[15]);
+assert property(@(posedge clk)  (a_FF[5] && div256[5]) |-> p[14]);
+assert property(@(posedge clk)  (a_FF[6] && div256[6]) |-> p[10]);
+assert property(@(posedge clk)  (!a_FF[5] && div256[5]) |-> p[13]);
+assert property(@(posedge clk)  (a_FF[3] && div256[3]) |-> p[13]);
+assert property(@(posedge clk)  (a_FF[3] && div256[3]) |-> p[14]);
+assert property(@(posedge clk)  (a_FF[1] && div256[1]) |-> p[14]);
+assert property(@(posedge clk)  (!a_FF[1] && div256[1]) |-> p[9]);
+assert property(@(posedge clk)  (a_FF[7] && div256[7]) |-> p[12]);
+assert property(@(posedge clk)  (a_FF[5] && div256[5]) |-> p[2]);
+assert property(@(posedge clk)  (a_FF[4] && div256[4]) |-> p[14]);
+assert property(@(posedge clk)  (a_FF[4] && div256[4]) |-> p[3]);
+assert property(@(posedge clk)  (!a_FF[4] && div256[4]) |-> p[12]);
+assert property(@(posedge clk)  (a_FF[7] && div256[7]) |-> p[11]);
+assert property(@(posedge clk)  (a_FF[5] && div256[5]) |-> p[13]);
+assert property(@(posedge clk)  (a_FF[5] && div256[5]) |-> p[15]);
+assert property(@(posedge clk)  (a_FF[0] && div256[0]) |-> p[0]);
+assert property(@(posedge clk)  (a_FF[7] && div256[7]) |-> p[15]);
+assert property(@(posedge clk)  (a_FF[6] && div256[6]) |-> p[6]);
+assert property(@(posedge clk)  (a_FF[7] && div256[7]) |-> p[0]);
+assert property(@(posedge clk)  (a_FF[2] && div256[2]) |-> p[13]);
+assert property(@(posedge clk)  (a_FF[4] && div256[4]) |-> p[13]);
+assert property(@(posedge clk)  (a_FF[2] && div256[2]) |-> p[15]);
+assert property(@(posedge clk)  (a_FF[6] && div256[6]) |-> p[12]);
+assert property(@(posedge clk)  (a_FF[4] && div256[4]) |-> p[12]);
+assert property(@(posedge clk)  (a_FF[6] && div256[6]) |-> p[14]);
+assert property(@(posedge clk)  (a_FF[0] && div256[0]) |-> p[15]);
+assert property(@(posedge clk)  (a_FF[5] && div256[5]) |-> p[12]);
+assert property(@(posedge clk)  (a_FF[5] && div256[5]) |-> p[10]);
+assert property(@(posedge clk)  (a_FF[6] && div256[6]) |-> p[15]);
+assert property(@(posedge clk)  (a_FF[5] && div256[5]) |-> p[11]);
+assert property(@(posedge clk)  (!a_FF[6] && div256[6]) |-> p[14]);
+assert property(@(posedge clk)  (a_FF[6] && div256[6]) |-> p[11]);
+assert property(@(posedge clk)  (a_FF[5] && div256[5]) |-> p[5]);
+assert property(@(posedge clk)  (a_FF[1] && div256[1]) |-> p[15]);
+
+endmodule

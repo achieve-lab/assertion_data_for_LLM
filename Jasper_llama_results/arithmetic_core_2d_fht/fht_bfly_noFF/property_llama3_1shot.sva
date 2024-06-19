@@ -1,0 +1,95 @@
+parameter N = 8;
+module i_fht_bfly_noFF(
+input [N-1:0] b_FF,
+input	[N  :0]	c, // additive input
+input [N-1:0] a_FF,
+input			clk,
+  	input [N-1:0] ainv,
+input	[N-1:0]	b, // input
+input			rstn,
+input			valid,
+  	input [N:0] plus1,
+input	[N  :0]	d, // subtractive input
+	input  ci,
+input	[N-1:0]	a, // input
+	input [N-1:0] co,
+	input [N-1:0] sum
+);
+
+assert property(@(posedge clk)  (c[4] == 0) |-> (a[4] == 0 & b[4] == 0));
+assert property(@(posedge clk)  (a[6] == 1) |-> (d[6] == 0));
+assert property(@(posedge clk)  (a[1] == 1) |-> (d[1] == 0));
+assert property(@(posedge clk)  (c[2] == 1) |-> (a[2] == 1 | b[2] == 1));
+assert property(@(posedge clk) (req1 == 1 & req2 == 1 & req3 == 1 & state == 0) |-> (gnt1 == 0));
+assert property(@(posedge clk)  (d[5] == 1) |-> (a[5] == 1 & b[5] == 0));
+assert property(@(posedge clk)  (a[7] == 1) |-> (d[7] == 0));
+assert property(@(posedge clk)  (d[3] == 0) |-> (a[3] == 0 & b[3] == 1));
+assert property(@(posedge clk)  (b[0] == 1) |-> (d[0] == 0));
+assert property(@(posedge clk)  (b[5] == 1) |-> (d[5] == 0));
+assert property(@(posedge clk)  (d[0] == 0) |-> (a[0] == 0 & b[0] == 1));
+assert property(@(posedge clk)  (d[7] == 0) |-> (a[7] == 0 & b[7] == 1));
+assert property(@(posedge clk)  (b[1] == 1) |-> (d[1] == 0));
+assert property(@(posedge clk)  (d[6] == 0) |-> (a[6] == 0 & b[6] == 1));
+assert property(@(posedge clk)  (d[3] == 1) |-> (a[3] == 1 & b[3] == 0));
+assert property(@(posedge clk)  (d[8] == 0) |-> (a[7] == 0 & b[7] == 1));
+assert property(@(posedge clk)  (b[1] == 1) |-> (c[1] == 1));
+assert property(@(posedge clk)  (b[2] == 1) |-> (c[2] == 1));
+assert property(@(posedge clk)  (c[2] == 0) |-> (a[2] == 0 & b[2] == 0));
+assert property(@(posedge clk)  (b[2] == 1) |-> (d[2] == 0));
+assert property(@(posedge clk)  (d[2] == 0) |-> (a[2] == 0 & b[2] == 1));
+assert property(@(posedge clk)  (b[6] == 1) |-> (c[6] == 1));
+assert property(@(posedge clk)  (c[0] == 1) |-> (a[0] == 1 | b[0] == 1));
+assert property(@(posedge clk)  (a[5] == 1) |-> (d[5] == 0));
+assert property(@(posedge clk)  (c[7] == 0) |-> (a[7] == 0 & b[7] == 0));
+assert property(@(posedge clk)  (d[6] == 1) |-> (a[6] == 1 & b[6] == 0));
+assert property(@(posedge clk)  (b[7] == 1) |-> (c[7] == 1));
+assert property(@(posedge clk)  (b[0] == 1) |-> (c[0] == 1));
+assert property(@(posedge clk)  (a[4] == 1) |-> (d[4] == 0));
+assert property(@(posedge clk)  (c[0] == 0) |-> (a[0] == 0 & b[0] == 0));
+assert property(@(posedge clk)  (b[6] == 1) |-> (d[6] == 0));
+assert property(@(posedge clk)  (a[6] == 1) |-> (c[6] == 1));
+assert property(@(posedge clk)  (c[8] == 1) |-> (a[7] == 1 | b[7] == 1));
+assert property(@(posedge clk)  (c[8] == 0) |-> (a[7] == 0 & b[7] == 0));
+assert property(@(posedge clk)  (a[3] == 1) |-> (d[3] == 0));
+assert property(@(posedge clk)  (d[4] == 1) |-> (a[4] == 1 & b[4] == 0));
+assert property(@(posedge clk)  (a[4] == 1) |-> (c[4] == 1));
+assert property(@(posedge clk)  (c[7] == 1) |-> (a[7] == 1 | b[7] == 1));
+assert property(@(posedge clk)  (c[3] == 1) |-> (a[3] == 1 | b[3] == 1));
+assert property(@(posedge clk)  (c[1] == 0) |-> (a[1] == 0 & b[1] == 0));
+assert property(@(posedge clk)  (d[8] == 1) |-> (a[7] == 1 & b[7] == 0));
+assert property(@(posedge clk)  (c[5] == 1) |-> (a[5] == 1 | b[5] == 1));
+assert property(@(posedge clk)  (b[4] == 1) |-> (d[4] == 0));
+assert property(@(posedge clk)  (c[6] == 1) |-> (a[6] == 1 | b[6] == 1));
+assert property(@(posedge clk)  (d[1] == 1) |-> (a[1] == 1 & b[1] == 0));
+assert property(@(posedge clk)  (d[2] == 1) |-> (a[2] == 1 & b[2] == 0));
+assert property(@(posedge clk)  (b[7] == 1) |-> (d[8] == 1));
+assert property(@(posedge clk)  (d[5] == 0) |-> (a[5] == 0 & b[5] == 1));
+assert property(@(posedge clk)  (d[1] == 0) |-> (a[1] == 0 & b[1] == 1));
+assert property(@(posedge clk)  (b[3] == 1) |-> (c[3] == 1));
+assert property(@(posedge clk)  (c[4] == 1) |-> (a[4] == 1 | b[4] == 1));
+assert property(@(posedge clk)  (d[7] == 1) |-> (a[7] == 1 & b[7] == 0));
+assert property(@(posedge clk)  (a[5] == 1) |-> (c[5] == 1));
+assert property(@(posedge clk)  (a[1] == 1) |-> (c[1] == 1));
+assert property(@(posedge clk)  (a[0] == 1) |-> (d[0] == 0));
+assert property(@(posedge clk)  (a[2] == 1) |-> (d[2] == 0));
+assert property(@(posedge clk)  (d[4] == 0) |-> (a[4] == 0 & b[4] == 1));
+assert property(@(posedge clk)  (b[4] == 1) |-> (c[4] == 1));
+assert property(@(posedge clk)  (b[7] == 1) |-> (c[8] == 1));
+assert property(@(posedge clk)  (a[7] == 1) |-> (c[7] == 1));
+assert property(@(posedge clk)  (b[7] == 1) |-> (d[7] == 0));
+assert property(@(posedge clk)  (a[7] == 1) |-> (d[8] == 1));
+assert property(@(posedge clk)  (c[5] == 0) |-> (a[5] == 0 & b[5] == 0));
+assert property(@(posedge clk) (req1 == 1 & req2 == 0 & state == 0) |-> (gnt1 == 1));
+assert property(@(posedge clk)  (c[1] == 1) |-> (a[1] == 1 | b[1] == 1));
+assert property(@(posedge clk)              (a[0] == 1) |-> (c[0] == 1));
+assert property(@(posedge clk)  (a[3] == 1) |-> (c[3] == 1));
+assert property(@(posedge clk)  end endmodule"            Assertions 2: (req1 == 1 & req2 == 1 & state == 0) |-> (gnt1 == 0));
+assert property(@(posedge clk)  (d[0] == 1) |-> (a[0] == 1 & b[0] == 0));
+assert property(@(posedge clk)  (b[3] == 1) |-> (d[3] == 0));
+assert property(@(posedge clk)  (a[7] == 1) |-> (c[8] == 1));
+assert property(@(posedge clk)  (b[5] == 1) |-> (c[5] == 1));
+assert property(@(posedge clk)  (c[6] == 0) |-> (a[6] == 0 & b[6] == 0));
+assert property(@(posedge clk)  (c[3] == 0) |-> (a[3] == 0 & b[3] == 0));
+assert property(@(posedge clk)  (a[2] == 1) |-> (c[2] == 1));
+
+endmodule

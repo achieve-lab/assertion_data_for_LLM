@@ -1,0 +1,41 @@
+parameter N_FilterLength      = 8;
+parameter N_FilterResetValue  = 8;
+parameter N_FilterMaxValue    = N_FilterResetValue;
+
+/* 256=2_PWR_8(counter length). Use this value because unsigned arithmetic */
+parameter N_FilterMinValue    = 256 - N_FilterResetValue;
+
+/* the counter length of reset scheme must be short */
+parameter ResetterCounterLength   = 4;
+parameter ResetterCounterMaxValue = 3;
+
+/* 16=2_PWR_4 */
+parameter ResetterCounterMinValue = 16 - 3;
+module i_variableresetrandomwalkfilter(
+input Up, Down,
+ input  MainClock, Lead, Lag, // System Clock and Phase Comparator signals
+ input Positive, Negative,   // "positive shift" and "negative shift" inputs
+input [N_FilterLength-1 : 0] N_FilterCounter,
+input [ResetterCounterLength-1 : 0] ResetterCounter,
+input DEFAULT_RESET,
+input [N_FilterLength-1 : 0] ResetterValue
+);
+
+assert property(@(posedge MainClock)  (N_FilterCounter == N_FilterMinValue) |-> (N_FilterCounter!= 256 - 4));
+assert property(@(posedge MainClock)  (N_FilterCounter == N_FilterMinValue) |-> (N_FilterCounter!= 0));
+assert property(@(posedge MainClock)  (N_FilterCounter == N_FilterMinValue) |-> (N_FilterCounter!= 256 - 6));
+assert property(@(posedge MainClock)  (N_FilterCounter == N_FilterMinValue) |-> (N_FilterCounter!= 256 - 7));
+assert property(@(posedge MainClock)  (N_FilterCounter == N_FilterMaxValue) |-> (N_FilterCounter!= 256 - 4));
+assert property(@(posedge MainClock)  (N_FilterCounter == N_FilterMaxValue) |-> (N_FilterCounter!= 256 - 6));
+assert property(@(posedge MainClock)  (N_FilterCounter == N_FilterMaxValue) |-> (N_FilterCounter!= 0));
+assert property(@(posedge MainClock)  (N_FilterCounter == N_FilterMinValue) |-> (N_FilterCounter!= N_FilterMaxValue));
+assert property(@(posedge MainClock)  (N_FilterCounter == N_FilterMaxValue) |-> (N_FilterCounter!= 256 - 7));
+assert property(@(posedge MainClock)  (N_FilterCounter == N_FilterMaxValue) |-> (N_FilterCounter!= N_FilterMinValue));
+assert property(@(posedge MainClock)  (N_FilterCounter == N_FilterMaxValue) |-> (N_FilterCounter!= 4));
+assert property(@(posedge MainClock)  (N_FilterCounter == N_FilterMaxValue) |-> (N_FilterCounter!= 6));
+assert property(@(posedge MainClock)  (N_FilterCounter == N_FilterMinValue) |-> (N_FilterCounter!= 7));
+assert property(@(posedge MainClock)  (N_FilterCounter == N_FilterMinValue) |-> (N_FilterCounter!= 4));
+assert property(@(posedge MainClock)  (N_FilterCounter == N_FilterMaxValue) |-> (N_FilterCounter!= 7));
+assert property(@(posedge MainClock)  (N_FilterCounter == N_FilterMinValue) |-> (N_FilterCounter!= 6));
+
+endmodule

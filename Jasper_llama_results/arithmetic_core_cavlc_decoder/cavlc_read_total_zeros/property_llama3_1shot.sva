@@ -1,0 +1,50 @@
+module i_cavlc_read_total_zeros(
+input   chroma_DC_sel,
+input     [3:0]   len_comb,
+input     [3:0]   TotalZeros_G3,
+input     [0:2]   rbsp_chroma_DC,         
+input   ena,
+input     [1:0]   len_chroma_DC,
+input     [3:0]   TotalZeros_LE3,
+input     [0:5]   rbsp_G3,        
+input   [0:8]   rbsp,
+input     [1:0]   TotalZeros_chroma_DC,
+input     [0:8]   rbsp_LE3,       
+input     [3:0]   len_LE3,
+input   sel,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET,
+input  [3:0]   TotalZeros_comb,
+input     [2:0]   len_G3,
+input   [3:0]   TotalCoeff
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b00 & rbsp[4] == 1 & rbsp[3] == 0 & rbsp[2] == 0 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 4));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b01 & rbsp[1] == 1 & rbsp[0] == 0) |-> (TotalZeros_comb == 1));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b01 & rbsp[8] == 0 & rbsp[7] == 0 & rbsp[6] == 0 & rbsp[5] == 0 & rbsp[4] == 0 & rbsp[3] == 0 & rbsp[2] == 0 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 9));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b00 & rbsp[7] == 1 & rbsp[6] == 0 & rbsp[5] == 0 & rbsp[4] == 0 & rbsp[3] == 0 & rbsp[2] == 0 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 7));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b00 & rbsp[3] == 1 & rbsp[2] == 0 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 3));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b10 & rbsp[2] == 1 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 3));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b00 & rbsp[8] == 0 & rbsp[7] == 0 & rbsp[6] == 0 & rbsp[5] == 0 & rbsp[4] == 0 & rbsp[3] == 0 & rbsp[2] == 0 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 9));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & chroma_DC_sel == 1 & rbsp[1] == 1) |-> (TotalZeros_comb == 1));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b00 & rbsp[1] == 1 & rbsp[0] == 0) |-> (TotalZeros_comb == 1));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b00 & rbsp[2] == 1 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 2));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b00 & rbsp[6] == 1 & rbsp[5] == 0 & rbsp[4] == 0 & rbsp[3] == 0 & rbsp[2] == 0 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 6));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b01 & rbsp[5] == 1 & rbsp[4] == 0 & rbsp[3] == 0 & rbsp[2] == 0 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 5));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b01 & rbsp[8] == 1 & rbsp[7] == 0 & rbsp[6] == 0 & rbsp[5] == 0 & rbsp[4] == 0 & rbsp[3] == 0 & rbsp[2] == 0 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 8));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b01 & rbsp[3] == 1 & rbsp[2] == 0 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 3));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b10 & rbsp[1] == 1 & rbsp[0] == 0) |-> (TotalZeros_comb == 2));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & chroma_DC_sel == 1 & rbsp[2] == 1) |-> (TotalZeros_comb == 2));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b00 & rbsp[0] == 1) |-> (TotalZeros_comb == 0));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b00 & rbsp[5] == 1 & rbsp[4] == 0 & rbsp[3] == 0 & rbsp[2] == 0 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 5));
+assert property(@(posedge DEFAULT_CLOCK)  (ena == 1 & sel == 1 & chroma_DC_sel == 1 & rbsp[0] == 1) |-> (TotalZeros_comb == 0));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b01 & rbsp[7] == 1 & rbsp[6] == 0 & rbsp[5] == 0 & rbsp[4] == 0 & rbsp[3] == 0 & rbsp[2] == 0 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 7));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b10 & rbsp[0] == 1) |-> (TotalZeros_comb == 1));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b00 & rbsp[8] == 1 & rbsp[7] == 0 & rbsp[6] == 0 & rbsp[5] == 0 & rbsp[4] == 0 & rbsp[3] == 0 & rbsp[2] == 0 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 8));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & chroma_DC_sel == 1 & rbsp[0] == 0) |-> (TotalZeros_comb == 3));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b01 & rbsp[6] == 1 & rbsp[5] == 0 & rbsp[4] == 0 & rbsp[3] == 0 & rbsp[2] == 0 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 6));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b01 & rbsp[2] == 1 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 2));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b01 & rbsp[4] == 1 & rbsp[3] == 0 & rbsp[2] == 0 & rbsp[1] == 0 & rbsp[0] == 0) |-> (TotalZeros_comb == 4));
+assert property(@(posedge DEFAULT_CLOCK) (ena == 1 & sel == 1 & TotalCoeff[3:2] == 2'b01 & rbsp[0] == 1) |-> (TotalZeros_comb == 0));
+
+endmodule

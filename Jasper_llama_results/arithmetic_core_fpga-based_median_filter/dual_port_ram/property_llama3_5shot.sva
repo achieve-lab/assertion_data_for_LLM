@@ -1,0 +1,90 @@
+   parameter DATA_WIDTH = 32;
+   parameter ADDR_WIDTH = 14;
+module i_dual_port_ram(
+   input clk, 
+   input r_ena,
+   input [DATA_WIDTH-1:0] w_data, 
+   input w_ena, 
+input [DATA_WIDTH-1:0] mem[0:2**ADDR_WIDTH-1],
+   input  [DATA_WIDTH-1:0] r_data ,
+   input [ADDR_WIDTH-1:0] r_addr,
+   input [ADDR_WIDTH-1:0] w_addr 
+);
+
+assert property(@(posedge clk)  (D && b) |-> Bout);
+assert property(@(posedge clk)  2'b10: out = in[2]);
+assert property(@(posedge clk)  (sel == 2'b01) |-> (out == in[1]));
+assert property(@(posedge clk)  (rst) |-> (cnt == 0)
+            Test Program: module mux4_1 ( input [3:0] in, input [1:0] sel, output reg out ));
+assert property(@(posedge clk)  input req1, req2);
+assert property(@(posedge clk)  always @ (*) if (state) begin gnt1 = req1 & ~req2);
+assert property(@(posedge clk)  gnt2 = req2 & ~req1);
+assert property(@(posedge clk)  (!Cout && a) |-> S
+            Test Program: module half_adder(input a, b, output S, Cout));
+assert property(@(posedge clk)  assign Bout = (~a & b) | (~(a ^ b) & Bin));
+assert property(@(posedge clk)  (!Bout && D) |-> a
+            Test Program: module dual_port_ram #( parameter DATA_WIDTH = 32, parameter ADDR_WIDTH = 14 ) ( input clk, input r_ena, input w_ena, input [DATA_WIDTH-1:0] w);
+assert property(@(posedge clk)  endmodule
+            Test Assertions: (!Cout && cin) |-> S);
+assert property(@(posedge clk) (req1 == 0) |-> (gnt1 == 0));
+assert property(@(posedge clk) (req1 == 1 & req2 == 0) |-> (gnt1 == 1));
+assert property(@(posedge clk)  2'b11: out = in[3]);
+assert property(@(posedge clk)  assign Cout = (a & b) | (b & cin) | (a & cin));
+assert property(@(posedge clk)  2'b01: out = in[1]);
+assert property(@(posedge clk)  end endmodule
+            Test Assertions: (state == 1 & req2 == 1) |-> (gnt1 == 0));
+assert property(@(posedge clk)  always @ (posedge clk or posedge rst) if (rst) state <= 0);
+assert property(@(posedge clk)  (!Cout && b) |-> S);
+assert property(@(posedge clk)  (sel == 2'b10) |-> (out == in[2]));
+assert property(@(posedge clk)  assign Cout = a & b);
+assert property(@(posedge clk)  (Cout) |-> a
+            Test Program: module T_flipflop ( input clk, rst_n, input t, output reg q, output q_bar ));
+assert property(@(posedge clk)  end endmodule
+            Test Assertions: (en) |-> (cnt == cnt + 1));
+assert property(@(posedge clk)  (D && Bin) |-> Bout);
+assert property(@(posedge clk)  (sel == 2'b11) |-> (out == in[3])
+            Test Program: module arb2 (clk, rst, req1, req2, gnt1, gnt2));
+assert property(@(posedge clk)  (r_ena) |-> (r_data == mem[r_addr])
+            Test Program: module counter ( input clk, rst, input en, output reg [7:0] cnt ));
+assert property(@(posedge clk)  (!Bout && b) |-> a);
+assert property(@(posedge clk)  reg gnt1, gnt2);
+assert property(@(posedge clk)  else if (en) cnt <= cnt + 1);
+assert property(@(posedge clk)  endcase end endmodule
+            Test Assertions: (sel == 2'b00) |-> (out == in[0]));
+assert property(@(posedge clk)  always @ (*) begin case (sel) 2'b00: out = in[0]);
+assert property(@(posedge clk)  output gnt1, gnt2);
+assert property(@(posedge clk)  reg state);
+assert property(@(posedge clk)  endmodule
+            Test Assertions: (!q) |-> q_bar);
+assert property(@(posedge clk)  (w_ena) |-> (mem[w_addr] == w_data));
+assert property(@(posedge clk) (req2 == 0) |-> (gnt2 == 0));
+assert property(@(posedge clk)  (!Bout && Bin) |-> a);
+assert property(@(posedge clk) (req1 == 1 & state == 0) |-> (gnt2 == 0));
+assert property(@(posedge clk)  (gnt2) |-> (req2));
+assert property(@(posedge clk) (req2 == 1 & req1 == 0) |-> (gnt2 == 1));
+assert property(@(posedge clk)  else begin q <= (t?~q:q));
+assert property(@(posedge clk)  input clk, rst);
+assert property(@(posedge clk)  assign S = a ^ b);
+assert property(@(posedge clk)  endmodule
+            Test Assertions: (!a && D) |-> Bout);
+assert property(@(posedge clk)  endmodule
+            Test Assertions: (Cout) |-> b);
+assert property(@(posedge clk)  end end assign q_bar = ~q);
+assert property(@(posedge clk)  gnt2 = req2);
+assert property(@(posedge clk)  (q == 1) |-> (q_bar == 0));
+assert property(@(posedge clk)  always @ (posedge clk) begin if (rst) cnt <= 0);
+assert property(@(posedge clk)  assign S = a ^ b ^ cin);
+assert property(@(posedge clk)  end else begin gnt1 = req1);
+assert property(@(posedge clk)  assign D = a ^ b ^ Bin);
+assert property(@(posedge clk)  always@(posedge clk) begin if(!rst_n) q <= 0);
+assert property(@(posedge clk) (q == 0) |-> (q_bar == 1)
+            Test Program: module full_subtractor(input a, b, Bin, output D, Bout));
+assert property(@(posedge clk)  else state <= gnt1);
+assert property(@(posedge clk) (req1 == 1 & state == 0) |-> (gnt1 == 1));
+assert property(@(posedge clk)  
+            Test Program: module full_adder(input a, b, cin, output S, Cout));
+assert property(@(posedge clk)  (gnt1) |-> (req1));
+assert property(@(posedge clk) (req2 == 1 & state == 1) |-> (gnt2 == 1));
+assert property(@(posedge clk)  (!q_bar) |-> q);
+
+endmodule

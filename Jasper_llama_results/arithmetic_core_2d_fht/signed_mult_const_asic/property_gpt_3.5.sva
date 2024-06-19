@@ -1,0 +1,15 @@
+parameter N = 8;
+module i_signed_mult_const_asic(
+input			rstn,
+input			clk,
+input [N  :0] p, // product input
+input [N+7:0] mult_wo_sign, // mult without sign
+input [N-1:0] a_FF,
+input			valid,
+input  [N-1:0] a, // variable - positive/negative
+input [N-1:0] b,
+input [N-1:0] div256 // divided 256
+);
+
+assert property (@(posedge clk) |-> (valid && a_FF == a)); assert property (@(posedge clk) (a_FF[N-1] == 1) |-> (b == ~a_FF[N-1:0] + {{N-1{1'b0}},1'b1})); assert property (@(posedge clk) (a_FF[N-1] == 0) |-> (b == a_FF[N-1:0])); assert property (@(posedge clk) (b[N+7:N] == 0)); assert property (@(posedge clk) (mult_wo_sign == b[N-2:0]*mult_constant)); assert property (@(posedge clk) (div256 == mult_wo_sign >> 8)); assert property (@(posedge clk) (p == {1'b1,{~div256[N-1:0] + {{N-1{1'b0}},1'b1}} }) |-> (a_FF[N-1] == 1)); assert property (@(posedge clk) (p == {1'b0, div256[N-1:0]}) |-> (a_FF[N-1] == 0));
+endmodule

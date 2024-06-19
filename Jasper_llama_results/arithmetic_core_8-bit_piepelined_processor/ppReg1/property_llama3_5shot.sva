@@ -1,0 +1,31 @@
+module i_ppReg1(
+		input clk,
+		input [`instOpCodeLen-1:0] opcodeOut,
+		input [`instOpCodeLen-1:0] opcodeIn,
+		input [`instFieldLen-1:0] fieldIn,
+		input [`instFieldLen-1:0] fieldOut
+);
+
+assert property(@(posedge clk)  input clk);
+assert property(@(posedge clk)             Test Program:`include "defines.v" module ppReg3 (clk, opcodeIn, fieldIn, opcodeOut, fieldOut));
+assert property(@(posedge clk)             Test Program:`include "defines.v" module ppReg5 (clk, opcodeIn, fieldIn, opcodeOut, fieldOut));
+assert property(@(posedge clk)             Test Program:`include "defines.v" module ppReg7 (clk, opcodeIn, fieldIn, opcodeOut, fieldOut));
+assert property(@(posedge clk)  output [`instFieldLen-1:0] fieldOut);
+assert property(@(posedge clk)  input [`instFieldLen-1:0] fieldIn);
+assert property(@(posedge clk)             Test Program:`include "defines.v" module ppReg8 (clk, opcodeIn, fieldIn, opcodeOut, fieldOut));
+assert property(@(posedge clk)  reg [`instFieldLen-1:0] fieldOut);
+assert property(@(posedge clk)  always @ (posedge clk) begin opcodeOut = opcodeIn);
+assert property(@(posedge clk)  end endmodule
+            Test Assertions: (opcodeIn == opcodeOut));
+assert property(@(posedge clk)  reg [`instOpCodeLen-1:0] opcodeOut);
+assert property(@(posedge clk)             Test Program:`include "defines.v" module ppReg4 (clk, opcodeIn, fieldIn, opcodeOut, fieldOut));
+assert property(@(posedge clk)             Test Program:`include "defines.v" module ppReg6 (clk, opcodeIn, fieldIn, opcodeOut, fieldOut));
+assert property(@(posedge clk)  reg);
+assert property(@(posedge clk)  output [`instOpCodeLen-1:0] opcodeOut);
+assert property(@(posedge clk)  (opcodeIn == opcodeOut));
+assert property(@(posedge clk)  input [`instOpCodeLen-1:0] opcodeIn);
+assert property(@(posedge clk)             Test Program:`include "defines.v" module ppReg2 (clk, opcodeIn, fieldIn, opcodeOut, fieldOut));
+assert property(@(posedge clk)  (fieldIn == fieldOut));
+assert property(@(posedge clk)  fieldOut = fieldIn);
+
+endmodule

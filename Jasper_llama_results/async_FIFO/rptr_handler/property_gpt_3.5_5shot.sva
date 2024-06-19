@@ -1,0 +1,12 @@
+module i_rptr_handler #(parameter PTR_WIDTH=3)(
+  input rclk, rrst_n, r_en,
+  input [PTR_WIDTH:0] g_wptr_sync,
+  input [PTR_WIDTH:0] b_rptr, g_rptr,
+  input [PTR_WIDTH:0] g_rptr_next,
+  input [PTR_WIDTH:0] b_rptr_next,
+  input empty,
+  input rempty
+);
+
+assert property(@(posedge rclk) (g_wptr_sync == g_rptr) |-> empty);assert property(@(posedge rclk)  (r_en && !empty) |-> (b_rptr_next == b_rptr + 1));assert property(@(posedge rclk)  (r_en && !empty) |-> (g_rptr_next == (b_rptr_next >> 1) ^ b_rptr_next));assert property(@(posedge rclk)  (g_wptr_sync != g_rptr_next) |-> !empty);assert property(@(posedge rclk)  (rrst_n == 0) |-> (b_rptr == 0));assert property(@(posedge rclk)  (rrst_n == 0) |-> (g_rptr == 0));assert property(@(posedge rclk)  (rrst_n == 0) |-> (empty == 1));
+endmodule

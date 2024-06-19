@@ -1,0 +1,58 @@
+module i_qtwosComp(
+	input [30:0] a,
+	input [63:0] flip,
+	input [63:0] b,
+	input [63:0] out,
+	input [63:0] data,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (a[14] == 1) |-> (b[47] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[24] == 0) |-> (b[57] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[12] == 1) |-> (b[45] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[10] == 0) |-> (b[43] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[17] == 0) |-> (b[50] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[22] == 1) |-> (b[55] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[20] == 1) |-> (b[53] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[30] == 0) |-> (b[63] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[29] == 1) |-> (b[62] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[27] == 1) |-> (b[60] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[13] == 0) |-> (b[46] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[18] == 0) |-> (b[51] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[25] == 0) |-> (b[58] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[11] == 1) |-> (b[44] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[8] == 0) |-> (b[41] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[24] == 1) |-> (b[57] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[21] == 1) |-> (b[54] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[28] == 1) |-> (b[61] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[25] == 1) |-> (b[58] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[18] == 1) |-> (b[51] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[30] == 1) |-> (b[63] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[20] == 0) |-> (b[53] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[9] == 0) |-> (b[42] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[23] == 0) |-> (b[56] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[10] == 1) |-> (b[43] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[21] == 0) |-> (b[54] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[26] == 1) |-> (b[59] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[22] == 0) |-> (b[55] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[23] == 1) |-> (b[56] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[17] == 1) |-> (b[50] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[16] == 1) |-> (b[49] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[15] == 1) |-> (b[48] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[11] == 0) |-> (b[44] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[16] == 0) |-> (b[49] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[27] == 0) |-> (b[60] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[15] == 0) |-> (b[48] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[13] == 1) |-> (b[46] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[9] == 1) |-> (b[42] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[12] == 0) |-> (b[45] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[8] == 1) |-> (b[41] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[29] == 0) |-> (b[62] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[19] == 1) |-> (b[52] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (a[26] == 0) |-> (b[59] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[28] == 0) |-> (b[61] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[14] == 0) |-> (b[47] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (a[19] == 0) |-> (b[52] == 0));
+
+endmodule

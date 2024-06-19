@@ -1,0 +1,92 @@
+module i_fpu_sub(
+input		clk,
+input   subtra_fraction_enable ,
+input   small_is_nonzero,
+input   diffshift_et_55, // when the difference ,
+input   [51:0] mantissa_small,
+input   diffshift_gt_exponent,
+input   [54:0] subtra_shift_2 ,
+input		rst,
+input   [54:0] subtra_shift,
+input   [54:0] diff,
+input   [10:0] exponent_small,
+input   small_is_denorm,
+input   subtra_shift_nonzero ,
+input		enable,
+input   [10:0] exponent,
+input   mana_gtet_manb,
+input [6:0] 	diff_shift_2,
+input   [10:0] exponent_large,
+input   large_norm_small_denorm,
+input   [10:0] exponent_a,
+input   [10:0] exponent_b,
+input	[63:0]	opa, opb,	  
+input   in_norm_out_denorm ,
+input   [54:0] subtra_shift_3,
+input   large_is_denorm,
+input [6:0] 	diff_shift,
+input   [51:0] mantissa_b,
+input   [10:0] exponent_diff,
+input   [51:0] mantissa_a,
+input   [55:0] diff_2,
+input   [54:0] minuend,
+input   [10:0] exponent_2,
+input	[2:0]	fpu_op,
+input   [51:0] mantissa_large,
+input   expa_et_expb,
+input   [54:0] diff_1,
+input   expa_gt_expb,
+input   a_gtet_b,
+input   sign,
+input   [54:0] subtrahend
+);
+
+assert property(@(posedge clk)  (mantissa_a < mantissa_b) |-> (mantissa_small == mantissa_a));
+assert property(@(posedge clk)  (mantissa_a < mantissa_b) |-> (exponent_large == exponent_b));
+assert property(@(posedge clk)  (fpu_op == 3'b111) |-> (sign == opa[63] ^ opb[63]));
+assert property(@(posedge clk)  (small_is_denorm == 0) |-> (large_norm_small_denorm == large_is_denorm));
+assert property(@(posedge clk)  (mantissa_a >= mantissa_b) |-> (mantissa_small == mantissa_b));
+assert property(@(posedge clk)  (exponent_a > exponent_b) |-> (exponent_small == exponent_b));
+assert property(@(posedge clk)  (exponent_a < exponent_b) |-> (mantissa_small == mantissa_a));
+assert property(@(posedge clk)  (exponent_large > 0) |-> (in_norm_out_denorm == 0));
+assert property(@(posedge clk)  (exponent_large - exponent);
+assert property(@(posedge clk)  (mantissa_a < mantissa_b) |-> (mantissa_large == mantissa_b));
+assert property(@(posedge clk)  (fpu_op == 3'b110) |-> (sign == opa[63] ^ opb[63]));
+assert property(@(posedge clk)  (exponent_small > 0) |-> (small_is_denorm == 0));
+assert property(@(posedge clk)  (exponent_large == 0) |-> (in_norm_out_denorm == small_is_denorm));
+assert property(@(posedge clk)  (mantissa_a < mantissa_b) |-> (exponent_small == exponent_a));
+assert property(@(posedge clk)  (exponent_large - exponent_small - large_norm_small_denorm == 0) |-> (exponent_diff == 0));
+assert property(@(posedge clk)  (exponent_a > exponent_b) |-> (mantissa_small == mantissa_b));
+assert property(@(posedge clk)  (exponent_large - exponent_small - large_norm_small_denorm == 6) |-> (exponent_diff == 6));
+assert property(@(posedge clk)  (fpu_op == 3'b011) |-> (sign == opa[63] ^ opb[63]));
+assert property(@(posedge clk)  (!exponent_small > 0) |-> (small_is_denorm == 1));
+assert property(@(posedge clk)  (exponent_large - exponent_small - large_norm_small_denorm == 4) |-> (exponent_diff == 4));
+assert property(@(posedge clk)  (small_is_denorm == 1) |-> (large_norm_small_denorm == 0));
+assert property(@(posedge clk)  (exponent_large - exponent_small - large_norm_small_denorm == 5) |-> (exponent_diff == 5));
+assert property(@(posedge clk)  (fpu_op == 3'b001) |-> (sign == opa[63] ^ opb[63]));
+assert property(@(posedge clk)  (exponent_a == exponent_b) |-> (exponent_small == exponent_b));
+assert property(@(posedge clk)  (exponent_a == exponent_b) |-> (mantissa_small == mantissa_b));
+assert property(@(posedge clk)  (exponent_large - exponent_small - large_norm_small_denorm == 3) |-> (exponent_diff == 3));
+assert property(@(posedge clk)  (exponent_a < exponent_b) |-> (exponent_large == exponent_b));
+assert property(@(posedge clk)  (exponent_large - exponent_small - large_norm_small_denorm == 2) |-> (exponent_diff == 2));
+assert property(@(posedge clk)  (exponent_large > 0) |-> (large_is_denorm == 0));
+assert property(@(posedge clk)  (mantissa_a >= mantissa_b) |-> (mantissa_large == mantissa_a));
+assert property(@(posedge clk)  (mantissa_a >= mantissa_b) |-> (exponent_small == exponent_b));
+assert property(@(posedge clk)  (exponent_a == exponent_b) |-> (exponent_large == exponent_a));
+assert property(@(posedge clk)  (exponent_a < exponent_b) |-> (mantissa_large == mantissa_b));
+assert property(@(posedge clk)  (fpu_op == 3'b000) |-> (sign == opa[63] ^ opb[63]));
+assert property(@(posedge clk)  (exponent_large - exponent_small - large_norm_small_denorm == 9) |-> (exponent_diff == 9));
+assert property(@(posedge clk)  (exponent_large - exponent_small - large_norm_small_denorm == 8) |-> (exponent_diff == 8));
+assert property(@(posedge clk)  (mantissa_a >= mantissa_b) |-> (exponent_large == exponent_a));
+assert property(@(posedge clk)  (fpu_op == 3'b101) |-> (sign == opa[63] ^ opb[63]));
+assert property(@(posedge clk)  (exponent_a > exponent_b) |-> (mantissa_large == mantissa_a));
+assert property(@(posedge clk)  (!exponent_large > 0) |-> (large_is_denorm == 1));
+assert property(@(posedge clk)  (exponent_a > exponent_b) |-> (exponent_large == exponent_a));
+assert property(@(posedge clk)  (exponent_large - exponent_small - large_norm_small_denorm == 1) |-> (exponent_diff == 1));
+assert property(@(posedge clk)  (exponent_a < exponent_b) |-> (exponent_small == exponent_a));
+assert property(@(posedge clk)  (fpu_op == 3'b010) |-> (sign == opa[63] ^ opb[63]));
+assert property(@(posedge clk)  (exponent_large - exponent_small - large_norm_small_denorm == 7) |-> (exponent_diff == 7));
+assert property(@(posedge clk)  (fpu_op == 3'b100) |-> (sign == opa[63] ^ opb[63]));
+assert property(@(posedge clk)  (exponent_a == exponent_b) |-> (mantissa_large == mantissa_a));
+
+endmodule

@@ -1,0 +1,8 @@
+module i_synchronizer#(parameter WIDTH=3)(
+	input clk, input rst_n, input [WIDTH:0] d_in,
+  input [WIDTH:0] q1,
+       	input  [WIDTH:0] d_out
+);
+
+assert property(@(posedge clk) (d_out == d_in) |-> $stable(d_out));assert property(@(posedge clk)  (d_out == d_in) |-> $changed(d_out));assert property(@(posedge clk)  (d_out == d_in) |-> $past(d_out) == d_in);assert property(@(posedge clk)  (d_out == d_in) |-> $rose(clk));assert property(@(posedge clk)  (d_out == d_in) |-> $fell(clk));assert property(@(posedge clk)  (d_out == d_in) |-> $changed(d_out) && $changed(d_in));assert property(@(posedge clk)  (d_out == d_in) |-> $stable(d_out) && $changed(d_in));assert property(@(posedge clk)  (d_out == d_in) |-> $changed(d_out) && $stable(d_in));
+endmodule

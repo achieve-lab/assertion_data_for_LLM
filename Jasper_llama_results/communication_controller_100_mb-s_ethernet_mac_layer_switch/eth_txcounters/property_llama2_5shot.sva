@@ -1,0 +1,92 @@
+module i_eth_txcounters(
+input HugEn,              // Pakets bigger then MaxFL enabled
+input ResetByteCnt,
+input StartJam,           // Jam state will be activated in next clock
+input StateDefer,         // Defer state
+input ByteCntMax,
+input StateIPG,           // IPG state
+input MTxClk,             // Tx clock
+input NibbleMinFl,       // Nibble counter is greater than the minimum frame length
+input PacketFinished_q,             
+input DlyCrcEn,           // Delayed CRC enabled
+input StartDefer,         // Defer state will be activated in next clock
+input StateJam,           // Jam state
+input StartIPG,           // IPG state will be activated in next clock
+input [15:0] MaxFL,       // Miximum frame length (in bytes)
+input [15:0] ByteCnt,
+input StateFCS,           // FCS state
+input Reset,              // Reset
+input ExDfrEn,            // Excessive deferral enabled
+input NibCntEq15,        // Nibble counter is equal to 15
+input IncrementByteCnt,
+input TxStartFrm,         // Tx start frame
+input [15:0] MinFL,       // Minimum frame length (in bytes)
+input IncrementNibCnt,
+input [2:0] DlyCrcCnt,   // Delayed CRC Count
+input StatePAD,           // PAD state
+input [1:0] StateData,    // Data state
+input StateBackOff,       // Backoff state
+input StateSFD,           // SFD state
+input StateIdle,          // Idle state
+input ResetNibCnt,
+input StartBackoff,       // Backoff state will be activated in next clock
+input [15:0] NibCnt,
+input NibCntEq7,         // Nibble counter is equal to 7
+input ExcessiveDeferCnt,
+input StatePreamble,      // Preamble state
+input ExcessiveDefer,    // Excessive Deferral occuring
+input MaxFrame,          // Maximum frame occured
+input StartFCS           // FCS state will be activated in next clock
+);
+
+assert property(@(posedge MTxClk) (StateBackOff) |-> (NibCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateIPG) |-> (NibCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateJam) |-> (ExcessiveDefer == 1'h0));
+assert property(@(posedge MTxClk) (StateIdle) |-> (ExcessiveDefer == 1'h0));
+assert property(@(posedge MTxClk) (StateBackOff) |-> (NibCntEq7 == 1'h0));
+assert property(@(posedge MTxClk) (StateIPG) |-> (NibCntEq15 == 1'h0));
+assert property(@(posedge MTxClk) (StatePAD) |-> (NibCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateDefer) |-> (NibCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateSFD) |-> (ByteCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateJam) |-> (NibCntEq7 == 1'h0));
+assert property(@(posedge MTxClk) (StateIdle) |-> (ByteCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateData[1]) |-> (ByteCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateDefer) |-> (ExcessiveDefer == 1'h0));
+assert property(@(posedge MTxClk) (StateJam) |-> (ByteCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateSFD) |-> (NibCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateIPG) |-> (ExcessiveDefer == 1'h0));
+assert property(@(posedge MTxClk) (StateBackOff) |-> (DlyCrcCnt == 3'h0));
+assert property(@(posedge MTxClk) (StateIPG) |-> (NibCntEq7 == 1'h0));
+assert property(@(posedge MTxClk) (StateJam) |-> (NibCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateDefer) |-> (ByteCnt == 16'h0));
+assert property(@(posedge MTxClk) (StatePAD) |-> (NibCntEq7 == 1'h0));
+assert property(@(posedge MTxClk) (StateBackOff) |-> (ExcessiveDefer == 1'h0));
+assert property(@(posedge MTxClk) (StatePAD) |-> (DlyCrcCnt == 3'h0));
+assert property(@(posedge MTxClk) (StateIdle) |-> (DlyCrcCnt == 3'h0));
+assert property(@(posedge MTxClk) (StatePAD) |-> (ExcessiveDefer == 1'h0));
+assert property(@(posedge MTxClk) (StateIPG) |-> (DlyCrcCnt == 3'h0));
+assert property(@(posedge MTxClk) (StateFCS) |-> (NibCntEq7 == 1'h0));
+assert property(@(posedge MTxClk) (StateData[1]) |-> (NibCntEq7 == 1'h0));
+assert property(@(posedge MTxClk) (StateJam) |-> (DlyCrcCnt == 3'h0));
+assert property(@(posedge MTxClk) (StateFCS) |-> (DlyCrcCnt == 3'h0));
+assert property(@(posedge MTxClk) (StateData[1]) |-> (NibCntEq15 == 1'h0));
+assert property(@(posedge MTxClk) (StatePAD) |-> (ByteCnt == 16'h0));
+assert property(@(posedge MTxClk) (StatePAD) |-> (NibCntEq15 == 1'h0));
+assert property(@(posedge MTxClk) (StateIPG) |-> (ByteCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateFCS) |-> (NibCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateSFD) |-> (ExcessiveDefer == 1'h0));
+assert property(@(posedge MTxClk) (StateDefer) |-> (DlyCrcCnt == 3'h0));
+assert property(@(posedge MTxClk) (StateData[1]) |-> (ExcessiveDefer == 1'h0));
+assert property(@(posedge MTxClk) (StatePreamble) |-> (NibCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateIdle) |-> (NibCntEq7 == 1'h0));
+assert property(@(posedge MTxClk) (StateDefer) |-> (NibCntEq7 == 1'h0));
+assert property(@(posedge MTxClk) (StateFCS) |-> (ExcessiveDefer == 1'h0));
+assert property(@(posedge MTxClk) (StateFCS) |-> (ByteCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateData[1]) |-> (NibCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateSFD) |-> (NibCntEq7 == 1'h0));
+assert property(@(posedge MTxClk) (StateIdle) |-> (NibCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateBackOff) |-> (ByteCnt == 16'h0));
+assert property(@(posedge MTxClk) (StateSFD) |-> (DlyCrcCnt == 3'h0));
+assert property(@(posedge MTxClk) (StateData[1]) |-> (DlyCrcCnt == 3'h0));
+
+endmodule

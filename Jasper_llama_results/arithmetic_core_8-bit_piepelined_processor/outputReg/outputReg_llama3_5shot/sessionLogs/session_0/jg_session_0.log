@@ -1,0 +1,123 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-06-04 14:01:55 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 62288
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:38595' '-nowindow' '-style' 'windows' '-data' 'AAABKnicbY65CsJQEEVvFINY+BGWojZil9o2LmAbgkuiqC/oi4KNfqp/Ek+CER44w2x37iyepOBZFIUqaT5wvkJN0Z94728SeHKlrBsuMn85UWrVwzXFx7oa6iyjSIly7UH6ILGOqNEdPKd/xWeo0UVWW23AQy1ht2Hv6NzIe/w604qegW9BS7+An2hEtman1GEiY4/RgWrwhxtV12OdsDHVhPspPFt9/QEkliaF' '-proj' '/data/vpulav2/Work/Jasper_llama/arithmetic_core_8-bit_piepelined_processor/outputReg/outputReg_llama3_5shot/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper_llama/arithmetic_core_8-bit_piepelined_processor/outputReg/outputReg_llama3_5shot/.tmp/.initCmds.tcl' 'FPV_outputReg.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper_llama/arithmetic_core_8-bit_piepelined_processor/outputReg/outputReg_llama3_5shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/outputReg.v
+[-- (VERI-1482)] Analyzing Verilog file './/outputReg.v'
+[INFO (VERI-1328)] .//outputReg.v(41): analyzing included file './/timescale.v'
+[INFO (VERI-1328)] .//outputReg.v(42): analyzing included file './/defines.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_llama3_5shot.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_llama3_5shot.sva'
+[INFO (VERI-1328)] .//property_llama3_5shot.sva(1): analyzing included file './/defines.v'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(16): syntax error near 'end'
+[ERROR (VERI-2344)] .//property_llama3_5shot.sva(16): SystemVerilog 2005 keyword 'end' used in incorrect context
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(16): syntax error near '='
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(16): syntax error near ')'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(18): syntax error near 'Input'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(19): syntax error near 'Output'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(19): syntax error near ':'
+[ERROR (VERI-1116)] .//property_llama3_5shot.sva(20): 'Input' is already declared
+[INFO (VERI-1967)] .//property_llama3_5shot.sva(18): previous declaration of 'Input' is from here
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(20): syntax error near ':'
+[INFO (VERI-2561)] .//property_llama3_5shot.sva(20): undeclared symbol 'clk', assumed default net type 'wire'
+[INFO (VERI-2561)] .//property_llama3_5shot.sva(20): undeclared symbol 'rst', assumed default net type 'wire'
+[INFO (VERI-2561)] .//property_llama3_5shot.sva(20): undeclared symbol 'req1', assumed default net type 'wire'
+[INFO (VERI-2561)] .//property_llama3_5shot.sva(20): undeclared symbol 'req2', assumed default net type 'wire'
+[INFO (VERI-2561)] .//property_llama3_5shot.sva(20): undeclared symbol 'gnt1', assumed default net type 'wire'
+[INFO (VERI-2561)] .//property_llama3_5shot.sva(20): undeclared symbol 'gnt2', assumed default net type 'wire'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(20): syntax error near ')'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(21): syntax error near 'outputReadOut'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(22): syntax error near 'input'
+[ERROR (VERI-2344)] .//property_llama3_5shot.sva(22): SystemVerilog 2005 keyword 'input' used in incorrect context
+[WARN (VERI-1362)] .//property_llama3_5shot.sva(22): 'req2' is already implicitly declared on line 20
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(23): syntax error near '(*'
+[INFO (VERI-1328)] .//property_llama3_5shot.sva(33): analyzing included file './/timescale.v'
+[INFO (VERI-1328)] .//property_llama3_5shot.sva(33): analyzing included file './/defines.v'
+[WARN (VERI-2059)] .//property_llama3_5shot.sva(33): `include directive is not isolated on its own line
+Summary of errors detected:
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(16): syntax error near 'end'
+	[ERROR (VERI-2344)] .//property_llama3_5shot.sva(16): SystemVerilog 2005 keyword 'end' used in incorrect context
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(16): syntax error near '='
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(16): syntax error near ')'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(18): syntax error near 'Input'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(19): syntax error near 'Output'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(19): syntax error near ':'
+	[ERROR (VERI-1116)] .//property_llama3_5shot.sva(20): 'Input' is already declared
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(20): syntax error near ':'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(20): syntax error near ')'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(21): syntax error near 'outputReadOut'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(22): syntax error near 'input'
+	[ERROR (VERI-2344)] .//property_llama3_5shot.sva(22): SystemVerilog 2005 keyword 'input' used in incorrect context
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(23): syntax error near '(*'
+ERROR (ENL034): 14 errors detected in the design file(s).
+
+ERROR: problem encountered at line 12 in file FPV_outputReg.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.399 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

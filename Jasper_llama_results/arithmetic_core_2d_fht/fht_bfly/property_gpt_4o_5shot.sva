@@ -1,0 +1,19 @@
+parameter N = 8;
+module i_fht_bfly(
+input			clk,
+	input [N-1:0] co,sum,
+input	[N-1:0]	b, // input
+input [N-1:0] b_FF,
+  	input [N:0] plus1,
+	input  ci,
+input			valid,
+  	input [N-1:0] ainv,
+input	[N  :0]	d, // subtractive input
+input	[N  :0]	c, // additive input
+input [N-1:0] a_FF,
+input			rstn,
+	input [N-1:0] a
+);
+
+assert property(@(posedge clk)  (!rstn) |-> (a_FF == 0));assert property(@(posedge clk)  (!rstn) |-> (b_FF == 0));assert property(@(posedge clk)  (valid && rstn) |-> (a_FF == a));assert property(@(posedge clk)  (valid && rstn) |-> (b_FF == b));assert property(@(posedge clk)  (c == rca_N(a_FF, b_FF)));assert property(@(posedge clk)  (d == rca_N(a_FF, twos_complement(b_FF))));
+endmodule

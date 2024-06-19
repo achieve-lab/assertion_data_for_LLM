@@ -1,0 +1,66 @@
+module i_host_interface(
+	input HSElx,
+	input buffer_write_en,
+	input HREADYOUT,
+	input HRESP,
+	input rev_out_type,
+	input [31:0] HRDATA,
+	input [31:0] crc_poly_out,
+	input buffer_full,
+	input read_wait,
+input crc_idr_sel,
+input crc_poly_sel,
+	input [31:0] HADDR,
+	input HCLK,
+	input [ 1:0] crc_poly_size,
+input buffer_read_en,
+input crc_cr_sel,
+input ahb_enable,
+input write_en,
+	input [31:0] crc_init_out,
+	input crc_poly_en,
+	input reset_pending,
+	input [ 1:0] bus_size,
+input crc_init_sel,
+	input [ 1:0] rev_in_type,
+input [2:0] hsize_pp,
+input sample_bus,
+	input [ 7:0] crc_idr_out,
+	input [31:0] HWDATA,
+input crc_dr_sel,
+	input HREADY,
+	input [31:0] bus_wr,
+	input [ 2:0] HSIZE,
+	input [31:0] crc_out,
+	input crc_idr_en,
+	input crc_init_en,
+	input HRESETn,
+input hselx_pp,
+input read_en,
+input [4:0] crc_cr_ff,
+input [1:0] htrans_pp,
+	input [ 1:0] HTRANS,
+input [2:0] haddr_pp,
+input hwrite_pp,
+	input HWRITE,
+	input reset_chain,
+input crc_cr_en,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET,
+input [31:0] crc_cr_rd
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (assert property (crc_dr_sel && write_en) |-> buffer_write_en);assert property(@(posedge DEFAULT_CLOCK) )
+(assert property (crc_init_sel && write_en) |-> crc_init_en);assert property(@(posedge DEFAULT_CLOCK) )
+(assert property (crc_idr_sel && write_en) |-> crc_idr_en);assert property(@(posedge DEFAULT_CLOCK) )
+(assert property (crc_poly_sel && write_en) |-> crc_poly_en);assert property(@(posedge DEFAULT_CLOCK) )
+(assert property (crc_cr_sel && write_en) |-> crc_cr_en);assert property(@(posedge DEFAULT_CLOCK) )
+(assert property (crc_dr_sel && read_en) |-> buffer_read_en);assert property(@(posedge DEFAULT_CLOCK) )
+(assert property (buffer_write_en && buffer_full) |-> !HREADYOUT);assert property(@(posedge DEFAULT_CLOCK) )
+(assert property (buffer_read_en && read_wait) |-> !HREADYOUT);assert property(@(posedge DEFAULT_CLOCK) )
+(assert property (crc_init_en && reset_pending) |-> !HREADYOUT);assert property(@(posedge DEFAULT_CLOCK) )
+(assert property (HRESETn && crc_cr_en) |-> reset_chain);assert property(@(posedge DEFAULT_CLOCK) )
+(assert property (crc_cr_en) |-> crc_poly_size == crc_cr_ff[1:0]);assert property(@(posedge DEFAULT_CLOCK) )
+(assert property (crc_cr_en) |-> rev_in_type == crc_cr_ff[3:2]);assert property(@(posedge DEFAULT_CLOCK) )
+(assert property (crc_cr_en) |-> rev_out_type == crc_cr_ff[4]);assert property(@(posedge DEFAULT_CLOCK) ));
+endmodule

@@ -1,0 +1,43 @@
+module i_rxStateMachine(
+   input[4:0] rxstate, rxstate_next,
+    input get_sfd, // SFD has been received,
+   input crc_check_valid,//Indicate the frame passed CRC Check,
+    input receiving_d1,
+   input get_error_code,
+   input check_reset,
+   input start_da,// Start to receive Destination Address,
+   input crc_check_invalid,//Indicate the frame failed in CRC Check,
+    input recv_enable,
+   input good_frame_get,// A good frame has been received,
+   input get_terminator,//Indicate end of receiving FCS field,
+   input receiving, //Rx Engine is working, not in IDLE state and Check state.
+    input local_invalid,// The Frame's DA field is not Local MAC,
+   input    start_lt,
+    input  wait_crc_check, 
+    input length_error,//
+    input rxclk,
+   input bad_frame_get, // A bad frame has been received, 
+    input reset
+);
+
+assert property(@(posedge rxclk) (crc_check_invalid) |-> (rxstate_next == 0));
+assert property(@(posedge rxclk) (rxstate[4]) |-> (wait_crc_check));
+assert property(@(posedge rxclk) (rxstate[4]) |-> (rxstate_next == 8));
+assert property(@(posedge rxclk) (check_reset) |-> (rxstate == 4));
+assert property(@(posedge rxclk) (rxstate[4]) |-> (rxstate == 4));
+assert property(@(posedge rxclk) (check_reset) |-> (rxstate_next == 0));
+assert property(@(posedge rxclk) (crc_check_invalid) |-> (bad_frame_get));
+assert property(@(posedge rxclk) (length_error) |-> (bad_frame_get));
+assert property(@(posedge rxclk) (length_error) |-> (rxstate_next == 0));
+assert property(@(posedge rxclk) (rxstate[3]) |-> (rxstate == 4));
+assert property(@(posedge rxclk) (check_reset) |-> (good_frame_get == 0));
+assert property(@(posedge rxclk) (crc_check_valid) |-> (rxstate == 4));
+assert property(@(posedge rxclk) (rxstate[3]) |-> (bad_frame_get));
+assert property(@(posedge rxclk) (check_reset) |-> (bad_frame_get == 0));
+assert property(@(posedge rxclk) (rxstate[3]) |-> (rxstate_next == 0));
+assert property(@(posedge rxclk) (length_error) |-> (rxstate == 4));
+assert property(@(posedge rxclk) (crc_check_valid) |-> (good_frame_get));
+assert property(@(posedge rxclk) (crc_check_invalid) |-> (rxstate == 4));
+assert property(@(posedge rxclk) (crc_check_valid) |-> (rxstate_next == 0));
+
+endmodule

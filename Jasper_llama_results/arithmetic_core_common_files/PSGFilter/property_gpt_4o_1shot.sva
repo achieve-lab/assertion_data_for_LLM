@@ -1,0 +1,20 @@
+parameter pTaps = 16;
+
+module i_PSGFilter(
+input [7:0] cnt,
+input [14:0] o,
+input wr,
+input [11:0] coeff [0:pTaps-1],   // magnitude of coefficient
+input clk,
+input [14:0] tap [0:pTaps-1],     // tap inputisters
+input [14:0] i,
+input [12:0] din,
+input [pTaps-1:0] sgn,            // sign of coefficient
+input [26:0] mult ,
+input [30:0] acc,                 // accumulator
+input rst,
+input [3:0] adr
+);
+
+assert property(@(posedge clk)  (wr == 1) |-> (coeff[adr] == din[11:0]));assert property(@(posedge clk)  (wr == 1) |-> (sgn[adr] == din[12]));assert property(@(posedge clk)  (cnt == 8'd0) |-> (tap[0] == i));assert property(@(posedge clk)  (cnt == 8'd0) |-> (tap[n] == tap[n-1]) [*pTaps-1]);assert property(@(posedge clk)  (rst == 1) |-> (acc == 0));assert property(@(posedge clk)  (cnt == 8'd0 && rst == 0) |-> (acc == (sgn[cnt[3:0]] ? 0 - mult : 0 + mult)));assert property(@(posedge clk)  (cnt < pTaps && rst == 0) |-> (acc == (sgn[cnt[3:0]] ? acc - mult : acc + mult)));assert property(@(posedge clk)  (rst == 1) |-> (o == 0));assert property(@(posedge clk)  (cnt == 8'd0 && rst == 0) |-> (o == acc[30:16]));
+endmodule

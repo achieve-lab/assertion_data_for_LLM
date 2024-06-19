@@ -1,0 +1,111 @@
+module i_MAC_tx_Ctrl(
+input           Clk                 ,
+input             MAC_tx_addr_rd      ,
+input             Tx_apply_rmon_tmp   ,
+input [3:0]       Next_state,
+input [7:0]       IPLengthCounter     ,//for pad append
+input           Fifo_data_err_full  ,
+input  [3:0]   RetryCnt            ,
+input           xoff_gen            ,
+input             TxEn_tmp            ,   
+input            Collision           , 
+input [1:0]       PADCounter          ,
+input             PktDrpEvenPtr       ,
+input             pause_frame_send_en_dl1 ,               
+input   [7:0]   CRC_out             ,
+input             Random_init         ,
+input          pause_quanta_sub    ,
+input             CRC_init            ,
+input          xoff_gen_complete   ,
+input          MAC_tx_addr_init    ,
+input [3:0]       Current_state   ,
+input [7:0]       TxD                 ,   
+input             Data_en             ,
+input [7:0]       pause_counter       ,
+input             Tx_apply_rmon       ,
+input             CRC_rd              ,
+input           Fifo_ra             ,
+input          TxEn                ,   
+input           xon_gen             ,
+input          Fifo_rd             ,
+input             Fifo_rd_finish      ,
+input  [7:0]   Frame_data          ,
+input             MAC_header_slot     ,
+input   [15:0]  pause_quanta_set    ,
+input             xon_gen_complete    ,
+input [7:0]       TxD_tmp             ,   
+input [2:0]       Tx_pkt_err_type_rmon,   
+input           MAC_tx_add_en       ,               
+input             Fifo_rd_retry       ,
+input [7:0]       JamCounter          ,
+input           CRS                 ,
+input [5:0]       IFG_counter,
+input   [5:0]   IFGset              ,
+input           Fifo_eop            ,
+input             Src_MAC_ptr         ,
+input [15:0]      pause_quanta_set_dl1    ,
+input           pause_frame_send_en ,               
+input           Reset               ,
+input           Fifo_da             ,
+input [4:0]       Preamble_counter,//
+input   [3:0]   MaxRetry            ,
+input [2:0]       Tx_pkt_type_rmon    ,
+input           pause_apply         ,
+input   [7:0]   Fifo_data           ,
+input           FullDuplex          ,
+input             Tx_apply_rmon_tmp_pl1,
+input           Fifo_data_err_empty ,
+input             MAC_header_slot_tmp ,
+input           Random_time_meet    ,//levle hight indicate random time passed away
+input           CRC_end             ,
+input   [7:0]   MAC_tx_addr_data    ,
+input  [15:0]  Tx_pkt_length_rmon  
+);
+
+assert property(@(posedge Clk) (Current_state == StatePreamble) |-> (TxEn_tmp == 1));
+assert property(@(posedge Clk) (Current_state == StateSendPauseFrame) |-> (TxD_tmp == 8'h08));
+assert property(@(posedge Clk) (Current_state == StatePAD) |-> (Fifo_rd == 1));
+assert property(@(posedge Clk) (CRC_end) |-> (Tx_apply_rmon_tmp == 1));
+assert property(@(posedge Clk) (Current_state == StateFCS) |-> (TxEn_tmp == 1));
+assert property(@(posedge Clk) (Fifo_eop & Current_state == StateJamDrop) |-> (Tx_pkt_err_type_rmon == 3'b001));
+assert property(@(posedge Clk) (Current_state == StateData) |-> (TxEn_tmp == 1));
+assert property(@(posedge Clk) (Current_state == StatePAD) |-> (TxEn_tmp == 1));
+assert property(@(posedge Clk) (Current_state == StatePAD) |-> (TxD_tmp == 8'h00));
+assert property(@(posedge Clk) (Current_state == StateJam) |-> (Fifo_rd == 1));
+assert property(@(posedge Clk) (Current_state == StateSFD) |-> (CRC_init == 1));
+assert property(@(posedge Clk) (Current_state == StateSendPauseFrame) |-> (TxEn_tmp == 1));
+assert property(@(posedge Clk) (Current_state == StateJam) |-> (Random_init == 1));
+assert property(@(posedge Clk) (Current_state == StateJam) |-> (TxD_tmp == 8'h01));
+assert property(@(posedge Clk) (Current_state == StateData) |-> (Fifo_rd == 1));
+assert property(@(posedge Clk) (Current_state == StatePreamble) |-> (TxD_tmp == 8'h55));
+assert property(@(posedge Clk) (Current_state == StateData) |-> (TxD_tmp == Fifo_data));
+assert property(@(posedge Clk) (Current_state == StateSFD &!(pause_frame_send_en_dl1 & (xoff_gen | xon_gen))) |-> (Fifo_rd == 1));
+assert property(@(posedge Clk) (Current_state == StateSendPauseFrame) |-> (TxD_tmp == 8'h88));
+assert property(@(posedge Clk) (Current_state == StateSendPauseFrame) |-> (TxD_tmp == pause_quanta_set_dl1[7:0]));
+assert property(@(posedge Clk) (Current_state == StateSendPauseFrame) |-> (TxD_tmp == pause_quanta_set_dl1[15:8]));
+assert property(@(posedge Clk) (Current_state == StateJam) |-> (Fifo_rd_retry == 1));
+assert property(@(posedge Clk) (Current_state == StateSwitchNext) |-> (Tx_apply_rmon_tmp == 1));
+assert property(@(posedge Clk) (Current_state == StateSFD) |-> (TxD_tmp == 8'hd5));
+assert property(@(posedge Clk) (Current_state == StateSFD) |-> (TxEn_tmp == 1));
+assert property(@(posedge Clk) (Current_state == StateSwitchNext) |-> (Fifo_rd_finish == 1));
+assert property(@(posedge Clk) (Current_state == StatePAD) |-> (Data_en == 1));
+assert property(@(posedge Clk) (Current_state == StateFCS) |-> (CRC_rd == 1));
+assert property(@(posedge Clk) (Fifo_eop & Current_state == StateFFEmptyDrop) |-> (Tx_apply_rmon_tmp == 1));
+assert property(@(posedge Clk) (Current_state == StateJam) |-> (TxEn_tmp == 1));
+assert property(@(posedge Clk) (Fifo_eop & Current_state == StateJamDrop) |-> (Tx_apply_rmon_tmp == 1));
+assert property(@(posedge Clk) (CRC_end) |-> (Tx_pkt_err_type_rmon == 3'b100));
+assert property(@(posedge Clk) (Current_state == StateSFD & Next_state == StateData) |);
+assert property(@(posedge Clk) (Current_state == StateFCS) |-> (TxD_tmp == CRC_out));
+assert property(@(posedge Clk) (Current_state == StateSendPauseFrame) |-> (TxD_tmp == 8'hc2));
+assert property(@(posedge Clk) (Current_state == StateSendPauseFrame) |-> (Data_en == 1));
+assert property(@(posedge Clk) (Current_state == StateSendPauseFrame) |-> (Fifo_rd == 1));
+assert property(@(posedge Clk) (Current_state == StateSendPauseFrame) |-> (TxD_tmp == 8'h00));
+assert property(@(posedge Clk)  (Current_state == StateData & Fifo_eop & Current_state == StateJamDrop & PktDrpEvenPtr) |-> (Fifo_rd == 1));
+assert property(@(posedge Clk) (Current_state == StateData) |-> (Data_en == 1));
+assert property(@(posedge Clk) (Fifo_eop & Fifo_data_err_full) |-> (Tx_pkt_err_type_rmon == 3'b011));
+assert property(@(posedge Clk) (Fifo_eop & Current_state == StateFFEmptyDrop) |-> (Tx_pkt_err_type_rmon == 3'b010));
+assert property(@(posedge Clk) (Current_state == StateSendPauseFrame) |-> (TxD_tmp == 8'h01));
+assert property(@(posedge Clk) (Current_state == StateData & Fifo_eop & Current_state == StateFFEmptyDrop & PktDrpEvenPtr) |-> (Fifo_rd == 1));
+assert property(@(posedge Clk) (Current_state == StateSendPauseFrame) |-> (TxD_tmp == 8'h80));
+
+endmodule

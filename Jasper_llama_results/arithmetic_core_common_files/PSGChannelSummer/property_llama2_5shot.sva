@@ -1,0 +1,54 @@
+module i_PSGChannelSummer(
+input [3:0] outctrl,	// channel input enable control
+input [21:0] o,		// summed input
+input [1:0] sel ,
+input clk_i,			// master clock
+input [19:0] tmc_i,		// time-multiplexed channel input
+input [7:0] cnt		// select counter
+);
+
+assert property(@(posedge clk_i)  (cnt == 8) |-> (o == tmc_i[159:70]));
+assert property(@(posedge clk_i)  (cnt == 37) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 10) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 16) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 15) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 24) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 28) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 31) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 41) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 36) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 42) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 9) |-> (o == tmc_i[179:80]));
+assert property(@(posedge clk_i)  (cnt == 4) |-> (o == tmc_i[79:30]));
+assert property(@(posedge clk_i)  (cnt == 1) |-> (o == tmc_i[19:0]));
+assert property(@(posedge clk_i)  (cnt == 11) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 12) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 30) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 35) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 18) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 6) |-> (o == tmc_i[119:50]));
+assert property(@(posedge clk_i)  (cnt == 17) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 2) |-> (o == tmc_i[39:10]));
+assert property(@(posedge clk_i)  (cnt == 32) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 39) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 5) |-> (o == tmc_i[99:40]));
+assert property(@(posedge clk_i)  (cnt == 29) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 20) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 40) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 21) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 14) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 13) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 19) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 34) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 25) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 7) |-> (o == tmc_i[139:60]));
+assert property(@(posedge clk_i)  (cnt == 3) |-> (o == tmc_i[59:20]));
+assert property(@(posedge clk_i)  (cnt == 26) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 38) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 27) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 0) |-> (o == 0));
+assert property(@(posedge clk_i)  (cnt == 22) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 23) |-> (o == tmc_i[199:90]));
+assert property(@(posedge clk_i)  (cnt == 33) |-> (o == tmc_i[199:90]));
+
+endmodule

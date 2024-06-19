@@ -1,0 +1,17 @@
+bind Phy_sim
+ i_Phy_sim v_Phy_sim(
+.Crs(Crs),
+.Gtx_clk(Gtx_clk),
+.Clk_2_5m(Clk_2_5m),
+.Rxd(Rxd),
+.Tx_en(Tx_en),
+.Tx_er(Tx_er),
+.Rx_dv(Rx_dv),
+.Txd(Txd),
+.Tx_clk(Tx_clk),
+.Col(Col),
+.Clk_25m(Clk_25m),
+.Rx_clk(Rx_clk),
+.Speed(Speed),
+.Rx_er(Rx_er)
+);

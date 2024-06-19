@@ -1,0 +1,56 @@
+parameter pChannels = 4;
+parameter pPrescalerBits = 8;
+module i_PSGEnvGen(
+	input [19:0] envDvn [3:0],
+	input [19:0] envStepPeriod1 ,
+	input [7:0] sustain3,
+	input [15:0] envStepPeriod,	// determines the length of one step of the envelope generator
+	input [17:0] decay,
+	input [19:0] envDvnx,
+	input [11:0] relese_x,
+	input [11:0] relese2,
+	input [15:0] attack0,
+	input [7:0] envCtr2 [3:0],
+	input [15:0] attack1,
+    input [1:0] sel ,
+	input [15:0] attack,
+	input [7:0] sustain0,
+	input [7:0] sustain2,
+	input rst,							// reset
+	input [7:0] sustain_x,
+	input [11:0] relese1,
+	input [7:0] sustain1,
+	input [15:0] attack_x,
+	input [7:0] envCtr [3:0],
+	input [11:0] decay2,
+	input [11:0] decay_x,
+	input clk,							// core clock
+	input [15:0] attack2,
+	input [7:0] sustain,
+	input [15:0] attack3,
+	input [2:0] icnt [3:0],		// interval count
+	input [2:0] envStateNxt,
+	input [11:0] decay3,
+	input [11:0] decay0,
+	input [17:0] relese,
+	input [7:0] envCtrx,
+	input [11:0] relese0,
+	input [3:0] gate,
+	input [7:0] iv [3:0],			// interval value for decay/release
+	input [11:0] decay1,
+	input [11:0] relese3,
+	input [pPrescalerBits-1:0] cnt,		// clock rate prescaler
+	input [7:0] o,
+	input [2:0] envState [3:0],
+        
+	input [1:0] s,
+	input [4:1] i1,
+	input e,
+	input [4:1] i2,
+	input [4:1] i0,
+	input [4:1] z,
+	input [4:1] i3
+);
+
+assert property(@(posedge clk) (envState[0] == 0) |-> (envStateNxt == 0));assert property(@(posedge clk)  (envState[1] == 0) |-> (envStateNxt == 0));assert property(@(posedge clk)  (envState[2] == 0) |-> (envStateNxt == 0));assert property(@(posedge clk)  (envState[3] == 0) |-> (envStateNxt == 0));assert property(@(posedge clk)  (envState[0] == 3) |-> (envStateNxt == 4));assert property(@(posedge clk)  (envState[1] == 3) |-> (envStateNxt == 4));assert property(@(posedge clk)  (envState[2] == 3) |-> (envStateNxt == 4));assert property(@(posedge clk)  (envState[3] == 3) |-> (envStateNxt == 4));assert property(@(posedge clk)  (envState[0] == 1) |-> (envStateNxt == 2));assert property(@(posedge clk)  (envState[1] == 1) |-> (envStateNxt == 2));assert property(@(posedge clk)  (envState[2] == 1) |-> (envStateNxt == 2));assert property(@(posedge clk)  (envState[3] == 1) |-> (envStateNxt == 2));assert property(@(posedge clk)  (envState[0] == 2) |-> (envStateNxt == 3));assert property(@(posedge clk)  (envState[1] == 2) |-> (envStateNxt == 3));assert property(@(posedge clk)  (envState[2] == 2) |-> (envStateNxt == 3));assert property(@(posedge clk)  (envState[3] == 2) |-> (envStateNxt == 3));assert property(@(posedge clk)  (envState[0] == 4) |-> (envStateNxt == 0));assert property(@(posedge clk)  (envState[1] == 4) |-> (envStateNxt == 0));assert property(@(posedge clk)  (envState[2] == 4) |-> (envStateNxt == 0));assert property(@(posedge clk)  (envState[3] == 4) |-> (envStateNxt == 0));assert property(@(posedge clk)  (envState[0] == 1 & envCtrx[0] == 254) |-> (envStateNxt == 3));assert property(@(posedge clk)  (envState[1] == 1 & envCtrx[1] == 254) |-> (envStateNxt == 3));assert property(@(posedge clk)  (envState[2] == 1 & envCtrx[2] == 254) |-> (envStateNxt == 3));assert property(@(posedge clk)  (envState[3] == 1 & envCtrx[3] == 254) |-> (envStateNxt == 3));assert property(@(posedge clk)  (envState[0] == 1 & envCtrx[0] != 254) |-> (envStateNxt == 2));assert property(@(posedge clk)  (envState[1] == 1 & envCtrx[1] != 254) |-> (envStateNxt == 2));assert property(@(posedge clk)  (envState[2] == 1 & envCtrx[2] != 254) |-> (envStateNxt == 2));assert property(@(posedge clk)  (envState[3] == 1 & envCtrx[3] != 254) |-> (envStateNxt == 2));assert property(@(posedge clk)  (envState[0] == 2 & envCtrx[0] == sustain[0]) |-> (envStateNxt == 3));assert property(@(posedge clk)  (envState[1] == 2 & envCtrx[1] == sustain[1]) |-> (envStateNxt == 3));assert property(@(posedge clk)  (envState[2] == 2 & envCtrx[2] == sustain[2]) |-> (envStateNxt == 3));assert property(@(posedge clk)  (envState[3] == 2 & envCtrx[3] == sustain[3]) |-> (envStateNxt == 3));assert property(@(posedge clk)  (envState[0] == 2 & envCtrx[0] != sustain[0]) |-> (envStateNxt == 2));assert property(@(posedge clk)  (envState[1] == 2 & envCtrx[1] != sustain[1]) |-> (envStateNxt == 2));assert property(@(posedge clk)  (envState[2] == 2 & envCtrx[2] != sustain[2]) |-> (envStateNxt == 2));assert property(@(posedge clk)  (envState[3] == 2 & envCtrx[3] != sustain[3]) |-> (envStateNxt == 2));assert property(@(posedge clk)  (envState[0] == 3 & ~gate[0]) |-> (envStateNxt == 4));assert property(@(posedge clk)  (envState[1] == 3 & ~gate[1]) |-> (envStateNxt == 4));assert property(@(posedge clk)  (envState[2] == 3 & ~gate[2]) |-> (envStateNxt == 4));assert property(@(posedge clk)  (envState[3] == 3 & ~gate[3]) |-> (envStateNxt ==);
+endmodule

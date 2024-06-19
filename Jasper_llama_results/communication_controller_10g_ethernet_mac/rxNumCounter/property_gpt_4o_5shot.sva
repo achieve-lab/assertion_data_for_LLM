@@ -1,0 +1,16 @@
+module i_rxNumCounter(
+    input reset, //globe reset
+    input receiving, //start to count	data field
+    input rxclk,            //receive clk	
+    input en,
+    input value,
+    input load, 
+    input[`COUNTER_WIDTH-1:0] frame_cnt
+);
+
+assert property(@(posedge rxclk)  (reset) |-> (frame_cnt == 0)
+ (receiving) |-> (frame_cnt != 0)
+ (~receiving) |-> (frame_cnt == 0)
+ (receiving && frame_cnt == `COUNTER_WIDTH-1) |-> (frame_cnt == 0)
+ (receiving && frame_cnt != `COUNTER_WIDTH-1) |-> (frame_cnt != 0));
+endmodule

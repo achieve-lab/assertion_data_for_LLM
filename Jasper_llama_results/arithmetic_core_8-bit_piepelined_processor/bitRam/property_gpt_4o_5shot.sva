@@ -1,0 +1,18 @@
+`include "defines.v"
+
+module i_bitRam(
+input reset,
+input clk,
+input bitRamEn,
+input bitRamRw,
+input bitRamIn,
+input [`bitRamAddrLen-1:0] bitRamAddr,
+input bitRamOut,
+input bitRam [`bitRamDepth-1:0]
+);
+
+assert property(@(posedge clk)  (reset) |-> (bitRamOut == 1'b0)
+ (bitRamEn && bitRamRw) |-> (bitRamOut == bitRam[bitRamAddr])
+ (bitRamEn && !bitRamRw) |-> (bitRam[bitRamAddr] == bitRamIn)
+ (!bitRamEn) |-> (bitRamOut == 1'bZ));
+endmodule

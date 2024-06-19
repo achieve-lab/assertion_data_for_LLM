@@ -1,0 +1,26 @@
+
+
+parameter DATA_WIDTH    = 32;
+parameter DEPTH         = 8;
+parameter CNT_WIDTH     = 4;
+
+module i_eth_fifo(
+    input     [DATA_WIDTH-1:0]  fifo  [0:DEPTH-1],
+input     [CNT_WIDTH-2:0]   write_pointer,
+input                     read,
+input                    almost_empty,
+input   [DATA_WIDTH-1:0]  data_in,
+input                     clear,
+input     [CNT_WIDTH-2:0]   read_pointer,
+input                    almost_full,
+input     [CNT_WIDTH-1:0]   cnt,
+input                    full,
+input                    empty,
+input                     clk,
+input                     write,
+input                     reset,
+input  [DATA_WIDTH-1:0]  data_out
+);
+
+assert property(@(posedge clk) (empty) |-> (almost_empty));assert property(@(posedge clk)  (almost_empty) |-> (empty));assert property(@(posedge clk)  (full) |-> (almost_full));assert property(@(posedge clk)  (almost_full) |-> (full));assert property(@(posedge clk)  (write & clear) |-> (fifo[0] == data_in));assert property(@(posedge clk)  (write & ~full) |-> (fifo[write_pointer] == data_in));assert property(@(posedge clk)  (clear) |-> (data_out == fifo[0]));assert property(@(posedge clk)  (!clear) |-> (data_out == fifo[read_pointer]));
+endmodule

@@ -1,0 +1,14 @@
+ parameter WIDTH = 8;
+module i_counter(
+    input en,
+    input clk,
+    input reset,
+    input [WIDTH-1:0] value,
+    input load
+);
+
+assert property(@(posedge clk)  (reset) |-> (value == 0));
+assert property(@(posedge clk)  (load) |-> (value == 0));
+assert property(@(posedge clk)  (en) |-> (value == value + 1));
+
+endmodule

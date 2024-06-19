@@ -1,0 +1,59 @@
+module i_cavlc_read_total_coeffs(
+input   [0:15]   rbsp,
+input     [1:0]   TrailingOnes_3,
+input     [4:0]   TotalCoeff,
+input     [4:0]   len_5,
+input     [4:0]   TotalCoeff_5,
+input     [4:0]   len_1,
+input     [1:0]   TrailingOnes,
+input   sel,
+input     [4:0]   len_2,
+input   start,
+input     [4:0]   TotalCoeff_comb,
+input     [1:0]   TrailingOnes_4,
+input     [4:0]   TotalCoeff_1,
+input     [4:0]   len_3,
+input     [4:0]   TotalCoeff_4,
+input     [4:0]   TotalCoeff_3,
+input     [0:15]  rbsp_1,         
+input     [4:0]   len_4,
+input     [4:0]   len_comb,
+input     [0:9]   rbsp_3,
+input     [0:5]   rbsp_4,
+input   rst_n,
+input     [1:0]   TrailingOnes_comb,
+input     [0:7]   rbsp_5,
+input   ena,
+input   signed   [5:0]   nC,
+input     [1:0]   TrailingOnes_5,
+input     [1:0]   TrailingOnes_1,
+input     [0:13]  rbsp_2,
+input     [4:0]   TotalCoeff_2,
+input     [1:0]   TrailingOnes_2,
+input DEFAULT_RESET,
+input   clk
+);
+
+assert property(@(posedge clk) (nC == -1) |-> (TrailingOnes_comb == TrailingOnes_5 && TotalCoeff_comb == TotalCoeff_5 && len_comb == len_5));assert property(@(posedge clk) 
+(nC[4] | nC[3]) |-> (TrailingOnes_comb == TrailingOnes_4 && TotalCoeff_comb == TotalCoeff_4 && len_comb == len_4));assert property(@(posedge clk) 
+(nC[2]) |-> (TrailingOnes_comb == TrailingOnes_3 && TotalCoeff_comb == TotalCoeff_3 && len_comb == len_3));assert property(@(posedge clk) 
+(nC[1]) |-> (TrailingOnes_comb == TrailingOnes_2 && TotalCoeff_comb == TotalCoeff_2 && len_comb == len_2));assert property(@(posedge clk) 
+!(nC == -1 || nC[4] || nC[3] || nC[2] || nC[1]) |-> (TrailingOnes_comb == TrailingOnes_1 && TotalCoeff_comb == TotalCoeff_1 && len_comb == len_1));assert property(@(posedge clk) 
+!rst_n |-> (rbsp_1 == 0 && rbsp_2 == 0 && rbsp_3 == 0 && rbsp_4 == 0 && rbsp_5 == 0));assert property(@(posedge clk) 
+(ena && start && nC[5]) |-> (rbsp_5 == rbsp[0:7]));assert property(@(posedge clk) 
+(ena && start && !(nC[5]) && (nC[4] || nC[3])) |-> (rbsp_4 == rbsp[0:5]));assert property(@(posedge clk) 
+(ena && start && !(nC[5]) && !(nC[4] || nC[3]) && nC[2]) |-> (rbsp_3 == rbsp[0:9]));assert property(@(posedge clk) 
+(ena && start && !(nC[5]) && !(nC[4] || nC[3]) && !(nC[2]) && nC[1]) |-> (rbsp_2 == rbsp[0:13]));assert property(@(posedge clk) 
+(ena && start && !(nC[5]) && !(nC[4] || nC[3]) && !(nC[2]) && !(nC[1])) |-> (rbsp_1 == rbsp));assert property(@(posedge clk) 
+(rbsp_1[0]) |-> (TrailingOnes_1 == 0 && TotalCoeff_1 == 0 && len_1 == 1));assert property(@(posedge clk) 
+(rbsp_1[1]) |-> (TrailingOnes_1 == 1 && TotalCoeff_1 == 1 && len_1 == 2));assert property(@(posedge clk) 
+(rbsp_1[2]) |-> (TrailingOnes_1 == 2 && TotalCoeff_1 == 2 && len_1 == 3));assert property(@(posedge clk) 
+(rbsp_1[3] && rbsp_1[4] == 'b1) |-> (TrailingOnes_1 == 3 && TotalCoeff_1 == 3 && len_1 == 5));assert property(@(posedge clk) 
+(rbsp_1[3] && rbsp_1[5] == 'b1) |-> (TrailingOnes_1 == 0 && TotalCoeff_1 == 1 && len_1 == 6));assert property(@(posedge clk) 
+(rbsp_1[3] && !(rbsp_1[4] == 'b1) && !(rbsp_1[5] == 'b1)) |-> (TrailingOnes_1 == 1 && TotalCoeff_1 == 2 && len_1 == 6));assert property(@(posedge clk) 
+(rbsp_1[4] && rbsp_1[5] == 'b1) |-> (TrailingOnes_1 == 3 && TotalCoeff_1 == 4 && len_1 == 6));assert property(@(posedge clk) 
+(rbsp_1[4] && rbsp_1[6] == 'b1) |-> (TrailingOnes_1 == 2 && TotalCoeff_1 == 3 && len_1 == 7));assert property(@(posedge clk) 
+(rbsp_1[4] && !(rbsp_1[5] == 'b1) && !(rbsp_1[6] == 'b1)) |-> (TrailingOnes_1 == 3 && TotalCoeff_1 == 5 && len_1 == 7));assert property(@(posedge clk) 
+(rbsp_1[5] && rbsp_1[6:7] == 'b11) |-> (TrailingOnes_1 == 0 && TotalCoeff_1 == 2 && len_1 == 8));assert property(@(posedge clk) 
+(rbsp_1[5] && rbsp_1[6:7] == 'b10) |-> (TrailingOnes_1 == 1 && TotalCoeff_1 == 3 && len_1 == 8));
+endmodule

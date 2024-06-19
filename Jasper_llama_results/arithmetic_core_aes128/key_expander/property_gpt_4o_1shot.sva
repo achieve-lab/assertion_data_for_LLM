@@ -1,0 +1,39 @@
+localparam integer KEY_WIDTH = 32;
+localparam integer KEY_NUM   = 4;
+localparam integer WORD      = 8;
+localparam integer ROUNDS    = 10;
+module i_key_expander(
+	input add_w_out,
+	input  [ 31:0] g_out,
+input   [     8 - 1 : 0] rc_dir, rc_inv,
+input  [     8 - 1 : 0] rot_in[0 : 4 - 1],
+	input  [127:0] key_out,
+	input enc_dec,j,k,
+input  [32 - 1 : 0] g_func,
+	input  [  3:0] round,
+	input  [127:0] key_in,
+input  [     8 - 1 : 0] rc,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET,
+input  [32 - 1 : 0] key   [0 : 4 - 1],
+	input  [ 31:0] g_in
+
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (g_out[31:24] ^ rc == g_func[31:24]));assert property(@(posedge DEFAULT_CLOCK) 
+(g_out[23:0] == g_func[23:0]));assert property(@(posedge DEFAULT_CLOCK) 
+(enc_dec == 1) |-> (rc == rc_dir));assert property(@(posedge DEFAULT_CLOCK) 
+(enc_dec == 0) |-> (rc == rc_inv));assert property(@(posedge DEFAULT_CLOCK) 
+(round == 8) |-> (rc_dir == 8'h1b));assert property(@(posedge DEFAULT_CLOCK) 
+(round == 9) |-> (rc_dir == 8'h36));assert property(@(posedge DEFAULT_CLOCK) 
+(round != 8 && round != 9) |-> (rc_dir == 8'h01 << round));assert property(@(posedge DEFAULT_CLOCK) 
+(round == 1) |-> (rc_inv == 8'h1b));assert property(@(posedge DEFAULT_CLOCK) 
+(round == 0) |-> (rc_inv == 8'h36));assert property(@(posedge DEFAULT_CLOCK) 
+(round != 1 && round != 0) |-> (rc_inv == 8'h80 >> (round - 2)));assert property(@(posedge DEFAULT_CLOCK) 
+(add_w_out == 1 && j == 1) |-> (key_out[KEY_WIDTH*(KEY_NUM - j) - 1 : KEY_WIDTH*(KEY_NUM - j - 1)] == key[j] ^ key[j - 1] ^ g_func));assert property(@(posedge DEFAULT_CLOCK) 
+(add_w_out == 0 && j == 1) |-> (key_out[KEY_WIDTH*(KEY_NUM - j) - 1 : KEY_WIDTH*(KEY_NUM - j - 1)] == key[j] ^ key[j - 1]));assert property(@(posedge DEFAULT_CLOCK) 
+(j != 1) |-> (key_out[KEY_WIDTH*(KEY_NUM - j) - 1 : KEY_WIDTH*(KEY_NUM - j - 1)] == key[j] ^ key[j - 1]));assert property(@(posedge DEFAULT_CLOCK) 
+(enc_dec == 1) |-> (rot_in[k] == key[KEY_NUM - 1][WORD*(k + 1) - 1 : WORD*k]));assert property(@(posedge DEFAULT_CLOCK) 
+(enc_dec == 0) |-> (rot_in[k] == key[KEY_NUM - 1][WORD*(k + 1) - 1 : WORD*k] ^ key[KEY_NUM - 2][WORD*(k + 1) - 1 : WORD*k]));assert property(@(posedge DEFAULT_CLOCK) 
+(g_in[WORD*(l + 1) - 1 : WORD*l] == rot_in[(KEY_NUM + l - 1) % KEY_NUM]));
+endmodule

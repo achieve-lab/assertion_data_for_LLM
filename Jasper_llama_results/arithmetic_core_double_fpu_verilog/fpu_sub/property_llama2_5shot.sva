@@ -1,0 +1,94 @@
+module i_fpu_sub(
+input		clk,
+input   subtra_fraction_enable ,
+input   small_is_nonzero,
+input   diffshift_et_55, // when the difference ,
+input   [51:0] mantissa_small,
+input   diffshift_gt_exponent,
+input   [54:0] subtra_shift_2 ,
+input		rst,
+input   [54:0] subtra_shift,
+input   [54:0] diff,
+input   [10:0] exponent_small,
+input   small_is_denorm,
+input   subtra_shift_nonzero ,
+input		enable,
+input   [10:0] exponent,
+input   mana_gtet_manb,
+input [6:0] 	diff_shift_2,
+input   [10:0] exponent_large,
+input   large_norm_small_denorm,
+input   [10:0] exponent_a,
+input   [10:0] exponent_b,
+input	[63:0]	opa, opb,	  
+input   in_norm_out_denorm ,
+input   [54:0] subtra_shift_3,
+input   large_is_denorm,
+input [6:0] 	diff_shift,
+input   [51:0] mantissa_b,
+input   [10:0] exponent_diff,
+input   [51:0] mantissa_a,
+input   [55:0] diff_2,
+input   [54:0] minuend,
+input   [10:0] exponent_2,
+input	[2:0]	fpu_op,
+input   [51:0] mantissa_large,
+input   expa_et_expb,
+input   [54:0] diff_1,
+input   expa_gt_expb,
+input   a_gtet_b,
+input   sign,
+input   [54:0] subtrahend
+);
+
+assert property(@(posedge clk) (exponent_diff == 1) |-> (diff_shift == 1));
+assert property(@(posedge clk) (exponent_diff == 13) |-> (diff_shift == 13));
+assert property(@(posedge clk) (exponent_diff == 19) |-> (diff_shift == 19));
+assert property(@(posedge clk) (exponent_diff == 16) |-> (diff_shift == 16));
+assert property(@(posedge clk) (exponent_diff == 31) |-> (diff_shift == 31));
+assert property(@(posedge clk) (exponent_diff == 18) |-> (diff_shift == 18));
+assert property(@(posedge clk) (exponent_diff == 40) |-> (diff_shift == 40));
+assert property(@(posedge clk) (exponent_diff == 20) |-> (diff_shift == 20));
+assert property(@(posedge clk) (exponent_diff == 21) |-> (diff_shift == 21));
+assert property(@(posedge clk) (exponent_diff == 39) |-> (diff_shift == 39));
+assert property(@(posedge clk) (exponent_diff == 15) |-> (diff_shift == 15));
+assert property(@(posedge clk) (exponent_diff == 24) |-> (diff_shift == 24));
+assert property(@(posedge clk) (exponent_diff == 29) |-> (diff_shift == 29));
+assert property(@(posedge clk) (exponent_diff == 48) |-> (diff_shift == 48));
+assert property(@(posedge clk) (exponent_diff == 2) |-> (diff_shift == 2));
+assert property(@(posedge clk) (exponent_diff == 26) |-> (diff_shift == 26));
+assert property(@(posedge clk) (exponent_diff == 32) |-> (diff_shift == 32));
+assert property(@(posedge clk) (exponent_diff == 45) |-> (diff_shift == 45));
+assert property(@(posedge clk) (exponent_diff == 3) |-> (diff_shift == 3));
+assert property(@(posedge clk) (exponent_diff == 6) |-> (diff_shift == 6));
+assert property(@(posedge clk) (exponent_diff == 14) |-> (diff_shift == 14));
+assert property(@(posedge clk) (exponent_diff == 41) |-> (diff_shift == 41));
+assert property(@(posedge clk) (exponent_diff == 46) |-> (diff_shift == 46));
+assert property(@(posedge clk) (exponent_diff == 5) |-> (diff_shift == 5));
+assert property(@(posedge clk) (exponent_diff == 9) |-> (diff_shift == 9));
+assert property(@(posedge clk) (exponent_diff == 36) |-> (diff_shift == 36));
+assert property(@(posedge clk) (exponent_diff == 11) |-> (diff_shift == 11));
+assert property(@(posedge clk) (exponent_diff == 28) |-> (diff_shift == 28));
+assert property(@(posedge clk) (exponent_diff == 34) |-> (diff_shift == 34));
+assert property(@(posedge clk) (exponent_diff == 47) |-> (diff_shift == 47));
+assert property(@(posedge clk) (exponent_diff == 7) |-> (diff_shift == 7));
+assert property(@(posedge clk) (exponent_diff == 22) |-> (diff_shift == 22));
+assert property(@(posedge clk) (exponent_diff == 38) |-> (diff_shift == 38));
+assert property(@(posedge clk) (exponent_diff == 23) |-> (diff_shift == 23));
+assert property(@(posedge clk) (exponent_diff == 25) |-> (diff_shift == 25));
+assert property(@(posedge clk) (exponent_diff == 0) |-> (diff_shift == 0));
+assert property(@(posedge clk) (exponent_diff == 35) |-> (diff_shift == 35));
+assert property(@(posedge clk) (exponent_diff == 8) |-> (diff_shift == 8));
+assert property(@(posedge clk) (exponent_diff == 42) |-> (diff_shift == 42));
+assert property(@(posedge clk) (exponent_diff == 10) |-> (diff_shift == 10));
+assert property(@(posedge clk) (exponent_diff == 4) |-> (diff_shift == 4));
+assert property(@(posedge clk) (exponent_diff == 30) |-> (diff_shift == 30));
+assert property(@(posedge clk) (exponent_diff == 12) |-> (diff_shift == 12));
+assert property(@(posedge clk) (exponent_diff == 43) |-> (diff_shift == 43));
+assert property(@(posedge clk) (exponent_diff == 27) |-> (diff_shift == 27));
+assert property(@(posedge clk) (exponent_diff == 44) |-> (diff_shift == 44));
+assert property(@(posedge clk) (exponent_diff == 33) |-> (diff_shift == 33));
+assert property(@(posedge clk) (exponent_diff == 17) |-> (diff_shift == 17));
+assert property(@(posedge clk) (exponent_diff == 37) |-> (diff_shift == 37));
+
+endmodule

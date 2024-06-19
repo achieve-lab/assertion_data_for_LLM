@@ -1,0 +1,87 @@
+
+parameter S_PREAMBLE  = 0;
+parameter                    S_ST        = 1;
+parameter                    S_OP_CODE   = 2;
+parameter                    S_PHY_ADDR  = 3;
+parameter                    S_REG_ADDR  = 4;
+parameter                    S_TA        = 5;
+parameter                    S_WR_DATA   = 6;
+parameter                    S_RD_DATA   = 7;
+parameter                    S_WR_COMMIT = 8;
+module i_ge_1000baseX_mdio(
+   input              mdio,
+   input [4:0] phy_addr, input phy_addr_shift,
+   input [1:0] op_code, 
+   input             mdio_out,
+   input [15:0] data_in, input data_in_shift,
+   input     strobe_wr,
+   input [15:0] data_out, input data_out_load, data_out_shift, next ,
+   input     [15:0]   data_rd,	op_code_shift ,
+   input              reset, 
+   // mdio/mdc state machine inputistered part.
+   input st,
+	 input st_latch,
+   input [4:0] input_addr,
+	 input input_addr_shift,
+   input [3:0] present, 
+   input [5:0] preamble_cnt,
+   input             mdio_oe,
+   input     [4:0]   data_addr,    
+   input    [15:0]   data_wr, 
+   input              mdc,
+	input reg_addr_shift,
+	input [4:0] reg_addr,
+	input pos_cnt_inc,
+	input pos_cnt,
+	input st_match
+);
+
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b11000));
+assert property(@(posedge mdc) (st_match) |-> (reg_addr == 5'b00100));
+assert property(@(posedge mdc) (st_match) |-> (reg_addr == 5'b01001));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b00110));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b11011));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b01110));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b00001));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b11001));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b00010));
+assert property(@(posedge mdc) (st_match) |-> (reg_addr == 5'b00110));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b01111));
+assert property(@(posedge mdc) (st_match) |-> (reg_addr == 5'b00011));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b00100));
+assert property(@(posedge mdc) (st_match) |-> (reg_addr == 5'b00001));
+assert property(@(posedge mdc) (st_match) |-> (reg_addr == 5'b00010));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b00000));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b10110));
+assert property(@(posedge mdc) (st_match) |-> (op_code == 2'b00));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b10010));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b00011));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b11101));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b01001));
+assert property(@(posedge mdc) (st_match) |-> (reg_addr == 5'b00101));
+assert property(@(posedge mdc) (st_match) |-> (reg_addr == 5'b01000));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b01011));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b10000));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b11111));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b11010));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b11110));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b01101));
+assert property(@(posedge mdc) (st_match) |-> (op_code == 2'b11));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b10001));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b01010));
+assert property(@(posedge mdc) (st_match) |-> (reg_addr == 5'b00000));
+assert property(@(posedge mdc) (st_match) |-> (reg_addr == 5'b01010));
+assert property(@(posedge mdc) (st_match) |-> (op_code == 2'b10));
+assert property(@(posedge mdc) (st_match) |-> (reg_addr == 5'b00111));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b10011));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b00101));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b10100));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b01100));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b11100));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b01000));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b10111));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b10101));
+assert property(@(posedge mdc) (st_match) |-> (phy_addr == 5'b00111));
+assert property(@(posedge mdc) (st_match) |-> (op_code == 2'b01));
+
+endmodule

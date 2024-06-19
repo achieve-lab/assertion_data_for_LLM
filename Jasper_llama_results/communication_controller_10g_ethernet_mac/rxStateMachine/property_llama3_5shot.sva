@@ -1,0 +1,95 @@
+module i_rxStateMachine(
+   input[4:0] rxstate, rxstate_next,
+    input get_sfd, // SFD has been received,
+   input crc_check_valid,//Indicate the frame passed CRC Check,
+    input receiving_d1,
+   input get_error_code,
+   input check_reset,
+   input start_da,// Start to receive Destination Address,
+   input crc_check_invalid,//Indicate the frame failed in CRC Check,
+    input recv_enable,
+   input good_frame_get,// A good frame has been received,
+   input get_terminator,//Indicate end of receiving FCS field,
+   input receiving, //Rx Engine is working, not in IDLE state and Check state.
+    input local_invalid,// The Frame's DA field is not Local MAC,
+   input    start_lt,
+    input  wait_crc_check, 
+    input length_error,//
+    input rxclk,
+   input bad_frame_get, // A bad frame has been received, 
+    input reset
+);
+
+assert property(@(posedge rxclk)  (check_reset) |-> good_frame_get);
+assert property(@(posedge rxclk)  (D && b) |-> Bout);
+assert property(@(posedge rxclk)  (rxstate[4]) |-> wait_crc_check);
+assert property(@(posedge rxclk)  (reset) |-> good_frame_get);
+assert property(@(posedge rxclk)  input req1, req2);
+assert property(@(posedge rxclk)  (rxstate[2] && rxstate[1] && rxstate[0]) |-> receiving);
+assert property(@(posedge rxclk)  (rxstate[0] && get_sfd && recv_enable) |-> rxstate_next[0]);
+assert property(@(posedge rxclk)  assign Bout = (~a & b) | (~(a ^ b) & Bin));
+assert property(@(posedge rxclk)  always @ (*) if (state) begin gnt1 = req1 & ~req2);
+assert property(@(posedge rxclk)  gnt2 = req2 & ~req1);
+assert property(@(posedge rxclk)  (rxstate[2] && rxstate[1] && rxstate[0]) |-> start_lt);
+assert property(@(posedge rxclk)  (rxstate[2] && rxstate[1] && rxstate[0]) |-> start_da);
+assert property(@(posedge rxclk)  (rxstate[4] &&!get_sfd &&!recv_enable) |-> rxstate_next[0]);
+assert property(@(posedge rxclk) (req1 == 0) |-> (gnt1 == 0));
+assert property(@(posedge rxclk)  (!Bout && D) |-> a
+            Program 9: module arb2(clk, rst, req1, req2, gnt1, gnt2));
+assert property(@(posedge rxclk) (req1 == 1 & req2 == 0) |-> (gnt1 == 1));
+assert property(@(posedge rxclk)  (reset) |-> rxstate_next[0]);
+assert property(@(posedge rxclk)  (rxstate[3] && crc_check_invalid && length_error) |-> bad_frame_get);
+assert property(@(posedge rxclk)  assign Cout = (a & b) | (b & cin) | (a & cin));
+assert property(@(posedge rxclk)  (rxstate[3] &&!get_sfd &&!recv_enable) |-> rxstate_next[0]);
+assert property(@(posedge rxclk)  always @ (posedge clk or posedge rst) if (rst) state <= 0);
+assert property(@(posedge rxclk)  (reset) |-> receiving_d1);
+assert property(@(posedge rxclk)  (!Cout && b) |-> S);
+assert property(@(posedge rxclk)  assign Cout = a & b);
+assert property(@(posedge rxclk)  (reset) |-> rxstate
+            Program 6: module half_adder(input a, b, output S, Cout));
+assert property(@(posedge rxclk)  (D && Bin) |-> Bout);
+assert property(@(posedge rxclk)  (check_reset) |-> bad_frame_get);
+assert property(@(posedge rxclk)  (rxstate[2] &&!local_invalid &&!length_error &&!get_error_code &&!get_terminator) |-> rxstate_next[2]);
+assert property(@(posedge rxclk)  (!Bout && b) |-> a);
+assert property(@(posedge rxclk)  endmodule
+            Assertions 8: (!a && D) |-> Bout);
+assert property(@(posedge rxclk)  reg gnt1, gnt2);
+assert property(@(posedge rxclk) (req2 == 1 & req1 == 0) |->);
+assert property(@(posedge rxclk)  end endmodule
+            Assertions 9: (state == 1 & req2 == 1) |-> (gnt1 == 0));
+assert property(@(posedge rxclk)  output gnt1, gnt2);
+assert property(@(posedge rxclk)  reg state);
+assert property(@(posedge rxclk) (req2 == 0) |-> (gnt2 == 0));
+assert property(@(posedge rxclk)  (rxstate[3] && get_sfd && recv_enable) |-> rxstate_next[0]);
+assert property(@(posedge rxclk)  (!Bout && Bin) |-> a);
+assert property(@(posedge rxclk) (req1 == 1 & state == 0) |-> (gnt2 == 0));
+assert property(@(posedge rxclk)  (reset) |-> bad_frame_get);
+assert property(@(posedge rxclk)  (Cout) |-> a
+            Program 7: module full_adder(input a, b, cin, output S, Cout));
+assert property(@(posedge rxclk)  (rxstate[2] &&!local_invalid &&!length_error &&!get_error_code && get_terminator) |-> rxstate_next[4]);
+assert property(@(posedge rxclk)  (rxstate[0] &&!get_sfd &&!recv_enable) |-> rxstate_next[0]);
+assert property(@(posedge rxclk)  (crc_check_valid) |-> bad_frame_get);
+assert property(@(posedge rxclk)  assign S = a ^ b);
+assert property(@(posedge rxclk)  input clk, rst);
+assert property(@(posedge rxclk)  (!Cout && a) |-> S
+            Program 8: module full_subtractor(input a, b, Bin, output D, Bout));
+assert property(@(posedge rxclk)  gnt2 = req2);
+assert property(@(posedge rxclk)  (reset) |-> wait_crc_check);
+assert property(@(posedge rxclk)  assign S = a ^ b ^ cin);
+assert property(@(posedge rxclk)  assign D = a ^ b ^ Bin);
+assert property(@(posedge rxclk)  (rxstate[3] && crc_check_invalid && length_error) |-> good_frame_get);
+assert property(@(posedge rxclk)  end else begin gnt1 = req1);
+assert property(@(posedge rxclk)  endmodule
+            Assertions 6: (Cout) |-> b);
+assert property(@(posedge rxclk)  (crc_check_valid || crc_check_invalid||length_error) |-> wait_crc_check);
+assert property(@(posedge rxclk)  else state <= gnt1);
+assert property(@(posedge rxclk)  (rxstate[4] && get_sfd && recv_enable) |-> rxstate_next[0]);
+assert property(@(posedge rxclk)  (receiving) |-> receiving_d1);
+assert property(@(posedge rxclk) (req1 == 1 & state == 0) |-> (gnt1 == 1));
+assert property(@(posedge rxclk)  (crc_check_valid) |-> good_frame_get);
+assert property(@(posedge rxclk)  (rxstate[1]) |-> rxstate_next[1]);
+assert property(@(posedge rxclk)  endmodule
+            Assertions 7: (!Cout && cin) |-> S);
+assert property(@(posedge rxclk) (req2 == 1 & state == 1) |-> (gnt2 == 1));
+
+endmodule

@@ -1,0 +1,65 @@
+  parameter DATA_SIZE = 32;
+module i_bit_reversal(
+	input  [DATA_SIZE - 1 : 0] data_in,
+	input [DATA_SIZE - 1 : 0] data_out,
+	input  [1 : 0] rev_type,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET,
+input [DATA_SIZE - 1 : 0] data_reversed[0 : 3]
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (rev_type == 2'b01) |-> (data_out[7:0] == data_in[7:0] && data_out[15:8] == data_in[15:8] && data_out[23:16] == data_in[23:16] && data_out[31:24] == data_in[31:24]));
+assert property(@(posedge DEFAULT_CLOCK)  (rev_type == 2'b11) |-> data_out == data_in
+            Note: 
+            1. You may assume that the given design is a valid design.
+            2. You may assume that the design is a single module design.
+            3. You may assume that the design is a combinational circuit.
+            4. You may assume that the design is a single input, single output design.
+            5. You may assume that the design is a single output, single input design.
+            6. You may assume that the design is a single output, multiple input design.
+            7. You may assume that the design is a multiple output, single input design.
+            8. You may assume that the design is a multiple output, multiple input design.
+            9. You may assume that the design is a single output, single input design.
+            10. You may assume that the design is a single output, multiple input design.
+            11. You may assume that the design is a multiple output, single input design.
+            12. You may assume that the design is a multiple output, multiple input design.
+            13. You may assume that the design is a single output, single input design.
+            14. You may assume that the design is a single output, multiple input design.
+            15. You may assume that the design is a multiple output, single input design.
+            16. You may assume that the design is a multiple output, multiple input design.
+            17. You may assume that the design is a single output, single input design.
+            18. You may assume that the design is a single output, multiple input design.
+            19. You may assume that the design is a multiple output, single input design.
+            20. You may assume that the design is a multiple output, multiple input design.
+            21. You may assume that the design is a single output, single input design.
+            22. You may assume that the design is a single output, multiple input design.
+            23. You may assume that the design is a multiple output, single input design.
+            24. You may assume that the design is a multiple output, multiple input design.
+            25. You may assume that the design is a single output, single input design.
+            26. You may assume that the design is a single output, multiple input design.
+            27. You may assume that the design is a multiple output, single input design.
+            28. You may assume that the design is a multiple output, multiple input design.
+            29. You may assume that the design is a single output, single input design.
+            30. You may assume that the design is a single output, multiple input design.
+            31. You may assume that the design is a multiple output, single input design.
+            32. You may assume that the design is a multiple output, multiple input design.
+            33. You may assume that the design is a single output, single input design.
+            34. You may assume that the design is a single output, multiple input design.
+            35. You may assume that the design is a multiple output, single input design.
+            36. You may assume that the design is a multiple output, multiple input design.
+            37. You may assume that the design is a single output, single input design.
+            38. You may assume that the design is a single output, multiple input design.
+            39. You may assume that the design is a multiple output, single input design.
+            40. You may assume that the design is a multiple output, multiple input design.
+            41. You may assume that the design is a single output, single input design.
+            42. You may assume that the design is a single output, multiple input design.
+            43. You may assume that the design is a multiple output, single input design.
+            44. You may assume that the design is a multiple output, multiple input design.
+            45. You may assume that the design is a single output, single input design.
+            46. You may assume that the design is a single output, multiple input design.
+           );
+assert property(@(posedge DEFAULT_CLOCK)  (rev_type == 2'b10) |-> (data_out[15:0] == data_in[15:0] && data_out[31:16] == data_in[31:16]));
+assert property(@(posedge DEFAULT_CLOCK)  
+            (rev_type == 2'b00) |-> data_out == data_in);
+
+endmodule

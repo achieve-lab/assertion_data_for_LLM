@@ -1,0 +1,12 @@
+module i_qtwosComp(
+	input [30:0] a,
+	input [63:0] flip,
+	input [63:0] b,
+	input [63:0] out,
+	input [63:0] data,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (a == 0) |-> (b == 64'h0000000000000001));assert property(@(posedge DEFAULT_CLOCK)  (a == 31'h7FFFFFFF) |-> (b == 64'hFFFFFFFF80000001));assert property(@(posedge DEFAULT_CLOCK)  (a == 31'h00000001) |-> (b == 64'hFFFFFFFFFFFFFFFE));assert property(@(posedge DEFAULT_CLOCK)  (a == 31'h00000000) |-> (b == 64'h0000000000000001));assert property(@(posedge DEFAULT_CLOCK)  (a == 31'hFFFFFFFF) |-> (b == 64'hFFFFFFFF00000001));assert property(@(posedge DEFAULT_CLOCK)  (a == 31'h00000010) |-> (b == 64'hFFFFFFFFFFFFFFF1));
+endmodule

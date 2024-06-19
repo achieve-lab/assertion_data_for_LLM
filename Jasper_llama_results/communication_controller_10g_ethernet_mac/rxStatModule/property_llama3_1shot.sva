@@ -1,0 +1,70 @@
+module i_rxStatModule(
+   input[17:0] rxStatRegPlus_tmp,
+   input jumbo_frame,
+   input multi_valid,
+   input padded_frame,
+   input get_error_code,
+   input crc_check_invalid,
+   input broad_valid,
+   input receiving,
+   input length_256_511,
+   input length_512_1023,
+   input good_frame_get, 
+   input large_error,
+   input rxclk,
+   input reset,
+   input length_65_127,
+   input length_128_255,
+   input pause_frame,
+   input [17:0] rxStatRegPlus,
+   input length_1024_max,
+   input small_error
+);
+
+assert property(@(posedge rxclk) (broad_valid == 1 & good_frame_get == 1) |-> (rxStatRegPlus[2] == 1));
+assert property(@(posedge rxclk)  (good_frame_get == 1) |-> (rxStatRegPlus[0] == 1));
+assert property(@(posedge rxclk) (pause_frame == 1 & good_frame_get == 1) |-> (rxStatRegPlus[12] == 1));
+assert property(@(posedge rxclk) (req2 == 1 & req1 == 0) |-> (gnt2 == 1));
+assert property(@(posedge rxclk) (req1 == 1 & state == 0) |-> (gnt2 == 0));
+assert property(@(posedge rxclk) (length_512_1023 == 1 & good_frame_get == 1) |-> (rxStatRegPlus[8] == 1));
+assert property(@(posedge rxclk)  (gnt2) |-> (req2));
+assert property(@(posedge rxclk) (req2 == 1 & state == 1) |-> (gnt2 == 1));
+assert property(@(posedge rxclk)  (rxStatRegPlus[0]) |-> (good_frame_get));
+assert property(@(posedge rxclk) (length_256_511 == 1 & good_frame_get == 1) |-> (rxStatRegPlus[7] == 1));
+assert property(@(posedge rxclk) (length_65_127 == 1 & good_frame_get == 1) |-> (rxStatRegPlus[5] == 1));
+assert property(@(posedge rxclk)  (gnt1) |-> (req1));
+assert property(@(posedge rxclk)  end endmoduleTest Assertions: (good_frame_get == 1) |-> (rxStatRegPlus[0] == 1));
+assert property(@(posedge rxclk)  (rxStatRegPlus[7]) |-> (good_frame_get & length_256_511));
+assert property(@(posedge rxclk) (receiving == 1) |-> (rxStatRegPlus[17] == 1));
+assert property(@(posedge rxclk)  (rxStatRegPlus[17]) |-> (receiving));
+assert property(@(posedge rxclk)  (rxStatRegPlus[5]) |-> (good_frame_get & length_65_127));
+assert property(@(posedge rxclk) (length_128_255 == 1 & good_frame_get == 1) |-> (rxStatRegPlus[6] == 1));
+assert property(@(posedge rxclk) (req1 == 1 & state == 0) |-> (gnt1 == 1));
+assert property(@(posedge rxclk)  (rxStatRegPlus[10]) |-> (good_frame_get & pause_frame));
+assert property(@(posedge rxclk)  (rxStatRegPlus[2]) |-> (good_frame_get & broad_valid));
+assert property(@(posedge rxclk) (receiving == 1 & get_error_code == 1) |-> (rxStatRegPlus[16] == 1));
+assert property(@(posedge rxclk)  (rxStatRegPlus[8]) |-> (good_frame_get & length_512_1023));
+assert property(@(posedge rxclk) (length_1024_max == 1 & good_frame_get == 1) |-> (rxStatRegPlus[9] == 1));
+assert property(@(posedge rxclk) (req2 == 0) |-> (gnt2 == 0));
+assert property(@(posedge rxclk) (jumbo_frame == 1 & good_frame_get == 1) |-> (rxStatRegPlus[14] == 1));
+assert property(@(posedge rxclk) (large_error == 1) |-> (rxStatRegPlus[11] == 1));
+assert property(@(posedge rxclk)  (rxStatRegPlus[3]) |-> (good_frame_get & multi_valid));
+assert property(@(posedge rxclk)  (rxStatRegPlus[16]) |-> (get_error_code & receiving));
+assert property(@(posedge rxclk) (small_error == 1) |-> (rxStatRegPlus[15] == 1));
+assert property(@(posedge rxclk) (padded_frame == 1 & good_frame_get == 1) |-> (rxStatRegPlus[4] == 1));
+assert property(@(posedge rxclk)  (rxStatRegPlus[15]) |-> (small_error));
+assert property(@(posedge rxclk)  (rxStatRegPlus[14]) |-> (good_frame_get & jumbo_frame));
+assert property(@(posedge rxclk) (req1 == 0) |-> (gnt1 == 0));
+assert property(@(posedge rxclk) (req1 == 1 & req2 == 0) |-> (gnt1 == 1));
+assert property(@(posedge rxclk) (pause_frame == 1 & good_frame_get == 1) |-> (rxStatRegPlus[10] == 1));
+assert property(@(posedge rxclk)  end endmodule"            Assertions 1: (state == 1 & req2 == 1) |-> (gnt1 == 0));
+assert property(@(posedge rxclk) (crc_check_invalid == 1) |-> (rxStatRegPlus[1] == 1));
+assert property(@(posedge rxclk)  (rxStatRegPlus[1]) |-> (crc_check_invalid));
+assert property(@(posedge rxclk)  (rxStatRegPlus[9]) |-> (good_frame_get & length_1024_max));
+assert property(@(posedge rxclk) (multi_valid == 1 & good_frame_get == 1) |-> (rxStatRegPlus[3] == 1));
+assert property(@(posedge rxclk)  (rxStatRegPlus[12]) |-> (good_frame_get & pause_frame));
+assert property(@(posedge rxclk)  (rxStatRegPlus[6]) |-> (good_frame_get & length_128_255));
+assert property(@(posedge rxclk)  (rxStatRegPlus[4]) |-> (good_frame_get & padded_frame));
+assert property(@(posedge rxclk)  (rxStatRegPlus[11]) |-> (large_error));
+
+endmodule

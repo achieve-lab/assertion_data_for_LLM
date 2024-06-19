@@ -1,0 +1,10 @@
+module i_PSGShaper(
+input [19:0] o,		// shaped input
+input [7:0] env,	// envelop generator input
+input clk_i,		// clock
+input [11:0] tgi,	// tone generator input
+input ce			// clock enable
+);
+
+assert property(@(posedge clk_i) (env != 0) |-> (o != 0)); assert property(@(posedge clk_i) (ce == 0) |-> (o == 0)); assert property(@(posedge clk_i) (ce == 1) |-> (o == tgi * env));
+endmodule

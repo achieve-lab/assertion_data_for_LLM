@@ -1,0 +1,44 @@
+module i_decoder_8b10b(
+   input coding_err,
+   input DISPARITY6b, DISPARITY6a2, DISPARITY6a0,
+   // Registered Coding error input
+   input RBYTECLK,
+   input 	AEQB, CEQD, P22, P13, P31,
+   input 	  xerr,
+   input 	P22_b_c_eeqi, P22_bn_cn_eeqi, an_bn_en_in,
+   input 	P22_a_c_eeqi, P22_an_cn_eeqi,
+   input disparity_err,
+   input disparity,
+   input derr12, derr34, derr56, derr78,
+   input 	OR12_1, OR12_2, OR12_3, OR12_4, OR12_5, OR12_6, OR12_7,
+   input reset,
+   input   zerr1, zerr2, zerr3,
+   input 	eeqi, c_d_e_i, cn_dn_en_in,
+   input 	a_b_e_i, P13_d_e_i, P13_in, P13_en, P31_i,
+   // Registered 8B input
+   input   xerr1, xerr2, xerr3, xerr4,
+   input 	A, B, C, D, E,
+   input cerr1, cerr2, cerr3, cerr4, cerr5, cerr6, cerr7, cerr8, cerr9,
+   input 	  cerr,
+   input  	K, F, G, H, K28p, KA, KB, KC,
+   input heqj, fghjP13, fghjP31, fghj22,
+   input [4:0] decoder_8b_X,  input [2:0] decoder_8b_Y,
+   // Register disparity and disparity_err input
+   input DISPARITY6p, DISPARITY6n, DISPARITY4p, DISPARITY4n,
+   input   a,b,c,d,e,i,f,g,h,j,  // 10 Bit inputs
+   input [9:0] tbi,
+   input 	  zerr,
+   // --- TBI (Ten Bit Interface) input bus
+   input [7:0] ebi,
+   input K_out,
+   input 	derr1,derr2,derr3,derr4,derr5,derr6,derr7,derr8,
+   input feqg,
+   input DISPARITY6a
+   // -- Eight bit input bus
+);
+
+assert property(@(posedge RBYTECLK)  (disparity_err) |-> (coding_err));
+assert property(@(posedge RBYTECLK)  (disparity_err) |-> (disparity));
+assert property(@(posedge RBYTECLK)  (disparity_err) |-> (disparity_err));
+
+endmodule

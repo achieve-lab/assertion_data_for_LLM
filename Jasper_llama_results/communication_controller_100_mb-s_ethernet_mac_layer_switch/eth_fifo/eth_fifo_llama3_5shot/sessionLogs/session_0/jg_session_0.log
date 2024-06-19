@@ -1,0 +1,124 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-06-04 14:12:13 CDT
+# hostname  : pal-achieve-08.(none)
+# pid       : 53821
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:39843' '-nowindow' '-style' 'windows' '-data' 'AAABJnicXY7NDsFQEIXPJRqx8AzWEjZi17VticS2aehVgtvQktjwqN6kPjcqqZnM35kzP0ZS+KiqSl7ad1ygSDP0J+b1TUKjpnzqVhNZPBtR6tTDNSXA+hrpJKdYW5XagQxBEh1Qpxt4Sf+Cz1Gnswql2oBHWsLuwrZ0ruQDfp1rRS+FlREtGy1TY+o1G6Ue/JwtTnt/658Z+8uJjtiEasrtDLzwH78Bb9klaw==' '-proj' '/data/vpulav2/Work/Jasper_llama/communication_controller_100_mb-s_ethernet_mac_layer_switch/eth_fifo/eth_fifo_llama3_5shot/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper_llama/communication_controller_100_mb-s_ethernet_mac_layer_switch/eth_fifo/eth_fifo_llama3_5shot/.tmp/.initCmds.tcl' 'FPV_eth_fifo.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper_llama/communication_controller_100_mb-s_ethernet_mac_layer_switch/eth_fifo/eth_fifo_llama3_5shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/eth_fifo.v
+[-- (VERI-1482)] Analyzing Verilog file './/eth_fifo.v'
+[INFO (VERI-1328)] .//eth_fifo.v(59): analyzing included file './/ethmac_defines.v'
+[INFO (VERI-1328)] .//eth_fifo.v(60): analyzing included file './/timescale.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_llama3_5shot.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_llama3_5shot.sva'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(25): syntax error near '"'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(27): syntax error near 'self'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(28): syntax error near '"'
+[INFO (VERI-2561)] .//property_llama3_5shot.sva(30): undeclared symbol 'self', assumed default net type 'wire'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(30): syntax error near ':'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(48): syntax error near '"'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(49): syntax error near '"'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(50): syntax error near '"'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(51): syntax error near '"'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(52): syntax error near '"'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(53): syntax error near '"'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(55): syntax error near '"'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(56): syntax error near '"'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(58): syntax error near '"'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(60): syntax error near 'self'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(61): syntax error near '"'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(62): syntax error near '"'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(63): syntax error near '"'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(64): syntax error near '"'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(65): syntax error near '"'
+[-- (SYS-1004)] Too many errors. Further error messages will be suppressed.
+[INFO (VMSG-1000)] Too many errors. Further error messages will be suppressed.
+Summary of errors detected:
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(25): syntax error near '"'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(27): syntax error near 'self'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(28): syntax error near '"'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(30): syntax error near ':'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(48): syntax error near '"'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(49): syntax error near '"'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(50): syntax error near '"'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(51): syntax error near '"'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(52): syntax error near '"'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(53): syntax error near '"'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(55): syntax error near '"'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(56): syntax error near '"'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(58): syntax error near '"'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(60): syntax error near 'self'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(61): syntax error near '"'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(62): syntax error near '"'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(63): syntax error near '"'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(64): syntax error near '"'
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(65): syntax error near '"'
+ERROR (ENL034): 19 errors detected in the design file(s).
+
+ERROR: problem encountered at line 12 in file FPV_eth_fifo.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.409 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

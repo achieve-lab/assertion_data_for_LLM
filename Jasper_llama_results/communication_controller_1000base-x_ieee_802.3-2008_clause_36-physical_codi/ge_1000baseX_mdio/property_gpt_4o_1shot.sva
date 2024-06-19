@@ -1,0 +1,80 @@
+                           
+parameter S_PREAMBLE  = 0;                
+parameter                    S_ST        = 1;
+parameter                    S_OP_CODE   = 2;
+parameter                    S_PHY_ADDR  = 3;
+parameter                    S_REG_ADDR  = 4;
+parameter                    S_TA        = 5;
+parameter                    S_WR_DATA   = 6;
+parameter                    S_RD_DATA   = 7;
+parameter                    S_WR_COMMIT = 8;
+module i_ge_1000baseX_mdio(
+   input              mdio,
+   input [4:0] phy_addr, input phy_addr_shift,
+   input [1:0] op_code, 
+   input             mdio_out,
+   input [15:0] data_in, input data_in_shift,
+   input     strobe_wr,
+   input [15:0] data_out, input data_out_load, data_out_shift, next ,
+   input     [15:0]   data_rd,	op_code_shift ,
+   input              reset, 
+   // mdio/mdc state machine inputistered part.
+   input st,
+	 input st_latch,
+   input [4:0] input_addr,
+	 input input_addr_shift,
+   input [3:0] present, 
+   input [5:0] preamble_cnt,
+   input             mdio_oe,
+   input     [4:0]   data_addr,    
+   input    [15:0]   data_wr, 
+   input              mdc,
+	input reg_addr_shift,
+	input [4:0] reg_addr,
+	input pos_cnt_inc,
+	input pos_cnt,
+	input st_match
+);
+
+assert property(@(posedge mdc) (op_code_done) |-> (present == S_PHY_ADDR));assert property(@(posedge mdc) 
+(phy_addr_done) |-> (present == S_REG_ADDR));assert property(@(posedge mdc) 
+(reg_addr_done) |-> (present == S_TA));assert property(@(posedge mdc) 
+(ta1_done & op_is_rd) |-> (present == S_RD_DATA));assert property(@(posedge mdc) 
+(ta1_done & op_is_wr) |-> (present == S_WR_DATA));assert property(@(posedge mdc) 
+(data_done & op_is_rd) |-> (present == S_PREAMBLE));assert property(@(posedge mdc) 
+(data_done & op_is_wr) |-> (present == S_WR_COMMIT));assert property(@(posedge mdc) 
+(preamble_match & ~mdio) |-> (present == S_ST));assert property(@(posedge mdc) 
+(mdio & present == S_ST) |-> (next == S_OP_CODE));assert property(@(posedge mdc) 
+(~mdio & present == S_ST) |-> (next == S_PREAMBLE));assert property(@(posedge mdc) 
+(preamble_cnt == 31) |-> (preamble_match == 1));assert property(@(posedge mdc) 
+(pos_cnt == 1) |-> (op_code_done == 1));assert property(@(posedge mdc) 
+(pos_cnt == 6) |-> (phy_addr_done == 1));assert property(@(posedge mdc) 
+(pos_cnt == 11) |-> (reg_addr_done == 1));assert property(@(posedge mdc) 
+(pos_cnt == 12) |-> (ta0_done == 1));assert property(@(posedge mdc) 
+(pos_cnt == 13) |-> (ta1_done == 1));assert property(@(posedge mdc) 
+(pos_cnt == 29) |-> (data_done == 1));assert property(@(posedge mdc) 
+(ta1_done & op_is_rd) |-> (mdio_oe == 1));assert property(@(posedge mdc) 
+(ta1_done & op_is_rd) |-> (mdio_out == 1));assert property(@(posedge mdc) 
+(data_out_shift) |-> (mdio_out == data_out[15]));assert property(@(posedge mdc) 
+(reset) |-> (present == S_PREAMBLE));assert property(@(posedge mdc) 
+(reset) |-> (preamble_cnt == 0));assert property(@(posedge mdc) 
+(reset) |-> (pos_cnt == 0));assert property(@(posedge mdc) 
+(reset) |-> (op_code == 0));assert property(@(posedge mdc) 
+(reset) |-> (phy_addr == 0));assert property(@(posedge mdc) 
+(reset) |-> (reg_addr == 0));assert property(@(posedge mdc) 
+(reset) |-> (data_in == 0));assert property(@(posedge mdc) 
+(reset) |-> (data_out == 0));assert property(@(posedge mdc) 
+(reset) |-> (st == 0));assert property(@(posedge mdc) 
+(st_latch) |-> (st == mdio));assert property(@(posedge mdc) 
+(op_code_shift) |-> (op_code == {op_code[0], mdio}));assert property(@(posedge mdc) 
+(phy_addr_shift) |-> (phy_addr == {phy_addr[3:0], mdio}));assert property(@(posedge mdc) 
+(reg_addr_shift) |-> (reg_addr == {reg_addr[3:0], mdio}));assert property(@(posedge mdc) 
+(data_in_shift) |-> (data_in == {data_in[14:0], mdio}));assert property(@(posedge mdc) 
+(data_out_load) |-> (data_out == data_rd));assert property(@(posedge mdc) 
+(data_out_shift) |-> (data_out == {data_out[14:0], 1'b0}));assert property(@(posedge mdc) 
+(phy_addr == PHY_ADDR) |-> (phy_addr_match == 1));assert property(@(posedge mdc) 
+(op_code == 2'b10) |-> (op_is_rd == 1));assert property(@(posedge mdc) 
+(op_code == 2'b01) |-> (op_is_wr == 1));assert property(@(posedge mdc) 
+(~op_is_rd & ~op_is_wr) |-> (op_is_invalid == 1));assert property(@(posedge mdc) 
+(strobe_wr) |-> (next == S_PREAMBLE));
+endmodule

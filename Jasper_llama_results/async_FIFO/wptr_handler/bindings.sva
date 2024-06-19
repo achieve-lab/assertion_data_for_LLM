@@ -1,0 +1,14 @@
+bind wptr_handler
+ i_wptr_handler v_wptr_handler(
+.w_en(w_en),
+.b_wptr(b_wptr),
+.b_wptr_next(b_wptr_next),
+.g_wptr_next(g_wptr_next),
+.wfull(wfull),
+.wclk(wclk),
+.g_rptr_sync(g_rptr_sync),
+.full(full),
+.wrap_around(wrap_around),
+.wrst_n(wrst_n),
+.g_wptr(g_wptr)
+);

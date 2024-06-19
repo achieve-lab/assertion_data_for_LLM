@@ -1,0 +1,28 @@
+parameter N = 8;
+module i_mtx_trps_8x8_dpsram(
+input			sclk,
+input [15:0] rd_DATA,
+input		indicator,				// 64 words written - Indication(pos. or neg. edge)
+input			mem_valid,
+input		cnt128d_rd_valid_start,	// Counter start increment
+input [6:0]	cnt128d_wr,				// Write Mode Counter
+input	[N-1:0]	inp_data,
+input	[N-1:0]	mem_data,
+input		wr_WEN,
+input			rstn,
+input			indicator_1d,			// Indication 1 clock delay
+input		rd_CSN,
+input		indicator_pos_edge,		// positive edge
+input [ 6:0] wr_ADDR,
+input [15:0] wr_DATA,
+input		cnt128d_rd_valid_stop,	// Counter stop increment
+input		wr_CSN,
+input		indicator_neg_edge,		// negative edge
+input			inp_valid,
+input	[6:0]	cnt128d_rd,				// Read Counter
+input [ 6:0] rd_ADDR,
+input			cnt128d_rd_valid		// valid time for cnt128d_rd counter
+);
+
+assert property(@(posedge sclk) (inp_valid && ~mem_valid) |-> (mem_data == 8'h00));assert property(@(posedge sclk)  (mem_valid && ~inp_valid) |-> (mem_data != 8'h00));assert property(@(posedge sclk)  (mem_valid && ~rstn) |-> (mem_data != 8'h00));assert property(@(posedge sclk)  (mem_valid && ~sclk) |-> (mem_data != 8'h00));
+endmodule

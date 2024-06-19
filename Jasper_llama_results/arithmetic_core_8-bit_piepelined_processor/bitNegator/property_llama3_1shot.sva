@@ -1,0 +1,19 @@
+`include "defines.v"
+
+module i_bitNegator(
+	input bitIn, bitN,
+	input bitOut,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (bitN) |-> (bitOut));
+assert property(@(posedge DEFAULT_CLOCK)  (~ bitIn & bitN) |-> (bitOut));
+assert property(@(posedge DEFAULT_CLOCK)  (~ bitIn) |-> (bitOut));
+assert property(@(posedge DEFAULT_CLOCK)  (bitIn & bitN) |-> (bitOut));
+assert property(@(posedge DEFAULT_CLOCK)  (bitIn & ~ bitN) |-> (bitOut));
+assert property(@(posedge DEFAULT_CLOCK)  (~ bitIn & ~ bitN) |-> (bitOut));
+assert property(@(posedge DEFAULT_CLOCK)  (~ bitN) |-> (bitOut));
+assert property(@(posedge DEFAULT_CLOCK)  (bitIn) |-> (bitOut));
+
+endmodule

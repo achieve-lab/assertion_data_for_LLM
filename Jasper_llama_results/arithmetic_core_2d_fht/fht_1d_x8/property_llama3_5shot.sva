@@ -1,0 +1,141 @@
+parameter N = 8;
+
+module i_fht_1d_x8(
+input			x_valid,
+input [N:0] stg1_sum2,
+input [N+1:0] stg2_sum1,
+input			rstn,
+input [N+1:0] stg2_sub1,
+// Data input [N-1:0] ,
+input [N+2:0] stg3_sum1,
+	// input data - x0,x1,x2,x3,x4,x5,x6,x7,x0,x1...
+input [N+2:0] stg3_sub3,
+input h6_valid,
+input	fht_valid_or,
+input h4_valid,
+input [N+1:0] stg2_sub3,
+input [N:0] mult_dat_1,
+input [N+2:0] stg3_sub1,
+input [13:0] xi_ready_d,
+	// 1D FHT input data - h0,h1,h2,h3,h4,h5,h6,h7,h0,h1...
+input [2:0] cnt,
+input [N+1:0] stg2_sum3,
+input h7_valid,
+input h0_valid,
+input [N+1:0] mult_res1,
+input [N:0] stg1_sum4,
+input x_valid_1d,
+input [N-1:0] x0,x1,x2,x3,x4,x5,x6,x7,
+input [N+2:0] stg3_sub2,
+input h2_valid,
+input h5_valid,
+input [N+2:0] h0_FF,h1_FF,h2_FF,h3_FF,h4_FF,h5_FF,h6_FF,h7_FF,
+input [N+1:0] mult_res2,
+input h3_valid,
+input [N:0] stg1_sub1,
+input [N:0] stg1_sub2,
+input [N+2:0] stg3_sum3,
+input	[N+2:0]	fht_data,
+input h1_valid,
+input [N+2:0] stg3_sum2,
+input xi_ready,
+input [N+2:0] stg3_sum4,
+input [N+2:0] stg3_sub4,
+input	[N-1:0]	x_data,
+input [N-1:0] x0_FF,x1_FF,x2_FF,x3_FF,x4_FF,x5_FF,x6_FF,x7_FF,
+input			sclk,
+input [N:0] stg1_sum3,
+input [N+1:0] stg2_sub2,
+input [N:0] stg1_sub3,
+input [N:0] stg1_sub4,
+input [N+1:0] stg2_sum2,
+input			fht_valid,
+input [N:0] mult_dat_2,
+input [N+2:0] h_or_data,
+input [N:0] stg1_sum1
+// On the input of the 1st bfly is [N:0] 
+);
+
+assert property(@(posedge sclk)  (xi_ready_d[5]) |-> h4_FF);
+assert property(@(posedge sclk)  (xi_ready) |-> x2_FF);
+assert property(@(posedge sclk)  (xi_ready_d[5]) |-> stg3_sum4);
+assert property(@(posedge sclk)  (x_valid) |-> x1);
+assert property(@(posedge sclk)  (h1_valid && h5_valid) |-> h1_FF);
+assert property(@(posedge sclk)  (xi_ready_d[5]) |-> h2_FF);
+assert property(@(posedge sclk)  (xi_ready_d[5]) |-> h7_FF);
+assert property(@(posedge sclk)  (x_valid) |-> x7);
+assert property(@(posedge sclk)  (xi_ready_d[9]) |-> h3_valid);
+assert property(@(posedge sclk)  (x_valid) |-> x0);
+assert property(@(posedge sclk)  (h3_valid && h7_valid) |-> h7_FF);
+assert property(@(posedge sclk)  (h3_valid) |-> fht_valid);
+assert property(@(posedge sclk)  (h1_valid && h5_valid) |-> h5_FF);
+assert property(@(posedge sclk)  (h0_valid && h4_valid) |-> h4_FF);
+assert property(@(posedge sclk)  (xi_ready) |-> x7_FF);
+assert property(@(posedge sclk)  (xi_ready_d[5]) |-> stg3_sub2);
+assert property(@(posedge sclk)  (xi_ready) |-> x3_FF);
+assert property(@(posedge sclk)  (xi_ready_d[5]) |-> stg3_sub1);
+assert property(@(posedge sclk)  (xi_ready) |-> x1_FF);
+assert property(@(posedge sclk)  (xi_ready_d[1]) |-> stg1_sum4);
+assert property(@(posedge sclk)  (xi_ready_d[3]) |-> stg2_sum2);
+assert property(@(posedge sclk)  (xi_ready_d[6]) |-> h0_valid);
+assert property(@(posedge sclk)  (h7_valid) |-> fht_valid);
+assert property(@(posedge sclk)  (h5_valid) |-> fht_valid);
+assert property(@(posedge sclk)  (h5_valid) |-> h_or_data);
+assert property(@(posedge sclk)  (h7_valid) |-> h_or_data);
+assert property(@(posedge sclk)  (xi_ready_d[1]) |-> stg1_sub4);
+assert property(@(posedge sclk)  (xi_ready_d[5]) |-> h5_FF);
+assert property(@(posedge sclk)  (xi_ready_d[1]) |-> stg1_sub3);
+assert property(@(posedge sclk)  (h6_valid) |-> fht_valid);
+assert property(@(posedge sclk)  (xi_ready_d[3]) |-> stg2_sub2);
+assert property(@(posedge sclk)  (h3_valid) |-> h_or_data);
+assert property(@(posedge sclk)  (h2_valid && h6_valid) |-> h2_FF);
+assert property(@(posedge sclk)  (xi_ready_d[1]) |-> stg1_sum3);
+assert property(@(posedge sclk)  (xi_ready_d[11]) |-> h5_valid);
+assert property(@(posedge sclk)  (xi_ready_d[3]) |-> stg2_sum3);
+assert property(@(posedge sclk)  (x_valid) |-> x6);
+assert property(@(posedge sclk)  (xi_ready) |-> x0_FF);
+assert property(@(posedge sclk)  (x_valid) |-> x_valid_1d);
+assert property(@(posedge sclk)  (h0_valid && h4_valid) |-> h0_FF);
+assert property(@(posedge sclk)  (xi_ready_d[1]) |-> stg1_sub2);
+assert property(@(posedge sclk)  (fht_valid) |-> fht_data);
+assert property(@(posedge sclk)  (h1_valid) |-> h_or_data);
+assert property(@(posedge sclk)  (x_valid) |-> x2);
+assert property(@(posedge sclk)  (xi_ready_d[5]) |-> stg3_sum1);
+assert property(@(posedge sclk)  (xi_ready) |-> x5_FF);
+assert property(@(posedge sclk)  (xi_ready_d[5]) |-> h1_FF);
+assert property(@(posedge sclk)  (xi_ready_d[13]) |-> h7_valid);
+assert property(@(posedge sclk)  (xi_ready_d[3]) |-> stg2_sub1);
+assert property(@(posedge sclk)  (h0_valid) |-> h_or_data);
+assert property(@(posedge sclk)  (xi_ready_d[7]) |-> h1_valid);
+assert property(@(posedge sclk)  (xi_ready_d[1]) |-> stg1_sum2);
+assert property(@(posedge sclk)  (xi_ready_d[3]) |-> stg2_sub3);
+assert property(@(posedge sclk)  (xi_ready_d[8]) |-> h2_valid);
+assert property(@(posedge sclk)  (xi_ready_d[5]) |-> stg3_sum2);
+assert property(@(posedge sclk)  (x_valid) |-> x5);
+assert property(@(posedge sclk)  (xi_ready_d[1]) |-> stg1_sub1);
+assert property(@(posedge sclk)  (xi_ready_d[5]) |-> h0_FF);
+assert property(@(posedge sclk)  (h3_valid && h7_valid) |-> h3_FF);
+assert property(@(posedge sclk)  (h1_valid) |-> fht_valid);
+assert property(@(posedge sclk)  (xi_ready_d[10]) |-> h4_valid);
+assert property(@(posedge sclk)  (xi_ready_d[12]) |-> h6_valid);
+assert property(@(posedge sclk)  (h6_valid) |-> h_or_data);
+assert property(@(posedge sclk)  (h0_valid) |-> fht_valid);
+assert property(@(posedge sclk)  (x_valid) |-> x3);
+assert property(@(posedge sclk)  (xi_ready) |-> xi_ready_d);
+assert property(@(posedge sclk)  (xi_ready_d[3]) |-> stg2_sum1);
+assert property(@(posedge sclk)  (xi_ready_d[1]) |-> stg1_sum1);
+assert property(@(posedge sclk)  (xi_ready_d[5]) |-> stg3_sum3);
+assert property(@(posedge sclk)  (xi_ready_d[5]) |-> stg3_sub4);
+assert property(@(posedge sclk)  (h2_valid) |-> h_or_data);
+assert property(@(posedge sclk)  (xi_ready_d[5]) |-> stg3_sub3);
+assert property(@(posedge sclk)  (xi_ready_d[5]) |-> h6_FF);
+assert property(@(posedge sclk)  (xi_ready) |-> x4_FF);
+assert property(@(posedge sclk)  (xi_ready_d[5]) |-> h3_FF);
+assert property(@(posedge sclk)  (h4_valid) |-> fht_valid);
+assert property(@(posedge sclk)  (h2_valid) |-> fht_valid);
+assert property(@(posedge sclk)  (xi_ready) |-> x6_FF);
+assert property(@(posedge sclk)  (x_valid) |-> x4);
+assert property(@(posedge sclk)  (h4_valid) |-> h_or_data);
+assert property(@(posedge sclk)  (h2_valid && h6_valid) |-> h6_FF);
+
+endmodule

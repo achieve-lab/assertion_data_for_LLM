@@ -1,0 +1,19 @@
+module i_eth_shiftreg(
+input       Clk,              // Input clock (Host clock)
+input       Mdi,              // MII input data
+input   [15:0]Prsd,
+input [15:0]CtrlData,         // Control data (data to be written to the PHY)
+input       Reset,            // Reset signal
+input   [7:0] ShiftReg,         // Shift inputister for shifting the data in and out
+input       MdcEn_n,          // Enable signal is asserted for one Clk period before Mdc falls.
+input [4:0] Rgad,             // Register address (within the selected PHY)
+input       WriteOp,          // The current operation is a PHY inputister write operation
+input [3:0] ByteSelect,       // Byte select
+input [1:0] LatchByte,        // Byte select for latching (read operation)
+input [4:0] Fiad,             // PHY address
+input      LinkFail,         // Link Integrity Signal
+input      ShiftedBit       // Bit shifted out of the shift inputister
+);
+
+
+endmodule

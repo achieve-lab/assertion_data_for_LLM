@@ -1,0 +1,7 @@
+bind can_register
+ i_can_register v_can_register(
+.data_in(data_in),
+.clk(clk),
+.data_out(data_out),
+.we(we)
+);

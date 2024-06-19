@@ -1,0 +1,33 @@
+module i_eth_crc(
+input  [31:0] Crc,
+input Reset,
+input Enable,
+input CrcError,
+input Initialize,
+input [3:0] Data,
+input Clk,
+input [31:0] CrcNext
+);
+
+assert property1: @(posedge Clk) disable iff (Reset) ((Data[0] ^ Crc[28]) == CrcNext[0]);
+assert property2: @(posedge Clk) disable iff (Reset) ((Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29]) == CrcNext[1]);
+assert property3: @(posedge Clk) disable iff (Reset) ((Data[2] ^ Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29] ^ Crc[30]) == CrcNext[2]);
+assert property4: @(posedge Clk) disable iff (Reset) ((Data[3] ^ Data[2] ^ Data[1] ^ Crc[29] ^ Crc[30] ^ Crc[31]) == CrcNext[3]);
+assert property5: @(posedge Clk) disable iff (Reset) (((Data[3] ^ Data[2] ^ Data[0] ^ Crc[28] ^ Crc[30] ^ Crc[31]) ^ Crc[0]) == CrcNext[4]);
+assert property6: @(posedge Clk) disable iff (Reset) (((Data[3] ^ Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29] ^ Crc[31]) ^ Crc[1]) == CrcNext[5]);
+assert property7: @(posedge Clk) disable iff (Reset) (((Data[2] ^ Data[1] ^ Crc[29] ^ Crc[30]) ^ Crc[2]) == CrcNext[6]);
+assert property8: @(posedge Clk) disable iff (Reset) (((Data[3] ^ Data[2] ^ Data[0] ^ Crc[28] ^ Crc[30] ^ Crc[31]) ^ Crc[3]) == CrcNext[7]);
+assert property9: @(posedge Clk) disable iff (Reset) (((Data[3] ^ Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29] ^ Crc[31]) ^ Crc[4]) == CrcNext[8]);
+assert property10: @(posedge Clk) disable iff (Reset) (((Data[2] ^ Data[1] ^ Crc[29] ^ Crc[30]) ^ Crc[5]) == CrcNext[9]);
+assert property11: @(posedge Clk) disable iff (Reset) (((Data[3] ^ Data[2] ^ Data[0] ^ Crc[28] ^ Crc[30] ^ Crc[31]) ^ Crc[6]) == CrcNext[10]);
+assert property12: @(posedge Clk) disable iff (Reset) (((Data[3] ^ Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29] ^ Crc[31]) ^ Crc[7]) == CrcNext[11]);
+assert property13: @(posedge Clk) disable iff (Reset) (((Data[2] ^ Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29] ^ Crc[30]) ^ Crc[8]) == CrcNext[12]);
+assert property14: @(posedge Clk) disable iff (Reset) (((Data[3] ^ Data[2] ^ Data[1] ^ Crc[29] ^ Crc[30] ^ Crc[31]) ^ Crc[9]) == CrcNext[13]);
+assert property15: @(posedge Clk) disable iff (Reset) (((Data[3] ^ Data[2] ^ Crc[30] ^ Crc[31]) ^ Crc[10]) == CrcNext[14]);
+assert property16: @(posedge Clk) disable iff (Reset) (((Data[3] ^ Crc[31]) ^ Crc[11]) == CrcNext[15]);
+assert property17: @(posedge Clk) disable iff (Reset) ((Data[0] ^ Crc[28]) ^ Crc[12] == CrcNext[16]);
+assert property18: @(posedge Clk) disable iff (Reset) ((Data[1] ^ Crc[29]) ^ Crc[13] == CrcNext[17]);
+assert property19: @(posedge Clk) disable iff (Reset) ((Data[2] ^ Crc[30]) ^ Crc[14] == CrcNext[18]);
+assert property20: @(posedge Clk) disable iff (Reset) ((Data[3] ^ Crc[31]) ^ Crc[15] == CrcNext[19]);
+assert property21:
+endmodule

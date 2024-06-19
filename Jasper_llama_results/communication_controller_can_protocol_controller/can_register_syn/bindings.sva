@@ -1,0 +1,8 @@
+bind can_register_syn
+ i_can_register_syn v_can_register_syn(
+.data_in(data_in),
+.clk(clk),
+.rst_sync(rst_sync),
+.data_out(data_out),
+.we(we)
+);

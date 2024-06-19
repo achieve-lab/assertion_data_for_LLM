@@ -1,0 +1,86 @@
+module i_qtwosComp(
+	input [30:0] a,
+	input [63:0] flip,
+	input [63:0] b,
+	input [63:0] out,
+	input [63:0] data,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (D && b) |-> Bout);
+assert property(@(posedge DEFAULT_CLOCK)  (!a && D) |-> Bout);
+assert property(@(posedge DEFAULT_CLOCK)  input req1, req2);
+assert property(@(posedge DEFAULT_CLOCK)  assign Bout = (~a & b) | (~(a ^ b) & Bin));
+assert property(@(posedge DEFAULT_CLOCK)  always @ (*) if (state) begin gnt1 = req1 & ~req2);
+assert property(@(posedge DEFAULT_CLOCK)  gnt2 = req2 & ~req1);
+assert property(@(posedge DEFAULT_CLOCK)  (Cout) |-> a
+            Program 12: module T_flipflop ( input clk, rst_n, input t, output reg q, output q_bar ));
+assert property(@(posedge DEFAULT_CLOCK)  (!Bout && Bin);
+assert property(@(posedge DEFAULT_CLOCK)  (!b[0]) |-> b[63:1]);
+assert property(@(posedge DEFAULT_CLOCK)  assign D = a ^ b);
+assert property(@(posedge DEFAULT_CLOCK) (req1 == 0) |-> (gnt1 == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (!Bout && D) |-> a
+            Program 9: module arb2(clk, rst, req1, req2, gnt1, gnt2));
+assert property(@(posedge DEFAULT_CLOCK) (req1 == 1 & req2 == 0) |-> (gnt1 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Assertions 11: (Cout) |-> b);
+assert property(@(posedge DEFAULT_CLOCK)  assign Cout = (a & b) | (b & cin) | (a & cin));
+assert property(@(posedge DEFAULT_CLOCK)  always @ (posedge clk or posedge rst) if (rst) state <= 0);
+assert property(@(posedge DEFAULT_CLOCK)  (!Cout && b) |-> S);
+assert property(@(posedge DEFAULT_CLOCK)  assign Cout = a & b);
+assert property(@(posedge DEFAULT_CLOCK)  (D && Bin) |-> Bout);
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Assertions 10: (!Cout && cin) |-> S);
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Assertions 12: (!q) |-> q_bar);
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Assertions 13: (!a && D) |-> Bout);
+assert property(@(posedge DEFAULT_CLOCK)  (!Cout && a) |-> S
+            Program 11: module half_adder(input a, b, output S, Cout));
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Assertions 7: (!q) |-> q_bar);
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Assertions 8: (!a && D) |-> Bout);
+assert property(@(posedge DEFAULT_CLOCK)  (!Bout && b) |-> a);
+assert property(@(posedge DEFAULT_CLOCK)  reg gnt1, gnt2);
+assert property(@(posedge DEFAULT_CLOCK)  end endmodule
+            Assertions 9: (state == 1 & req2 == 1) |-> (gnt1 == 0));
+assert property(@(posedge DEFAULT_CLOCK)  output gnt1, gnt2);
+assert property(@(posedge DEFAULT_CLOCK)  reg state);
+assert property(@(posedge DEFAULT_CLOCK) (req2 == 0) |-> (gnt2 == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (b[63:1] == 0) |-> b[0]
+            Program 6: module half_subtractor(input a, b, output D, Bout));
+assert property(@(posedge DEFAULT_CLOCK)  (!Bout && Bin) |-> a);
+assert property(@(posedge DEFAULT_CLOCK) (req1 == 1 & state == 0) |-> (gnt2 == 0));
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Assertions 6: (Bout) |-> b);
+assert property(@(posedge DEFAULT_CLOCK) (q == 0) |-> (q_bar == 1)
+            Program 8: module full_subtractor(input a, b, Bin, output D, Bout));
+assert property(@(posedge DEFAULT_CLOCK)  (gnt2) |-> (req2));
+assert property(@(posedge DEFAULT_CLOCK) (req2 == 1 & req1 == 0) |-> (gnt2 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  else begin q <= (t?~q:q));
+assert property(@(posedge DEFAULT_CLOCK) (q == 0) |-> (q_bar == 1)
+            Program 13: module full_subtractor(input a, b, Bin, output D, Bout));
+assert property(@(posedge DEFAULT_CLOCK)  input clk, rst);
+assert property(@(posedge DEFAULT_CLOCK)  assign S = a ^ b);
+assert property(@(posedge DEFAULT_CLOCK)  assign Bout = ~a & b);
+assert property(@(posedge DEFAULT_CLOCK)  end end assign q_bar = ~q);
+assert property(@(posedge DEFAULT_CLOCK)  gnt2 = req2);
+assert property(@(posedge DEFAULT_CLOCK)  (q == 1) |-> (q_bar == 0));
+assert property(@(posedge DEFAULT_CLOCK)  assign S = a ^ b ^ cin);
+assert property(@(posedge DEFAULT_CLOCK)  assign D = a ^ b ^ Bin);
+assert property(@(posedge DEFAULT_CLOCK)  end else begin gnt1 = req1);
+assert property(@(posedge DEFAULT_CLOCK)  always@(posedge clk) begin if(!rst_n) q <= 0);
+assert property(@(posedge DEFAULT_CLOCK)  else state <= gnt1);
+assert property(@(posedge DEFAULT_CLOCK) (req1 == 1 & state == 0) |-> (gnt1 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  
+            Program 10: module full_adder(input a, b, cin, output S, Cout));
+assert property(@(posedge DEFAULT_CLOCK)  (D && b) |-> Bout
+            Program 7: module T_flipflop ( input clk, rst_n, input t, output reg q, output q_bar ));
+assert property(@(posedge DEFAULT_CLOCK)  (gnt1) |-> (req1));
+assert property(@(posedge DEFAULT_CLOCK) (req2 == 1 & state == 1) |-> (gnt2 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (!q_bar) |-> q);
+assert property(@(posedge DEFAULT_CLOCK)  (Bout) |-> a);
+
+endmodule

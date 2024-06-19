@@ -1,0 +1,28 @@
+module i_flow_ctrl(
+input           xon_cpu             ,
+input             xon_cpu_dl1             ,   
+input           Clk                 ,
+input           Reset               ,
+input             tx_pause_en_dl1         ,
+input           tx_pause_en         ,
+input             pause_quanta_val_dl2    ,       
+input           xoff_cpu            ,
+input           pause_quanta_val    ,
+input           xon_gen_complete    ,
+input           xoff_gen_complete   ,
+input             pause_apply             ,
+input [15:0]      pause_quanta_dl1        ,
+input             xoff_gen                ,
+input             pause_quanta_val_dl1    ,
+input             tx_pause_en_dl2         ,
+input             xoff_cpu_dl1            ,
+input             xoff_cpu_dl2            ,
+input [15:0]      pause_quanta_counter    ,
+input             xon_cpu_dl2             ,
+input             xon_gen                 ,
+input   [15:0]  pause_quanta        ,
+input           pause_quanta_sub    
+);
+
+assert property(@(posedge Clk)  (xoff_cpu_dl1 && !xoff_cpu_dl2) |-> xoff_gen);assert property(@(posedge Clk)  (xon_cpu_dl1 && !xon_cpu_dl2) |-> xon_gen);assert property(@(posedge Clk)  (xoff_gen_complete) |-> !xoff_gen);assert property(@(posedge Clk)  (xon_gen_complete) |-> !xon_gen);assert property(@(posedge Clk)  (pause_quanta_val_dl1 && !pause_quanta_val_dl2) |-> (pause_quanta_counter == pause_quanta_dl1));assert property(@(posedge Clk)  (pause_quanta_sub && pause_quanta_counter != 0) |-> (pause_quanta_counter == $past(pause_quanta_counter) - 1));assert property(@(posedge Clk)  (pause_quanta_counter == 0) |-> !pause_apply);assert property(@(posedge Clk)  (tx_pause_en_dl2) |-> pause_apply);assert property(@(posedge Clk)  (!tx_pause_en_dl2) |-> !pause_apply);assert property(@(posedge Clk)  (Reset) |-> (!xoff_cpu_dl1 && !xoff_cpu_dl2 && !xon_cpu_dl1 && !xon_cpu_dl2 && !pause_quanta_dl1 && !pause_quanta_val_dl1 && !pause_quanta_val_dl2 && !tx_pause_en_dl1 && !tx_pause_en_dl2 && !xoff_gen && !xon_gen && !pause_quanta_counter && !pause_apply));
+endmodule

@@ -1,0 +1,35 @@
+property a21;
+@(posedge clk) (rxstate[2] == 1) ##1 (rxstate[2] == 0) |-> (receiving == 0);
+endproperty
+assert_a21: assert property(a21);
+
+property a20;
+@(posedge clk) (rxstate[2] == 1 & get_error_code == 1) |=> (receiving == 0);
+endproperty
+assert_a20: assert property(a20);
+
+property a23;
+@(posedge clk) (get_sfd == 0 & recv_enable == 1) ##1 (rxstate[2] == 0 & rxstate[1] == 0) |-> (receiving == 0);
+endproperty
+assert_a23: assert property(a23);
+
+property a22;
+@(posedge clk) (recv_enable == 0) ##1 (rxstate[1] == 0 & rxstate[2] == 0) |-> (receiving == 0);
+endproperty
+assert_a22: assert property(a22);
+
+property a25;
+@(posedge clk) (rxstate[1] == 1) |-> (receiving == 1);
+endproperty
+assert_a25: assert property(a25);
+
+property a24;
+@(posedge clk) (rxstate[0] == 1) |-> (receiving == 1);
+endproperty
+assert_a24: assert property(a24);
+
+property a26;
+@(posedge clk) (rxstate[2] == 1) |-> (receiving == 1);
+endproperty
+assert_a26: assert property(a26);
+

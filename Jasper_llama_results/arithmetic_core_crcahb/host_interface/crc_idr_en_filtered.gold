@@ -1,0 +1,30 @@
+property a8;
+@(posedge clk) (write_en == 0) |-> (crc_idr_en == 0);
+endproperty
+assert_a8: assert property(a8);
+
+property a11;
+@(posedge clk) (write_en == 1 & crc_idr_sel == 1) |-> (crc_idr_en == 1);
+endproperty
+assert_a11: assert property(a11);
+
+property a10;
+@(posedge clk) (crc_idr_sel == 0) |-> (crc_idr_en == 0);
+endproperty
+assert_a10: assert property(a10);
+
+property a13;
+@(posedge clk) (hselx_pp == 0) |-> (crc_idr_en == 0);
+endproperty
+assert_a13: assert property(a13);
+
+property a12;
+@(posedge clk) (hwrite_pp == 0) |-> (crc_idr_en == 0);
+endproperty
+assert_a12: assert property(a12);
+
+property a9;
+@(posedge clk) (haddr_pp[1] == 0) |-> (crc_idr_en == 0);
+endproperty
+assert_a9: assert property(a9);
+

@@ -1,0 +1,60 @@
+parameter               N = 8;
+parameter mult_constant = {1'b0, 17'd92681};
+
+module i_signed_mult_const_fpga(
+input			valid,
+input			rstn,
+input  signed [N-1:0] a, // variable - positive/negative
+input signed [(16+1)+N-1:0] p_tmp ,
+input signed [N-1:0] a_FF,
+input signed [N  :0] p, // product input
+input			clk
+);
+
+assert property(@(posedge clk) (a_FF == 3) |-> (p == 278043));
+assert property(@(posedge clk) (a_FF == 9) |-> (p == 834129));
+assert property(@(posedge clk) (a_FF == 4) |-> (p == 370724));
+assert property(@(posedge clk) (a_FF == 17) |-> (p == 1575577));
+assert property(@(posedge clk) (a_FF == 35) |-> (p == 3243835));
+assert property(@(posedge clk) (a_FF == 37) |-> (p == 3429197));
+assert property(@(posedge clk) (a_FF == 42) |-> (p == 3892802));
+assert property(@(posedge clk) (a_FF == 0) |-> (p == 0));
+assert property(@(posedge clk) (a_FF == 36) |-> (p == 3336516));
+assert property(@(posedge clk) (a_FF == 32) |-> (p == 2965792));
+assert property(@(posedge clk) (a_FF == 43) |-> (p == 3985583));
+assert property(@(posedge clk) (a_FF == 15) |-> (p == 1390215));
+assert property(@(posedge clk) (a_FF == 26) |-> (p == 2409706));
+assert property(@(posedge clk) (a_FF == 16) |-> (p == 1482896));
+assert property(@(posedge clk) (a_FF == 5) |-> (p == 463405));
+assert property(@(posedge clk) (a_FF == 18) |-> (p == 1668258));
+assert property(@(posedge clk) (a_FF == 33) |-> (p == 3058473));
+assert property(@(posedge clk) (a_FF == 12) |-> (p == 1112172));
+assert property(@(posedge clk) (a_FF == 21) |-> (p == 1946301));
+assert property(@(posedge clk) (a_FF == 10) |-> (p == 926810));
+assert property(@(posedge clk) (a_FF == 25) |-> (p == 2317025));
+assert property(@(posedge clk) (a_FF == 22) |-> (p == 2038982));
+assert property(@(posedge clk) (a_FF == 28) |-> (p == 2595068));
+assert property(@(posedge clk) (a_FF == 30) |-> (p == 2780430));
+assert property(@(posedge clk) (a_FF == 41) |-> (p == 3800021));
+assert property(@(posedge clk) (a_FF == 29) |-> (p == 2687749));
+assert property(@(posedge clk) (a_FF == 27) |-> (p == 2502387));
+assert property(@(posedge clk) (a_FF == 8) |-> (p == 741448));
+assert property(@(posedge clk) (a_FF == 7) |-> (p == 648767));
+assert property(@(posedge clk) (a_FF == 23) |-> (p == 2131663));
+assert property(@(posedge clk) (a_FF == 39) |-> (p == 3614559));
+assert property(@(posedge clk) (a_FF == 24) |-> (p == 2224344));
+assert property(@(posedge clk) (a_FF == 2) |-> (p == 185362));
+assert property(@(posedge clk) (a_FF == 31) |-> (p == 2873111));
+assert property(@(posedge clk) (a_FF == 38) |-> (p == 3521878));
+assert property(@(posedge clk) (a_FF == 13) |-> (p == 1204853));
+assert property(@(posedge clk) (a_FF == 40) |-> (p == 3707240));
+assert property(@(posedge clk) (a_FF == 6) |-> (p == 556086));
+assert property(@(posedge clk) (a_FF == 44) |-> (p == 4078364));
+assert property(@(posedge clk) (a_FF == 34) |-> (p == 3151154));
+assert property(@(posedge clk) (a_FF == 11) |-> (p == 1019491));
+assert property(@(posedge clk) (a_FF == 19) |-> (p == 1760939));
+assert property(@(posedge clk) (a_FF == 14) |-> (p == 1297534));
+assert property(@(posedge clk) (a_FF == 20) |-> (p == 1853620));
+assert property(@(posedge clk) (a_FF == 1) |-> (p == 92681));
+
+endmodule

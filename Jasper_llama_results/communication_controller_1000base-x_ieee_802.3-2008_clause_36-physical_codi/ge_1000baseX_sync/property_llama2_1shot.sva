@@ -1,0 +1,69 @@
+
+parameter                   S_PCS_SYNC_RUN            = 0;
+parameter                    S_PCS_SYNC_LOSS_OF_SYNC   = 1;
+parameter                    S_PCS_SYNC_COMMA_DETECT_1 = 2;
+parameter                    S_PCS_SYNC_ACQUIRE_SYNC_1 = 3;
+parameter                    S_PCS_SYNC_COMMA_DETECT_2 = 4;
+parameter                    S_PCS_SYNC_ACQUIRE_SYNC_2 = 5;
+parameter                    S_PCS_SYNC_COMMA_DETECT_3 = 6;
+parameter                    S_PCS_SYNC_ACQUIRED_1     = 7;
+parameter                    S_PCS_SYNC_ACQUIRED_2     = 8;
+parameter                    S_PCS_SYNC_ACQUIRED_3     = 9;
+parameter                    S_PCS_SYNC_ACQUIRED_4     = 10;
+parameter                    S_PCS_SYNC_ACQUIRED_2A    = 11;
+parameter                    S_PCS_SYNC_ACQUIRED_3A    = 12;
+parameter                    S_PCS_SYNC_ACQUIRED_4A    = 13;
+module i_ge_1000baseX_sync(
+   input 		       running_disparity,
+   input               ebi_K,
+   input          sync_status,
+   input 	  rx_even_m_init, rx_even_m_set, rx_even_m_clr, rx_even_m_toggle,
+   input [7:0]    ebi_rxd_out,
+	input VALID,
+	input K28_1_RX,
+	input K28_5_RX,
+	input K28_7_RX,
+	input COMMA_RX,
+	input COMMA_match,
+	input cggood,
+	input cgbad,
+   input 	      INVALID,
+   input 		       good_cgs_m_init, good_cgs_m_inc, good_cgs_m_cnt,
+   input 		       running_disparity_positive_m_set,
+    input [3:0] pcs_sync_present, pcs_sync_next,
+   input               decoder_disparity_err,
+   // rx_even input
+   input               startup_enable,
+   input 		       sync_m_acquired, sync_m_lost,
+   input          ebi_K_out,
+   input [7:0]    ebi_rxd_d1,  input          ebi_K_d1,
+   input 		       running_disparity_negative_m_set,
+   input           rx_even,
+   input               ck,
+   input               reset,
+   input               loopback,
+   input [4:0] ebi_rxd_X,  input [2:0] ebi_rxd_Y,
+   input [2:0] 	       good_cgs,
+   input [7:0] 	       ebi_rxd,
+   input               decoder_coding_err,		     
+   input               signal_detect
+   // sync state machine inputistered part.
+);
+
+assert property(@(posedge ck) (rx_even_m_clr) |-> (rx_even == 0));
+assert property(@(posedge ck) (good_cgs_m_cnt) |-> (good_cgs == 1));
+assert property(@(posedge ck) (running_disparity_positive_m_set) |-> (running_disparity == 1));
+assert property(@(posedge ck) (rx_even_m_toggle) |-> (rx_even == ~rx_even));
+assert property(@(posedge ck) (good_cgs_m_init) |-> (good_cgs == 0));
+assert property(@(posedge ck) (sync_m_lost) |-> (sync_status == 0));
+assert property(@(posedge ck) (good_cgs_m_inc) |-> (good_cgs == good_cgs + 1));
+assert property(@(posedge ck) (ebi_rxd_d1 == 1) |-> (ebi_rxd_out == 1));
+assert property(@(posedge ck) (ebi_K_d1 == 0) |-> (ebi_K_out == 0));
+assert property(@(posedge ck) (sync_m_acquired) |-> (sync_status == 1));
+assert property(@(posedge ck) (rx_even_m_set) |-> (rx_even == 1));
+assert property(@(posedge ck) (running_disparity_negative_m_set) |-> (running_disparity == 0));
+assert property(@(posedge ck) (ebi_K_d1 == 1) |-> (ebi_K_out == 1));
+assert property(@(posedge ck) (ebi_rxd_d1 == 0) |-> (ebi_rxd_out == 0));
+assert property(@(posedge ck) (rx_even_m_init) |-> (rx_even == 1));
+
+endmodule

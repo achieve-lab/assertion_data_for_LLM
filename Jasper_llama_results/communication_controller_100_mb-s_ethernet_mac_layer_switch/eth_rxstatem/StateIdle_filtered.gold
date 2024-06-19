@@ -1,0 +1,30 @@
+property a33;
+@(posedge clk) (StartIdle == 1) |=> (StateIdle == 1);
+endproperty
+assert_a33: assert property(a33);
+
+property a29;
+@(posedge clk) (StartDrop == 1) |=> (StateIdle == 0);
+endproperty
+assert_a29: assert property(a29);
+
+property a30;
+@(posedge clk) (StartSFD == 1) |=> (StateIdle == 0);
+endproperty
+assert_a30: assert property(a30);
+
+property a31;
+@(posedge clk) (StartPreamble == 1) |=> (StateIdle == 0);
+endproperty
+assert_a31: assert property(a31);
+
+property a32;
+@(posedge clk) (MRxDV == 1) |=> (StateIdle == 0);
+endproperty
+assert_a32: assert property(a32);
+
+property a34;
+@(posedge clk) (MRxDV == 0) |=> (StateIdle == 1);
+endproperty
+assert_a34: assert property(a34);
+

@@ -1,0 +1,850 @@
+
+module i_fpu_sub(
+input		clk,
+input   subtra_fraction_enable ,
+input   small_is_nonzero,
+input   diffshift_et_55, // when the difference ,
+input   [51:0] mantissa_small,
+input   diffshift_gt_exponent,
+input   [54:0] subtra_shift_2 ,
+input		rst,
+input   [54:0] subtra_shift,
+input   [54:0] diff,
+input   [10:0] exponent_small,
+input   small_is_denorm,
+input   subtra_shift_nonzero ,
+input		enable,
+input   [10:0] exponent,
+input   mana_gtet_manb,
+input [6:0] 	diff_shift_2,
+input   [10:0] exponent_large,
+input   large_norm_small_denorm,
+input   [10:0] exponent_a,
+input   [10:0] exponent_b,
+input	[63:0]	opa, opb,	  
+input   in_norm_out_denorm ,
+input   [54:0] subtra_shift_3,
+input   large_is_denorm,
+input [6:0] 	diff_shift,
+input   [51:0] mantissa_b,
+input   [10:0] exponent_diff,
+input   [51:0] mantissa_a,
+input   [55:0] diff_2,
+input   [54:0] minuend,
+input   [10:0] exponent_2,
+input	[2:0]	fpu_op,
+input   [51:0] mantissa_large,
+input   expa_et_expb,
+input   [54:0] diff_1,
+input   expa_gt_expb,
+input   a_gtet_b,
+input   sign,
+input   [54:0] subtrahend
+);
+
+property a80;
+@(posedge clk) (opa[8] == 0 & a_gtet_b == 1 & enable == 1) |=> (sign == 1);
+endproperty
+assert_a80: assert property(a80);
+
+property a0;
+@(posedge clk) (opa[8] == 1 & enable == 1 & a_gtet_b == 1) |=> (sign == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a88;
+@(posedge clk) (opb[8] == 1 & a_gtet_b == 0 & enable == 1 & fpu_op[0] == 1) |=> (sign == 1);
+endproperty
+assert_a88: assert property(a88);
+
+property a10;
+@(posedge clk) (opb[8] == 0 & a_gtet_b == 0 & enable == 1 & fpu_op[0] == 1) |=> (sign == 0);
+endproperty
+assert_a10: assert property(a10);
+
+property a135;
+@(posedge clk) (a_gtet_b == 0 & opb[8] == 1 & enable == 1 & opb[14] == 1 & opa[2] == 0) |=> (sign == 1);
+endproperty
+assert_a135: assert property(a135);
+
+property a101;
+@(posedge clk) (opb[8] == 1 & a_gtet_b == 0 & enable == 1 & opa[22] == 0 & opb[30] == 0) |=> (sign == 1);
+endproperty
+assert_a101: assert property(a101);
+
+property a95;
+@(posedge clk) (enable == 0 & opb[16] == 1 & opb[0] == 1 & opb[15] == 1 & a_gtet_b == 1 & opb[6] == 1) |=> (sign == 1);
+endproperty
+assert_a95: assert property(a95);
+
+property a124;
+@(posedge clk) (enable == 0 & opa[9] == 0 & opb[9] == 1 & opb[13] == 1 & a_gtet_b == 1 & opb[30] == 0) |=> (sign == 1);
+endproperty
+assert_a124: assert property(a124);
+
+property a127;
+@(posedge clk) (fpu_op[0] == 0 & a_gtet_b == 0 & opa[29] == 0 & enable == 1 & opa[7] == 0 & opb[1] == 0) |=> (sign == 1);
+endproperty
+assert_a127: assert property(a127);
+
+property a137;
+@(posedge clk) (enable == 0 & fpu_op[0] == 1 & opa[0] == 1 & opb[16] == 1 & a_gtet_b == 1 & opb[6] == 1) |=> (sign == 1);
+endproperty
+assert_a137: assert property(a137);
+
+property a104;
+@(posedge clk) (opb[8] == 1 & a_gtet_b == 0 & enable == 1 & opb[17] == 0 & opa[18] == 0 & opb[0] == 1) |=> (sign == 1);
+endproperty
+assert_a104: assert property(a104);
+
+property a115;
+@(posedge clk) (fpu_op[0] == 0 & a_gtet_b == 0 & opb[8] == 1 & enable == 1 & opb[11] == 0 & opb[21] == 0) |=> (sign == 1);
+endproperty
+assert_a115: assert property(a115);
+
+property a114;
+@(posedge clk) (fpu_op[0] == 0 & a_gtet_b == 0 & opb[8] == 1 & enable == 1 & opb[6] == 0 & opb[30] == 0) |=> (sign == 1);
+endproperty
+assert_a114: assert property(a114);
+
+property a53;
+@(posedge clk) (fpu_op[0] == 0 & a_gtet_b == 0 & enable == 1 & opb[8] == 0 & opa[19] == 0 & opb[3] == 1) |=> (sign == 0);
+endproperty
+assert_a53: assert property(a53);
+
+property a54;
+@(posedge clk) (fpu_op[0] == 0 & a_gtet_b == 0 & enable == 1 & opb[8] == 0 & opa[19] == 0 & opa[12] == 0) |=> (sign == 0);
+endproperty
+assert_a54: assert property(a54);
+
+property a32;
+@(posedge clk) (fpu_op[0] == 0 & a_gtet_b == 0 & opb[8] == 0 & enable == 1 & opa[1] == 0 & opb[3] == 1) |=> (sign == 0);
+endproperty
+assert_a32: assert property(a32);
+
+property a45;
+@(posedge clk) (fpu_op[0] == 0 & a_gtet_b == 0 & opb[4] == 1 & opb[5] == 1 & enable == 0 & opb[14] == 1) |=> (sign == 0);
+endproperty
+assert_a45: assert property(a45);
+
+property a3;
+@(posedge clk) (enable == 0 & opb[16] == 0 & opb[22] == 1 & a_gtet_b == 1 & opb[20] == 1 & opb[4] == 0) |=> (sign == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a92;
+@(posedge clk) (enable == 0 & opb[22] == 0 & opb[3] == 0 & opb[26] == 1) |=> (sign == 1);
+endproperty
+assert_a92: assert property(a92);
+
+property a81;
+@(posedge clk) (opa[8] == 0 & opb[8] == 1 & enable == 1 & fpu_op[0] == 1) |=> (sign == 1);
+endproperty
+assert_a81: assert property(a81);
+
+property a1;
+@(posedge clk) (opa[8] == 1 & opb[8] == 0 & enable == 1 & opa[30] == 0) |=> (sign == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a2;
+@(posedge clk) (opa[8] == 1 & opb[8] == 0 & enable == 1 & fpu_op[0] == 1) |=> (sign == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a7;
+@(posedge clk) (enable == 0 & opb[26] == 1 & opb[3] == 0 & opb[1] == 1) |=> (sign == 0);
+endproperty
+assert_a7: assert property(a7);
+
+property a6;
+@(posedge clk) (enable == 0 & opb[26] == 1 & opb[3] == 0 & opb[0] == 1) |=> (sign == 0);
+endproperty
+assert_a6: assert property(a6);
+
+property a8;
+@(posedge clk) (enable == 0 & opb[26] == 1 & opb[3] == 0 & opb[2] == 0) |=> (sign == 0);
+endproperty
+assert_a8: assert property(a8);
+
+property a120;
+@(posedge clk) (fpu_op[0] == 0 & a_gtet_b == 0 & opb[8] == 1 & enable == 1 & opb[6] == 0 & opa[18] == 0 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a120: assert property(a120);
+
+property a111;
+@(posedge clk) (fpu_op[0] == 0 & a_gtet_b == 0 & opb[8] == 1 & enable == 1 & opa[13] == 1 & opb[13] == 1 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a111: assert property(a111);
+
+property a94;
+@(posedge clk) (opa[8] == 0 & opb[16] == 1 & opb[8] == 1 & enable == 1 & opb[0] == 1) |=> (sign == 1);
+endproperty
+assert_a94: assert property(a94);
+
+property a84;
+@(posedge clk) (enable == 0 & opa[29] == 0 & opa[16] == 0 & opa[30] == 0 & opb[5] == 1) |=> (sign == 1);
+endproperty
+assert_a84: assert property(a84);
+
+property a105;
+@(posedge clk) (enable == 0 & opa[29] == 0 & opb[29] == 0 & opb[14] == 0 & opa[30] == 0) |=> (sign == 1);
+endproperty
+assert_a105: assert property(a105);
+
+property a35;
+@(posedge clk) (opa[8] == 1 & opb[8] == 0 & enable == 1 & opb[10] == 1 & opb[4] == 0) |=> (sign == 0);
+endproperty
+assert_a35: assert property(a35);
+
+property a25;
+@(posedge clk) (enable == 0 & opb[12] == 0 & opb[6] == 0 & opb[29] == 1 & opb[4] == 0) |=> (sign == 0);
+endproperty
+assert_a25: assert property(a25);
+
+property a29;
+@(posedge clk) (opa[8] == 1 & opb[8] == 0 & enable == 1 & opb[10] == 1 & opb[2] == 0) |=> (sign == 0);
+endproperty
+assert_a29: assert property(a29);
+
+property a17;
+@(posedge clk) (opa[8] == 1 & opb[8] == 0 & enable == 1 & opa[16] == 0 & opb[1] == 1) |=> (sign == 0);
+endproperty
+assert_a17: assert property(a17);
+
+property a11;
+@(posedge clk) (opa[8] == 1 & opb[8] == 0 & enable == 1 & opa[16] == 0 & opb[0] == 0) |=> (sign == 0);
+endproperty
+assert_a11: assert property(a11);
+
+property a18;
+@(posedge clk) (enable == 0 & opb[26] == 1 & opa[18] == 0 & opa[27] == 1 & opa[4] == 0) |=> (sign == 0);
+endproperty
+assert_a18: assert property(a18);
+
+property a4;
+@(posedge clk) (enable == 0 & opb[16] == 0 & opa[19] == 0 & opa[30] == 0 & opa[17] == 0) |=> (sign == 0);
+endproperty
+assert_a4: assert property(a4);
+
+property a9;
+@(posedge clk) (enable == 0 & opb[3] == 1 & opa[9] == 1 & fpu_op[1] == 0 & opa[30] == 0) |=> (sign == 0);
+endproperty
+assert_a9: assert property(a9);
+
+property a42;
+@(posedge clk) (enable == 0 & opb[16] == 0 & opb[22] == 1 & opa[0] == 1 & opa[17] == 1 & opb[9] == 1) |=> (sign == 0);
+endproperty
+assert_a42: assert property(a42);
+
+property a98;
+@(posedge clk) (enable == 0 & opb[16] == 1 & opa[16] == 0 & opa[10] == 0 & opb[21] == 1 & opb[1] == 1) |=> (sign == 1);
+endproperty
+assert_a98: assert property(a98);
+
+property a97;
+@(posedge clk) (enable == 0 & opb[16] == 1 & opb[0] == 1 & opa[9] == 1 & opa[0] == 0 & opb[1] == 1) |=> (sign == 1);
+endproperty
+assert_a97: assert property(a97);
+
+property a96;
+@(posedge clk) (enable == 0 & opa[29] == 0 & opb[18] == 1 & opa[1] == 1 & opa[18] == 0 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a96: assert property(a96);
+
+property a91;
+@(posedge clk) (enable == 0 & opa[29] == 0 & opa[21] == 0 & opa[28] == 0 & opa[7] == 0 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a91: assert property(a91);
+
+property a90;
+@(posedge clk) (enable == 0 & opa[29] == 0 & opb[18] == 1 & opb[10] == 0 & opb[2] == 0 & opb[1] == 0) |=> (sign == 1);
+endproperty
+assert_a90: assert property(a90);
+
+property a93;
+@(posedge clk) (enable == 0 & opb[22] == 0 & opb[3] == 0 & opa[5] == 0 & opa[16] == 0 & opb[1] == 0) |=> (sign == 1);
+endproperty
+assert_a93: assert property(a93);
+
+property a72;
+@(posedge clk) (enable == 0 & opa[0] == 1 & opb[13] == 0 & opb[4] == 1 & opa[19] == 1 & opb[16] == 0) |=> (sign == 0);
+endproperty
+assert_a72: assert property(a72);
+
+property a82;
+@(posedge clk) (enable == 0 & opb[16] == 1 & opa[16] == 0 & fpu_op[1] == 0 & opb[29] == 0 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a82: assert property(a82);
+
+property a83;
+@(posedge clk) (enable == 0 & opb[16] == 1 & opa[16] == 0 & opa[3] == 0 & opa[7] == 1 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a83: assert property(a83);
+
+property a86;
+@(posedge clk) (enable == 0 & opa[29] == 0 & opa[11] == 0 & opa[1] == 1 & opb[7] == 1 & opb[1] == 1) |=> (sign == 1);
+endproperty
+assert_a86: assert property(a86);
+
+property a87;
+@(posedge clk) (enable == 0 & opb[12] == 1 & opa[21] == 0 & opb[26] == 0 & opb[18] == 0 & opb[4] == 0) |=> (sign == 1);
+endproperty
+assert_a87: assert property(a87);
+
+property a85;
+@(posedge clk) (enable == 0 & opb[16] == 1 & opb[10] == 0 & opb[26] == 0 & opb[9] == 1 & opb[2] == 1) |=> (sign == 1);
+endproperty
+assert_a85: assert property(a85);
+
+property a89;
+@(posedge clk) (enable == 0 & opb[16] == 1 & opb[0] == 1 & opb[15] == 1 & opa[0] == 0 & opb[3] == 0) |=> (sign == 1);
+endproperty
+assert_a89: assert property(a89);
+
+property a128;
+@(posedge clk) (enable == 0 & opa[9] == 0 & opb[6] == 1 & opb[9] == 1 & fpu_op[1] == 0 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a128: assert property(a128);
+
+property a121;
+@(posedge clk) (enable == 0 & opa[21] == 0 & opa[29] == 0 & opa[28] == 0 & opa[0] == 0 & opb[0] == 1) |=> (sign == 1);
+endproperty
+assert_a121: assert property(a121);
+
+property a123;
+@(posedge clk) (enable == 0 & opa[17] == 1 & opa[13] == 1 & opa[22] == 0 & opb[12] == 0 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a123: assert property(a123);
+
+property a125;
+@(posedge clk) (enable == 0 & opb[22] == 0 & opa[17] == 1 & opa[29] == 0 & opb[7] == 1 & opa[30] == 0) |=> (sign == 1);
+endproperty
+assert_a125: assert property(a125);
+
+property a139;
+@(posedge clk) (enable == 0 & opa[8] == 1 & opb[15] == 1 & opa[12] == 0 & opa[16] == 0 & opa[19] == 1) |=> (sign == 1);
+endproperty
+assert_a139: assert property(a139);
+
+property a136;
+@(posedge clk) (enable == 0 & opb[7] == 1 & opb[5] == 1 & opb[20] == 1 & opa[19] == 0 & opa[12] == 1) |=> (sign == 1);
+endproperty
+assert_a136: assert property(a136);
+
+property a107;
+@(posedge clk) (enable == 0 & opa[16] == 0 & opa[29] == 0 & opa[27] == 0 & opb[20] == 0 & opb[0] == 1) |=> (sign == 1);
+endproperty
+assert_a107: assert property(a107);
+
+property a102;
+@(posedge clk) (enable == 0 & opa[15] == 1 & opb[9] == 0 & opb[14] == 0 & opa[3] == 0 & opb[4] == 1) |=> (sign == 1);
+endproperty
+assert_a102: assert property(a102);
+
+property a103;
+@(posedge clk) (enable == 0 & opb[12] == 1 & opa[9] == 0 & opa[30] == 0 & opb[2] == 1 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a103: assert property(a103);
+
+property a100;
+@(posedge clk) (enable == 0 & opa[5] == 1 & opb[8] == 0 & opb[0] == 1 & opb[13] == 1 & opb[10] == 1) |=> (sign == 1);
+endproperty
+assert_a100: assert property(a100);
+
+property a109;
+@(posedge clk) (enable == 0 & opa[0] == 0 & opa[20] == 0 & opb[30] == 0 & opb[12] == 1 & opb[3] == 0) |=> (sign == 1);
+endproperty
+assert_a109: assert property(a109);
+
+property a113;
+@(posedge clk) (enable == 0 & opa[21] == 0 & opa[3] == 1 & opb[12] == 1 & opa[2] == 1 & opb[10] == 0) |=> (sign == 1);
+endproperty
+assert_a113: assert property(a113);
+
+property a112;
+@(posedge clk) (enable == 0 & opa[12] == 0 & opa[19] == 1 & opb[7] == 0 & opa[8] == 1 & opb[2] == 1) |=> (sign == 1);
+endproperty
+assert_a112: assert property(a112);
+
+property a116;
+@(posedge clk) (enable == 0 & opb[16] == 1 & opb[20] == 1 & opa[16] == 0 & opa[13] == 0 & opb[0] == 1) |=> (sign == 1);
+endproperty
+assert_a116: assert property(a116);
+
+property a119;
+@(posedge clk) (enable == 0 & opa[21] == 0 & opa[29] == 0 & fpu_op[0] == 1 & opb[9] == 0 & opb[0] == 1) |=> (sign == 1);
+endproperty
+assert_a119: assert property(a119);
+
+property a118;
+@(posedge clk) (enable == 0 & opb[29] == 0 & opb[14] == 0 & opa[21] == 1 & opa[12] == 0 & opb[1] == 0) |=> (sign == 1);
+endproperty
+assert_a118: assert property(a118);
+
+property a51;
+@(posedge clk) (enable == 0 & opb[14] == 0 & opa[6] == 1 & opb[10] == 0 & opa[7] == 1 & opb[11] == 1) |=> (sign == 0);
+endproperty
+assert_a51: assert property(a51);
+
+property a52;
+@(posedge clk) (enable == 0 & opb[15] == 0 & opb[20] == 1 & opb[6] == 1 & opa[18] == 0 & opa[11] == 1) |=> (sign == 0);
+endproperty
+assert_a52: assert property(a52);
+
+property a55;
+@(posedge clk) (enable == 0 & opa[21] == 0 & opa[13] == 1 & opb[12] == 0 & opa[22] == 1 & opb[3] == 1) |=> (sign == 0);
+endproperty
+assert_a55: assert property(a55);
+
+property a57;
+@(posedge clk) (enable == 0 & opb[21] == 0 & opb[1] == 1 & opa[13] == 1 & opb[17] == 1 & opb[3] == 1) |=> (sign == 0);
+endproperty
+assert_a57: assert property(a57);
+
+property a56;
+@(posedge clk) (enable == 0 & opa[14] == 1 & opa[16] == 1 & opa[12] == 1 & opa[19] == 1 & opb[12] == 0) |=> (sign == 0);
+endproperty
+assert_a56: assert property(a56);
+
+property a99;
+@(posedge clk) (enable == 0 & opb[11] == 1 & opb[22] == 0 & opb[3] == 0 & opa[5] == 0 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a99: assert property(a99);
+
+property a33;
+@(posedge clk) (enable == 0 & opa[7] == 1 & opb[16] == 0 & opb[9] == 1 & opb[20] == 1 & opb[30] == 0) |=> (sign == 0);
+endproperty
+assert_a33: assert property(a33);
+
+property a31;
+@(posedge clk) (enable == 0 & opb[10] == 1 & opa[11] == 1 & opa[7] == 0 & opa[27] == 0 & opb[2] == 0) |=> (sign == 0);
+endproperty
+assert_a31: assert property(a31);
+
+property a30;
+@(posedge clk) (enable == 0 & opb[12] == 0 & opa[2] == 0 & opa[13] == 1 & opb[19] == 0 & opb[1] == 0) |=> (sign == 0);
+endproperty
+assert_a30: assert property(a30);
+
+property a36;
+@(posedge clk) (enable == 0 & opa[7] == 1 & opa[20] == 1 & opb[2] == 1 & fpu_op[0] == 1 & opa[9] == 0) |=> (sign == 0);
+endproperty
+assert_a36: assert property(a36);
+
+property a38;
+@(posedge clk) (enable == 0 & opb[3] == 1 & opa[9] == 1 & fpu_op[0] == 1 & opa[1] == 0 & opb[12] == 0) |=> (sign == 0);
+endproperty
+assert_a38: assert property(a38);
+
+property a58;
+@(posedge clk) (enable == 0 & opa[17] == 1 & opa[2] == 0 & opa[12] == 0 & opb[3] == 1 & opb[2] == 0) |=> (sign == 0);
+endproperty
+assert_a58: assert property(a58);
+
+property a44;
+@(posedge clk) (enable == 0 & opa[13] == 1 & opa[19] == 0 & opa[17] == 0 & opb[16] == 0 & opb[0] == 1) |=> (sign == 0);
+endproperty
+assert_a44: assert property(a44);
+
+property a40;
+@(posedge clk) (enable == 0 & opb[15] == 0 & opa[10] == 0 & opb[29] == 0 & opb[10] == 1 & opb[21] == 0) |=> (sign == 0);
+endproperty
+assert_a40: assert property(a40);
+
+property a41;
+@(posedge clk) (enable == 0 & opb[3] == 1 & opa[18] == 0 & opb[13] == 1 & opa[30] == 0 & opb[4] == 0) |=> (sign == 0);
+endproperty
+assert_a41: assert property(a41);
+
+property a20;
+@(posedge clk) (enable == 0 & opa[16] == 1 & opb[17] == 1 & opa[1] == 1 & opa[2] == 1 & opb[0] == 0) |=> (sign == 0);
+endproperty
+assert_a20: assert property(a20);
+
+property a21;
+@(posedge clk) (enable == 0 & opb[12] == 0 & opa[2] == 0 & opb[14] == 1 & opa[17] == 1 & opb[0] == 1) |=> (sign == 0);
+endproperty
+assert_a21: assert property(a21);
+
+property a22;
+@(posedge clk) (enable == 0 & opb[16] == 0 & opb[4] == 1 & opb[19] == 0 & opb[30] == 0 & opb[0] == 0) |=> (sign == 0);
+endproperty
+assert_a22: assert property(a22);
+
+property a23;
+@(posedge clk) (enable == 0 & opb[26] == 1 & opa[18] == 0 & opa[29] == 1 & opa[6] == 0 & opb[0] == 0) |=> (sign == 0);
+endproperty
+assert_a23: assert property(a23);
+
+property a24;
+@(posedge clk) (enable == 0 & opa[16] == 1 & opb[4] == 1 & opa[6] == 1 & opa[8] == 1 & opb[0] == 0) |=> (sign == 0);
+endproperty
+assert_a24: assert property(a24);
+
+property a26;
+@(posedge clk) (enable == 0 & opb[15] == 0 & opb[4] == 1 & opb[14] == 1 & opa[1] == 1 & opb[1] == 0) |=> (sign == 0);
+endproperty
+assert_a26: assert property(a26);
+
+property a27;
+@(posedge clk) (enable == 0 & opb[3] == 1 & opa[18] == 0 & opa[30] == 0 & opa[11] == 1 & opb[0] == 0) |=> (sign == 0);
+endproperty
+assert_a27: assert property(a27);
+
+property a28;
+@(posedge clk) (enable == 0 & opb[3] == 1 & opa[18] == 0 & opa[30] == 0 & opa[11] == 1 & opb[1] == 0) |=> (sign == 0);
+endproperty
+assert_a28: assert property(a28);
+
+property a15;
+@(posedge clk) (enable == 0 & opb[16] == 0 & opb[19] == 0 & opa[11] == 1 & opb[7] == 0 & opb[0] == 0) |=> (sign == 0);
+endproperty
+assert_a15: assert property(a15);
+
+property a14;
+@(posedge clk) (enable == 0 & opa[16] == 1 & opa[1] == 1 & opa[4] == 0 & opb[0] == 0 & opb[2] == 0) |=> (sign == 0);
+endproperty
+assert_a14: assert property(a14);
+
+property a16;
+@(posedge clk) (enable == 0 & opb[16] == 0 & opb[9] == 1 & opb[1] == 1 & opb[0] == 1 & opb[6] == 1) |=> (sign == 0);
+endproperty
+assert_a16: assert property(a16);
+
+property a13;
+@(posedge clk) (enable == 0 & opb[15] == 0 & opb[12] == 0 & opa[15] == 0 & opb[17] == 0 & opb[1] == 0) |=> (sign == 0);
+endproperty
+assert_a13: assert property(a13);
+
+property a12;
+@(posedge clk) (enable == 0 & opb[16] == 0 & opb[19] == 0 & opa[11] == 1 & opb[30] == 0 & opb[0] == 0) |=> (sign == 0);
+endproperty
+assert_a12: assert property(a12);
+
+property a19;
+@(posedge clk) (enable == 0 & opb[26] == 1 & opa[18] == 0 & opa[4] == 1 & opa[30] == 0 & opb[2] == 1) |=> (sign == 0);
+endproperty
+assert_a19: assert property(a19);
+
+property a5;
+@(posedge clk) (enable == 0 & opb[16] == 0 & opb[22] == 1 & opb[14] == 1 & opa[18] == 1 & opb[5] == 0) |=> (sign == 0);
+endproperty
+assert_a5: assert property(a5);
+
+property a147;
+@(posedge clk) (opb[29] == 0 & opa[9] == 1 & enable == 0 & opa[10] == 1 & opa[20] == 0 & opb[0] == 1) |=> (sign == 1);
+endproperty
+assert_a147: assert property(a147);
+
+property a110;
+@(posedge clk) (opa[8] == 0 & opb[18] == 1 & opa[15] == 1 & a_gtet_b == 1 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a110: assert property(a110);
+
+property a47;
+@(posedge clk) (fpu_op[0] == 0 & a_gtet_b == 0 & opa[29] == 1 & opa[6] == 0 & opb[2] == 0) |=> (sign == 0);
+endproperty
+assert_a47: assert property(a47);
+
+property a126;
+@(posedge clk) (enable == 0 & opb[22] == 0 & opa[17] == 1 & opb[7] == 1 & opb[16] == 0 & opb[20] == 0 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a126: assert property(a126);
+
+property a138;
+@(posedge clk) (enable == 0 & opb[7] == 1 & fpu_op[0] == 1 & opb[13] == 1 & opb[2] == 0 & opa[7] == 1 & opb[0] == 1) |=> (sign == 1);
+endproperty
+assert_a138: assert property(a138);
+
+property a131;
+@(posedge clk) (enable == 0 & opa[17] == 1 & opb[22] == 0 & opa[29] == 0 & opa[20] == 0 & opa[9] == 0 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a131: assert property(a131);
+
+property a130;
+@(posedge clk) (enable == 0 & opb[29] == 0 & opa[10] == 1 & opb[5] == 1 & opb[3] == 0 & opb[2] == 0 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a130: assert property(a130);
+
+property a134;
+@(posedge clk) (enable == 0 & opb[17] == 1 & opb[22] == 0 & opa[17] == 1 & opa[13] == 1 & opa[11] == 0 & opb[0] == 1) |=> (sign == 1);
+endproperty
+assert_a134: assert property(a134);
+
+property a106;
+@(posedge clk) (enable == 0 & opa[5] == 1 & opb[22] == 0 & opb[11] == 1 & opa[4] == 1 & opa[9] == 1 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a106: assert property(a106);
+
+property a108;
+@(posedge clk) (enable == 0 & opb[16] == 1 & opb[0] == 1 & opb[8] == 0 & opa[7] == 1 & fpu_op[1] == 1 & opb[1] == 1) |=> (sign == 1);
+endproperty
+assert_a108: assert property(a108);
+
+property a50;
+@(posedge clk) (enable == 0 & opb[15] == 0 & opb[4] == 1 & opa[18] == 0 & opb[13] == 1 & opb[14] == 1 & opb[0] == 0) |=> (sign == 0);
+endproperty
+assert_a50: assert property(a50);
+
+property a34;
+@(posedge clk) (enable == 0 & opa[7] == 1 & opb[16] == 0 & opb[9] == 1 & opa[9] == 1 & fpu_op[1] == 0 & opb[0] == 0) |=> (sign == 0);
+endproperty
+assert_a34: assert property(a34);
+
+property a79;
+@(posedge clk) (opb[8] == 0 & a_gtet_b == 0 & opb[14] == 1 & opa[11] == 1 & opb[1] == 0 & opb[4] == 0) |=> (sign == 0);
+endproperty
+assert_a79: assert property(a79);
+
+property a66;
+@(posedge clk) (fpu_op[1] == 0 & opb[1] == 1 & a_gtet_b == 0 & opb[11] == 1 & opb[21] == 0 & opb[0] == 1) |=> (sign == 0);
+endproperty
+assert_a66: assert property(a66);
+
+property a117;
+@(posedge clk) (fpu_op[0] == 0 & a_gtet_b == 0 & opa[29] == 0 & opa[20] == 0 & opa[13] == 1 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a117: assert property(a117);
+
+property a37;
+@(posedge clk) (fpu_op[0] == 0 & a_gtet_b == 0 & opb[8] == 0 & opb[14] == 1 & opb[20] == 1 & opb[4] == 0) |=> (sign == 0);
+endproperty
+assert_a37: assert property(a37);
+
+property a46;
+@(posedge clk) (fpu_op[0] == 0 & a_gtet_b == 0 & opa[10] == 1 & opb[19] == 0 & opa[3] == 0 & opb[1] == 0) |=> (sign == 0);
+endproperty
+assert_a46: assert property(a46);
+
+property a140;
+@(posedge clk) (a_gtet_b == 0 & fpu_op[0] == 0 & opb[2] == 1 & opa[22] == 1 & opa[3] == 1 & opa[20] == 0) |=> (sign == 1);
+endproperty
+assert_a140: assert property(a140);
+
+property a129;
+@(posedge clk) (a_gtet_b == 0 & fpu_op[0] == 0 & opa[7] == 1 & opa[2] == 1 & opb[18] == 1 & opb[1] == 1 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a129: assert property(a129);
+
+property a122;
+@(posedge clk) (fpu_op[0] == 0 & a_gtet_b == 0 & opa[9] == 1 & opa[12] == 0 & opb[10] == 1 & opa[20] == 1 & opb[3] == 0) |=> (sign == 1);
+endproperty
+assert_a122: assert property(a122);
+
+property a39;
+@(posedge clk) (fpu_op[0] == 0 & a_gtet_b == 0 & opb[4] == 1 & opa[1] == 0 & fpu_op[1] == 1 & opb[21] == 1 & opb[0] == 1) |=> (sign == 0);
+endproperty
+assert_a39: assert property(a39);
+
+property a43;
+@(posedge clk) (fpu_op[0] == 0 & a_gtet_b == 0 & opa[4] == 1 & opb[0] == 0 & opa[12] == 1 & opb[17] == 1 & opb[1] == 1) |=> (sign == 0);
+endproperty
+assert_a43: assert property(a43);
+
+property a159;
+@(posedge clk) (opb[19] == 1 & opb[7] == 0 & opa[9] == 1 & opb[14] == 0 & opb[2] == 0 & opb[6] == 1) |=> (sign == 1);
+endproperty
+assert_a159: assert property(a159);
+
+property a78;
+@(posedge clk) (opb[19] == 0 & opb[6] == 1 & opa[27] == 0 & opb[12] == 1 & opb[17] == 0 & opb[15] == 0) |=> (sign == 0);
+endproperty
+assert_a78: assert property(a78);
+
+property a77;
+@(posedge clk) (fpu_op[1] == 0 & opa[10] == 1 & opb[14] == 0 & opb[9] == 1 & opa[15] == 0 & opb[2] == 1) |=> (sign == 0);
+endproperty
+assert_a77: assert property(a77);
+
+property a76;
+@(posedge clk) (opb[23] == 0 & opa[0] == 1 & opb[28] == 0 & fpu_op[0] == 0 & opa[16] == 0 & opa[8] == 1 & opb[1] == 1) |=> (sign == 0);
+endproperty
+assert_a76: assert property(a76);
+
+property a75;
+@(posedge clk) (opb[23] == 0 & opa[0] == 1 & opb[28] == 0 & opa[8] == 1 & opb[13] == 0 & opb[17] == 0 & opb[2] == 0) |=> (sign == 0);
+endproperty
+assert_a75: assert property(a75);
+
+property a74;
+@(posedge clk) (opa[8] == 1 & opb[13] == 0 & opb[0] == 0 & opb[5] == 0 & opa[18] == 1 & opb[1] == 0) |=> (sign == 0);
+endproperty
+assert_a74: assert property(a74);
+
+property a73;
+@(posedge clk) (fpu_op[1] == 0 & opb[22] == 0 & opb[17] == 0 & opb[30] == 0 & opb[11] == 0 & opb[0] == 1) |=> (sign == 0);
+endproperty
+assert_a73: assert property(a73);
+
+property a71;
+@(posedge clk) (opb[13] == 0 & opa[0] == 1 & fpu_op[0] == 0 & opa[20] == 0 & opb[22] == 0 & opb[17] == 1) |=> (sign == 0);
+endproperty
+assert_a71: assert property(a71);
+
+property a70;
+@(posedge clk) (opb[13] == 0 & opa[0] == 1 & fpu_op[0] == 0 & opa[19] == 0 & opb[0] == 0 & opb[7] == 1 & opb[1] == 0) |=> (sign == 0);
+endproperty
+assert_a70: assert property(a70);
+
+property a68;
+@(posedge clk) (opa[13] == 0 & opb[23] == 0 & fpu_op[1] == 0 & opb[21] == 1 & opa[1] == 1 & opb[1] == 1) |=> (sign == 0);
+endproperty
+assert_a68: assert property(a68);
+
+property a69;
+@(posedge clk) (opa[13] == 0 & opb[18] == 0 & opa[10] == 1 & opb[3] == 1 & opa[20] == 1 & opb[13] == 1 & opb[2] == 0) |=> (sign == 0);
+endproperty
+assert_a69: assert property(a69);
+
+property a64;
+@(posedge clk) (opa[30] == 1 & opa[20] == 1 & opb[30] == 0 & opa[7] == 0 & opb[13] == 1) |=> (sign == 0);
+endproperty
+assert_a64: assert property(a64);
+
+property a65;
+@(posedge clk) (opa[7] == 1 & opa[20] == 1 & opa[3] == 1 & opb[3] == 1 & opa[1] == 0 & opb[18] == 1) |=> (sign == 0);
+endproperty
+assert_a65: assert property(a65);
+
+property a67;
+@(posedge clk) (opa[10] == 1 & opa[7] == 1 & opa[15] == 1 & opb[3] == 1 & opb[19] == 0 & opa[5] == 0) |=> (sign == 0);
+endproperty
+assert_a67: assert property(a67);
+
+property a60;
+@(posedge clk) (opa[15] == 1 & opa[28] == 0 & opa[8] == 1 & opb[4] == 1 & opb[14] == 1 & opb[5] == 1) |=> (sign == 0);
+endproperty
+assert_a60: assert property(a60);
+
+property a61;
+@(posedge clk) (opa[15] == 1 & opa[22] == 1 & opa[28] == 0 & opa[8] == 1 & opb[21] == 0 & opa[1] == 1) |=> (sign == 0);
+endproperty
+assert_a61: assert property(a61);
+
+property a62;
+@(posedge clk) (opb[23] == 0 & opb[30] == 0 & opa[12] == 1 & opa[6] == 1 & opb[20] == 1) |=> (sign == 0);
+endproperty
+assert_a62: assert property(a62);
+
+property a63;
+@(posedge clk) (opa[13] == 0 & opb[26] == 1 & opb[3] == 0 & opb[9] == 0) |=> (sign == 0);
+endproperty
+assert_a63: assert property(a63);
+
+property a133;
+@(posedge clk) (opb[0] == 1 & opb[14] == 1 & opa[6] == 1 & fpu_op[1] == 0 & opb[8] == 1 & opb[3] == 0) |=> (sign == 1);
+endproperty
+assert_a133: assert property(a133);
+
+property a132;
+@(posedge clk) (opb[0] == 1 & opa[7] == 1 & fpu_op[0] == 0 & opb[12] == 0 & opb[18] == 1 & opa[0] == 1 & opb[1] == 1) |=> (sign == 1);
+endproperty
+assert_a132: assert property(a132);
+
+property a59;
+@(posedge clk) (fpu_op[0] == 0 & opb[11] == 1 & opb[17] == 1 & opb[18] == 1 & opb[13] == 1 & opb[4] == 0) |=> (sign == 0);
+endproperty
+assert_a59: assert property(a59);
+
+property a158;
+@(posedge clk) (opb[11] == 1 & opb[29] == 0 & opa[22] == 1 & opa[13] == 0 & opb[10] == 0 & opb[16] == 1 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a158: assert property(a158);
+
+property a155;
+@(posedge clk) (opa[14] == 0 & opa[7] == 1 & opb[5] == 1 & opb[7] == 1 & opa[0] == 1 & fpu_op[1] == 1 & opb[3] == 1) |=> (sign == 1);
+endproperty
+assert_a155: assert property(a155);
+
+property a154;
+@(posedge clk) (opa[1] == 1 & opa[5] == 1 & opb[11] == 1 & opa[18] == 1 & opa[16] == 1 & opb[14] == 1 & opb[4] == 1) |=> (sign == 1);
+endproperty
+assert_a154: assert property(a154);
+
+property a156;
+@(posedge clk) (opb[10] == 0 & opb[8] == 1 & opa[18] == 1 & opa[15] == 1 & opa[30] == 0 & opb[3] == 1) |=> (sign == 1);
+endproperty
+assert_a156: assert property(a156);
+
+property a151;
+@(posedge clk) (opa[27] == 0 & opb[29] == 0 & opa[21] == 0 & opa[9] == 1 & opb[0] == 0 & opa[15] == 1 & opb[1] == 0) |=> (sign == 1);
+endproperty
+assert_a151: assert property(a151);
+
+property a150;
+@(posedge clk) (opa[27] == 0 & opa[21] == 0 & opb[6] == 0 & opa[17] == 1 & opa[12] == 1 & opb[10] == 0 & opb[1] == 0) |=> (sign == 1);
+endproperty
+assert_a150: assert property(a150);
+
+property a160;
+@(posedge clk) (opb[30] == 0 & opa[12] == 0 & opb[10] == 1 & opa[10] == 0 & opb[1] == 1) |=> (sign == 1);
+endproperty
+assert_a160: assert property(a160);
+
+property a152;
+@(posedge clk) (opa[27] == 0 & opb[29] == 0 & opb[21] == 1 & opa[8] == 1 & opa[21] == 0 & opb[10] == 0 & opb[13] == 1) |=> (sign == 1);
+endproperty
+assert_a152: assert property(a152);
+
+property a48;
+@(posedge clk) (fpu_op[0] == 0 & opa[16] == 1 & opb[21] == 0 & opa[6] == 1 & opa[18] == 1 & opb[0] == 1) |=> (sign == 0);
+endproperty
+assert_a48: assert property(a48);
+
+property a49;
+@(posedge clk) (fpu_op[0] == 0 & opa[1] == 0 & opa[20] == 0 & opa[6] == 1 & opb[20] == 1 & opb[6] == 1) |=> (sign == 0);
+endproperty
+assert_a49: assert property(a49);
+
+property a141;
+@(posedge clk) (opa[16] == 1 & opa[5] == 1 & opa[18] == 1 & opb[11] == 1 & opa[30] == 0 & opb[0] == 0) |=> (sign == 1);
+endproperty
+assert_a141: assert property(a141);
+
+property a153;
+@(posedge clk) (opb[8] == 1 & opa[5] == 1 & opb[7] == 1 & opb[12] == 0 & opa[9] == 1 & opb[5] == 0 & opb[1] == 0) |=> (sign == 1);
+endproperty
+assert_a153: assert property(a153);
+
+property a142;
+@(posedge clk) (opa[16] == 1 & opa[15] == 1 & opb[17] == 1 & opb[28] == 1 & opb[5] == 0 & opb[0] == 1) |=> (sign == 1);
+endproperty
+assert_a142: assert property(a142);
+
+property a143;
+@(posedge clk) (opa[16] == 1 & opa[5] == 1 & opb[19] == 1 & opb[0] == 1 & opa[8] == 1 & opa[29] == 0 & opb[8] == 1) |=> (sign == 1);
+endproperty
+assert_a143: assert property(a143);
+
+property a157;
+@(posedge clk) (opa[10] == 0 & opa[6] == 1 & opa[13] == 0 & opa[22] == 1 & opa[7] == 1 & opb[10] == 0 & opb[0] == 1) |=> (sign == 1);
+endproperty
+assert_a157: assert property(a157);
+
+property a146;
+@(posedge clk) (opa[16] == 1 & opb[2] == 1 & fpu_op[1] == 0 & opa[19] == 0 & opa[0] == 1 & opb[22] == 1) |=> (sign == 1);
+endproperty
+assert_a146: assert property(a146);
+
+property a144;
+@(posedge clk) (opa[16] == 1 & opa[15] == 1 & opb[17] == 1 & opb[5] == 1 & opa[12] == 0 & opb[7] == 0) |=> (sign == 1);
+endproperty
+assert_a144: assert property(a144);
+
+property a145;
+@(posedge clk) (opa[16] == 1 & opa[5] == 1 & opa[18] == 1 & opb[11] == 1 & opa[1] == 1 & opb[14] == 1 & opb[3] == 0) |=> (sign == 1);
+endproperty
+assert_a145: assert property(a145);
+
+property a148;
+@(posedge clk) (opa[11] == 1 & opb[22] == 0 & opa[21] == 0 & opa[27] == 0 & fpu_op[0] == 0 & opb[13] == 0 & opb[2] == 0) |=> (sign == 1);
+endproperty
+assert_a148: assert property(a148);
+
+property a149;
+@(posedge clk) (opb[29] == 0 & opb[18] == 0 & opb[17] == 1 & opb[0] == 0 & opb[8] == 1 & opb[22] == 0) |=> (sign == 1);
+endproperty
+assert_a149: assert property(a149);
+
+endmodule

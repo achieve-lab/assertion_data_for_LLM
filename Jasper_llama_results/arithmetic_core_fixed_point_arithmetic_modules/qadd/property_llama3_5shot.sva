@@ -1,0 +1,71 @@
+parameter Q = 15;
+        parameter N = 32;
+module i_qadd(
+input [N-1:0] res,
+    input [N-1:0] b,
+    input [N-1:0] c,
+    input [N-1:0] a,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  input req1, req2);
+assert property(@(posedge DEFAULT_CLOCK)  always @ (*) if (state) begin gnt1 = req1 & ~req2);
+assert property(@(posedge DEFAULT_CLOCK)  (c[N-2:0] == a[N-2:0] + b[N-2:0]) |-> (a[N-1] == 1 && b[N-1] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  gnt2 = req2 & ~req1);
+assert property(@(posedge DEFAULT_CLOCK)  (c[N-2:0] == a[N-2:0] - b[N-2:0]) |-> (a[N-1] == 0 && b[N-1] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Assertions 2: (!Cout && cin) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) (req1 == 0) |-> (gnt1 == 0));
+assert property(@(posedge DEFAULT_CLOCK) (req1 == 1 & req2 == 0) |-> (gnt1 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Assertions 3: (Cout) |-> b);
+assert property(@(posedge DEFAULT_CLOCK)  
+            Program 2: module full_adder(input a, b, cin, output S, Cout));
+assert property(@(posedge DEFAULT_CLOCK)  assign Cout = (a & b) | (b & cin) | (a & cin));
+assert property(@(posedge DEFAULT_CLOCK)  always @ (posedge clk or posedge rst) if (rst) state <= 0);
+assert property(@(posedge DEFAULT_CLOCK)  (c[N-1] == 1) |-> (a[N-1] == 0 && b[N-1] == 1 && a[N-2:0] > b[N-2:0]));
+assert property(@(posedge DEFAULT_CLOCK)  (!Cout && b) |-> S);
+assert property(@(posedge DEFAULT_CLOCK)  (!Cout && a) |-> S
+            Programm 3: module half_adder(input a, b, output S, Cout));
+assert property(@(posedge DEFAULT_CLOCK)  assign Cout = a & b);
+assert property(@(posedge DEFAULT_CLOCK)  end endmodule
+            Assertions 1: (state == 1 & req2 == 1) |-> (gnt1 == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (Cout) |-> a
+            Program 4: module T);
+assert property(@(posedge DEFAULT_CLOCK)  (c[N-1] == 1) |-> (a[N-1] == 1 && b[N-1] == 0 && a[N-2:0] < b[N-2:0]));
+assert property(@(posedge DEFAULT_CLOCK)  (c[N-1] == 0) |-> (a[N-1] == 0 && b[N-1] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  reg gnt1, gnt2);
+assert property(@(posedge DEFAULT_CLOCK)  (c[N-1] == 0) |-> (a[N-1] == 0 && b[N-1] == 1 && a[N-2:0] <= b[N-2:0]));
+assert property(@(posedge DEFAULT_CLOCK)  (c[N-2:0] == b[N-2:0] - a[N-2:0]) |-> (a[N-1] == 1 && b[N-1] == 0)
+            Note: The test program may contain multiple modules. Generate the assertions for each module separately. Do not include any additional text in the output. You can assume that the design is free of syntax errors.
+            """
+        ),
+    )
+    def test_q4(self):
+        self.maxDiff = None
+        return get_test_result(
+            "q4",
+            """
+            Your task is to generate the list of assertions to the given verilog design. An example is shown below. Generate only the list of assertions for the test program with no additional text.
+            Program 1: module arb2(clk, rst, req1, req2, gnt1, gnt2));
+assert property(@(posedge DEFAULT_CLOCK)  output gnt1, gnt2);
+assert property(@(posedge DEFAULT_CLOCK)  reg state);
+assert property(@(posedge DEFAULT_CLOCK) (req2 == 0) |-> (gnt2 == 0));
+assert property(@(posedge DEFAULT_CLOCK) (req1 == 1 & state == 0) |-> (gnt2 == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (gnt2) |-> (req2));
+assert property(@(posedge DEFAULT_CLOCK) (req2 == 1 & req1 == 0) |-> (gnt2 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (c[N-2:0] == a[N-2:0] + b[N-2:0]) |-> (a[N-1] == 0 && b[N-1] == 0));
+assert property(@(posedge DEFAULT_CLOCK)  input clk, rst);
+assert property(@(posedge DEFAULT_CLOCK)  assign S = a ^ b);
+assert property(@(posedge DEFAULT_CLOCK)  gnt2 = req2);
+assert property(@(posedge DEFAULT_CLOCK)  (c[N-1] == 1) |-> (a[N-1] == 1 && b[N-1] == 1));
+assert property(@(posedge DEFAULT_CLOCK)  assign S = a ^ b ^ cin);
+assert property(@(posedge DEFAULT_CLOCK)  end else begin gnt1 = req1);
+assert property(@(posedge DEFAULT_CLOCK)  (c[N-1] == 0) |-> (a[N-1] == 1 && b[N-1] == 0 && a[N-2:0] >= b[N-2:0]));
+assert property(@(posedge DEFAULT_CLOCK)  else state <= gnt1);
+assert property(@(posedge DEFAULT_CLOCK) (req1 == 1 & state == 0) |-> (gnt1 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (gnt1) |-> (req1));
+assert property(@(posedge DEFAULT_CLOCK) (req2 == 1 & state == 1) |-> (gnt2 == 1));
+
+endmodule

@@ -1,0 +1,15 @@
+parameter WID=4;
+module i_mux4to1(
+input [1:0] s,
+input [WID:1] i1,
+input e,
+input [WID:1] i2,
+input [WID:1] i0,
+input [WID:1] z,
+input [WID:1] i3,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (e && s == 2'b00) |-> (z == i0));assert property(@(posedge DEFAULT_CLOCK)  (e && s == 2'b01) |-> (z == i1));assert property(@(posedge DEFAULT_CLOCK)  (e && s == 2'b10) |-> (z == i2));assert property(@(posedge DEFAULT_CLOCK)  (e && s == 2'b11) |-> (z == i3));assert property(@(posedge DEFAULT_CLOCK)  (!e) |-> (z == {WID{1'b0}}));
+endmodule

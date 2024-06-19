@@ -1,0 +1,42 @@
+
+parameter S_PREAMBLE  = 0;
+parameter                    S_ST        = 1;
+parameter                    S_OP_CODE   = 2;
+parameter                    S_PHY_ADDR  = 3;
+parameter                    S_REG_ADDR  = 4;
+parameter                    S_TA        = 5;
+parameter                    S_WR_DATA   = 6;
+parameter                    S_RD_DATA   = 7;
+parameter                    S_WR_COMMIT = 8;
+module i_ge_1000baseX_mdio(
+   input              mdio,
+   input [4:0] phy_addr, input phy_addr_shift,
+   input [1:0] op_code, 
+   input             mdio_out,
+   input [15:0] data_in, input data_in_shift,
+   input     strobe_wr,
+   input [15:0] data_out, input data_out_load, data_out_shift, next ,
+   input     [15:0]   data_rd,	op_code_shift ,
+   input              reset, 
+   // mdio/mdc state machine inputistered part.
+   input st,
+	 input st_latch,
+   input [4:0] input_addr,
+	 input input_addr_shift,
+   input [3:0] present, 
+   input [5:0] preamble_cnt,
+   input             mdio_oe,
+   input     [4:0]   data_addr,    
+   input    [15:0]   data_wr, 
+   input              mdc,
+	input reg_addr_shift,
+	input [4:0] reg_addr,
+	input pos_cnt_inc,
+	input pos_cnt,
+	input st_match
+);
+
+assert property(@(posedge mdc)  (preamble_match) |-> (present == S_ST));
+assert property(@(posedge mdc)  (preamble_match) |-> (next == S_ST));
+
+endmodule

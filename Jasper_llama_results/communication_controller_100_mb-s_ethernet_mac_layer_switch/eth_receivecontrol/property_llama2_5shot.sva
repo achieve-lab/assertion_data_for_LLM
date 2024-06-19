@@ -1,0 +1,82 @@
+module i_eth_receivecontrol(
+input [15:0]  LatchedTimerValue,
+input [7:0] RxData,
+input       RxStatusWriteLatched_sync2,
+input       ReceivedPacketGood,
+input        ResetSlotTimer,           // 
+input       TxDoneIn,
+input         DetectionWindow,          // Detection of the PAUSE frame is possible within this window
+input        SlotFinished,             // 
+input        PauseTimerEq0,            // 
+input       RxStartFrm,
+input       TxReset, 
+input         OpCodeOK,                 // PAUSE opcode detected (0x0001)
+input        ByteCntEq1,               // ByteCnt ,
+input        ByteCntEq5,               // ByteCnt ,
+input        ByteCntEq17,              // ByteCnt ,
+input        ByteCntEq15,              // ByteCnt ,
+input [15:0]  PauseTimer,
+input        ByteCntEq16,              // ByteCnt ,
+input       RxFlow,
+input  [4:0]  ByteCnt,
+input        IncrementSlotTimer,       // 
+input [15:0] TypeLength,               // 0x8808
+input       RxValid,
+input  [2:0]  DlyCrcCnt,
+input      Pause,
+input       RxReset, 
+input      ReceivedPauseFrm,
+input         Divider2,
+input       r_PassAll,
+input         PauseTimerEq0_sync2,
+input        ByteCntEq2,               // ByteCnt ,
+input        ByteCntEq4,               // ByteCnt ,
+input         ReceivedPauseFrmWAddr,
+input       MRxClk,
+input         TypeLengthOK,             // Type/Length field contains 0x8808
+input [15:0]  AssembledTimerValue,
+input [47:0] ReservedMulticast,        // 0x0180C2000001
+input  [5:0]  SlotTimer,
+input       DlyCrcEn,
+input       TxUsedDataOutDetected,
+input        ByteCntEq0,               // ByteCnt ,
+input        ByteCntEq18,              // ByteCnt ,
+input        DecrementPauseTimer,      // 
+input       TxStartFrmOut,
+input        ResetByteCnt,             // 
+input        IncrementByteCnt,         // 
+input        ByteCntEq3,               // ByteCnt ,
+input        ByteCntEq13,              // ByteCnt ,
+input       ReceiveEnd,
+input      SetPauseTimer,
+input         AddressOK,                // Multicast or unicast address detected
+input         PauseTimerEq0_sync1,
+input        ByteCntEq12,              // ByteCnt ,
+input       RxEndFrm,
+input        ByteCntEq14,              // ByteCnt ,
+input       MTxClk,
+input [47:0]MAC,
+input       TxAbortIn,
+input       ReceivedLengthOK
+);
+
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq17 & RxData[7:0] == ReservedMulticast[39:32]) |-> (AddressOK));
+assert property(@(posedge MRxClk)  (DetectionWindow & ByteCntEq12 & RxData[7:0] == 8'h88) |-> (TypeLengthOK));
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq18 & RxData[7:0] == ReservedMulticast[7:0]) |-> (AddressOK));
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq14 & RxData[7:0] == 8'h00) |-> (OpCodeOK));
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq18 & RxData[7:0] == MAC[39:32]) |-> (AddressOK));
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq18 & RxData[7:0] == MAC[7:0]) |-> (AddressOK));
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq15 & RxData[7:0] == 8'h01) |-> (OpCodeOK));
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq18 & RxData[7:0] == MAC[23:16]) |-> (AddressOK));
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq18 & RxData[7:0] == ReservedMulticast[39:32]) |-> (AddressOK));
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq18 & RxData[7:0] == MAC[47:40]) |-> (AddressOK));
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq18 & RxData[7:0] == ReservedMulticast[23:16]) |-> (AddressOK));
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq13 & RxData[7:0] == 8'h08) |-> (TypeLengthOK));
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq18 & RxData[7:0] == ReservedMulticast[47:40]) |-> (AddressOK));
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq16 & RxData[7:0] == ReservedMulticast[47:40]) |-> (AddressOK));
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq18 & RxData[7:0] == MAC[15:8]) |-> (AddressOK));
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq18 & RxData[7:0] == MAC[31:24]) |-> (AddressOK));
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq18 & RxData[7:0] == ReservedMulticast[15:8]) |-> (AddressOK));
+assert property(@(posedge MRxClk) (DetectionWindow & ByteCntEq18 & RxData[7:0] == ReservedMulticast[31:24]) |-> (AddressOK));
+
+endmodule

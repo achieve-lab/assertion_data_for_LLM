@@ -1,0 +1,111 @@
+parameter StateCount = 1'b0;
+parameter read_fifo = 1'b0;
+parameter StateLeftinQ = 1'b0;
+parameter PreNib15State = 1'b0;
+parameter Divided_2_clk=0;
+module i_eth_transmitcontrol(
+input [15:0]  LatchedTimerValue,
+input [7:0] RxData,
+input       RxStatusWriteLatched_sync2,
+input       ReceivedPacketGood,
+input        ResetSlotTimer,           // 
+input       TxDoneIn,
+input         DetectionWindow,          // Detection of the PAUSE frame is possible within this window
+input        SlotFinished,             // 
+input        PauseTimerEq0,            // 
+input       RxStartFrm,
+input       TxReset, 
+input         OpCodeOK,                 // PAUSE opcode detected (0x0001)
+input        ByteCntEq1,               // ByteCnt ,
+input        ByteCntEq5,               // ByteCnt ,
+input        ByteCntEq17,              // ByteCnt ,
+input        ByteCntEq15,              // ByteCnt ,
+input [15:0]  PauseTimer,
+input        ByteCntEq16,              // ByteCnt ,
+input       RxFlow,
+input  [4:0]  ByteCnt,
+input        IncrementSlotTimer,       // 
+input [15:0] TypeLength,               // 0x8808
+input       RxValid,
+input  [2:0]  DlyCrcCnt,
+input      Pause,
+input       RxReset, 
+input      ReceivedPauseFrm,
+input         Divider2,
+input       r_PassAll,
+input         PauseTimerEq0_sync2,
+input        ByteCntEq2,               // ByteCnt ,
+input        ByteCntEq4,               // ByteCnt ,
+input         ReceivedPauseFrmWAddr,
+input       MRxClk,
+input         TypeLengthOK,             // Type/Length field contains 0x8808
+input [15:0]  AssembledTimerValue,
+input [47:0] ReservedMulticast,        // 0x0180C2000001
+input  [5:0]  SlotTimer,
+input       DlyCrcEn,
+input       TxUsedDataOutDetected,
+input        ByteCntEq0,               // ByteCnt ,
+input        ByteCntEq18,              // ByteCnt ,
+input        DecrementPauseTimer,      // 
+input       TxStartFrmOut,
+input        ResetByteCnt,             // 
+input        IncrementByteCnt,         // 
+input        ByteCntEq3,               // ByteCnt ,
+input        ByteCntEq13,              // ByteCnt ,
+input       ReceiveEnd,
+input      SetPauseTimer,
+input         AddressOK,                // Multicast or unicast address detected
+input         PauseTimerEq0_sync1,
+input        ByteCntEq12,              // ByteCnt ,
+input       RxEndFrm,
+input        ByteCntEq14,              // ByteCnt ,
+input       MTxClk,
+input [47:0]MAC,
+input       TxAbortIn,
+input       ReceivedLengthOK
+);
+
+assert property(@(posedge MTxClk) (statecount == 1 & prenib15state >= 8) |-> (bytecnt == bytecnt + 1));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 7'h2));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 7'h1));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (write_fifo == 1));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (txdata_wrapped_out == mac[47:40]));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (txdata_wrapped_out == dmac[39:32]));
+assert property(@(posedge MTxClk) (txbufferempty == 1) |-> (stateleftinq == 0));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 7'hd));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 7'h9));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 7'h5));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (txdata_wrapped_out == txdatain));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (txdata_wrapped_out == mac[31:24]));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 7'hb));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 0));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 7'h6));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (read_fifo == 1));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (txdata_wrapped_out == dmac[31:24]));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (read_fifo == 0));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 7'h4));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (txdata_wrapped_out == 8'h0));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 7'h3));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (write_fifo == 0));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 7'ha));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 7'hc));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 7'h0));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (txdata_wrapped_out == dmac[47:40]));
+assert property(@(posedge MTxClk) (txendfrmin == 1) |-> (stateleftinq == 1));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (txdata_wrapped_out == mac[23:16]));
+assert property(@(posedge MTxClk) (txendfrmin == 1) |-> (statecount == 0));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (txdata_wrapped_out == dmac[15:8]));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (prenib15state == 9'h0));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (txdata_wrapped_out == dmac[7:0]));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 7'h8));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 7'hf));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (txdata_wrapped_out == dmac[23:16]));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 7'h7));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (bytecnt == 7'he));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (txdata_wrapped_out == mac[7:0]));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (txdata_wrapped_out == mac[15:8]));
+assert property(@(posedge MTxClk) (txstartfrmin == 1 | stateleftinq == 1 | statecount == 1) |-> (txdata_wrapped_out == mac[39:32]));
+assert property(@(posedge MTxClk) (statecount == 1) |-> (prenib15state == prenib15state + 1));
+assert property(@(posedge MTxClk)  (txstartfrmin == 1) |-> (statecount == 1));
+
+endmodule

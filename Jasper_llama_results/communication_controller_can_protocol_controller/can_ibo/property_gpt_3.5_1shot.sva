@@ -1,0 +1,9 @@
+module i_can_ibo(
+input  [7:0] do_can,
+input   [7:0] di,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (gnt1) |-> (req1[7]));assert property(@(posedge DEFAULT_CLOCK)  (gnt1) |-> (req1[6]));assert property(@(posedge DEFAULT_CLOCK)  (gnt1) |-> (req1[5]));assert property(@(posedge DEFAULT_CLOCK)  (gnt1) |-> (req1[4]));assert property(@(posedge DEFAULT_CLOCK)  (gnt1) |-> (req1[3]));assert property(@(posedge DEFAULT_CLOCK)  (gnt1) |-> (req1[2]));assert property(@(posedge DEFAULT_CLOCK)  (gnt1) |-> (req1[1]));assert property(@(posedge DEFAULT_CLOCK)  (gnt1) |-> (req1[0]));assert property(@(posedge DEFAULT_CLOCK)  (gnt2) |-> (req2[7]));assert property(@(posedge DEFAULT_CLOCK)  (gnt2) |-> (req2[6]));assert property(@(posedge DEFAULT_CLOCK)  (gnt2) |-> (req2[5]));assert property(@(posedge DEFAULT_CLOCK)  (gnt2) |-> (req2[4]));assert property(@(posedge DEFAULT_CLOCK)  (gnt2) |-> (req2[3]));assert property(@(posedge DEFAULT_CLOCK)  (gnt2) |-> (req2[2]));assert property(@(posedge DEFAULT_CLOCK)  (gnt2) |-> (req2[1]));assert property(@(posedge DEFAULT_CLOCK)  (gnt2) |-> (req2[0]));
+endmodule

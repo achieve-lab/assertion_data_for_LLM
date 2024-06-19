@@ -1,0 +1,10 @@
+property a28;
+@(posedge clk) (rxstate[0] == 1) |-> (start_da == 1);
+endproperty
+assert_a28: assert property(a28);
+
+property a27;
+@(posedge clk) (rxstate[0] == 0) |-> (start_da == 0);
+endproperty
+assert_a27: assert property(a27);
+

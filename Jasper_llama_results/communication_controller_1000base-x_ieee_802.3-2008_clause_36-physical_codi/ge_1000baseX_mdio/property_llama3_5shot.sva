@@ -1,0 +1,98 @@
+
+parameter S_PREAMBLE  = 0;
+parameter                    S_ST        = 1;
+parameter                    S_OP_CODE   = 2;
+parameter                    S_PHY_ADDR  = 3;
+parameter                    S_REG_ADDR  = 4;
+parameter                    S_TA        = 5;
+parameter                    S_WR_DATA   = 6;
+parameter                    S_RD_DATA   = 7;
+parameter                    S_WR_COMMIT = 8;
+module i_ge_1000baseX_mdio(
+   input              mdio,
+   input [4:0] phy_addr, input phy_addr_shift,
+   input [1:0] op_code, 
+   input             mdio_out,
+   input [15:0] data_in, input data_in_shift,
+   input     strobe_wr,
+   input [15:0] data_out, input data_out_load, data_out_shift, next ,
+   input     [15:0]   data_rd,	op_code_shift ,
+   input              reset, 
+   // mdio/mdc state machine inputistered part.
+   input st,
+	 input st_latch,
+   input [4:0] input_addr,
+	 input input_addr_shift,
+   input [3:0] present, 
+   input [5:0] preamble_cnt,
+   input             mdio_oe,
+   input     [4:0]   data_addr,    
+   input    [15:0]   data_wr, 
+   input              mdc,
+	input reg_addr_shift,
+	input [4:0] reg_addr,
+	input pos_cnt_inc,
+	input pos_cnt,
+	input st_match
+);
+
+assert property(@(posedge mdc) (q == 0) |-> (q_bar == 1)
+            Program 7: module JK_flipflop ( input clk, rst_n, input j, k, output reg q, output q_bar ));
+assert property(@(posedge mdc)  endmodule
+            Assertions 9: (!q) |-> q_bar);
+assert property(@(posedge mdc) (present == S_TA) |-> (next == S_TA));
+assert property(@(posedge mdc)  endmodule
+            Assertions 10: (Cout) |-> b);
+assert property(@(posedge mdc)  (Cout) |-> a
+            Program 11: module full_adder(input a,);
+assert property(@(posedge mdc) (present == S_WR_DATA & data_done) |-> (next == S_WR_COMMIT));
+assert property(@(posedge mdc) (ta1_done & op_is_wr) |-> (present == S_TA));
+assert property(@(posedge mdc) (q == 0) |-> (q_bar == 1)
+            Program 9: module JK_flipflop ( input clk, rst_n, input j, k, output reg q, output q_bar ));
+assert property(@(posedge mdc)  endmodule
+            Assertions 6: (!q) |-> q_bar);
+assert property(@(posedge mdc) (mdio) |-> (present == S_ST));
+assert property(@(posedge mdc) (present == S_PHY_ADDR & phy_addr_match & reg_addr_done) |-> (next == S_TA));
+assert property(@(posedge mdc)  q <= (k?0:q));
+assert property(@(posedge mdc) (present == S_PHY_ADDR) |-> (next == S_PHY_ADDR));
+assert property(@(posedge mdc) (data_done) |-> (present == S_WR_DATA));
+assert property(@(posedge mdc)  assign Cout = a & b);
+assert property(@(posedge mdc)  else begin q <= (j?1:q));
+assert property(@(posedge mdc) (phy_addr_match & reg_addr_done) |-> (present == S_PHY_ADDR));
+assert property(@(posedge mdc) (q == 0) |-> (q_bar == 1)
+            Program 8: module T_flipflop ( input clk, rst_n, input t, output reg q, output q_bar ));
+assert property(@(posedge mdc) (q == 0) |-> (q_bar == 1)
+            Program 10: module half_adder(input a, b, output S, Cout));
+assert property(@(posedge mdc)  (present == S_PREAMBLE & preamble_match & ~mdio) |-> (next == S_ST));
+assert property(@(posedge mdc) (present == S_RD_DATA) |-> (next == S_RD_DATA));
+assert property(@(posedge mdc) (present == S_TA & ta1_done & op_is_rd) |-> (next == S_RD_DATA));
+assert property(@(posedge mdc)  endmodule
+            Assertions 7: (!q) |-> q_bar);
+assert property(@(posedge mdc) (present == S_OP_CODE) |-> (next == S_OP_CODE));
+assert property(@(posedge mdc)  endmodule
+            Assertions 8: (!q) |-> q_bar);
+assert property(@(posedge mdc) (present == S_RD_DATA & data_done) |-> (next == S_PREAMBLE));
+assert property(@(posedge mdc) (present == S_PHY_ADDR & ~phy_addr_match) |-> (next == S_PREAMBLE));
+assert property(@(posedge mdc)  else q <= d);
+assert property(@(posedge mdc) (present == S_TA & ta1_done & op_is_wr) |-> (next == S_WR_DATA));
+assert property(@(posedge mdc) (ta1_done & op_is_rd) |-> (present == S_TA));
+assert property(@(posedge mdc)  
+            Program 6: module D_flipflop ( input clk, rst_n, input d, output reg q, output q_bar ));
+assert property(@(posedge mdc) (present == S_TA & ta1_done & ~op_is_rd & ~op_is_wr) |-> (next == S_PREAMBLE));
+assert property(@(posedge mdc)  (preamble_match & ~mdio) |-> (present == S_PREAMBLE));
+assert property(@(posedge mdc)  else begin q <= (t?~q:q));
+assert property(@(posedge mdc) (op_code_done) |-> (present == S_OP_CODE));
+assert property(@(posedge mdc)  assign S = a ^ b);
+assert property(@(posedge mdc) (present == S_WR_COMMIT) |-> (next == S_PREAMBLE));
+assert property(@(posedge mdc)  end end assign q_bar = ~q);
+assert property(@(posedge mdc)  (q == 1) |-> (q_bar == 0));
+assert property(@(posedge mdc) (present == S_PREAMBLE) |-> (next == S_PREAMBLE));
+assert property(@(posedge mdc)  always@(posedge clk) begin if(!rst_n) q <= 0);
+assert property(@(posedge mdc) (present == S_WR_DATA) |-> (next == S_WR_DATA));
+assert property(@(posedge mdc) (ta1_done & ~op_is_rd & ~op_is_wr) |-> (present == S_TA));
+assert property(@(posedge mdc) (present == S_OP_CODE & op_code_done) |-> (next == S_PHY_ADDR));
+assert property(@(posedge mdc)  end assign q_bar = ~q);
+assert property(@(posedge mdc) (data_done) |-> (present == S_RD_DATA));
+assert property(@(posedge mdc)  (!q_bar) |-> q);
+
+endmodule

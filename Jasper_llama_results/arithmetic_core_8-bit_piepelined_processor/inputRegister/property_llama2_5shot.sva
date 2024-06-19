@@ -1,0 +1,57 @@
+module i_inputRegister(
+	input [`inputNumber-1:0] inputs,
+	input inputReadOut,
+	input [`inputAddrLen-1:0] inputReadAddr,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 12) |-> (inputReadOut == inputs[12]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 15) |-> (inputReadOut == inputs[15]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 22) |-> (inputReadOut == inputs[22]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 0) |-> (inputReadOut == inputs[0]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 23) |-> (inputReadOut == inputs[23]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 17) |-> (inputReadOut == inputs[17]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 27) |-> (inputReadOut == inputs[27]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 8) |-> (inputReadOut == inputs[8]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 19) |-> (inputReadOut == inputs[19]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 38) |-> (inputReadOut == inputs[38]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 30) |-> (inputReadOut == inputs[30]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 44) |-> (inputReadOut == inputs[44]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 3) |-> (inputReadOut == inputs[3]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 21) |-> (inputReadOut == inputs[21]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 11) |-> (inputReadOut == inputs[11]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 28) |-> (inputReadOut == inputs[28]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 6) |-> (inputReadOut == inputs[6]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 43) |-> (inputReadOut == inputs[43]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 20) |-> (inputReadOut == inputs[20]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 1) |-> (inputReadOut == inputs[1]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 13) |-> (inputReadOut == inputs[13]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 4) |-> (inputReadOut == inputs[4]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 7) |-> (inputReadOut == inputs[7]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 45) |-> (inputReadOut == inputs[45]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 24) |-> (inputReadOut == inputs[24]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 41) |-> (inputReadOut == inputs[41]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 35) |-> (inputReadOut == inputs[35]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 26) |-> (inputReadOut == inputs[26]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 39) |-> (inputReadOut == inputs[39]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 25) |-> (inputReadOut == inputs[25]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 9) |-> (inputReadOut == inputs[9]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 46) |-> (inputReadOut == inputs[46]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 34) |-> (inputReadOut == inputs[34]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 5) |-> (inputReadOut == inputs[5]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 14) |-> (inputReadOut == inputs[14]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 31) |-> (inputReadOut == inputs[31]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 36) |-> (inputReadOut == inputs[36]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 18) |-> (inputReadOut == inputs[18]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 33) |-> (inputReadOut == inputs[33]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 10) |-> (inputReadOut == inputs[10]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 37) |-> (inputReadOut == inputs[37]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 32) |-> (inputReadOut == inputs[32]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 42) |-> (inputReadOut == inputs[42]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 29) |-> (inputReadOut == inputs[29]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 16) |-> (inputReadOut == inputs[16]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 40) |-> (inputReadOut == inputs[40]));
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadAddr == 2) |-> (inputReadOut == inputs[2]));
+
+endmodule

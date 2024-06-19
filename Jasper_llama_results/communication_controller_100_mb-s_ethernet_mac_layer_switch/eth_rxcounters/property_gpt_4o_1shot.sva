@@ -1,0 +1,70 @@
+module i_eth_rxcounters(
+input         DlyCrcEn,
+input        ByteCntEq1,               // Byte counter ,
+input         StateDrop,
+input        ByteCntEq0,               // Byte counter ,
+input        ByteCntEq6,               // Byte counter ,
+input   [15:0]  ByteCnt,
+input [15:0] ByteCntOut,               // Byte counter
+input        ByteCntEq4,               // Byte counter ,
+input         StateIdle,
+input        IFGCounterEq24,           // IFG counter reaches 9600 ns (960 ns)
+input        ByteCntEq3,               // Byte counter ,
+input        ByteCntGreat2,            // Byte counter > 2
+input        ByteCntMaxFrame,          // Byte counter ,
+input        ByteCntEq2,               // Byte counter ,
+input          ByteCntMax,
+input  [15:0]  ByteCntDelayed,
+input         MRxDV,
+input         r_IFG,
+input         HugEn,
+input         StatePreamble,
+input [15:0]  MaxFL,
+input        ByteCntSmall7,            // Byte counter < 7
+input         MRxDEqD,
+input         StateSFD,
+input         Transmitting,
+input [3:0]  DlyCrcCnt,                // Delayed CRC counter
+input          ResetByteCounter,
+input         MRxClk,
+input          IncrementByteCounter,
+input          ResetIFGCounter,
+input [1:0]   StateData,
+input        ByteCntEq7,               // Byte counter ,
+input        ByteCntEq5,               // Byte counter ,
+input   [4:0]   IFGCounter,
+input         Reset,
+input          IncrementIFGCounter
+);
+
+assert property(@(posedge MRxClk) (MRxDV & StateSFD & MRxDEqD) |-> (ResetByteCounter == 1));assert property(@(posedge MRxClk) 
+(StateData[0] & ByteCntMaxFrame) |-> (ResetByteCounter == 1));assert property(@(posedge MRxClk) 
+(~ResetByteCounter & MRxDV & (StatePreamble | StateSFD | StateIdle & ~Transmitting | StateData[1] & ~ByteCntMax & ~(DlyCrcEn & |DlyCrcCnt))) |-> (IncrementByteCounter == 1));assert property(@(posedge MRxClk) 
+(Reset) |=> (ByteCnt == 16'd0));assert property(@(posedge MRxClk) 
+(ResetByteCounter) |=> (ByteCnt == 16'd0));assert property(@(posedge MRxClk) 
+(IncrementByteCounter) |=> (ByteCnt == ByteCnt + 16'd1));assert property(@(posedge MRxClk) 
+(DlyCrcEn) |-> (ByteCntOut == ByteCntDelayed));assert property(@(posedge MRxClk) 
+(~DlyCrcEn) |-> (ByteCntOut == ByteCnt));assert property(@(posedge MRxClk) 
+(ByteCnt == 16'd0) |-> (ByteCntEq0 == 1));assert property(@(posedge MRxClk) 
+(ByteCnt == 16'd1) |-> (ByteCntEq1 == 1));assert property(@(posedge MRxClk) 
+(ByteCnt == 16'd2) |-> (ByteCntEq2 == 1));assert property(@(posedge MRxClk) 
+(ByteCnt == 16'd3) |-> (ByteCntEq3 == 1));assert property(@(posedge MRxClk) 
+(ByteCnt == 16'd4) |-> (ByteCntEq4 == 1));assert property(@(posedge MRxClk) 
+(ByteCnt == 16'd5) |-> (ByteCntEq5 == 1));assert property(@(posedge MRxClk) 
+(ByteCnt == 16'd6) |-> (ByteCntEq6 == 1));assert property(@(posedge MRxClk) 
+(ByteCnt == 16'd7) |-> (ByteCntEq7 == 1));assert property(@(posedge MRxClk) 
+(ByteCnt > 16'd2) |-> (ByteCntGreat2 == 1));assert property(@(posedge MRxClk) 
+(ByteCnt < 16'd7) |-> (ByteCntSmall7 == 1));assert property(@(posedge MRxClk) 
+(ByteCnt == 16'hffff) |-> (ByteCntMax == 1));assert property(@(posedge MRxClk) 
+(ByteCnt == MaxFL & ~HugEn) |-> (ByteCntMaxFrame == 1));assert property(@(posedge MRxClk) 
+(StateSFD & MRxDV & MRxDEqD | StateDrop) |-> (ResetIFGCounter == 1));assert property(@(posedge MRxClk) 
+(~ResetIFGCounter & (StateDrop | StateIdle | StatePreamble | StateSFD) & ~IFGCounterEq24) |-> (IncrementIFGCounter == 1));assert property(@(posedge MRxClk) 
+(Reset) |=> (IFGCounter == 5'h0));assert property(@(posedge MRxClk) 
+(ResetIFGCounter) |=> (IFGCounter == 5'h0));assert property(@(posedge MRxClk) 
+(IncrementIFGCounter) |=> (IFGCounter == IFGCounter + 5'd1));assert property(@(posedge MRxClk) 
+(IFGCounter == 5'h18 | r_IFG) |-> (IFGCounterEq24 == 1));assert property(@(posedge MRxClk) 
+(Reset) |=> (DlyCrcCnt == 4'h0));assert property(@(posedge MRxClk) 
+(DlyCrcCnt == 4'h9) |=> (DlyCrcCnt == 4'h0));assert property(@(posedge MRxClk) 
+(DlyCrcEn & StateSFD) |=> (DlyCrcCnt == 4'h1));assert property(@(posedge MRxClk) 
+(DlyCrcEn & (|DlyCrcCnt)) |=> (DlyCrcCnt == DlyCrcCnt + 4'd1));
+endmodule

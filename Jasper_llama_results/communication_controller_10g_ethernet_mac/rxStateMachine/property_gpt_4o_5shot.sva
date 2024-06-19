@@ -1,0 +1,24 @@
+module i_rxStateMachine(
+   input[4:0] rxstate, rxstate_next,
+    input get_sfd, // SFD has been received,
+   input crc_check_valid,//Indicate the frame passed CRC Check,
+    input receiving_d1,
+   input get_error_code,
+   input check_reset,
+   input start_da,// Start to receive Destination Address,
+   input crc_check_invalid,//Indicate the frame failed in CRC Check,
+    input recv_enable,
+   input good_frame_get,// A good frame has been received,
+   input get_terminator,//Indicate end of receiving FCS field,
+   input receiving, //Rx Engine is working, not in IDLE state and Check state.
+    input local_invalid,// The Frame's DA field is not Local MAC,
+   input    start_lt,
+    input  wait_crc_check, 
+    input length_error,//
+    input rxclk,
+   input bad_frame_get, // A bad frame has been received, 
+    input reset
+);
+
+assert property(@(posedge rxclk)  (reset) |-> (rxstate_next == IDLE));assert property(@(posedge rxclk)  (rxstate == IDLE && get_sfd && recv_enable) |-> (rxstate_next == rxReceiveDA));assert property(@(posedge rxclk)  (rxstate == IDLE && !(get_sfd && recv_enable)) |-> (rxstate_next == IDLE));assert property(@(posedge rxclk)  (rxstate == rxReceiveDA) |-> (rxstate_next == rxReceiveLT));assert property(@(posedge rxclk)  (rxstate == rxReceiveLT) |-> (rxstate_next == rxReceiveData));assert property(@(posedge rxclk)  (rxstate == rxReceiveData && (local_invalid || length_error || get_error_code)) |-> (rxstate_next == rxGetError));assert property(@(posedge rxclk)  (rxstate == rxReceiveData && get_terminator) |-> (rxstate_next == rxIFGWait));assert property(@(posedge rxclk)  (rxstate == rxReceiveData && !(local_invalid || length_error || get_error_code || get_terminator)) |-> (rxstate_next == rxReceiveData));assert property(@(posedge rxclk)  (rxstate == rxGetError && get_sfd && recv_enable) |-> (rxstate_next == rxReceiveDA));assert property(@(posedge rxclk)  (rxstate == rxGetError && !(get_sfd && recv_enable)) |-> (rxstate_next == IDLE));assert property(@(posedge rxclk)  (rxstate == rxIFGWait && get_sfd && recv_enable) |-> (rxstate_next == rxReceiveDA));assert property(@(posedge rxclk)  (rxstate == rxIFGWait && !(get_sfd && recv_enable)) |-> (rxstate_next == IDLE));assert property(@(posedge rxclk)  (posedge rxclk or posedge reset) |-> (rxstate == rxstate_next));assert property(@(posedge rxclk)  (reset) |-> (receiving_d1 == 0));assert property(@(posedge rxclk)  (posedge rxclk && !reset) |-> (receiving_d1 == receiving));assert property(@(posedge rxclk)  (reset) |-> (wait_crc_check == 0));assert property(@(posedge rxclk)  (rxstate[4]) |-> (wait_crc_check == 1));assert property(@(posedge rxclk)  (crc_check_valid || crc_check_invalid || length_error) |-> (wait_crc_check == 0));assert property(@(posedge rxclk)  (reset) |-> (bad_frame_get == 0 && good_frame_get == 0));assert property(@(posedge rxclk)  (rxstate[3] || crc_check_invalid || length_error) |-> (bad_frame_get == 1 && good_frame_get == 0));assert property(@(posedge rxclk)  (crc_check_valid) |-> (good_frame_get == 1 && bad_frame_get == 0));assert property(@(posedge rxclk)  (check_reset) |-> (good_frame_get == 0 && bad_frame_get == 0));
+endmodule

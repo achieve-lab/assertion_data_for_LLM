@@ -1,0 +1,13 @@
+bind fifo_mem
+ i_fifo_mem v_fifo_mem(
+.empty(empty),
+.r_en(r_en),
+.rclk(rclk),
+.w_en(w_en),
+.data_out(data_out),
+.data_in(data_in),
+.b_wptr(b_wptr),
+.full(full),
+.wclk(wclk),
+.b_rptr(b_rptr)
+);

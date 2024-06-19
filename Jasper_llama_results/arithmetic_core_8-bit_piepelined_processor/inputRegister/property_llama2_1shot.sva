@@ -1,0 +1,12 @@
+module i_inputRegister(
+	input [`inputNumber-1:0] inputs,
+	input inputReadOut,
+	input [`inputAddrLen-1:0] inputReadAddr,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (inputs[inputReadAddr] == 0) |-> (inputReadOut == 0));
+assert property(@(posedge DEFAULT_CLOCK) (inputs[inputReadAddr] == 1) |-> (inputReadOut == 1));
+
+endmodule

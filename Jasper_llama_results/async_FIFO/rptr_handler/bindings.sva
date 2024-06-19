@@ -1,0 +1,12 @@
+bind rptr_handler
+ i_rptr_handler v_rptr_handler(
+.b_rptr_next(b_rptr_next),
+.g_wptr_sync(g_wptr_sync),
+.g_rptr(g_rptr),
+.b_rptr(b_rptr),
+.r_en(r_en),
+.empty(empty),
+.g_rptr_next(g_rptr_next),
+.rrst_n(rrst_n),
+.rclk(rclk)
+);

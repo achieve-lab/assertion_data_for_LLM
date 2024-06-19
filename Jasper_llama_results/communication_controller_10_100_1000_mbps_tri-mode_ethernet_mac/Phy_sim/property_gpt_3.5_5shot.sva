@@ -1,0 +1,19 @@
+module i_Phy_sim(
+input			Rx_dv,
+input			Col,
+input			Rx_er,
+input			Crs,
+input	[2:0]	Speed,				
+input	[7:0]	Txd,		
+input			Tx_clk	,//used only in MII mode
+input			Tx_en	,
+input			Gtx_clk		,//used only in GMII mode
+input				Clk_25m	,//used for 100 Mbps mode
+input				Clk_2_5m	,//used for 10 Mbps mode
+input			Tx_er	,
+input			Rx_clk	,
+input 	[7:0]	Rxd						
+);
+
+assert property(@(posedge Gtx_clk) (Rx_dv && Rx_clk) |-> Rxd);assert property(@(posedge Gtx_clk)  (Rx_er && Rx_clk) |-> 0);assert property(@(posedge Gtx_clk)  (Crs && Tx_clk) |-> Txd);assert property(@(posedge Gtx_clk)  (Col && Tx_clk) |-> 0);
+endmodule

@@ -1,0 +1,21 @@
+module i_rxLinkFaultState(
+    input  get_one_fault,
+    input[1:0] last_seq_type,
+    input[2:0] linkstate, linkstate_next,
+    input      seq_cnt,
+    input      reset_col_cnt,
+    input     seq_cnt_3,
+    input local_fault,
+    input  fault_type,
+    input remote_fault,
+    input     col_cnt_64,
+    input rxclk,
+    input[1:0] seq_type,
+    input  no_new_type,
+    input reset,
+    input[5:0] col_cnt,
+    input[1:0] link_fault
+);
+
+assert property(@(posedge rxclk) (seq_type == 2'b11) |-> (linkstate == 2'b01));assert property(@(posedge rxclk) (seq_type == 2'b10) |-> (linkstate == 2'b00));assert property(@(posedge rxclk) (seq_type == 2'b01) |-> (linkstate == 2'b01));assert property(@(posedge rxclk) (seq_type == 2'b00) |-> (linkstate == 2'b00));assert property(@(posedge rxclk) (seq_type == 2'b11) |-> (link_fault == 2'b11));assert property(@(posedge rxclk) (seq_type == 2'b10) |-> (link_fault == 2'b10));assert property(@(posedge rxclk) (seq_type == 2'b01) |-> (link_fault == 2'b01));assert property(@(posedge rxclk) (seq_type == 2'b00) |-> (link_fault == 2'b00));assert property(@(posedge rxclk) (seq_type == 2'b11) |-> (seq_cnt == 2'b00));assert property(@(posedge rxclk) (seq_type == 2'b10) |-> (seq_cnt == 2'b00));assert property(@(posedge rxclk) (seq_type == 2'b01) |-> (seq_cnt == 2'b01));assert property(@(posedge rxclk) (seq_type == 2'b00) |-> (seq_cnt == 2'b00));assert property(@(posedge rxclk) (seq_type == 2'b11) |-> (last_seq_type == 2'b11));assert property(@(posedge rxclk) (seq_type == 2'b10) |-> (last_seq_type == 2'b10));assert property(@(posedge rxclk) (seq_type == 2'b01) |-> (last_seq_type == 2'b01));assert property(@(posedge rxclk) (seq_type == 2'b00) |-> (last_seq_type == 2'b00));assert property(@(posedge rxclk) (linkstate == 2'b01) |-> (linkstate_next == 2'b01));assert property(@(posedge rxclk) (linkstate == 2'b00) |-> (linkstate_next == 2'b00));assert property(@(posedge rxclk) (linkstate == 2'b01) |-> (linkstate_next == 2'b01));assert property(@(posedge rxclk) (linkstate == 2'b00) |-> (linkstate_next == 2'b00));assert property(@(posedge rxclk) (linkstate == 2'b01) |-> (reset_col_cnt == 1));assert property(@(posedge rxclk) (linkstate == 2'b00) |-> (reset_col_cnt == 1));assert property(@(posedge rxclk) (linkstate == 2'b01) |-> (reset_col_cnt == 1));assert property(@(posedge rxclk) (linkstate == 2'b00) |-> (reset_col_cnt == 1));assert property(@(posedge rxclk) (linkstate == 2'b01) |-> (seq_cnt_3 == 1));assert property(@(posedge rxclk) (linkstate == 2'b00) |-> (seq_cnt_3 == 0));assert property(@(posedge rxclk) (linkstate == 2'b01) |-> (col_cnt_64 == 1));assert property(@(posedge rxclk) (linkstate == 2'b00) |-> (col_cnt_64 == 0));
+endmodule

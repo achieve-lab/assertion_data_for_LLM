@@ -1,0 +1,151 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.9.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-04-22 17:23:03 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 420783
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:41843' '-nowindow' '-style' 'windows' '-data' 'AAABHHicdY7NDsFAFIW/IRqxsPYIImFt0bVticR2ItWiEdOgiA2P6k3GaaOSLpyb+3fuOZMxQPj03lOh/VAJiJgpfjDv7xAamij3VpNZvBodOrW5lgTKPmOOOCxbCvZiRmLWHBSOm/hC97NqrnCcuJCwER+xlLordarLVfNQf52z0i1lJ51lyl1piStnwkRsrJehJ18uzpFpG/x1lPgA7yEjEA==' '-proj' '/data/vpulav2/Work/Jasper/arithmetic_core_2d_fht/fht_8x8_core/fht_8x8_core/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper/arithmetic_core_2d_fht/fht_8x8_core/fht_8x8_core/.tmp/.initCmds.tcl' 'FPV_fht_8x8_core.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper/arithmetic_core_2d_fht/fht_8x8_core/fht_8x8_core/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/fht_8x8_core.v \
+  ${RTL_PATH}/mtx_trps_8x8_dpsram.v \
+  ${RTL_PATH}/fht_1d_x8.v \
+  ${RTL_PATH}/fht_bfly_noFF.v 
+[-- (VERI-1482)] Analyzing Verilog file './/fht_8x8_core.v'
+[INFO (VERI-1328)] .//fht_8x8_core.v(78): analyzing included file './/fht_1d_x8.v'
+[INFO (VERI-1328)] .//fht_1d_x8.v(29): analyzing included file './/fht_bfly_noFF.v'
+[INFO (VERI-1328)] .//fht_8x8_core.v(79): analyzing included file './/mtx_trps_8x8_dpsram.v'
+[-- (VERI-1482)] Analyzing Verilog file './/mtx_trps_8x8_dpsram.v'
+[WARN (VERI-1206)] .//mtx_trps_8x8_dpsram.v(152): overwriting previous definition of module 'mtx_trps_8x8_dpsram'
+[INFO (VERI-2142)] .//mtx_trps_8x8_dpsram.v(152): previous definition of design element 'mtx_trps_8x8_dpsram' is here
+[-- (VERI-1482)] Analyzing Verilog file './/fht_1d_x8.v'
+[INFO (VERI-1328)] .//fht_1d_x8.v(29): analyzing included file './/fht_bfly_noFF.v'
+[WARN (VERI-1206)] .//fht_bfly_noFF.v(130): overwriting previous definition of module 'fht_bfly_noFF'
+[INFO (VERI-2142)] .//fht_bfly_noFF.v(130): previous definition of design element 'fht_bfly_noFF' is here
+[WARN (VERI-1206)] .//fht_1d_x8.v(273): overwriting previous definition of module 'fht_1d_x8'
+[INFO (VERI-2142)] .//fht_1d_x8.v(273): previous definition of design element 'fht_1d_x8' is here
+[-- (VERI-1482)] Analyzing Verilog file './/fht_bfly_noFF.v'
+[INFO (VERI-2142)] .//fht_bfly_noFF.v(130): previous definition of design element 'fht_bfly_noFF' is here
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top fht_8x8_core
+INFO (ISW003): Top module name is "fht_8x8_core".
+[WARN (VERI-2418)] .//property.sva(1): parameter 'N' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[INFO (HIER-8002)] .//fht_8x8_core.v(151): Disabling old hierarchical reference handler
+[WARN (VERI-1927)] .//bindings.sva(13): port 'stg1_sum2' remains unconnected for this instance
+[WARN (VERI-2435)] .//bindings.sva(13): port 'clk' is not connected on this instance
+[WARN (VERI-1927)] .//fht_1d_x8.v(144): port 'rstn' remains unconnected for this instance
+[WARN (VERI-2435)] .//fht_1d_x8.v(144): port 'clk' is not connected on this instance
+[WARN (VERI-1927)] .//fht_1d_x8.v(145): port 'rstn' remains unconnected for this instance
+[WARN (VERI-2435)] .//fht_1d_x8.v(145): port 'clk' is not connected on this instance
+[WARN (VERI-1927)] .//fht_1d_x8.v(146): port 'rstn' remains unconnected for this instance
+[WARN (VERI-2435)] .//fht_1d_x8.v(146): port 'clk' is not connected on this instance
+[WARN (VERI-1927)] .//fht_1d_x8.v(147): port 'rstn' remains unconnected for this instance
+[WARN (VERI-2435)] .//fht_1d_x8.v(147): port 'clk' is not connected on this instance
+[INFO (VERI-1018)] .//fht_bfly_noFF.v(22): compiling module 'fht_bfly_noFF'
+[WARN (VERI-2457)] .//fht_bfly_noFF.v(92): assignment and/or driver for 'co' inside static function 'rca_N' is not preserved
+[WARN (VERI-2457)] .//fht_bfly_noFF.v(92): assignment and/or driver for 'sum' inside static function 'rca_N' is not preserved
+[INFO (VERI-1018)] .//fht_1d_x8.v(31): compiling module 'fht_1d_x8'
+[WARN (VERI-1209)] .//fht_1d_x8.v(92): expression size 32 truncated to fit in target size 3
+[WARN (VERI-8028)] .//fht_1d_x8.v(144): missing/open ports on instance u11_fht_bfly of module fht_bfly_noFF
+[WARN (VERI-8028)] .//fht_1d_x8.v(145): missing/open ports on instance u12_fht_bfly of module fht_bfly_noFF
+[WARN (VERI-8028)] .//fht_1d_x8.v(146): missing/open ports on instance u13_fht_bfly of module fht_bfly_noFF
+[WARN (VERI-8028)] .//fht_1d_x8.v(147): missing/open ports on instance u14_fht_bfly of module fht_bfly_noFF
+[WARN (VERI-1063)] .//fht_1d_x8.v(160): instantiating unknown module 'fht_bfly'
+[WARN (VERI-1063)] .//fht_1d_x8.v(192): instantiating unknown module 'fht_bfly'
+[WARN (VDB-1013)] .//fht_1d_x8.v(144): input port 'rstn' is not connected on this instance
+[WARN (VDB-1013)] .//fht_1d_x8.v(145): input port 'rstn' is not connected on this instance
+[WARN (VDB-1013)] .//fht_1d_x8.v(146): input port 'rstn' is not connected on this instance
+[WARN (VDB-1013)] .//fht_1d_x8.v(147): input port 'rstn' is not connected on this instance
+ERROR (ENL058): Unable to elaborate module/entity "fht_bfly" because this module/entity is missing or it contains errors.
+    Re-analyze it or use "-bbox_m fht_bfly" if you want to black box this module/entity.
+WARNING (WNL059): If you are analyzing with "-mfcu" or "-sfcu" and "-L", try using "elaborate -L libname", "set_analyze_libunboundsearch" or "analyze +libunboundsearch"
+[INFO (VERI-1018)] .//mtx_trps_8x8_dpsram.v(28): compiling module 'mtx_trps_8x8_dpsram:(N=11)'
+[WARN (VERI-1209)] .//mtx_trps_8x8_dpsram.v(101): expression size 32 truncated to fit in target size 7
+[WARN (VERI-1209)] .//mtx_trps_8x8_dpsram.v(128): expression size 32 truncated to fit in target size 7
+[WARN (VDB-1002)] .//mtx_trps_8x8_dpsram.v(70): net 'rd_DATA[7]' does not have a driver
+[INFO (VERI-1018)] .//fht_bfly_noFF.v(22): compiling module 'fht_bfly_noFF:(N=11)'
+[INFO (VERI-1018)] .//fht_1d_x8.v(31): compiling module 'fht_1d_x8:(N=11)'
+ERROR (ENL058): Unable to elaborate module/entity "fht_bfly" because this module/entity is missing or it contains errors.
+    Re-analyze it or use "-bbox_m fht_bfly" if you want to black box this module/entity.
+WARNING (WNL059): If you are analyzing with "-mfcu" or "-sfcu" and "-L", try using "elaborate -L libname", "set_analyze_libunboundsearch" or "analyze +libunboundsearch"
+[INFO (VERI-1018)] .//property.sva(3): compiling module 'i_fht_8x8_core'
+[INFO (VERI-1018)] .//fht_8x8_core.v(81): compiling module 'fht_8x8_core'
+[WARN (VERI-8028)] .//bindings.sva(2): missing/open ports on instance v_fht_8x8_core of module i_fht_8x8_core
+[WARN (VDB-1013)] .//bindings.sva(13): input port 'stg1_sum2[8]' is not connected on this instance
+[ERROR (VDB-9017)] Module fht_8x8_core could not be elaborated
+Summary of errors detected:
+	ERROR (ENL058): Unable to elaborate module/entity "fht_bfly" because this module/entity is missing or it contains errors.
+    Re-analyze it or use "-bbox_m fht_bfly" if you want to black box this module/entity.
+	ERROR (ENL058): Unable to elaborate module/entity "fht_bfly" because this module/entity is missing or it contains errors.
+    Re-analyze it or use "-bbox_m fht_bfly" if you want to black box this module/entity.
+	[ERROR (VDB-9017)] Module fht_8x8_core could not be elaborated
+ERROR (ENL034): 3 errors detected in the design file(s).
+
+ERROR: problem encountered at line 20 in file FPV_fht_8x8_core.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 1.028 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

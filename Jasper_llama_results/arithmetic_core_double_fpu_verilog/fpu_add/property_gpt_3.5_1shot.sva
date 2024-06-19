@@ -1,0 +1,40 @@
+module i_fpu_add(
+
+input           clk,
+input           rst,
+input           enable,
+input   [63:0]  opa, opb,
+input          sign,
+input  [55:0]  sum_2,
+input  [10:0]  exponent_2,
+
+input   [10:0] exponent_a,
+input   [10:0] exponent_b,
+input   [51:0] mantissa_a,
+input   [51:0] mantissa_b,
+input   expa_gt_expb,
+input   [10:0] exponent_small,
+input   [10:0] exponent_large,
+input   [51:0] mantissa_small,
+input   [51:0] mantissa_large,
+input   small_is_denorm,
+input   large_is_denorm,
+input   large_norm_small_denorm,
+input   [10:0] exponent_diff,
+input   [55:0] large_add,
+input   [55:0] small_add,
+input   [55:0] small_shift,
+input   small_shift_nonzero ,
+input    small_is_nonzero ,
+input   small_fraction_enable ,
+input   [55:0] small_shift_2,
+input   [55:0] small_shift_3,
+input   [55:0] sum,
+input   sum_overflow, // sum[55] will be 0 if there was no carry from adding the 2 numbers
+input   [10:0] exponent,
+input   sum_leading_one , // this is where the leading one resides, unless denorm
+input   denorm_to_norm
+);
+
+assert property(@(posedge clk) (sign) |-> (opa[63]));assert property(@(posedge clk) (sign) |-> (opb[63]));assert property(@(posedge clk) (exponent_a > exponent_b) |-> (exponent_small == exponent_b));assert property(@(posedge clk) !(exponent_small > 0) |-> (small_is_denorm == 1));assert property(@(posedge clk) !(exponent_large > 0) |-> (large_is_denorm == 1));assert property(@(posedge clk) ((small_is_denorm && !large_is_denorm)) |-> (large_norm_small_denorm == 1));assert property(@(posedge clk) (exponent_large - exponent_small - large_norm_small_denorm) |-> (exponent_diff == exponent_large - exponent_small - large_norm_small_denorm));assert property(@(posedge clk) (sum[55]) |-> (sum_overflow == 1));assert property(@(posedge clk) (sum_2[54]) |-> (sum_leading_one == 1));assert property(@(posedge clk) (sum_overflow) |-> (exponent == exponent_large + 1));assert property(@(posedge clk) (sum_leading_one & large_is_denorm) |-> (denorm_to_norm == 1));assert property(@(posedge clk) (denorm_to_norm) |-> (exponent_2 == exponent + 1));
+endmodule

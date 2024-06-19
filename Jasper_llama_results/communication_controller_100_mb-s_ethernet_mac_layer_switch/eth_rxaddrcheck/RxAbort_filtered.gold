@@ -1,0 +1,20 @@
+property a25;
+@(posedge clk) (RxAddressInvalid == 0) |=> (RxAbort == 0);
+endproperty
+assert_a25: assert property(a25);
+
+property a24;
+@(posedge clk) (RxAddressInvalid == 1 & ByteCntEq7 == 1 & RxCheckEn == 1) |=> (RxAbort == 1);
+endproperty
+assert_a24: assert property(a24);
+
+property a23;
+@(posedge clk) (RxCheckEn == 0) |=> (RxAbort == 0);
+endproperty
+assert_a23: assert property(a23);
+
+property a22;
+@(posedge clk) (ByteCntEq7 == 0) |=> (RxAbort == 0);
+endproperty
+assert_a22: assert property(a22);
+

@@ -1,0 +1,73 @@
+`include "defines.v"
+module i_tcReset(
+	input [`tcNumbers-1:0] resets,
+	input [`tcNumbers-1:0] resetOut,
+	input tcResetEn, resetIn,
+	input [`tcAddrLen-1:0] tcAddr,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  endcase end end assign q_bar = ~q);
+assert property(@(posedge DEFAULT_CLOCK)  else begin case ({s,r}) 2'b00: q <= q);
+assert property(@(posedge DEFAULT_CLOCK)  2'b10: q <= 0);
+assert property(@(posedge DEFAULT_CLOCK)  (resetOut[tcAddr]) |-> (resets[tcAddr]));
+assert property(@(posedge DEFAULT_CLOCK)  gnt2 = req2 & ~req1);
+assert property(@(posedge DEFAULT_CLOCK)  always @ (posedge clk) begin if (rst) q <= 0);
+assert property(@(posedge DEFAULT_CLOCK)  2'b01: q <= 1);
+assert property(@(posedge DEFAULT_CLOCK) (req4 && state == 2'b00) |-> (gnt4 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  gnt2 = req2 & ~req3 & ~req1);
+assert property(@(posedge DEFAULT_CLOCK) (req2 && state == 2'b01) |-> (gnt2 == 1));
+assert property(@(posedge DEFAULT_CLOCK) (req1 && state == 2'b01) |-> (gnt1 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  else begin case ({j,k}) 2'b00: q <= q);
+assert property(@(posedge DEFAULT_CLOCK)  gnt4 = req4 & ~req3 & ~req2 & ~req1);
+assert property(@(posedge DEFAULT_CLOCK)  default: q <= q);
+assert property(@(posedge DEFAULT_CLOCK) (req2 && state == 2'b00) |-> (gnt2 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  always @ (posedge clk or posedge rst) if (rst) state <= 0);
+assert property(@(posedge DEFAULT_CLOCK)  gnt3 = req3 & ~req4 & ~req2 & ~req1);
+assert property(@(posedge DEFAULT_CLOCK) (q == 0) |-> (q_bar == 1)
+            Program 7: module D_flipflop(input d, clk, rst, output q, q_bar));
+assert property(@(posedge DEFAULT_CLOCK)  (tcResetEn) |-> (resets[tcAddr]));
+assert property(@(posedge DEFAULT_CLOCK)  end else if (state == 2'b10) begin gnt1 = req1 & ~req3);
+assert property(@(posedge DEFAULT_CLOCK)  input req1, req2, req3, req4);
+assert property(@(posedge DEFAULT_CLOCK)  gnt2 = req2 & ~req4 & ~req1);
+assert property(@(posedge DEFAULT_CLOCK)  else begin q <= d);
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Assertions 6: (q) |-> q_bar);
+assert property(@(posedge DEFAULT_CLOCK)  always @ (*) if (state == 2'b00) begin gnt1 = req1);
+assert property(@(posedge DEFAULT_CLOCK) (q == 0) |-> (q_bar == 1)
+            Program 9: module arb4(clk, rst, req1, req2, req3, req4, gnt1, gnt2, gnt3, gnt4));
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Assertions 8: (q) |-> q_bar);
+assert property(@(posedge DEFAULT_CLOCK)  2'b11: q <= ~q);
+assert property(@(posedge DEFAULT_CLOCK)  reg gnt1, gnt2, gnt3, gnt4);
+assert property(@(posedge DEFAULT_CLOCK) (q == 0) |-> (q_bar == 1)
+            Program 8: module SR_flipflop(input s, r, clk, rst, output q, q_bar));
+assert property(@(posedge DEFAULT_CLOCK)  end else if (state == 2'b01) begin gnt1 = req1 & ~req4);
+assert property(@(posedge DEFAULT_CLOCK)  gnt4 = req4);
+assert property(@(posedge DEFAULT_CLOCK)  (q_bar) |-> q);
+assert property(@(posedge DEFAULT_CLOCK)  2'b01: q <= 0);
+assert property(@(posedge DEFAULT_CLOCK)  2'b10: q <= 1);
+assert property(@(posedge DEFAULT_CLOCK)  else state <= {gnt3, gnt4});
+assert property(@(posedge DEFAULT_CLOCK)  end endmodule
+            Assertions 9: (req1 && state == 2'b00) |-> (gnt1 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Assertions 7: (q) |-> q_bar);
+assert property(@(posedge DEFAULT_CLOCK) (req3 && state == 2'b00) |-> (gnt3 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  reg [1:0] state);
+assert property(@(posedge DEFAULT_CLOCK)  (resetOut[tcAddr]) |-> (resetIn)
+            Program 6: module JK_flipflop(input j, k, clk, rst, output q, q_bar));
+assert property(@(posedge DEFAULT_CLOCK)  gnt3 = req3);
+assert property(@(posedge DEFAULT_CLOCK)  2'b11: q <= x);
+assert property(@(posedge DEFAULT_CLOCK)  input clk, rst);
+assert property(@(posedge DEFAULT_CLOCK)  end end assign q_bar = ~q);
+assert property(@(posedge DEFAULT_CLOCK)  gnt2 = req2);
+assert property(@(posedge DEFAULT_CLOCK)  (q == 1) |-> (q_bar == 0));
+assert property(@(posedge DEFAULT_CLOCK)  reg q);
+assert property(@(posedge DEFAULT_CLOCK)  gnt3 = req3 & ~req2 & ~req1);
+assert property(@(posedge DEFAULT_CLOCK)  (resetIn) |-> (resets[tcAddr]));
+assert property(@(posedge DEFAULT_CLOCK) (req3 && state == 2);
+assert property(@(posedge DEFAULT_CLOCK)  output gnt1, gnt2, gnt3, gnt4);
+assert property(@(posedge DEFAULT_CLOCK)  end else if (state == 2'b11) begin gnt1 = req1 & ~req2);
+
+endmodule

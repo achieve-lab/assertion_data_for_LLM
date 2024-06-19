@@ -1,0 +1,51 @@
+localparam integer KEY_WIDTH = 32;
+localparam integer KEY_NUM   = 4;
+localparam integer WORD      = 8;
+localparam integer ROUNDS    = 10;
+module i_key_expander(
+	input add_w_out,
+	input  [ 31:0] g_out,
+input   [     8 - 1 : 0] rc_dir, rc_inv,
+input  [     8 - 1 : 0] rot_in[0 : 4 - 1],
+	input  [127:0] key_out,
+	input enc_dec,
+input  [32 - 1 : 0] g_func,
+	input  [  3:0] round,
+	input  [127:0] key_in,
+input  [     8 - 1 : 0] rc,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET,
+input  [32 - 1 : 0] key   [0 : 4 - 1],
+	input  [ 31:0] g_in
+
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (key_out[95:64] == key[1] ^ key[2]) |-> (add_w_out == 0));
+assert property(@(posedge DEFAULT_CLOCK) (g_func[31:24] == g_out[31:24] ^ rc) |-> (WORD == 8));
+assert property(@(posedge DEFAULT_CLOCK) (rc == 8'h80 >> (round - 2)) |-> (round > 9));
+assert property(@(posedge DEFAULT_CLOCK) (rot_in[0] == key[3][7:0]) |-> (enc_dec == 1));
+assert property(@(posedge DEFAULT_CLOCK) (rc == 8'h36) |-> (round == 9));
+assert property(@(posedge DEFAULT_CLOCK) (key_out[63:32] == key[2] ^ key[3]) |-> (add_w_out == 0));
+assert property(@(posedge DEFAULT_CLOCK) (rot_in[1] == key[3][15:8]) |-> (enc_dec == 1));
+assert property(@(posedge DEFAULT_CLOCK) (rot_in[3] == key[3][31:24]) |-> (enc_dec == 1));
+assert property(@(posedge DEFAULT_CLOCK) (rc == rc_dir) |-> (enc_dec == 1));
+assert property(@(posedge DEFAULT_CLOCK) (g_in[23:16] == rot_in[1]) |-> (KEY_NUM == 4));
+assert property(@(posedge DEFAULT_CLOCK) (g_in[15:8] == rot_in[2]) |-> (KEY_NUM == 4));
+assert property(@(posedge DEFAULT_CLOCK) (rc == 8'h01 << round) |-> (round < 8));
+assert property(@(posedge DEFAULT_CLOCK) (g_in[7:0] == rot_in[3]) |-> (KEY_NUM == 4));
+assert property(@(posedge DEFAULT_CLOCK) (g_func[7:0] == g_out[7:0]) |-> (WORD == 8));
+assert property(@(posedge DEFAULT_CLOCK) (key_out[127:96] == key[0] ^ key[1]) |-> (add_w_out == 0));
+assert property(@(posedge DEFAULT_CLOCK) (rot_in[2] == key[3][23:16] ^ key[2][23:16]) |-> (enc_dec == 0));
+assert property(@(posedge DEFAULT_CLOCK) (g_func[15:8] == g_out[15:8]) |-> (WORD == 8));
+assert property(@(posedge DEFAULT_CLOCK) (rot_in[2] == key[3][23:16]) |-> (enc_dec == 1));
+assert property(@(posedge DEFAULT_CLOCK) (rc == 8'h1b) |-> (round == 8));
+assert property(@(posedge DEFAULT_CLOCK) (rot_in[3] == key[3][31:24] ^ key[2][31:24]) |-> (enc_dec == 0));
+assert property(@(posedge DEFAULT_CLOCK)              (key_out[127:96] == key[0] ^ g_func) |-> (add_w_out == 1));
+assert property(@(posedge DEFAULT_CLOCK) (rot_in[0] == key[3][7:0] ^ key[2][7:0]) |-> (enc_dec == 0));
+assert property(@(posedge DEFAULT_CLOCK) (rot_in[1] == key[3][15:8] ^ key[2][15:8]) |-> (enc_dec == 0));
+assert property(@(posedge DEFAULT_CLOCK) (g_func == {g_out[31:24] ^ rc, g_out[23:16], g_out[15:8], g_out[7:0]}) |-> (WORD == 8));
+assert property(@(posedge DEFAULT_CLOCK) (g_func[23:16] == g_out[23:16]) |-> (WORD == 8));
+assert property(@(posedge DEFAULT_CLOCK) (rc == rc_inv) |-> (enc_dec == 0));
+assert property(@(posedge DEFAULT_CLOCK) (g_in[31:24] == rot_in[0]) |-> (KEY_NUM == 4));
+
+endmodule

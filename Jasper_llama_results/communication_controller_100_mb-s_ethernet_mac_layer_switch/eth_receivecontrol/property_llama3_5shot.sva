@@ -1,0 +1,126 @@
+module i_eth_receivecontrol(
+input [15:0]  LatchedTimerValue,
+input [7:0] RxData,
+input       RxStatusWriteLatched_sync2,
+input       ReceivedPacketGood,
+input        ResetSlotTimer,           // 
+input       TxDoneIn,
+input         DetectionWindow,          // Detection of the PAUSE frame is possible within this window
+input        SlotFinished,             // 
+input        PauseTimerEq0,            // 
+input       RxStartFrm,
+input       TxReset, 
+input         OpCodeOK,                 // PAUSE opcode detected (0x0001)
+input        ByteCntEq1,               // ByteCnt ,
+input        ByteCntEq5,               // ByteCnt ,
+input        ByteCntEq17,              // ByteCnt ,
+input        ByteCntEq15,              // ByteCnt ,
+input [15:0]  PauseTimer,
+input        ByteCntEq16,              // ByteCnt ,
+input       RxFlow,
+input  [4:0]  ByteCnt,
+input        IncrementSlotTimer,       // 
+input [15:0] TypeLength,               // 0x8808
+input       RxValid,
+input  [2:0]  DlyCrcCnt,
+input      Pause,
+input       RxReset, 
+input      ReceivedPauseFrm,
+input         Divider2,
+input       r_PassAll,
+input         PauseTimerEq0_sync2,
+input        ByteCntEq2,               // ByteCnt ,
+input        ByteCntEq4,               // ByteCnt ,
+input         ReceivedPauseFrmWAddr,
+input       MRxClk,
+input         TypeLengthOK,             // Type/Length field contains 0x8808
+input [15:0]  AssembledTimerValue,
+input [47:0] ReservedMulticast,        // 0x0180C2000001
+input  [5:0]  SlotTimer,
+input       DlyCrcEn,
+input       TxUsedDataOutDetected,
+input        ByteCntEq0,               // ByteCnt ,
+input        ByteCntEq18,              // ByteCnt ,
+input        DecrementPauseTimer,      // 
+input       TxStartFrmOut,
+input        ResetByteCnt,             // 
+input        IncrementByteCnt,         // 
+input        ByteCntEq3,               // ByteCnt ,
+input        ByteCntEq13,              // ByteCnt ,
+input       ReceiveEnd,
+input      SetPauseTimer,
+input         AddressOK,                // Multicast or unicast address detected
+input         PauseTimerEq0_sync1,
+input        ByteCntEq12,              // ByteCnt ,
+input       RxEndFrm,
+input        ByteCntEq14,              // ByteCnt ,
+input       MTxClk,
+input [47:0]MAC,
+input       TxAbortIn,
+input       ReceivedLengthOK
+);
+
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (OpCodeOK == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (TypeLengthOK == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (ByteCntEq15 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (SetPauseTimer == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (ByteCntEq14 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (PauseTimerEq0 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (AssembledTimerValue == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (TypeLengthOK == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (ResetSlotTimer == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (ByteCntEq14 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (ByteCntEq15 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (Pause == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (PauseTimerEq0 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (ByteCntEq2 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (ByteCntEq5 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (Pause == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (ReceivedPauseFrm == 0);
+assert property(@(posedge MRxClk)  (ByteCntEq15) |-> (OpCodeOK == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (ByteCntEq18 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (DecrementPauseTimer == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (ByteCntEq2 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (ByteCntEq12 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (ByteCnt == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (ReceivedPauseFrmWAddr == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (ByteCntEq1 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq14) |-> (OpCodeOK == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (ByteCntEq0 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (ReceivedPauseFrm == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (DetectionWindow == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (ByteCntEq0 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (PauseTimerEq0_sync2 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (ByteCntEq18 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (ByteCntEq3 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (ByteCntEq12 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (DlyCrcCnt == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (IncrementSlotTimer == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (ByteCntEq13 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (SlotFinished == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (ByteCntEq3 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (ReceivedPauseFrmWAddr == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (AddressOK == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (IncrementSlotTimer == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (SetPauseTimer == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (AddressOK == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq12) |-> (TypeLengthOK == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (LatchedTimerValue == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (ByteCntEq17 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (ByteCntEq4 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (ByteCntEq5 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (ResetSlotTimer == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (ByteCntEq1 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq13) |-> (TypeLengthOK == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (ByteCntEq4 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (ByteCntEq16 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (SlotFinished == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (ByteCntEq13 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq17) |-> (DecrementPauseTimer == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (PauseTimerEq0_sync1 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq5) |-> (AddressOK == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (Divider2 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (DetectionWindow == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq16) |-> (OpCodeOK == 0));
+
+endmodule

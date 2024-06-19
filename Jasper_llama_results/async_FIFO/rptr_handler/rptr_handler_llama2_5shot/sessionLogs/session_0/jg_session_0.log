@@ -1,0 +1,260 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-06-04 11:34:41 CDT
+# hostname  : pal-achieve-07.(none)
+# pid       : 30582
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:41665' '-nowindow' '-style' 'windows' '-data' 'AAABNnicdY+7CsJAEEVvFINY+B0iaBGwS20bRbANwVeUmA3rRsFGP9U/icdghBTOsLMzZ+Yus56k8FFVlWrr3gm+Is3xn3mvbxJ6atun7rTJ8tm6pV4jbkZ8zlAT5TKKdVCpI2QMSZThRjd4Sf9CLHAjK6edtvBIK6b7TO/pXMlH7LrQmp6FOGKslLdy5jNUVlPohlwaoCsgRieq4K8irjdJdOYEVDN2SVG5+gdvHK4o/A==' '-proj' '/home/vpulav2/Work/Jasper_llama/async_FIFO/rptr_handler/rptr_handler_llama2_5shot/sessionLogs/session_0' '-init' '-hidden' '/home/vpulav2/Work/Jasper_llama/async_FIFO/rptr_handler/rptr_handler_llama2_5shot/.tmp/.initCmds.tcl' 'FPV_rptr_handler.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /home/vpulav2/Work/Jasper_llama/async_FIFO/rptr_handler/rptr_handler_llama2_5shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/rptr_handler.v
+[-- (VERI-1482)] Analyzing Verilog file './/rptr_handler.v'
+[INFO (VERI-2561)] .//rptr_handler.v(13): undeclared symbol 'rempty', assumed default net type 'wire'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_llama2_5shot.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_llama2_5shot.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top rptr_handler
+INFO (ISW003): Top module name is "rptr_handler".
+[INFO (HIER-8002)] .//rptr_handler.v(30): Disabling old hierarchical reference handler
+[WARN (VERI-2435)] .//bindings.sva(12): port 'rempty' is not connected on this instance
+[INFO (VERI-1018)] .//property_llama2_5shot.sva(1): compiling module 'i_rptr_handler'
+[INFO (VERI-1018)] .//rptr_handler.v(1): compiling module 'rptr_handler'
+[WARN (VERI-8028)] .//bindings.sva(2): missing/open ports on instance v_rptr_handler of module i_rptr_handler
+[WARN (VDB-1013)] .//bindings.sva(12): input port 'rempty' is not connected on this instance
+INFO (INL208): Elaboration synthesis summary:
+  Number of synthesized netlists          3 (1 packages)
+  Single run mode                         On
+  Pipeline                                On (2 pipelined netlists)
+  Late hierarchical reference connection  On
+  Number of analyzed Verilog modules      3 (3 synthesized)
+  Number of analyzed VHDL entities        0 (0 synthesized)
+INFO (INL003): Clearing all state information (assumes, stopats, and so forth).
+rptr_handler
+[<embedded>] % 
+[<embedded>] % # Set up Clocks and Resets
+[<embedded>] % clock rclk
+[<embedded>] % reset rrst_n
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "rrst_n".
+[<embedded>] % 
+[<embedded>] % # Get design information to check general complexity
+[<embedded>] % get_design_info
+Statistics [for instance "rptr_handler"]
+---------------------------
+# Flops:         3 (9) (0 property flop bits)
+# Latches:       0 (0)
+# Gates:         95 (150)
+# Nets:          130
+# Ports:         7
+# RTL Lines:     49
+# RTL Instances: 2
+# Embedded Assumptions: 0
+# Embedded Assertions:  7
+# Embedded Covers:      7
+9
+[<embedded>] % 
+[<embedded>] % # Prove properties
+[<embedded>] % prove -all
+Ncustom1: Custom engine code is hT3Ng7hPPfiYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSl+CwjiTMAQA
+Bcustom2: Custom engine code is hT3Nm7hPr1Vp3Di1Ra2USNIGL4JypRnLKLAdF6JAyuavO2JfGCiY9OZJhcAcOUnLx5xwNdhILGrAWX9s+z2WDkKwNR7tAfClBEjRFVQeq6DU54boFgEA
+AMcustom3: Custom engine code is hT3Ng7hP/feYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSmmqwm7g9AQA
+Mpcustom4: Custom engine code is hT3NZbhP9fmY2AbBQnsjfOxn6c+6e6yL+/e8fZFmaQrnlgEA
+INFO (IPF036): Starting proof on task: "<embedded>", 14 properties to prove with 0 already proven/unreachable
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis: phase 2 of 4.
+INFO (IRS031): Running reset analysis: phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 2 iterations. Assigned values for 0 of 9 design flops, 0 of 0 design latches, 14 of 14 internal elements.
+WARNING (WRS031): 9 of 9 design flop(s) with asynchronous reset condition, but not reset. Run "get_reset_info -x_value -with_reset_pin" to get a list of such flops.
+INFO (IRS039): Reset analysis complete.
+INFO (IPF031): Settings used for proof thread 0:
+    orchestration                 = on
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = auto
+    proofgrid_per_engine_max_jobs = 1
+    max engine jobs               = auto
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+0: Using multistage preprocessing
+0: Starting reduce
+0: Finished reduce in 0s
+AMcustom5: Custom engine code is hT3N1rhP11/52HrFRS21ROp2LOjVTgPvT8L8BGXHgLhaIuqtT4nARFjUqrBL+7pLmaTOzBepZW/Jm8SSrHDybSQtoNiO3y43wk+dEoWlsZizu97Fih6O6lPVG/LpWP5SsUPwlGagLNa1FKEFvwVXyX7//8prySbvSxIHXr5er+z4RAEA
+Ncustom6: Custom engine code is hT3OXrhPByJp3TrFSTLhUmMH4KVtJgmTCnNDF46yMXOKY48m4LS5nE7yBzFjA7kDuwO/GhGUpEPiky3p3wmPn3dJZHxFMsafSoObRzSC+tn7sEY0WbTdZ/FV4hL3MYH/b1CIUvXSWR4wqEoVLsmMOD4xIPT4lI1LO6ZCO7PnnWQuLwetnvKlrXx6wCW/A+x+enqslg1YPobi4wEF/EvbzOvcTYdJvl2s4H2yZg2b2ofAVN5WvhWk1HoBAA
+ADcustom7: Custom engine code is hT3Nv7hPv1752HrFRa2kROx2f/ECJeZB2AZsLdlO8VwmIuqtT4nIDFXclhg+O+o+DMmQCekbheGk0kK28laA9gaOFDXsQp29J3X615HY1IPHJWd6FUFvCHjO+p1k652b5JJvZlShNpGlGSXAiQe/mEAj6tEBAA
+Tricustom8: Custom engine code is hT3Nu7hPt1752DvFRa0kNDiyIV97VyejwM9C/jCLJjdPvusZONHY42VYUy0Q1ZotnhcVtNc56tJ5wbxv6V2+XpdsaSlHck5vfnbYjdwj1OECy9U+7oSQ0SZE3g5ayD+Phuh4odCJTjeKa2k4elM9ldQfkAEA
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+Gcustom9: Custom engine code is hT3NibhPDfeYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncipMGcUXqAadachREE9F2PwhBUZUNw5kHnd4JdXkamORRgEA
+INFO (IPF057): 0.0.PRE: The property "rptr_handler.v_rptr_handler._assert_1" was proven in 0.00 s.
+C2custom10: Custom engine code is hT3NirhPjfWYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncgkrYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuG86XYVV00BAA
+AGcustom11: Custom engine code is hT3NirhP/fmYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInnckcwYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuHEZnZByh0BAA
+Bcustom12: Custom engine code is hT3NjrhPDfiYQADBZnYcglOvK9PfWxFtenjIyBqfrgr7if/jL/yPOuK1BAflEcW0DxNH2eDIoezN2gxlQFg81RZtiWXh7aiTAidvAQA
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+Ncustom13: Custom engine code is hT3NR7hPByFp3TrFSTLhUmMH4KWtJglTyV/c51BHEeZWamnJv767nE6PCak26bd3gf3XGN3rIRheufhDieCJQVISo+gNYUKhiUedBKGtsP/a18svAnlMJZudHxDFwK5ufsyoxsIyiAeSY2oi3tEuoDHr5gw42DFKAG3PqO3CEsl8Azzdt3pl5nGA1Ifv2H02eYsFzWb/nfp8PMb3F0krE/EgBcm8TD9Div8BAA
+INFO (IPF051): 0.0.PRE: The cover property "rptr_handler.v_rptr_handler._assert_1:precondition1" was proven unreachable in 0.00 s.
+Tricustom14: Custom engine code is hT3Nu7hP3fiYQADBZnYcglNHp9bfd7EOeniIqP/ji8sGLQu8yhsFO+wxJ+O+R0bU8g/IewXFomyos+viQnWc2xYNYmMqpo3i40O7DaZR7qfp4YqNx26KRvQ/qx0BAA
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rptr_handler.v_rptr_handler._assert_2" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rptr_handler.v_rptr_handler._assert_2:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rptr_handler.v_rptr_handler._assert_3" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rptr_handler.v_rptr_handler._assert_3:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rptr_handler.v_rptr_handler._assert_4" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rptr_handler.v_rptr_handler._assert_4:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rptr_handler.v_rptr_handler._assert_5" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rptr_handler.v_rptr_handler._assert_5:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rptr_handler.v_rptr_handler._assert_6" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rptr_handler.v_rptr_handler._assert_6:precondition1" was proven unreachable in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "rptr_handler.v_rptr_handler._assert_7" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "rptr_handler.v_rptr_handler._assert_7:precondition1" was proven unreachable in 0.00 s.
+0: Found proofs for 14 properties in preprocessing
+INFO (IPF059): 0: Completed proof on task: "<embedded>"
+
+==============================================================
+SUMMARY
+==============================================================
+           Properties Considered              : 14
+                 assertions                   : 7
+                  - proven                    : 7 (100%)
+                  - bounded_proven (user)     : 0 (0%)
+                  - bounded_proven (auto)     : 0 (0%)
+                  - marked_proven             : 0 (0%)
+                  - cex                       : 0 (0%)
+                  - ar_cex                    : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+                 covers                       : 7
+                  - unreachable               : 7 (100%)
+                  - bounded_unreachable (user): 0 (0%)
+                  - covered                   : 0 (0%)
+                  - ar_covered                : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+determined
+[<embedded>] % 
+[<embedded>] % # Report proof results
+[<embedded>] % report
+
+==============================================================
+    Jasper Verification Results
+==============================================================
+    2024.03 FCS 64 bits for Linux64 3.10.0-1160.21.1.el7.x86_64
+    Host Name: pal-achieve-07.uic.edu
+    User Name: vpulav2
+    Printed on: Tuesday, Jun 4, 2024 11:34:42 AM CDT
+    Working Directory: /home/vpulav2/Work/Jasper_llama/async_FIFO/rptr_handler
+
+
+==============================================================
+RESULTS
+==============================================================
+
+----------------------------------------------------------------------------------------------------------------
+       Name                                                    |    Result    |  Engine  |  Bound  |  Time    
+----------------------------------------------------------------------------------------------------------------
+
+---[ <embedded> ]-----------------------------------------------------------------------------------------------
+[1]   rptr_handler.v_rptr_handler._assert_1                         proven          PRE    Infinite    0.000 s      
+[2]   rptr_handler.v_rptr_handler._assert_1:precondition1           unreachable     PRE    Infinite    0.000 s      
+[3]   rptr_handler.v_rptr_handler._assert_2                         proven          PRE    Infinite    0.000 s      
+[4]   rptr_handler.v_rptr_handler._assert_2:precondition1           unreachable     PRE    Infinite    0.000 s      
+[5]   rptr_handler.v_rptr_handler._assert_3                         proven          PRE    Infinite    0.000 s      
+[6]   rptr_handler.v_rptr_handler._assert_3:precondition1           unreachable     PRE    Infinite    0.000 s      
+[7]   rptr_handler.v_rptr_handler._assert_4                         proven          PRE    Infinite    0.000 s      
+[8]   rptr_handler.v_rptr_handler._assert_4:precondition1           unreachable     PRE    Infinite    0.000 s      
+[9]   rptr_handler.v_rptr_handler._assert_5                         proven          PRE    Infinite    0.000 s      
+[10]  rptr_handler.v_rptr_handler._assert_5:precondition1           unreachable     PRE    Infinite    0.000 s      
+[11]  rptr_handler.v_rptr_handler._assert_6                         proven          PRE    Infinite    0.000 s      
+[12]  rptr_handler.v_rptr_handler._assert_6:precondition1           unreachable     PRE    Infinite    0.000 s      
+[13]  rptr_handler.v_rptr_handler._assert_7                         proven          PRE    Infinite    0.000 s      
+[14]  rptr_handler.v_rptr_handler._assert_7:precondition1           unreachable     PRE    Infinite    0.000 s      
+
+==============================================================
+ASSUMPTIONS
+==============================================================
+
+-------------------------------------------------------------------------------
+       Name    |  Expression  |  Location     |  Status      |  Dependencies                  
+-------------------------------------------------------------------------------
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % exit
+INFO (IPL005): Received request to exit from the console.
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.
+INFO (IPL018): The peak resident set memory use for this session was 0.000 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

@@ -1,0 +1,34 @@
+module i_qmult(
+	input [63:0] a_ext,
+    input [31:0] a,
+	input [63:0] a_mult,    
+    input [63:0] flip,
+        input [63:0] out,
+        input [63:0] data,
+    input [31:0] b,
+	input [63:0] result,
+	input [31:0] retVal,
+	input [63:0] r_ext,
+	input [63:0] b_mult,
+	input [63:0] b_ext,
+    input [31:0] c,
+	input DEFAULT_CLOCK,
+input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (a[32-1] && b[32-1] &&!r_ext[32-2:0]) |-> retVal[32-1]);
+assert property(@(posedge DEFAULT_CLOCK)  (!a[32-1] && b[32-1] &&!a_mult[63:32]) |-> result[32-2+15:15]);
+assert property(@(posedge DEFAULT_CLOCK)  (!a[32-1] &&!b[32-1] &&!b_mult[63:32]) |-> result[32-2+15:15]);
+assert property(@(posedge DEFAULT_CLOCK)  (a[32-1] &&!b[32-1] &&!b_mult[63:32]) |-> result[32-2+15:15]);
+assert property(@(posedge DEFAULT_CLOCK)  (a[32-1] && b[32-1] &&!r_ext[32-2:0]) |-> retVal[32-2:0]);
+assert property(@(posedge DEFAULT_CLOCK)  (a[32-1] &&!b[32-1] && result[32-2+15:15]) |-> r_ext[32-2:0]);
+assert property(@(posedge DEFAULT_CLOCK)  (a[32-1] && b[32-1] && b_ext[63:32]) |-> result[32-2+15:15]);
+assert property(@(posedge DEFAULT_CLOCK)  (!a[32-1] &&!b[32-1] &&!a_mult[63:32]) |-> result[32-2+15:15]);
+assert property(@(posedge DEFAULT_CLOCK)  (!a[32-1] && b[32-1] && result[32-2+15:15]) |-> r_ext[32-2:0]);
+assert property(@(posedge DEFAULT_CLOCK)  (a[32-1] && b[32-1] && result[32-2+15:15]) |-> r_ext[32-2:0]);
+assert property(@(posedge DEFAULT_CLOCK)  (a[32-1] &&!b[32-1] && a_ext[63:32]) |-> result[32-2+15:15]);
+assert property(@(posedge DEFAULT_CLOCK)  (a[32-1] && b[32-1] && a_ext[63:32]) |-> result[32-2+15:15]);
+assert property(@(posedge DEFAULT_CLOCK)  (!a[32-1] && b[32-1] && b_ext[63:32]) |-> result[32-2+15:15]);
+assert property(@(posedge DEFAULT_CLOCK)  (!a[32-1] &&!b[32-1] && result[32-2+15:15]) |-> retVal[32-2:0]);
+
+endmodule

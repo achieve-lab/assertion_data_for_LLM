@@ -1,0 +1,26 @@
+module i_eth_l3_checksum(
+input   [15:0]   CheckSum,
+input    Reset,
+input    MRxClk,
+input [15:0] ByteCnt,
+input            Divided_2_clk ,
+input        CSready,
+input   [1:0]    StartCalc,
+input            Divided_4_clk ,
+input   [31:0]   Sum,
+input [7:0] prev_latched_Rx,
+input [7:0] prev_latched_Rx1,
+input [7:0] RxData
+);
+
+assert property(@(posedge MRxClk)  (CSready) |-> (Sum == 32'h0));
+assert property(@(posedge MRxClk)  (CSready) |-> (StartCalc == 2'h0));
+assert property(@(posedge MRxClk)  (CSready) |-> (Divided_2_clk == 1'h0));
+assert property(@(posedge MRxClk)  (CSready) |-> (RxData == 8'h0));
+assert property(@(posedge MRxClk)  (CSready) |-> (CheckSum == 16'h0));
+assert property(@(posedge MRxClk)  (CSready) |-> (ByteCnt == 16'h0));
+assert property(@(posedge MRxClk)  (CSready) |-> (prev_latched_Rx == 8'h0));
+assert property(@(posedge MRxClk)  (CSready) |-> (prev_latched_Rx1 == 8'h0));
+assert property(@(posedge MRxClk)  (CSready) |-> (Divided_4_clk == 1'h0));
+
+endmodule

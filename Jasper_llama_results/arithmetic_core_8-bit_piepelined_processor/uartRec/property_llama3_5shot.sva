@@ -1,0 +1,65 @@
+`include "defines.v"
+module i_uartRec(
+		input [7:0] bReg, bNext,		// data recieved in this..
+		// recvd data input
+		input [1:0] stateReg, stateNext,	// current and next states
+		input rxDoneTick,
+		input [3:0] sReg, sNext,		//	counter
+		input clk, reset, sTick, rx,
+		input [`dataBits-1:0] dOut,
+		input [2:0] nReg,
+		input [2:0] nNext		// counter
+);
+
+assert property(@(posedge clk)  (stateReg == stop && sReg == 11) |-> (stateNext == stop));
+assert property(@(posedge clk)  (stateReg == start && sReg == 3) |-> (stateNext == start));
+assert property(@(posedge clk)  (stateReg == data && sReg == 15 && nReg == 0) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == data && sReg == 15 && nReg == 1) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == data && sReg == 12) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == data && sReg == 5) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == data && sReg == 8) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == data && sReg == 13) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == data && sReg == 15 && nReg == 2) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == stop && sReg == 14) |-> (stateNext == stop));
+assert property(@(posedge clk)  (rx) |-> (stateNext == idle));
+assert property(@(posedge clk)  (stateReg == data && sReg == 15 && nReg == 4) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == start && sReg == 4) |-> (stateNext == start));
+assert property(@(posedge clk)  (stateReg == data && sReg == 1) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == data && sReg == 0) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == stop && sReg == 6) |-> (stateNext == stop));
+assert property(@(posedge clk)  (stateReg == start && sReg == 1) |-> (stateNext == start));
+assert property(@(posedge clk)  (stateReg == data && sReg == 9) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == stop && sReg == 9) |-> (stateNext == stop));
+assert property(@(posedge clk)  (stateReg == data && sReg == 15 && nReg == 3) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == data && sReg == 15 && nReg == 6) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == stop && sReg == 13) |-> (stateNext == stop));
+assert property(@(posedge clk)  (stateReg == stop && sReg == 1) |-> (stateNext == stop));
+assert property(@(posedge clk)  (stateReg == stop && sReg == 7) |-> (stateNext == stop));
+assert property(@(posedge clk)  (stateReg == data && sReg == 15 && nReg == 5) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == data && sReg == 15 && nReg == 8) |-> (stateNext == stop));
+assert property(@(posedge clk)  (stateReg == stop && sReg == 2) |-> (stateNext == stop));
+assert property(@(posedge clk)  (state);
+assert property(@(posedge clk)  (stateReg == stop && sReg == 8) |-> (stateNext == stop));
+assert property(@(posedge clk)  (stateReg == stop && sReg == 3) |-> (stateNext == stop));
+assert property(@(posedge clk)  (stateReg == start && sReg == 7) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == stop && sReg == 4) |-> (stateNext == stop));
+assert property(@(posedge clk)  (stateReg == stop && sReg == 15) |-> (stateNext == idle));
+assert property(@(posedge clk)  (stateReg == data && sReg == 6) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == idle &&!rx) |-> (stateNext == start));
+assert property(@(posedge clk)  (stateReg == data && sReg == 2) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == data && sReg == 11) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == data && sReg == 7) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == start && sReg == 5) |-> (stateNext == start));
+assert property(@(posedge clk)  (stateReg == stop && sReg == 5) |-> (stateNext == stop));
+assert property(@(posedge clk)  (stateReg == data && sReg == 4) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == stop && sReg == 0) |-> (stateNext == stop));
+assert property(@(posedge clk)  (stateReg == data && sReg == 10) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == data && sReg == 3) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == start && sReg == 2) |-> (stateNext == start));
+assert property(@(posedge clk)  (stateReg == data && sReg == 14) |-> (stateNext == data));
+assert property(@(posedge clk)  (stateReg == stop && sReg == 12) |-> (stateNext == stop));
+assert property(@(posedge clk)  (stateReg == start && sReg == 6) |-> (stateNext == start));
+assert property(@(posedge clk)  (stateReg == stop && sReg == 10) |-> (stateNext == stop));
+assert property(@(posedge clk)  (stateReg == data && sReg == 15 && nReg == 7) |-> (stateNext == data));
+
+endmodule

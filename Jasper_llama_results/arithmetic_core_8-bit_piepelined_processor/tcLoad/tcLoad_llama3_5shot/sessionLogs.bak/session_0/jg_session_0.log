@@ -1,0 +1,164 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-06-04 16:57:18 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 106742
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:40417' '-nowindow' '-style' 'windows' '-data' 'AAABHnicVY67CsJAEEVPFINY+AXWFoI2YpfaSogi2IbgK0p0g24UbPRT/ZN4XYywM8zs3MfuTgBEz6qqcNF8qIXETJX/CN6/IQrw44sbPrN4eSe06su1JVR1GXLGkLCn5CBmICYlVxru4kvpV/VCabhg2bIRH7OUuy33TspNc0+7zllJs6yZyZ3KOXIol96Rt9ALhqNQ33Ml7seUk2osNNGfmTTrNv0AKtAjiQ==' '-proj' '/data/vpulav2/Work/Jasper_llama/arithmetic_core_8-bit_piepelined_processor/tcLoad/tcLoad_llama3_5shot/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper_llama/arithmetic_core_8-bit_piepelined_processor/tcLoad/tcLoad_llama3_5shot/.tmp/.initCmds.tcl' 'FPV_tcLoad.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper_llama/arithmetic_core_8-bit_piepelined_processor/tcLoad/tcLoad_llama3_5shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/tcLoad.v
+[-- (VERI-1482)] Analyzing Verilog file './/tcLoad.v'
+[INFO (VERI-1328)] .//tcLoad.v(41): analyzing included file './/timescale.v'
+[INFO (VERI-1328)] .//tcLoad.v(42): analyzing included file './/defines.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_llama3_5shot.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_llama3_5shot.sva'
+[INFO (VERI-1328)] .//property_llama3_5shot.sva(1): analyzing included file './/defines.v'
+[ERROR (VERI-1137)] .//property_llama3_5shot.sva(21): syntax error near ')'
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(10): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(10): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(10): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(10): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(11): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(11): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(11): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(11): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(12): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(12): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(12): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(12): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(13): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(13): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(13): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(13): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(14): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(14): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(14): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(14): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(15): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(15): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(15): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(15): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(16): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(16): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(16): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(16): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(17): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(17): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(17): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(17): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(18): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(18): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(18): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(18): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(19): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(19): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(19): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(19): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(20): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(20): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(20): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(20): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(22): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(22): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(22): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(22): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(23): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(23): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(23): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(23): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(24): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(24): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(24): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(24): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(25): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(25): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(25): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(25): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(26): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(26): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(26): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(26): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(27): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(27): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(27): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(27): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(28): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(28): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(28): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(28): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(29): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(29): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(29): concatenation with an unsized literal will be treated as 32 bits
+[WARN (VERI-1320)] .//property_llama3_5shot.sva(29): concatenation with an unsized literal will be treated as 32 bits
+[ERROR (VERI-1072)] .//property_llama3_5shot.sva(31): module 'i_tcLoad' is ignored due to previous errors
+Summary of errors detected:
+	[ERROR (VERI-1137)] .//property_llama3_5shot.sva(21): syntax error near ')'
+	[ERROR (VERI-1072)] .//property_llama3_5shot.sva(31): module 'i_tcLoad' is ignored due to previous errors
+ERROR (ENL034): 2 errors detected in the design file(s).
+
+ERROR: problem encountered at line 12 in file FPV_tcLoad.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.403 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

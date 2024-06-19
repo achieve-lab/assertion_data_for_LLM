@@ -1,0 +1,48 @@
+module i_rxStateMachine(
+   input[4:0] rxstate, rxstate_next,
+    input get_sfd, // SFD has been received,
+   input crc_check_valid,//Indicate the frame passed CRC Check,
+    input receiving_d1,
+   input get_error_code,
+   input check_reset,
+   input start_da,// Start to receive Destination Address,
+   input crc_check_invalid,//Indicate the frame failed in CRC Check,
+    input recv_enable,
+   input good_frame_get,// A good frame has been received,
+   input get_terminator,//Indicate end of receiving FCS field,
+   input receiving, //Rx Engine is working, not in IDLE state and Check state.
+    input local_invalid,// The Frame's DA field is not Local MAC,
+   input    start_lt,
+    input  wait_crc_check, 
+    input length_error,//
+    input rxclk,
+   input bad_frame_get, // A bad frame has been received, 
+    input reset
+);
+
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (start_lt == 0));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (good_frame_get == 1));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (wait_crc_check == 1));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (rxstate[2] == 0));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (start_da == 0));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (rxstate[4] == 0));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (wait_crc_check == 0));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (rxstate[3] == 0));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (bad_frame_get == 0));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (receiving == 1));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (rxstate[3] == 1));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (rxstate[2] == 1));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (rxstate[1] == 1));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (receiving_d1 == 0));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (good_frame_get == 0));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (rxstate[0] == 0));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (start_da == 1));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (rxstate[0] == 1));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (receiving == 0));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (start_lt == 1));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (receiving_d1 == 1));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (rxstate[1] == 0));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (rxstate[4] == 1));
+assert property(@(posedge rxclk)  (rxstate[2] & rxstate[1] & rxstate[0] & rxstate[4] & rxstate[3] & good_frame_get & bad_frame_get & wait_crc_check & start_da & start_lt & receiving & receiving_d1) |-> (bad_frame_get == 1));
+
+endmodule

@@ -1,0 +1,11 @@
+parameter WIDTH = 8;
+module i_can_register_syn(
+input [WIDTH-1:0] data_in,
+input             clk,
+input             rst_sync,
+input             we,
+input [WIDTH-1:0] data_out
+);
+
+assert property(@(posedge clk) (data_out == 8'h00) |-> (data_out == data_in)); assert property(@(posedge clk) (we == 1) |-> (data_out == data_in)); assert property(@(posedge clk) (we == 0) |-> (data_out == data_out)); assert property(@(posedge clk) (rst_sync == 1) |-> (data_out == 8'h00));
+endmodule

@@ -1,0 +1,16 @@
+bind eth_random
+ i_eth_random v_eth_random(
+.RetryCnt(RetryCnt),
+.ByteCnt(ByteCnt),
+.MTxClk(MTxClk),
+.Random(Random),
+.Reset(Reset),
+.NibCnt(NibCnt),
+.RandomEqByteCnt(RandomEqByteCnt),
+.Feedback(Feedback),
+.StateJam_q(StateJam_q),
+.RandomEq0(RandomEq0),
+.RandomLatched(RandomLatched),
+.StateJam(StateJam),
+.x(x)
+);

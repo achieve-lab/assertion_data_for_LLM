@@ -1,0 +1,92 @@
+
+localparam EMPTY   = 2'b00;
+localparam WRITE_1 = 2'b01;
+localparam WRITE_2 = 2'b10;
+localparam BYPASS  = 2'b11;
+
+//States definition for state_byte
+localparam IDLE   = 3'b100;
+localparam BYTE_0 = 3'b000;
+localparam BYTE_1 = 3'b001;
+localparam BYTE_2 = 3'b010;
+localparam BYTE_3 = 3'b011;
+
+//States definition for state_reset
+localparam NO_RESET = 3'b000;
+localparam RESET    = 3'b001;
+localparam WAIT     = 3'b010;
+localparam WRITE    = 3'b011;
+localparam RESET_2  = 3'b100;
+
+//Coding for size signal
+localparam BYTE      = 2'b00;
+localparam HALF_WORD = 2'b01;
+localparam WORD      = 2'b10;
+
+module i_crc_control_unit(
+ input byte_en,
+ input [1:0] byte_sel,
+input [2:0] state_byte,
+ input [1:0] size_in,
+ input read_wait,
+ input write,
+ input bypass_size,
+ input rst_n,
+ input clk,
+input [2:0] state_reset,
+ input clear_crc_init_sel,
+input [2:0] next_state_reset,
+ input reset_pending,
+input [1:0] next_state_full,
+ input reset_chain,
+ input set_crc_init_sel,
+ input buffer_full,
+input [1:0] state_full,
+input last_byte,
+ input bypass_byte0,
+ input crc_out_en,
+input has_data,
+input [2:0] next_state_byte
+);
+
+assert property(@(posedge clk) (size_in == BYTE && state_byte == BYTE_0) |-> (last_byte == 1));assert property(@(posedge clk) 
+(size_in == HALF_WORD && state_byte == BYTE_1) |-> (last_byte == 1));assert property(@(posedge clk) 
+(size_in == WORD && state_byte == BYTE_3) |-> (last_byte == 1));assert property(@(posedge clk) 
+(state_full == EMPTY && write == 1) |-> (next_state_full == WRITE_1));assert property(@(posedge clk) 
+(state_full == WRITE_1 && last_byte == 1 && write == 0) |-> (next_state_full == EMPTY));assert property(@(posedge clk) 
+(state_full == WRITE_1 && last_byte == 0 && write == 1) |-> (next_state_full == WRITE_2));assert property(@(posedge clk) 
+(state_full == WRITE_2 && last_byte == 1 && write == 1) |-> (next_state_full == BYPASS));assert property(@(posedge clk) 
+(state_full == WRITE_2 && last_byte == 1 && write == 0) |-> (next_state_full == WRITE_1));assert property(@(posedge clk) 
+(state_full == BYPASS && last_byte == 1 && write == 0) |-> (next_state_full == WRITE_1));assert property(@(posedge clk) 
+(state_full == WRITE_2 && last_byte == 0) |-> (buffer_full == 1));assert property(@(posedge clk) 
+(state_full == BYPASS && last_byte == 0) |-> (buffer_full == 1));assert property(@(posedge clk) 
+(state_byte != IDLE) |-> (read_wait == 1));assert property(@(posedge clk) 
+(state_full != BYPASS) |-> (bypass_byte0 == 1));assert property(@(posedge clk) 
+(state_full == WRITE_2 || state_full == BYPASS) |-> (has_data == 1));assert property(@(posedge clk) 
+(state_byte == IDLE && write == 1) |-> (next_state_byte == BYTE_0));assert property(@(posedge clk) 
+(state_byte == BYTE_0 && size_in == BYTE && write == 0 && has_data == 0) |-> (next_state_byte == IDLE));assert property(@(posedge clk) 
+(state_byte == BYTE_0 && size_in != BYTE) |-> (next_state_byte == BYTE_1));assert property(@(posedge clk) 
+(state_byte == BYTE_1 && size_in == HALF_WORD && (has_data == 1 || (write == 1 && buffer_full == 0))) |-> (next_state_byte == BYTE_0));assert property(@(posedge clk) 
+(state_byte == BYTE_1 && size_in == HALF_WORD && has_data == 0 && (write == 0 || buffer_full == 1)) |-> (next_state_byte == IDLE));assert property(@(posedge clk) 
+(state_byte == BYTE_1 && size_in != HALF_WORD) |-> (next_state_byte == BYTE_2));assert property(@(posedge clk) 
+(state_byte == BYTE_2) |-> (next_state_byte == BYTE_3));assert property(@(posedge clk) 
+(state_byte == BYTE_3 && (has_data == 1 || (write == 1 && buffer_full == 0))) |-> (next_state_byte == BYTE_0));assert property(@(posedge clk) 
+(state_byte == BYTE_3 && has_data == 0 && (write == 0 || buffer_full == 1)) |-> (next_state_byte == IDLE));assert property(@(posedge clk) 
+(state_byte == BYTE_0) |-> (byte_sel == BYTE_0));assert property(@(posedge clk) 
+(state_byte == BYTE_1) |-> (byte_sel == BYTE_1));assert property(@(posedge clk) 
+(state_byte == BYTE_2) |-> (byte_sel == BYTE_2));assert property(@(posedge clk) 
+(state_byte == BYTE_3) |-> (byte_sel == BYTE_3));assert property(@(posedge clk) 
+((state_full != BYPASS && state_byte != BYTE_0) || state_full == BYPASS) |-> (bypass_size == 0));assert property(@(posedge clk) 
+(state_byte != IDLE) |-> (crc_out_en == 1));assert property(@(posedge clk) 
+(state_byte == BYTE_0 && (size_in == HALF_WORD || size_in == WORD) && state_full != BYPASS) |-> (byte_en == 1));assert property(@(posedge clk) 
+(last_byte == 1 && has_data == 1) |-> (byte_en == 1));assert property(@(posedge clk) 
+(state_reset == NO_RESET && reset_chain == 1 && has_data == 0 && state_byte != IDLE && last_byte == 0) |-> (next_state_reset == RESET));assert property(@(posedge clk) 
+(state_reset == NO_RESET && reset_chain == 1 && has_data == 1 && last_byte == 1) |-> (next_state_reset == RESET));assert property(@(posedge clk) 
+(state_reset == NO_RESET && reset_chain == 1 && has_data == 1 && last_byte == 0) |-> (next_state_reset == WAIT));assert property(@(posedge clk) 
+(state_reset == RESET && last_byte == 1) |-> (next_state_reset == NO_RESET));assert property(@(posedge clk) 
+(state_reset == RESET && last_byte == 0 && write == 1) |-> (next_state_reset == WRITE));assert property(@(posedge clk) 
+(state_reset == WAIT && last_byte == 1 && write == 1) |-> (next_state_reset == WRITE));assert property(@(posedge clk) 
+(state_reset == WAIT && last_byte == 1 && write == 0) |-> (next_state_reset == RESET));assert property(@(posedge clk) 
+(state_reset == WAIT && last_byte == 0) |-> (next_state_reset == WAIT));assert property(@(posedge clk) 
+(state_reset == WRITE && reset_chain == 1 && last_byte == 1) |-> (next_state_reset == RESET));
+endmodule

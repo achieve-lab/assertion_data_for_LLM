@@ -1,0 +1,63 @@
+2024-06-04 13:04:17.772930 (37126) main____ INFO    ----------------------------------------
+2024-06-04 13:04:17.772971 (37126) main____ INFO    Jasper version info
+2024-06-04 13:04:17.772979 (37126) main____ INFO      tool      : Jasper 2024.03
+2024-06-04 13:04:17.772985 (37126) main____ INFO      version   : 2024.03 FCS 64 bits
+2024-06-04 13:04:17.772991 (37126) main____ INFO      build date: 2024.03.27 15:42:27 UTC
+2024-06-04 13:04:17.772995 (37126) main____ INFO    ----------------------------------------
+2024-06-04 13:04:17.772999 (37126) main____ INFO    Runtime info:
+2024-06-04 13:04:17.773003 (37126) main____ INFO      platform  : Linux 4.18.0-513.24.1.el8_9.x86_64 x86_64
+2024-06-04 13:04:17.773010 (37126) main____ INFO      hostname  : pal-achieve-08
+2024-06-04 13:04:17.773016 (37126) main____ INFO      pid       : 37126
+2024-06-04 13:04:17.773021 (37126) main____ INFO      arguments : '-style' 'windows' '-no_gui' '-allow_unsupported_OS' '-fpv' 'FPV_RMON_addr_gen.tcl' '-proj' 'RMON_addr_gen_llama3_1shot'
+2024-06-04 13:04:17.773025 (37126) main____ INFO      locale    : UTF-8
+2024-06-04 13:04:17.773029 (37126) main____ INFO    ----------------------------------------
+2024-06-04 13:04:17.773033 (37126) main____ INFO    System resource limits info:
+2024-06-04 13:04:17.773038 (37126) main____ INFO      virtual memory: unlimited
+2024-06-04 13:04:17.773043 (37126) main____ INFO      cpu time      : unlimited
+2024-06-04 13:04:17.773050 (37126) main____ INFO      processes     : 17912
+2024-06-04 13:04:17.773059 (37126) main____ INFO      stack size    : 8388608 B
+2024-06-04 13:04:17.773065 (37126) main____ INFO      core file size: 0 B
+2024-06-04 13:04:17.773070 (37126) main____ INFO      open files    : 262144
+2024-06-04 13:04:17.773075 (37126) main____ INFO      file size     : unlimited
+2024-06-04 13:04:17.773079 (37126) main____ INFO    ----------------------------------------
+2024-06-04 13:04:17.773083 (37126) main____ INFO    Memory statistics:
+2024-06-04 13:04:17.773087 (37126) main____ INFO      total physical memory  : 4648712 kB
+2024-06-04 13:04:17.773092 (37126) main____ INFO      free physical memory   : 361936 kB
+2024-06-04 13:04:17.773096 (37126) main____ INFO      committed address space: 2363300 kB
+2024-06-04 13:04:17.773100 (37126) main____ INFO    ----------------------------------------
+2024-06-04 13:04:17.773828 (37126) main____ INFO    Important environment variables:
+2024-06-04 13:04:17.773847 (37126) main____ INFO      CDS_LIC_FILE         : '5280@cadenceuic.webstore.illinois.edu'
+2024-06-04 13:04:17.773854 (37126) main____ INFO      CDS_LIC_FILE_modshare: '5280@cadenceuic.webstore.illinois.edu:1'
+2024-06-04 13:04:17.773859 (37126) main____ INFO      JASPER_INSTALL_DIR   : '/tools/Cadence/Jasper/jasper_2024.03'
+2024-06-04 13:04:17.773865 (37126) main____ INFO      JASPER_KERNEL_CHECK  : '1'
+2024-06-04 13:04:17.773869 (37126) main____ INFO      JASPER_OS_CHECK      : '0'
+2024-06-04 13:04:17.773874 (37126) main____ INFO      LANG                 : 'en_US.UTF-8'
+2024-06-04 13:04:17.773878 (37126) main____ INFO    ----------------------------------------
+2024-06-04 13:04:17.774859 (37126) lic_core INFO    Initializing license system ...
+2024-06-04 13:04:17.931518 (37126) lic_core INFO    ... license system initialized.
+2024-06-04 13:04:18.241536 (37126) lic__man INFO    Claim 'main' for <ui>.
+2024-06-04 13:04:18.241578 (37126) lic_core INFO    (1) checking out 'jasper_interactive' ...
+2024-06-04 13:04:18.268579 (37126) lic_core INFO    ... (1) checkout succeeded
+2024-06-04 13:04:18.268613 (37126) lic__man INFO    Claim 'fpv' for <ui>.
+2024-06-04 13:04:18.268626 (37126) lic_core INFO    (2) checking out 'jasper_fpv' ...
+2024-06-04 13:04:18.315196 (37126) lic_core INFO    ... (2) checkout failed (error: -5) ("FLEXnet ERROR(-5, 0, 0): No such feature exists.")
+2024-06-04 13:04:18.315217 (37126) lic_core INFO    (3) checking out 'jasper_fao' ...
+2024-06-04 13:04:18.561402 (37126) lic_core INFO    ... (3) checkout succeeded
+2024-06-04 13:04:18.562024 (37138) stdio___ INFO    Starting STDIN reader (tty: yes, tty name: '/dev/pts/3')
+2024-06-04 13:04:18.562083 (37126) main____ INFO    Tool inactivity delay is 480000 ms.
+2024-06-04 13:04:18.577640 (37126) session_ INFO    Starting analysis session with session id 'session_0' (launcher: <local>) ...
+2024-06-04 13:04:18.578600 (37126) session_ INFO    Analysis session with session id 'session_0' started (pid: 37139)
+2024-06-04 13:04:19.486500 (37126) session_ INFO    Analysis session 'session_0' connected to the console (host: 127.0.0.1:51600)
+2024-06-04 13:04:20.305178 (37126) lic__man INFO    Unclaim everything for 'session_0'.
+2024-06-04 13:04:20.373917 (37126) lic__man INFO    Claim 'fpv' for 'session_0'.
+2024-06-04 13:04:20.373960 (37126) lic__man INFO    Claim 'fpv' for 'session_0/prove-0'.
+2024-06-04 13:04:20.928631 (37126) lic__man INFO    Unclaim everything for 'session_0/prove-0'.
+2024-06-04 13:04:21.177373 (37126) main____ INFO    About to exit: request to exit with status 0 received from analysis session 'session_0'
+2024-06-04 13:04:21.306814 (37126) session_ INFO    Analysis session 'session_0' disconnected.
+2024-06-04 13:04:21.307045 (37126) lic__man INFO    Unclaim everything for 'session_0'.
+2024-06-04 13:04:21.307198 (37126) session_ INFO    Process for analysis session 'session_0' has exited with exit status '0'.
+2024-06-04 13:04:23.141255 (37138) stdio___ INFO    STDIN reader requested to stop.
+2024-06-04 13:04:23.141297 (37138) stdio___ INFO    STDIN reader stopped.
+2024-06-04 13:04:23.141461 (37126) lic_core INFO    (1) checkin jasper_interactive
+2024-06-04 13:04:23.143200 (37126) lic_core INFO    (3) checkin jasper_fao
+2024-06-04 13:04:23.145656 (37126) main____ INFO    Exiting with status 0.

@@ -1,0 +1,11 @@
+module i_PSGChannelSummer(
+input [3:0] outctrl,	// channel input enable control
+input [21:0] o,		// summed input
+input [1:0] sel ,
+input clk_i,			// master clock
+input [19:0] tmc_i,		// time-multiplexed channel input
+input [7:0] cnt		// select counter
+);
+
+assert property(@(posedge clk_i) (sel == 2'b00) |-> (o == 22'd0 + (tmc_i & {20{outctrl[0]}})); assert property(@(posedge clk_i) (sel == 2'b01) |-> (o == 22'd0 + (tmc_i & {20{outctrl[1]}})); assert property(@(posedge clk_i) (sel == 2'b10) |-> (o == 22'd0 + (tmc_i & {20{outctrl[2]}})); assert property(@(posedge clk_i) (sel == 2'b11) |-> (o == 22'd0 + (tmc_i & {20{outctrl[3]}})); assert property(@(posedge clk_i) (cnt == 8'd0) |-> (o == 22'd0 + (tmc_i & {20{outctrl[sel]}})); assert property(@(posedge clk_i) (cnt < 8'd4) |-> (o == $past(o) + (tmc_i & {20{outctrl[sel]}}));
+endmodule

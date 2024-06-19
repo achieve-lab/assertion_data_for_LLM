@@ -1,0 +1,55 @@
+
+parameter       StateCPU        =4'd00;
+parameter       StateMAC0       =4'd01;
+parameter       StateMAC1       =4'd02;
+module i_RMON_ctrl(
+input           Reg_apply_1     ,
+input           CPU_rd_apply        ,
+input           Clk             ,
+input   [15:0]  Reg_data_0      ,
+input             Pipeline,
+input   [4:0]   Reg_addr_0      ,
+input [3:0]       CurrentState /* synthesys syn_keep*/,
+input          Reg_next_1      ,
+input     CPU_rd_apply_dl2,
+input     CPU_rd_apply_dl1,
+input   [4:0]   Reg_addr_1      ,
+input [5:0]       Addra               ,
+input  [31:0]  Dina                ,
+input          Wea                 ,
+input           Reset           ,
+input          CPU_rd_grant        ,
+input [3:0]       NextState,
+input [31:0]      CPU_rd_dout         ,
+input [4:0]       StepCounter,
+input [31:0]      DoutaReg,
+input   [31:0]  Douta               ,
+input             CPU_rd_apply_input    ,
+input   [15:0]  Reg_data_1      ,
+input   [5:0]   CPU_rd_addr         ,
+input             Write,
+input             Reg_next_0      ,
+input           Reg_apply_0     ,
+input [3:0]       CurrentState_input,
+input             Read,
+input CPU_rd_apply_reg,
+input CurrentState_reg
+);
+
+assert property(@(posedge Clk) (CurrentState==StateCPU) |-> (CPU_rd_apply_reg==1));
+assert property(@(posedge Clk) (CurrentState==StateCPU) |-> (CPU_rd_apply_reg==0));
+assert property(@(posedge Clk) (CurrentState==StateCPU) |-> (CPU_rd_grant==0));
+assert property(@(posedge Clk) (CurrentState==StateMAC1) |-> (Dina==Douta+Reg_data_1));
+assert property(@(posedge Clk) (CurrentState==StateCPU) |-> (Dina==0));
+assert property(@(posedge Clk)              (CurrentState==StateMAC0) |-> (Reg_next_0==0));
+assert property(@(posedge Clk) (CurrentState==StateCPU) |-> (CPU_rd_dout==Douta));
+assert property(@(posedge Clk) (CurrentState==StateCPU) |-> (CPU_rd_grant==1));
+assert property(@(posedge Clk) (CurrentState==StateMAC1) |-> (Reg_next_1==1));
+assert property(@(posedge Clk) (CurrentState==StateMAC1) |-> (Addra=={1'd1,Reg_addr_1}));
+assert property(@(posedge Clk) (CurrentState==StateMAC0) |-> (Dina==Douta+Reg_data_0));
+assert property(@(posedge Clk) (CurrentState==StateCPU) |-> (Addra==CPU_rd_addr));
+assert property(@(posedge Clk) (CurrentState==StateMAC0) |-> (Reg_next_0==1));
+assert property(@(posedge Clk) (CurrentState==StateMAC0) |-> (Addra=={1'd0,Reg_addr_0}));
+assert property(@(posedge Clk) (CurrentState==StateMAC1) |-> (Reg_next_1==0));
+
+endmodule

@@ -1,0 +1,11 @@
+bind rxDAchecker
+ i_rxDAchecker v_rxDAchecker(
+.multi_valid(multi_valid),
+.local_valid(local_valid),
+.broad_valid(broad_valid),
+.rxclk(rxclk),
+.reset(reset),
+.MAC_Addr(MAC_Addr),
+.local_invalid(local_invalid),
+.da_addr(da_addr)
+);

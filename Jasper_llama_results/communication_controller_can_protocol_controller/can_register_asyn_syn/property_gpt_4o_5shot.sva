@@ -1,0 +1,12 @@
+parameter RESET_VALUE =0;parameter WIDTH =8 ;
+module i_can_register_asyn_syn(
+input             rst_sync,
+input             rst,
+input [WIDTH-1:0] data_out,
+input             clk,
+input [WIDTH-1:0] data_in,
+input             we
+);
+
+assert property(@(posedge clk)  (rst) |-> (data_out == RESET_VALUE));assert property(@(posedge clk)  (rst_sync) |-> (data_out == RESET_VALUE));assert property(@(posedge clk)  (we && !rst && !rst_sync) |-> (data_out == data_in));assert property(@(posedge clk)  (!we && !rst && !rst_sync) |-> (data_out == $past(data_out)));
+endmodule

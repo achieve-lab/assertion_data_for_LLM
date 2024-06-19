@@ -1,0 +1,93 @@
+module i_PSGShaper(
+input [19:0] o,		// shaped input
+input [7:0] env,	// envelop generator input
+input clk_i,		// clock
+input [11:0] tgi,	// tone generator input
+input ce			// clock enable
+);
+
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 11 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 1 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 28 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 20 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 37 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 10 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 24 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 26 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 29 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 34 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 2 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 0 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 15 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 5 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 10 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 17 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 37 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 13 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 3 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 5 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 0 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 11 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 16 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 7 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 16 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 23 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 24 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 25 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 26 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 14 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 8 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (tgi == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 13 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 36 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 21 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 30 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 28 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 0 & tgi == 1 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 30 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 27 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 18 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 36 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 6 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 1 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 6 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 0 & tgi == 1 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 15 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 17 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 31 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 32 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 34 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 25 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 21 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 18 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 0 & tgi == 0 & env == 1));
+assert property(@(posedge clk_i)  (o == 0) |-> (ce == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 4 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 9 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 12 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 35 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 9 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 22 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 7 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 20 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 22 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 29 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 12 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 3 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 19 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 23 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 27 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 32 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 33 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 0 & tgi == 0 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 14 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 33 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 35 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 19 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 4 & env == 1));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 2 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 8 & env == 0));
+assert property(@(posedge clk_i) (o == 0) |-> (ce == 1 & tgi == 31 & env == 1));
+
+endmodule

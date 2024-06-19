@@ -1,0 +1,11 @@
+bind accumulatorMUX
+ i_accumulatorMUX v_accumulatorMUX(
+.uartStatIn(uartStatIn),
+.tcLoadIn(tcLoadIn),
+.accMuxOut(accMuxOut),
+.uartDataIn(uartDataIn),
+.aluOut(aluOut),
+.immData(immData),
+.tcAccIn(tcAccIn),
+.accMuxSel(accMuxSel)
+);

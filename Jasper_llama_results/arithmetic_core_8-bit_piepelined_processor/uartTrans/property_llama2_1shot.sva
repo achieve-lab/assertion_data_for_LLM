@@ -1,0 +1,49 @@
+`include "defines.v"
+module i_uartTrans(
+		// input bit-stream
+		input [1:0] stateReg, stateNext,	// current and next states
+		input [2:0] nReg, nNext,		// counter
+		input tx, txDoneTick,
+		input		 txReg, txNext,	// current bit being transferred
+		input [3:0] sReg, sNext,		//	counter
+		input clk, reset, sTick, txStart,
+		input [7:0] bReg, bNext,		// perhaps keeps data to be sent
+		input [`dataBits-1 :0] din
+);
+
+assert property(@(posedge clk) (stateReg == 2'b11 & sTick == 1) |-> (stateNext == 2'b11));
+assert property(@(posedge clk) (stateReg == 2'b01 & sTick == 0) |-> (bNext == 8'b0));
+assert property(@(posedge clk) (stateReg == 2'b01 & sTick == 0) |-> (nNext == 3'b0));
+assert property(@(posedge clk) (stateReg == 2'b10 & sTick == 1) |-> (sNext == 4'b0));
+assert property(@(posedge clk) (stateReg == 2'b10 & sTick == 1) |-> (txNext == 1'b1));
+assert property(@(posedge clk) (stateReg == 2'b01 & sTick == 0) |-> (txNext == 1'b0));
+assert property(@(posedge clk) (stateReg == 2'b11 & sTick == 1) |-> (sNext == 4'b0));
+assert property(@(posedge clk) (stateReg == 2'b01 & sTick == 1) |-> (nNext == 3'b0));
+assert property(@(posedge clk) (stateReg == 2'b10 & sTick == 0) |-> (bNext == 8'b0));
+assert property(@(posedge clk) (stateReg == 2'b10 & sTick == 0) |-> (stateNext == 2'b10));
+assert property(@(posedge clk) (stateReg == 2'b00 & txStart == 1) |-> (nNext == 3'b0));
+assert property(@(posedge clk) (stateReg == 2'b10 & sTick == 1) |-> (nNext == 3'b0));
+assert property(@(posedge clk) (stateReg == 2'b10 & sTick == 0) |-> (txNext == 1'b1));
+assert property(@(posedge clk) (stateReg == 2'b10 & sTick == 1) |-> (stateNext == 2'b10));
+assert property(@(posedge clk) (stateReg == 2'b00 & txStart == 1) |-> (stateNext == 2'b01));
+assert property(@(posedge clk) (stateReg == 2'b00 & txStart == 0) |-> (sNext == 4'b0));
+assert property(@(posedge clk) (stateReg == 2'b01 & sTick == 0) |-> (sNext == 4'b0));
+assert property(@(posedge clk) (stateReg == 2'b00 & txStart == 0) |-> (txNext == 1'b1));
+assert property(@(posedge clk) (stateReg == 2'b00 & txStart == 1) |-> (txDoneTick == 1));
+assert property(@(posedge clk) (stateReg == 2'b01 & sTick == 0) |-> (stateNext == 2'b01));
+assert property(@(posedge clk) (stateReg == 2'b01 & sTick == 1) |-> (sNext == 4'b0));
+assert property(@(posedge clk) (stateReg == 2'b00 & txStart == 1) |-> (sNext == 4'b0));
+assert property(@(posedge clk) (stateReg == 2'b01 & sTick == 1) |-> (txNext == 1'b0));
+assert property(@(posedge clk) (stateReg == 2'b00 & txStart == 1) |-> (txNext == 1'b1));
+assert property(@(posedge clk) (stateReg == 2'b10 & sTick == 0) |-> (nNext == 3'b0));
+assert property(@(posedge clk) (stateReg == 2'b00 & txStart == 0) |-> (bNext == 8'b0));
+assert property(@(posedge clk) (stateReg == 2'b00 & txStart == 0) |-> (stateNext == 2'b00));
+assert property(@(posedge clk) (stateReg == 2'b10 & sTick == 1) |-> (bNext == din));
+assert property(@(posedge clk) (stateReg == 2'b10 & sTick == 0) |-> (sNext == 4'b0));
+assert property(@(posedge clk) (stateReg == 2'b11 & sTick == 1) |-> (bNext == din));
+assert property(@(posedge clk) (stateReg == 2'b01 & sTick == 1) |-> (bNext == din));
+assert property(@(posedge clk) (stateReg == 2'b00 & txStart == 1) |-> (bNext == din));
+assert property(@(posedge clk) (stateReg == 2'b00 & txStart == 0) |-> (nNext == 3'b0));
+assert property(@(posedge clk) (stateReg == 2'b01 & sTick == 1) |-> (stateNext == 2'b10));
+
+endmodule

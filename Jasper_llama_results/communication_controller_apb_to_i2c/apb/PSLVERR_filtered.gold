@@ -1,0 +1,11 @@
+property a3;
+@(posedge clk) (TX_EMPTY == 1) |-> (INT_TX == 1);
+endproperty
+assert_a3: assert property(a3);
+
+property a2;
+@(posedge clk) (TX_EMPTY == 0) |-> (INT_TX == 0);
+endproperty
+assert_a2: assert property(a2);
+
+

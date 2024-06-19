@@ -1,0 +1,106 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.9.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-05-02 13:38:19 CDT
+# hostname  : pal-achieve-07.(none)
+# pid       : 164962
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:44149' '-nowindow' '-style' 'windows' '-data' 'AAABKHichY7LCsIwEEVPFIu48BP8AEHRfdduqwjiTnxUUcSUPlTc6Kf6J/E2WKEr55LJ5MydIQYIn845fDQfSgERE+kX5v0tQkM9ynejTmav2g2tariyBDpdBlywrDhQcBTpi6w5S5abeKF+ppxIlpScmJ14xFzuttx7da6qh/rrlIXfFSuPGXlttC8TWYql3OXL2Wo/dDSdiFlOevX+zJXxAXovJEo=' '-proj' '/home/vpulav2/Work/Jasper/ge_1000baseX_rx/ge_1000baseX_rx/sessionLogs/session_0' '-init' '-hidden' '/home/vpulav2/Work/Jasper/ge_1000baseX_rx/ge_1000baseX_rx/.tmp/.initCmds.tcl' 'FPV_ge_1000baseX_rx.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /home/vpulav2/Work/Jasper/ge_1000baseX_rx/ge_1000baseX_rx/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/ge_1000baseX_rx.v
+[-- (VERI-1482)] Analyzing Verilog file './/ge_1000baseX_rx.v'
+[INFO (VERI-1328)] .//ge_1000baseX_rx.v(54): analyzing included file './/timescale.v'
+[INFO (VERI-1328)] .//ge_1000baseX_rx.v(56): analyzing included file './/ge_1000baseX_regs.v'
+[INFO (VERI-1328)] .//ge_1000baseX_rx.v(57): analyzing included file './/ge_1000baseX_constants.v'
+[INFO (VERI-2561)] .//ge_1000baseX_rx.v(421): undeclared symbol 'ability_matched1', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_rx.v(422): undeclared symbol 'ability_matched2', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_rx.v(424): undeclared symbol 'ability_matched', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_rx.v(442): undeclared symbol 'rx_config_match1', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_rx.v(443): undeclared symbol 'rx_config_match2', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_rx.v(445): undeclared symbol 'rx_config_match', assumed default net type 'wire'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top ge_1000baseX_rx
+INFO (ISW003): Top module name is "ge_1000baseX_rx".
+[INFO (VERI-9030)] .//bindings.sva(27): undeclared symbol 'ebi_rxd_d1_Y' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(36): undeclared symbol 'ebi_rxd_d2_Y' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(37): undeclared symbol 'ebi_rxd_d2_X' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(41): undeclared symbol 'ebi_rxd_d3_Y' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(58): undeclared symbol 'ebi_rxd_X' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(75): undeclared symbol 'ebi_rxd_d1_X' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(101): undeclared symbol 'ebi_rxd_d3_X' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(106): undeclared symbol 'ebi_rxd_Y' in bind instance actual, assumed default net type 'wire'
+[ERROR (VERI-1274)] .//bindings.sva(88): formal port 'ability_matched_reg' expects a modport or interface instance actual
+[ERROR (VDB-9017)] Module ge_1000baseX_rx could not be elaborated
+Summary of errors detected:
+	[ERROR (VERI-1274)] .//bindings.sva(88): formal port 'ability_matched_reg' expects a modport or interface instance actual
+	[ERROR (VDB-9017)] Module ge_1000baseX_rx could not be elaborated
+ERROR (ENL034): 2 errors detected in the design file(s).
+
+ERROR: problem encountered at line 17 in file FPV_ge_1000baseX_rx.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.453 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

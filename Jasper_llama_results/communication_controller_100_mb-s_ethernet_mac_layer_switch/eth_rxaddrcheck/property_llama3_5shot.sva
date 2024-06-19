@@ -1,0 +1,112 @@
+module i_eth_rxaddrcheck(
+ input RxCheckEn,
+  input [47:0] MAC,
+  input        Reset, 
+  input        ByteCntEq7,
+  input        PassAll,
+  input [1:0]  StateData,
+  input        ByteCntEq6,
+ input ByteCntEq2,
+  input        ByteCntEq0,
+  input [7:0]  RxData, 
+ input UnicastOK,
+  input [31:0] HASH1, 
+ input RxAddressInvalid,
+  input        r_Bro, 
+  input        MRxClk, 
+ input MulticastOK,
+ input HashBit,
+ input AddressMiss,
+  input [31:0] HASH0, 
+  input        ByteCntEq5,
+  input        ByteCntEq3,
+  input [5:0]  CrcHash, 
+ input ByteCntEq4, 
+  input        r_Pro, 
+  input        Broadcast, 
+  input       RxAbort,
+ input [7:0]  ByteHash,
+ input [31:0] IntHash,
+ input BroadcastOK,
+  input        RxEndFrm,
+  input        CrcHashGood, 
+  input        ControlFrmAddressOK,
+  input        Multicast 
+);
+
+assert property(@(posedge MRxClk)  (Reset) |-> MulticastOK);
+assert property(@(posedge MRxClk) (ByteCntEq3 && UnicastOK) |-> (RxData[7:0] == MAC[39:32]));
+assert property(@(posedge MRxClk) (!Cout && a) |-> S""",
+        )
+        self.assertEqual(
+            self._test_sv_assertion_generation(
+                "half_adder", ["a", "b", "S", "Cout"]
+            ),
+            """(Cout) |-> b);
+assert property(@(posedge MRxClk) (req1 == 1 & req2 == 0) |-> (gnt1 == 1));
+assert property(@(posedge MRxClk)  (ByteCntEq7 && RxCheckEn && RxAddressInvalid) |-> RxAbort);
+assert property(@(posedge MRxClk)  (Reset) |-> AddressMiss);
+assert property(@(posedge MRxClk) (ByteCntEq4 && UnicastOK) |-> (RxData[7:0] == MAC[31:24]));
+assert property(@(posedge MRxClk)  (RxData[7:0] == MAC[15:8]) |-> UnicastOK);
+assert property(@(posedge MRxClk)  (RxEndFrm || RxAbort) |-> AddressMiss);
+assert property(@(posedge MRxClk) (req2 == 1 & req1 == 0) |-> (gnt2 == 1));
+assert property(@(posedge MRxClk) (req2 == 0) |-> (gnt2 == 0));
+assert property(@(posedge MRxClk)  (CrcHashGood && Multicast) |-> MulticastOK);
+assert property(@(posedge MRxClk)  (ByteCntEq7 && RxCheckEn && (UnicastOK || BroadcastOK || MulticastOK || (PassAll && ControlFrmAddressOK))) |-> AddressMiss);
+assert property(@(posedge MRxClk) (req1 == 0) |-> (gnt1 == 0));
+assert property(@(posedge MRxClk)  (ByteCntEq2 && RxCheckEn) |-> UnicastOK);
+assert property(@(posedge MRxClk) (req1 == 1 & state == 0) |-> (gnt2 == 0));
+assert property(@(posedge MRxClk)  (RxAddressInvalid && ByteCntEq7 && RxCheckEn) |-> RxAbort);
+assert property(@(posedge MRxClk)  (ByteCntEq0) |-> AddressMiss);
+assert property(@(posedge MRxClk) (req1 == 1 & state == 0) |-> (gnt1 == 1));
+assert property(@(posedge MRxClk)  (gnt2) |-> (req2));
+assert property(@(posedge MRxClk)  (gnt1) |-> (req1));
+assert property(@(posedge MRxClk)  (Reset) |-> UnicastOK);
+assert property(@(posedge MRxClk)  (ByteCntEq5 && RxCheckEn) |-> UnicastOK);
+assert property(@(posedge MRxClk) (ByteCntEq6 && UnicastOK) |-> (RxData[7:0] == MAC[15:8]));
+assert property(@(posedge MRxClk)  (RxEndFrm || RxAbort) |-> MulticastOK);
+assert property(@(posedge MRxClk)  (RxEndFrm || RxAbort) |-> RxAbort);
+assert property(@(posedge MRxClk) (ByteCntEq5 && UnicastOK) |-> (RxData[7:0] == MAC[23:16]));
+assert property(@(posedge MRxClk)  (RxData[7:0] == MAC[7:0]) |-> UnicastOK);
+assert property(@(posedge MRxClk) (Cout) |-> a""",
+        )
+        self.assertEqual(
+            self._test_sv_assertion_generation(
+                "T_flipflop", ["clk", "rst_n", "t", "q", "q_bar"]
+            ),
+            """(!q) |->);
+assert property(@(posedge MRxClk)  (RxEndFrm || RxAbort) |-> UnicastOK);
+assert property(@(posedge MRxClk)  (ByteCntEq4 && RxCheckEn) |-> UnicastOK);
+assert property(@(posedge MRxClk)  (RxData[7:0] == MAC[31:24]) |-> UnicastOK);
+assert property(@(posedge MRxClk)  (Reset) |-> RxAbort
+            """
+        ),
+    )
+    def test_sv_assertion_generation(self):
+        """Test SV assertion generation."""
+        self.maxDiff = None
+        self.assertEqual(
+            self._test_sv_assertion_generation(
+                "arb2", ["clk", "rst", "req1", "req2", "gnt1", "gnt2"]
+            ),
+            """(state == 1 & req2 == 1) |-> (gnt1 == 0));
+assert property(@(posedge MRxClk)  (RxData[7:0] == MAC[23:16]) |-> UnicastOK);
+assert property(@(posedge MRxClk)  (ByteCntEq2 && UnicastOK) |-> (RxData[7:0] == MAC[47:40]));
+assert property(@(posedge MRxClk)  """,
+        )
+        self.assertEqual(
+            self._test_sv_assertion_generation(
+                "full_adder", ["a", "b", "cin", "S", "Cout"]
+            ),
+            """(!Cout && cin) |-> S);
+assert property(@(posedge MRxClk) (!Cout && b) |-> S);
+assert property(@(posedge MRxClk)  (ByteCntEq7 && RxCheckEn) |-> UnicastOK);
+assert property(@(posedge MRxClk) (MulticastOK && CrcHashGood) |-> HashBit);
+assert property(@(posedge MRxClk)  (ByteCntEq6 && RxCheckEn) |-> UnicastOK);
+assert property(@(posedge MRxClk) (ByteCntEq7 && UnicastOK) |-> (RxData[7:0] == MAC[7:0]));
+assert property(@(posedge MRxClk)  (RxData[7:0] == MAC[39:32]) |-> UnicastOK);
+assert property(@(posedge MRxClk)  (ByteCntEq3 && RxCheckEn) |-> UnicastOK);
+assert property(@(posedge MRxClk) (req2 == 1 & state == 1) |-> (gnt2 == 1));
+assert property(@(posedge MRxClk)  (RxData[7:0] == MAC[47:40]) |-> UnicastOK);
+
+endmodule

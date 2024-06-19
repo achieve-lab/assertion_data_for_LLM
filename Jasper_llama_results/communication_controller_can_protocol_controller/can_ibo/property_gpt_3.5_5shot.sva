@@ -1,0 +1,9 @@
+module i_can_ibo(
+input  [7:0] do_can,
+input   [7:0] di,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (do_can[0] == di[7]));assert property(@(posedge DEFAULT_CLOCK)  (do_can[1] == di[6]));assert property(@(posedge DEFAULT_CLOCK)  (do_can[2] == di[5]));assert property(@(posedge DEFAULT_CLOCK)  (do_can[3] == di[4]));assert property(@(posedge DEFAULT_CLOCK)  (do_can[4] == di[3]));assert property(@(posedge DEFAULT_CLOCK)  (do_can[5] == di[2]));assert property(@(posedge DEFAULT_CLOCK)  (do_can[6] == di[1]));assert property(@(posedge DEFAULT_CLOCK)  (do_can[7] == di[0]));
+endmodule

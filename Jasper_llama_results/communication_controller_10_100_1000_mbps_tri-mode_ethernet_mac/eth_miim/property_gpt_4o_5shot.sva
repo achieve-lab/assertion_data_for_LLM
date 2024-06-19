@@ -1,0 +1,74 @@
+module i_eth_miim(
+input           WCtrlData_q2,       // Write Control Data operation delayed 2 Clk cycles
+input          LatchByte1_d2,
+input          MdcEn,              // MII Management Data Clock Enable signal is asserted for one Clk period before Mdc rises.
+input           LatchByte0_d,
+input          StartOp,            // Start Operation (start of any of the preceding operations)
+input           UpdateMIIRX_DATAReg,// Updates MII RX_DATA inputister with read data
+input           WCtrlData_q3,       // Write Control Data operation delayed 3 Clk cycles
+input           LatchByte1_d,
+input           WCtrlDataStart_q1,  // Start Write Control Data Command delayed 1 Mdc cycle
+input           InProgress,         // Operation in progress
+input           EndBusy,            // End Busy signal (stops the operation in progress)
+input        Busy,               // Busy Signal
+input           WCtrlData_q1,       // Write Control Data operation delayed 1 Clk cycle
+input           RStat_q1,           // Read Status operation delayed 1 Clk cycle
+input          WriteDataOp,        // Write Data Operation (positive edge detected)
+input   [4:0] Fiad,               // PHY Address
+input   [7:0] Divider,            // Divider for the host clock
+input          LatchByte0_d2,
+input           InProgress_q2,      // Operation in progress delayed 2 Mdc cycles
+input          MdcFrame,           // Frame window for limiting the Mdc
+input         WCtrlData,          // Write Control Data operation
+input           SyncStatMdcEn,      // Scan Status operation delayed at least cycles and synchronized to MdcEn
+input           InProgress_q3,      // Operation in progress delayed 3 Mdc cycles
+input           WCtrlDataStart_q2,  // Start Write Control Data Command delayed 2 Mdc cycles
+input           RStatStart_q1,      // Start Read Status Command delayed 1 Mdc cycle
+input        Nvalid,             // Invalid Status (qualifier for the valid scan result)
+input         NoPre,              // No Preamble (no 32-bit preamble)
+input          ReadStatusOp,       // Read Status Operation (positive edge detected)
+input          ScanStatusOp,       // Scan Status Operation (positive edge detected)
+input         Mdi,
+input           ScanStat_q2,        // Scan Status operation delayed 2 cycles
+input           RStat_q2,           // Read Status operation delayed 2 Clk cycles
+input           WriteOp,            // Write Operation Latch (When asserted, write operation is in progress)
+input        WCtrlDataStart,     // This signals resets the WCTRLDATA bit in the MIIM Command inputister
+input  [15:0] CtrlData,           // Control Data (to be written to the PHY input.)
+input        RStatStart,         // This signal resets the RSTAT BIT in the MIIM Command inputister
+input           ScanStat_q1,        // Scan Status operation delayed 1 cycle
+input          EndOp,              // End of Operation
+input         ScanStat,           // Scan Status operation
+input         Reset,              // General Reset
+input           InProgress_q1,      // Operation in progress delayed 1 Mdc cycle
+input     [6:0] BitCounter,         // Bit Counter
+input        Mdc,                // MII Management Data Clock
+input           RStat_q3,           // Read Status operation delayed 3 Clk cycles
+input [15:0] Prsd,               // Read Status Data (data read from the PHY)
+input           EndBusy_d,          // Pre-end Busy signal
+input           WCtrlDataStart_q,
+input         Clk,                // Host Clock
+input           RStatStart_q2,      // Start Read Status Command delayed 2 Mdc cycles
+input         RStat,              // Read Status operation
+
+input           MdoEn_2d,
+input         ShiftedBit,         // This bit is input of the shift inputister and is connected to the Mdo signal
+input           MdoEn_d,
+input           Mdo_d,
+input           Mdo,                // MII Management Data Output
+input           Mdo_2d,
+input           MdoEn,
+input          SerialEn,
+input   [7:0] ShiftReg,         // Shift inputister for shifting the data in and out
+input       MdcEn_n,          // Enable signal is asserted for one Clk period before Mdc falls.
+input [4:0] Rgad,             // Register address (within the selected PHY)
+input [3:0] ByteSelect,       // Byte select
+input [1:0] LatchByte,        // Byte select for latching (read operation)
+input      LinkFail,         // Link Integrity Signal
+input TempDivider,
+input Counter,
+input CounterPreset,
+input CountEq0
+);
+
+assert property(@(posedge Clk)  (Reset) |-> (EndBusy_d == 0 && EndBusy == 0));assert property(@(posedge Clk)  (Reset) |-> (UpdateMIIRX_DATAReg == 0));assert property(@(posedge Clk)  (EndBusy && ~WCtrlDataStart_q) |-> (UpdateMIIRX_DATAReg == 1));assert property(@(posedge Clk)  (Reset) |-> (WCtrlData_q1 == 0 && WCtrlData_q2 == 0 && WCtrlData_q3 == 0 && RStat_q1 == 0 && RStat_q2 == 0 && RStat_q3 == 0 && ScanStat_q1 == 0 && ScanStat_q2 == 0 && SyncStatMdcEn == 0));assert property(@(posedge Clk)  (MdcEn) |-> (SyncStatMdcEn == ScanStat_q2));assert property(@(posedge Clk)  (EndBusy) |-> (WCtrlDataStart == 0 && RStatStart == 0));assert property(@(posedge Clk)  (WCtrlData_q2 && ~WCtrlData_q3) |-> (WCtrlDataStart == 1));assert property(@(posedge Clk)  (RStat_q2 && ~RStat_q3) |-> (RStatStart == 1));assert property(@(posedge Clk)  (Reset) |-> (Nvalid == 0));assert property(@(posedge Clk)  (~InProgress_q2 && InProgress_q3) |-> (Nvalid == 0));assert property(@(posedge Clk)  (ScanStat_q2 && ~SyncStatMdcEn) |-> (Nvalid == 1));assert property(@(posedge Clk)  (Reset) |-> (WCtrlDataStart_q1 == 0 && WCtrlDataStart_q2 == 0 && RStatStart_q1 == 0 && RStatStart_q2 == 0 && InProgress_q1 == 0 && InProgress_q2 == 0 && InProgress_q3 == 0 && LatchByte0_d == 0 && LatchByte1_d == 0 && LatchByte == 2'b00));assert property(@(posedge Clk)  (MdcEn) |-> (WCtrlDataStart_q1 == WCtrlDataStart && WCtrlDataStart_q2 == WCtrlDataStart_q1 && RStatStart_q1 == RStatStart && RStatStart_q2 == RStatStart_q1 && LatchByte[0] == LatchByte0_d && LatchByte[1] == LatchByte1_d && LatchByte0_d == LatchByte0_d2 && LatchByte1_d == LatchByte1_d2 && InProgress_q1 == InProgress && InProgress_q2 == InProgress_q1 && InProgress_q3 == InProgress_q2));assert property(@(posedge Clk)  (Reset) |-> (Busy == 0));assert property(@(posedge Clk)  (WCtrlData || WCtrlDataStart || RStat || RStatStart || SyncStatMdcEn || EndBusy || InProgress || InProgress_q3 || Nvalid) |-> (Busy == 1));assert property(@(posedge Clk)  (Reset) |-> (InProgress == 0 && WriteOp == 0));assert property(@(posedge Clk)  (MdcEn && StartOp && ~InProgress) |-> (WriteOp == WriteDataOp && InProgress == 1));assert property(@(posedge Clk)  (MdcEn && EndOp) |-> (InProgress == 0 && WriteOp == 0));assert property(@(posedge Clk)  (Reset) |-> (BitCounter == 7'h0));assert property(@(posedge Clk)  (MdcEn && InProgress && NoPre && BitCounter == 7'h0) |-> (BitCounter == 7'h21));assert property(@(posedge Clk)  (MdcEn && InProgress && ~NoPre && BitCounter != 7'h0) |-> (BitCounter == BitCounter + 1'b1));assert property(@(posedge Clk)  (MdcEn && ~InProgress) |-> (BitCounter == 7'h0));assert property(@(posedge Clk)  (EndOp) |-> (BitCounter == 63));assert property(@(posedge Clk)  (InProgress && ((NoPre && BitCounter == 7'h0) || (~NoPre && BitCounter == 7'h20))) |-> (ByteSelect[0] == 1));assert property(@(posedge Clk)  (InProgress && BitCounter == 7'h28) |-> (ByteSelect[1] == 1));assert property(@(posedge Clk)  (InProgress && WriteOp && BitCounter == 7'h30) |-> (ByteSelect[2] == 1));assert property(@(posedge Clk)  (InProgress && WriteOp && BitCounter == 7'h38) |-> (ByteSelect[3] == 1));assert property(@(posedge Clk)  (InProgress && ~WriteOp && BitCounter == 7'h37) |-> (LatchByte1_d2 == 1));assert property(@(posedge Clk)  (InProgress && ~WriteOp && BitCounter == 7'h3F) |-> (LatchByte0_d2 == 1));
+endmodule

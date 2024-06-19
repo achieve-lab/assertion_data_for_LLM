@@ -1,0 +1,14 @@
+module i_Ramdon_gen(
+input           Reset           ,
+input [9:0]       Ramdom          ,
+input   [3:0]   RetryCnt        ,
+input [9:0]       Ramdom_counter  ,
+input [9:0]       Random_sequence ,
+input [7:0]       Slot_time_counter, //256*2,
+input           Clk             ,
+input           Init            ,
+input          Random_time_meet   
+);
+
+assert property(@(posedge Clk) (Random_time_meet && !Init) |-> (Slot_time_counter == 0));assert property(@(posedge Clk)  (!Random_time_meet && !Init) |-> (Slot_time_counter != 0));assert property(@(posedge Clk)  (Random_time_meet && !Init) |-> (Ramdom_counter == 0));assert property(@(posedge Clk)  (!Random_time_meet && !Init) |-> (Ramdom_counter != 0));
+endmodule

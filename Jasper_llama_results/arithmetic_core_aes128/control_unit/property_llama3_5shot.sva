@@ -1,0 +1,219 @@
+localparam AES_CR    = 4'd00;
+localparam AES_SR    = 4'd01;
+localparam AES_DINR  = 4'd02;
+localparam AES_DOUTR = 4'd03;
+localparam AES_KEYR0 = 4'd04;
+localparam AES_KEYR1 = 4'd05;
+localparam AES_KEYR2 = 4'd06;
+localparam AES_KEYR3 = 4'd07;
+localparam AES_IVR0  = 4'd08;
+localparam AES_IVR1  = 4'd09;
+localparam AES_IVR2  = 4'd10;
+localparam AES_IVR3  = 4'd11;
+
+//=============================================================================
+// Operation Modes
+//=============================================================================
+localparam ENCRYPTION     = 2'b00;
+localparam KEY_DERIVATION = 2'b01;
+localparam DECRYPTION     = 2'b10;
+localparam DECRYP_W_DERIV = 2'b11;
+
+//=============================================================================
+// AES Modes
+//=============================================================================
+localparam ECB = 2'b00;
+localparam CBC = 2'b01;
+localparam CTR = 2'b10;
+
+//=============================================================================
+// SBOX SEL
+//=============================================================================
+localparam COL_0 = 3'b000;
+localparam COL_1 = 3'b001;
+localparam COL_2 = 3'b010;
+localparam COL_3 = 3'b011;
+localparam G_FUNCTION = 3'b100;
+
+//=============================================================================
+// RK_SEL
+//=============================================================================
+localparam COL        = 2'b00;
+localparam MIXCOL_IN  = 2'b01;
+localparam MIXCOL_OUT = 2'b10;
+
+//=============================================================================
+// KEY_OUT_SEL
+//=============================================================================
+localparam KEY_0 = 2'b00;
+localparam KEY_1 = 2'b01;
+localparam KEY_2 = 2'b10;
+localparam KEY_3 = 2'b11;
+
+//=============================================================================
+// COL_SEL
+//=============================================================================
+localparam SHIFT_ROWS = 2'b00;
+localparam ADD_RK_OUT = 2'b01;
+localparam INPUT      = 2'b10;
+
+//=============================================================================
+// KEY_SEL
+//=============================================================================
+localparam KEY_HOST = 1'b0;
+localparam KEY_OUT  = 1'b1;
+
+//=============================================================================
+// KEY_EN
+//=============================================================================
+localparam KEY_DIS  = 4'b0000;
+localparam EN_KEY_0 = 4'b0001;
+localparam EN_KEY_1 = 4'b0010;
+localparam EN_KEY_2 = 4'b0100;
+localparam EN_KEY_3 = 4'b1000;
+localparam KEY_ALL  = 4'b1111;
+
+//=============================================================================
+// COL_EN
+//=============================================================================
+localparam COL_DIS  = 4'b0000;
+localparam EN_COL_0 = 4'b0001;
+localparam EN_COL_1 = 4'b0010;
+localparam EN_COL_2 = 4'b0100;
+localparam EN_COL_3 = 4'b1000;
+localparam COL_ALL  = 4'b1111;
+
+//=============================================================================
+// IV_CNT_SEL
+//=============================================================================
+localparam IV_CNT = 1'b1;
+localparam IV_BUS = 1'b0;
+
+//=============================================================================
+// ENABLES
+//=============================================================================
+localparam ENABLE = 1'b1;
+localparam DISABLE = 1'b0;
+
+localparam NUMBER_ROUND      = 4'd10;
+localparam NUMBER_ROUND_INC  = 4'd11;
+localparam INITIAL_ROUND     = 4'd00;
+
+//=============================================================================
+// FSM STATES
+//=============================================================================
+localparam IDLE        = 4'd00;
+localparam ROUND0_COL0 = 4'd01;
+localparam ROUND0_COL1 = 4'd02;
+localparam ROUND0_COL2 = 4'd03;
+localparam ROUND0_COL3 = 4'd04;
+localparam ROUND_KEY0  = 4'd05;
+localparam ROUND_COL0  = 4'd06;
+localparam ROUND_COL1  = 4'd07;
+localparam ROUND_COL2  = 4'd08;
+localparam ROUND_COL3  = 4'd09;
+localparam READY       = 4'd10;
+localparam GEN_KEY0    = 4'd11;
+localparam GEN_KEY1    = 4'd12;
+localparam GEN_KEY2    = 4'd13;
+localparam GEN_KEY3    = 4'd14;
+localparam NOP         = 4'd15;
+
+module i_control_unit(
+        input  [2:0] sbox_sel,
+        input  [1:0] rk_sel,
+        input  [1:0] key_out_sel,
+        input  [1:0] col_sel,
+        input  [3:0] key_en,
+        input  [3:0] col_en,
+        input  [3:0] round,
+        input  bypass_rk,
+        input  bypass_key_en,
+        input  key_sel,
+        input  iv_cnt_en,
+        input  iv_cnt_sel,
+        input  key_derivation_en,
+        input end_comp,
+        input key_init,
+        input key_gen,
+        input mode_ctr,
+        input mode_cbc,
+        input last_round,
+  	input encrypt_decrypt,
+        input [1:0] operation_mode,
+        input [1:0] aes_mode,
+        input start,
+        input disable_core,
+        input clk,
+        input rst_n,
+	input first_round,
+	input state,
+	input op_mode,
+	input rd_count_en,
+	input next_state,
+	input rd_count,
+	input op_key_derivation,
+	input enc_dec
+);
+
+assert property(@(posedge clk)  (state == ROUND_COL3) |-> (rk_sel == MIXCOL_OUT));
+assert property(@(posedge clk)  (state == ROUND_KEY0) |-> (rd_count_en == ENABLE));
+assert property(@(posedge clk)  (state == ROUND_COL1) |-> (col_en == EN_COL_1));
+assert property(@(posedge clk)  (state == ROUND_COL2) |-> (rk_sel == MIXCOL_OUT));
+assert property(@(posedge clk)  (state == ROUND0_COL0) |-> (key_sel == KEY_OUT));
+assert property(@(posedge clk)  (state == ROUND0_COL3) |-> (key_sel == KEY_OUT));
+assert property(@(posedge clk)  (state == ROUND_COL3) |-> (sbox_sel == COL_3));
+assert property(@(posedge clk)  (state == ROUND0_COL3) |-> (sbox_sel == COL_3));
+assert property(@(posedge clk)  (state == GEN_KEY0) |-> (rd_count_en == ENABLE));
+assert property(@(posedge clk)  (state == ROUND0_COL0) |-> (sbox_sel == COL_0));
+assert property(@(posedge clk)  (state == ROUND0_COL1) |-> (rk_sel == COL));
+assert property(@(posedge clk)  (state == ROUND_COL1) |-> (key_out_sel == KEY_1));
+assert property(@(posedge clk)  (state == ROUND_COL3) |-> (key_sel == KEY_OUT));
+assert property(@(posedge clk)  (state == READY && op_mode == KEY_DERIVATION) |-> key_derivation_en);
+assert property(@(posedge clk)  (state == ROUND_COL2) |-> (key_out_sel == KEY_2));
+assert property(@(posedge clk)  (state == ROUND_KEY0) |-> (key_out_sel == KEY_0));
+assert property(@(posedge clk)  (state == GEN_KEY1) |-> (key_sel == KEY_OUT));
+assert property(@(posedge clk)  (state == GEN_KEY3) |-> (key_out_sel == KEY_3));
+assert property(@(posedge clk)  (state == ROUND_COL0) |-> (col_en == EN_COL_0));
+assert property(@(posedge clk)  (state == ROUND0_COL3) |-> ();
+assert property(@(posedge clk)  (state == ROUND_KEY0) |-> (sbox_sel == G_FUNCTION));
+assert property(@(posedge clk)  (state == ROUND0_COL0) |-> (key_out_sel == KEY_0));
+assert property(@(posedge clk)  (state == GEN_KEY3) |-> (key_sel == KEY_OUT));
+assert property(@(posedge clk)  (state == ROUND0_COL2) |-> (rk_sel == COL));
+assert property(@(posedge clk)  (state == ROUND_COL1) |-> (sbox_sel == COL_1));
+assert property(@(posedge clk)  (state == ROUND0_COL2) |-> (sbox_sel == COL_2));
+assert property(@(posedge clk)  (state == GEN_KEY2) |-> (key_out_sel == KEY_2));
+assert property(@(posedge clk)  (state == ROUND0_COL2) |-> (key_out_sel == KEY_2));
+assert property(@(posedge clk)  (state == ROUND_KEY0) |-> (key_sel == KEY_OUT));
+assert property(@(posedge clk)  (state == GEN_KEY2) |-> (bypass_key_en == ENABLE));
+assert property(@(posedge clk)  (state == GEN_KEY1) |-> (key_en == EN_KEY_1 | EN_KEY_0));
+assert property(@(posedge clk)  (state == ROUND_COL2) |-> (sbox_sel == COL_2));
+assert property(@(posedge clk)  (state == ROUND_COL1) |-> (rk_sel == MIXCOL_OUT));
+assert property(@(posedge clk)  (state == ROUND0_COL3) |-> (rk_sel == COL));
+assert property(@(posedge clk)  (state == ROUND0_COL1) |-> (sbox_sel == COL_1));
+assert property(@(posedge clk)  (state == ROUND_COL0) |-> (key_sel == KEY_OUT));
+assert property(@(posedge clk)  (state == ROUND_COL0) |-> (key_out_sel == KEY_0));
+assert property(@(posedge clk)  (state == GEN_KEY3) |-> (bypass_key_en == ENABLE));
+assert property(@(posedge clk)  (state == GEN_KEY1) |-> (bypass_key_en == ENABLE));
+assert property(@(posedge clk)  (state == ROUND0_COL1) |-> (key_sel == KEY_OUT));
+assert property(@(posedge clk)  (state == ROUND_COL3) |-> (col_en == EN_COL_3));
+assert property(@(posedge clk)  (state == ROUND_COL2) |-> (col_en == EN_COL_2));
+assert property(@(posedge clk)  (state == GEN_KEY0) |-> (key_out_sel == KEY_0));
+assert property(@(posedge clk)  (state == ROUND0_COL3) |-> (key_out_sel == KEY_3));
+assert property(@(posedge clk)  (state == READY) |-> (key_derivation_en == ENABLE));
+assert property(@(posedge clk)  (state == ROUND0_COL2) |-> (key_sel == KEY_OUT));
+assert property(@(posedge clk)  (state == GEN_KEY0) |-> (sbox_sel == G_FUNCTION));
+assert property(@(posedge clk)  (state == GEN_KEY2) |-> (key_en == EN_KEY_2));
+assert property(@(posedge clk)  (state == GEN_KEY2) |-> (key_sel == KEY_OUT));
+assert property(@(posedge clk)  (state == GEN_KEY3) |-> (key_en == EN_KEY_3));
+assert property(@(posedge clk)  (state == ROUND_COL0) |-> (sbox_sel == COL_0));
+assert property(@(posedge clk)  (state == ROUND0_COL1) |-> (key_out_sel == KEY_1));
+assert property(@(posedge clk)  (state == ROUND_COL3) |-> (key_out_sel == KEY_3));
+assert property(@(posedge clk)  (state == ROUND_COL2) |-> (key_sel == KEY_OUT));
+assert property(@(posedge clk)  (state == ROUND_COL1) |-> (key_sel == KEY_OUT));
+assert property(@(posedge clk)  (state == ROUND_COL0) |-> (rk_sel == MIXCOL_OUT));
+assert property(@(posedge clk)  (state == ROUND0_COL0) |-> (rk_sel == COL));
+assert property(@(posedge clk)  (state == GEN_KEY0) |-> (key_sel == KEY_OUT));
+assert property(@(posedge clk)  (state == GEN_KEY1) |-> (key_out_sel == KEY_1));
+
+endmodule

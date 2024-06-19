@@ -1,0 +1,85 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-06-03 19:48:18 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 920224
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:38983' '-nowindow' '-style' 'windows' '-data' 'AAABInicXY5PD8FAEMV/JRpx8BGcRcKJW8+uJRLXRqqUiN3QkrjwUX2Tet2oZM1k58+bN7MvAKJnVVU4az8UQmLm8p8F728RBfhW9y0fWb68DJ1muaGEen3GnDEk7Ck5CBkJ2XCSG+7CS82vilZuuFCQsRUesxK7K/ZOk5vqgbQuWGuWiZUrp9qwTNSlugc9sa1uGI7qhn+8WoMVkjB1imb6N1dVOLUf1WQktg==' '-proj' '/data/vpulav2/Work/Jasper_corrected/communication_controller_100_mb-s_ethernet_mac_layer_switch/eth_cop/eth_cop_gpt_4o_5shot/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper_corrected/communication_controller_100_mb-s_ethernet_mac_layer_switch/eth_cop/eth_cop_gpt_4o_5shot/.tmp/.initCmds.tcl' 'FPV_eth_cop.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper_corrected/communication_controller_100_mb-s_ethernet_mac_layer_switch/eth_cop/eth_cop_gpt_4o_5shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/eth_cop.v
+[-- (VERI-1482)] Analyzing Verilog file './/eth_cop.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_gpt_4o_5shot.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_gpt_4o_5shot.sva'
+[ERROR (VERI-1137)] .//property_gpt_4o_5shot.sva(36): syntax error near ';'
+[ERROR (VERI-1072)] .//property_gpt_4o_5shot.sva(37): module 'i_eth_cop' is ignored due to previous errors
+Summary of errors detected:
+	[ERROR (VERI-1137)] .//property_gpt_4o_5shot.sva(36): syntax error near ';'
+	[ERROR (VERI-1072)] .//property_gpt_4o_5shot.sva(37): module 'i_eth_cop' is ignored due to previous errors
+ERROR (ENL034): 2 errors detected in the design file(s).
+
+ERROR: problem encountered at line 12 in file FPV_eth_cop.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.389 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

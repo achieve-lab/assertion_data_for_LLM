@@ -1,0 +1,66 @@
+module i_ppReg1(
+		input clk,
+		input [`instOpCodeLen-1:0] opcodeOut,
+		input [`instOpCodeLen-1:0] opcodeIn,
+		input [`instFieldLen-1:0] fieldIn,
+		input [`instFieldLen-1:0] fieldOut
+);
+
+assert property(@(posedge clk)  (fieldIn == 19) |-> (fieldOut == 19));
+assert property(@(posedge clk)  (fieldIn == 14) |-> (fieldOut == 14));
+assert property(@(posedge clk)  (fieldIn == 26) |-> (fieldOut == 26));
+assert property(@(posedge clk)  (opcodeIn == 1) |-> (opcodeOut == 1));
+assert property(@(posedge clk)  (opcodeIn == 9) |-> (opcodeOut == 9));
+assert property(@(posedge clk)  (fieldIn == 13) |-> (fieldOut == 13));
+assert property(@(posedge clk)  (fieldIn == 17) |-> (fieldOut == 17));
+assert property(@(posedge clk)  (fieldIn == 24) |-> (fieldOut == 24));
+assert property(@(posedge clk)  (opcodeIn == 27) |-> (opcodeOut == 27));
+assert property(@(posedge clk)  (fieldIn == 6) |-> (fieldOut == 6));
+assert property(@(posedge clk)  (opcodeIn == 24) |-> (opcodeOut == 24));
+assert property(@(posedge clk)  (fieldIn == 21) |-> (fieldOut == 21));
+assert property(@(posedge clk)  (opcodeIn == 7) |-> (opcodeOut == 7));
+assert property(@(posedge clk)  (opcodeIn == 15) |-> (opcodeOut == 15));
+assert property(@(posedge clk)  (fieldIn == 12) |-> (fieldOut == 12));
+assert property(@(posedge clk)  (opcodeIn == 17) |-> (opcodeOut == 17));
+assert property(@(posedge clk)  (opcodeIn == 12) |-> (opcodeOut == 12));
+assert property(@(posedge clk)  (fieldIn == 9) |-> (fieldOut == 9));
+assert property(@(posedge clk)  (fieldIn == 0) |-> (fieldOut == 0));
+assert property(@(posedge clk)  (opcodeIn == 11) |-> (opcodeOut == 11));
+assert property(@(posedge clk)  (fieldIn == 1) |-> (fieldOut == 1));
+assert property(@(posedge clk)  (fieldIn == 11) |-> (fieldOut == 11));
+assert property(@(posedge clk)  (fieldIn == 4) |-> (fieldOut == 4));
+assert property(@(posedge clk)  (opcodeIn == 13) |-> (opcodeOut == 13));
+assert property(@(posedge clk)  (fieldIn == 15) |-> (fieldOut == 15));
+assert property(@(posedge clk)  (fieldIn == 23) |-> (fieldOut == 23));
+assert property(@(posedge clk)  (opcodeIn == 10) |-> (opcodeOut == 10));
+assert property(@(posedge clk)  (opcodeIn == 6) |-> (opcodeOut == 6));
+assert property(@(posedge clk)  (opcodeIn == 25) |-> (opcodeOut == 25));
+assert property(@(posedge clk)  (opcodeIn == 26) |-> (opcodeOut == 26));
+assert property(@(posedge clk)  (fieldIn == 10) |-> (fieldOut == 10));
+assert property(@(posedge clk)  (fieldIn == 5) |-> (fieldOut == 5));
+assert property(@(posedge clk)  (fieldIn == 7) |-> (fieldOut == 7));
+assert property(@(posedge clk)  (opcodeIn == 16) |-> (opcodeOut == 16));
+assert property(@(posedge clk)  (opcodeIn == 8) |-> (opcodeOut == 8));
+assert property(@(posedge clk)  (fieldIn == 3) |-> (fieldOut == 3));
+assert property(@(posedge clk)  (opcodeIn == 2) |-> (opcodeOut == 2));
+assert property(@(posedge clk)  (opcodeIn == 18) |-> (opcodeOut == 18));
+assert property(@(posedge clk)  (opcodeIn == 20) |-> (opcodeOut == 20));
+assert property(@(posedge clk)  (opcodeIn == 5) |-> (opcodeOut == 5));
+assert property(@(posedge clk)  (fieldIn == 2) |-> (fieldOut == 2));
+assert property(@(posedge clk)  (opcodeIn == 19) |-> (opcodeOut == 19));
+assert property(@(posedge clk)  (opcodeIn == 0) |-> (opcodeOut == 0));
+assert property(@(posedge clk)  (opcodeIn == 3) |-> (opcodeOut == 3));
+assert property(@(posedge clk)  (opcodeIn == 22) |-> (opcodeOut == 22));
+assert property(@(posedge clk)  (fieldIn == 25) |-> (fieldOut == 25));
+assert property(@(posedge clk)  (opcodeIn == 23) |-> (opcodeOut == 23));
+assert property(@(posedge clk)  (fieldIn == 27) |-> (fieldOut == 27));
+assert property(@(posedge clk)  (fieldIn == 16) |-> (fieldOut == 16));
+assert property(@(posedge clk)  (opcodeIn == 21) |-> (opcodeOut == 21));
+assert property(@(posedge clk)  (opcodeIn == 4) |-> (opcodeOut == 4));
+assert property(@(posedge clk)  (fieldIn == 22) |-> (fieldOut == 22));
+assert property(@(posedge clk)  (fieldIn == 8) |-> (fieldOut == 8));
+assert property(@(posedge clk)  (opcodeIn == 14) |-> (opcodeOut == 14));
+assert property(@(posedge clk)  (fieldIn == 20) |-> (fieldOut == 20));
+assert property(@(posedge clk)  (fieldIn == 18) |-> (fieldOut == 18));
+
+endmodule

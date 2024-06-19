@@ -1,0 +1,220 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-04-30 15:51:57 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 50448
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:43221' '-nowindow' '-style' 'windows' '-data' 'AAABEHicbY47CsJQEEVPFEUsLFyCpaArsLaNItiKxA+KmKBJBBtdqjuJJ2KEgHd487n3zvACYPIoioIPmndTm5Cp8UPw+jaTgDrKuVFn5s9ahVa1XFnavh4jzsSs2JNxkBnKrDkZMTf5TP1qToyYCylbNvIhC90d3TuV3H7gX2cs1SIv5F6I7FO3EsbWSAa6biTeiTk69f94S7wBVy4hWA==' '-proj' '/data/vpulav2/Work/Jasper/cavlc_top/cavlc_top/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper/cavlc_top/cavlc_top/.tmp/.initCmds.tcl' 'FPV_cavlc_top.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper/cavlc_top/cavlc_top/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/cavlc_top.v 
+[-- (VERI-1482)] Analyzing Verilog file './/cavlc_top.v'
+[INFO (VERI-1328)] .//cavlc_top.v(40): analyzing included file './/defines.v'
+[INFO (VERI-1328)] .//cavlc_top.v(41): analyzing included file './/cavlc_read_total_coeffs.v'
+[INFO (VERI-1328)] .//cavlc_read_total_coeffs.v(42): analyzing included file './/defines.v'
+[INFO (VERI-1328)] .//cavlc_top.v(42): analyzing included file './/cavlc_read_run_befores.v'
+[INFO (VERI-1328)] .//cavlc_read_run_befores.v(40): analyzing included file './/defines.v'
+[INFO (VERI-1328)] .//cavlc_top.v(43): analyzing included file './/cavlc_read_levels.v'
+[INFO (VERI-1328)] .//cavlc_read_levels.v(44): analyzing included file './/defines.v'
+[INFO (VERI-1328)] .//cavlc_top.v(44): analyzing included file './/cavlc_read_total_zeros.v'
+[INFO (VERI-1328)] .//cavlc_read_total_zeros.v(40): analyzing included file './/defines.v'
+[INFO (VERI-1328)] .//cavlc_top.v(45): analyzing included file './/cavlc_fsm.v'
+[INFO (VERI-1328)] .//cavlc_fsm.v(40): analyzing included file './/defines.v'
+[INFO (VERI-1328)] .//cavlc_top.v(46): analyzing included file './/cavlc_len_gen.v'
+[INFO (VERI-1328)] .//cavlc_len_gen.v(40): analyzing included file './/defines.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/cleaned_property.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/cleaned_property.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top cavlc_top
+INFO (ISW003): Top module name is "cavlc_top".
+[INFO (HIER-8002)] .//cavlc_top.v(301): Disabling old hierarchical reference handler
+[WARN (VERI-1927)] .//bindings.sva(57): port 'state' remains unconnected for this instance
+[WARN (VERI-2435)] .//bindings.sva(57): port 'levels_abs_refresh' is not connected on this instance
+[INFO (VERI-1018)] .//cavlc_read_total_coeffs.v(44): compiling module 'cavlc_read_total_coeffs'
+[INFO (VERI-1018)] .//cavlc_read_levels.v(46): compiling module 'cavlc_read_levels'
+[WARN (VERI-1209)] .//cavlc_read_levels.v(157): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//cavlc_read_levels.v(214): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(228): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(231): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(261): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(263): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(265): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(268): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(270): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(272): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(275): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(277): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(279): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(282): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(284): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(286): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(289): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(291): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(293): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(296): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(298): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(300): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(303): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(305): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(307): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(310): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(312): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(314): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(317): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(319): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(321): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(324): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(326): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(328): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(331): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(333): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(335): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(338): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(340): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(342): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(345): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(347): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(349): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(352): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(354): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(356): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(359): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(361): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(363): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_levels.v(390): expression size 32 truncated to fit in target size 5
+[INFO (VERI-1018)] .//cavlc_read_total_zeros.v(42): compiling module 'cavlc_read_total_zeros'
+[WARN (VERI-1209)] .//cavlc_read_total_zeros.v(93): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_total_zeros.v(94): expression size 32 truncated to fit in target size 6
+[WARN (VERI-1209)] .//cavlc_read_total_zeros.v(97): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] .//cavlc_read_total_zeros.v(99): expression size 32 truncated to fit in target size 6
+[WARN (VERI-1209)] .//cavlc_read_total_zeros.v(102): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] .//cavlc_read_total_zeros.v(103): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_total_zeros.v(107): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] .//cavlc_read_total_zeros.v(108): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//cavlc_read_total_zeros.v(109): expression size 32 truncated to fit in target size 6
+[WARN (VERI-1209)] .//cavlc_read_total_zeros.v(321): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//cavlc_read_total_zeros.v(322): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//cavlc_read_total_zeros.v(689): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] .//cavlc_read_total_zeros.v(690): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] .//cavlc_read_run_befores.v(42): compiling module 'cavlc_read_run_befores'
+[WARN (VERI-1209)] .//cavlc_read_run_befores.v(182): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//cavlc_read_run_befores.v(197): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//cavlc_read_run_befores.v(202): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//cavlc_read_run_befores.v(206): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//cavlc_read_run_befores.v(212): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//cavlc_read_run_befores.v(216): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//cavlc_read_run_befores.v(220): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//cavlc_read_run_befores.v(243): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//cavlc_read_run_befores.v(256): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//cavlc_read_run_befores.v(256): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] .//cavlc_len_gen.v(42): compiling module 'cavlc_len_gen'
+[WARN (VERI-1209)] .//cavlc_len_gen.v(80): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1174)] .//cavlc_len_gen.v(71): synthesis - simulation differences may occur when using parallel_case directive
+[INFO (VERI-1018)] .//cavlc_fsm.v(42): compiling module 'cavlc_fsm'
+[WARN (VERI-1209)] .//cavlc_fsm.v(107): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//cavlc_fsm.v(136): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//cavlc_fsm.v(140): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//cavlc_fsm.v(145): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//cavlc_fsm.v(154): expression size 32 truncated to fit in target size 4
+[INFO (VERI-1018)] .//cleaned_property.sva(2): compiling module 'i_cavlc_top'
+INFO (IPL017): The host machine is running out of memory.
+    This message was triggered because the system reached 10% memory.
+    System memory use information:
+    [Process]
+        Memory In Use: 2788124 kB (59%)
+        Peak Memory Usage: 2788124 kB (59%)
+    [Host]
+        Available Memory: 455588 kB (9%)
+        Total Memory: 4648708 kB
+        Free Swap: 7899388 kB (80%)
+        Total Swap: 9768956 kB
+INFO (IPL017): The host machine is running out of memory.
+    This message was triggered because the system reached 1% memory.
+    System memory use information:
+    [Process]
+        Memory In Use: 3477020 kB (74%)
+        Peak Memory Usage: 3477020 kB (74%)
+    [Host]
+        Available Memory: 84916 kB (1%)
+        Total Memory: 4648708 kB
+        Free Swap: 6954492 kB (71%)
+        Total Swap: 9768956 kB
+[INFO (VERI-1018)] .//cavlc_top.v(49): compiling module 'cavlc_top'
+[WARN (VERI-8028)] .//bindings.sva(2): missing/open ports on instance v_cavlc_top of module i_cavlc_top
+[WARN (VDB-1013)] .//bindings.sva(57): input port 'state[7]' is not connected on this instance
+INFO (INL208): Elaboration synthesis summary:
+  Number of synthesized netlists          9 (1 packages)
+  Single run mode                         On
+  Pipeline                                On (8 pipelined netlists)
+  Late hierarchical reference connection  On
+  Number of analyzed Verilog modules      9 (9 synthesized)
+  Number of analyzed VHDL entities        0 (0 synthesized)
+WARNING (WG013): Signal "SIGHUP" has been received from an unknown source (external to Jasper) in the analysis session.
+    For message help, type "help -message WG013".
+WARNING (WG013): Signal "SIGTERM" has been received from an unknown source (external to Jasper) in the analysis session.
+    For message help, type "help -message WG013".
+INFO (IIM001): *** Interrupting current command ***
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IIM001): *** Interrupting current command ***
+INFO (IIM001): *** Interrupting current command ***
+WARNING (WPL005): Wait for Tcl-thread to exit timed out.
+INFO (IPL018): The peak resident set memory use for this session was 3.377 GB.
+INFO (IPL016): Exiting the analysis session with status 0.

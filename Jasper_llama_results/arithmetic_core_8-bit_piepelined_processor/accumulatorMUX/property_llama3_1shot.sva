@@ -1,0 +1,22 @@
+`include "defines.v"
+
+module i_accumulatorMUX(
+	input [`accMuxSelLen-1:0]	accMuxSel,
+	input [7:0] uartDataIn, uartStatIn,
+	input [7:0]	accMuxOut,
+	input [`immDataLen-1:0]		immData,
+	input [7:0] tcLoadIn, tcAccIn,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET,
+	input	[7:0]	aluOut
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (accMuxSel == `accMuxSelAluOut) |-> (accMuxOut == aluOut));
+assert property(@(posedge DEFAULT_CLOCK) (accMuxSel == `accMuxSelImmData) |-> (accMuxOut == immData));
+assert property(@(posedge DEFAULT_CLOCK) (accMuxSel == `accMuxSelUartData) |-> (accMuxOut == uartDataIn));
+assert property(@(posedge DEFAULT_CLOCK) (accMuxSel == `accMuxSelTcLoad) |-> (accMuxOut == tcLoadIn));
+assert property(@(posedge DEFAULT_CLOCK) (accMuxSel == `accMuxSelUartStat) |-> (accMuxOut == uartStatIn));
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel == `accMuxSelImmData) |-> (accMuxOut == immData));
+assert property(@(posedge DEFAULT_CLOCK) (accMuxSel == `accMuxSelTcAcc) |-> (accMuxOut == tcAccIn));
+
+endmodule

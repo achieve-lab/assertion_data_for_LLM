@@ -1,0 +1,20 @@
+module i_eth_outputcontrol(
+input           MdoEn_2d,
+input         NoPre,              // No Preamble (no 32-bit preamble)
+input         ShiftedBit,         // This bit is input of the shift inputister and is connected to the Mdo signal
+input   [6:0] BitCounter,         // Bit Counter
+input         MdcEn_n,            // MII Management Data Clock Enable signal is asserted for one Clk period before Mdc falls.
+input           MdoEn_d,
+input           Mdo_d,
+input         WriteOp,            // Write Operation Latch (When asserted, write operation is in progress)
+input           Mdo,                // MII Management Data Output
+input           Mdo_2d,
+input           MdoEn,
+input         Reset,              // General Reset
+input          SerialEn,
+input         Clk,                // Host Clock
+input         InProgress         // Operation in progress
+);
+
+assert property(@(posedge Clk) (assert property (Reset |-> (MdoEn == 0)));assert property(@(posedge Clk) (assert property (MdcEn_n & InProgress & BitCounter<32) |-> (MdoEn_2d == 1));assert property(@(posedge Clk) (assert property (MdcEn_n & InProgress & BitCounter<32) |-> (MdoEn_d == 1));assert property(@(posedge Clk) (assert property (MdcEn_n & InProgress & BitCounter<32) |-> (MdoEn == 1));assert property(@(posedge Clk) (assert property (MdcEn_n & BitCounter<32) |-> (Mdo_2d == 1));assert property(@(posedge Clk) (assert property (MdcEn_n & BitCounter<32) |-> (Mdo_d == 1));assert property(@(posedge Clk) (assert property (MdcEn_n & BitCounter<32) |-> (Mdo == 1));assert property(@(posedge Clk) (assert property (MdcEn_n & BitCounter<32) |-> (MdoEn == 1));assert property(@(posedge Clk) (assert property (MdcEn_n & BitCounter<32) |-> (MdoEn_d == 1));assert property(@(posedge Clk) (assert property (MdcEn_n & BitCounter<32) |-> (MdoEn_2d == 1));
+endmodule

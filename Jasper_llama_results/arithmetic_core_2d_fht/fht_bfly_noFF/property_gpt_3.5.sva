@@ -1,0 +1,31 @@
+parameter N = 8;
+module i_fht_bfly_noFF(
+input [N-1:0] b_FF,
+input	[N  :0]	c, // additive input
+input [N-1:0] a_FF,
+input			clk,
+  	input [N-1:0] ainv,
+input	[N-1:0]	b, // input
+input			rstn,
+input			valid,
+  	input [N:0] plus1,
+input	[N  :0]	d, // subtractive input
+	input  ci,
+input	[N-1:0]	a, // input
+	input [N-1:0] co,
+	input [N-1:0] sum
+);
+
+assert property(@(posedge clk) (gnt1) |-> (req1));
+assert property(@(posedge clk) (gnt2) |-> (req2));
+assert property(@(posedge clk) (req1 == 0) |-> (c == 0));
+assert property(@(posedge clk) (req2 == 0) |-> (d == 0));
+assert property(@(posedge clk) (req1 == 1 & req2 == 0) |-> (c == a));
+assert property(@(posedge clk) (req1 == 1 & req2 == 0) |-> (d == a));
+assert property(@(posedge clk) (req1 == 0 & req2 == 1) |-> (c == b));
+assert property(@(posedge clk) (req1 == 0 & req2 == 1) |-> (d == -b));
+assert property(@(posedge clk) (req1 == 1 & req2 == 1) |-> (c == a + b));
+assert property(@(posedge clk) (req1 == 1 & req2 == 1) |-> (d == a - b));
+assert property(@(posedge clk) (req1 == 0 & req2 == 0) |-> (c == 0));
+assert property(@(posedge clk) (req1 == 0 & req2 == 0) |-> (d == 0));
+endmodule

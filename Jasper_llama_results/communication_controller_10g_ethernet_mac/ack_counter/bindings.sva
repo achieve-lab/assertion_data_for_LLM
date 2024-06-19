@@ -1,0 +1,12 @@
+bind ack_counter
+ i_ack_counter v_ack_counter(
+.tx_start(tx_start),
+.ready(ready),
+.counter(counter),
+.reset(reset),
+.start_count(start_count),
+.tx_ack(tx_ack),
+.clock(clock),
+.start_count_del(start_count_del),
+.max_count(max_count)
+);

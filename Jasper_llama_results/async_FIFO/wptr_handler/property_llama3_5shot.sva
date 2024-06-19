@@ -1,0 +1,25 @@
+module i_wptr_handler #(parameter PTR_WIDTH=3)(
+  input [PTR_WIDTH:0] b_wptr, g_wptr,
+  input wrap_around,
+  input [PTR_WIDTH:0] b_wptr_next,
+  input wclk, wrst_n, w_en,
+  input [PTR_WIDTH:0] g_rptr_sync,
+  input wfull,
+  input [PTR_WIDTH:0] g_wptr_next,
+  input full
+);
+
+assert property(@(posedge wclk)  (!wfull) |-> (g_wptr == g_wptr_next));
+assert property(@(posedge wclk)  (!wfull &&!w_en) |-> (b_wptr_next == b_wptr));
+assert property(@(posedge wclk)  (!wfull && w_en) |-> (g_wptr_next == (b_wptr >>1)^(b_wptr + 1)));
+assert property(@(posedge wclk)  (!wfull && w_en) |-> (g_wptr_next == (b_wptr + 1) >>1)^(b_wptr + 1));
+assert property(@(posedge wclk)  (wfull) |-> (g_wptr_next == {~g_rptr_sync[PTR_WIDTH:PTR_WIDTH-1], g_rptr_sync[PTR_WIDTH-2:0]}));
+assert property(@(posedge wclk)  (!wfull) |-> (b_wptr == b_wptr_next));
+assert property(@(posedge wclk)  (wfull) |-> (g_wptr_next == b_wptr_next));
+assert property(@(posedge wclk)  (wfull) |-> (b_wptr_next == g_wptr_next));
+assert property(@(posedge wclk)  (wfull) |-> (b_wptr_next == {~g_rptr_sync[PTR_WIDTH:PTR_WIDTH-1], g_rptr_sync[PTR_WIDTH-2:0]}));
+assert property(@(posedge wclk)  (!wfull && w_en) |-> (g_wptr_next == (b_wptr_next >>1)^b_wptr_next));
+assert property(@(posedge wclk)  (!wfull &&!w_en) |-> (g_wptr_next == g_wptr));
+assert property(@(posedge wclk)  (!wfull && w_en) |-> (b_wptr_next == b_wptr + 1));
+
+endmodule

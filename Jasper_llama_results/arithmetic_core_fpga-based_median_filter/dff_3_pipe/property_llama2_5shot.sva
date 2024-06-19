@@ -1,0 +1,21 @@
+parameter DATA_WIDTH = 8;
+
+module i_dff_3_pipe(
+    input [DATA_WIDTH-1:0] q0,
+    input [DATA_WIDTH-1:0] q2,
+    input [DATA_WIDTH-1:0] d0,
+    input [DATA_WIDTH-1:0] d2,
+    input [DATA_WIDTH-1:0] q1,
+    input [DATA_WIDTH-1:0] d1,
+    input clk,
+    input rst_n
+);
+
+assert property(@(posedge clk)  (q2 == 0) |-> (d2 == 0));
+assert property(@(posedge clk)  (q0 == 1) |-> (d0 == 1));
+assert property(@(posedge clk)  (q2 == 1) |-> (d2 == 1));
+assert property(@(posedge clk)  (q1 == 0) |-> (d1 == 0));
+assert property(@(posedge clk)  (q1 == 1) |-> (d1 == 1));
+assert property(@(posedge clk)  (q0 == 0) |-> (d0 == 0));
+
+endmodule

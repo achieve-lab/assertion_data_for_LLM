@@ -1,0 +1,75 @@
+property a82;
+@(posedge clk) (req0 == 0 & req1 == 1 & ce == 1 & ack == 1) |=> (sel1 == 1);
+endproperty
+assert_a82: assert property(a82);
+
+property a74;
+@(posedge clk) (ce == 1 & req0 == 1 & ack == 1) |=> (sel1 == 0);
+endproperty
+assert_a74: assert property(a74);
+
+property a73;
+@(posedge clk) (ce == 1 & req1 == 0 & ack == 1 & req2 == 1) |=> (sel1 == 0);
+endproperty
+assert_a73: assert property(a73);
+
+property a75;
+@(posedge clk) (req1 == 0 & ack == 1 & ce == 1 & req3 == 1) |=> (sel1 == 0);
+endproperty
+assert_a75: assert property(a75);
+
+property a78;
+@(posedge clk) (req1 == 0 & ack == 1 & ce == 1 & req5 == 1) |=> (sel1 == 0);
+endproperty
+assert_a78: assert property(a78);
+
+property a76;
+@(posedge clk) (req1 == 0 & ack == 1 & ce == 1 & req6 == 1) |=> (sel1 == 0);
+endproperty
+assert_a76: assert property(a76);
+
+property a77;
+@(posedge clk) (req1 == 0 & ack == 1 & ce == 1 & req7 == 1) |=> (sel1 == 0);
+endproperty
+assert_a77: assert property(a77);
+
+property a81;
+@(posedge clk) (sel1 == 1 & req1 == 1 & req0 == 0) |=> (sel1 == 1);
+endproperty
+assert_a81: assert property(a81);
+
+property a71;
+@(posedge clk) (sel1 == 0 & req0 == 1) |=> (sel1 == 0);
+endproperty
+assert_a71: assert property(a71);
+
+property a72;
+@(posedge clk) (sel1 == 0 & req1 == 0) |=> (sel1 == 0);
+endproperty
+assert_a72: assert property(a72);
+
+property a83;
+@(posedge clk) (sel1 == 1 & req0 == 0 & req6 == 0 & req3 == 0 & req7 == 0 & req5 == 0) |=> (sel1 == 1);
+endproperty
+assert_a83: assert property(a83);
+
+property a80;
+@(posedge clk) (sel1 == 1 & ack == 0) |=> (sel1 == 1);
+endproperty
+assert_a80: assert property(a80);
+
+property a79;
+@(posedge clk) (sel1 == 1 & ce == 0) |=> (sel1 == 1);
+endproperty
+assert_a79: assert property(a79);
+
+property a70;
+@(posedge clk) (sel1 == 0 & ack == 0) |=> (sel1 == 0);
+endproperty
+assert_a70: assert property(a70);
+
+property a69;
+@(posedge clk) (sel1 == 0 & ce == 0) |=> (sel1 == 0);
+endproperty
+assert_a69: assert property(a69);
+

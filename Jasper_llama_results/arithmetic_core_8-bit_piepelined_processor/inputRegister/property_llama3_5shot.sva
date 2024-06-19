@@ -1,0 +1,20 @@
+module i_inputRegister(
+	input [`inputNumber-1:0] inputs,
+	input inputReadOut,
+	input [`inputAddrLen-1:0] inputReadAddr,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (inputReadOut) |-> inputs
+            Test Program:`include "timescale.v" `include "defines.v" module inputRegister (inputs, inputReadAddr, inputReadOut));
+assert property(@(posedge DEFAULT_CLOCK)  assign inputReadOut = inputs[inputReadAddr]);
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+Test Assertions: (inputReadOut) |-> inputs
+            Test Program:`include "timescale.v" `include "defines.v" module inputRegister (inputs, inputReadAddr, inputReadOut));
+assert property(@(posedge DEFAULT_CLOCK)  output inputReadOut);
+assert property(@(posedge DEFAULT_CLOCK)  input [`inputNumber-1:0] inputs);
+assert property(@(posedge DEFAULT_CLOCK)  input [`inputAddrLen-1:0] inputReadAddr);
+assert property(@(posedge DEFAULT_CLOCK)  wire [`inputNumber-1:0] inputs);
+
+endmodule

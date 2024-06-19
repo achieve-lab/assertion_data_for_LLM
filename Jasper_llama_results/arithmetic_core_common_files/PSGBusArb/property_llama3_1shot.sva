@@ -1,0 +1,103 @@
+module i_PSGBusArb(
+input req3,
+input sel4,
+input sel3,
+input sel6,
+input sel1,
+input req4,
+input req2,		// ...
+input req6,
+input ack,		// bus transfer completed
+input req1,		// requester 1 wants the bus
+input sel7,
+input req0,		// requester 0 wants the bus
+input sel2,
+input req5,
+input rst,		// reset
+input req7,
+input ce,		// clock enable (eg 25MHz)
+input clk,		// clock (eg 100MHz)
+input sel5,
+input [2:0] seln,
+input sel0
+);
+
+assert property(@(posedge clk) (req4) |-> (sel4));
+assert property(@(posedge clk) (sel6) |-> (req6));
+assert property(@(posedge clk) (sel4) |-> (req4));
+assert property(@(posedge clk) (seln == 3'd1) |-> (seln!= 3'd0 & seln!= 3'd2 & seln!= 3'd3 & seln!= 3'd4 & seln!= 3'd5 & seln!= 3'd6 & seln!= 3'd7));
+assert property(@(posedge clk) (req5) |-> (sel5));
+assert property(@(posedge clk) (seln == 3'd3) |-> (seln!= 3'd0 & seln!= 3'd1 & seln!= 3'd2 & seln!= 3'd4 & seln!= 3'd5 & seln!= 3'd6 & seln!= 3'd7));
+assert property(@(posedge clk) (sel2) |-> (seln!= 3'd0 & seln!= 3'd1 & seln!= 3'd3 & seln!= 3'd4 & seln!= 3'd5 & seln!= 3'd6 & seln!= 3'd7));
+assert property(@(posedge clk) (seln == 3'd0) |-> (req0));
+assert property(@(posedge clk) (sel2) |-> (seln == 3'd2));
+assert property(@(posedge clk) (sel5) |-> (seln == 3'd5));
+assert property(@(posedge clk) (sel3) |-> (seln == 3'd3));
+assert property(@(posedge clk) (seln == 3'd5) |-> (req5));
+assert property(@(posedge clk) (req1) |-> (sel1));
+assert property(@(posedge clk) (seln == 3'd1) |-> (sel1));
+assert property(@(posedge clk) (seln == 3'd7) |-> (sel7));
+assert property(@(posedge clk) (sel0) |-> (seln!= 3'd1 & seln!= 3'd2 & seln!= 3'd3 & seln!= 3'd4 & seln!= 3'd5 & seln!= 3'd6 & seln!= 3'd7));
+assert property(@(posedge clk) (seln == 3'd0) |-> (seln!= 3'd1 & seln!= 3'd2 & seln!= 3'd3 & seln!= 3'd4 & seln!= 3'd5 & seln!= 3'd6 & seln!= 3'd7));
+assert property(@(posedge clk) (sel6) |-> (seln!= 3'd0 & seln!= 3'd1 & seln!= 3'd2 & seln!= 3'd3 & seln!= 3'd4 & seln!= 3'd5 & seln!= 3'd7));
+assert property(@(posedge clk) (req1) |-> (seln == 3'd1));
+assert property(@(posedge clk) (req4) |-> (seln == 3'd4));
+assert property(@(posedge clk) (seln == 3'd3) |-> (req3));
+assert property(@(posedge clk) (req0) |-> (sel0));
+assert property(@(posedge clk) (seln == 3'd6) |-> (req6));
+assert property(@(posedge clk) (req5) |-> (seln == 3'd5));
+assert property(@(posedge clk) (sel7) |-> (req7));
+assert property(@(posedge clk) (sel7) |-> (~sel0 & ~sel1 & ~sel2 & ~sel3 & ~sel4 & ~sel5 & ~sel6));
+assert property(@(posedge clk) (seln == 3'd2) |-> (req2));
+assert property(@(posedge clk) (sel4) |-> (~sel0 & ~sel1 & ~sel2 & ~sel3 & ~sel5 & ~sel6 & ~sel7));
+assert property(@(posedge clk) (seln == 3'd1) |-> (~sel0 & ~sel2 & ~sel3 & ~sel4 & ~sel5 & ~sel6 & ~sel7));
+assert property(@(posedge clk) (seln == 3'd6) |-> (~sel0 & ~sel1 & ~sel2 & ~sel3 & ~sel4 & ~sel5 & ~sel7));
+assert property(@(posedge clk) (seln == 3'd0) |-> (sel0));
+assert property(@(posedge clk)              (ce) |-> (ack));
+assert property(@(posedge clk) (sel5) |-> (~sel0 & ~sel1 & ~sel2 & ~sel3 & ~sel4 & ~sel6 & ~sel7));
+assert property(@(posedge clk) (seln == 3'd5) |-> (~sel0 & ~sel1 & ~sel2 & ~sel3 & ~sel4 & ~sel6 & ~sel7));
+assert property(@(posedge clk) (seln == 3'd3) |-> (~sel0 & ~sel1 & ~sel2 & ~sel4 & ~sel5 & ~sel6 & ~sel7));
+assert property(@(posedge clk) (sel0) |-> (req0));
+assert property(@(posedge clk) (seln == 3'd4) |-> (req4));
+assert property(@(posedge clk) (seln == 3'd2) |-> (sel2));
+assert property(@(posedge clk) (req7) |-> (sel7));
+assert property(@(posedge clk) (seln == 3'd4) |-> (sel4));
+assert property(@(posedge clk) (seln == 3'd5) |-> (sel5));
+assert property(@(posedge clk) (seln == 3'd3) |-> (sel3));
+assert property(@(posedge clk) (sel3) |-> (~sel0 & ~sel1 & ~sel2 & ~sel4 & ~sel5 & ~sel6 & ~sel7));
+assert property(@(posedge clk) (req3) |-> (seln == 3'd3));
+assert property(@(posedge clk) (sel3) |-> (req3));
+assert property(@(posedge clk) (sel6) |-> (~sel0 & ~sel1 & ~sel2 & ~sel3 & ~sel4 & ~sel5 & ~sel7));
+assert property(@(posedge clk) (sel7) |-> (seln == 3'd7));
+assert property(@(posedge clk) (sel1) |-> (seln!= 3'd0 & seln!= 3'd2 & seln!= 3'd3 & seln!= 3'd4 & seln!= 3'd5 & seln!= 3'd6 & seln!= 3'd7));
+assert property(@(posedge clk) (seln == 3'd1) |-> (req1));
+assert property(@(posedge clk) (req3) |-> (sel3));
+assert property(@(posedge clk) (seln == 3'd2) |-> (~sel0 & ~sel1 & ~sel3 & ~sel4 & ~sel5 & ~sel6 & ~sel7));
+assert property(@(posedge clk) (sel2) |-> (req2));
+assert property(@(posedge clk) (sel4) |-> (seln == 3'd4));
+assert property(@(posedge clk) (sel3) |-> (seln!= 3'd0 & seln!= 3'd1 & seln!= 3'd2 & seln!= 3'd4 & seln!= 3'd5 & seln!= 3'd6 & seln!= 3'd7));
+assert property(@(posedge clk) (sel5) |-> (req5));
+assert property(@(posedge clk) (seln == 3'd7) |-> (req7));
+assert property(@(posedge clk) (sel1) |-> (~sel0 & ~sel2 & ~sel3 & ~sel4 & ~sel5 & ~sel6 & ~sel7));
+assert property(@(posedge clk) (sel0) |-> (~sel1 & ~sel2 & ~sel3 & ~sel4 & ~sel5 & ~sel6 & ~sel7));
+assert property(@(posedge clk) (req0) |-> (seln == 3'd0));
+assert property(@(posedge clk) (seln == 3'd7) |-> (~sel0 & ~sel1 & ~sel2 & ~sel3 & ~sel4 & ~sel5 & ~sel6));
+assert property(@(posedge clk) (sel1) |-> (req1));
+assert property(@(posedge clk) (sel6) |-> (seln == 3'd6));
+assert property(@(posedge clk) (req2) |-> (sel2));
+assert property(@(posedge clk) (seln == 3'd0) |-> (~sel1 & ~sel2 & ~sel3 & ~sel4 & ~sel5 & ~sel6 & ~sel7));
+assert property(@(posedge clk) (seln == 3'd4) |-> (~sel0 & ~sel1 & ~sel2 & ~sel3 & ~sel5 & ~sel6 & ~sel7));
+assert property(@(posedge clk) (req6) |-> (seln == 3'd6));
+assert property(@(posedge clk) (req7) |-> (seln == 3'd7));
+assert property(@(posedge clk) (sel0) |-> (seln == 3'd0));
+assert property(@(posedge clk) (sel4) |-> (seln!= 3'd0 & seln!= 3'd1 & seln!= 3'd2 & seln!= 3'd3 & seln!= 3'd5 & seln!= 3'd6 & seln!= 3'd7));
+assert property(@(posedge clk) (sel2) |-> (~sel0 & ~sel1 & ~sel3 & ~sel4 & ~sel5 & ~sel6 & ~sel7));
+assert property(@(posedge clk) (sel5) |-> (seln!= 3'd0 & seln!= 3'd1 & seln!= 3'd2 & seln!= 3'd3 & seln!= 3'd4 & seln!= 3'd6 & seln!= 3'd7));
+assert property(@(posedge clk) (sel7) |-> (seln!= 3'd0 & seln!= 3'd1 & seln!= 3'd2 & seln!= 3'd3 & seln!= 3'd4 & seln!= 3'd5 & seln!= 3'd6));
+assert property(@(posedge clk) (sel1) |-> (seln == 3'd1));
+assert property(@(posedge clk) (seln == 3'd6) |-> (sel6));
+assert property(@(posedge clk) (seln == 3'd2) |-> (seln!= 3'd0 & seln!= 3'd1 & seln!= 3'd3 & seln!= 3'd4 & seln!= 3'd5 & seln!= 3'd6 & seln!= 3'd7));
+assert property(@(posedge clk) (req6) |-> (sel6));
+assert property(@(posedge clk) (req2) |-> (seln == 3'd2));
+
+endmodule

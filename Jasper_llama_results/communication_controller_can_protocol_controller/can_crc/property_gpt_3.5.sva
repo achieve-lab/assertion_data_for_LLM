@@ -1,0 +1,18 @@
+module i_can_crc(
+input         initialize,
+input          crc_next,
+input         enable,
+input         clk,
+input   [14:0] crc_tmp,
+input         data,
+input    [14:0] crc
+);
+
+assert property( @(posedge clk) disable iff (!initialize) (crc_next == 1'b1) |-> (crc_tmp == 15'h4599));
+assert property( @(posedge clk) disable iff (!initialize) (crc_next == 1'b0) |-> (crc_tmp == crc[13:0]));
+assert property( @(posedge clk) disable iff (!initialize) (crc_next == 1'b1) |-> (crc == crc_tmp ^ 15'h4599));
+assert property( @(posedge clk) disable iff (!initialize) (crc_next == 1'b0) |-> (crc == crc_tmp));
+assert property( @(posedge clk) disable iff (!initialize) (initialize) |-> (crc == 15'h0));
+assert property( @(posedge clk) disable iff (!initialize) (enable && crc_next) |-> (crc == crc_tmp ^ 15'h4599));
+assert property( @(posedge clk) disable iff (!initialize) (enable && !crc_next) |-> (crc == crc_tmp));
+endmodule

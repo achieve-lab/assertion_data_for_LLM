@@ -1,0 +1,1455 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-05-06 20:27:30 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 73540
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:44319' '-nowindow' '-style' 'windows' '-data' 'AAABGnicXY5NDgFBEIW/JiZi4QhiLeEEs7YdIrEVDELG9ARNYsNR3aS9FiNpr9L18+pVdRkgfXjv+aB5l0vIGMt+MK9vkhpihLoRM9NnFKFVD9eSRK/LkBLLgh2OvZiBmCWFzHIT79Q/y1cyy4kLG3LxGTOp21Jv1bkq7+nWCXP1AuMUw9yKkWbW2gcdqSvtsBxU9f904QYrXc5Rl5T6J+ANt90jgg==' '-proj' '/data/vpulav2/Work/Jasper/fpu_sub/fpu_sub_goldmine/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper/fpu_sub/fpu_sub_goldmine/.tmp/.initCmds.tcl' 'FPV_fpu_sub.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper/fpu_sub/fpu_sub_goldmine/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/fpu_sub.v
+[-- (VERI-1482)] Analyzing Verilog file './/fpu_sub.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_goldmine.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_goldmine.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top fpu_sub
+INFO (ISW003): Top module name is "fpu_sub".
+[INFO (HIER-8002)] .//fpu_sub.v(221): Disabling old hierarchical reference handler
+[INFO (VERI-1018)] .//property_goldmine.sva(2): compiling module 'i_fpu_sub'
+[INFO (VERI-1018)] .//fpu_sub.v(39): compiling module 'fpu_sub'
+[WARN (VERI-1209)] .//fpu_sub.v(150): expression size 32 truncated to fit in target size 11
+[WARN (VERI-1209)] .//fpu_sub.v(151): expression size 32 truncated to fit in target size 11
+INFO (INL208): Elaboration synthesis summary:
+  Number of synthesized netlists          3 (1 packages)
+  Single run mode                         On
+  Pipeline                                On (2 pipelined netlists)
+  Late hierarchical reference connection  On
+  Number of analyzed Verilog modules      3 (3 synthesized)
+  Number of analyzed VHDL entities        0 (0 synthesized)
+INFO (INL003): Clearing all state information (assumes, stopats, and so forth).
+fpu_sub
+[<embedded>] % 
+[<embedded>] % # Set up Clocks and Resets
+[<embedded>] % clock clk
+[<embedded>] % reset rst
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "rst".
+[<embedded>] % 
+[<embedded>] % # Get design information to check general complexity
+[<embedded>] % get_design_info
+Statistics [for instance "fpu_sub"]
+--------------------------
+# Flops:         30 (850) (161 property flop bits)
+# Latches:       0 (0)
+# Gates:         3931 (30832)
+# Nets:          4212
+# Ports:         9
+# RTL Lines:     1032
+# RTL Instances: 2
+# Embedded Assumptions: 0
+# Embedded Assertions:  161
+# Embedded Covers:      161
+850
+[<embedded>] % 
+[<embedded>] % # Prove properties
+[<embedded>] % prove -all
+Ncustom1: Custom engine code is hT3Ng7hPPfiYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSl+CwjiTMAQA
+Bcustom2: Custom engine code is hT3Nm7hPr1Vp3Di1Ra2USNIGL4JypRnLKLAdF6JAyuavO2JfGCiY9OZJhcAcOUnLx5xwNdhILGrAWX9s+z2WDkKwNR7tAfClBEjRFVQeq6DU54boFgEA
+AMcustom3: Custom engine code is hT3Ng7hP/feYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSmmqwm7g9AQA
+Mpcustom4: Custom engine code is hT3NZbhP9fmY2AbBQnsjfOxn6c+6e6yL+/e8fZFmaQrnlgEA
+INFO (IPF036): Starting proof on task: "<embedded>", 322 properties to prove with 0 already proven/unreachable
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis: phase 2 of 4.
+INFO (IRS031): Running reset analysis: phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 4 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 iterations. Assigned values for 689 of 689 design flops, 0 of 0 design latches, 483 of 483 internal elements.
+INFO (IRS039): Reset analysis complete.
+INFO (IPF031): Settings used for proof thread 0:
+    orchestration                 = on
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = auto
+    proofgrid_per_engine_max_jobs = 1
+    max engine jobs               = auto
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+0: Using multistage preprocessing
+0: Starting reduce
+0: Finished reduce in 0.001s
+0.0.PRE: Performing Proof Simplification...
+0.0.N: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: Proof Simplification Iteration 1	[0.00 s]
+0.0.PRE: A trace with 1 cycles was found. [0.01 s]
+AMcustom5: Custom engine code is hT3N1rhP11/52HrFRS21ROp2LOjVTgPvT8L8BGXHgLhaIuqtT4nARFjUqrBL+7pLmaTOzBepZW/Jm8SSrHDybSQtoNiO3y43wk+dEoWlsZizu97Fih6O6lPVG/LpWP5SsUPwlGagLNa1FKEFvwVXyX7//8prySbvSxIHXr5er+z4RAEA
+Ncustom6: Custom engine code is hT3OXrhPByJp3TrFSTLhUmMH4KVtJgmTCnNDF46yMXOKY48m4LS5nE7yBzFjA7kDuwO/GhGUpEPiky3p3wmPn3dJZHxFMsafSoObRzSC+tn7sEY0WbTdZ/FV4hL3MYH/b1CIUvXSWR4wqEoVLsmMOD4xIPT4lI1LO6ZCO7PnnWQuLwetnvKlrXx6wCW/A+x+enqslg1YPobi4wEF/EvbzOvcTYdJvl2s4H2yZg2b2ofAVN5WvhWk1HoBAA
+ADcustom7: Custom engine code is hT3Nv7hPv1752HrFRa2kROx2f/ECJeZB2AZsLdlO8VwmIuqtT4nIDFXclhg+O+o+DMmQCekbheGk0kK28laA9gaOFDXsQp29J3X615HY1IPHJWd6FUFvCHjO+p1k652b5JJvZlShNpGlGSXAiQe/mEAj6tEBAA
+Tricustom8: Custom engine code is hT3Nu7hPt1752DvFRa0kNDiyIV97VyejwM9C/jCLJjdPvusZONHY42VYUy0Q1ZotnhcVtNc56tJ5wbxv6V2+XpdsaSlHck5vfnbYjdwj1OECy9U+7oSQ0SZE3g5ayD+Phuh4odCJTjeKa2k4elM9ldQfkAEA
+Gcustom9: Custom engine code is hT3NibhPDfeYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncipMGcUXqAadachREE9F2PwhBUZUNw5kHnd4JdXkamORRgEA
+C2custom10: Custom engine code is hT3NirhPjfWYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncgkrYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuG86XYVV00BAA
+AGcustom11: Custom engine code is hT3NirhP/fmYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInnckcwYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuHEZnZByh0BAA
+Bcustom12: Custom engine code is hT3NjrhPDfiYQADBZnYcglOvK9PfWxFtenjIyBqfrgr7if/jL/yPOuK1BAflEcW0DxNH2eDIoezN2gxlQFg81RZtiWXh7aiTAidvAQA
+Ncustom13: Custom engine code is hT3NR7hPByFp3TrFSTLhUmMH4KWtJglTyV/c51BHEeZWamnJv767nE6PCak26bd3gf3XGN3rIRheufhDieCJQVISo+gNYUKhiUedBKGtsP/a18svAnlMJZudHxDFwK5ufsyoxsIyiAeSY2oi3tEuoDHr5gw42DFKAG3PqO3CEsl8Azzdt3pl5nGA1Ifv2H02eYsFzWb/nfp8PMb3F0krE/EgBcm8TD9Div8BAA
+Tricustom14: Custom engine code is hT3Nu7hP3fiYQADBZnYcglNHp9bfd7EOeniIqP/ji8sGLQu8yhsFO+wxJ+O+R0bU8g/IewXFomyos+viQnWc2xYNYmMqpo3i40O7DaZR7qfp4YqNx26KRvQ/qx0BAA
+INFO (IPF047): 0.0.PRE: The cover property "fpu_sub.v_fpu_sub.assert_a88:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "fpu_sub.v_fpu_sub.assert_a154:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.N: Proof Simplification Iteration 2	[0.02 s]
+0.0.PRE: A trace with 2 cycles was found. [0.03 s]
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a88" in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a154" in 0.00 s.
+0.0.N: Proof Simplification Iteration 3	[0.02 s]
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property ":noDeadEnd" was proven in 0.00 s.
+    Use check_assumptions -show -dead_end to show this property in the property table.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property ":noConflict" was proven in 0.00 s.
+    Use check_assumptions -show to show this property in the property table.
+INFO (IPF047): 0.0.PRE: The cover property ":live" was covered in 1 cycles in 0.00 s.
+    Use check_assumptions -show -live to show this property in the property table.
+0.0.PRE: Proof Simplification completed in 0.05 s
+0.0.N: Identified and disabled 2 duplicated targets.
+0: About to start ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+0: =============================== ProofGrid start ===============================
+0: ProofGrid usable level: 318
+0: Initial ProofGrid level: 1
+0: ProofGrid is starting event handling
+0.0.Hp: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.N: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Hp: Proofgrid shell started at 73591@pal-achieve-06(local) jg_73540_pal-achieve-06_1
+0.0.N: Proofgrid shell started at 73590@pal-achieve-06(local) jg_73540_pal-achieve-06_1
+0.0.Hp: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.N: Starting proof for property "fpu_sub.v_fpu_sub.assert_a80"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: A trace with 4 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 4 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a80" in 0.00 s.
+INFO (IPF047): 0.0.N: The cover property "fpu_sub.v_fpu_sub.assert_a80:precondition1" was covered in 3 cycles in 0.00 s by the incidental trace "fpu_sub.v_fpu_sub.assert_a80".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a127" in 0.00 s by the incidental trace "fpu_sub.v_fpu_sub.assert_a80".
+INFO (IPF047): 0.0.N: The cover property "fpu_sub.v_fpu_sub.assert_a127:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "fpu_sub.v_fpu_sub.assert_a80".
+INFO (IPF047): 0.0.N: The cover property "fpu_sub.v_fpu_sub.assert_a54:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "fpu_sub.v_fpu_sub.assert_a80".
+INFO (IPF055): 0.0.N: A counterexample (cex) with 4 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a94" in 0.00 s by the incidental trace "fpu_sub.v_fpu_sub.assert_a80".
+INFO (IPF047): 0.0.N: The cover property "fpu_sub.v_fpu_sub.assert_a94:precondition1" was covered in 3 cycles in 0.00 s by the incidental trace "fpu_sub.v_fpu_sub.assert_a80".
+INFO (IPF047): 0.0.N: The cover property "fpu_sub.v_fpu_sub.assert_a73:precondition1" was covered in 1 cycles in 0.00 s by the incidental trace "fpu_sub.v_fpu_sub.assert_a80".
+0.0.N: Stopped processing property "fpu_sub.v_fpu_sub.assert_a80"	[0.00 s].
+0.0.N: Starting proof for property "fpu_sub.v_fpu_sub.assert_a0"	[0.00 s].
+0: ProofGrid usable level: 310
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: A trace with 4 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 4 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a0" in 0.01 s.
+INFO (IPF047): 0.0.N: The cover property "fpu_sub.v_fpu_sub.assert_a0:precondition1" was covered in 3 cycles in 0.01 s by the incidental trace "fpu_sub.v_fpu_sub.assert_a0".
+INFO (IPF047): 0.0.N: The cover property "fpu_sub.v_fpu_sub.assert_a1:precondition1" was covered in 2 cycles in 0.01 s by the incidental trace "fpu_sub.v_fpu_sub.assert_a0".
+INFO (IPF047): 0.0.N: The cover property "fpu_sub.v_fpu_sub.assert_a11:precondition1" was covered in 2 cycles in 0.01 s by the incidental trace "fpu_sub.v_fpu_sub.assert_a0".
+0.0.N: Stopped processing property "fpu_sub.v_fpu_sub.assert_a0"	[0.01 s].
+0: ProofGrid usable level: 306
+0.0.Hp: Trace Attempt  1	[0.06 s]
+0.0.Hp: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a10:precondition1" was covered in 1 cycles in 0.11 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a2:precondition1" was covered in 1 cycles in 0.11 s.
+0.0.Hp: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a135:precondition1" was covered in 1 cycles in 0.12 s.
+0.0.Hp: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a101:precondition1" was covered in 1 cycles in 0.12 s.
+0.0.Hp: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a104:precondition1" was covered in 1 cycles in 0.12 s.
+0.0.Hp: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a115:precondition1" was covered in 1 cycles in 0.12 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a114:precondition1" was covered in 1 cycles in 0.13 s.
+0: ProofGrid usable level: 299
+0.0.Hp: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a53:precondition1" was covered in 1 cycles in 0.14 s.
+0.0.Hp: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a32:precondition1" was covered in 1 cycles in 0.14 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a65:precondition1" was covered in 1 cycles in 0.14 s.
+0.0.Hp: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a45:precondition1" was covered in 1 cycles in 0.14 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a136:precondition1" was covered in 1 cycles in 0.14 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a100:precondition1" was covered in 1 cycles in 0.14 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a108:precondition1" was covered in 1 cycles in 0.14 s.
+0.0.Hp: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a92:precondition1" was covered in 1 cycles in 0.14 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a7:precondition1" was covered in 1 cycles in 0.14 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a6:precondition1" was covered in 1 cycles in 0.14 s.
+0.0.Hp: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a81:precondition1" was covered in 1 cycles in 0.14 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a1:precondition1" was covered in 1 cycles in 0.17 s.
+0.0.Hp: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a8:precondition1" was covered in 1 cycles in 0.17 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a138:precondition1" was covered in 1 cycles in 0.17 s.
+0.0.Hp: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a120:precondition1" was covered in 1 cycles in 0.17 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a111:precondition1" was covered in 1 cycles in 0.17 s.
+0.0.Hp: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a84:precondition1" was covered in 1 cycles in 0.17 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a125:precondition1" was covered in 1 cycles in 0.17 s.
+0.0.Hp: A trace with 1 cycles was found. [0.06 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a105:precondition1" was covered in 1 cycles in 0.17 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a130:precondition1" was covered in 1 cycles in 0.17 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a35:precondition1" was covered in 1 cycles in 0.18 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a29:precondition1" was covered in 1 cycles in 0.18 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a17:precondition1" was covered in 1 cycles in 0.18 s.
+0.0.Hp: A trace with 1 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a25:precondition1" was covered in 1 cycles in 0.18 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a123:precondition1" was covered in 1 cycles in 0.18 s.
+0.0.Hp: A trace with 1 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a18:precondition1" was covered in 1 cycles in 0.19 s.
+0.0.Hp: A trace with 1 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a4:precondition1" was covered in 1 cycles in 0.19 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a33:precondition1" was covered in 1 cycles in 0.19 s.
+0.0.Hp: A trace with 1 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a9:precondition1" was covered in 1 cycles in 0.19 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a41:precondition1" was covered in 1 cycles in 0.19 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a27:precondition1" was covered in 1 cycles in 0.19 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a34:precondition1" was covered in 1 cycles in 0.19 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a42:precondition1" was covered in 1 cycles in 0.19 s.
+0.0.Hp: A trace with 1 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a98:precondition1" was covered in 1 cycles in 0.19 s.
+0.0.Hp: A trace with 1 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a97:precondition1" was covered in 1 cycles in 0.19 s.
+0.0.Hp: A trace with 1 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a96:precondition1" was covered in 1 cycles in 0.19 s.
+0.0.Hp: A trace with 1 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a91:precondition1" was covered in 1 cycles in 0.19 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a90:precondition1" was covered in 1 cycles in 0.20 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a28:precondition1" was covered in 1 cycles in 0.20 s.
+0.0.Hp: A trace with 1 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a93:precondition1" was covered in 1 cycles in 0.20 s.
+0.0.Hp: A trace with 1 cycles was found. [0.09 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a72:precondition1" was covered in 1 cycles in 0.20 s.
+0.0.Hp: A trace with 1 cycles was found. [0.09 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a82:precondition1" was covered in 1 cycles in 0.20 s.
+0.0.Hp: A trace with 1 cycles was found. [0.09 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a83:precondition1" was covered in 1 cycles in 0.20 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.09 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a86:precondition1" was covered in 1 cycles in 0.21 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a87:precondition1" was covered in 1 cycles in 0.21 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a85:precondition1" was covered in 1 cycles in 0.21 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a89:precondition1" was covered in 1 cycles in 0.21 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a121:precondition1" was covered in 1 cycles in 0.21 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a128:precondition1" was covered in 1 cycles in 0.22 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a103:precondition1" was covered in 1 cycles in 0.22 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a139:precondition1" was covered in 1 cycles in 0.22 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a107:precondition1" was covered in 1 cycles in 0.22 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a102:precondition1" was covered in 1 cycles in 0.22 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a109:precondition1" was covered in 1 cycles in 0.23 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a113:precondition1" was covered in 1 cycles in 0.23 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a112:precondition1" was covered in 1 cycles in 0.23 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a116:precondition1" was covered in 1 cycles in 0.23 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a119:precondition1" was covered in 1 cycles in 0.24 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a118:precondition1" was covered in 1 cycles in 0.24 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a51:precondition1" was covered in 1 cycles in 0.24 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a52:precondition1" was covered in 1 cycles in 0.24 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a55:precondition1" was covered in 1 cycles in 0.25 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a57:precondition1" was covered in 1 cycles in 0.25 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a66:precondition1" was covered in 1 cycles in 0.25 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a61:precondition1" was covered in 1 cycles in 0.25 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a56:precondition1" was covered in 1 cycles in 0.25 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a99:precondition1" was covered in 1 cycles in 0.25 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a20:precondition1" was covered in 1 cycles in 0.25 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a24:precondition1" was covered in 1 cycles in 0.25 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a131:precondition1" was covered in 1 cycles in 0.25 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a31:precondition1" was covered in 1 cycles in 0.27 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a40:precondition1" was covered in 1 cycles in 0.27 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a14:precondition1" was covered in 1 cycles in 0.27 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a30:precondition1" was covered in 1 cycles in 0.27 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a36:precondition1" was covered in 1 cycles in 0.28 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a38:precondition1" was covered in 1 cycles in 0.28 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a151:precondition1" was covered in 1 cycles in 0.28 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a58:precondition1" was covered in 1 cycles in 0.28 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a144:precondition1" was covered in 1 cycles in 0.28 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a44:precondition1" was covered in 1 cycles in 0.31 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a21:precondition1" was covered in 1 cycles in 0.31 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a60:precondition1" was covered in 1 cycles in 0.31 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a22:precondition1" was covered in 1 cycles in 0.31 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a15:precondition1" was covered in 1 cycles in 0.31 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a12:precondition1" was covered in 1 cycles in 0.31 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a23:precondition1" was covered in 1 cycles in 0.31 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a26:precondition1" was covered in 1 cycles in 0.31 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a16:precondition1" was covered in 1 cycles in 0.32 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a160:precondition1" was covered in 1 cycles in 0.32 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a13:precondition1" was covered in 1 cycles in 0.32 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a19:precondition1" was covered in 1 cycles in 0.32 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a5:precondition1" was covered in 1 cycles in 0.32 s.
+0.0.Hp: A trace with 1 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a147:precondition1" was covered in 1 cycles in 0.32 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a47:precondition1" was covered in 1 cycles in 0.33 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a126:precondition1" was covered in 1 cycles in 0.33 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a74:precondition1" was covered in 1 cycles in 0.33 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a148:precondition1" was covered in 1 cycles in 0.33 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a134:precondition1" was covered in 1 cycles in 0.34 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a106:precondition1" was covered in 1 cycles in 0.34 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a141:precondition1" was covered in 1 cycles in 0.34 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a50:precondition1" was covered in 1 cycles in 0.34 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a79:precondition1" was covered in 1 cycles in 0.35 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a117:precondition1" was covered in 1 cycles in 0.35 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a37:precondition1" was covered in 1 cycles in 0.36 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a46:precondition1" was covered in 1 cycles in 0.36 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a140:precondition1" was covered in 1 cycles in 0.36 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a129:precondition1" was covered in 1 cycles in 0.38 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a59:precondition1" was covered in 1 cycles in 0.38 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a122:precondition1" was covered in 1 cycles in 0.38 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a39:precondition1" was covered in 1 cycles in 0.38 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a43:precondition1" was covered in 1 cycles in 0.38 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a159:precondition1" was covered in 1 cycles in 0.38 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a78:precondition1" was covered in 1 cycles in 0.40 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a77:precondition1" was covered in 1 cycles in 0.40 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a76:precondition1" was covered in 1 cycles in 0.40 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a75:precondition1" was covered in 1 cycles in 0.40 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a71:precondition1" was covered in 1 cycles in 0.40 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a70:precondition1" was covered in 1 cycles in 0.41 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a68:precondition1" was covered in 1 cycles in 0.41 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a69:precondition1" was covered in 1 cycles in 0.41 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a64:precondition1" was covered in 1 cycles in 0.41 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a67:precondition1" was covered in 1 cycles in 0.41 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a62:precondition1" was covered in 1 cycles in 0.42 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a63:precondition1" was covered in 1 cycles in 0.42 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a133:precondition1" was covered in 1 cycles in 0.42 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a132:precondition1" was covered in 1 cycles in 0.42 s.
+0.0.Hp: A trace with 1 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a158:precondition1" was covered in 1 cycles in 0.42 s.
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a152:precondition1" was covered in 1 cycles in 0.42 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.12 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a155:precondition1" was covered in 1 cycles in 0.43 s.
+0.0.Hp: A trace with 1 cycles was found. [0.12 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a156:precondition1" was covered in 1 cycles in 0.44 s.
+0.0.Hp: A trace with 1 cycles was found. [0.12 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a150:precondition1" was covered in 1 cycles in 0.44 s.
+0.0.Hp: A trace with 1 cycles was found. [0.12 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a48:precondition1" was covered in 1 cycles in 0.44 s.
+0.0.Hp: A trace with 1 cycles was found. [0.12 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a49:precondition1" was covered in 1 cycles in 0.45 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.12 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a153:precondition1" was covered in 1 cycles in 0.46 s.
+0.0.Hp: A trace with 1 cycles was found. [0.12 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a142:precondition1" was covered in 1 cycles in 0.46 s.
+0.0.Hp: A trace with 1 cycles was found. [0.12 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a143:precondition1" was covered in 1 cycles in 0.47 s.
+0.0.Hp: A trace with 1 cycles was found. [0.12 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a157:precondition1" was covered in 1 cycles in 0.47 s.
+0.0.Hp: A trace with 1 cycles was found. [0.12 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a146:precondition1" was covered in 1 cycles in 0.47 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Hp: A trace with 1 cycles was found. [0.12 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a145:precondition1" was covered in 1 cycles in 0.48 s.
+0.0.Hp: A trace with 1 cycles was found. [0.12 s]
+INFO (IPF047): 0.0.Hp: The cover property "fpu_sub.v_fpu_sub.assert_a149:precondition1" was covered in 1 cycles in 0.48 s.
+0.0.Ht: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Ht: Proofgrid shell started at 73616@pal-achieve-06(local) jg_73540_pal-achieve-06_1
+0.0.Bm: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Bm: Proofgrid shell started at 73621@pal-achieve-06(local) jg_73540_pal-achieve-06_1
+0.0.Mpcustom4: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Mpcustom4: Proofgrid shell started at 73622@pal-achieve-06(local) jg_73540_pal-achieve-06_1
+0.0.Oh: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Oh: Proofgrid shell started at 73623@pal-achieve-06(local) jg_73540_pal-achieve-06_1
+0.0.L: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.L: Proofgrid shell started at 73624@pal-achieve-06(local) jg_73540_pal-achieve-06_1
+0.0.B: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.AM: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.N: Starting proof for property "fpu_sub.v_fpu_sub.assert_a10"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a10" in 0.00 s.
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a2" in 0.00 s by the incidental trace "fpu_sub.v_fpu_sub.assert_a10".
+0.0.N: Stopped processing property "fpu_sub.v_fpu_sub.assert_a10"	[0.00 s].
+0: Running jobs with 5 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 5 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 6 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 6 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 7 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 7 threads on "pal-achieve-06" with 4 cores.
+0.0.N: Starting proof for property "fpu_sub.v_fpu_sub.assert_a135"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: A trace with 2 cycles was found. [0.00 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a135" in 0.00 s.
+0.0.N: Stopped processing property "fpu_sub.v_fpu_sub.assert_a135"	[0.00 s].
+0.0.AM: Proofgrid shell started at 73628@pal-achieve-06(local) jg_73540_pal-achieve-06_1
+0.0.Ht: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Ht: Trace Attempt  1	[0.02 s]
+0.0.Ht: Trace Attempt  2	[0.02 s]
+0.0.Ht: A trace with 2 cycles was found. [0.02 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a101" in 0.00 s.
+0.0.Ht: A trace with 2 cycles was found. [0.02 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a104" in 0.00 s.
+0.0.Ht: A trace with 2 cycles was found. [0.02 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a115" in 0.00 s.
+0.0.Ht: A trace with 2 cycles was found. [0.02 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a114" in 0.00 s.
+0.0.Ht: A trace with 2 cycles was found. [0.02 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a53" in 0.00 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.02 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a54" in 0.01 s.
+0.0.Ht: A trace with 2 cycles was found. [0.02 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a32" in 0.01 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a65" in 0.01 s.
+0.0.Ht: A trace with 2 cycles was found. [0.02 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a92" in 0.01 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a100" in 0.01 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a108" in 0.01 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a122" in 0.01 s.
+0.0.Ht: A trace with 2 cycles was found. [0.03 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a81" in 0.02 s.
+0.0.Ht: A trace with 2 cycles was found. [0.03 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a1" in 0.02 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.03 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a120" in 0.02 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a111" in 0.02 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a129" in 0.02 s.
+0.0.Ht: A trace with 2 cycles was found. [0.03 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a84" in 0.03 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a125" in 0.03 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a105" in 0.03 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a130" in 0.03 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a35" in 0.03 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a29" in 0.03 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a17" in 0.03 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a11" in 0.03 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a98" in 0.03 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a160" in 0.03 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a97" in 0.04 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a89" in 0.04 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a96" in 0.04 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a91" in 0.05 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a90" in 0.05 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a113" in 0.05 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a93" in 0.05 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a82" in 0.05 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a83" in 0.05 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a86" in 0.06 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a87" in 0.06 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a85" in 0.06 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a128" in 0.06 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a103" in 0.06 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a121" in 0.07 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a123" in 0.07 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a139" in 0.07 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a136" in 0.07 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a107" in 0.07 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a152" in 0.07 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a102" in 0.08 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a109" in 0.08 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a112" in 0.08 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a116" in 0.08 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a119" in 0.08 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a118" in 0.09 s.
+0.0.Ht: A trace with 2 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a99" in 0.09 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a131" in 0.09 s.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a147" in 0.09 s.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a47" in 0.10 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a46" in 0.10 s.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a126" in 0.10 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a138" in 0.11 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a134" in 0.11 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a142" in 0.11 s.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a106" in 0.11 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a141" in 0.11 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a145" in 0.11 s.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a79" in 0.11 s.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a66" in 0.11 s.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a117" in 0.11 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a37" in 0.12 s.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a140" in 0.12 s.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a39" in 0.12 s.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a43" in 0.12 s.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a159" in 0.13 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a78" in 0.13 s.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a77" in 0.13 s.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a76" in 0.13 s.
+0.0.Ht: A trace with 2 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a75" in 0.14 s.
+0.0.Ht: A trace with 2 cycles was found. [0.06 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a74" in 0.14 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.06 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a73" in 0.14 s.
+0.0.Ht: A trace with 2 cycles was found. [0.06 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a71" in 0.14 s.
+0.0.Ht: A trace with 2 cycles was found. [0.06 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a70" in 0.14 s.
+0.0.Ht: A trace with 2 cycles was found. [0.06 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a68" in 0.14 s.
+0.0.Ht: A trace with 2 cycles was found. [0.06 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a69" in 0.14 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.06 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a64" in 0.15 s.
+0.0.Ht: A trace with 2 cycles was found. [0.06 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a67" in 0.15 s.
+0.0.Ht: A trace with 2 cycles was found. [0.06 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a60" in 0.15 s.
+0.0.Ht: A trace with 2 cycles was found. [0.06 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a61" in 0.16 s.
+0.0.Ht: A trace with 2 cycles was found. [0.06 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a62" in 0.16 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.06 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a63" in 0.16 s.
+0.0.Ht: A trace with 2 cycles was found. [0.06 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a133" in 0.16 s.
+0.0.Ht: A trace with 2 cycles was found. [0.06 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a132" in 0.17 s.
+0.0.Ht: A trace with 2 cycles was found. [0.06 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a59" in 0.17 s.
+0.0.Ht: A trace with 2 cycles was found. [0.06 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a158" in 0.17 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.07 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a155" in 0.17 s.
+0.0.Ht: A trace with 2 cycles was found. [0.07 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a156" in 0.17 s.
+0.0.Ht: A trace with 2 cycles was found. [0.07 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a151" in 0.17 s.
+0.0.Ht: A trace with 2 cycles was found. [0.07 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a150" in 0.17 s.
+0.0.Ht: A trace with 2 cycles was found. [0.07 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a48" in 0.18 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.07 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a49" in 0.18 s.
+0.0.Ht: A trace with 2 cycles was found. [0.07 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a153" in 0.18 s.
+0.0.Ht: A trace with 2 cycles was found. [0.07 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a143" in 0.19 s.
+0.0.Ht: A trace with 2 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a157" in 0.19 s.
+0.0.Ht: A trace with 2 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a146" in 0.19 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a144" in 0.19 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 2 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a148" in 0.20 s.
+0.0.Ht: A trace with 2 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 2 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a149" in 0.21 s.
+0.0.Ht: Trace Attempt  3	[0.08 s]
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.Ht: The cover property "fpu_sub.v_fpu_sub.assert_a95:precondition1" was covered in 3 cycles in 0.21 s.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.Ht: The cover property "fpu_sub.v_fpu_sub.assert_a124:precondition1" was covered in 3 cycles in 0.21 s.
+INFO (IPF047): 0.0.Ht: The cover property "fpu_sub.v_fpu_sub.assert_a137:precondition1" was covered in 3 cycles in 0.21 s.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a45" in 0.21 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF047): 0.0.Ht: The cover property "fpu_sub.v_fpu_sub.assert_a3:precondition1" was covered in 3 cycles in 0.21 s.
+0: ProofGrid usable level: 46
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a7" in 0.22 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a6" in 0.22 s.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a8" in 0.22 s.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a25" in 0.22 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a56" in 0.22 s.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a18" in 0.22 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a4" in 0.23 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a44" in 0.23 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a9" in 0.24 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a41" in 0.24 s.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a42" in 0.24 s.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a72" in 0.24 s.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a51" in 0.24 s.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a52" in 0.24 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a16" in 0.24 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a55" in 0.25 s.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a57" in 0.25 s.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a33" in 0.25 s.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a31" in 0.26 s.
+0.0.Ht: A trace with 3 cycles was found. [0.08 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a30" in 0.26 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a28" in 0.26 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 3 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a36" in 0.26 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 3 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a38" in 0.27 s.
+0.0.Ht: A trace with 3 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a58" in 0.27 s.
+0.0.Ht: A trace with 3 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a40" in 0.27 s.
+0.0.Ht: A trace with 3 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a20" in 0.27 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a22" in 0.27 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a24" in 0.27 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a27" in 0.27 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a14" in 0.27 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a12" in 0.27 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a34" in 0.27 s.
+0.0.Ht: A trace with 3 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a21" in 0.27 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a26" in 0.27 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 3 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a23" in 0.28 s.
+0.0.Ht: A trace with 3 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a15" in 0.28 s.
+0.0.Ht: A trace with 3 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a13" in 0.28 s.
+0.0.Ht: A trace with 3 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a19" in 0.28 s.
+0.0.Ht: A trace with 3 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a5" in 0.29 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 3 cycles was found. [0.09 s]
+INFO (IPF047): 0.0.Ht: The cover property "fpu_sub.v_fpu_sub.assert_a110:precondition1" was covered in 3 cycles in 0.29 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Ht: A trace with 3 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 3 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a50" in 0.30 s.
+0.0.Ht: Trace Attempt  4	[0.09 s]
+0.0.Ht: A trace with 4 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 4 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a95" in 0.30 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 4 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a124" in 0.30 s.
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 4 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a137" in 0.30 s.
+0.0.Ht: A trace with 4 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 4 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a3" in 0.30 s.
+0.0.N: Requesting engine job to stop
+0.0.Hp: Requesting engine job to terminate
+0.0.Ht: Requesting engine job to terminate
+0.0.Bm: Requesting engine job to terminate
+0.0.Mpcustom4: Requesting engine job to terminate
+0.0.Oh: Requesting engine job to terminate
+0.0.L: Requesting engine job to terminate
+INFO (IPF144): 0: Initiating shutdown of proof [0.90 s]
+0.0.Ht: A trace with 4 cycles was found. [0.09 s]
+INFO (IPF055): 0.0.Ht: A counterexample (cex) with 4 cycles was found for the property "fpu_sub.v_fpu_sub.assert_a110" in 0.30 s.
+0.0.Ht: All properties determined. [0.09 s]
+0.0.Bm: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Bm: Trace Attempt  1	[0.01 s]
+0.0.Bm: Trace Attempt  2	[0.01 s]
+0.0.Mpcustom4: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Mpcustom4: Trace Attempt  1	[0.03 s]
+0.0.Mpcustom4: Trace Attempt  2	[0.03 s]
+0.0.L: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.L: Using trace diversification with seed 1 (0.05)
+0.0.L: Using LRU state removal heuristic
+0.0.L: Using states from traces to { (reset) }
+0.0.L: Trace Attempt  3	[0.03 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a88 <2> }
+0.0.L: Trace Attempt  3	[0.06 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a10 <3> }
+0.0.L: Trace Attempt  3	[0.07 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a0:precondition1 (4) }
+0.0.L: Trace Attempt  3	[0.08 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a80 <5> }
+0.0.L: Trace Attempt  3	[0.08 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a135 <6> }
+0.0.L: Trace Attempt  3	[0.09 s]
+0.0.Hp: Trace Attempt  2	[0.58 s]
+0.0.Ht: Exited with Success (@ 0.91 s)
+0: ProofGrid usable level: 0
+0.0.Bm: A trace with 2 cycles was found. [0.10 s]
+INFO (IPF047): 0.0.Bm: The cover property "fpu_sub.v_fpu_sub.assert_a11:precondition1" was covered in 1 cycles in 0.01 s.
+0.0.Mpcustom4: All properties determined. [0.41 s]
+0.0.Oh: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Oh: bwd trail(1): 1 0.0241197s
+0.0.Oh: All properties either determined or skipped. [0.09 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a101 <7> }
+0.0.L: Trace Attempt  3	[0.10 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a127 <8> }
+0.0.L: Trace Attempt  3	[0.10 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a104 <9> }
+0.0.L: Trace Attempt  3	[0.11 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a115 <10> }
+0.0.L: Trace Attempt  3	[0.12 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a114 <11> }
+0.0.L: Trace Attempt  3	[0.13 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a32 <12> }
+0.0.L: Trace Attempt  3	[0.13 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a53 <13> }
+0.0.L: Trace Attempt  3	[0.14 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a54 <14> }
+0.0.L: Trace Attempt  3	[0.15 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a1 <15> }
+0.0.L: Trace Attempt  3	[0.16 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a81 <16> }
+0.0.L: Trace Attempt  3	[0.17 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a2 <17> }
+0.0.L: Trace Attempt  3	[0.17 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a94 <18> }
+0.0.L: Trace Attempt  3	[0.18 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a35 <19> }
+0.0.L: Trace Attempt  3	[0.19 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a120 <20> }
+0.0.L: Trace Attempt  3	[0.20 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a111 <21> }
+0.0.L: Trace Attempt  3	[0.20 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a84 <22> }
+0.0.L: Trace Attempt  3	[0.21 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a29 <23> }
+0.0.L: Trace Attempt  3	[0.22 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a11:precondition1 (24) }
+0.0.L: Trace Attempt  3	[0.23 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a17 <25> }
+0.0.L: Trace Attempt  3	[0.24 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a47 <26> }
+0.0.L: Trace Attempt  3	[0.24 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a148 <27> }
+0.0.L: Trace Attempt  3	[0.25 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a92 <28> }
+0.0.L: Trace Attempt  3	[0.26 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a79 <29> }
+0.0.L: Trace Attempt  3	[0.27 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a66 <30> }
+0.0.L: Trace Attempt  3	[0.28 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a117 <31> }
+0.0.L: Trace Attempt  3	[0.28 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a37 <32> }
+0.0.L: Trace Attempt  3	[0.29 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a145 <33> }
+0.0.L: Trace Attempt  3	[0.30 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a140 <34> }
+0.0.L: Trace Attempt  3	[0.31 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a46 <35> }
+0.0.L: Trace Attempt  3	[0.32 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a129 <36> }
+0.0.L: Trace Attempt  3	[0.32 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a122 <37> }
+0.0.L: Trace Attempt  3	[0.33 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a39 <38> }
+0.0.L: Trace Attempt  3	[0.34 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a76 <39> }
+0.0.L: Trace Attempt  3	[0.34 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a68 <40> }
+0.0.L: Trace Attempt  3	[0.36 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a45 <41> }
+0.0.L: Trace Attempt  3	[0.36 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a43 <42> }
+0.0.L: Trace Attempt  3	[0.37 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a78 <43> }
+0.0.L: Trace Attempt  3	[0.38 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a77 <44> }
+0.0.L: Trace Attempt  3	[0.39 s]
+0.0.L: Using states from traces to { fpu_sub.v_fpu_sub.assert_a75 <45> }
+0.0.L: Trace Attempt  3	[0.40 s]
+0.0.L: All properties determined. [0.40 s]
+0.0.B: Proofgrid shell started at 73625@pal-achieve-06(local) jg_73540_pal-achieve-06_1
+0.0.B: Requesting engine job to terminate
+0.0.B: Preventing job from starting because proof is shutting down.
+0.0.B: Requesting engine job to terminate
+0.0.B: Interrupted. [0.00 s]
+0.0.AM: Requesting engine job to terminate
+0.0.AM: All properties determined. [0.34 s]
+0.0.N: Last scan. Per property time limit: 0s
+0.0.N: Starting proof for property "fpu_sub.v_fpu_sub.assert_a101"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Stopped processing property "fpu_sub.v_fpu_sub.assert_a101"	[0.00 s].
+0.0.N: Starting proof for property "fpu_sub.v_fpu_sub.assert_a95"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Stopped processing property "fpu_sub.v_fpu_sub.assert_a95"	[0.00 s].
+0.0.N: All properties determined. [0.30 s]
+0.0.Bm: All properties determined. [0.40 s]
+0.0.Mpcustom4: Exited with Success (@ 0.91 s)
+0.0.Oh: Exited with Success (@ 0.91 s)
+0.0.L: Exited with Success (@ 0.91 s)
+0.0.B: Exited with Success (@ 0.91 s)
+0.0.AM: Exited with Success (@ 0.91 s)
+0.0.N: Exited with Success (@ 0.91 s)
+0.0.Hp: Interrupted (multi)
+0.0.Hp: All properties determined. [0.91 s]
+0.0.Bm: Exited with Success (@ 0.91 s)
+0.0.Hp: Exited with Success (@ 0.92 s)
+0: --------------------------------------------------------------
+ProofGrid Summary (utilization 48.54 %)
+--------------------------------------------------------------
+     engines started                               :     9
+     engine jobs started                           :     9
+
+    Average time in state (seconds)
+    ------------------------------------------------------
+    Engine  Pending     Running        Dead    Utilization
+    ------------------------------------------------------
+      N        0.19        0.90        0.00       82.43 %
+     Hp        0.19        0.90        0.00       82.73 %
+     Ht        0.56        0.40        0.00       41.46 %
+     Bm        0.50        0.40        0.00       44.28 %
+    Mpcustom4        0.50        0.40        0.00       44.30 %
+     Oh        0.49        0.40        0.00       44.91 %
+      L        0.46        0.40        0.00       46.41 %
+      B        0.79        0.00        0.00        0.00 %
+     AM        0.35        0.00        0.00        0.00 %
+    all        0.45        0.42        0.00       48.54 %
+
+    Total time in state (seconds)
+    -----------------------------------------
+            Pending     Running        Dead  
+    -----------------------------------------
+               4.02        3.79        0.00
+
+    Data read    : 1.31 MiB
+    Data written : 56.81 kiB
+
+0: All pending notifications were processed.
+0: ProofGrid was paused 49 times for a total of 0.612 seconds
+INFO (IPF059): 0: Completed proof on task: "<embedded>"
+
+==============================================================
+SUMMARY
+==============================================================
+           Properties Considered              : 322
+                 assertions                   : 161
+                  - proven                    : 0 (0%)
+                  - bounded_proven (user)     : 0 (0%)
+                  - bounded_proven (auto)     : 0 (0%)
+                  - marked_proven             : 0 (0%)
+                  - cex                       : 161 (100%)
+                  - ar_cex                    : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+                 covers                       : 161
+                  - unreachable               : 0 (0%)
+                  - bounded_unreachable (user): 0 (0%)
+                  - covered                   : 161 (100%)
+                  - ar_covered                : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+determined
+[<embedded>] % 
+[<embedded>] % # Report proof results
+[<embedded>] % report
+
+==============================================================
+    Jasper Verification Results
+==============================================================
+    2024.03 FCS 64 bits for Linux64 3.10.0-1160.21.1.el7.x86_64
+    Host Name: pal-achieve-06.uic.edu
+    User Name: vpulav2
+    Printed on: Monday, May 6, 2024 08:27:36 PM CDT
+    Working Directory: /data/vpulav2/Work/Jasper/fpu_sub
+
+
+==============================================================
+RESULTS
+==============================================================
+
+--------------------------------------------------------------------------------------------------------
+       Name                                            |    Result    |  Engine  |  Bound  |  Time    
+--------------------------------------------------------------------------------------------------------
+
+---[ <embedded> ]---------------------------------------------------------------------------------------
+[1]   fpu_sub.v_fpu_sub.assert_a80                          cex             N             4    0.001 s      
+[2]   fpu_sub.v_fpu_sub.assert_a80:precondition1            covered         N         2 - 3    0.001 s      
+[3]   fpu_sub.v_fpu_sub.assert_a0                           cex             N             4    0.012 s      
+[4]   fpu_sub.v_fpu_sub.assert_a0:precondition1             covered         N         2 - 3    0.012 s      
+[5]   fpu_sub.v_fpu_sub.assert_a88                          cex             PRE           2    0.000 s      
+[6]   fpu_sub.v_fpu_sub.assert_a88:precondition1            covered         PRE           1    0.000 s      
+[7]   fpu_sub.v_fpu_sub.assert_a10                          cex             N             2    0.001 s      
+[8]   fpu_sub.v_fpu_sub.assert_a10:precondition1            covered         Hp            1    0.114 s      
+[9]   fpu_sub.v_fpu_sub.assert_a135                         cex             N             2    0.000 s      
+[10]  fpu_sub.v_fpu_sub.assert_a135:precondition1           covered         Hp            1    0.115 s      
+[11]  fpu_sub.v_fpu_sub.assert_a101                         cex             Ht            2    0.001 s      
+[12]  fpu_sub.v_fpu_sub.assert_a101:precondition1           covered         Hp            1    0.116 s      
+[13]  fpu_sub.v_fpu_sub.assert_a95                          cex             Ht            4    0.302 s      
+[14]  fpu_sub.v_fpu_sub.assert_a95:precondition1            covered         Ht            3    0.206 s      
+[15]  fpu_sub.v_fpu_sub.assert_a124                         cex             Ht            4    0.302 s      
+[16]  fpu_sub.v_fpu_sub.assert_a124:precondition1           covered         Ht            3    0.207 s      
+[17]  fpu_sub.v_fpu_sub.assert_a127                         cex             N             2    0.001 s      
+[18]  fpu_sub.v_fpu_sub.assert_a127:precondition1           covered         N             1    0.001 s      
+[19]  fpu_sub.v_fpu_sub.assert_a137                         cex             Ht            4    0.302 s      
+[20]  fpu_sub.v_fpu_sub.assert_a137:precondition1           covered         Ht            3    0.207 s      
+[21]  fpu_sub.v_fpu_sub.assert_a104                         cex             Ht            2    0.002 s      
+[22]  fpu_sub.v_fpu_sub.assert_a104:precondition1           covered         Hp            1    0.116 s      
+[23]  fpu_sub.v_fpu_sub.assert_a115                         cex             Ht            2    0.003 s      
+[24]  fpu_sub.v_fpu_sub.assert_a115:precondition1           covered         Hp            1    0.117 s      
+[25]  fpu_sub.v_fpu_sub.assert_a114                         cex             Ht            2    0.004 s      
+[26]  fpu_sub.v_fpu_sub.assert_a114:precondition1           covered         Hp            1    0.133 s      
+[27]  fpu_sub.v_fpu_sub.assert_a53                          cex             Ht            2    0.005 s      
+[28]  fpu_sub.v_fpu_sub.assert_a53:precondition1            covered         Hp            1    0.137 s      
+[29]  fpu_sub.v_fpu_sub.assert_a54                          cex             Ht            2    0.010 s      
+[30]  fpu_sub.v_fpu_sub.assert_a54:precondition1            covered         N             1    0.001 s      
+[31]  fpu_sub.v_fpu_sub.assert_a32                          cex             Ht            2    0.011 s      
+[32]  fpu_sub.v_fpu_sub.assert_a32:precondition1            covered         Hp            1    0.139 s      
+[33]  fpu_sub.v_fpu_sub.assert_a45                          cex             Ht            3    0.208 s      
+[34]  fpu_sub.v_fpu_sub.assert_a45:precondition1            covered         Hp            1    0.142 s      
+[35]  fpu_sub.v_fpu_sub.assert_a3                           cex             Ht            4    0.304 s      
+[36]  fpu_sub.v_fpu_sub.assert_a3:precondition1             covered         Ht            3    0.215 s      
+[37]  fpu_sub.v_fpu_sub.assert_a92                          cex             Ht            2    0.014 s      
+[38]  fpu_sub.v_fpu_sub.assert_a92:precondition1            covered         Hp            1    0.143 s      
+[39]  fpu_sub.v_fpu_sub.assert_a81                          cex             Ht            2    0.018 s      
+[40]  fpu_sub.v_fpu_sub.assert_a81:precondition1            covered         Hp            1    0.144 s      
+[41]  fpu_sub.v_fpu_sub.assert_a1                           cex             Ht            2    0.020 s      
+[42]  fpu_sub.v_fpu_sub.assert_a1:precondition1             covered         N             1    0.012 s      
+[43]  fpu_sub.v_fpu_sub.assert_a2                           cex             N             2    0.001 s      
+[44]  fpu_sub.v_fpu_sub.assert_a2:precondition1             covered         Hp            1    0.114 s      
+[45]  fpu_sub.v_fpu_sub.assert_a7                           cex             Ht            3    0.216 s      
+[46]  fpu_sub.v_fpu_sub.assert_a7:precondition1             covered         Hp            1    0.143 s      
+[47]  fpu_sub.v_fpu_sub.assert_a6                           cex             Ht            3    0.216 s      
+[48]  fpu_sub.v_fpu_sub.assert_a6:precondition1             covered         Hp            1    0.143 s      
+[49]  fpu_sub.v_fpu_sub.assert_a8                           cex             Ht            3    0.219 s      
+[50]  fpu_sub.v_fpu_sub.assert_a8:precondition1             covered         Hp            1    0.168 s      
+[51]  fpu_sub.v_fpu_sub.assert_a120                         cex             Ht            2    0.023 s      
+[52]  fpu_sub.v_fpu_sub.assert_a120:precondition1           covered         Hp            1    0.170 s      
+[53]  fpu_sub.v_fpu_sub.assert_a111                         cex             Ht            2    0.023 s      
+[54]  fpu_sub.v_fpu_sub.assert_a111:precondition1           covered         Hp            1    0.170 s      
+[55]  fpu_sub.v_fpu_sub.assert_a94                          cex             N         2 - 4    0.001 s      
+[56]  fpu_sub.v_fpu_sub.assert_a94:precondition1            covered         N         1 - 3    0.001 s      
+[57]  fpu_sub.v_fpu_sub.assert_a84                          cex             Ht            2    0.026 s      
+[58]  fpu_sub.v_fpu_sub.assert_a84:precondition1            covered         Hp            1    0.172 s      
+[59]  fpu_sub.v_fpu_sub.assert_a105                         cex             Ht            2    0.027 s      
+[60]  fpu_sub.v_fpu_sub.assert_a105:precondition1           covered         Hp            1    0.174 s      
+[61]  fpu_sub.v_fpu_sub.assert_a35                          cex             Ht            2    0.028 s      
+[62]  fpu_sub.v_fpu_sub.assert_a35:precondition1            covered         Hp            1    0.184 s      
+[63]  fpu_sub.v_fpu_sub.assert_a25                          cex             Ht            3    0.223 s      
+[64]  fpu_sub.v_fpu_sub.assert_a25:precondition1            covered         Hp            1    0.185 s      
+[65]  fpu_sub.v_fpu_sub.assert_a29                          cex             Ht            2    0.028 s      
+[66]  fpu_sub.v_fpu_sub.assert_a29:precondition1            covered         Hp            1    0.184 s      
+[67]  fpu_sub.v_fpu_sub.assert_a17                          cex             Ht            2    0.028 s      
+[68]  fpu_sub.v_fpu_sub.assert_a17:precondition1            covered         Hp            1    0.184 s      
+[69]  fpu_sub.v_fpu_sub.assert_a11                          cex             Ht            2    0.028 s      
+[70]  fpu_sub.v_fpu_sub.assert_a11:precondition1            covered         N             1    0.012 s      
+[71]  fpu_sub.v_fpu_sub.assert_a18                          cex             Ht            3    0.225 s      
+[72]  fpu_sub.v_fpu_sub.assert_a18:precondition1            covered         Hp            1    0.186 s      
+[73]  fpu_sub.v_fpu_sub.assert_a4                           cex             Ht            3    0.227 s      
+[74]  fpu_sub.v_fpu_sub.assert_a4:precondition1             covered         Hp            1    0.186 s      
+[75]  fpu_sub.v_fpu_sub.assert_a9                           cex             Ht            3    0.236 s      
+[76]  fpu_sub.v_fpu_sub.assert_a9:precondition1             covered         Hp            1    0.187 s      
+[77]  fpu_sub.v_fpu_sub.assert_a42                          cex             Ht            3    0.237 s      
+[78]  fpu_sub.v_fpu_sub.assert_a42:precondition1            covered         Hp            1    0.189 s      
+[79]  fpu_sub.v_fpu_sub.assert_a98                          cex             Ht            2    0.034 s      
+[80]  fpu_sub.v_fpu_sub.assert_a98:precondition1            covered         Hp            1    0.190 s      
+[81]  fpu_sub.v_fpu_sub.assert_a97                          cex             Ht            2    0.038 s      
+[82]  fpu_sub.v_fpu_sub.assert_a97:precondition1            covered         Hp            1    0.191 s      
+[83]  fpu_sub.v_fpu_sub.assert_a96                          cex             Ht            2    0.044 s      
+[84]  fpu_sub.v_fpu_sub.assert_a96:precondition1            covered         Hp            1    0.191 s      
+[85]  fpu_sub.v_fpu_sub.assert_a91                          cex             Ht            2    0.046 s      
+[86]  fpu_sub.v_fpu_sub.assert_a91:precondition1            covered         Hp            1    0.192 s      
+[87]  fpu_sub.v_fpu_sub.assert_a90                          cex             Ht            2    0.047 s      
+[88]  fpu_sub.v_fpu_sub.assert_a90:precondition1            covered         Hp            1    0.200 s      
+[89]  fpu_sub.v_fpu_sub.assert_a93                          cex             Ht            2    0.048 s      
+[90]  fpu_sub.v_fpu_sub.assert_a93:precondition1            covered         Hp            1    0.201 s      
+[91]  fpu_sub.v_fpu_sub.assert_a72                          cex             Ht            3    0.238 s      
+[92]  fpu_sub.v_fpu_sub.assert_a72:precondition1            covered         Hp            1    0.202 s      
+[93]  fpu_sub.v_fpu_sub.assert_a82                          cex             Ht            2    0.049 s      
+[94]  fpu_sub.v_fpu_sub.assert_a82:precondition1            covered         Hp            1    0.203 s      
+[95]  fpu_sub.v_fpu_sub.assert_a83                          cex             Ht            2    0.055 s      
+[96]  fpu_sub.v_fpu_sub.assert_a83:precondition1            covered         Hp            1    0.203 s      
+[97]  fpu_sub.v_fpu_sub.assert_a86                          cex             Ht            2    0.056 s      
+[98]  fpu_sub.v_fpu_sub.assert_a86:precondition1            covered         Hp            1    0.212 s      
+[99]  fpu_sub.v_fpu_sub.assert_a87                          cex             Ht            2    0.057 s      
+[100] fpu_sub.v_fpu_sub.assert_a87:precondition1            covered         Hp            1    0.213 s      
+[101] fpu_sub.v_fpu_sub.assert_a85                          cex             Ht            2    0.057 s      
+[102] fpu_sub.v_fpu_sub.assert_a85:precondition1            covered         Hp            1    0.214 s      
+[103] fpu_sub.v_fpu_sub.assert_a89                          cex             Ht            2    0.038 s      
+[104] fpu_sub.v_fpu_sub.assert_a89:precondition1            covered         Hp            1    0.214 s      
+[105] fpu_sub.v_fpu_sub.assert_a128                         cex             Ht            2    0.058 s      
+[106] fpu_sub.v_fpu_sub.assert_a128:precondition1           covered         Hp            1    0.215 s      
+[107] fpu_sub.v_fpu_sub.assert_a121                         cex             Ht            2    0.066 s      
+[108] fpu_sub.v_fpu_sub.assert_a121:precondition1           covered         Hp            1    0.214 s      
+[109] fpu_sub.v_fpu_sub.assert_a123                         cex             Ht            2    0.072 s      
+[110] fpu_sub.v_fpu_sub.assert_a123:precondition1           covered         Hp            1    0.185 s      
+[111] fpu_sub.v_fpu_sub.assert_a125                         cex             Ht            2    0.026 s      
+[112] fpu_sub.v_fpu_sub.assert_a125:precondition1           covered         Hp            1    0.172 s      
+[113] fpu_sub.v_fpu_sub.assert_a139                         cex             Ht            2    0.073 s      
+[114] fpu_sub.v_fpu_sub.assert_a139:precondition1           covered         Hp            1    0.223 s      
+[115] fpu_sub.v_fpu_sub.assert_a136                         cex             Ht            2    0.073 s      
+[116] fpu_sub.v_fpu_sub.assert_a136:precondition1           covered         Hp            1    0.142 s      
+[117] fpu_sub.v_fpu_sub.assert_a107                         cex             Ht            2    0.074 s      
+[118] fpu_sub.v_fpu_sub.assert_a107:precondition1           covered         Hp            1    0.224 s      
+[119] fpu_sub.v_fpu_sub.assert_a102                         cex             Ht            2    0.076 s      
+[120] fpu_sub.v_fpu_sub.assert_a102:precondition1           covered         Hp            1    0.225 s      
+[121] fpu_sub.v_fpu_sub.assert_a103                         cex             Ht            2    0.058 s      
+[122] fpu_sub.v_fpu_sub.assert_a103:precondition1           covered         Hp            1    0.215 s      
+[123] fpu_sub.v_fpu_sub.assert_a100                         cex             Ht            2    0.014 s      
+[124] fpu_sub.v_fpu_sub.assert_a100:precondition1           covered         Hp            1    0.142 s      
+[125] fpu_sub.v_fpu_sub.assert_a109                         cex             Ht            2    0.077 s      
+[126] fpu_sub.v_fpu_sub.assert_a109:precondition1           covered         Hp            1    0.226 s      
+[127] fpu_sub.v_fpu_sub.assert_a113                         cex             Ht            2    0.047 s      
+[128] fpu_sub.v_fpu_sub.assert_a113:precondition1           covered         Hp            1    0.226 s      
+[129] fpu_sub.v_fpu_sub.assert_a112                         cex             Ht            2    0.078 s      
+[130] fpu_sub.v_fpu_sub.assert_a112:precondition1           covered         Hp            1    0.233 s      
+[131] fpu_sub.v_fpu_sub.assert_a116                         cex             Ht            2    0.079 s      
+[132] fpu_sub.v_fpu_sub.assert_a116:precondition1           covered         Hp            1    0.235 s      
+[133] fpu_sub.v_fpu_sub.assert_a119                         cex             Ht            2    0.080 s      
+[134] fpu_sub.v_fpu_sub.assert_a119:precondition1           covered         Hp            1    0.235 s      
+[135] fpu_sub.v_fpu_sub.assert_a118                         cex             Ht            2    0.087 s      
+[136] fpu_sub.v_fpu_sub.assert_a118:precondition1           covered         Hp            1    0.236 s      
+[137] fpu_sub.v_fpu_sub.assert_a51                          cex             Ht            3    0.238 s      
+[138] fpu_sub.v_fpu_sub.assert_a51:precondition1            covered         Hp            1    0.237 s      
+[139] fpu_sub.v_fpu_sub.assert_a52                          cex             Ht            3    0.239 s      
+[140] fpu_sub.v_fpu_sub.assert_a52:precondition1            covered         Hp            1    0.245 s      
+[141] fpu_sub.v_fpu_sub.assert_a55                          cex             Ht            3    0.247 s      
+[142] fpu_sub.v_fpu_sub.assert_a55:precondition1            covered         Hp            1    0.246 s      
+[143] fpu_sub.v_fpu_sub.assert_a57                          cex             Ht            3    0.250 s      
+[144] fpu_sub.v_fpu_sub.assert_a57:precondition1            covered         Hp            1    0.247 s      
+[145] fpu_sub.v_fpu_sub.assert_a56                          cex             Ht            3    0.223 s      
+[146] fpu_sub.v_fpu_sub.assert_a56:precondition1            covered         Hp            1    0.249 s      
+[147] fpu_sub.v_fpu_sub.assert_a99                          cex             Ht            2    0.088 s      
+[148] fpu_sub.v_fpu_sub.assert_a99:precondition1            covered         Hp            1    0.250 s      
+[149] fpu_sub.v_fpu_sub.assert_a33                          cex             Ht            3    0.254 s      
+[150] fpu_sub.v_fpu_sub.assert_a33:precondition1            covered         Hp            1    0.186 s      
+[151] fpu_sub.v_fpu_sub.assert_a31                          cex             Ht            3    0.256 s      
+[152] fpu_sub.v_fpu_sub.assert_a31:precondition1            covered         Hp            1    0.274 s      
+[153] fpu_sub.v_fpu_sub.assert_a30                          cex             Ht            3    0.257 s      
+[154] fpu_sub.v_fpu_sub.assert_a30:precondition1            covered         Hp            1    0.275 s      
+[155] fpu_sub.v_fpu_sub.assert_a36                          cex             Ht            3    0.260 s      
+[156] fpu_sub.v_fpu_sub.assert_a36:precondition1            covered         Hp            1    0.276 s      
+[157] fpu_sub.v_fpu_sub.assert_a38                          cex             Ht            3    0.267 s      
+[158] fpu_sub.v_fpu_sub.assert_a38:precondition1            covered         Hp            1    0.278 s      
+[159] fpu_sub.v_fpu_sub.assert_a58                          cex             Ht            3    0.268 s      
+[160] fpu_sub.v_fpu_sub.assert_a58:precondition1            covered         Hp            1    0.281 s      
+[161] fpu_sub.v_fpu_sub.assert_a44                          cex             Ht            3    0.227 s      
+[162] fpu_sub.v_fpu_sub.assert_a44:precondition1            covered         Hp            1    0.310 s      
+[163] fpu_sub.v_fpu_sub.assert_a40                          cex             Ht            3    0.269 s      
+[164] fpu_sub.v_fpu_sub.assert_a40:precondition1            covered         Hp            1    0.274 s      
+[165] fpu_sub.v_fpu_sub.assert_a41                          cex             Ht            3    0.236 s      
+[166] fpu_sub.v_fpu_sub.assert_a41:precondition1            covered         Hp            1    0.187 s      
+[167] fpu_sub.v_fpu_sub.assert_a20                          cex             Ht            3    0.270 s      
+[168] fpu_sub.v_fpu_sub.assert_a20:precondition1            covered         Hp            1    0.250 s      
+[169] fpu_sub.v_fpu_sub.assert_a21                          cex             Ht            3    0.271 s      
+[170] fpu_sub.v_fpu_sub.assert_a21:precondition1            covered         Hp            1    0.311 s      
+[171] fpu_sub.v_fpu_sub.assert_a22                          cex             Ht            3    0.270 s      
+[172] fpu_sub.v_fpu_sub.assert_a22:precondition1            covered         Hp            1    0.312 s      
+[173] fpu_sub.v_fpu_sub.assert_a23                          cex             Ht            3    0.278 s      
+[174] fpu_sub.v_fpu_sub.assert_a23:precondition1            covered         Hp            1    0.314 s      
+[175] fpu_sub.v_fpu_sub.assert_a24                          cex             Ht            3    0.270 s      
+[176] fpu_sub.v_fpu_sub.assert_a24:precondition1            covered         Hp            1    0.250 s      
+[177] fpu_sub.v_fpu_sub.assert_a26                          cex             Ht            3    0.271 s      
+[178] fpu_sub.v_fpu_sub.assert_a26:precondition1            covered         Hp            1    0.315 s      
+[179] fpu_sub.v_fpu_sub.assert_a27                          cex             Ht            3    0.270 s      
+[180] fpu_sub.v_fpu_sub.assert_a27:precondition1            covered         Hp            1    0.187 s      
+[181] fpu_sub.v_fpu_sub.assert_a28                          cex             Ht            3    0.257 s      
+[182] fpu_sub.v_fpu_sub.assert_a28:precondition1            covered         Hp            1    0.200 s      
+[183] fpu_sub.v_fpu_sub.assert_a15                          cex             Ht            3    0.279 s      
+[184] fpu_sub.v_fpu_sub.assert_a15:precondition1            covered         Hp            1    0.312 s      
+[185] fpu_sub.v_fpu_sub.assert_a14                          cex             Ht            3    0.270 s      
+[186] fpu_sub.v_fpu_sub.assert_a14:precondition1            covered         Hp            1    0.274 s      
+[187] fpu_sub.v_fpu_sub.assert_a16                          cex             Ht            3    0.239 s      
+[188] fpu_sub.v_fpu_sub.assert_a16:precondition1            covered         Hp            1    0.318 s      
+[189] fpu_sub.v_fpu_sub.assert_a13                          cex             Ht            3    0.280 s      
+[190] fpu_sub.v_fpu_sub.assert_a13:precondition1            covered         Hp            1    0.320 s      
+[191] fpu_sub.v_fpu_sub.assert_a12                          cex             Ht            3    0.270 s      
+[192] fpu_sub.v_fpu_sub.assert_a12:precondition1            covered         Hp            1    0.312 s      
+[193] fpu_sub.v_fpu_sub.assert_a19                          cex             Ht            3    0.282 s      
+[194] fpu_sub.v_fpu_sub.assert_a19:precondition1            covered         Hp            1    0.321 s      
+[195] fpu_sub.v_fpu_sub.assert_a5                           cex             Ht            3    0.289 s      
+[196] fpu_sub.v_fpu_sub.assert_a5:precondition1             covered         Hp            1    0.322 s      
+[197] fpu_sub.v_fpu_sub.assert_a147                         cex             Ht            2    0.091 s      
+[198] fpu_sub.v_fpu_sub.assert_a147:precondition1           covered         Hp            1    0.323 s      
+[199] fpu_sub.v_fpu_sub.assert_a110                         cex             Ht            4    0.305 s      
+[200] fpu_sub.v_fpu_sub.assert_a110:precondition1           covered         Ht            3    0.291 s      
+[201] fpu_sub.v_fpu_sub.assert_a47                          cex             Ht            2    0.102 s      
+[202] fpu_sub.v_fpu_sub.assert_a47:precondition1            covered         Hp            1    0.332 s      
+[203] fpu_sub.v_fpu_sub.assert_a126                         cex             Ht            2    0.104 s      
+[204] fpu_sub.v_fpu_sub.assert_a126:precondition1           covered         Hp            1    0.333 s      
+[205] fpu_sub.v_fpu_sub.assert_a138                         cex             Ht            2    0.105 s      
+[206] fpu_sub.v_fpu_sub.assert_a138:precondition1           covered         Hp            1    0.168 s      
+[207] fpu_sub.v_fpu_sub.assert_a131                         cex             Ht            2    0.088 s      
+[208] fpu_sub.v_fpu_sub.assert_a131:precondition1           covered         Hp            1    0.250 s      
+[209] fpu_sub.v_fpu_sub.assert_a130                         cex             Ht            2    0.027 s      
+[210] fpu_sub.v_fpu_sub.assert_a130:precondition1           covered         Hp            1    0.174 s      
+[211] fpu_sub.v_fpu_sub.assert_a134                         cex             Ht            2    0.108 s      
+[212] fpu_sub.v_fpu_sub.assert_a134:precondition1           covered         Hp            1    0.336 s      
+[213] fpu_sub.v_fpu_sub.assert_a106                         cex             Ht            2    0.109 s      
+[214] fpu_sub.v_fpu_sub.assert_a106:precondition1           covered         Hp            1    0.339 s      
+[215] fpu_sub.v_fpu_sub.assert_a108                         cex             Ht            2    0.014 s      
+[216] fpu_sub.v_fpu_sub.assert_a108:precondition1           covered         Hp            1    0.142 s      
+[217] fpu_sub.v_fpu_sub.assert_a50                          cex             Ht            3    0.301 s      
+[218] fpu_sub.v_fpu_sub.assert_a50:precondition1            covered         Hp            1    0.341 s      
+[219] fpu_sub.v_fpu_sub.assert_a34                          cex             Ht            3    0.270 s      
+[220] fpu_sub.v_fpu_sub.assert_a34:precondition1            covered         Hp            1    0.187 s      
+[221] fpu_sub.v_fpu_sub.assert_a79                          cex             Ht            2    0.110 s      
+[222] fpu_sub.v_fpu_sub.assert_a79:precondition1            covered         Hp            1    0.351 s      
+[223] fpu_sub.v_fpu_sub.assert_a66                          cex             Ht            2    0.111 s      
+[224] fpu_sub.v_fpu_sub.assert_a66:precondition1            covered         Hp            1    0.247 s      
+[225] fpu_sub.v_fpu_sub.assert_a117                         cex             Ht            2    0.112 s      
+[226] fpu_sub.v_fpu_sub.assert_a117:precondition1           covered         Hp            1    0.353 s      
+[227] fpu_sub.v_fpu_sub.assert_a37                          cex             Ht            2    0.119 s      
+[228] fpu_sub.v_fpu_sub.assert_a37:precondition1            covered         Hp            1    0.357 s      
+[229] fpu_sub.v_fpu_sub.assert_a46                          cex             Ht            2    0.102 s      
+[230] fpu_sub.v_fpu_sub.assert_a46:precondition1            covered         Hp            1    0.360 s      
+[231] fpu_sub.v_fpu_sub.assert_a140                         cex             Ht            2    0.120 s      
+[232] fpu_sub.v_fpu_sub.assert_a140:precondition1           covered         Hp            1    0.362 s      
+[233] fpu_sub.v_fpu_sub.assert_a129                         cex             Ht            2    0.023 s      
+[234] fpu_sub.v_fpu_sub.assert_a129:precondition1           covered         Hp            1    0.375 s      
+[235] fpu_sub.v_fpu_sub.assert_a122                         cex             Ht            2    0.014 s      
+[236] fpu_sub.v_fpu_sub.assert_a122:precondition1           covered         Hp            1    0.377 s      
+[237] fpu_sub.v_fpu_sub.assert_a39                          cex             Ht            2    0.120 s      
+[238] fpu_sub.v_fpu_sub.assert_a39:precondition1            covered         Hp            1    0.378 s      
+[239] fpu_sub.v_fpu_sub.assert_a43                          cex             Ht            2    0.122 s      
+[240] fpu_sub.v_fpu_sub.assert_a43:precondition1            covered         Hp            1    0.379 s      
+[241] fpu_sub.v_fpu_sub.assert_a159                         cex             Ht            2    0.126 s      
+[242] fpu_sub.v_fpu_sub.assert_a159:precondition1           covered         Hp            1    0.380 s      
+[243] fpu_sub.v_fpu_sub.assert_a78                          cex             Ht            2    0.129 s      
+[244] fpu_sub.v_fpu_sub.assert_a78:precondition1            covered         Hp            1    0.397 s      
+[245] fpu_sub.v_fpu_sub.assert_a77                          cex             Ht            2    0.132 s      
+[246] fpu_sub.v_fpu_sub.assert_a77:precondition1            covered         Hp            1    0.398 s      
+[247] fpu_sub.v_fpu_sub.assert_a76                          cex             Ht            2    0.134 s      
+[248] fpu_sub.v_fpu_sub.assert_a76:precondition1            covered         Hp            1    0.399 s      
+[249] fpu_sub.v_fpu_sub.assert_a75                          cex             Ht            2    0.136 s      
+[250] fpu_sub.v_fpu_sub.assert_a75:precondition1            covered         Hp            1    0.400 s      
+[251] fpu_sub.v_fpu_sub.assert_a74                          cex             Ht            2    0.137 s      
+[252] fpu_sub.v_fpu_sub.assert_a74:precondition1            covered         Hp            1    0.333 s      
+[253] fpu_sub.v_fpu_sub.assert_a73                          cex             Ht            2    0.140 s      
+[254] fpu_sub.v_fpu_sub.assert_a73:precondition1            covered         N             1    0.001 s      
+[255] fpu_sub.v_fpu_sub.assert_a71                          cex             Ht            2    0.141 s      
+[256] fpu_sub.v_fpu_sub.assert_a71:precondition1            covered         Hp            1    0.401 s      
+[257] fpu_sub.v_fpu_sub.assert_a70                          cex             Ht            2    0.141 s      
+[258] fpu_sub.v_fpu_sub.assert_a70:precondition1            covered         Hp            1    0.408 s      
+[259] fpu_sub.v_fpu_sub.assert_a68                          cex             Ht            2    0.142 s      
+[260] fpu_sub.v_fpu_sub.assert_a68:precondition1            covered         Hp            1    0.409 s      
+[261] fpu_sub.v_fpu_sub.assert_a69                          cex             Ht            2    0.143 s      
+[262] fpu_sub.v_fpu_sub.assert_a69:precondition1            covered         Hp            1    0.410 s      
+[263] fpu_sub.v_fpu_sub.assert_a64                          cex             Ht            2    0.151 s      
+[264] fpu_sub.v_fpu_sub.assert_a64:precondition1            covered         Hp            1    0.411 s      
+[265] fpu_sub.v_fpu_sub.assert_a65                          cex             Ht            2    0.011 s      
+[266] fpu_sub.v_fpu_sub.assert_a65:precondition1            covered         Hp            1    0.139 s      
+[267] fpu_sub.v_fpu_sub.assert_a67                          cex             Ht            2    0.152 s      
+[268] fpu_sub.v_fpu_sub.assert_a67:precondition1            covered         Hp            1    0.411 s      
+[269] fpu_sub.v_fpu_sub.assert_a60                          cex             Ht            2    0.152 s      
+[270] fpu_sub.v_fpu_sub.assert_a60:precondition1            covered         Hp            1    0.311 s      
+[271] fpu_sub.v_fpu_sub.assert_a61                          cex             Ht            2    0.156 s      
+[272] fpu_sub.v_fpu_sub.assert_a61:precondition1            covered         Hp            1    0.247 s      
+[273] fpu_sub.v_fpu_sub.assert_a62                          cex             Ht            2    0.159 s      
+[274] fpu_sub.v_fpu_sub.assert_a62:precondition1            covered         Hp            1    0.419 s      
+[275] fpu_sub.v_fpu_sub.assert_a63                          cex             Ht            2    0.162 s      
+[276] fpu_sub.v_fpu_sub.assert_a63:precondition1            covered         Hp            1    0.420 s      
+[277] fpu_sub.v_fpu_sub.assert_a133                         cex             Ht            2    0.164 s      
+[278] fpu_sub.v_fpu_sub.assert_a133:precondition1           covered         Hp            1    0.421 s      
+[279] fpu_sub.v_fpu_sub.assert_a132                         cex             Ht            2    0.167 s      
+[280] fpu_sub.v_fpu_sub.assert_a132:precondition1           covered         Hp            1    0.422 s      
+[281] fpu_sub.v_fpu_sub.assert_a59                          cex             Ht            2    0.168 s      
+[282] fpu_sub.v_fpu_sub.assert_a59:precondition1            covered         Hp            1    0.375 s      
+[283] fpu_sub.v_fpu_sub.assert_a158                         cex             Ht            2    0.169 s      
+[284] fpu_sub.v_fpu_sub.assert_a158:precondition1           covered         Hp            1    0.423 s      
+[285] fpu_sub.v_fpu_sub.assert_a155                         cex             Ht            2    0.173 s      
+[286] fpu_sub.v_fpu_sub.assert_a155:precondition1           covered         Hp            1    0.433 s      
+[287] fpu_sub.v_fpu_sub.assert_a154                         cex             PRE           2    0.000 s      
+[288] fpu_sub.v_fpu_sub.assert_a154:precondition1           covered         PRE           1    0.000 s      
+[289] fpu_sub.v_fpu_sub.assert_a156                         cex             Ht            2    0.173 s      
+[290] fpu_sub.v_fpu_sub.assert_a156:precondition1           covered         Hp            1    0.437 s      
+[291] fpu_sub.v_fpu_sub.assert_a151                         cex             Ht            2    0.174 s      
+[292] fpu_sub.v_fpu_sub.assert_a151:precondition1           covered         Hp            1    0.278 s      
+[293] fpu_sub.v_fpu_sub.assert_a150                         cex             Ht            2    0.175 s      
+[294] fpu_sub.v_fpu_sub.assert_a150:precondition1           covered         Hp            1    0.439 s      
+[295] fpu_sub.v_fpu_sub.assert_a160                         cex             Ht            2    0.034 s      
+[296] fpu_sub.v_fpu_sub.assert_a160:precondition1           covered         Hp            1    0.318 s      
+[297] fpu_sub.v_fpu_sub.assert_a152                         cex             Ht            2    0.074 s      
+[298] fpu_sub.v_fpu_sub.assert_a152:precondition1           covered         Hp            1    0.423 s      
+[299] fpu_sub.v_fpu_sub.assert_a48                          cex             Ht            2    0.176 s      
+[300] fpu_sub.v_fpu_sub.assert_a48:precondition1            covered         Hp            1    0.440 s      
+[301] fpu_sub.v_fpu_sub.assert_a49                          cex             Ht            2    0.183 s      
+[302] fpu_sub.v_fpu_sub.assert_a49:precondition1            covered         Hp            1    0.449 s      
+[303] fpu_sub.v_fpu_sub.assert_a141                         cex             Ht            2    0.109 s      
+[304] fpu_sub.v_fpu_sub.assert_a141:precondition1           covered         Hp            1    0.339 s      
+[305] fpu_sub.v_fpu_sub.assert_a153                         cex             Ht            2    0.184 s      
+[306] fpu_sub.v_fpu_sub.assert_a153:precondition1           covered         Hp            1    0.462 s      
+[307] fpu_sub.v_fpu_sub.assert_a142                         cex             Ht            2    0.108 s      
+[308] fpu_sub.v_fpu_sub.assert_a142:precondition1           covered         Hp            1    0.464 s      
+[309] fpu_sub.v_fpu_sub.assert_a143                         cex             Ht            2    0.186 s      
+[310] fpu_sub.v_fpu_sub.assert_a143:precondition1           covered         Hp            1    0.465 s      
+[311] fpu_sub.v_fpu_sub.assert_a157                         cex             Ht            2    0.190 s      
+[312] fpu_sub.v_fpu_sub.assert_a157:precondition1           covered         Hp            1    0.466 s      
+[313] fpu_sub.v_fpu_sub.assert_a146                         cex             Ht            2    0.193 s      
+[314] fpu_sub.v_fpu_sub.assert_a146:precondition1           covered         Hp            1    0.468 s      
+[315] fpu_sub.v_fpu_sub.assert_a144                         cex             Ht            2    0.195 s      
+[316] fpu_sub.v_fpu_sub.assert_a144:precondition1           covered         Hp            1    0.281 s      
+[317] fpu_sub.v_fpu_sub.assert_a145                         cex             Ht            2    0.109 s      
+[318] fpu_sub.v_fpu_sub.assert_a145:precondition1           covered         Hp            1    0.477 s      
+[319] fpu_sub.v_fpu_sub.assert_a148                         cex             Ht            2    0.204 s      
+[320] fpu_sub.v_fpu_sub.assert_a148:precondition1           covered         Hp            1    0.333 s      
+[321] fpu_sub.v_fpu_sub.assert_a149                         cex             Ht            2    0.205 s      
+[322] fpu_sub.v_fpu_sub.assert_a149:precondition1           covered         Hp            1    0.480 s      
+
+==============================================================
+ASSUMPTIONS
+==============================================================
+
+-------------------------------------------------------------------------------
+       Name    |  Expression  |  Location     |  Status      |  Dependencies                  
+-------------------------------------------------------------------------------
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % exit
+INFO (IPL005): Received request to exit from the console.
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.
+INFO (IPL018): The peak resident set memory use for this session was 0.417 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

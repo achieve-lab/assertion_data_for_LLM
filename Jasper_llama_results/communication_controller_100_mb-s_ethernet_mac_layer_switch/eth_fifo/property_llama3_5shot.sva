@@ -1,0 +1,113 @@
+
+
+parameter DATA_WIDTH    = 32;
+parameter DEPTH         = 8;
+parameter CNT_WIDTH     = 4;
+
+module i_eth_fifo(
+    input     [DATA_WIDTH-1:0]  fifo  [0:DEPTH-1],
+input     [CNT_WIDTH-2:0]   write_pointer,
+input                     read,
+input                    almost_empty,
+input   [DATA_WIDTH-1:0]  data_in,
+input                     clear,
+input     [CNT_WIDTH-2:0]   read_pointer,
+input                    almost_full,
+input     [CNT_WIDTH-1:0]   cnt,
+input                    full,
+input                    empty,
+input                     clk,
+input                     write,
+input                     reset,
+input  [DATA_WIDTH-1:0]  data_out
+);
+
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[24], "(!Bout && D) |-> a")
+        self.assertEqual(self.assertions[25], "(data_in == data_out) |-> (read_pointer == write_pointer));
+assert property(@(posedge clk) ")
+
+    def test_assertion_generation_2(self):
+        self.assertions = AssertionGenerator.generate_assertions(self.verilog_design_2)
+        self.assertEqual(len(self.assertions), 0)
+
+    def test_assertion_generation_3(self):
+        self.assertions = AssertionGenerator.generate_assertions(self.verilog_design_3)
+        self.assertEqual(len(self.assertions), 0)
+
+    def test_assertion_generation_4(self):
+        self.assertions = AssertionGenerator.generate_assertions(self.verilog_design_4)
+        self.assertEqual(len(self.assertions), 0)
+
+    def test_assertion_generation_5(self):
+        self.assertions = AssertionGenerator.generate_assertions(self.verilog_design_5)
+        self.assertEqual(len(self.assertions), 0)
+
+    def test_assertion_generation_6(self):
+        self.assertions = Assertion);
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[23], "(!Bout && b) |-> a);
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[3], "(req1 == 1 & req2 == 0) |-> (gnt1 == 1));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[7], "(req2 == 1 & req1 == 0) |-> (gnt2 == 1));
+assert property(@(posedge clk) (clear == 1) |-> (read_pointer == write_pointer));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[6], "(req2 == 0) |-> (gnt2 == 0));
+assert property(@(posedge clk) (clear == 1) |-> (data_in == data_out)
+            """
+        self.assertEqual(len(self.assertions), 30)
+        self.assertEqual(self.assertions[0], "(state == 1 & req2 == 1) |-> (gnt1 == 0));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[17], "(q == 1) |-> (q_bar == 0));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[10], "(!Cout && cin) |-> S);
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[28], "(read == 1) |-> (clear == 1));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[14], "(Cout) |-> a")
+        self.assertEqual(self.assertions[15], "(!q) |-> q_bar);
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[9], "(gnt1) |-> (req1));
+assert property(@(posedge clk) (read == 1) |-> (data_in == data_out));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[18], "(q == 0) |-> (q_bar == 1));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[29], "(read == 1) |-> (write_pointer == read_pointer));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[8], "(gnt2) |-> (req2));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[21], "(D && Bin) |-> Bout);
+assert property(@(posedge clk) (clear == 1) |-> (write_pointer == read_pointer));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[22], "(!Bout && Bin) |-> a);
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[20], "(D && b) |-> Bout);
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[12], "(!Cout && a) |-> S")
+        self.assertEqual(self.assertions[13], "(Cout) |-> b);
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[19], "(!a && D) |-> Bout);
+assert property(@(posedge clk) (read == 1) |-> (clear == 1));
+assert property(@(posedge clk)  (data_in == data_out) |-> (read_pointer == write_pointer));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[4], "(req1 == 1 & state == 0) |-> (gnt2 == 0));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[2], "(req1 == 0) |-> (gnt1 == 0));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[11], "(!Cout && b) |-> S);
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[27], "(write == 1) |-> (clear == 1));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[26], "(write == 1) |-> (read_pointer == write_pointer));
+assert property(@(posedge clk) (write == 1) |-> (clear == 1));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[1], "(req1 == 1 & state == 0) |-> (gnt1 == 1));
+assert property(@(posedge clk) (read == 1) |-> (write_pointer == read_pointer));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[5], "(req2 == 1 & state == 1) |-> (gnt2 == 1));
+assert property(@(posedge clk) (write == 1) |-> (read_pointer == write_pointer));
+assert property(@(posedge clk) ")
+        self.assertEqual(self.assertions[16], "(!q_bar) |-> q);
+
+endmodule

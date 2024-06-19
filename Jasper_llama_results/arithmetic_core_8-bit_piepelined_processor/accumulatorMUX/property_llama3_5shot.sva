@@ -1,0 +1,65 @@
+`include "defines.v"
+
+module i_accumulatorMUX(
+	input [`accMuxSelLen-1:0]	accMuxSel,
+	input [7:0] uartDataIn, uartStatIn,
+	input [7:0]	accMuxOut,
+	input [`immDataLen-1:0]		immData,
+	input [7:0] tcLoadIn, tcAccIn,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET,
+	input	[7:0]	aluOut
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[6]) |-> accMuxSel[0]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[2]) |-> accMuxOut[0]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[0]) |-> accMuxOut[4]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[0]) |-> accMuxSel[0]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[0]) |-> accMuxOut[5]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[2]) |-> accMuxSel[2]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[0]) |-> accMuxOut[2]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[1]) |-> accMuxOut[4]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[1]) |-> accMuxOut[0]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[2]) |-> accMuxOut[1]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[1]) |-> accMuxSel[1]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[2]) |-> accMuxSel[0]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[3]) |-> accMuxSel[0]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[5]) |-> accMuxSel[2]);
+assert property(@(posedge DEFAULT_CLOCK) Test Assertions: (!accMuxOut[7]) |-> accMuxSel[2]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[7]) |-> accMuxSel[0]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[4]) |-> accMuxSel[1]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[6]) |-> accMuxSel[2]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[5]) |-> accMuxSel[1]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[3]) |-> accMuxSel[2]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[1]) |-> accMuxSel[2]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[7]) |-> accMuxSel[2]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[0]) |-> accMuxOut[3]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[1]) |-> accMuxOut[1]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[2]) |-> accMuxOut[3]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[1]) |-> accMuxOut[3]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[1]) |-> accMuxOut[2]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[2]) |-> accMuxOut[7]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[1]) |-> accMuxSel[0]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[2]) |-> accMuxOut[4]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[1]) |-> accMuxOut[7]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[0]) |-> accMuxOut[0]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[0]) |-> accMuxSel[1]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[3]) |-> accMuxSel[1]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[2]) |-> accMuxSel[1]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[5]) |-> accMuxSel[0]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[0]) |-> accMuxOut[6]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[4]) |-> accMuxSel[2]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[1]) |-> accMuxOut[5]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[2]) |-> accMuxOut[2]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[2]) |-> accMuxOut[5]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[2]) |-> accMuxOut[6]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[7]) |-> accMuxSel[1]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[1]) |-> accMuxOut[6]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[6]) |-> accMuxSel[1]);
+assert property(@(posedge DEFAULT_CLOCK)  (!);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[0]) |-> accMuxOut[1]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[4]) |-> accMuxSel[0]);
+assert property(@(posedge DEFAULT_CLOCK)  (!accMuxOut[0]) |-> accMuxSel[2]);
+assert property(@(posedge DEFAULT_CLOCK)  (accMuxSel[0]) |-> accMuxOut[7]);
+
+endmodule

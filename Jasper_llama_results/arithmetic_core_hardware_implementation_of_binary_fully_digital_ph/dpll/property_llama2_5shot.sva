@@ -1,0 +1,19 @@
+module i_dpll(
+input  SignalIn,                // input signal
+input  MainClock,               // reference signal
+input SignalOut,               // input
+input Lead, Lag,               // internal DPLL signals
+input Positive, Negative,      // internal DPLL signals
+input InputSignalEdgeDet,
+input InputSignalEdge,
+input InputSignal
+);
+
+assert property(@(posedge MainClock)  (Negative) |-> (Positive));
+assert property(@(posedge MainClock)  (Positive) |-> (Negative));
+assert property(@(posedge MainClock)  (Lag) |-> (Lead));
+assert property(@(posedge MainClock)  (SignalOut) |-> (SignalIn));
+assert property(@(posedge MainClock)  (Lead) |-> (Lag));
+assert property(@(posedge MainClock)  (SignalIn) |-> (SignalOut));
+
+endmodule

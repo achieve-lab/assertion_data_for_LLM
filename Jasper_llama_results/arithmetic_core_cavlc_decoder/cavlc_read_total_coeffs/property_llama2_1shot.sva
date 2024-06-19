@@ -1,0 +1,48 @@
+module i_cavlc_read_total_coeffs(
+input   [0:15]   rbsp,
+input     [1:0]   TrailingOnes_3,
+input     [4:0]   TotalCoeff,
+input     [4:0]   len_5,
+input     [4:0]   TotalCoeff_5,
+input     [4:0]   len_1,
+input     [1:0]   TrailingOnes,
+input   sel,
+input     [4:0]   len_2,
+input   start,
+input     [4:0]   TotalCoeff_comb,
+input     [1:0]   TrailingOnes_4,
+input     [4:0]   TotalCoeff_1,
+input     [4:0]   len_3,
+input     [4:0]   TotalCoeff_4,
+input     [4:0]   TotalCoeff_3,
+input     [0:15]  rbsp_1,         
+input     [4:0]   len_4,
+input     [4:0]   len_comb,
+input     [0:9]   rbsp_3,
+input     [0:5]   rbsp_4,
+input   rst_n,
+input     [1:0]   TrailingOnes_comb,
+input     [0:7]   rbsp_5,
+input   ena,
+input   signed   [5:0]   nC,
+input     [1:0]   TrailingOnes_5,
+input     [1:0]   TrailingOnes_1,
+input     [0:13]  rbsp_2,
+input     [4:0]   TotalCoeff_2,
+input     [1:0]   TrailingOnes_2,
+input DEFAULT_RESET,
+input   clk
+);
+
+assert property(@(posedge clk) (req1 == 1 & state == 0) |-> (gnt2 == 0));
+assert property(@(posedge clk) (state == 1 & req2 == 1) |-> (gnt1 == 0));
+assert property(@(posedge clk) (req1 == 1 & req2 == 0) |-> (gnt1 == 1));
+assert property(@(posedge clk) (req1 == 0) |-> (gnt1 == 0));
+assert property(@(posedge clk)  (gnt2) |-> (req2));
+assert property(@(posedge clk)  (gnt1) |-> (req1));
+assert property(@(posedge clk) (req2 == 0) |-> (gnt2 == 0));
+assert property(@(posedge clk) (req2 == 1 & req1 == 0) |-> (gnt2 == 1));
+assert property(@(posedge clk) (req2 == 1 & state == 1) |-> (gnt2 == 1));
+assert property(@(posedge clk) (req1 == 1 & state == 0) |-> (gnt1 == 1));
+
+endmodule

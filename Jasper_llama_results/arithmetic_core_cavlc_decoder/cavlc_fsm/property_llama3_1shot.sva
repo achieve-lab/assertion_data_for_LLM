@@ -1,0 +1,57 @@
+module i_cavlc_fsm(
+input idle,
+input  ena,
+input  [3:0]  ZeroLeft,
+input  [1:0]  TrailingOnes,
+input  start,
+input [3:0]  i,
+input  [7:0]  state,
+input  [4:0]  TotalCoeff_comb,
+input  [1:0]  TrailingOnes_comb,
+input  clk,
+input  [4:0]  TotalCoeff,
+input  [4:0]  max_coeff_num,
+input valid,
+input  rst_n
+);
+
+assert property(@(posedge clk) (state[7]) |-> (i <= TotalCoeff -1));
+assert property(@(posedge clk) (state[2] & TrailingOnes == TotalCoeff) |-> (state[6] == 1));
+assert property(@(posedge clk) (state[1] | state[2] | state[3] | state[4] | state[5] | state[6] | state[7]) |-> (idle == 0));
+assert property(@(posedge clk) (state[7] & i == 0 & ZeroLeft == 0) |-> (state[0] == 1));
+assert property(@(posedge clk) (state[5] & i == 0 & TotalCoeff >= max_coeff_num) |-> (i <= TotalCoeff -1));
+assert property(@(posedge clk)              state[0] |-> (idle == 1));
+assert property(@(posedge clk) (state[2]) |-> (i <= TotalCoeff_comb -1));
+assert property(@(posedge clk) (state[7] & i == 0 & ZeroLeft!= 0) |-> (state[0] == 1));
+assert property(@(posedge clk) (state[1] & TotalCoeff_comb > 0 & TrailingOnes_comb > 0) |-> (state[2] == 1));
+assert property(@(posedge clk) (state[6]) |-> (state[7] == 1));
+assert property(@(posedge clk) (state[5] & i == 0 & TotalCoeff < max_coeff_num) |-> (state[6] == 1));
+assert property(@(posedge clk) (state[5] & i == 0 & TotalCoeff >= max_coeff_num) |-> (state[7] == 1));
+assert property(@(posedge clk) (state[7] & i!= 0 & ZeroLeft == 0) |-> (state[0] == 1));
+assert property(@(posedge clk) (state[0]) |-> (valid == 0));
+assert property(@(posedge clk) (state[1] & TotalCoeff_comb > 0 & TrailingOnes_comb == 0) |-> (state[3] == 1));
+assert property(@(posedge clk) (state[0] | state[1] | state[2] | state[3] | state[4] | state[5] | state[6] | state[7]) |-> (state <= 128));
+assert property(@(posedge clk) (state[4]) |-> (state[5] == 1));
+assert property(@(posedge clk) (state[5] & i == 0 & TotalCoeff >= max_coeff_num) |-> (i >= TotalCoeff -1));
+assert property(@(posedge clk)  endmodule"            Assertions 2: (state[0] & start == 1) |-> (state[1] == 1));
+assert property(@(posedge clk) (state[0] | state[1] | state[2] | state[3] | state[4] | state[5] | state[6] | state[7]) |-> (valid <= 1));
+assert property(@(posedge clk) (state[7]) |-> (i >= TotalCoeff -1));
+assert property(@(posedge clk) (state[0] | state[1] | state[2] | state[3] | state[4] | state[5] | state[6] | state[7]) |-> (i <= TotalCoeff_comb -1));
+assert property(@(posedge clk) (state[2]) |-> (i >= TotalCoeff_comb -1 -TrailingOnes));
+assert property(@(posedge clk) (state[5] & i!= 0) |-> (state[3] == 1));
+assert property(@(posedge clk) (state[7]) |-> (valid == 1));
+assert property(@(posedge clk) (state[7] & i!= 0 & ZeroLeft!= 0) |-> (state[7] == 1));
+assert property(@(posedge clk) (state[5] & i!= 0) |-> (i <= TotalCoeff -1 -1));
+assert property(@(posedge clk) (state[5] & i!= 0) |-> (i >= TotalCoeff -1));
+assert property(@(posedge clk) (state[1] | state[2] | state[3] | state[4] | state[5] | state[6] | state[7]) |-> (valid == 0));
+assert property(@(posedge clk) (state[2] & TrailingOnes!= TotalCoeff) |-> (state[3] == 1));
+assert property(@(posedge clk) (state[3]) |-> (state[4] == 1));
+assert property(@(posedge clk) (state[0] | state[1] | state[2] | state[3] | state[4] | state[5] | state[6] | state[7]) |-> (valid >= 0));
+assert property(@(posedge clk) (state[1] & TotalCoeff_comb == 0) |-> (state[0] == 1));
+assert property(@(posedge clk) (state[1] & TrailingOnes_comb > 0 & TotalCoeff_comb > 0) |-> (state[2] == 1));
+assert property(@(posedge clk) (state[0] & start == 0) |-> (state[0] == 1));
+assert property(@(posedge clk) (state[1] & TrailingOnes_comb == 0 & TotalCoeff_comb > 0) |-> (state[3] == 1));
+assert property(@(posedge clk) (state[0] | state[1] | state[2] | state[3] | state[4] | state[5] | state[6] | state[7]) |-> (state >= 0));
+assert property(@(posedge clk) (state[0] | state[1] | state[2] | state[3] | state[4] | state[5] | state[6] | state[7]) |-> (i >= 0));
+
+endmodule

@@ -1,0 +1,21 @@
+parameter Q = 15;
+        parameter N = 32;
+module i_qadd(
+input [N-1:0] res,
+    input [N-1:0] b,
+    input [N-1:0] c,
+    input [N-1:0] a,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (a[31] == 0 & b[31] == 0) |-> (c[30:0] == a[30:0] + b[30:0]));
+assert property(@(posedge DEFAULT_CLOCK) (a[31] == 1 & b[31] == 0) |-> (c[31] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (a[31] == 0 & b[31] == 1) |-> (c[31] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (a[31] == 1 & b[31] == 1) |-> (c[31] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (a[31] == 0 & b[31] == 1) |-> (c[30:0] == a[30:0] - b[30:0]));
+assert property(@(posedge DEFAULT_CLOCK) (a[31] == 1 & b[31] == 0) |-> (c[30:0] == b[30:0] - a[30:0]));
+assert property(@(posedge DEFAULT_CLOCK) (a[31] == 1 & b[31] == 1) |-> (c[30:0] == a[30:0] + b[30:0]));
+assert property(@(posedge DEFAULT_CLOCK) (a[31] == 0 & b[31] == 0) |-> (c[31] == 0));
+
+endmodule

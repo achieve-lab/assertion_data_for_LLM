@@ -1,0 +1,27 @@
+    parameter LOW_MUX = 1; // disable low output
+    parameter HI_MUX = 1; // disable hight output
+parameter DATA_WIDTH = 8;
+module i_node(
+    input [DATA_WIDTH-1:0] data_lo,
+    input [DATA_WIDTH-1:0] data_b,
+    input sel0,
+    input [DATA_WIDTH-1:0] data_a,
+    input [DATA_WIDTH-1:0] data_hi,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (data_hi == data_a) |-> (data_a < data_b));
+assert property(@(posedge DEFAULT_CLOCK) (data_lo == data_a) |-> (data_a < data_b));
+assert property(@(posedge DEFAULT_CLOCK) (data_lo == data_b) |-> (data_a < data_b));
+assert property(@(posedge DEFAULT_CLOCK) (data_hi == data_a) |-> (data_lo == data_b));
+assert property(@(posedge DEFAULT_CLOCK) (data_lo == data_b) |-> (data_hi == data_a));
+assert property(@(posedge DEFAULT_CLOCK) (data_hi == data_b) |-> (data_a < data_b));
+assert property(@(posedge DEFAULT_CLOCK) (data_hi == data_b) |-> (data_a >= data_b));
+assert property(@(posedge DEFAULT_CLOCK) (data_hi == data_a) |-> (data_a >= data_b));
+assert property(@(posedge DEFAULT_CLOCK) (data_lo == data_b) |-> (data_a >= data_b));
+assert property(@(posedge DEFAULT_CLOCK)  (data_lo == data_a) |-> (data_hi == data_b));
+assert property(@(posedge DEFAULT_CLOCK) (data_lo == data_a) |-> (data_a >= data_b));
+assert property(@(posedge DEFAULT_CLOCK) (data_hi == data_b) |-> (data_lo == data_a));
+
+endmodule

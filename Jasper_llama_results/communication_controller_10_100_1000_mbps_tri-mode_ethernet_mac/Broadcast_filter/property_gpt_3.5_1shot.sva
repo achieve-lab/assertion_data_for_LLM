@@ -1,0 +1,14 @@
+module i_Broadcast_filter(
+input           broadcast_filter_en         ,
+input           broadcast_ptr               ,
+input     [15:0]  time_counter            ,
+input     [15:0]  broadcast_counter        ,
+input           Reset                       ,
+input   [15:0]  broadcast_bucket_interval   ,
+input           Clk                         ,
+input          broadcast_drop              ,
+input   [15:0]  broadcast_bucket_depth      
+);
+
+assert property(@(posedge Clk) (broadcast_ptr && broadcast_counter == broadcast_bucket_depth) |-> (broadcast_drop == 1));assert property(@(posedge Clk)  (!broadcast_filter_en || broadcast_counter != broadcast_bucket_depth) |-> (broadcast_drop == 0));assert property(@(posedge Clk)  (broadcast_counter == broadcast_bucket_depth) |-> (broadcast_drop == 1));assert property(@(posedge Clk)  (broadcast_counter != broadcast_bucket_depth) |-> (broadcast_drop == 0));assert property(@(posedge Clk)  (time_counter == broadcast_bucket_interval) |-> (time_counter == 0));assert property(@(posedge Clk)  (time_counter != broadcast_bucket_interval) |-> (time_counter == time_counter + 1));assert property(@(posedge Clk)  (broadcast_ptr && broadcast_counter != broadcast_bucket_depth) |-> (broadcast_counter == broadcast_counter + 1));assert property(@(posedge Clk)  (broadcast_ptr && broadcast_counter == broadcast_bucket_depth) |-> (broadcast_counter == 0));assert property(@(posedge Clk)  (broadcast_ptr && broadcast_counter != broadcast_bucket_depth) |-> (broadcast_counter == broadcast_counter + 1));
+endmodule

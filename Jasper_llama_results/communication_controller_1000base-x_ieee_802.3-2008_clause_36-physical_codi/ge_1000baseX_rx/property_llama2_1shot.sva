@@ -1,0 +1,119 @@
+parameter    S_PCS_RX_START            = 0;
+parameter                    S_PCS_RX_LINK_FAILED      = 1;
+parameter                    S_PCS_RX_WAIT_K           = 2;
+parameter                    S_PCS_RX_K                = 3;
+parameter                    S_PCS_RX_CONFIG_CB        = 4;
+parameter                    S_PCS_RX_CONFIG_CC        = 5;
+parameter                    S_PCS_RX_CONFIG_CD        = 6;
+parameter                    S_PCS_RX_INVALID          = 7;
+parameter                    S_PCS_RX_IDLE_D           = 8;
+parameter                    S_PCS_RX_FALSE_CARRIER    = 9;
+parameter                    S_PCS_RX_START_OF_PACKET  = 10;
+parameter                    S_PCS_RX_RECEIVE          = 11;
+parameter                    S_PCS_RX_EARLY_END        = 12;
+parameter                    S_PCS_RX_TRI_RRI          = 13;
+parameter                    S_PCS_RX_TRR_EXTEND       = 14;
+parameter                    S_PCS_RX_EPD2_CHECK_END   = 15;
+parameter                    S_PCS_RX_PACKET_BURST_RRS = 16;
+parameter                    S_PCS_RX_EXTEND_ERR       = 17;
+parameter                    S_PCS_RX_EARLY_END_EXT    = 18;
+parameter                    S_PCS_RX_DATA_ERROR       = 19;
+parameter                    S_PCS_RX_DATA             = 20;
+
+module i_ge_1000baseX_rx(
+   input [7:0] 	       ebi_rxd_d2,
+   input [7:0] 	       ebi_rxd_d1,
+   // rx_Config_input
+   input           receiving,
+   input          ability_match,
+   input      [2:0]    xmit,
+   input [15:0] 	       early_end_cnt,
+   input [1:0]   idle_cnt,
+   input 	       idle_cnt_m_inc, idle_cnt_m_clr,
+   input  xmit_DATA, xmit_nDATA, xmit_DATA_CD, xmit_DATA_nCD,
+   input              rx_frame_pulse,
+   input [15:0] 	       check_end_R_R_K28_5_cnt,
+   input     CE_match, SPD_match, EPD_match,
+   input 	      early_end,
+   input   xmit_DATA_CD_SPD, xmit_DATA_CD_nSPD, xmit_DATA_CD_nSPD_nK28_5,
+   input  [2:0]    rudi,
+   input  [15:0]   rx_config,
+   input [15:0] 	       rx_data_cnt,
+   input [4:0] ebi_rxd_d1_X,  input [2:0] ebi_rxd_d1_Y,
+   input 	      check_end_R_R_R,
+   input gmii_rxd_false_carrier_m_set, gmii_rxd_preamble_m_set, gmii_rxd_ext_err_m_set,
+   input gmii_rx_er_m_set, gmii_rx_er_m_clr,
+   input 		     soft_reset,
+   input   check_end_R_R_S,
+   input [15:0] rx_config_tmp ,
+   input              sync_status, 
+   input [7:0] 	       ge_x_pcs_rx_stats_inc,
+   input gmii_rx_dv_m_set, gmii_rx_dv_m_clr,
+   input              idle_match,
+   input 		       ebi_K_d1,          ebi_K_d2,          ebi_K_d3,  
+   input               ebi_K,
+   input [15:0] 	       check_end_R_R_R_cnt,
+   input gmii_rxd_packet_burst_m_set, gmii_rxd_trr_extend_m_set, gmii_rxd_m_set,
+   input [4:0] pcs_rx_present, pcs_rx_next,
+   input          acknowledge_match,
+   input 	      check_end_T_R_R,
+   input       early_end_idle,
+   input [6:0] ability, input [6:0] ability_d1, input [6:0] ability_d2,
+   input [15:0] 	       check_end_R_R_S_cnt,
+   input [4:0] ebi_rxd_d2_X,  input [2:0] ebi_rxd_d2_Y,
+   input 	  rudi_INVALID_m_set, input  rudi_IDLE_m_set, input rudi_CONF_m_set,
+   input               mr_main_reset,
+   input       early_end_config,
+     input [6:0] ability_matched_input,
+   input 	      rx_config_lo_read, rx_config_hi_read,
+   input [15:0] 	       check_end_T_R_K28_5_cnt,
+   input 	 K28_5_match, D2_2_match, D21_5_match, D5_6_match, D16_2_match,
+   input          gmii_rx_er,
+   // GMII input 
+   input [2:0] rx_config_cnt,
+   input 		       sync_status_d1,    sync_status_d2,    sync_status_d3, 		       
+   input [4:0] ebi_rxd_d3_X,  input [2:0] ebi_rxd_d3_Y,
+   input               carrier_detect,
+   input           rx_config_set,		   
+   input           gmii_rx_dv,  
+   input   [7:0]   gmii_rxd,
+   input 	      check_end_R_R_K28_5,
+   input 	      check_end_T_R_K28_5,
+   input              signal_detect,
+   input 	     rx_config_cnt_m_inc, rx_config_cnt_m_rst,
+   input rx_config_cnt_done,
+   input 		       carrier_detect_d1, carrier_detect_d2, carrier_detect_d3,
+   input [15:0] 	       check_end_T_R_R_cnt,
+   input              consistency_match,
+   input [15:0] 	       rx_frame_cnt,
+   input [7:0] 	       ebi_rxd_d3,
+   input 	receiving_m_set, receiving_m_clr,
+   input 		       rx_even_d1,        rx_even_d2,        rx_even_d3,
+   input [7:0] 	       ebi_rxd,	  
+   input               rx_even,
+   input [15:0] rx_config_d1, input [15:0] rx_config_d2,  input [7:0] rx_config_lo,  
+   input               ck,
+   input               reset,
+   input [4:0] ebi_rxd_X,  input [2:0] ebi_rxd_Y,
+	input ability_matched1,
+	input ability_matched2,
+	input rx_config_match,
+	input rx_config_match1,
+input [6:0] ability_matched_reg,
+   //  Diagnostics inputisters
+	input rx_config_match2,
+	input ability_matched
+);
+
+assert property(@(posedge ck) (req1 == 1 & state == 0) |-> (gnt2 == 0));
+assert property(@(posedge ck) (state == 1 & req2 == 1) |-> (gnt1 == 0));
+assert property(@(posedge ck) (req1 == 1 & req2 == 0) |-> (gnt1 == 1));
+assert property(@(posedge ck) (req1 == 0) |-> (gnt1 == 0));
+assert property(@(posedge ck)  (gnt2) |-> (req2));
+assert property(@(posedge ck)  (gnt1) |-> (req1));
+assert property(@(posedge ck) (req2 == 0) |-> (gnt2 == 0));
+assert property(@(posedge ck) (req2 == 1 & req1 == 0) |-> (gnt2 == 1));
+assert property(@(posedge ck) (req2 == 1 & state == 1) |-> (gnt2 == 1));
+assert property(@(posedge ck) (req1 == 1 & state == 0) |-> (gnt1 == 1));
+
+endmodule

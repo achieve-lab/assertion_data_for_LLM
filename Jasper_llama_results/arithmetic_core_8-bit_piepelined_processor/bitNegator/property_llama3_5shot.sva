@@ -1,0 +1,44 @@
+`include "defines.v"
+
+module i_bitNegator(
+	input bitIn, bitN,
+	input bitOut,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  assign Bout = w2 | (~w1 & Bin));
+assert property(@(posedge DEFAULT_CLOCK)  (!Bout) |-> (D == 1)
+            Test Program: `include "timescale.v" `include "defines.v" module mux2x1 (A, B, S, Z));
+assert property(@(posedge DEFAULT_CLOCK)  (!Bout) |-> (D == 1)
+           );
+assert property(@(posedge DEFAULT_CLOCK)  output Sum, Cout);
+assert property(@(posedge DEFAULT_CLOCK)  input A, B, Bin);
+assert property(@(posedge DEFAULT_CLOCK)  (S == 1) |-> (Z == B)
+            Test Program: `include "timescale.v" `include "defines.v" module full_adder (A, B, C, Sum, Cout));
+assert property(@(posedge DEFAULT_CLOCK)  wire w1, w2);
+assert property(@(posedge DEFAULT_CLOCK)  (bitN) |-> (bitOut == ~bitIn)
+            Test Program: `include "timescale.v" `include "defines.v" module mux2x1 (A, B, S, Z));
+assert property(@(posedge DEFAULT_CLOCK)  assign w = (S == 0)? A : B);
+assert property(@(posedge DEFAULT_CLOCK)  (!bitN) |-> (bitOut == bitIn));
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Test Assertions: (Cout) |-> (Sum == 0));
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Test Assertions: (Bout) |-> (D == 0));
+assert property(@(posedge DEFAULT_CLOCK)  assign w2 = A & B);
+assert property(@(posedge DEFAULT_CLOCK)  output Z);
+assert property(@(posedge DEFAULT_CLOCK)  input A, B, C);
+assert property(@(posedge DEFAULT_CLOCK)  assign w1 = A ^ B);
+assert property(@(posedge DEFAULT_CLOCK)  assign Z = w);
+assert property(@(posedge DEFAULT_CLOCK)  assign Sum = w1 ^ C);
+assert property(@(posedge DEFAULT_CLOCK)  input A, B, S);
+assert property(@(posedge DEFAULT_CLOCK)  (!Cout) |-> (Sum == 1)
+            Test Program: `include "timescale.v" `include "defines.v" module full_subtractor (A, B, Bin, D, Bout));
+assert property(@(posedge DEFAULT_CLOCK)  assign D = w1 ^ Bin);
+assert property(@(posedge DEFAULT_CLOCK)  assign Cout = w2 | (w1 & C));
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Test Assertions: (S == 0) |-> (Z == A));
+assert property(@(posedge DEFAULT_CLOCK)  output D, Bout);
+assert property(@(posedge DEFAULT_CLOCK)  wire w);
+
+endmodule

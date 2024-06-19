@@ -1,0 +1,853 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-06-04 17:13:52 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 113476
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:35907' '-nowindow' '-style' 'windows' '-data' 'AAABInicXY7LCsIwEEVPFIu48BNci6Abcde12/oAt6XUN2qKtgpu9FP9k3oNVogzzGTmzkkyBggfZVnirH5XCogYy39mXt8iNPj26Wu+Mn16JzSqyxUSKNr0OWGJ2VCwk9KTknCQW27SC80vypncciZnxVJ6xFx0U/Rak6vqjnadsHB3EkfOxKYMVKV6D1qiM00se3XdPy52vyYcFUN1I/27FZu7bd/QUCSL' '-proj' '/data/vpulav2/Work/Jasper_llama/arithmetic_core_8-bit_piepelined_processor/uartRec/uartRec_llama3_5shot/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper_llama/arithmetic_core_8-bit_piepelined_processor/uartRec/uartRec_llama3_5shot/.tmp/.initCmds.tcl' 'FPV_uartRec.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper_llama/arithmetic_core_8-bit_piepelined_processor/uartRec/uartRec_llama3_5shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/uartRec.v
+[-- (VERI-1482)] Analyzing Verilog file './/uartRec.v'
+[INFO (VERI-1328)] .//uartRec.v(41): analyzing included file './/timescale.v'
+[INFO (VERI-1328)] .//uartRec.v(42): analyzing included file './/defines.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_llama3_5shot.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_llama3_5shot.sva'
+[INFO (VERI-1328)] .//property_llama3_5shot.sva(2): analyzing included file './/defines.v'
+% 
+% # Elaborate design and properties
+% elaborate -top uartRec
+INFO (ISW003): Top module name is "uartRec".
+[WARN (VERI-2418)] .//property_llama3_5shot.sva(3): parameter 'dataBits' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama3_5shot.sva(4): parameter 'sbTick' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[INFO (HIER-8002)] .//uartRec.v(153): Disabling old hierarchical reference handler
+[INFO (VERI-1018)] .//property_llama3_5shot.sva(5): compiling module 'i_uartRec'
+[INFO (VERI-1018)] .//uartRec.v(45): compiling module 'uartRec'
+[WARN (VERI-1209)] .//uartRec.v(116): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//uartRec.v(127): expression size 32 truncated to fit in target size 3
+[WARN (VERI-1209)] .//uartRec.v(131): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//uartRec.v(141): expression size 32 truncated to fit in target size 4
+INFO (INL208): Elaboration synthesis summary:
+  Number of synthesized netlists          3 (1 packages)
+  Single run mode                         On
+  Pipeline                                On (2 pipelined netlists)
+  Late hierarchical reference connection  On
+  Number of analyzed Verilog modules      3 (3 synthesized)
+  Number of analyzed VHDL entities        0 (0 synthesized)
+INFO (INL003): Clearing all state information (assumes, stopats, and so forth).
+uartRec
+[<embedded>] % 
+[<embedded>] % # Set up Clocks and Resets
+[<embedded>] % clock clk
+[<embedded>] % reset reset
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "reset".
+[<embedded>] % 
+[<embedded>] % # Get design information to check general complexity
+[<embedded>] % get_design_info
+Statistics [for instance "uartRec"]
+--------------------------
+# Flops:         4 (17) (0 property flop bits)
+# Latches:       0 (0)
+# Gates:         702 (2328)
+# Nets:          739
+# Ports:         6
+# RTL Lines:     172
+# RTL Instances: 2
+# Embedded Assumptions: 0
+# Embedded Assertions:  49
+# Embedded Covers:      49
+17
+[<embedded>] % 
+[<embedded>] % # Prove properties
+[<embedded>] % prove -all
+Ncustom1: Custom engine code is hT3Ng7hPPfiYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSl+CwjiTMAQA
+Bcustom2: Custom engine code is hT3Nm7hPr1Vp3Di1Ra2USNIGL4JypRnLKLAdF6JAyuavO2JfGCiY9OZJhcAcOUnLx5xwNdhILGrAWX9s+z2WDkKwNR7tAfClBEjRFVQeq6DU54boFgEA
+AMcustom3: Custom engine code is hT3Ng7hP/feYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSmmqwm7g9AQA
+Mpcustom4: Custom engine code is hT3NZbhP9fmY2AbBQnsjfOxn6c+6e6yL+/e8fZFmaQrnlgEA
+INFO (IPF036): Starting proof on task: "<embedded>", 98 properties to prove with 0 already proven/unreachable
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis: phase 2 of 4.
+INFO (IRS031): Running reset analysis: phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 4 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 3 iterations. Assigned values for 17 of 17 design flops, 0 of 0 design latches, 98 of 98 internal elements.
+INFO (IRS039): Reset analysis complete.
+INFO (IPF031): Settings used for proof thread 0:
+    orchestration                 = on
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = auto
+    proofgrid_per_engine_max_jobs = 1
+    max engine jobs               = auto
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property "uartRec.v_uartRec._assert_26" was proven in 0.00 s.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF051): 0.0.PRE: The cover property "uartRec.v_uartRec._assert_26:precondition1" was proven unreachable in 0.00 s.
+0: Found proofs for 2 properties in preprocessing
+0: Using multistage preprocessing
+0: Starting reduce
+0: Finished reduce in 0s
+0.0.PRE: Performing Proof Simplification...
+0.0.N: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: Proof Simplification Iteration 1	[0.00 s]
+0.0.PRE: A trace with 1 cycles was found. [0.00 s]
+AMcustom5: Custom engine code is hT3N1rhP11/52HrFRS21ROp2LOjVTgPvT8L8BGXHgLhaIuqtT4nARFjUqrBL+7pLmaTOzBepZW/Jm8SSrHDybSQtoNiO3y43wk+dEoWlsZizu97Fih6O6lPVG/LpWP5SsUPwlGagLNa1FKEFvwVXyX7//8prySbvSxIHXr5er+z4RAEA
+Ncustom6: Custom engine code is hT3OXrhPByJp3TrFSTLhUmMH4KVtJgmTCnNDF46yMXOKY48m4LS5nE7yBzFjA7kDuwO/GhGUpEPiky3p3wmPn3dJZHxFMsafSoObRzSC+tn7sEY0WbTdZ/FV4hL3MYH/b1CIUvXSWR4wqEoVLsmMOD4xIPT4lI1LO6ZCO7PnnWQuLwetnvKlrXx6wCW/A+x+enqslg1YPobi4wEF/EvbzOvcTYdJvl2s4H2yZg2b2ofAVN5WvhWk1HoBAA
+ADcustom7: Custom engine code is hT3Nv7hPv1752HrFRa2kROx2f/ECJeZB2AZsLdlO8VwmIuqtT4nIDFXclhg+O+o+DMmQCekbheGk0kK28laA9gaOFDXsQp29J3X615HY1IPHJWd6FUFvCHjO+p1k652b5JJvZlShNpGlGSXAiQe/mEAj6tEBAA
+Tricustom8: Custom engine code is hT3Nu7hPt1752DvFRa0kNDiyIV97VyejwM9C/jCLJjdPvusZONHY42VYUy0Q1ZotnhcVtNc56tJ5wbxv6V2+XpdsaSlHck5vfnbYjdwj1OECy9U+7oSQ0SZE3g5ayD+Phuh4odCJTjeKa2k4elM9ldQfkAEA
+Gcustom9: Custom engine code is hT3NibhPDfeYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncipMGcUXqAadachREE9F2PwhBUZUNw5kHnd4JdXkamORRgEA
+C2custom10: Custom engine code is hT3NirhPjfWYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncgkrYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuG86XYVV00BAA
+AGcustom11: Custom engine code is hT3NirhP/fmYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInnckcwYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuHEZnZByh0BAA
+Bcustom12: Custom engine code is hT3NjrhPDfiYQADBZnYcglOvK9PfWxFtenjIyBqfrgr7if/jL/yPOuK1BAflEcW0DxNH2eDIoezN2gxlQFg81RZtiWXh7aiTAidvAQA
+Ncustom13: Custom engine code is hT3NR7hPByFp3TrFSTLhUmMH4KWtJglTyV/c51BHEeZWamnJv767nE6PCak26bd3gf3XGN3rIRheufhDieCJQVISo+gNYUKhiUedBKGtsP/a18svAnlMJZudHxDFwK5ufsyoxsIyiAeSY2oi3tEuoDHr5gw42DFKAG3PqO3CEsl8Azzdt3pl5nGA1Ifv2H02eYsFzWb/nfp8PMb3F0krE/EgBcm8TD9Div8BAA
+Tricustom14: Custom engine code is hT3Nu7hP3fiYQADBZnYcglNHp9bfd7EOeniIqP/ji8sGLQu8yhsFO+wxJ+O+R0bU8g/IewXFomyos+viQnWc2xYNYmMqpo3i40O7DaZR7qfp4YqNx26KRvQ/qx0BAA
+INFO (IPF047): 0.0.PRE: The cover property "uartRec.v_uartRec._assert_34:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.PRE: A trace with 1 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.PRE: The cover property "uartRec.v_uartRec._assert_11:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.N: Proof Simplification Iteration 2	[0.02 s]
+0.0.N: Proof Simplification Iteration 3	[0.02 s]
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property ":noDeadEnd" was proven in 0.00 s.
+    Use check_assumptions -show -dead_end to show this property in the property table.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property ":noConflict" was proven in 0.00 s.
+    Use check_assumptions -show to show this property in the property table.
+INFO (IPF047): 0.0.PRE: The cover property ":live" was covered in 1 cycles in 0.00 s.
+    Use check_assumptions -show -live to show this property in the property table.
+0.0.PRE: Proof Simplification completed in 0.03 s
+0.0.N: Identified and disabled 1 duplicated target.
+0: About to start ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+0: =============================== ProofGrid start ===============================
+0: ProofGrid usable level: 94
+0: Initial ProofGrid level: 1
+0: ProofGrid is starting event handling
+0.0.N: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Hp: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.N: Proofgrid shell started at 113525@pal-achieve-06(local) jg_113476_pal-achieve-06_1
+0.0.Hp: Proofgrid shell started at 113526@pal-achieve-06(local) jg_113476_pal-achieve-06_1
+0.0.N: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.N: Starting proof for property "uartRec.v_uartRec._assert_1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.N: The property "uartRec.v_uartRec._assert_1" was proven in 0.00 s.
+0.0.N: Stopped processing property "uartRec.v_uartRec._assert_1"	[0.00 s].
+0: ProofGrid usable level: 93
+0.0.N: Starting proof for property "uartRec.v_uartRec._assert_1:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_1:precondition1" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  1	[0.01 s]
+0.0.N: Trace Attempt  2	[0.01 s]
+0.0.N: Trace Attempt  3	[0.01 s]
+0.0.N: Trace Attempt  5	[0.01 s]
+0.0.Hp: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_2" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_3" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_4" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_5" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_6" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_7" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_8" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_9" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_10" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_12" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_13" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_14" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_15" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_16" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_17" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_18" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_19" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_20" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_21" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_22" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_23" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_24" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_25" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_27" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_28" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_29" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_31" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_33" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_34" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_35" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_36" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_37" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_38" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_39" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_40" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_41" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_42" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_43" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_44" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_45" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_46" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_47" was proven in 0.01 s.
+0.0.Hp: A proof was found: No trace exists. [0.02 s]
+INFO (IPF057): 0.0.Hp: The property "uartRec.v_uartRec._assert_48" was proven in 0.01 s.
+0.0.Bm: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0: ProofGrid usable level: 50
+0.0.Bm: Proofgrid shell started at 113551@pal-achieve-06(local) jg_113476_pal-achieve-06_1
+0.0.Hp: Trace Attempt  1	[0.10 s]
+0.0.Hp: Trace Attempt  2	[0.10 s]
+0.0.Hp: A trace with 2 cycles was found. [0.10 s]
+INFO (IPF055): 0.0.Hp: A counterexample (cex) with 2 cycles was found for the property "uartRec.v_uartRec._assert_11" in 0.07 s.
+0.0.Bm: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_2:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_3:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_4:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_5:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_6:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_7:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_8:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_9:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_10:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_12:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_13:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_14:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_15:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_16:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_17:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_18:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_19:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_20:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_21:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_22:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_23:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_24:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_25:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_27:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_28:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_29:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_30" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_30:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_31:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_32" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_32:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_33:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_35:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_36:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_37:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_38:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_39:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_40:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_41:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_42:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_43:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_44:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_45:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_46:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_47:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_48:precondition1" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_49" in 0.00 s.
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 512 cycles. [0.01 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 512 was found for the property "uartRec.v_uartRec._assert_49:precondition1" in 0.00 s.
+0.0.Bm: Trace Attempt  1	[0.01 s]
+0.0.Bm: Trace Attempt  2	[0.01 s]
+0.0.Bm: Trace Attempt  3	[0.01 s]
+0.0.Bm: A trace with 3 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_17:precondition1" was covered in 3 cycles in 0.00 s.
+0.0.Bm: Trace Attempt  4	[0.01 s]
+0.0.Bm: A trace with 4 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_44:precondition1" was covered in 4 cycles in 0.00 s.
+0.0.Bm: Trace Attempt  5	[0.01 s]
+0.0.Bm: A trace with 5 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_2:precondition1" was covered in 5 cycles in 0.01 s.
+0.0.Bm: Trace Attempt  6	[0.01 s]
+0.0.Bm: A trace with 6 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_13:precondition1" was covered in 6 cycles in 0.01 s.
+0.0.Bm: Trace Attempt  7	[0.01 s]
+0.0.Bm: A trace with 7 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_38:precondition1" was covered in 7 cycles in 0.01 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Bm: Trace Attempt  8	[0.01 s]
+0.0.Bm: A trace with 8 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_47:precondition1" was covered in 8 cycles in 0.02 s.
+0.0.Bm: Trace Attempt  9	[0.01 s]
+0.0.Bm: A trace with 9 cycles was found. [0.01 s]
+INFO (IPF055): 0.0.Bm: A counterexample (cex) with 9 cycles was found for the property "uartRec.v_uartRec._assert_30" in 0.02 s.
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_30:precondition1" was covered in 9 cycles in 0.02 s.
+0.0.Bm: Trace Attempt 10	[0.01 s]
+0.0.Bm: A trace with 10 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_15:precondition1" was covered in 10 cycles in 0.02 s.
+0.0.Bm: Trace Attempt 11	[0.01 s]
+0.0.Bm: A trace with 11 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_14:precondition1" was covered in 11 cycles in 0.02 s.
+0.0.Bm: Trace Attempt 12	[0.01 s]
+0.0.Bm: A trace with 12 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_35:precondition1" was covered in 12 cycles in 0.02 s.
+0.0.Bm: Trace Attempt 13	[0.01 s]
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Bm: A trace with 13 cycles was found. [0.01 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_43:precondition1" was covered in 13 cycles in 0.05 s.
+0.0.Bm: Trace Attempt 14	[0.01 s]
+0.0.Bm: A trace with 14 cycles was found. [0.02 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_40:precondition1" was covered in 14 cycles in 0.05 s.
+0.0.Bm: Trace Attempt 15	[0.02 s]
+0.0.Bm: A trace with 15 cycles was found. [0.02 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_6:precondition1" was covered in 15 cycles in 0.05 s.
+0.0.Bm: Trace Attempt 16	[0.02 s]
+0.0.Bm: A trace with 16 cycles was found. [0.02 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_33:precondition1" was covered in 16 cycles in 0.05 s.
+0.0.Bm: Trace Attempt 17	[0.02 s]
+0.0.Bm: A trace with 17 cycles was found. [0.02 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_37:precondition1" was covered in 17 cycles in 0.05 s.
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Bm: Trace Attempt 18	[0.02 s]
+0.0.Bm: A trace with 18 cycles was found. [0.02 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_7:precondition1" was covered in 18 cycles in 0.08 s.
+0.0.Bm: Trace Attempt 19	[0.02 s]
+0.0.Bm: A trace with 19 cycles was found. [0.02 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_18:precondition1" was covered in 19 cycles in 0.08 s.
+0.0.Bm: Trace Attempt 20	[0.02 s]
+0.0.Bm: A trace with 20 cycles was found. [0.05 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_42:precondition1" was covered in 20 cycles in 0.08 s.
+0.0.Bm: Trace Attempt 21	[0.05 s]
+0.0.Bm: A trace with 21 cycles was found. [0.05 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_36:precondition1" was covered in 21 cycles in 0.08 s.
+0.0.Bm: Trace Attempt 22	[0.05 s]
+0.0.Bm: A trace with 22 cycles was found. [0.05 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_5:precondition1" was covered in 22 cycles in 0.09 s.
+0.0.Bm: Trace Attempt 23	[0.05 s]
+0: ProofGrid is temporarily paused because there are too many pending traces.
+0: ProofGrid is resuming to work after pausing for 0s. The amount of pending traces decreased.
+0.0.Bm: A trace with 23 cycles was found. [0.05 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_8:precondition1" was covered in 23 cycles in 0.09 s.
+0.0.Bm: Trace Attempt 24	[0.05 s]
+0.0.Bm: A trace with 24 cycles was found. [0.05 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_45:precondition1" was covered in 24 cycles in 0.09 s.
+0.0.Bm: Trace Attempt 25	[0.05 s]
+0.0.Bm: A trace with 25 cycles was found. [0.05 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_3:precondition1" was covered in 25 cycles in 0.09 s.
+0.0.Bm: Trace Attempt 41	[0.07 s]
+0.0.Bm: A trace with 41 cycles was found. [0.07 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_4:precondition1" was covered in 41 cycles in 0.09 s.
+0.0.Bm: Trace Attempt 42	[0.07 s]
+0.0.Bm: Trace Attempt 57	[0.11 s]
+0.0.Bm: A trace with 57 cycles was found. [0.11 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_9:precondition1" was covered in 57 cycles in 0.09 s.
+0.0.Bm: Trace Attempt 58	[0.11 s]
+0.0.Bm: Trace Attempt 73	[0.13 s]
+0.0.Bm: A trace with 73 cycles was found. [0.14 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_20:precondition1" was covered in 73 cycles in 0.10 s.
+0.0.Bm: Trace Attempt 74	[0.14 s]
+0.0.Oh: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Bm: Trace Attempt 89	[0.16 s]
+0.0.Bm: A trace with 89 cycles was found. [0.16 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_12:precondition1" was covered in 89 cycles in 0.14 s.
+0.0.Bm: Trace Attempt 90	[0.17 s]
+0.0.Ht: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Oh: Proofgrid shell started at 113558@pal-achieve-06(local) jg_113476_pal-achieve-06_1
+0.0.Bm: Trace Attempt 105	[0.20 s]
+0.0.Bm: A trace with 105 cycles was found. [0.20 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_25:precondition1" was covered in 105 cycles in 0.18 s.
+0.0.Bm: Trace Attempt 106	[0.20 s]
+0.0.Mpcustom4: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Oh: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Oh: bwd trail(1): 1 0.00170148s
+0.0.Oh: All properties either determined or skipped. [0.02 s]
+0.0.Oh: Exited with Success (@ 0.40 s)
+0.0.Oh: Completed, Restart ignored.
+0: ProofGrid usable level: 20
+0.0.Mpcustom4: Proofgrid shell started at 113557@pal-achieve-06(local) jg_113476_pal-achieve-06_1
+0.0.Bm: Trace Attempt 121	[0.24 s]
+0.0.Bm: A trace with 121 cycles was found. [0.25 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_21:precondition1" was covered in 121 cycles in 0.21 s.
+0.0.Bm: Trace Attempt 122	[0.25 s]
+0.0.Mpcustom4: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Mpcustom4: Trace Attempt  1	[0.00 s]
+0.0.Mpcustom4: Trace Attempt  2	[0.00 s]
+0.0.Mpcustom4: Trace Attempt  3	[0.01 s]
+0.0.Mpcustom4: Trace Attempt  4	[0.01 s]
+0.0.Mpcustom4: Trace Attempt  5	[0.01 s]
+0.0.Mpcustom4: Trace Attempt  3	[0.02 s]
+0.0.Mpcustom4: Trace Attempt  4	[0.02 s]
+0.0.Mpcustom4: Trace Attempt  5	[0.02 s]
+0.0.B: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Ht: Proofgrid shell started at 113547@pal-achieve-06(local) jg_113476_pal-achieve-06_1
+0.0.Bm: Trace Attempt 137	[0.31 s]
+0.0.Bm: A trace with 137 cycles was found. [0.32 s]
+INFO (IPF055): 0.0.Bm: A counterexample (cex) with 137 cycles was found for the property "uartRec.v_uartRec._assert_49" in 0.28 s.
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_49:precondition1" was covered in 137 cycles in 0.28 s.
+0.0.Bm: Trace Attempt 138	[0.32 s]
+0: Running jobs with 5 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 5 threads on "pal-achieve-06" with 4 cores.
+0.0.Bm: A trace with 138 cycles was found. [0.32 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_41:precondition1" was covered in 138 cycles in 0.29 s.
+0.0.Bm: Trace Attempt 139	[0.32 s]
+0.0.Bm: A trace with 139 cycles was found. [0.32 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_23:precondition1" was covered in 139 cycles in 0.29 s.
+0.0.Bm: Trace Attempt 140	[0.32 s]
+0.0.Bm: A trace with 140 cycles was found. [0.33 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_27:precondition1" was covered in 140 cycles in 0.29 s.
+0.0.Ht: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Ht: Trace Attempt  1	[0.01 s]
+0.0.Ht: Trace Attempt  2	[0.01 s]
+0.0.Ht: Trace Attempt  3	[0.01 s]
+0.0.Ht: Trace Attempt  4	[0.01 s]
+0.0.Ht: Trace Attempt  5	[0.01 s]
+0.0.Bm: Trace Attempt 141	[0.33 s]
+0.0.Bm: A trace with 141 cycles was found. [0.33 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_29:precondition1" was covered in 141 cycles in 0.31 s.
+0.0.Bm: Trace Attempt 142	[0.33 s]
+0.0.B: Proofgrid shell started at 113574@pal-achieve-06(local) jg_113476_pal-achieve-06_1
+0.0.Bm: A trace with 142 cycles was found. [0.34 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_31:precondition1" was covered in 142 cycles in 0.31 s.
+0.0.Bm: Trace Attempt 143	[0.34 s]
+0.0.Bm: A trace with 143 cycles was found. [0.34 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_39:precondition1" was covered in 143 cycles in 0.31 s.
+0.0.Bm: Trace Attempt 144	[0.34 s]
+0.0.Bm: A trace with 144 cycles was found. [0.34 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_16:precondition1" was covered in 144 cycles in 0.31 s.
+0.0.Bm: Trace Attempt 145	[0.34 s]
+0.0.Bm: A trace with 145 cycles was found. [0.34 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_24:precondition1" was covered in 145 cycles in 0.31 s.
+0.0.Bm: Trace Attempt 146	[0.34 s]
+0.0.Bm: A trace with 146 cycles was found. [0.35 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_28:precondition1" was covered in 146 cycles in 0.31 s.
+0: Running jobs with 6 threads on "pal-achieve-06" with 4 cores.
+0: Running jobs with 6 threads on "pal-achieve-06" with 4 cores.
+0.0.Bm: Trace Attempt 147	[0.35 s]
+0.0.Bm: A trace with 147 cycles was found. [0.35 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_19:precondition1" was covered in 147 cycles in 0.33 s.
+0.0.B: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.B: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.B: Starting proof for property "uartRec.v_uartRec._assert_1:precondition1"	[0.00 s].
+0.0.B: Trace Attempt  1	[0.00 s]
+0.0.B: Trace Attempt  2	[0.00 s]
+0.0.B: Trace Attempt  3	[0.00 s]
+0.0.B: Trace Attempt  4	[0.00 s]
+0.0.B: Trace Attempt  5	[0.00 s]
+0.0.Bm: Trace Attempt 148	[0.35 s]
+0.0.Bm: A trace with 148 cycles was found. [0.36 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_48:precondition1" was covered in 148 cycles in 0.33 s.
+0.0.Bm: Trace Attempt 149	[0.36 s]
+0.0.Bm: A trace with 149 cycles was found. [0.36 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_1:precondition1" was covered in 149 cycles in 0.33 s.
+0.0.Bm: Trace Attempt 150	[0.36 s]
+0.0.Bm: A trace with 150 cycles was found. [0.36 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_46:precondition1" was covered in 150 cycles in 0.33 s.
+0.0.N: Trace Attempt 66	[0.13 s]
+0.0.N: Stopped processing property "uartRec.v_uartRec._assert_1:precondition1"	[0.47 s].
+0.0.N: Starting proof for property "uartRec.v_uartRec._assert_10:precondition1"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.Bm: Trace Attempt 151	[0.36 s]
+0.0.Bm: A trace with 151 cycles was found. [0.37 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_22:precondition1" was covered in 151 cycles in 0.34 s.
+0.0.Bm: Trace Attempt 152	[0.37 s]
+0.0.Bm: A trace with 152 cycles was found. [0.37 s]
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_10:precondition1" was covered in 152 cycles in 0.34 s.
+0.0.N: Requesting engine job to stop
+0.0.B: Requesting engine job to stop
+0.0.Hp: Requesting engine job to terminate
+0.0.Ht: Requesting engine job to terminate
+0.0.Bm: Requesting engine job to terminate
+0.0.Mpcustom4: Requesting engine job to terminate
+INFO (IPF144): 0: Initiating shutdown of proof [0.54 s]
+0.0.Bm: Trace Attempt 153	[0.37 s]
+0.0.Bm: A trace with 153 cycles was found. [0.37 s]
+INFO (IPF055): 0.0.Bm: A counterexample (cex) with 153 cycles was found for the property "uartRec.v_uartRec._assert_32" in 0.34 s.
+INFO (IPF047): 0.0.Bm: The cover property "uartRec.v_uartRec._assert_32:precondition1" was covered in 153 cycles in 0.34 s.
+0.0.Bm: All properties determined. [0.38 s]
+0.0.N: Trace Attempt  1	[0.01 s]
+0.0.Bm: Exited with Success (@ 0.54 s)
+0: ProofGrid usable level: 0
+0.0.N: Trace Attempt  2	[0.01 s]
+0.0.N: Stopped processing property "uartRec.v_uartRec._assert_10:precondition1"	[0.01 s].
+0.0.N: All properties determined. [0.01 s]
+0.0.N: Exited with Success (@ 0.55 s)
+0.0.AM: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Mpcustom4: Trace Attempt 23	[0.09 s]
+0.0.Mpcustom4: All properties determined. [0.13 s]
+0.0.Ht: Interrupted (multi)
+0.0.Ht: Trace Attempt 148	[0.05 s]
+0.0.Ht: All properties determined. [0.06 s]
+0.0.B: Trace Attempt 18	[0.01 s]
+0.0.B: Stopped processing property "uartRec.v_uartRec._assert_1:precondition1"	[0.02 s].
+0.0.B: All properties determined. [0.03 s]
+0.0.Mpcustom4: Exited with Success (@ 0.55 s)
+0.0.B: Exited with Success (@ 0.56 s)
+0.0.Hp: Interrupted (multi)
+0.0.Hp: All properties determined. [0.52 s]
+0.0.Hp: Exited with Success (@ 0.56 s)
+0.0.L: pal-achieve-06: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Ht: Exited with Success (@ 0.56 s)
+0.0.AM: Proofgrid shell started at 113577@pal-achieve-06(local) jg_113476_pal-achieve-06_1
+0.0.AM: Requesting engine job to terminate
+0.0.AM: Preventing job from starting because proof is shutting down.
+0.0.AM: Requesting engine job to terminate
+0.0.AM: Interrupted. [0.00 s]
+0.0.AM: Exited with Success (@ 0.59 s)
+0.0.L: Proofgrid shell started at 113559@pal-achieve-06(local) jg_113476_pal-achieve-06_1
+0.0.L: Requesting engine job to terminate
+0.0.L: Preventing job from starting because proof is shutting down.
+0.0.L: Requesting engine job to terminate
+0.0.L: Interrupted. [0.00 s]
+0.0.L: Exited with Success (@ 0.60 s)
+0: --------------------------------------------------------------
+ProofGrid Summary (utilization 33.56 %)
+--------------------------------------------------------------
+     engines started                               :     9
+     engine jobs started                           :     9
+
+    Average time in state (seconds)
+    ------------------------------------------------------
+    Engine  Pending     Running        Dead    Utilization
+    ------------------------------------------------------
+      N        0.16        0.54        0.00       77.65 %
+     Hp        0.17        0.49        0.00       73.74 %
+     Ht        0.52        0.05        0.00        8.38 %
+     Bm        0.18        0.38        0.00       67.44 %
+    Mpcustom4        0.41        0.12        0.00       22.90 %
+     Oh        0.36        0.02        0.00        5.15 %
+      L        0.54        0.00        0.00        0.00 %
+      B        0.41        0.03        0.00        6.23 %
+     AM        0.46        0.00        0.00        0.00 %
+    all        0.36        0.18        0.00       33.56 %
+
+    Total time in state (seconds)
+    -----------------------------------------
+            Pending     Running        Dead  
+    -----------------------------------------
+               3.23        1.63        0.00
+
+    Data read    : 105.08 kiB
+    Data written : 27.62 kiB
+
+0: All pending notifications were processed.
+0: ProofGrid was paused 4 times for a total of 0.1 seconds
+INFO (IPF059): 0: Completed proof on task: "<embedded>"
+
+==============================================================
+SUMMARY
+==============================================================
+           Properties Considered              : 98
+                 assertions                   : 49
+                  - proven                    : 45 (91.8367%)
+                  - bounded_proven (user)     : 0 (0%)
+                  - bounded_proven (auto)     : 0 (0%)
+                  - marked_proven             : 0 (0%)
+                  - cex                       : 4 (8.16327%)
+                  - ar_cex                    : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+                 covers                       : 49
+                  - unreachable               : 1 (2.04082%)
+                  - bounded_unreachable (user): 0 (0%)
+                  - covered                   : 48 (97.9592%)
+                  - ar_covered                : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+determined
+[<embedded>] % 
+[<embedded>] % # Report proof results
+[<embedded>] % report
+
+==============================================================
+    Jasper Verification Results
+==============================================================
+    2024.03 FCS 64 bits for Linux64 3.10.0-1160.21.1.el7.x86_64
+    Host Name: pal-achieve-06.uic.edu
+    User Name: vpulav2
+    Printed on: Tuesday, Jun 4, 2024 05:13:53 PM CDT
+    Working Directory: /data/vpulav2/Work/Jasper_llama/arithmetic_core_8-bit_piepelined_processor/uartRec
+
+
+==============================================================
+RESULTS
+==============================================================
+
+-------------------------------------------------------------------------------------------------------
+       Name                                           |    Result    |  Engine  |  Bound  |  Time    
+-------------------------------------------------------------------------------------------------------
+
+---[ <embedded> ]--------------------------------------------------------------------------------------
+[1]   uartRec.v_uartRec._assert_1                          proven          N      Infinite    0.001 s      
+[2]   uartRec.v_uartRec._assert_1:precondition1            covered         Bm          149    0.327 s      
+[3]   uartRec.v_uartRec._assert_2                          proven          Hp     Infinite    0.007 s      
+[4]   uartRec.v_uartRec._assert_2:precondition1            covered         Bm            5    0.005 s      
+[5]   uartRec.v_uartRec._assert_3                          proven          Hp     Infinite    0.007 s      
+[6]   uartRec.v_uartRec._assert_3:precondition1            covered         Bm           25    0.092 s      
+[7]   uartRec.v_uartRec._assert_4                          proven          Hp     Infinite    0.007 s      
+[8]   uartRec.v_uartRec._assert_4:precondition1            covered         Bm           41    0.092 s      
+[9]   uartRec.v_uartRec._assert_5                          proven          Hp     Infinite    0.007 s      
+[10]  uartRec.v_uartRec._assert_5:precondition1            covered         Bm           22    0.085 s      
+[11]  uartRec.v_uartRec._assert_6                          proven          Hp     Infinite    0.007 s      
+[12]  uartRec.v_uartRec._assert_6:precondition1            covered         Bm           15    0.052 s      
+[13]  uartRec.v_uartRec._assert_7                          proven          Hp     Infinite    0.007 s      
+[14]  uartRec.v_uartRec._assert_7:precondition1            covered         Bm           18    0.083 s      
+[15]  uartRec.v_uartRec._assert_8                          proven          Hp     Infinite    0.008 s      
+[16]  uartRec.v_uartRec._assert_8:precondition1            covered         Bm           23    0.090 s      
+[17]  uartRec.v_uartRec._assert_9                          proven          Hp     Infinite    0.008 s      
+[18]  uartRec.v_uartRec._assert_9:precondition1            covered         Bm           57    0.093 s      
+[19]  uartRec.v_uartRec._assert_10                         proven          Hp     Infinite    0.008 s      
+[20]  uartRec.v_uartRec._assert_10:precondition1           covered         Bm          152    0.343 s      
+[21]  uartRec.v_uartRec._assert_11                         cex             Hp            2    0.068 s      
+[22]  uartRec.v_uartRec._assert_11:precondition1           covered         PRE           1    0.000 s      
+[23]  uartRec.v_uartRec._assert_12                         proven          Hp     Infinite    0.008 s      
+[24]  uartRec.v_uartRec._assert_12:precondition1           covered         Bm           89    0.139 s      
+[25]  uartRec.v_uartRec._assert_13                         proven          Hp     Infinite    0.008 s      
+[26]  uartRec.v_uartRec._assert_13:precondition1           covered         Bm            6    0.006 s      
+[27]  uartRec.v_uartRec._assert_14                         proven          Hp     Infinite    0.008 s      
+[28]  uartRec.v_uartRec._assert_14:precondition1           covered         Bm           11    0.021 s      
+[29]  uartRec.v_uartRec._assert_15                         proven          Hp     Infinite    0.009 s      
+[30]  uartRec.v_uartRec._assert_15:precondition1           covered         Bm           10    0.021 s      
+[31]  uartRec.v_uartRec._assert_16                         proven          Hp     Infinite    0.009 s      
+[32]  uartRec.v_uartRec._assert_16:precondition1           covered         Bm          144    0.310 s      
+[33]  uartRec.v_uartRec._assert_17                         proven          Hp     Infinite    0.009 s      
+[34]  uartRec.v_uartRec._assert_17:precondition1           covered         Bm            3    0.004 s      
+[35]  uartRec.v_uartRec._assert_18                         proven          Hp     Infinite    0.009 s      
+[36]  uartRec.v_uartRec._assert_18:precondition1           covered         Bm           19    0.084 s      
+[37]  uartRec.v_uartRec._assert_19                         proven          Hp     Infinite    0.010 s      
+[38]  uartRec.v_uartRec._assert_19:precondition1           covered         Bm          147    0.326 s      
+[39]  uartRec.v_uartRec._assert_20                         proven          Hp     Infinite    0.010 s      
+[40]  uartRec.v_uartRec._assert_20:precondition1           covered         Bm           73    0.100 s      
+[41]  uartRec.v_uartRec._assert_21                         proven          Hp     Infinite    0.010 s      
+[42]  uartRec.v_uartRec._assert_21:precondition1           covered         Bm          121    0.211 s      
+[43]  uartRec.v_uartRec._assert_22                         proven          Hp     Infinite    0.010 s      
+[44]  uartRec.v_uartRec._assert_22:precondition1           covered         Bm          151    0.342 s      
+[45]  uartRec.v_uartRec._assert_23                         proven          Hp     Infinite    0.010 s      
+[46]  uartRec.v_uartRec._assert_23:precondition1           covered         Bm          139    0.294 s      
+[47]  uartRec.v_uartRec._assert_24                         proven          Hp     Infinite    0.010 s      
+[48]  uartRec.v_uartRec._assert_24:precondition1           covered         Bm          145    0.311 s      
+[49]  uartRec.v_uartRec._assert_25                         proven          Hp     Infinite    0.011 s      
+[50]  uartRec.v_uartRec._assert_25:precondition1           covered         Bm          105    0.177 s      
+[51]  uartRec.v_uartRec._assert_26                         proven          PRE    Infinite    0.000 s      
+[52]  uartRec.v_uartRec._assert_26:precondition1           unreachable     PRE    Infinite    0.000 s      
+[53]  uartRec.v_uartRec._assert_27                         proven          Hp     Infinite    0.011 s      
+[54]  uartRec.v_uartRec._assert_27:precondition1           covered         Bm          140    0.295 s      
+[55]  uartRec.v_uartRec._assert_28                         proven          Hp     Infinite    0.011 s      
+[56]  uartRec.v_uartRec._assert_28:precondition1           covered         Bm          146    0.313 s      
+[57]  uartRec.v_uartRec._assert_29                         proven          Hp     Infinite    0.011 s      
+[58]  uartRec.v_uartRec._assert_29:precondition1           covered         Bm          141    0.308 s      
+[59]  uartRec.v_uartRec._assert_30                         cex             Bm            9    0.020 s      
+[60]  uartRec.v_uartRec._assert_30:precondition1           covered         Bm            9    0.020 s      
+[61]  uartRec.v_uartRec._assert_31                         proven          Hp     Infinite    0.011 s      
+[62]  uartRec.v_uartRec._assert_31:precondition1           covered         Bm          142    0.309 s      
+[63]  uartRec.v_uartRec._assert_32                         cex             Bm          153    0.344 s      
+[64]  uartRec.v_uartRec._assert_32:precondition1           covered         Bm          153    0.344 s      
+[65]  uartRec.v_uartRec._assert_33                         proven          Hp     Infinite    0.011 s      
+[66]  uartRec.v_uartRec._assert_33:precondition1           covered         Bm           16    0.053 s      
+[67]  uartRec.v_uartRec._assert_34                         proven          Hp     Infinite    0.011 s      
+[68]  uartRec.v_uartRec._assert_34:precondition1           covered         PRE           1    0.000 s      
+[69]  uartRec.v_uartRec._assert_35                         proven          Hp     Infinite    0.012 s      
+[70]  uartRec.v_uartRec._assert_35:precondition1           covered         Bm           12    0.022 s      
+[71]  uartRec.v_uartRec._assert_36                         proven          Hp     Infinite    0.012 s      
+[72]  uartRec.v_uartRec._assert_36:precondition1           covered         Bm           21    0.085 s      
+[73]  uartRec.v_uartRec._assert_37                         proven          Hp     Infinite    0.012 s      
+[74]  uartRec.v_uartRec._assert_37:precondition1           covered         Bm           17    0.054 s      
+[75]  uartRec.v_uartRec._assert_38                         proven          Hp     Infinite    0.012 s      
+[76]  uartRec.v_uartRec._assert_38:precondition1           covered         Bm            7    0.006 s      
+[77]  uartRec.v_uartRec._assert_39                         proven          Hp     Infinite    0.012 s      
+[78]  uartRec.v_uartRec._assert_39:precondition1           covered         Bm          143    0.310 s      
+[79]  uartRec.v_uartRec._assert_40                         proven          Hp     Infinite    0.012 s      
+[80]  uartRec.v_uartRec._assert_40:precondition1           covered         Bm           14    0.052 s      
+[81]  uartRec.v_uartRec._assert_41                         proven          Hp     Infinite    0.013 s      
+[82]  uartRec.v_uartRec._assert_41:precondition1           covered         Bm          138    0.293 s      
+[83]  uartRec.v_uartRec._assert_42                         proven          Hp     Infinite    0.013 s      
+[84]  uartRec.v_uartRec._assert_42:precondition1           covered         Bm           20    0.084 s      
+[85]  uartRec.v_uartRec._assert_43                         proven          Hp     Infinite    0.013 s      
+[86]  uartRec.v_uartRec._assert_43:precondition1           covered         Bm           13    0.051 s      
+[87]  uartRec.v_uartRec._assert_44                         proven          Hp     Infinite    0.013 s      
+[88]  uartRec.v_uartRec._assert_44:precondition1           covered         Bm            4    0.005 s      
+[89]  uartRec.v_uartRec._assert_45                         proven          Hp     Infinite    0.013 s      
+[90]  uartRec.v_uartRec._assert_45:precondition1           covered         Bm           24    0.091 s      
+[91]  uartRec.v_uartRec._assert_46                         proven          Hp     Infinite    0.013 s      
+[92]  uartRec.v_uartRec._assert_46:precondition1           covered         Bm          150    0.328 s      
+[93]  uartRec.v_uartRec._assert_47                         proven          Hp     Infinite    0.013 s      
+[94]  uartRec.v_uartRec._assert_47:precondition1           covered         Bm            8    0.019 s      
+[95]  uartRec.v_uartRec._assert_48                         proven          Hp     Infinite    0.014 s      
+[96]  uartRec.v_uartRec._assert_48:precondition1           covered         Bm          148    0.327 s      
+[97]  uartRec.v_uartRec._assert_49                         cex             Bm          137    0.280 s      
+[98]  uartRec.v_uartRec._assert_49:precondition1           covered         Bm          137    0.280 s      
+
+==============================================================
+ASSUMPTIONS
+==============================================================
+
+-------------------------------------------------------------------------------
+       Name    |  Expression  |  Location     |  Status      |  Dependencies                  
+-------------------------------------------------------------------------------
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.
+INFO (IPL018): The peak resident set memory use for this session was 0.371 GB.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

@@ -1,0 +1,516 @@
+`include "defines.v"
+                                                                                                         
+module i_outputReg(                                                                                      
+input reset, outputRw,                                                                                   
+        input [`outputAddrLen-1:0] outputRwAddr,                                                         
+        input outputWriteIn,                                                                             
+        input DEFAULT_CLOCK,                                                                             
+        input outputReadOut,                                                                             
+        input  [`outputNumber-1:0] outputs,                                                              
+                                                                                                         
+        input [`outputNumber-1 :0] outputReg                                                             
+                                                                                                         
+);  
+
+
+property a63;
+@(posedge DEFAULT_CLOCK) (outputReg[68] == 0 & outputReg[64] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a63: assert property(a63);
+
+property a50;
+@(posedge DEFAULT_CLOCK) (outputReg[122] == 1 & outputReg[88] == 0 & outputReg[36] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a50: assert property(a50);
+
+property a54;
+@(posedge DEFAULT_CLOCK) (outputReg[125] == 1 & outputReg[12] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a54: assert property(a54);
+
+property a38;
+@(posedge DEFAULT_CLOCK) (outputReg[83] == 1 & outputReg[13] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a38: assert property(a38);
+
+property a46;
+@(posedge DEFAULT_CLOCK) (outputReg[2] == 1 & outputReg[29] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a46: assert property(a46);
+
+property a44;
+@(posedge DEFAULT_CLOCK) (outputReg[40] == 1 & outputReg[54] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a44: assert property(a44);
+
+property a45;
+@(posedge DEFAULT_CLOCK) (outputReg[28] == 1 & outputReg[11] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a45: assert property(a45);
+
+property a42;
+@(posedge DEFAULT_CLOCK) (outputReg[111] == 1 & outputReg[2] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a42: assert property(a42);
+
+property a43;
+@(posedge DEFAULT_CLOCK) (outputReg[84] == 0 & outputReg[40] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a43: assert property(a43);
+
+property a10;
+@(posedge DEFAULT_CLOCK) (outputReg[31] == 0 & outputReg[103] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a10: assert property(a10);
+
+property a1;
+@(posedge DEFAULT_CLOCK) (outputReg[95] == 0 & outputReg[26] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge DEFAULT_CLOCK) (outputReg[44] == 0) |-> (outputReadOut == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a3;
+@(posedge DEFAULT_CLOCK) (outputReg[74] == 0 & outputReg[4] == 0) |-> (outputReadOut == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a2;
+@(posedge DEFAULT_CLOCK) (outputReg[94] == 0 & outputReg[73] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a4;
+@(posedge DEFAULT_CLOCK) (outputReg[73] == 0 & outputReg[96] == 0) |-> (outputReadOut == 0);
+endproperty
+assert_a4: assert property(a4);
+
+property a7;
+@(posedge DEFAULT_CLOCK) (outputReg[65] == 1 & outputReg[26] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a7: assert property(a7);
+
+property a9;
+@(posedge DEFAULT_CLOCK) (outputReg[65] == 1 & outputReg[30] == 1 & outputReg[22] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a9: assert property(a9);
+
+property a91;
+@(posedge DEFAULT_CLOCK) (outputReg[17] == 0 & outputReg[64] == 1 & outputRw == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a91: assert property(a91);
+
+property a69;
+@(posedge DEFAULT_CLOCK) (outputReg[12] == 1 & outputReg[36] == 0 & outputRw == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a69: assert property(a69);
+
+property a61;
+@(posedge DEFAULT_CLOCK) (outputRw == 1 & outputReg[30] == 0 & outputReg[72] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a61: assert property(a61);
+
+property a19;
+@(posedge DEFAULT_CLOCK) (outputReg[29] == 0 & outputReg[21] == 0 & outputRw == 0) |-> (outputReadOut == 0);
+endproperty
+assert_a19: assert property(a19);
+
+property a68;
+@(posedge DEFAULT_CLOCK) (outputReg[32] == 1 & outputReg[104] == 0 & outputReg[11] == 0 & outputRwAddr[0] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a68: assert property(a68);
+
+property a20;
+@(posedge DEFAULT_CLOCK) (outputReg[29] == 0 & outputReg[100] == 1 & outputReg[17] == 1 & outputRwAddr[4] == 0) |-> (outputReadOut == 0);
+endproperty
+assert_a20: assert property(a20);
+
+property a15;
+@(posedge DEFAULT_CLOCK) (outputReg[11] == 0 & outputReg[21] == 0 & outputReg[104] == 1 & outputRwAddr[3] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a15: assert property(a15);
+
+property a87;
+@(posedge DEFAULT_CLOCK) (outputRwAddr[3] == 1 & outputRw == 1 & outputReg[31] == 0 & outputReg[94] == 1 & outputReg[26] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a87: assert property(a87);
+
+property a70;
+@(posedge DEFAULT_CLOCK) (outputReg[100] == 1 & outputReg[10] == 0 & outputRwAddr[4] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a70: assert property(a70);
+
+property a88;
+@(posedge DEFAULT_CLOCK) (outputReg[10] == 1 & outputReg[52] == 0 & outputRwAddr[2] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a88: assert property(a88);
+
+property a67;
+@(posedge DEFAULT_CLOCK) (outputReg[13] == 1 & outputReg[32] == 0 & outputRwAddr[2] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a67: assert property(a67);
+
+property a53;
+@(posedge DEFAULT_CLOCK) (outputReg[122] == 1 & outputReg[12] == 0 & outputRwAddr[1] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a53: assert property(a53);
+
+property a52;
+@(posedge DEFAULT_CLOCK) (outputReg[21] == 1 & outputReg[86] == 0 & outputRwAddr[1] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a52: assert property(a52);
+
+property a55;
+@(posedge DEFAULT_CLOCK) (outputReg[12] == 1 & outputReg[100] == 0 & outputRwAddr[2] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a55: assert property(a55);
+
+property a57;
+@(posedge DEFAULT_CLOCK) (outputReg[17] == 0 & outputRwAddr[2] == 1 & outputReg[64] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a57: assert property(a57);
+
+property a33;
+@(posedge DEFAULT_CLOCK) (outputReg[10] == 1 & outputReg[17] == 1 & outputRwAddr[2] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a33: assert property(a33);
+
+property a32;
+@(posedge DEFAULT_CLOCK) (outputReg[95] == 0 & outputReg[72] == 1 & outputRwAddr[0] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a32: assert property(a32);
+
+property a34;
+@(posedge DEFAULT_CLOCK) (outputReg[17] == 0 & outputRwAddr[5] == 0 & outputReg[64] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a34: assert property(a34);
+
+property a48;
+@(posedge DEFAULT_CLOCK) (outputReg[21] == 1 & outputReg[86] == 0 & outputRwAddr[0] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a48: assert property(a48);
+
+property a49;
+@(posedge DEFAULT_CLOCK) (outputReg[28] == 1 & outputReg[12] == 0 & outputRwAddr[0] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a49: assert property(a49);
+
+property a28;
+@(posedge DEFAULT_CLOCK) (outputReg[10] == 1 & outputReg[17] == 1 & outputRwAddr[1] == 0) |-> (outputReadOut == 0);
+endproperty
+assert_a28: assert property(a28);
+
+property a17;
+@(posedge DEFAULT_CLOCK) (outputReg[73] == 0 & outputReg[72] == 1 & outputRwAddr[1] == 0) |-> (outputReadOut == 0);
+endproperty
+assert_a17: assert property(a17);
+
+property a13;
+@(posedge DEFAULT_CLOCK) (outputReg[31] == 0 & outputReg[54] == 1 & outputRwAddr[0] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a13: assert property(a13);
+
+property a65;
+@(posedge DEFAULT_CLOCK) (outputRw == 1 & outputReg[26] == 1 & outputRwAddr[1] == 0 & outputReg[15] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a65: assert property(a65);
+
+property a56;
+@(posedge DEFAULT_CLOCK) (outputRw == 1 & outputReg[11] == 0 & outputReg[26] == 0 & outputRwAddr[0] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a56: assert property(a56);
+
+property a59;
+@(posedge DEFAULT_CLOCK) (outputRw == 1 & outputReg[26] == 1 & outputReg[32] == 0 & outputRwAddr[0] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a59: assert property(a59);
+
+property a83;
+@(posedge DEFAULT_CLOCK) (outputRwAddr[0] == 0 & outputReg[26] == 1 & outputRwAddr[2] == 1 & outputReg[21] == 1 & outputReg[92] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a83: assert property(a83);
+
+property a81;
+@(posedge DEFAULT_CLOCK) (outputRwAddr[0] == 0 & outputReg[26] == 1 & outputReg[104] == 0 & outputReg[31] == 1 & outputRwAddr[2] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a81: assert property(a81);
+
+property a86;
+@(posedge DEFAULT_CLOCK) (outputRwAddr[0] == 0 & outputReg[26] == 1 & outputReg[104] == 0 & outputReg[31] == 1 & outputRwAddr[4] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a86: assert property(a86);
+
+property a73;
+@(posedge DEFAULT_CLOCK) (outputReg[2] == 1 & outputRwAddr[2] == 1 & outputRw == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a73: assert property(a73);
+
+property a25;
+@(posedge DEFAULT_CLOCK) (outputReg[18] == 1 & outputRwAddr[1] == 0 & outputRw == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a25: assert property(a25);
+
+property a95;
+@(posedge DEFAULT_CLOCK) (outputReg[54] == 0 & outputReg[101] == 0 & outputRwAddr[2] == 0 & outputRwAddr[0] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a95: assert property(a95);
+
+property a82;
+@(posedge DEFAULT_CLOCK) (outputReg[101] == 0 & outputRwAddr[3] == 0 & outputReg[54] == 0 & outputRwAddr[5] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a82: assert property(a82);
+
+property a31;
+@(posedge DEFAULT_CLOCK) (outputReg[10] == 1 & outputReg[111] == 0 & outputRwAddr[3] == 1 & outputRwAddr[0] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a31: assert property(a31);
+
+property a41;
+@(posedge DEFAULT_CLOCK) (outputReg[41] == 0 & outputRwAddr[4] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a41: assert property(a41);
+
+property a22;
+@(posedge DEFAULT_CLOCK) (outputReg[41] == 0 & outputRwAddr[0] == 0) |-> (outputReadOut == 0);
+endproperty
+assert_a22: assert property(a22);
+
+property a23;
+@(posedge DEFAULT_CLOCK) (outputReg[11] == 0 & outputRwAddr[0] == 0 & outputReg[15] == 1 & outputRwAddr[2] == 0) |-> (outputReadOut == 0);
+endproperty
+assert_a23: assert property(a23);
+
+property a27;
+@(posedge DEFAULT_CLOCK) (outputReg[84] == 1 & outputRwAddr[4] == 0 & outputRwAddr[0] == 1 & outputReg[31] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a27: assert property(a27);
+
+property a12;
+@(posedge DEFAULT_CLOCK) (outputReg[18] == 1 & outputRwAddr[0] == 0) |-> (outputReadOut == 0);
+endproperty
+assert_a12: assert property(a12);
+
+property a93;
+@(posedge DEFAULT_CLOCK) (outputReg[54] == 0 & outputReg[32] == 1 & outputRwAddr[1] == 0 & outputRwAddr[4] == 0 & outputRw == 0 & outputRwAddr[0] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a93: assert property(a93);
+
+property a92;
+@(posedge DEFAULT_CLOCK) (outputRwAddr[1] == 0 & outputRwAddr[4] == 0 & outputReg[17] == 0 & outputRw == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a92: assert property(a92);
+
+property a79;
+@(posedge DEFAULT_CLOCK) (outputRwAddr[0] == 0 & outputReg[83] == 1 & outputRwAddr[1] == 1 & outputRw == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a79: assert property(a79);
+
+property a71;
+@(posedge DEFAULT_CLOCK) (outputRw == 1 & outputRwAddr[3] == 1 & outputReg[41] == 0 & outputRwAddr[0] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a71: assert property(a71);
+
+property a64;
+@(posedge DEFAULT_CLOCK) (outputRw == 1 & outputReg[11] == 0 & outputRwAddr[5] == 0 & outputRwAddr[0] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a64: assert property(a64);
+
+property a66;
+@(posedge DEFAULT_CLOCK) (outputRw == 1 & outputRwAddr[4] == 1 & outputRwAddr[1] == 1 & outputReg[30] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a66: assert property(a66);
+
+property a14;
+@(posedge DEFAULT_CLOCK) (outputReg[84] == 1 & outputRw == 0 & outputRwAddr[2] == 1 & outputRwAddr[1] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a14: assert property(a14);
+
+property a11;
+@(posedge DEFAULT_CLOCK) (outputReg[31] == 0 & outputRw == 0 & outputRwAddr[2] == 1 & outputRwAddr[0] == 0) |-> (outputReadOut == 0);
+endproperty
+assert_a11: assert property(a11);
+
+property a96;
+@(posedge DEFAULT_CLOCK) (outputRwAddr[3] == 1 & outputReg[54] == 0 & outputRwAddr[4] == 0 & outputReg[4] == 1 & outputRwAddr[5] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a96: assert property(a96);
+
+property a90;
+@(posedge DEFAULT_CLOCK) (outputRwAddr[1] == 0 & outputRwAddr[4] == 0 & outputReg[54] == 0 & outputReg[31] == 1 & outputRwAddr[0] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a90: assert property(a90);
+
+property a80;
+@(posedge DEFAULT_CLOCK) (outputRwAddr[0] == 0 & outputReg[26] == 1 & outputRwAddr[2] == 1 & outputReg[21] == 1 & outputRwAddr[1] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a80: assert property(a80);
+
+property a24;
+@(posedge DEFAULT_CLOCK) (outputReg[11] == 0 & outputRwAddr[0] == 0 & outputReg[92] == 0 & outputRwAddr[1] == 1 & outputRwAddr[2] == 0) |-> (outputReadOut == 0);
+endproperty
+assert_a24: assert property(a24);
+
+property a84;
+@(posedge DEFAULT_CLOCK) (outputRw == 1 & outputRwAddr[3] == 1 & outputRwAddr[2] == 1 & outputReg[29] == 0 & outputRwAddr[0] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a84: assert property(a84);
+
+property a89;
+@(posedge DEFAULT_CLOCK) (outputRwAddr[1] == 0 & outputRwAddr[4] == 0 & outputReg[29] == 0 & outputRw == 1 & outputRwAddr[5] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a89: assert property(a89);
+
+property a29;
+@(posedge DEFAULT_CLOCK) (outputReg[31] == 0 & outputRwAddr[4] == 0 & outputRw == 1 & outputRwAddr[2] == 0 & outputRwAddr[0] == 0) |-> (outputReadOut == 0);
+endproperty
+assert_a29: assert property(a29);
+
+property a62;
+@(posedge DEFAULT_CLOCK) (outputReg[2] == 1 & outputRwAddr[3] == 1 & outputRwAddr[0] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a62: assert property(a62);
+
+property a51;
+@(posedge DEFAULT_CLOCK) (outputReg[2] == 1 & outputRwAddr[2] == 1 & outputRwAddr[1] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a51: assert property(a51);
+
+property a58;
+@(posedge DEFAULT_CLOCK) (outputReg[41] == 0 & outputRwAddr[0] == 1 & outputRwAddr[1] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a58: assert property(a58);
+
+property a39;
+@(posedge DEFAULT_CLOCK) (outputReg[83] == 1 & outputRwAddr[2] == 1 & outputRwAddr[0] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a39: assert property(a39);
+
+property a47;
+@(posedge DEFAULT_CLOCK) (outputReg[35] == 1 & outputRwAddr[3] == 0 & outputRwAddr[0] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a47: assert property(a47);
+
+property a18;
+@(posedge DEFAULT_CLOCK) (outputReg[95] == 0 & outputRwAddr[1] == 0 & outputRwAddr[4] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a18: assert property(a18);
+
+property a5;
+@(posedge DEFAULT_CLOCK) (outputReg[4] == 1 & outputRwAddr[1] == 0 & outputRwAddr[3] == 0) |-> (outputReadOut == 0);
+endproperty
+assert_a5: assert property(a5);
+
+property a6;
+@(posedge DEFAULT_CLOCK) (outputReg[4] == 1 & outputRwAddr[2] == 1 & outputRwAddr[4] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a6: assert property(a6);
+
+property a78;
+@(posedge DEFAULT_CLOCK) (outputReg[101] == 0 & outputRwAddr[2] == 0 & outputRwAddr[5] == 0 & outputRwAddr[0] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a78: assert property(a78);
+
+property a77;
+@(posedge DEFAULT_CLOCK) (outputReg[17] == 0 & outputRwAddr[2] == 1 & outputRwAddr[0] == 1 & outputRwAddr[4] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a77: assert property(a77);
+
+property a60;
+@(posedge DEFAULT_CLOCK) (outputReg[17] == 0 & outputRwAddr[2] == 1 & outputRwAddr[0] == 1 & outputRwAddr[1] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a60: assert property(a60);
+
+property a37;
+@(posedge DEFAULT_CLOCK) (outputReg[72] == 0 & outputRwAddr[1] == 0 & outputRwAddr[2] == 0 & outputRwAddr[0] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a37: assert property(a37);
+
+property a16;
+@(posedge DEFAULT_CLOCK) (outputReg[31] == 0 & outputRwAddr[4] == 0 & outputRwAddr[3] == 0 & outputRwAddr[5] == 0) |-> (outputReadOut == 0);
+endproperty
+assert_a16: assert property(a16);
+
+property a36;
+@(posedge DEFAULT_CLOCK) (outputReg[31] == 0 & outputRwAddr[4] == 0 & outputRwAddr[0] == 1 & outputRwAddr[5] == 0 & outputRwAddr[2] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a36: assert property(a36);
+
+property a72;
+@(posedge DEFAULT_CLOCK) (outputRw == 1 & outputRwAddr[4] == 1 & outputRwAddr[1] == 1 & outputRwAddr[5] == 0 & outputRwAddr[2] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a72: assert property(a72);
+
+property a35;
+@(posedge DEFAULT_CLOCK) (outputRw == 1 & outputRwAddr[0] == 0 & outputRwAddr[3] == 0 & outputRwAddr[1] == 0 & outputRwAddr[2] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a35: assert property(a35);
+
+property a30;
+@(posedge DEFAULT_CLOCK) (outputReg[29] == 0 & outputReg[21] == 0 & outputWriteIn == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a30: assert property(a30);
+
+property a99;
+@(posedge DEFAULT_CLOCK) (outputRwAddr[1] == 0 & outputWriteIn == 1 & outputReg[105] == 0 & outputReg[94] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a99: assert property(a99);
+
+property a76;
+@(posedge DEFAULT_CLOCK) (outputReg[32] == 1 & outputReg[104] == 0 & outputWriteIn == 0 & outputRwAddr[0] == 1 & outputRwAddr[4] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a76: assert property(a76);
+
+property a98;
+@(posedge DEFAULT_CLOCK) (outputReg[26] == 1 & outputWriteIn == 0 & outputRw == 1 & outputRwAddr[4] == 1 & outputRwAddr[3] == 1 & outputRwAddr[0] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a98: assert property(a98);
+
+property a74;
+@(posedge DEFAULT_CLOCK) (outputRw == 1 & outputRwAddr[2] == 1 & outputReg[26] == 1 & outputRwAddr[4] == 1 & outputWriteIn == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a74: assert property(a74);
+
+property a26;
+@(posedge DEFAULT_CLOCK) (outputReg[84] == 1 & outputWriteIn == 1 & outputRwAddr[0] == 1 & outputRw == 0 & outputRwAddr[1] == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a26: assert property(a26);
+
+property a8;
+@(posedge DEFAULT_CLOCK) (outputReg[73] == 0 & outputRw == 0 & outputWriteIn == 1) |-> (outputReadOut == 0);
+endproperty
+assert_a8: assert property(a8);
+
+property a94;
+@(posedge DEFAULT_CLOCK) (outputReg[54] == 0 & outputRwAddr[3] == 1 & outputRwAddr[4] == 0 & outputWriteIn == 0 & outputRwAddr[1] == 0 & outputRwAddr[0] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a94: assert property(a94);
+
+property a97;
+@(posedge DEFAULT_CLOCK) (outputRwAddr[3] == 1 & outputRwAddr[1] == 0 & outputRwAddr[4] == 0 & outputReg[95] == 0 & outputRwAddr[2] == 1 & outputWriteIn == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a97: assert property(a97);
+
+property a75;
+@(posedge DEFAULT_CLOCK) (outputRw == 1 & outputRwAddr[5] == 1 & outputRwAddr[2] == 1 & outputRwAddr[0] == 1 & outputWriteIn == 1 & outputRwAddr[3] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a75: assert property(a75);
+
+property a85;
+@(posedge DEFAULT_CLOCK) (outputRwAddr[0] == 0 & outputWriteIn == 1 & outputReg[30] == 0 & outputRwAddr[1] == 1) |-> (outputReadOut == 1);
+endproperty
+assert_a85: assert property(a85);
+
+property a21;
+@(posedge DEFAULT_CLOCK) (outputReg[84] == 1 & outputRwAddr[4] == 0 & outputRwAddr[1] == 1 & outputWriteIn == 0) |-> (outputReadOut == 0);
+endproperty
+assert_a21: assert property(a21);
+
+property a40;
+@(posedge DEFAULT_CLOCK) (outputReg[83] == 1 & outputWriteIn == 1 & outputRwAddr[1] == 0) |-> (outputReadOut == 1);
+endproperty
+assert_a40: assert property(a40);
+
+endmodule

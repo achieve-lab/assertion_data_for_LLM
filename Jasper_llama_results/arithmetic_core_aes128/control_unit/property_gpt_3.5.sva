@@ -1,0 +1,71 @@
+
+
+module i_control_unit(
+        input  [2:0] sbox_sel,
+        input  [1:0] rk_sel,
+        input  [1:0] key_out_sel,
+        input  [1:0] col_sel,
+        input  [3:0] key_en,
+        input  [3:0] col_en,
+        input  [3:0] round,
+        input  bypass_rk,
+        input  bypass_key_en,
+        input  key_sel,
+        input  iv_cnt_en,
+        input  iv_cnt_sel,
+        input  key_derivation_en,
+        input end_comp,
+        input key_init,
+        input key_gen,
+        input mode_ctr,
+        input mode_cbc,
+        input last_round,
+  	input encrypt_decrypt,
+        input [1:0] operation_mode,
+        input [1:0] aes_mode,
+        input start,
+        input disable_core,
+        input clk,
+        input rst_n,
+	input first_round,
+	input state,
+	input op_mode,
+	input rd_count_en,
+	input next_state,
+	input rd_count,
+	input op_key_derivation,
+	input enc_dec
+);
+
+assert property @(posedge clk) (state == IDLE && start) |-> (next_state == ROUND0_COL0);
+assert property @(posedge clk) (state == ROUND0_COL0 && enc_dec) |-> (next_state == ROUND0_COL1);
+assert property @(posedge clk) (state == ROUND0_COL0 && !enc_dec) |-> (next_state == ROUND_KEY0);
+assert property @(posedge clk) (state == ROUND0_COL1 && enc_dec) |-> (next_state == ROUND0_COL2);
+assert property @(posedge clk) (state == ROUND0_COL1 && !enc_dec) |-> (next_state == ROUND0_COL0);
+assert property @(posedge clk) (state == ROUND0_COL2 && enc_dec) |-> (next_state == ROUND0_COL3);
+assert property @(posedge clk) (state == ROUND0_COL2 && !enc_dec) |-> (next_state == ROUND0_COL1);
+assert property @(posedge clk) (state == ROUND0_COL3 && enc_dec) |-> (next_state == ROUND_KEY0);
+assert property @(posedge clk) (state == ROUND0_COL3 && !enc_dec) |-> (next_state == ROUND0_COL2);
+assert property @(posedge clk) (state == ROUND_KEY0 && !first_round) |-> (next_state == NOP);
+assert property @(posedge clk) (state == ROUND_KEY0 && first_round) |-> (next_state == ROUND_COL0);
+assert property @(posedge clk) (state == NOP) |-> (next_state == ROUND_COL0);
+assert property @(posedge clk) (state == ROUND_COL0 && enc_dec) |-> (next_state == ROUND_COL1);
+assert property @(posedge clk) (state == ROUND_COL0 && !enc_dec) |-> (next_state == ROUND_KEY0);
+assert property @(posedge clk) (state == ROUND_COL1 && enc_dec) |-> (next_state == ROUND_COL2);
+assert property @(posedge clk) (state == ROUND_COL1 && !enc_dec) |-> (next_state == ROUND_COL0);
+assert property @(posedge clk) (state == ROUND_COL2 && enc_dec) |-> (next_state == ROUND_COL3);
+assert property @(posedge clk) (state == ROUND_COL2 && !enc_dec) |-> (next_state == ROUND_COL1);
+assert property @(posedge clk) (state == ROUND_COL3 && enc_dec && last_round) |-> (next_state == READY);
+assert property @(posedge clk) (state == ROUND_COL3 && enc_dec && !last_round) |-> (next_state == ROUND_KEY0);
+assert property @(posedge clk) (state == ROUND_COL3 && !enc_dec) |-> (next_state == ROUND_COL2);
+assert property @(posedge clk) (state == GEN_KEY0) |-> (next_state == GEN_KEY1);
+assert property @(posedge clk) (state == GEN_KEY1) |-> (next_state == GEN_KEY2);
+assert property @(posedge clk) (state == GEN_KEY2) |-> (next_state == GEN_KEY3);
+assert property @(posedge clk) (state == GEN_KEY3 && last_round) |-> (next_state == READY);
+assert property @(posedge clk) (state == GEN_KEY3 && !last_round) |-> (next_state == ROUND0_COL3);
+assert property @(posedge clk) (state == READY && op_mode == KEY_DERIVATION) |-> (key_derivation_en == ENABLE);
+assert property @(posedge clk) (state == ROUND0_COL0) |-> (sbox_sel == COL_0 && rk_sel == COL && bypass_rk == ENABLE && bypass_key_en == ENABLE && key_out_sel == KEY_0 && col_sel == ADD_RK_OUT && col_en == EN_COL_0);
+assert property @(posedge clk) (state == ROUND0_COL1) |-> (sbox_sel == COL_1 && rk_sel == COL && bypass_rk == ENABLE && bypass_key_en == ENABLE && key_out_sel == KEY_1 && col_sel == ADD_RK_OUT && col_en == EN_COL_1 && key_sel == KEY_OUT && key_en == EN_KEY_1);
+assert property @(posedge clk) (state == ROUND0_COL2) |-> (sbox_sel == COL_2 && rk_sel == COL && bypass_rk == ENABLE && bypass_key_en == ENABLE && key_out_sel == KEY_2 && col_sel == ADD_RK_OUT && col_en == EN_COL_2 && key_sel == KEY_OUT && key_en == EN_KEY_2);
+assert property @(posedge clk) (state == ROUND0_COL3) |-> (sbox_sel == COL_3 && rk_sel == COL && bypass_key_en == ENABLE && key_out_sel == KEY_3 && col_sel == SHIFT_ROWS && col
+endmodule

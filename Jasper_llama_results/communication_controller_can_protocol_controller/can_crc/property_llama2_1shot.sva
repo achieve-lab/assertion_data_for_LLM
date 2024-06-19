@@ -1,0 +1,41 @@
+module i_can_crc(
+input         initialize,
+input          crc_next,
+input         enable,
+input         clk,
+input   [14:0] crc_tmp,
+input         data,
+input    [14:0] crc
+);
+
+assert property(@(posedge clk) (crc_next) |-> (crc[6:0] == 7'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[5:5] == 1'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[0:0] == 1'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[6:6] == 1'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[1:1] == 1'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[4:0] == 5'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[12:12] == 1'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[1:0] == 2'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[10:0] == 11'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[13:13] == 1'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[9:9] == 1'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[12:0] == 13'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[5:0] == 6'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[7:0] == 8'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[14:0] == 15'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[8:8] == 1'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[13:0] == 14'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[2:2] == 1'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[11:11] == 1'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[9:0] == 10'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[7:7] == 1'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[3:0] == 4'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[11:0] == 12'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[8:0] == 9'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[10:10] == 1'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[3:3] == 1'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[2:0] == 3'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[4:4] == 1'h0));
+assert property(@(posedge clk) (crc_next) |-> (crc[14:14] == 1'h0));
+
+endmodule

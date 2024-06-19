@@ -1,0 +1,118 @@
+
+//=====================================================================================
+localparam AES_CR    = 4'd00;
+localparam AES_SR    = 4'd01;
+localparam AES_DINR  = 4'd02;
+localparam AES_DOUTR = 4'd03;
+localparam AES_KEYR0 = 4'd04;
+localparam AES_KEYR1 = 4'd05;
+localparam AES_KEYR2 = 4'd06;
+localparam AES_KEYR3 = 4'd07;
+localparam AES_IVR0  = 4'd08;
+localparam AES_IVR1  = 4'd09;
+localparam AES_IVR2  = 4'd10;
+localparam AES_IVR3  = 4'd11;
+
+//=============================================================================
+// Operation Modes
+//=============================================================================
+localparam ENCRYPTION     = 2'b00;
+localparam KEY_DERIVATION = 2'b01;
+localparam DECRYPTION     = 2'b10;
+localparam DECRYP_W_DERIV = 2'b11;
+
+//=============================================================================
+// AES Modes
+//=============================================================================
+localparam ECB = 2'b00;
+localparam CBC = 2'b01;
+localparam CTR = 2'b10;
+
+//=============================================================================
+// Resets Values
+//=============================================================================
+localparam AES_CR_RESET = 13'd0;
+localparam AES_SR_RESET =  3'd0;
+
+//=============================================================================
+// Enable Value (Active High)
+//=============================================================================
+localparam ENABLE  = 1'b1;
+localparam DISABLE = 1'b0;
+
+//=============================================================================
+// FSM STATES
+//=============================================================================
+localparam IDLE   = 3'd0;
+localparam INPUT  = 3'd1;
+localparam START  = 3'd2;
+localparam WAIT   = 3'd3;
+localparam OUTPUT = 3'd4;
+
+module i_host_interface(
+	input [31:0] col_bus,
+input cnt_en,
+input wr_err,
+input first_block_set,
+	input int_ccf,
+	input col_rd_en,
+	input [1:0] key_sel,
+	input col_wr_en,
+input [31:0] bus_out_mux,
+	input [1:0] data_type,
+input dma_in_en,
+input enable,
+	input [3:0] key_en,
+input errc,
+	input PWRITE,
+	input [31:0] key_bus,
+	input [31:0] PRDATA,
+input [2:0] state, next_state,
+	input [31:0] iv_bus,
+	input [12:0] PWDATA,
+input wr_err_en,
+input ccf_ie,
+	input [1:0] mode,
+	input PCLK,
+input enable_clear,
+input aes_cr_wr_en,
+input write_completed,
+input [10:0] aes_cr,
+input key_deriv,
+	input start_core,
+input [1:0] chmod_in,
+	input dma_req_rd,
+	input ccf_set,
+input [1:0] mode_in,
+input rd_err,
+input ccf,
+input dma_req,
+	input PSEL,
+	input [3:0] PADDR,
+input read_en,
+	input disable_core,
+	input [3:0] iv_en,
+input [31:0] bus_out,
+input err_ie,
+input access_permission,
+	input [1:0] col_addr,
+	input [3:0] iv_sel,
+	input PENABLE,
+input ccfc,
+input read_completed,
+	input dma_req_wr,
+	input int_err,
+	input [1:0] chmod,
+input first_block_clear,
+input dma_out_en,
+input rd_err_en,
+input [1:0] cnt,
+	input PRESETn,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET,
+input write_en,
+	input first_block
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (!PRESETn) |-> (aes_cr == AES_CR_RESET[10:0]));assert property(@(posedge DEFAULT_CLOCK)  (enable_clear) |-> (aes_cr[0] == 1'b0));assert property(@(posedge DEFAULT_CLOCK)  (aes_cr_wr_en && access_permission) |-> (aes_cr[2:1] == PWDATA[2:1]));assert property(@(posedge DEFAULT_CLOCK)  (aes_cr_wr_en && access_permission && mode_in == DECRYP_W_DERIV && chmod_in == CTR) |-> (aes_cr[4:3] == DECRYPTION));assert property(@(posedge DEFAULT_CLOCK)  (aes_cr_wr_en && access_permission && !(mode_in == DECRYP_W_DERIV && chmod_in == CTR)) |-> (aes_cr[4:3] == mode_in));assert property(@(posedge DEFAULT_CLOCK)  (aes_cr_wr_en && access_permission) |-> (aes_cr[6:5] == PWDATA[6:5]));assert property(@(posedge DEFAULT_CLOCK)  (aes_cr_wr_en && access_permission) |-> (aes_cr[10:7] == PWDATA[12:9]));assert property(@(posedge DEFAULT_CLOCK)  (wr_err_en) |-> (wr_err == 1'b1));assert property(@(posedge DEFAULT_CLOCK)  (errc && aes_cr_wr_en && access_permission) |-> (wr_err == 1'b0));assert property(@(posedge DEFAULT_CLOCK)  (rd_err_en) |-> (rd_err == 1'b1));assert property(@(posedge DEFAULT_CLOCK)  (errc && aes_cr_wr_en && access_permission) |-> (rd_err == 1'b0));assert property(@(posedge DEFAULT_CLOCK)  (ccf_set) |-> (ccf == 1'b1));assert property(@(posedge DEFAULT_CLOCK)  (ccfc && aes_cr_wr_en) |-> (ccf == 1'b0));assert property(@(posedge DEFAULT_CLOCK)  (int_ccf) |-> (ccf_ie && ccf_set));assert property(@(posedge DEFAULT_CLOCK)  (int_err) |-> ((wr_err_en || rd_err_en) && err_ie));assert property(@(posedge DEFAULT_CLOCK)  (key_en) |-> ((4'b1000 >> PADDR[1:0]) & {4{(~PADDR[3] & PADDR[2] & access_permission & write_en)}}));assert property(@(posedge DEFAULT_CLOCK)  (key_sel) |-> (~PADDR[1:0] & {2{(PADDR[2] & access_permission)}}));assert property(@(posedge DEFAULT_CLOCK)  (iv_sel) |-> ((4'b1000 >> PADDR[1:0]) & {4{(PADDR[3] & ~PADDR[2] & access_permission)}}));assert property(@(posedge DEFAULT_CLOCK)  (iv_en) |-> (iv_sel & {4{write_en}}));assert property(@(posedge DEFAULT_CLOCK)  (!PRESETn) |-> (state == IDLE));assert property(@(posedge DEFAULT_CLOCK)  (!enable) |-> (state == IDLE));assert property(@(posedge DEFAULT_CLOCK)  (state == IDLE && enable) |-> (next_state == (key_deriv ? START : INPUT)));assert property(@(posedge DEFAULT_CLOCK)  (state == INPUT && write_completed && cnt_en) |-> (next_state == START));assert property(@(posedge DEFAULT_CLOCK)  (state == START) |-> (next_state == WAIT));assert property(@(posedge DEFAULT_CLOCK)  (state == WAIT && ccf_set) |-> (next_state == (key_deriv ? IDLE : OUTPUT)));assert property(@(posedge DEFAULT_CLOCK)  (state == OUTPUT && read_completed && cnt_en) |-> (next_state == INPUT));assert property(@(posedge DEFAULT_CLOCK)  (disable_core) |-> (~enable));assert property(@(posedge DEFAULT_CLOCK)  (state == IDLE && enable && !key_deriv) |-> (cnt_en == ENABLE));assert property(@(posedge DEFAULT_CLOCK)  (state == INPUT && PADDR == AES_DINR && write_en) |-> (cnt_en == ENABLE));assert property(@(posedge DEFAULT_CLOCK)  (state == START) |-> (start_core == ENABLE));assert property(@(posedge DEFAULT_CLOCK)  (state == WAIT && ccf_set) |-> (cnt_en == ENABLE));assert property(@(posedge DEFAULT_CLOCK)  (state == WAIT && ccf_set && key_deriv) |-> (enable_clear == ENABLE));assert property(@(posedge DEFAULT_CLOCK)  (state == OUTPUT && PADDR == AES_DOUTR && read_en && PENABLE) |-> (cnt_en == ENABLE));assert property(@(posedge DEFAULT_CLOCK)  (!PRESETn) |-> (first_block == 1'b1));assert property(@(posedge DEFAULT_CLOCK)  (first_block_set) |-> (first_block == 1'b1));assert property(@(posedge DEFAULT_CLOCK)  (first_block_clear) |-> (first_block == 1'b0));assert property(@(posedge DEFAULT_CLOCK)  (!PRESETn) |-> (cnt == 2'b11));assert property(@(posedge DEFAULT_CLOCK)  (!enable || state == START) |-> (cnt == 2'b11));assert property(@(posedge DEFAULT_CLOCK)  (cnt_en) |-> (cnt == cnt + 1'b1));assert property(@(posedge DEFAULT_CLOCK)  (col_wr_en) |-> (PADDR == AES_DINR && write_en && state == INPUT));assert property(@(posedge DEFAULT_CLOCK)  (col_rd_en) |-> (PADDR == AES_DOUTR && read_en && state == OUTPUT));assert property(@(posedge DEFAULT_CLOCK)  (wr_err_en) |-> (PADDR == AES_DINR && write_en && (state != INPUT && state != IDLE)));assert property(@(posedge DEFAULT_CLOCK)  (rd_err_en) |-> (PADDR == AES_DOUTR && read_en && (state != OUTPUT && state != IDLE)));assert property(@(posedge DEFAULT_CLOCK)  (!PRE);
+endmodule

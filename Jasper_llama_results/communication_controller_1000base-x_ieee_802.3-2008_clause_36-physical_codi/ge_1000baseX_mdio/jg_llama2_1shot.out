@@ -1,0 +1,614 @@
+Jasper Apps 2024.03 FCS 64 bits 2024.03.27 15:42:27 UTC
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper_llama/communication_controller_1000base-x_ieee_802.3-2008_clause_36-physical_codi/ge_1000baseX_mdio/ge_1000baseX_mdio_llama2_1shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/ge_1000baseX_mdio.v
+[-- (VERI-1482)] Analyzing Verilog file './/ge_1000baseX_mdio.v'
+[INFO (VERI-1328)] .//ge_1000baseX_mdio.v(53): analyzing included file './/ge_1000baseX_constants.v'
+[INFO (VERI-1328)] .//ge_1000baseX_mdio.v(55): analyzing included file './/timescale.v'
+[INFO (VERI-2561)] .//ge_1000baseX_mdio.v(103): undeclared symbol 'preamble_match', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_mdio.v(124): undeclared symbol 'op_code_done', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_mdio.v(125): undeclared symbol 'phy_addr_done', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_mdio.v(126): undeclared symbol 'reg_addr_done', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_mdio.v(127): undeclared symbol 'ta0_done', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_mdio.v(128): undeclared symbol 'ta1_done', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_mdio.v(129): undeclared symbol 'data_done', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_mdio.v(143): undeclared symbol 'st_match', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_mdio.v(157): undeclared symbol 'op_is_rd', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_mdio.v(157): undeclared symbol 'op_is_wr', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_mdio.v(159): undeclared symbol 'op_is_invalid', assumed default net type 'wire'
+[INFO (VERI-2561)] .//ge_1000baseX_mdio.v(173): undeclared symbol 'phy_addr_match', assumed default net type 'wire'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_llama2_1shot.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_llama2_1shot.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top ge_1000baseX_mdio
+INFO (ISW003): Top module name is "ge_1000baseX_mdio".
+[WARN (VERI-2418)] .//property_llama2_1shot.sva(2): parameter 'S_PREAMBLE' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_1shot.sva(3): parameter 'S_ST' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_1shot.sva(4): parameter 'S_OP_CODE' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_1shot.sva(5): parameter 'S_PHY_ADDR' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_1shot.sva(6): parameter 'S_REG_ADDR' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_1shot.sva(7): parameter 'S_TA' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_1shot.sva(8): parameter 'S_WR_DATA' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_1shot.sva(9): parameter 'S_RD_DATA' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_1shot.sva(10): parameter 'S_WR_COMMIT' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[INFO (HIER-8002)] .//ge_1000baseX_mdio.v(322): Disabling old hierarchical reference handler
+[WARN (VERI-2435)] .//bindings.sva(30): port 'input_addr' is not connected on this instance
+[INFO (VERI-1018)] .//property_llama2_1shot.sva(11): compiling module 'i_ge_1000baseX_mdio'
+[INFO (VERI-1018)] .//ge_1000baseX_mdio.v(57): compiling module 'ge_1000baseX_mdio'
+[WARN (VERI-1209)] .//ge_1000baseX_mdio.v(110): expression size 32 truncated to fit in target size 6
+[WARN (VERI-1209)] .//ge_1000baseX_mdio.v(122): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] .//ge_1000baseX_mdio.v(230): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//ge_1000baseX_mdio.v(253): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//ge_1000baseX_mdio.v(258): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//ge_1000baseX_mdio.v(265): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//ge_1000baseX_mdio.v(272): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//ge_1000baseX_mdio.v(281): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//ge_1000baseX_mdio.v(296): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//ge_1000baseX_mdio.v(304): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//ge_1000baseX_mdio.v(311): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1330)] .//bindings.sva(8): actual bit length 5 differs from formal bit length 1 for port 'pos_cnt'
+[WARN (VERI-1330)] .//bindings.sva(13): actual bit length 4 differs from formal bit length 1 for port 'next'
+[WARN (VERI-1330)] .//bindings.sva(23): actual bit length 1 differs from formal bit length 16 for port 'op_code_shift'
+[WARN (VERI-8028)] .//bindings.sva(2): missing/open ports on instance v_ge_1000baseX_mdio of module i_ge_1000baseX_mdio
+[WARN (VDB-1013)] .//bindings.sva(30): input port 'input_addr[4]' is not connected on this instance
+INFO (INL208): Elaboration synthesis summary:
+  Number of synthesized netlists          3 (1 packages)
+  Single run mode                         On
+  Pipeline                                On (2 pipelined netlists)
+  Late hierarchical reference connection  On
+  Number of analyzed Verilog modules      3 (3 synthesized)
+  Number of analyzed VHDL entities        0 (0 synthesized)
+INFO (INL003): Clearing all state information (assumes, stopats, and so forth).
+ge_1000baseX_mdio
+[<embedded>] % 
+[<embedded>] % # Set up Clocks and Resets
+[<embedded>] % clock mdc
+[<embedded>] % reset reset
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "reset".
+[<embedded>] % 
+[<embedded>] % # Get design information to check general complexity
+[<embedded>] % get_design_info
+Statistics [for instance "ge_1000baseX_mdio"]
+---------------------------
+# Flops:         9 (88) (0 property flop bits)
+# Latches:       0 (0)
+# Gates:         562 (1685)
+# Nets:          619
+# Ports:         9
+# RTL Lines:     343
+# RTL Instances: 2
+# Embedded Assumptions: 0
+# Embedded Assertions:  47
+# Embedded Covers:      47
+88
+[<embedded>] % 
+[<embedded>] % # Prove properties
+[<embedded>] % prove -all
+Ncustom1: Custom engine code is hT3Ng7hPPfiYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSl+CwjiTMAQA
+Bcustom2: Custom engine code is hT3Nm7hPr1Vp3Di1Ra2USNIGL4JypRnLKLAdF6JAyuavO2JfGCiY9OZJhcAcOUnLx5xwNdhILGrAWX9s+z2WDkKwNR7tAfClBEjRFVQeq6DU54boFgEA
+AMcustom3: Custom engine code is hT3Ng7hP/feYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSmmqwm7g9AQA
+Mpcustom4: Custom engine code is hT3NZbhP9fmY2AbBQnsjfOxn6c+6e6yL+/e8fZFmaQrnlgEA
+INFO (IPF036): Starting proof on task: "<embedded>", 94 properties to prove with 0 already proven/unreachable
+INFO (IRS029): Starting reset analysis: phase 1 of 4.
+INFO (IRS030): Running reset analysis: phase 2 of 4.
+INFO (IRS031): Running reset analysis: phase 3 of 4.
+INFO (IRS020): Starting the reset analysis simulation with a limit of 100 iterations (phase 4 of 4).
+INFO (IRS024): Reset iterations 0 to 3 analyzed.
+INFO (IRS018): Reset analysis simulation executed for 2 iterations. Assigned values for 60 of 60 design flops, 0 of 0 design latches, 122 of 122 internal elements.
+INFO (IRS039): Reset analysis complete.
+INFO (IPF031): Settings used for proof thread 0:
+    orchestration                 = on
+    time_limit                    = 86400s
+    per_property_time_limit       = 1s * 10 ^ scan
+    engine_mode                   = auto
+    proofgrid_per_engine_max_jobs = 1
+    max engine jobs               = auto
+    proofgrid_mode                = local
+    proofgrid_restarts            = 10
+0: Using multistage preprocessing
+0: Starting reduce
+0: Finished reduce in 0s
+0.0.PRE: Performing Proof Simplification...
+0.0.N: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: Proof Simplification Iteration 1	[0.00 s]
+0.0.PRE: A trace with 1 cycles was found. [0.00 s]
+AMcustom5: Custom engine code is hT3N1rhP11/52HrFRS21ROp2LOjVTgPvT8L8BGXHgLhaIuqtT4nARFjUqrBL+7pLmaTOzBepZW/Jm8SSrHDybSQtoNiO3y43wk+dEoWlsZizu97Fih6O6lPVG/LpWP5SsUPwlGagLNa1FKEFvwVXyX7//8prySbvSxIHXr5er+z4RAEA
+Ncustom6: Custom engine code is hT3OXrhPByJp3TrFSTLhUmMH4KVtJgmTCnNDF46yMXOKY48m4LS5nE7yBzFjA7kDuwO/GhGUpEPiky3p3wmPn3dJZHxFMsafSoObRzSC+tn7sEY0WbTdZ/FV4hL3MYH/b1CIUvXSWR4wqEoVLsmMOD4xIPT4lI1LO6ZCO7PnnWQuLwetnvKlrXx6wCW/A+x+enqslg1YPobi4wEF/EvbzOvcTYdJvl2s4H2yZg2b2ofAVN5WvhWk1HoBAA
+ADcustom7: Custom engine code is hT3Nv7hPv1752HrFRa2kROx2f/ECJeZB2AZsLdlO8VwmIuqtT4nIDFXclhg+O+o+DMmQCekbheGk0kK28laA9gaOFDXsQp29J3X615HY1IPHJWd6FUFvCHjO+p1k652b5JJvZlShNpGlGSXAiQe/mEAj6tEBAA
+Tricustom8: Custom engine code is hT3Nu7hPt1752DvFRa0kNDiyIV97VyejwM9C/jCLJjdPvusZONHY42VYUy0Q1ZotnhcVtNc56tJ5wbxv6V2+XpdsaSlHck5vfnbYjdwj1OECy9U+7oSQ0SZE3g5ayD+Phuh4odCJTjeKa2k4elM9ldQfkAEA
+Gcustom9: Custom engine code is hT3NibhPDfeYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncipMGcUXqAadachREE9F2PwhBUZUNw5kHnd4JdXkamORRgEA
+C2custom10: Custom engine code is hT3NirhPjfWYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInncgkrYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuG86XYVV00BAA
+AGcustom11: Custom engine code is hT3NirhP/fmYQADBZnYcglOvK9Pfd7EOeniIqP8jNsyIqInnckcwYMMXCYbdK0dUjZIF9d4cJ0rHoBDjwVLBKuHEZnZByh0BAA
+Bcustom12: Custom engine code is hT3NjrhPDfiYQADBZnYcglOvK9PfWxFtenjIyBqfrgr7if/jL/yPOuK1BAflEcW0DxNH2eDIoezN2gxlQFg81RZtiWXh7aiTAidvAQA
+Ncustom13: Custom engine code is hT3NR7hPByFp3TrFSTLhUmMH4KWtJglTyV/c51BHEeZWamnJv767nE6PCak26bd3gf3XGN3rIRheufhDieCJQVISo+gNYUKhiUedBKGtsP/a18svAnlMJZudHxDFwK5ufsyoxsIyiAeSY2oi3tEuoDHr5gw42DFKAG3PqO3CEsl8Azzdt3pl5nGA1Ifv2H02eYsFzWb/nfp8PMb3F0krE/EgBcm8TD9Div8BAA
+Tricustom14: Custom engine code is hT3Nu7hP3fiYQADBZnYcglNHp9bfd7EOeniIqP/ji8sGLQu8yhsFO+wxJ+O+R0bU8g/IewXFomyos+viQnWc2xYNYmMqpo3i40O7DaZR7qfp4YqNx26KRvQ/qx0BAA
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_1" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_1:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_2" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_2:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_3" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_3:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_4" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_4:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_5" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_5:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_6" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_6:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_7" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_7:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_8" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_8:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_9" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_9:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_10" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_10:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_11" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_11:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_12" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_12:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_13" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_13:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_14" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_14:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_15" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_15:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_16:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_17" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_17:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_18:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_19" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_19:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_20" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_20:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_21" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_21:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_22" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_22:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_23" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_23:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_24" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_24:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_25" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_25:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_26" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_26:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_27" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_27:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_28" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_28:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_29" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_29:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_30" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_30:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_31" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_31:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_32" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_32:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_33" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_33:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_34:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_35" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_35:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_36" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_36:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_37" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_37:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_38" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_38:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_39" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_39:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_40" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_40:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_41" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_41:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_42" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_42:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_43" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_43:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_44" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_44:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_45" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_45:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_46" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_46:precondition1" was covered in 1 cycles in 0.00 s.
+INFO (IPF055): 0.0.PRE: A counterexample (cex) with 1 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_47" in 0.00 s.
+INFO (IPF047): 0.0.PRE: The cover property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_47:precondition1" was covered in 1 cycles in 0.00 s.
+0.0.N: Proof Simplification Iteration 2	[0.03 s]
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property ":noDeadEnd" was proven in 0.00 s.
+    Use check_assumptions -show -dead_end to show this property in the property table.
+0.0.PRE: A proof was found: No trace exists. [0.00 s]
+INFO (IPF057): 0.0.PRE: The property ":noConflict" was proven in 0.00 s.
+    Use check_assumptions -show to show this property in the property table.
+INFO (IPF047): 0.0.PRE: The cover property ":live" was covered in 1 cycles in 0.00 s.
+    Use check_assumptions -show -live to show this property in the property table.
+0.0.PRE: Proof Simplification completed in 0.03 s
+0.0.N: Identified and disabled 90 duplicated targets.
+0: About to start ProofGrid in its own thread with a limit of 10000 pending notifications and a limit of 10 traces.
+0: =============================== ProofGrid start ===============================
+0: ProofGrid usable level: 3
+0: Initial ProofGrid level: 1
+0: ProofGrid is starting event handling
+0.0.Hp: pal-achieve-08: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.N: pal-achieve-08: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Hp: Proofgrid shell started at 70478@pal-achieve-08(local) jg_70378_pal-achieve-08_1
+0.0.Hp: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Hp: Trace Attempt  1	[0.00 s]
+0.0.Hp: Trace Attempt  2	[0.00 s]
+0.0.Hp: Trace Attempt  3	[0.00 s]
+0.0.Hp: Trace Attempt  4	[0.01 s]
+0.0.Hp: Trace Attempt  5	[0.01 s]
+0.0.N: Proofgrid shell started at 70477@pal-achieve-08(local) jg_70378_pal-achieve-08_1
+0.0.N: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.N: Next scan (0) will use per property time limit: 1s * 10 ^ 0 = 1s
+0.0.N: Starting proof for property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_16"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4194304 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4194304 was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_16" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  1	[0.04 s]
+0.0.N: Trace Attempt  2	[0.04 s]
+0.0.N: Trace Attempt  3	[0.04 s]
+0.0.N: Trace Attempt  5	[0.04 s]
+0.0.Ht: pal-achieve-08: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Bm: pal-achieve-08: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.L: pal-achieve-08: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Mpcustom4: pal-achieve-08: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.N: Trace Attempt 37	[0.27 s]
+0.0.N: A trace with 37 cycles was found. [0.32 s]
+INFO (IPF055): 0.0.N: A counterexample (cex) with 37 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_16" in 0.29 s.
+0.0.N: Stopped processing property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_16"	[0.29 s].
+0.0.L: Proofgrid shell started at 70511@pal-achieve-08(local) jg_70378_pal-achieve-08_1
+0.0.N: Starting proof for property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_18"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: A max_length bound was found. The shortest trace is no longer than 4194304 cycles. [0.00 s]
+INFO (IPF008): 0.0.N: A max_length bound of 4194304 was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_18" in 0.00 s.
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  1	[0.01 s]
+0.0.N: Trace Attempt  2	[0.01 s]
+0.0.N: Trace Attempt  3	[0.01 s]
+0.0.Bm: Proofgrid shell started at 70508@pal-achieve-08(local) jg_70378_pal-achieve-08_1
+0.0.Bm: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.Bm: A max_length bound was found. The shortest trace is no longer than 134217728 cycles. [0.00 s]
+INFO (IPF008): 0.0.Bm: A max_length bound of 134217728 was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_34" in 0.00 s.
+0.0.Bm: Trace Attempt  1	[0.00 s]
+0.0.Bm: Trace Attempt  2	[0.00 s]
+0.0.Bm: Trace Attempt  3	[0.00 s]
+0.0.Bm: Trace Attempt  4	[0.00 s]
+0.0.Bm: Trace Attempt  5	[0.00 s]
+0.0.Ht: Proofgrid shell started at 70501@pal-achieve-08(local) jg_70378_pal-achieve-08_1
+0.0.Bm: Trace Attempt 35	[0.03 s]
+0.0.Bm: A trace with 35 cycles was found. [0.04 s]
+INFO (IPF055): 0.0.Bm: A counterexample (cex) with 35 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_18" in 0.01 s.
+0.0.L: clocks: 1, declared: 1, looping: 0, posedge: 1, negedge: 0, noedge: 0, bothedge: 0
+0.0.L: Using trace diversification with seed 1 (0.05)
+0.0.L: Using LRU state removal heuristic
+0.0.L: Using states from traces to { (reset) }
+0.0.L: Trace Attempt  3	[0.01 s]
+0.0.L: Trace Attempt  4	[0.01 s]
+0.0.L: Trace Attempt  5	[0.01 s]
+0.0.L: Using states from traces to { ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_18 <34> }
+0.0.L: Trace Attempt  3	[0.03 s]
+0.0.L: Trace Attempt  4	[0.03 s]
+0.0.L: Using states from traces to { ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_16 <36> }
+0.0.B: pal-achieve-08: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Bm: Trace Attempt 36	[0.04 s]
+0.0.N: Trace Attempt 16	[0.02 s]
+0.0.N: Stopped processing property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_18"	[0.05 s].
+0.0.N: Last scan. Per property time limit: 0s
+0.0.N: Starting proof for property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_34"	[0.00 s].
+0.0.N: Trace Attempt  1	[0.00 s]
+0.0.N: Trace Attempt  2	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  3	[0.00 s]
+0.0.N: Trace Attempt  4	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0.0.N: Trace Attempt  5	[0.00 s]
+0: Running jobs with 5 threads on "pal-achieve-08" with 4 cores.
+0: Running jobs with 5 threads on "pal-achieve-08" with 4 cores.
+0.0.N: Requesting engine job to stop
+0.0.Hp: Requesting engine job to terminate
+0.0.Ht: Requesting engine job to terminate
+0.0.Bm: Requesting engine job to terminate
+0.0.L: Requesting engine job to terminate
+INFO (IPF144): 0: Initiating shutdown of proof [0.43 s]
+0.0.Bm: Trace Attempt 42	[0.05 s]
+0.0.Bm: A trace with 42 cycles was found. [0.05 s]
+INFO (IPF055): 0.0.Bm: A counterexample (cex) with 42 cycles was found for the property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_34" in 0.02 s.
+0.0.Bm: All properties determined. [0.05 s]
+0.0.Bm: Exited with Success (@ 0.43 s)
+0: ProofGrid usable level: 0
+0.0.B: Proofgrid shell started at 70512@pal-achieve-08(local) jg_70378_pal-achieve-08_1
+0.0.B: Requesting engine job to terminate
+0.0.B: Preventing job from starting because proof is shutting down.
+0.0.B: Requesting engine job to terminate
+0.0.B: Interrupted. [0.00 s]
+0.0.N: Trace Attempt 18	[0.01 s]
+0.0.N: Stopped processing property "ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_34"	[0.01 s].
+0.0.N: All properties determined. [0.01 s]
+0.0.N: Exited with Success (@ 0.44 s)
+0.0.B: Exited with Success (@ 0.44 s)
+0.0.Ht: Interrupted. [0.01 s]
+0.0.L: All properties determined. [0.06 s]
+0.0.Ht: Exited with Success (@ 0.44 s)
+0.0.L: Exited with Success (@ 0.44 s)
+0.0.Oh: pal-achieve-08: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.AM: pal-achieve-08: "AlmaLinux 8.9 (Midnight Oncilla)" is an unsupported operating system.
+0.0.Hp: Interrupted (multi)
+0.0.Hp: Trace Attempt 38	[0.42 s]
+0.0.Hp: All properties determined. [0.46 s]
+0.0.Hp: Exited with Success (@ 0.47 s)
+0.0.Mpcustom4: Proofgrid shell started at 70509@pal-achieve-08(local) jg_70378_pal-achieve-08_1
+0.0.Mpcustom4: Requesting engine job to terminate
+0.0.Mpcustom4: Preventing job from starting because proof is shutting down.
+0.0.Mpcustom4: Requesting engine job to terminate
+0.0.Mpcustom4: Interrupted. [0.00 s]
+0.0.Oh: Proofgrid shell started at 70510@pal-achieve-08(local) jg_70378_pal-achieve-08_1
+0.0.Oh: Requesting engine job to terminate
+0.0.Mpcustom4: Exited with Success (@ 0.48 s)
+0.0.Oh: Preventing job from starting because proof is shutting down.
+0.0.Oh: Requesting engine job to terminate
+0.0.Oh: Interrupted. [0.00 s]
+0.0.AM: Proofgrid shell started at 70513@pal-achieve-08(local) jg_70378_pal-achieve-08_1
+0.0.AM: Requesting engine job to terminate
+0.0.Oh: Exited with Success (@ 0.49 s)
+0.0.AM: Preventing job from starting because proof is shutting down.
+0.0.AM: Requesting engine job to terminate
+0.0.AM: Interrupted. [0.00 s]
+0.0.AM: Exited with Success (@ 0.49 s)
+0: --------------------------------------------------------------
+ProofGrid Summary (utilization 22.43 %)
+--------------------------------------------------------------
+     engines started                               :     9
+     engine jobs started                           :     9
+
+    Average time in state (seconds)
+    ------------------------------------------------------
+    Engine  Pending     Running        Dead    Utilization
+    ------------------------------------------------------
+      N        0.19        0.38        0.00       66.71 %
+     Hp        0.15        0.43        0.00       74.26 %
+     Ht        0.45        0.00        0.00        0.03 %
+     Bm        0.38        0.05        0.00       11.98 %
+    Mpcustom4        0.47        0.00        0.00        0.00 %
+     Oh        0.46        0.00        0.00        0.00 %
+      L        0.33        0.04        0.00       10.32 %
+      B        0.34        0.00        0.00        0.00 %
+     AM        0.36        0.00        0.00        0.00 %
+    all        0.35        0.10        0.00       22.43 %
+
+    Total time in state (seconds)
+    -----------------------------------------
+            Pending     Running        Dead  
+    -----------------------------------------
+               3.14        0.91        0.00
+
+    Data read    : 28.81 kiB
+    Data written : 3.77 kiB
+
+0: All pending notifications were processed.
+INFO (IPF059): 0: Completed proof on task: "<embedded>"
+
+==============================================================
+SUMMARY
+==============================================================
+           Properties Considered              : 94
+                 assertions                   : 47
+                  - proven                    : 0 (0%)
+                  - bounded_proven (user)     : 0 (0%)
+                  - bounded_proven (auto)     : 0 (0%)
+                  - marked_proven             : 0 (0%)
+                  - cex                       : 47 (100%)
+                  - ar_cex                    : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+                 covers                       : 47
+                  - unreachable               : 0 (0%)
+                  - bounded_unreachable (user): 0 (0%)
+                  - covered                   : 47 (100%)
+                  - ar_covered                : 0 (0%)
+                  - undetermined              : 0 (0%)
+                  - unknown                   : 0 (0%)
+                  - error                     : 0 (0%)
+determined
+[<embedded>] % 
+[<embedded>] % # Report proof results
+[<embedded>] % report
+
+==============================================================
+    Jasper Verification Results
+==============================================================
+    2024.03 FCS 64 bits for Linux64 3.10.0-1160.21.1.el7.x86_64
+    Host Name: pal-achieve-08.uic.edu
+    User Name: vpulav2
+    Printed on: Tuesday, Jun 4, 2024 03:28:01 PM CDT
+    Working Directory: /data/vpulav2/Work/Jasper_llama/communication_controller_1000base-x_ieee_802.3-2008_clause_36-physical_codi/ge_1000baseX_mdio
+
+
+==============================================================
+RESULTS
+==============================================================
+
+---------------------------------------------------------------------------------------------------------------------------
+       Name                                                               |    Result    |  Engine  |  Bound  |  Time    
+---------------------------------------------------------------------------------------------------------------------------
+
+---[ <embedded> ]----------------------------------------------------------------------------------------------------------
+[1]   ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_1                          cex             PRE           1    0.000 s      
+[2]   ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_1:precondition1            covered         PRE           1    0.000 s      
+[3]   ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_2                          cex             PRE           1    0.000 s      
+[4]   ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_2:precondition1            covered         PRE           1    0.000 s      
+[5]   ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_3                          cex             PRE           1    0.000 s      
+[6]   ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_3:precondition1            covered         PRE           1    0.000 s      
+[7]   ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_4                          cex             PRE           1    0.000 s      
+[8]   ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_4:precondition1            covered         PRE           1    0.000 s      
+[9]   ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_5                          cex             PRE           1    0.000 s      
+[10]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_5:precondition1            covered         PRE           1    0.000 s      
+[11]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_6                          cex             PRE           1    0.000 s      
+[12]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_6:precondition1            covered         PRE           1    0.000 s      
+[13]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_7                          cex             PRE           1    0.000 s      
+[14]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_7:precondition1            covered         PRE           1    0.000 s      
+[15]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_8                          cex             PRE           1    0.000 s      
+[16]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_8:precondition1            covered         PRE           1    0.000 s      
+[17]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_9                          cex             PRE           1    0.000 s      
+[18]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_9:precondition1            covered         PRE           1    0.000 s      
+[19]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_10                         cex             PRE           1    0.000 s      
+[20]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_10:precondition1           covered         PRE           1    0.000 s      
+[21]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_11                         cex             PRE           1    0.000 s      
+[22]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_11:precondition1           covered         PRE           1    0.000 s      
+[23]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_12                         cex             PRE           1    0.000 s      
+[24]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_12:precondition1           covered         PRE           1    0.000 s      
+[25]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_13                         cex             PRE           1    0.000 s      
+[26]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_13:precondition1           covered         PRE           1    0.000 s      
+[27]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_14                         cex             PRE           1    0.000 s      
+[28]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_14:precondition1           covered         PRE           1    0.000 s      
+[29]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_15                         cex             PRE           1    0.000 s      
+[30]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_15:precondition1           covered         PRE           1    0.000 s      
+[31]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_16                         cex             N            37    0.289 s      
+[32]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_16:precondition1           covered         PRE           1    0.000 s      
+[33]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_17                         cex             PRE           1    0.000 s      
+[34]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_17:precondition1           covered         PRE           1    0.000 s      
+[35]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_18                         cex             Bm           35    0.007 s      
+[36]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_18:precondition1           covered         PRE           1    0.000 s      
+[37]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_19                         cex             PRE           1    0.000 s      
+[38]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_19:precondition1           covered         PRE           1    0.000 s      
+[39]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_20                         cex             PRE           1    0.000 s      
+[40]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_20:precondition1           covered         PRE           1    0.000 s      
+[41]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_21                         cex             PRE           1    0.000 s      
+[42]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_21:precondition1           covered         PRE           1    0.000 s      
+[43]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_22                         cex             PRE           1    0.000 s      
+[44]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_22:precondition1           covered         PRE           1    0.000 s      
+[45]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_23                         cex             PRE           1    0.000 s      
+[46]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_23:precondition1           covered         PRE           1    0.000 s      
+[47]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_24                         cex             PRE           1    0.000 s      
+[48]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_24:precondition1           covered         PRE           1    0.000 s      
+[49]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_25                         cex             PRE           1    0.000 s      
+[50]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_25:precondition1           covered         PRE           1    0.000 s      
+[51]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_26                         cex             PRE           1    0.000 s      
+[52]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_26:precondition1           covered         PRE           1    0.000 s      
+[53]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_27                         cex             PRE           1    0.000 s      
+[54]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_27:precondition1           covered         PRE           1    0.000 s      
+[55]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_28                         cex             PRE           1    0.000 s      
+[56]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_28:precondition1           covered         PRE           1    0.000 s      
+[57]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_29                         cex             PRE           1    0.000 s      
+[58]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_29:precondition1           covered         PRE           1    0.000 s      
+[59]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_30                         cex             PRE           1    0.000 s      
+[60]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_30:precondition1           covered         PRE           1    0.000 s      
+[61]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_31                         cex             PRE           1    0.000 s      
+[62]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_31:precondition1           covered         PRE           1    0.000 s      
+[63]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_32                         cex             PRE           1    0.000 s      
+[64]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_32:precondition1           covered         PRE           1    0.000 s      
+[65]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_33                         cex             PRE           1    0.000 s      
+[66]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_33:precondition1           covered         PRE           1    0.000 s      
+[67]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_34                         cex             Bm           42    0.024 s      
+[68]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_34:precondition1           covered         PRE           1    0.000 s      
+[69]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_35                         cex             PRE           1    0.000 s      
+[70]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_35:precondition1           covered         PRE           1    0.000 s      
+[71]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_36                         cex             PRE           1    0.000 s      
+[72]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_36:precondition1           covered         PRE           1    0.000 s      
+[73]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_37                         cex             PRE           1    0.000 s      
+[74]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_37:precondition1           covered         PRE           1    0.000 s      
+[75]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_38                         cex             PRE           1    0.000 s      
+[76]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_38:precondition1           covered         PRE           1    0.000 s      
+[77]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_39                         cex             PRE           1    0.000 s      
+[78]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_39:precondition1           covered         PRE           1    0.000 s      
+[79]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_40                         cex             PRE           1    0.000 s      
+[80]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_40:precondition1           covered         PRE           1    0.000 s      
+[81]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_41                         cex             PRE           1    0.000 s      
+[82]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_41:precondition1           covered         PRE           1    0.000 s      
+[83]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_42                         cex             PRE           1    0.000 s      
+[84]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_42:precondition1           covered         PRE           1    0.000 s      
+[85]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_43                         cex             PRE           1    0.000 s      
+[86]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_43:precondition1           covered         PRE           1    0.000 s      
+[87]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_44                         cex             PRE           1    0.000 s      
+[88]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_44:precondition1           covered         PRE           1    0.000 s      
+[89]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_45                         cex             PRE           1    0.000 s      
+[90]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_45:precondition1           covered         PRE           1    0.000 s      
+[91]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_46                         cex             PRE           1    0.000 s      
+[92]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_46:precondition1           covered         PRE           1    0.000 s      
+[93]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_47                         cex             PRE           1    0.000 s      
+[94]  ge_1000baseX_mdio.v_ge_1000baseX_mdio._assert_47:precondition1           covered         PRE           1    0.000 s      
+
+==============================================================
+ASSUMPTIONS
+==============================================================
+
+-------------------------------------------------------------------------------
+       Name    |  Expression  |  Location     |  Status      |  Dependencies                  
+-------------------------------------------------------------------------------
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % exit
+[<embedded>] % INFO (IPL005): Received request to exit from the console.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.
+INFO (IPL018): The peak resident set memory use for this session was 0.376 GB.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

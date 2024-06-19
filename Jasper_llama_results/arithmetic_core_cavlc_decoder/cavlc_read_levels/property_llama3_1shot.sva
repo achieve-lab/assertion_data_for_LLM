@@ -1,0 +1,98 @@
+ 
+module i_cavlc_read_levels(
+input  [8:0]   level_4,
+input   [3:0]   i,
+input  [8:0]   level_14,
+input  [8:0]   level_5,
+input   [4:0]   TotalCoeff,
+input     [3:0]   level_prefix_comb,
+input    [2:0]   tmp1,
+input   t1s_sel,
+input     [4:0]   len_comb,
+input  [8:0]   level_3,
+input   prefix_sel,
+input   clk,
+input  [8:0]   level_1,
+input  [8:0]   level_15,
+input level_abs_refresh,
+input first_level,
+input   ena,
+input  [8:0]   level_9,
+input  [8:0]   level_6,
+input  [8:0]   level_8,
+input   rst_n,
+input  [8:0]   level_2,
+input     [8:0]   level_suffix,
+input   [0:15]  rbsp,
+input     [8:0]   level,
+input   suffix_sel,
+input   [1:0]   TrailingOnes,
+input  [8:0]   level_12,
+input  [8:0]   level_13,
+input  [8:0]   level_10,
+input     [3:0]   level_prefix,
+input     [8:0]   level_abs,
+input  [8:0]   level_0,
+input     [0:15]  rbsp_internal,        // reduce toggle rate
+input  [8:0]   level_7,
+input     [8:0]   level_code_tmp,
+input   calc_sel,
+input  [8:0]   level_11,
+input     [2:0]   suffixLength   // range from 0 to 6
+);
+assert property(@(posedge clk)    (rst_n == 0) |-> (rbsp_internal == 'hffff));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_prefix_comb == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_prefix == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (suffixLength == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_code_tmp == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_abs == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_0 == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_1 == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_2 == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_3 == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_4 == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_5 == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_6 == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_7 == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_8 == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_9 == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_10 == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_11 == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_12 == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_13 == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_14 == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (level_15 == 0));
+assert property(@(posedge clk)    (rst_n == 0) |-> (len_comb == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (rbsp_internal == rbsp));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_prefix_comb == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_prefix == level_prefix_comb));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (suffixLength == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_code_tmp == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_abs == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_0 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_1 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_2 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_3 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_4 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_5 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_6 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_7 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_8 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_9 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_10 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_11 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_12 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_13 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_14 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (level_15 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 1) |-> (len_comb == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 0) |-> (rbsp_internal == 'hffff));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 0) |-> (level_prefix_comb == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 0) |-> (level_prefix == level_prefix_comb));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 0) |-> (suffixLength == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 0) |-> (level_code_tmp == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 0) |-> (level_abs == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 0) |-> (level_0 == 0));
+assert property(@(posedge clk)    (rst_n == 1 && t1s_sel == 1 && ena == 0) |-> (level_1 == 0));
+
+endmodule

@@ -1,0 +1,75 @@
+module i_fifo_mem#(parameter DEPTH=8, DATA_WIDTH=8, PTR_WIDTH=3)(
+  input full, empty,
+  input [PTR_WIDTH:0] b_wptr, b_rptr,
+  input [DATA_WIDTH-1:0] fifo[0:DEPTH-1],
+  input [DATA_WIDTH-1:0] data_out,
+  input [DATA_WIDTH-1:0] data_in,
+  input DEFAULT_CLOCK,
+  input DEFAULT_RESET,
+  input wclk, w_en, rclk, r_en
+);
+
+assert property(@(posedge DEFAULT_CLOCK) \nassign Cout = (a & b) | (b & cin) | (a & cin));
+assert property(@(posedge DEFAULT_CLOCK) \nelse state <= gnt1);
+assert property(@(posedge DEFAULT_CLOCK) \n(req1 == 1 & req2 == 0) |-> (gnt1 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  gnt2 = req2 & ~req1);
+assert property(@(posedge DEFAULT_CLOCK) \n(req1 == 1 & state == 0) |-> (gnt2 == 0));
+assert property(@(posedge DEFAULT_CLOCK)  end\nelse begin gnt1 = req1);
+assert property(@(posedge DEFAULT_CLOCK) \n (!Cout && b) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) \n (D && b) |-> Bout);
+assert property(@(posedge DEFAULT_CLOCK) \nProgram 2: module full_adder(input a, b, cin, output S, Cout));
+assert property(@(posedge DEFAULT_CLOCK) \nendmodule\nAssertions 2: (!Cout && cin) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) \nendmodule\n",
+            student_response="module full_adder(input a, b, cin, output S, Cout));
+assert property(@(posedge DEFAULT_CLOCK) \nalways @ (*)\nif (state) begin gnt1 = req1 & ~req2);
+assert property(@(posedge DEFAULT_CLOCK) \n (!Bout && b) |-> a);
+assert property(@(posedge DEFAULT_CLOCK) \nendmodule\nAssertions 4: (!q) |-> q_bar);
+assert property(@(posedge DEFAULT_CLOCK) \nassign S = a ^ b);
+assert property(@(posedge DEFAULT_CLOCK) \n (D && Bin) |-> Bout);
+assert property(@(posedge DEFAULT_CLOCK) \nendmodule\nAssertions 5: (!a && D) |-> Bout);
+assert property(@(posedge DEFAULT_CLOCK) \n (!Bout && Bin) |-> a);
+assert property(@(posedge DEFAULT_CLOCK) \nassign D = a ^ b ^ Bin);
+assert property(@(posedge DEFAULT_CLOCK) \n (gnt2) |-> (req2));
+assert property(@(posedge DEFAULT_CLOCK) \n(req1 == 0) |-> (gnt1 == 0));
+assert property(@(posedge DEFAULT_CLOCK) \n (!Cout && a) |-> S\nProgramm 3: module half_adder(input a, b, output S, Cout));
+assert property(@(posedge DEFAULT_CLOCK) \nendmodule\nAssertions 3: (Cout) |-> b);
+assert property(@(posedge DEFAULT_CLOCK)  (b_wptr == b_rptr) |-> data_out
+            """
+        )
+
+    def test_system_verilog_assertions_2(self):
+        self.assertIO(
+            data="module full_adder(input a, b, cin, output S, Cout));
+assert property(@(posedge DEFAULT_CLOCK) \nalways@(posedge clk)\nbegin\nif(!rst_n) q <= 0);
+assert property(@(posedge DEFAULT_CLOCK) \nreg gnt1, gnt2);
+assert property(@(posedge DEFAULT_CLOCK) \nreg state);
+assert property(@(posedge DEFAULT_CLOCK) \ninput req1, req2);
+assert property(@(posedge DEFAULT_CLOCK)  (w_en &&!full) |-> b_wptr);
+assert property(@(posedge DEFAULT_CLOCK) \n (q == 1) |-> (q_bar == 0));
+assert property(@(posedge DEFAULT_CLOCK) \nelse begin q <= (t?~q:q));
+assert property(@(posedge DEFAULT_CLOCK) \n (Cout) |-> a\nProgram 4: module T_flipflop ( input clk, rst_n, input t, output reg q, output q_bar ));
+assert property(@(posedge DEFAULT_CLOCK) \nassign Bout = (~a & b) | (~(a ^ b) & Bin));
+assert property(@(posedge DEFAULT_CLOCK) \nendmodule\n",
+            feedback="Your task is to generate the list of assertions to the given verilog design. An example is shown below. Generate only the list of assertions for the test program with no additional text.\nProgram 1: module arb2(clk, rst, req1, req2, gnt1, gnt2));
+assert property(@(posedge DEFAULT_CLOCK) \n (!Bout && D) |-> a\nTest Program:module fifo_mem #(parameter DEPTH=8, DATA_WIDTH=8, PTR_WIDTH=3) ( input wclk, w_en, rclk, r_en, input [);
+assert property(@(posedge DEFAULT_CLOCK) \n(q == 0) |-> (q_bar == 1)\nProgram 5: module full_subtractor(input a, b, Bin, output D, Bout));
+assert property(@(posedge DEFAULT_CLOCK)  (b_wptr == b_rptr) |-> full);
+assert property(@(posedge DEFAULT_CLOCK) \n(req2 == 1 & state == 1) |-> (gnt2 == 1));
+assert property(@(posedge DEFAULT_CLOCK) \nalways @ (posedge clk or posedge rst)\nif (rst) state <= 0);
+assert property(@(posedge DEFAULT_CLOCK) \ninput clk, rst);
+assert property(@(posedge DEFAULT_CLOCK)  
+            (w_en &&!full) |-> data_in);
+assert property(@(posedge DEFAULT_CLOCK)  gnt2 = req2);
+assert property(@(posedge DEFAULT_CLOCK) \n(req2 == 0) |-> (gnt2 == 0));
+assert property(@(posedge DEFAULT_CLOCK) \noutput gnt1, gnt2);
+assert property(@(posedge DEFAULT_CLOCK)  (b_wptr == b_rptr) |-> empty);
+assert property(@(posedge DEFAULT_CLOCK) \n(req2 == 1 & req1 == 0) |-> (gnt2 == 1));
+assert property(@(posedge DEFAULT_CLOCK) \n(req1 == 1 & state == 0) |-> (gnt1 == 1));
+assert property(@(posedge DEFAULT_CLOCK) \n (gnt1) |-> (req1));
+assert property(@(posedge DEFAULT_CLOCK)  end\nend\nassign q_bar = ~q);
+assert property(@(posedge DEFAULT_CLOCK) \n (!q_bar) |-> q);
+assert property(@(posedge DEFAULT_CLOCK) \nassign Cout = a & b);
+assert property(@(posedge DEFAULT_CLOCK) \nassign S = a ^ b ^ cin);
+assert property(@(posedge DEFAULT_CLOCK)  end\nendmodule\nAssertions 1: (state == 1 & req2 == 1) |-> (gnt1 == 0));
+
+endmodule

@@ -1,0 +1,197 @@
+module i_fpu_exceptions(
+input		[63:0]	out_1,
+input		inexact_trigger,
+input		subtract,
+input	[1:0]	rmode,
+input	[1:0]	mantissa_in,
+input		in_et_zero,
+input		sub_inf,
+input		round_nearest,
+input		[63:0]	out_0,
+input	[10:0]  exp_2046 ,
+input		inexact,
+input		a_NaN,
+input		[62:0]	inf_round_down,
+input		opb_inf,
+input		mul_inf,
+input		div_inf,
+input		clk,
+input		overflow_trigger ,
+input	[63:0]	in_except,
+input		SNaN_trigger,
+input		out_inf_trigger,
+input	[63:0]	out,
+input		overflow,
+input		div_by_0,
+input		opa_QNaN,
+input	[63:0]	opb,
+input		multiply,
+input		[62:0] NaN_input_0, 
+input		divide,
+input		addsub_inf,
+input		opb_SNaN,
+input		addsub_inf_invalid,
+input		rst,
+input		opb_et_zero,
+input		underflow_trigger,			
+input		underflow,
+input		div_by_inf,
+input	[10:0]  exp_2047 ,
+input		SNaN_input,
+input		opb_pos_inf,
+input		mul_0_by_inf,
+input		enable,
+input	[2:0]	fpu_op,
+input		[63:0]	out_2,
+input		add,
+input		add_inf,
+input		opa_neg_inf,
+input	[63:0]	opa,
+input		div_inf_by_inf,
+input		out_neg_inf,
+input		opa_pos_inf,
+input		round_to_neg_inf,
+input		invalid,
+input		opa_et_zero,
+input		round_to_pos_inf,
+input		NaN_out_trigger,
+input	[51:0]  mantissa_max ,
+input		ex_enable,
+input	[11:0]	exponent_in,
+input		invalid_trigger,
+input		[62:0]	out_inf,
+input		opb_QNaN,
+input		opa_SNaN,
+input		opb_neg_inf,
+input		exception,
+input		enable_trigger,
+input		div_uf,								
+input		mul_uf,
+input		round_to_zero,
+input		input_et_zero,
+input		out_pos_inf,
+input		div_0_by_0,
+input		opa_inf,
+input		inf_round_down_trigger,
+input	 	except_trigger,
+input		[62:0] NaN_input ,
+input           [62:0] NaN_output_0,
+input           [62:0] NaN_output
+
+);
+
+assert property(@(posedge clk) (rst == 0) |-> (opa_SNaN == opa_SNaN));
+assert property(@(posedge clk) (out_inf_trigger == 1 & inf_round_down_trigger == 1) |-> (out_inf == inf_round_down));
+assert property(@(posedge clk) (enable == 0) |-> (exception == 0));
+assert property(@(posedge clk) (rst == 1) |-> (opb_pos_inf == 0));
+assert property(@(posedge clk) (rst == 0) |-> (add == add));
+assert property(@(posedge clk) (rst == 1) |-> (mul_inf == 0));
+assert property(@(posedge clk) (rst == 1) |-> (round_nearest == 0));
+assert property(@(posedge clk) (rst == 0) |-> (round_nearest == round_nearest));
+assert property(@(posedge clk) (NaN_out_trigger == 0) |-> (out_2 == out_1));
+assert property(@(posedge clk) (add == 1 & opa_inf == 1 & opb_inf == 1) |-> (addsub_inf_invalid == 0));
+assert property(@(posedge clk) (rst == 0) |-> (opb_SNaN == opb_SNaN));
+assert property(@(posedge clk) (enable == 0) |-> (out == 0));
+assert property(@(posedge clk) (rst == 1) |-> (opb_QNaN == 0));
+assert property(@(posedge clk) (enable == 1) |-> (inexact == inexact_trigger));
+assert property(@(posedge clk) (rst == 0) |-> (out_pos_inf == out_pos_inf));
+assert property(@(posedge clk) (rst == 0) |-> (opa_et_zero == opa_et_zero));
+assert property(@(posedge clk) (rst == 0) |-> (input_et_zero == input_et_zero));
+assert property(@(posedge clk) (rst == 0) |-> (mul_0_by_inf == mul_0_by_inf));
+assert property(@(posedge clk) (out_inf_trigger == 0) |-> (out_1 == out_0));
+assert property(@(posedge clk) (a_NaN == 1) |-> (NaN_output_0 == exp_2047));
+assert property(@(posedge clk) (rst == 1) |-> (opa_SNaN == 0));
+assert property(@(posedge clk) (out_inf_trigger == 1 & round_to_zero == 1) |-> (inf_round_down_trigger == 1));
+assert property(@(posedge clk) (out_inf_trigger == 1 & round_to_neg_inf == 1) |-> (inf_round_down_trigger == 1));
+assert property(@(posedge clk) (enable == 1) |-> (invalid == invalid_trigger));
+assert property(@(posedge clk) (rst == 1) |-> (sub_inf == 0));
+assert property(@(posedge clk) (rst == 0) |-> (opa_neg_inf == opa_neg_inf));
+assert property(@(posedge clk) (rst == 0) |-> (divide == divide));
+assert property(@(posedge clk) (rst == 0) |-> (mul_inf == mul_inf));
+assert property(@(posedge clk) (rst == 1) |-> (div_0_by_0 == 0));
+assert property(@(posedge clk) (a_NaN == 0) |-> (NaN_output_0 == exp_2047));
+assert property(@(posedge clk) (rst == 1) |-> (opb_neg_inf == 0));
+assert property(@(posedge clk) (rst == 1) |-> (out_pos_inf == 0));
+assert property(@(posedge clk) (underflow_trigger == 1) |-> (out_0 == in_except));
+assert property(@(posedge clk) (rst == 0) |-> (in_et_zero == in_et_zero));
+assert property(@(posedge clk) (rst == 0) |-> (div_by_0 == div_by_0));
+assert property(@(posedge clk) (rst == 0) |-> (round_to_zero == round_to_zero));
+assert property(@(posedge clk) (enable == 1) |-> (overflow == overflow_trigger));
+assert property(@(posedge clk) (enable == 0) |-> (overflow == 0));
+assert property(@(posedge clk) (rst == 1) |-> (div_by_0 == 0));
+assert property(@(posedge clk) (rst == 0) |-> (opb_neg_inf == opb_neg_inf));
+assert property(@(posedge clk) (rst == 1) |-> (input_et_zero == 0));
+assert property(@(posedge clk) (rst == 0) |-> (addsub_inf == addsub_inf));
+assert property(@(posedge clk) (enable == 0) |-> (underflow == 0));
+assert property(@(posedge clk) (rst == 0) |-> (opa_inf == opa_inf));
+assert property(@(posedge clk) (rst == 0) |-> (div_inf == div_inf));
+assert property(@(posedge clk) (rst == 1) |-> (round_to_pos_inf == 0));
+assert property(@(posedge clk) (SNaN_trigger == 0) |-> (NaN_output == NaN_output_0));
+assert property(@(posedge clk) (rst == 0) |-> (SNaN_input == SNaN_input));
+assert property(@(posedge clk) (rst == 0) |-> (round_to_pos_inf == round_to_pos_inf));
+assert property(@(posedge clk) (subtract == 1 & opa_neg_inf == 1 & opb_neg_inf == 1) |-> (addsub_inf_invalid == 1));
+assert property(@(posedge clk) (rst == 1) |-> (opb_inf == 0));
+assert property(@(posedge clk) (rst == 1) |-> (divide == 0));
+assert property(@(posedge clk) (rst == 1) |-> (opb_et_zero == 0));
+assert property(@(posedge clk) (rst == 1) |-> (round_to_zero == 0));
+assert property(@(posedge clk) (rst == 1) |-> (add == 0));
+assert property(@(posedge clk)  (in_et_zero == 1 & opa_et_zero == 1 & opb_et_zero == 1) |-> (input_et_zero == 1));
+assert property(@(posedge clk) (rst == 1) |-> (opa_inf == 0));
+assert property(@(posedge clk) (enable == 1) |-> (out == out_2));
+assert property(@(posedge clk) (rst == 0) |-> (subtract == subtract));
+assert property(@(posedge clk) (enable == 0) |-> (ex_enable == 0));
+assert property(@(posedge clk) (rst == 0) |-> (a_NaN == a_NaN));
+assert property(@(posedge clk) (rst == 1) |-> (add_inf == 0));
+assert property(@(posedge clk) (rst == 1) |-> (multiply == 0));
+assert property(@(posedge clk) (rst == 1) |-> (opa_et_zero == 0));
+assert property(@(posedge clk) (rst == 1) |-> (div_by_inf == 0));
+assert property(@(posedge clk) (rst == 0) |-> (div_by_inf == div_by_inf));
+assert property(@(posedge clk) (rst == 1) |-> (div_inf == 0));
+assert property(@(posedge clk) (rst == 1) |-> (div_inf_by_inf == 0));
+assert property(@(posedge clk) (rst == 0) |-> (out_inf_trigger == out_inf_trigger));
+assert property(@(posedge clk) (rst == 1) |-> (addsub_inf == 0));
+assert property(@(posedge clk) (rst == 0) |-> (div_inf_by_inf == div_inf_by_inf));
+assert property(@(posedge clk) (out_inf_trigger == 1) |-> (out_1 == out_inf));
+assert property(@(posedge clk) (out_inf_trigger == 1 & inf_round_down_trigger == 0) |-> (out_inf == exp_2047));
+assert property(@(posedge clk) (rst == 0) |-> (opb_pos_inf == opb_pos_inf));
+assert property(@(posedge clk) (rst == 0) |-> (opb_et_zero == opb_et_zero));
+assert property(@(posedge clk) (rst == 1) |-> (out_inf_trigger == 0));
+assert property(@(posedge clk) (rst == 1) |-> (opa_pos_inf == 0));
+assert property(@(posedge clk) (sub_inf == 1 & addsub_inf_invalid == 0) |-> (addsub_inf == 1));
+assert property(@(posedge clk) (rst == 0) |-> (out_neg_inf == out_neg_inf));
+assert property(@(posedge clk) (NaN_out_trigger == 1) |-> (out_2 == NaN_output));
+assert property(@(posedge clk) (rst == 0) |-> (opa_QNaN == opa_QNaN));
+assert property(@(posedge clk) (enable == 1) |-> (ex_enable == enable_trigger));
+assert property(@(posedge clk) (enable == 1) |-> (underflow == underflow_trigger));
+assert property(@(posedge clk) (rst == 1) |-> (opa_QNaN == 0));
+assert property(@(posedge clk) (rst == 0) |-> (opb_inf == opb_inf));
+assert property(@(posedge clk) (enable == 0) |-> (invalid == 0));
+assert property(@(posedge clk) (add_inf == 1 & addsub_inf_invalid == 0) |-> (addsub_inf == 1));
+assert property(@(posedge clk) (rst == 1) |-> (in_et_zero == 0));
+assert property(@(posedge clk) (rst == 1) |-> (mul_0_by_inf == 0));
+assert property(@(posedge clk) (rst == 1) |-> (NaN_input == 0));
+assert property(@(posedge clk) (underflow_trigger == 0) |-> (out_0 == in_except));
+assert property(@(posedge clk) (rst == 0) |-> (div_0_by_0 == div_0_by_0));
+assert property(@(posedge clk) (add == 1 & opa_neg_inf == 1 & opb_pos_inf == 1) |-> (addsub_inf_invalid == 1));
+assert property(@(posedge clk) (out_inf_trigger == 1 & round_to_pos_inf == 1) |-> (inf_round_down_trigger == 1));
+assert property(@(posedge clk) (rst == 0) |-> (sub_inf == sub_inf));
+assert property(@(posedge clk) (rst == 1) |-> (a_NaN == 0));
+assert property(@(posedge clk) (rst == 0) |-> (NaN_input == NaN_input));
+assert property(@(posedge clk) (rst == 0) |-> (add_inf == add_inf));
+assert property(@(posedge clk) (rst == 1) |-> (opa_neg_inf == 0));
+assert property(@(posedge clk) (enable == 0) |-> (inexact == 0));
+assert property(@(posedge clk) (rst == 1) |-> (out_neg_inf == 0));
+assert property(@(posedge clk) (rst == 1) |-> (subtract == 0));
+assert property(@(posedge clk) (rst == 0) |-> (opb_QNaN == opb_QNaN));
+assert property(@(posedge clk) (rst == 1) |-> (opb_SNaN == 0));
+assert property(@(posedge clk) (rst == 0) |-> (multiply == multiply));
+assert property(@(posedge clk) (rst == 1) |-> (addsub_inf_invalid == 0));
+assert property(@(posedge clk) (enable == 1) |-> (exception == except_trigger));
+assert property(@(posedge clk) (rst == 1) |-> (SNaN_input == 0));
+assert property(@(posedge clk) (subtract == 1 & opa_pos_inf == 1 & opb_pos_inf == 1) |-> (addsub_inf_invalid == 1));
+assert property(@(posedge clk) (rst == 0) |-> (opa_pos_inf == opa_pos_inf));
+assert property(@(posedge clk) (rst == 0) |-> (addsub_inf_invalid == addsub_inf_invalid));
+assert property(@(posedge clk) (add == 1 & opa_pos_inf == 1 & opb_neg_inf == 1) |-> (addsub_inf_invalid == 1));
+assert property(@(posedge clk) (SNaN_trigger == 1) |-> (NaN_output == exp_2047));
+
+endmodule

@@ -1,0 +1,87 @@
+module i_cavlc_fsm(
+input idle,
+input  ena,
+input  [3:0]  ZeroLeft,
+input  [1:0]  TrailingOnes,
+input  start,
+input [3:0]  i,
+input  [7:0]  state,
+input  [4:0]  TotalCoeff_comb,
+input  [1:0]  TrailingOnes_comb,
+input  clk,
+input  [4:0]  TotalCoeff,
+input  [4:0]  max_coeff_num,
+input valid,
+input  rst_n
+);
+
+assert property(@(posedge clk) (state == 51) |-> (i == 0));
+assert property(@(posedge clk) (state == 68) |-> (i == 0));
+assert property(@(posedge clk) (state == 66) |-> (i == 0));
+assert property(@(posedge clk) (state == 46) |-> (i == 0));
+assert property(@(posedge clk) (state == 42) |-> (i == 0));
+assert property(@(posedge clk) (state == 50) |-> (i == 0));
+assert property(@(posedge clk) (state == 39) |-> (i == 0));
+assert property(@(posedge clk) (state == 12) |-> (i == 0));
+assert property(@(posedge clk) (state == 22) |-> (i == 0));
+assert property(@(posedge clk) (state == 53) |-> (i == 0));
+assert property(@(posedge clk) (state == 40) |-> (i == 0));
+assert property(@(posedge clk) (state == 58) |-> (i == 0));
+assert property(@(posedge clk) (state == 34) |-> (i == 0));
+assert property(@(posedge clk) (state == 35) |-> (i == 0));
+assert property(@(posedge clk) (state == 17) |-> (i == 0));
+assert property(@(posedge clk) (state == 24) |-> (i == 0));
+assert property(@(posedge clk) (state == 43) |-> (i == 0));
+assert property(@(posedge clk) (state == 33) |-> (i == 0));
+assert property(@(posedge clk) (state == 47) |-> (i == 0));
+assert property(@(posedge clk) (state == 61) |-> (i == 0));
+assert property(@(posedge clk) (state == 5) |-> (i == 0));
+assert property(@(posedge clk) (state == 27) |-> (i == 0));
+assert property(@(posedge clk) (state == 19) |-> (i == 0));
+assert property(@(posedge clk) (state == 14) |-> (i == 0));
+assert property(@(posedge clk) (state == 54) |-> (i == 0));
+assert property(@(posedge clk) (state == 63) |-> (i == 0));
+assert property(@(posedge clk) (state == 64) |-> (i == 0));
+assert property(@(posedge clk) (state == 16) |-> (i == 0));
+assert property(@(posedge clk) (state == 11) |-> (i == 0));
+assert property(@(posedge clk) (state == 26) |-> (i == 0));
+assert property(@(posedge clk) (state == 37) |-> (i == 0));
+assert property(@(posedge clk) (state == 23) |-> (i == 0));
+assert property(@(posedge clk) (state == 18) |-> (i == 0));
+assert property(@(posedge clk) (state == 30) |-> (i == 0));
+assert property(@(posedge clk) (state == 48) |-> (i == 0));
+assert property(@(posedge clk) (state == 56) |-> (i == 0));
+assert property(@(posedge clk) (state == 36) |-> (i == 0));
+assert property(@(posedge clk) (state == 20) |-> (i == 0));
+assert property(@(posedge clk) (state == 7) |-> (i == 0));
+assert property(@(posedge clk) (state == 67) |-> (i == 0));
+assert property(@(posedge clk) (state == 32) |-> (i == 0));
+assert property(@(posedge clk) (state == 41) |-> (i == 0));
+assert property(@(posedge clk) (state == 65) |-> (i == 0));
+assert property(@(posedge clk) (state == 2) |-> (i == 0));
+assert property(@(posedge clk) (state == 25) |-> (i == 0));
+assert property(@(posedge clk) (state == 15) |-> (i == 0));
+assert property(@(posedge clk) (state == 62) |-> (i == 0));
+assert property(@(posedge clk) (state == 49) |-> (i == 0));
+assert property(@(posedge clk) (state == 55) |-> (i == 0));
+assert property(@(posedge clk) (state == 4) |-> (i == 0));
+assert property(@(posedge clk) (state == 9) |-> (i == 0));
+assert property(@(posedge clk) (state == 21) |-> (i == 0));
+assert property(@(posedge clk) (state == 13) |-> (i == 0));
+assert property(@(posedge clk) (state == 28) |-> (i == 0));
+assert property(@(posedge clk) (state == 29) |-> (i == 0));
+assert property(@(posedge clk) (state == 10) |-> (i == 0));
+assert property(@(posedge clk) (state == 57) |-> (i == 0));
+assert property(@(posedge clk) (state == 6) |-> (i == 0));
+assert property(@(posedge clk) (state == 44) |-> (i == 0));
+assert property(@(posedge clk) (state == 45) |-> (i == 0));
+assert property(@(posedge clk) (state == 60) |-> (i == 0));
+assert property(@(posedge clk) (state == 8) |-> (i == 0));
+assert property(@(posedge clk) (state == 38) |-> (i == 0));
+assert property(@(posedge clk) (state == 3) |-> (i == 0));
+assert property(@(posedge clk) (state == 59) |-> (i == 0));
+assert property(@(posedge clk) (state == 1) |-> (i == 0));
+assert property(@(posedge clk) (state == 52) |-> (i == 0));
+assert property(@(posedge clk) (state == 31) |-> (i == 0));
+
+endmodule

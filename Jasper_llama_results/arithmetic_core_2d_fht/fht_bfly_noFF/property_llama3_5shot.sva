@@ -1,0 +1,26 @@
+parameter N = 8;
+module i_fht_bfly_noFF(
+input [N-1:0] b_FF,
+input	[N  :0]	c, // additive input
+input [N-1:0] a_FF,
+input			clk,
+  	input [N-1:0] ainv,
+input	[N-1:0]	b, // input
+input			rstn,
+input			valid,
+  	input [N:0] plus1,
+input	[N  :0]	d, // subtractive input
+	input  ci,
+input	[N-1:0]	a, // input
+	input [N-1:0] co,
+	input [N-1:0] sum
+);
+
+assert property(@(posedge clk) (b_FF[0] && b_FF[1] && b_FF[2] && b_FF[3] && b_FF[4] && b_FF[5] && b_FF[6] && b_FF[7]) |-> (d[0] && d[1] && d[2] && d[3] && d[4] && d[5] && d[6] && d[7] && d[8])
+            (a_FF[0] && a_FF[1] && a_FF[2] && a_FF[3] && a_FF[4] && a_FF[5] && a_FF[6] && a_FF[7]) |-> (c[0] && c[1] && c[2] && c);
+assert property(@(posedge clk) (b_FF[0] && b_FF[1] && b_FF[2] && b_FF[3] && b_FF[4] && b_FF[5] && b_FF[6] && b_FF[7]) |-> (d[0] && d[1] && d[2] && d[3] && d[4] && d[5] && d[6] && d[7] && d[8])
+            (a_FF[0] && a_FF[1] && a_FF[2] && a_FF[3] && a_FF[4] && a_FF[5] && a_FF[6] && a_FF[7]) |-> (c[0] && c[1] && c[2] && c[3] && c[4] && c[5] && c[6] && c[7] && c[8]));
+assert property(@(posedge clk)  
+            (a_FF[0] && a_FF[1] && a_FF[2] && a_FF[3] && a_FF[4] && a_FF[5] && a_FF[6] && a_FF[7]) |-> (c[0] && c[1] && c[2] && c[3] && c[4] && c[5] && c[6] && c[7] && c[8]));
+
+endmodule

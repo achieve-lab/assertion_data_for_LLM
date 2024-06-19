@@ -1,0 +1,89 @@
+module i_cavlc_read_run_befores(
+input  [8:0]   coeff_6,
+input   [8:0]   level_5,
+input  [8:0]   coeff_9,
+input   sel,
+input  [3:0]   len_comb,
+input     [8:0]   coeff,
+input   [8:0]   level_6,
+input   ena,
+input  [8:0]   coeff_14,
+input     [8:0]   coeff_12,
+input   clr,
+input  [8:0]   coeff_1,
+input   [0:10]  rbsp,
+input  [8:0]   coeff_4,
+input   [8:0]   level_7,
+input   [8:0]   level_15,
+input   clk,
+input   [3:0]   i,          //range from TotalCoeff-1 to 0
+input   [8:0]   level_0,
+input   [8:0]   level_12,
+input  [8:0]   coeff_11,
+input     [8:0]   coeff_10,
+input  [8:0]   coeff_3,
+input   [8:0]   level_14,
+input   [8:0]   level_4,
+input     [8:0]   coeff_13,
+input   [8:0]   level_3,
+input     [8:0]   coeff_5,
+input     [3:0]   run,
+input  [8:0]   coeff_7,
+input  [8:0]   coeff_15,
+input     [8:0]   coeff_0,
+input   [8:0]   level_1,
+input     [3:0]   len,
+input  [8:0]   coeff_2,
+input   [8:0]   level_10,
+input   [8:0]   level_9,
+input   ZeroLeft_init,
+input   [8:0]   level_13,
+input  [8:0]   coeff_8,
+input   [8:0]   level_11,
+input     [3:0]   ZeroLeft,
+input   [3:0]   TotalZeros_comb,
+input   rst_n,
+input  [8:0] level_8,
+input   [8:0]   level_2
+);
+
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 13) |-> (level_13 == rbsp_internal[0]? -1 : 1));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 1) |-> (level_1 == rbsp_internal[0]? -1 : 1));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 15) |-> (level_15 == rbsp_internal[0]? -1 : 1));
+assert property(@(posedge clk)  (!rst_n) |-> (level_1 == 0));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 10) |-> (level_10 == rbsp_internal[0]? -1 : 1));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 2 && TrailingOnes == 3) |-> (level_1 == rbsp_internal[2]? -1 : 1));
+assert property(@(posedge clk)  (!rst_n) |-> (level_12 == 0));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 4) |-> (level_4 == rbsp_internal[0]? -1 : 1));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 9) |-> (level_9 == rbsp_internal[0]? -1 : 1));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 3 && TrailingOnes[1]) |-> (level_2 == rbsp_internal[1]? -1 : 1));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 2) |-> (level_2 == rbsp_internal[0]? -1 : 1));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 1 && TrailingOnes[1]) |-> (level_0 == rbsp_internal[1]? -1 : 1));
+assert property(@(posedge clk)  (!rst_n) |-> (level_0 == 0));
+assert property(@(posedge clk)  (!rst_n) |-> (level_9 == 0));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 0) |-> (level_0 == rbsp_internal[0]? -1 : 1));
+assert property(@(posedge clk)  (!rst_n) |-> (level_3 == 0));
+assert property(@(posedge clk)  (!rst_n) |-> (level_6 == 0));
+assert property(@(posedge clk)  (!rst_n) |-> (level_8 == 0));
+assert property(@(posedge clk)  (!rst_n) |-> (level_13 == 0));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 7) |-> (level_7 == rbsp_internal[0]? -1 : 1));
+assert property(@(posedge clk)  (!rst_n) |-> (level_4 == 0));
+assert property(@(posedge clk)  (!rst_n) |-> (level_5 == 0));
+assert property(@(posedge clk)  (!rst_n) |-> (level_14 == 0));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 5) |-> (level_5 == rbsp_internal[0]? -1 : 1));
+assert property(@(posedge clk)  (!rst_n) |-> (level_7 == 0));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 14) |-> (level_14 == rbsp_internal[0]? -1 : 1));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 6) |-> (level_6 == rbsp_internal[0]? -1 : 1));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 3) |-> (level_3 == rbsp_internal[0]? -1 : 1));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 2 && TrailingOnes == 3) |-> (level_0 == rbsp_internal[2]? -1 : 1));
+assert property(@(posedge clk)  (rst_n && t1s);
+assert property(@(posedge clk)  (!rst_n) |-> (level_15 == 0));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 11) |-> (level_11 == rbsp_internal[0]? -1 : 1));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 12) |-> (level_12 == rbsp_internal[0]? -1 : 1));
+assert property(@(posedge clk)  (!rst_n) |-> (level_11 == 0));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 1 && TrailingOnes[1]) |-> (level_1 == rbsp_internal[1]? -1 : 1));
+assert property(@(posedge clk)  (!rst_n) |-> (level_2 == 0));
+assert property(@(posedge clk)  (rst_n && t1s_sel && ena && i == 8) |-> (level_8 == rbsp_internal[0]? -1 : 1));
+assert property(@(posedge clk)  (!rst_n) |-> (level_10 == 0));
+
+endmodule

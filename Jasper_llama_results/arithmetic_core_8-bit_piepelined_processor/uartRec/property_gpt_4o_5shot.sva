@@ -1,0 +1,16 @@
+`include "defines.v"
+module i_uartRec(
+		input [7:0] bReg, bNext,		// data recieved in this..
+		// recvd data input
+		input [1:0] stateReg, stateNext,	// current and next states
+		input rxDoneTick,
+		input [3:0] sReg, sNext,		//	counter
+		input clk, reset, sTick, rx,
+		input [`dataBits-1:0] dOut,
+		input [2:0] nReg,
+		input [2:0] nNext		// counter
+);
+
+assert property(@(posedge clk) ```systemverilog
+(stateReg == idle && ~rx) |-> (stateNext == start));assert property(@(posedge clk) (stateReg == start && sTick && sReg == 7) |-> (stateNext == data));assert property(@(posedge clk) (stateReg == data && sTick && sReg == 15 && nReg == (dataBits-1)) |-> (stateNext == stop));assert property(@(posedge clk) (stateReg == data && sTick && sReg == 15 && nReg != (dataBits-1)) |-> (nNext == nReg + 1));assert property(@(posedge clk) (stateReg == stop && sTick && sReg == (sbTick-1)) |-> (stateNext == idle && rxDoneTick == 1'b1));assert property(@(posedge clk) (stateReg == idle && rx) |-> (stateNext == idle));assert property(@(posedge clk) (stateReg == start && sTick && sReg != 7) |-> (sNext == sReg + 1));assert property(@(posedge clk) (stateReg == data && sTick && sReg != 15) |-> (sNext == sReg + 1));assert property(@(posedge clk) (stateReg == stop && sTick && sReg != (sbTick-1)) |-> (sNext == sReg + 1));assert property(@(posedge clk) ```);
+endmodule

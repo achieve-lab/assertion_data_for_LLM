@@ -1,0 +1,215 @@
+
+//=====================================================================================
+localparam AES_CR    = 4'd00;
+localparam AES_SR    = 4'd01;
+localparam AES_DINR  = 4'd02;
+localparam AES_DOUTR = 4'd03;
+localparam AES_KEYR0 = 4'd04;
+localparam AES_KEYR1 = 4'd05;
+localparam AES_KEYR2 = 4'd06;
+localparam AES_KEYR3 = 4'd07;
+localparam AES_IVR0  = 4'd08;
+localparam AES_IVR1  = 4'd09;
+localparam AES_IVR2  = 4'd10;
+localparam AES_IVR3  = 4'd11;
+
+//=============================================================================
+// Operation Modes
+//=============================================================================
+localparam ENCRYPTION     = 2'b00;
+localparam KEY_DERIVATION = 2'b01;
+localparam DECRYPTION     = 2'b10;
+localparam DECRYP_W_DERIV = 2'b11;
+
+//=============================================================================
+// AES Modes
+//=============================================================================
+localparam ECB = 2'b00;
+localparam CBC = 2'b01;
+localparam CTR = 2'b10;
+
+//=============================================================================
+// Resets Values
+//=============================================================================
+localparam AES_CR_RESET = 13'd0;
+localparam AES_SR_RESET =  3'd0;
+
+//=============================================================================
+// Enable Value (Active High)
+//=============================================================================
+localparam ENABLE  = 1'b1;
+localparam DISABLE = 1'b0;
+
+//=============================================================================
+// FSM STATES
+//=============================================================================
+localparam IDLE   = 3'd0;
+localparam INPUT  = 3'd1;
+localparam START  = 3'd2;
+localparam WAIT   = 3'd3;
+localparam OUTPUT = 3'd4;
+
+module i_host_interface(
+	input [31:0] col_bus,
+input cnt_en,
+input wr_err,
+input first_block_set,
+	input int_ccf,
+	input col_rd_en,
+	input [1:0] key_sel,
+	input col_wr_en,
+input [31:0] bus_out_mux,
+	input [1:0] data_type,
+input dma_in_en,
+input enable,
+	input [3:0] key_en,
+input errc,
+	input PWRITE,
+	input [31:0] key_bus,
+	input [31:0] PRDATA,
+input [2:0] state, next_state,
+	input [31:0] iv_bus,
+	input [12:0] PWDATA,
+input wr_err_en,
+input ccf_ie,
+	input [1:0] mode,
+	input PCLK,
+input enable_clear,
+input aes_cr_wr_en,
+input write_completed,
+input [10:0] aes_cr,
+input key_deriv,
+	input start_core,
+input [1:0] chmod_in,
+	input dma_req_rd,
+	input ccf_set,
+input [1:0] mode_in,
+input rd_err,
+input ccf,
+input dma_req,
+	input PSEL,
+	input [3:0] PADDR,
+input read_en,
+	input disable_core,
+	input [3:0] iv_en,
+input [31:0] bus_out,
+input err_ie,
+input access_permission,
+	input [1:0] col_addr,
+	input [3:0] iv_sel,
+	input PENABLE,
+input ccfc,
+input read_completed,
+	input dma_req_wr,
+	input int_err,
+	input [1:0] chmod,
+input first_block_clear,
+input dma_out_en,
+input rd_err_en,
+input [1:0] cnt,
+	input PRESETn,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET,
+input write_en,
+	input first_block
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (rd_err_en));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (aes_cr_wr_en));
+assert property(@(posedge DEFAULT_CLOCK)  (dma_out_en) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (col_bus));
+assert property(@(posedge DEFAULT_CLOCK)  (ccf_set) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (aes_cr_wr_en) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (data_type));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL && PWRITE) |-> (PADDR));
+assert property(@(posedge DEFAULT_CLOCK)  (err_ie) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PRESETn) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (dma_out_en));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (enable_clear));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (first_block_clear));
+assert property(@(posedge DEFAULT_CLOCK)  (PWRITE) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (wr_err_en));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL && PWRITE) |-> (PWDATA));
+assert property(@(posedge DEFAULT_CLOCK)  (PRDATA) |-> (PSEL && ~PWRITE));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL && ~PWRITE) |-> (PADDR));
+assert property(@(posedge DEFAULT_CLOCK)  (chmod_in) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (read_en) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (dma_in_en) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (mode_in) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (err_ie));
+assert property(@(posedge DEFAULT_CLOCK)  (iv_sel) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PCLK) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (rd_err_en) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (key_bus));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (mode_in));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (ccf_set));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (aes_cr));
+assert property(@(posedge DEFAULT_CLOCK)  (enable) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (col_addr));
+assert property(@(posedge DEFAULT_CLOCK)  (PADDR) |-> (PSEL && PWRITE));
+assert property(@(posedge DEFAULT_CLOCK)  (access_permission) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (cnt_en) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (enable));
+assert property(@(posedge DEFAULT_CLOCK)  (col_rd_en) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (PRESETn));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> ();
+assert property(@(posedge DEFAULT_CLOCK)  (first_block_clear) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (ccfc) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (int_ccf) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (PCLK));
+assert property(@(posedge DEFAULT_CLOCK)  (iv_en) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (write_en));
+assert property(@(posedge DEFAULT_CLOCK)  (PWDATA) |-> (PSEL && PWRITE));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (mode));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (iv_sel));
+assert property(@(posedge DEFAULT_CLOCK)  (int_err) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (chmod) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (mode) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (dma_in_en));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (disable_core));
+assert property(@(posedge DEFAULT_CLOCK)  (PWRITE) |-> (PENABLE));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (errc));
+assert property(@(posedge DEFAULT_CLOCK)  (write_en) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (col_addr) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (dma_req_rd) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (aes_cr) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (wr_err_en) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (key_en) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (dma_req_rd));
+assert property(@(posedge DEFAULT_CLOCK)  (errc) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (iv_bus));
+assert property(@(posedge DEFAULT_CLOCK)  (start_core) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (first_block_set) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (first_block_set));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (int_ccf));
+assert property(@(posedge DEFAULT_CLOCK)  (enable_clear) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (data_type) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL && ~PWRITE) |-> (PRDATA));
+assert property(@(posedge DEFAULT_CLOCK)  (PADDR) |-> (PSEL && ~PWRITE));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (start_core));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (int_err));
+assert property(@(posedge DEFAULT_CLOCK)  (iv_bus) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (col_rd_en));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (ccf_ie));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (key_en));
+assert property(@(posedge DEFAULT_CLOCK)  (ccf_ie) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (col_wr_en));
+assert property(@(posedge DEFAULT_CLOCK)  (key_sel) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (disable_core) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (dma_req_wr) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (read_en));
+assert property(@(posedge DEFAULT_CLOCK)  (col_wr_en) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (col_bus) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (key_sel));
+assert property(@(posedge DEFAULT_CLOCK)  (PENABLE) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (chmod_in));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (PWRITE | PENABLE));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (iv_en));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (access_permission));
+assert property(@(posedge DEFAULT_CLOCK)  (key_bus) |-> (PSEL));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (dma_req_wr));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (ccfc));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (chmod));
+assert property(@(posedge DEFAULT_CLOCK)  (PSEL) |-> (cnt_en));
+
+endmodule

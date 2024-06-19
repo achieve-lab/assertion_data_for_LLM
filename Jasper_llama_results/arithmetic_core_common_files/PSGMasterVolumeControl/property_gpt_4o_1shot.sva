@@ -1,0 +1,14 @@
+module i_PSGMasterVolumeControl(
+input [15:0] i,
+input rst_i,
+input [3:0] volume,
+input clk_i,
+input [19:0] o,
+input [19:0] v2 ,
+input [19:0] v1 ,
+input [19:0] vo ,
+input [19:0] v3 
+);
+
+assert property(@(posedge clk_i)  (rst_i) |-> (o == 20'b0));assert property(@(posedge clk_i)  (!rst_i && volume[0] && i != 16'd0) |-> (o == i));assert property(@(posedge clk_i)  (!rst_i && volume[1] && i != 16'd0) |-> (o == {i,1'b0} + (volume[0] ? i : 20'd0)));assert property(@(posedge clk_i)  (!rst_i && volume[2] && i != 16'd0) |-> (o == {i,2'b0} + (volume[1] ? {i,1'b0} + (volume[0] ? i : 20'd0) : (volume[0] ? i : 20'd0))));assert property(@(posedge clk_i)  (!rst_i && volume[3] && i != 16'd0) |-> (o == {i,3'b0} + (volume[2] ? {i,2'b0} + (volume[1] ? {i,1'b0} + (volume[0] ? i : 20'd0) : (volume[0] ? i : 20'd0)) : (volume[1] ? {i,1'b0} + (volume[0] ? i : 20'd0) : (volume[0] ? i : 20'd0)))));assert property(@(posedge clk_i)  (!rst_i && !volume[0] && !volume[1] && !volume[2] && !volume[3]) |-> (o == 20'd0));
+endmodule

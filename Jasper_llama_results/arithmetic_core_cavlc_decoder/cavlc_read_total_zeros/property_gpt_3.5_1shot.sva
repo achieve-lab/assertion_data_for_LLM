@@ -1,0 +1,23 @@
+module i_cavlc_read_total_zeros(
+input   chroma_DC_sel,
+input     [3:0]   len_comb,
+input     [3:0]   TotalZeros_G3,
+input     [0:2]   rbsp_chroma_DC,         
+input   ena,
+input     [1:0]   len_chroma_DC,
+input     [3:0]   TotalZeros_LE3,
+input     [0:5]   rbsp_G3,        
+input   [0:8]   rbsp,
+input     [1:0]   TotalZeros_chroma_DC,
+input     [0:8]   rbsp_LE3,       
+input     [3:0]   len_LE3,
+input   sel,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET,
+input  [3:0]   TotalZeros_comb,
+input     [2:0]   len_G3,
+input   [3:0]   TotalCoeff
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (rbsp_chroma_DC[0] && TotalCoeff == 1) |-> (TotalZeros_chroma_DC == 0));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_chroma_DC[1] && TotalCoeff == 1) |-> (TotalZeros_chroma_DC == 1));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_chroma_DC[2] && TotalCoeff == 1) |-> (TotalZeros_chroma_DC == 2));assert property(@(posedge DEFAULT_CLOCK)  (TotalCoeff == 1 && !rbsp_chroma_DC[0] && !rbsp_chroma_DC[1] && !rbsp_chroma_DC[2]) |-> (TotalZeros_chroma_DC == 3));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_chroma_DC[0] && TotalCoeff == 2) |-> (TotalZeros_chroma_DC == 0));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_chroma_DC[1] && TotalCoeff == 2) |-> (TotalZeros_chroma_DC == 1));assert property(@(posedge DEFAULT_CLOCK)  (!rbsp_chroma_DC[0] && !rbsp_chroma_DC[1] && !rbsp_chroma_DC[2] && TotalCoeff == 2) |-> (TotalZeros_chroma_DC == 2));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_chroma_DC[0]) |-> (TotalZeros_chroma_DC));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_chroma_DC[1]) |-> (TotalZeros_chroma_DC));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_chroma_DC[2]) |-> (TotalZeros_chroma_DC));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[0] && TotalCoeff == 1) |-> (TotalZeros_LE3 == 0));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[1] && TotalCoeff == 1) |-> (TotalZeros_LE3 == 1));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[2] && TotalCoeff == 1) |-> (TotalZeros_LE3 == 2));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[3] && TotalCoeff == 1) |-> (TotalZeros_LE3 == 3));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[4] && TotalCoeff == 1) |-> (TotalZeros_LE3 == 5));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[5] && TotalCoeff == 1) |-> (TotalZeros_LE3 == 7));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[6] && TotalCoeff == 1) |-> (TotalZeros_LE3 == 9));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[7] && TotalCoeff == 1) |-> (TotalZeros_LE3 == 13));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[0] && TotalCoeff == 2) |-> (TotalZeros_LE3 == 0));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[1] && TotalCoeff == 2) |-> (TotalZeros_LE3 == 1));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[2] && TotalCoeff == 2) |-> (TotalZeros_LE3 == 2));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[3] && TotalCoeff == 2) |-> (TotalZeros_LE3 == 4));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[4] && TotalCoeff == 2) |-> (TotalZeros_LE3 == 6));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[5] && TotalCoeff == 2) |-> (TotalZeros_LE3 == 9));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[0] && TotalCoeff == 3) |-> (TotalZeros_LE3 == 1));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[1] && TotalCoeff == 3) |-> (TotalZeros_LE3 == 3));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[2] && TotalCoeff == 3) |-> (TotalZeros_LE3 == 6));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[3] && TotalCoeff == 3) |-> (TotalZeros_LE3 == 9));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[4] && TotalCoeff == 3) |-> (TotalZeros_LE3 == 12));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_LE3[5] && TotalCoeff == 3) |-> (TotalZeros_LE3 == 15));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_G3[0] && TotalCoeff == 4) |-> (TotalZeros_G3 == 1));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_G3[1] && TotalCoeff == 4) |-> (TotalZeros_G3 == 2));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_G3[2] && TotalCoeff == 4) |-> (TotalZeros_G3 == 4));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_G3[3] && TotalCoeff == 4) |-> (TotalZeros_G3 == 7));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_G3[4] && TotalCoeff == 4) |-> (TotalZeros_G3 == 10));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_G3[0] && TotalCoeff == 5) |-> (TotalZeros_G3 == 3));assert property(@(posedge DEFAULT_CLOCK)  (rbsp_G3[1] && TotalCoeff == 5) |-> (TotalZeros_G3);
+endmodule

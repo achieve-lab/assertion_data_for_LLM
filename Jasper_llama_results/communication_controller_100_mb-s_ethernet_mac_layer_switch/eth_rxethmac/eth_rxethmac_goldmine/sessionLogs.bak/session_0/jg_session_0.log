@@ -1,0 +1,129 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.9.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-05-01 14:36:15 CDT
+# hostname  : pal-achieve-07.(none)
+# pid       : 94458
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:44353' '-nowindow' '-style' 'windows' '-data' 'AAABLnicdY7NDsFAFIW/IRqx8Bwi4Qm6ti2R2Iq0gwqmKUVseFRvMk6bVtKFezP355xz71wDhC/vPZV1nwoBETP5z8ynLkJD28q+00YW71aGXjPcSAK9IRPOONbsKEiFjIVsOModd+GF+ItiJnfkXLEkwiOWUvel3oq5qR7p1jkrcVaqvXLOo65P2hkzVR1rMww0l4l3HKo//02UdzlNJOpTXWKry7/RHCem' '-proj' '/home/vpulav2/Work/Jasper/communication_controller_100_mb-s_ethernet_mac_layer_switch/eth_rxethmac/eth_rxethmac_goldmine/sessionLogs/session_0' '-init' '-hidden' '/home/vpulav2/Work/Jasper/communication_controller_100_mb-s_ethernet_mac_layer_switch/eth_rxethmac/eth_rxethmac_goldmine/.tmp/.initCmds.tcl' 'FPV_eth_rxethmac.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /home/vpulav2/Work/Jasper/communication_controller_100_mb-s_ethernet_mac_layer_switch/eth_rxethmac/eth_rxethmac_goldmine/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/eth_rxethmac.v \
+  ${RTL_PATH}/eth_rxstatem.v \
+  ${RTL_PATH}/eth_rxcounters.v \
+  ${RTL_PATH}/eth_rxaddrcheck.v \
+  ${RTL_PATH}/eth_crc.v
+[-- (VERI-1482)] Analyzing Verilog file './/eth_rxethmac.v'
+[INFO (VERI-1328)] .//eth_rxethmac.v(113): analyzing included file './/timescale.v'
+[INFO (VERI-1328)] .//eth_rxethmac.v(114): analyzing included file './/eth_crc.v'
+[INFO (VERI-1328)] .//eth_rxethmac.v(115): analyzing included file './/eth_rxstatem.v'
+[INFO (VERI-1328)] .//eth_rxstatem.v(85): analyzing included file './/timescale.v'
+[INFO (VERI-1328)] .//eth_rxethmac.v(116): analyzing included file './/eth_rxcounters.v'
+[INFO (VERI-1328)] .//eth_rxcounters.v(82): analyzing included file './/timescale.v'
+[INFO (VERI-1328)] .//eth_rxethmac.v(117): analyzing included file './/eth_rxaddrcheck.v'
+[INFO (VERI-1328)] .//eth_rxaddrcheck.v(72): analyzing included file './/timescale.v'
+[-- (VERI-1482)] Analyzing Verilog file './/eth_rxstatem.v'
+[INFO (VERI-1328)] .//eth_rxstatem.v(85): analyzing included file './/timescale.v'
+[WARN (VERI-1206)] .//eth_rxstatem.v(193): overwriting previous definition of module 'eth_rxstatem'
+[INFO (VERI-2142)] .//eth_rxstatem.v(193): previous definition of design element 'eth_rxstatem' is here
+[-- (VERI-1482)] Analyzing Verilog file './/eth_rxcounters.v'
+[INFO (VERI-1328)] .//eth_rxcounters.v(82): analyzing included file './/timescale.v'
+[WARN (VERI-1206)] .//eth_rxcounters.v(217): overwriting previous definition of module 'eth_rxcounters'
+[INFO (VERI-2142)] .//eth_rxcounters.v(217): previous definition of design element 'eth_rxcounters' is here
+[-- (VERI-1482)] Analyzing Verilog file './/eth_rxaddrcheck.v'
+[INFO (VERI-1328)] .//eth_rxaddrcheck.v(72): analyzing included file './/timescale.v'
+[WARN (VERI-1206)] .//eth_rxaddrcheck.v(214): overwriting previous definition of module 'eth_rxaddrcheck'
+[INFO (VERI-2142)] .//eth_rxaddrcheck.v(214): previous definition of design element 'eth_rxaddrcheck' is here
+[-- (VERI-1482)] Analyzing Verilog file './/eth_crc.v'
+[WARN (VERI-1206)] .//eth_crc.v(142): overwriting previous definition of module 'eth_crc'
+[INFO (VERI-2142)] .//eth_crc.v(142): previous definition of design element 'eth_crc' is here
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_goldmine.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_goldmine.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top eth_rxethmac
+INFO (ISW003): Top module name is "eth_rxethmac".
+[INFO (VERI-9030)] .//bindings.sva(14): undeclared symbol 'StartCalc' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(25): undeclared symbol 'Divided_2_clk' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(32): undeclared symbol 'prev_latched_Rx1' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(40): undeclared symbol 'prev_latched_Rx' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(58): undeclared symbol 'Sum' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(61): undeclared symbol 'Divided_4_clk' in bind instance actual, assumed default net type 'wire'
+[ERROR (VERI-1010)] .//bindings.sva(61): cannot find port 'Divided_4_clk' on this module
+[INFO (VERI-1310)] .//property_goldmine.sva(1): 'i_eth_rxethmac' is declared here
+[ERROR (VERI-1010)] .//bindings.sva(25): cannot find port 'Divided_2_clk' on this module
+[INFO (VERI-1310)] .//property_goldmine.sva(1): 'i_eth_rxethmac' is declared here
+[ERROR (VERI-1010)] .//bindings.sva(9): cannot find port 'RxStartFrm' on this module
+[INFO (VERI-1310)] .//property_goldmine.sva(1): 'i_eth_rxethmac' is declared here
+[ERROR (VDB-9017)] Module eth_rxethmac could not be elaborated
+Summary of errors detected:
+	[ERROR (VERI-1010)] .//bindings.sva(61): cannot find port 'Divided_4_clk' on this module
+	[ERROR (VERI-1010)] .//bindings.sva(25): cannot find port 'Divided_2_clk' on this module
+	[ERROR (VERI-1010)] .//bindings.sva(9): cannot find port 'RxStartFrm' on this module
+	[ERROR (VDB-9017)] Module eth_rxethmac could not be elaborated
+ERROR (ENL034): 4 errors detected in the design file(s).
+
+ERROR: problem encountered at line 21 in file FPV_eth_rxethmac.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.416 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

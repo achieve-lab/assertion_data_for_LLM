@@ -1,0 +1,57 @@
+module i_cavlc_read_total_coeffs(
+input   [0:15]   rbsp,
+input     [1:0]   TrailingOnes_3,
+input     [4:0]   TotalCoeff,
+input     [4:0]   len_5,
+input     [4:0]   TotalCoeff_5,
+input     [4:0]   len_1,
+input     [1:0]   TrailingOnes,
+input   sel,
+input     [4:0]   len_2,
+input   start,
+input     [4:0]   TotalCoeff_comb,
+input     [1:0]   TrailingOnes_4,
+input     [4:0]   TotalCoeff_1,
+input     [4:0]   len_3,
+input     [4:0]   TotalCoeff_4,
+input     [4:0]   TotalCoeff_3,
+input     [0:15]  rbsp_1,         
+input     [4:0]   len_4,
+input     [4:0]   len_comb,
+input     [0:9]   rbsp_3,
+input     [0:5]   rbsp_4,
+input   rst_n,
+input     [1:0]   TrailingOnes_comb,
+input     [0:7]   rbsp_5,
+input   ena,
+input   signed   [5:0]   nC,
+input     [1:0]   TrailingOnes_5,
+input     [1:0]   TrailingOnes_1,
+input     [0:13]  rbsp_2,
+input     [4:0]   TotalCoeff_2,
+input     [1:0]   TrailingOnes_2,
+input DEFAULT_RESET,
+input   clk
+);
+
+assert property(@(posedge clk)  property TrailingOnes = 1);
+assert property(@(posedge clk)  property TrailingOnes_comb = 1);
+assert property(@(posedge clk)  endmodule
+Test Assertions_1: module TestAssertions_1 (clk, rst_n, TrailingOnes, TotalCoeff, len, TrailingOnes_comb, TotalCoeff_comb, len_comb));
+assert property(@(posedge clk)  property TotalCoeff = 1);
+assert property(@(posedge clk)  module TestAssertions (clk, rst_n, TrailingOnes, TotalCoeff, len, TrailingOnes_comb, TotalCoeff_comb, len_comb));
+assert property(@(posedge clk)  property len_comb = 1);
+assert property(@(posedge clk)  property TrailingOns = 1);
+assert property(@(posedge clk)  property Trailing On 1);
+assert property(@(posedge clk)  endmodule
+TestAssertions_3: module TestAssertions_3 (clk, rst_n, TrailingOnes, TotalCoeff, len, TrailingOnes_comb, TotalCoeff_comb, len_comb));
+assert property(@(posedge clk)  property Trailing On1);
+assert property(@(posedge clk) 1);
+assert property(@(posedge clk)  endmodule
+Test Assertions_2: module TestAssertions_2 (clk, rst_n, TrailingOnes, TotalCoeff, len, TrailingOnes_comb, TotalCoeff_comb, len_comb));
+assert property(@(posedge clk)  property Trailing Ons = 1);
+assert property(@(posedge clk)  property TotalCoeff_comb = 1);
+assert property(@(posedge clk)  property Trailing Ons1);
+assert property(@(posedge clk)  property len = 1);
+
+endmodule

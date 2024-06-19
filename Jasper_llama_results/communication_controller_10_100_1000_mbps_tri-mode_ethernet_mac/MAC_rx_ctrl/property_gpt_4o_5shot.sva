@@ -1,0 +1,48 @@
+module i_MAC_rx_ctrl(
+input  [2:0]   Rx_pkt_type_rmon        ,
+input [3:0]       Pause_next,                             
+input             Too_short,
+input             broadcast_ptr           ,
+input [15:0]      Frame_length_counter,
+input [7:0]       pause_quanta_h      ,
+input  [15:0]  pause_quanta        ,   
+input          Fifo_data_end   ,
+input           Fifo_full,
+input [3:0]       Pause_current /* synthesis syn_keep*/,
+input   [7:0]   MRxD    ,                                       
+input [3:0]       Next_state, 
+input [5:0]       IFG_counter,   
+input           MRxErr  ,                                       
+input             RxErr   ,
+input             pause_quanta_val_tmp,
+input             pause_frame_ptr     ,
+input [7:0]       RxD_dl1 ,
+input             Rx_apply_rmon_tmp,
+input  [7:0]   Fifo_data       ,
+input             Fifo_data_en,
+input   [5:0]   RX_IFG_SET    ,
+input   [6:0]   RX_MIN_LENGTH   ,// 64
+input   [15:0]  RX_MAX_LENGTH   ,// 1518
+input          CRC_en  ,       
+input [7:0]       RxD ,
+input [2:0]       Rx_pkt_err_type_rmon,
+input           MCrs_dv ,                                       
+input             Rx_apply_rmon,
+input          CRC_init,       
+input             Too_long,
+input             Fifo_data_err,
+input             Crs_dv  ,      
+input          pause_quanta_val    ,   
+input  [15:0]  Rx_pkt_length_rmon      ,
+input             MAC_add_en,
+input             Rx_apply_rmon_tmp_pl1,
+input           Reset   ,         
+input           Clk     ,         
+input           CRC_err ,
+input           MAC_rx_add_chk_err  ,
+input           broadcast_drop          ,
+input [3:0]       Current_state /* synthesis syn_keep*/
+);
+
+assert property(@(posedge Clk)  (Reset) |-> (Crs_dv == 0 && RxD == 0 && RxErr == 0));assert property(@(posedge Clk)  (Reset) |-> (RxD_dl1 == 0));assert property(@(posedge Clk)  (Reset) |-> (Current_state == State_idle));assert property(@(posedge Clk)  (Current_state == State_idle && Crs_dv && RxD == 8'h55) |-> (Next_state == State_preamble));assert property(@(posedge Clk)  (Current_state == State_preamble && !Crs_dv) |-> (Next_state == State_ErrEnd));assert property(@(posedge Clk)  (Current_state == State_preamble && RxErr) |-> (Next_state == State_drop));assert property(@(posedge Clk)  (Current_state == State_preamble && RxD == 8'hd5) |-> (Next_state == State_SFD));assert property(@(posedge Clk)  (Current_state == State_preamble && RxD == 8'h55) |-> (Next_state == Current_state));assert property(@(posedge Clk)  (Current_state == State_SFD && !Crs_dv) |-> (Next_state == State_ErrEnd));assert property(@(posedge Clk)  (Current_state == State_SFD && RxErr) |-> (Next_state == State_drop));assert property(@(posedge Clk)  (Current_state == State_SFD && !RxErr && Crs_dv) |-> (Next_state == State_data));assert property(@(posedge Clk)  (Current_state == State_data && !Crs_dv && !Too_short && !Too_long) |-> (Next_state == State_checkCRC));assert property(@(posedge Clk)  (Current_state == State_data && !Crs_dv && (Too_short || Too_long)) |-> (Next_state == State_ErrEnd));assert property(@(posedge Clk)  (Current_state == State_data && Fifo_full) |-> (Next_state == State_FFFullErrEnd));assert property(@(posedge Clk)  (Current_state == State_data && (RxErr || MAC_rx_add_chk_err || Too_long || broadcast_drop)) |-> (Next_state == State_drop));assert property(@(posedge Clk)  (Current_state == State_checkCRC && CRC_err) |-> (Next_state == State_CRCErrEnd));assert property(@(posedge Clk)  (Current_state == State_checkCRC && !CRC_err) |-> (Next_state == State_OkEnd));assert property(@(posedge Clk)  (Current_state == State_drop && !Crs_dv) |-> (Next_state == State_ErrEnd));assert property(@(posedge Clk)  (Current_state == State_OkEnd) |-> (Next_state == State_IFG));assert property(@(posedge Clk)  (Current_state == State_ErrEnd) |-> (Next_state == State_IFG));assert property(@(posedge Clk)  (Current_state == State_CRCErrEnd) |-> (Next_state == State_IFG));assert property(@(posedge Clk)  (Current_state == State_FFFullDrop && !Crs_dv) |-> (Next_state == State_IFG));assert property(@(posedge Clk)  (Current_state == State_FFFullErrEnd) |-> (Next_state == State_FFFullDrop));assert property(@(posedge Clk)  (Current_state == State_IFG && IFG_counter == RX_IFG_SET - 4) |-> (Next_state == State_idle));assert property(@(posedge Clk)  (Current_state == State_IFG && IFG_counter != RX_IFG_SET - 4) |-> (Next_state == Current_state));assert property(@(posedge Clk)  (Current_state == State_data) |-> (Fifo_data_en == 1));assert property(@(posedge Clk)  (Current_state != State_data) |-> (Fifo_data_en == 0));assert property(@(posedge Clk)  (Current_state == State_ErrEnd || Current_state == State_OkEnd || Current_state == State_CRCErrEnd || Current_state == State_FFFullErrEnd) |-> (Fifo_data_end == 1));assert property(@(posedge Clk)  (Current_state != State_ErrEnd && Current_state != State_OkEnd && Current_state != State_CRCErrEnd && Current_state != State_FFFullErrEnd) |-> (Fifo_data_end == 0));assert property(@(posedge Clk)  (Current_state == State_ErrEnd || Current_state == State_CRCErrEnd || Current_state == State_FFFullErrEnd) |-> (Fifo_data_err == 1));assert property(@(posedge Clk)  (Current_state != State_ErrEnd && Current_state != State_CRCErrEnd && Current_state != State_FFFullErrEnd) |-> (Fifo_data_err == 0));assert property(@(posedge Clk)  (Current_state == State_data) |-> (CRC_en == 1));assert property(@(posedge Clk)  (Current_state != State_data) |-> (CRC_en == 0));assert property(@(posedge Clk)  (Current_state == State_SFD) |-> (CRC_init == 1));assert property(@(posedge Clk)  (Current_state != State_SFD) |-> (CRC_init == 0));assert property(@(posedge Clk)  (Current_state == State_SFD) |-> (Frame_length_counter == 1));assert property(@(posedge Clk)  (Current_state == State_data) |-> (Frame_length_counter == Frame_length_counter + 1));assert property(@(posedge Clk)  (Frame_length_counter < RX_MIN_LENGTH) |-> (Too_short == 1));assert property(@(posedge Clk)  (Frame_length_counter >= RX_MIN_LENGTH) |-> ();
+endmodule

@@ -1,0 +1,187 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-06-04 15:05:42 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 68437
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:42095' '-nowindow' '-style' 'windows' '-data' 'AAABNnicdY+7CsJAEEVvFINY+B0iaBGwS20bRbANwcS3boiJr0Y/1T9Zj8EIKZxh53Hv3GHWkeQ/rLUqrXknuAo0xn/mvL6F76hun75RR6bPWpZalbgacXldDXSUUaiVCm1A+iCR9rjRBbyAPxFT3ChTrkQxeKAZ022mlzBn6h63TjSH2zFzIye6wkVsiKkzDVEv2Cx10KUgRls6768iLC+JdOB5dCNuWaPKyx+8ARgmKPA=' '-proj' '/data/vpulav2/Work/Jasper_llama/arithmetic_core_aes128/key_expander/key_expander_llama2_5shot/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper_llama/arithmetic_core_aes128/key_expander/key_expander_llama2_5shot/.tmp/.initCmds.tcl' 'FPV_key_expander.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper_llama/arithmetic_core_aes128/key_expander/key_expander_llama2_5shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/key_expander.v
+[-- (VERI-1482)] Analyzing Verilog file './/key_expander.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_llama2_5shot.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_llama2_5shot.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top key_expander
+INFO (ISW003): Top module name is "key_expander".
+[INFO (HIER-8002)] .//key_expander.v(179): Disabling old hierarchical reference handler
+[WARN (VERI-2435)] .//bindings.sva(13): port 'rc_dir' is not connected on this instance
+[INFO (VERI-1018)] .//property_llama2_5shot.sva(5): compiling module 'i_key_expander'
+[INFO (VERI-1018)] .//key_expander.v(76): compiling module 'key_expander'
+[WARN (VERI-8028)] .//bindings.sva(2): missing/open ports on instance v_key_expander of module i_key_expander
+[WARN (VDB-1013)] .//bindings.sva(13): input port 'rc_dir[7]' is not connected on this instance
+INFO (INL208): Elaboration synthesis summary:
+  Number of synthesized netlists          3 (1 packages)
+  Single run mode                         On
+  Pipeline                                On (2 pipelined netlists)
+  Late hierarchical reference connection  On
+  Number of analyzed Verilog modules      3 (3 synthesized)
+  Number of analyzed VHDL entities        0 (0 synthesized)
+INFO (INL003): Clearing all state information (assumes, stopats, and so forth).
+key_expander
+[<embedded>] % 
+[<embedded>] % # Set up Clocks and Resets
+[<embedded>] % clock -infer
+WARNING (WCK018): The attempt to automatically extract the clock failed. Use:
+    "clock signalName" to declare a primary clock,
+    "clock -none" for a free-running clock environment,
+    "clock -analyze" to help set up the clock environment properly.
+[<embedded>] % reset -none
+INFO (IPM031): Clearing proof results of all properties.
+[<embedded>] % 
+[<embedded>] % # Get design information to check general complexity
+[<embedded>] % get_design_info
+Statistics [for instance "key_expander"]
+---------------------------
+# Flops:         0 (0) (0 property flop bits)
+# Latches:       0 (0)
+# Gates:         36 (1161)
+# Nets:          86
+# Ports:         7
+# RTL Lines:     124
+# RTL Instances: 2
+# Embedded Assumptions: 0
+# Embedded Assertions:  0
+# Embedded Covers:      0
+0
+[<embedded>] % 
+[<embedded>] % # Prove properties
+[<embedded>] % prove -all
+Ncustom1: Custom engine code is hT3Ng7hPPfiYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSl+CwjiTMAQA
+Bcustom2: Custom engine code is hT3Nm7hPr1Vp3Di1Ra2USNIGL4JypRnLKLAdF6JAyuavO2JfGCiY9OZJhcAcOUnLx5xwNdhILGrAWX9s+z2WDkKwNR7tAfClBEjRFVQeq6DU54boFgEA
+AMcustom3: Custom engine code is hT3Ng7hP/feYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSmmqwm7g9AQA
+Mpcustom4: Custom engine code is hT3NZbhP9fmY2AbBQnsjfOxn6c+6e6yL+/e8fZFmaQrnlgEA
+
+==============================================================
+SUMMARY
+==============================================================
+           Properties Considered              : 0
+                 assertions                   : 0
+                  - proven                    : 0
+                  - bounded_proven (user)     : 0
+                  - bounded_proven (auto)     : 0
+                  - marked_proven             : 0
+                  - cex                       : 0
+                  - ar_cex                    : 0
+                  - undetermined              : 0
+                  - unknown                   : 0
+                  - error                     : 0
+                 covers                       : 0
+                  - unreachable               : 0
+                  - bounded_unreachable (user): 0
+                  - covered                   : 0
+                  - ar_covered                : 0
+                  - undetermined              : 0
+                  - unknown                   : 0
+                  - error                     : 0
+no_properties
+[<embedded>] % 
+[<embedded>] % # Report proof results
+[<embedded>] % report
+
+==============================================================
+    Jasper Verification Results
+==============================================================
+    2024.03 FCS 64 bits for Linux64 3.10.0-1160.21.1.el7.x86_64
+    Host Name: pal-achieve-06.uic.edu
+    User Name: vpulav2
+    Printed on: Tuesday, Jun 4, 2024 03:05:43 PM CDT
+    Working Directory: /data/vpulav2/Work/Jasper_llama/arithmetic_core_aes128/key_expander
+
+
+==============================================================
+RESULTS
+==============================================================
+
+-------------------------------------------------------------
+       Name |    Result    |  Engine  |  Bound  |  Time    
+-------------------------------------------------------------
+
+---[ <embedded> ]--------------------------------------------
+
+==============================================================
+ASSUMPTIONS
+==============================================================
+
+-------------------------------------------------------------------------------
+       Name    |  Expression  |  Location     |  Status      |  Dependencies                  
+-------------------------------------------------------------------------------
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % exit
+INFO (IPL005): Received request to exit from the console.
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.
+INFO (IPL018): The peak resident set memory use for this session was 0.000 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

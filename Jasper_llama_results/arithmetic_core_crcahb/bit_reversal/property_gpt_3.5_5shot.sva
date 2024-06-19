@@ -1,0 +1,12 @@
+  parameter DATA_SIZE = 32;
+module i_bit_reversal(
+	input  [DATA_SIZE - 1 : 0] data_in,
+	input [DATA_SIZE - 1 : 0] data_out,
+	input  [1 : 0] rev_type,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET,
+input [DATA_SIZE - 1 : 0] data_reversed[0 : 3]
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (data_out == data_in) |-> (rev_type == NO_REVERSE));assert property(@(posedge DEFAULT_CLOCK) (data_out == data_in) |-> (rev_type == BYTE));assert property(@(posedge DEFAULT_CLOCK) (data_out == data_in) |-> (rev_type == HALF_WORD));assert property(@(posedge DEFAULT_CLOCK) (data_out == data_in) |-> (rev_type == WORD));
+endmodule

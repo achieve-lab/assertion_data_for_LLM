@@ -1,0 +1,41 @@
+
+
+parameter DATA_WIDTH    = 32;
+parameter DEPTH         = 8;
+parameter CNT_WIDTH     = 4;
+
+module i_eth_fifo(
+    input     [DATA_WIDTH-1:0]  fifo  [0:DEPTH-1],
+input     [CNT_WIDTH-2:0]   write_pointer,
+input                     read,
+input                    almost_empty,
+input   [DATA_WIDTH-1:0]  data_in,
+input                     clear,
+input     [CNT_WIDTH-2:0]   read_pointer,
+input                    almost_full,
+input     [CNT_WIDTH-1:0]   cnt,
+input                    full,
+input                    empty,
+input                     clk,
+input                     write,
+input                     reset,
+input  [DATA_WIDTH-1:0]  data_out
+);
+
+assert property(@(posedge clk) (cnt == 0) |-> (empty == 1));assert property(@(posedge clk) 
+(cnt == 1) |-> (almost_empty == 1));assert property(@(posedge clk) 
+(cnt == DEPTH) |-> (full == 1));assert property(@(posedge clk) 
+(cnt == DEPTH-1) |-> (almost_full == 1));assert property(@(posedge clk) 
+(write & ~full) |-> (cnt == $past(cnt) + 1));assert property(@(posedge clk) 
+(read & ~empty) |-> (cnt == $past(cnt) - 1));assert property(@(posedge clk) 
+(reset) |=> (cnt == 0));assert property(@(posedge clk) 
+(reset) |=> (read_pointer == 0));assert property(@(posedge clk) 
+(reset) |=> (write_pointer == 0));assert property(@(posedge clk) 
+(clear) |=> (cnt == { {(CNT_WIDTH-1){1'b0}}, read^write}));assert property(@(posedge clk) 
+(clear) |=> (read_pointer == { {(CNT_WIDTH-2){1'b0}}, read}));assert property(@(posedge clk) 
+(clear) |=> (write_pointer == { {(CNT_WIDTH-2){1'b0}}, write}));assert property(@(posedge clk) 
+(write & ~full) |-> (fifo[write_pointer] == data_in));assert property(@(posedge clk) 
+(read & ~empty) |-> (data_out == fifo[read_pointer]));assert property(@(posedge clk) 
+(write & clear) |-> (fifo[0] == data_in));assert property(@(posedge clk) 
+(clear) |-> (data_out == fifo[0]));
+endmodule

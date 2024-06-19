@@ -1,0 +1,204 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-06-04 13:49:26 CDT
+# hostname  : pal-achieve-08.(none)
+# pid       : 47364
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:39367' '-nowindow' '-style' 'windows' '-data' 'AAABMnicdY69CsJAEIS/KAax8DEsBEUEuzQSsJMogm0I/ot6ISYqNvqovkkcgxGucJfb2Z2dPcYBvEee5xRRvau4BIyUv3Be38ZzsOMzV2xm+rQQauVxKXH1mnQ4YQjZkLET0xYTcVAaruIz7c+qsdKQkLJiKT5gJnVd6rU2F/UteZ0w127MEF+YclP1hYn+6woXQmjoKhZn2Gvq/dGHhYuIo15f00A+trpJC/dvH+8nDg==' '-proj' '/data/vpulav2/Work/Jasper_llama/communication_controller_10_100_1000_mbps_tri-mode_ethernet_mac/MAC_tx_Ctrl/MAC_tx_Ctrl_llama2_5shot/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper_llama/communication_controller_10_100_1000_mbps_tri-mode_ethernet_mac/MAC_tx_Ctrl/MAC_tx_Ctrl_llama2_5shot/.tmp/.initCmds.tcl' 'FPV_MAC_tx_Ctrl.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper_llama/communication_controller_10_100_1000_mbps_tri-mode_ethernet_mac/MAC_tx_Ctrl/MAC_tx_Ctrl_llama2_5shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/MAC_tx_Ctrl.v
+[-- (VERI-1482)] Analyzing Verilog file './/MAC_tx_Ctrl.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_llama2_5shot.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_llama2_5shot.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top MAC_tx_ctrl
+INFO (ISW003): Top module name is "MAC_tx_ctrl".
+[WARN (VERI-2418)] .//property_llama2_5shot.sva(1): parameter 'StateIdle' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_5shot.sva(2): parameter 'StatePreamble' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_5shot.sva(3): parameter 'StateSFD' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_5shot.sva(4): parameter 'StateData' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_5shot.sva(5): parameter 'StatePause' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_5shot.sva(6): parameter 'StatePAD' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_5shot.sva(7): parameter 'StateFCS' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_5shot.sva(8): parameter 'StateIFG' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_5shot.sva(9): parameter 'StateJam' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_5shot.sva(10): parameter 'StateBackOff' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_5shot.sva(11): parameter 'StateJamDrop' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_5shot.sva(12): parameter 'StateFFEmptyDrop' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_5shot.sva(13): parameter 'StateSwitchNext' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_5shot.sva(14): parameter 'StateDefer' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property_llama2_5shot.sva(15): parameter 'StateSendPauseFrame' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[INFO (HIER-8002)] .//MAC_tx_Ctrl.v(643): Disabling old hierarchical reference handler
+[INFO (VERI-1018)] .//property_llama2_5shot.sva(16): compiling module 'i_MAC_tx_Ctrl'
+[INFO (VERI-1018)] .//MAC_tx_Ctrl.v(56): compiling module 'MAC_tx_ctrl'
+[WARN (VERI-1209)] .//MAC_tx_Ctrl.v(241): expression size 32 truncated to fit in target size 8
+[WARN (VERI-1209)] .//MAC_tx_Ctrl.v(249): expression size 32 truncated to fit in target size 8
+[WARN (VERI-1209)] .//MAC_tx_Ctrl.v(257): expression size 32 truncated to fit in target size 2
+[WARN (VERI-1209)] .//MAC_tx_Ctrl.v(373): expression size 32 truncated to fit in target size 8
+[WARN (VERI-1209)] .//MAC_tx_Ctrl.v(382): expression size 32 truncated to fit in target size 4
+[WARN (VERI-1209)] .//MAC_tx_Ctrl.v(390): expression size 32 truncated to fit in target size 6
+[WARN (VERI-1209)] .//MAC_tx_Ctrl.v(398): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] .//MAC_tx_Ctrl.v(532): expression size 32 truncated to fit in target size 16
+INFO (INL208): Elaboration synthesis summary:
+  Number of synthesized netlists          3 (1 packages)
+  Single run mode                         On
+  Pipeline                                On (2 pipelined netlists)
+  Late hierarchical reference connection  On
+  Number of analyzed Verilog modules      3 (3 synthesized)
+  Number of analyzed VHDL entities        0 (0 synthesized)
+INFO (INL003): Clearing all state information (assumes, stopats, and so forth).
+MAC_tx_ctrl
+[<embedded>] % 
+[<embedded>] % # Set up Clocks and Resets
+[<embedded>] % clock Clk
+[<embedded>] % reset Reset
+INFO (IPM031): Clearing proof results of all properties.
+INFO (IRS006): Current reset condition is "Reset".
+[<embedded>] % 
+[<embedded>] % # Get design information to check general complexity
+[<embedded>] % get_design_info
+Statistics [for instance "MAC_tx_ctrl"]
+---------------------------
+# Flops:         25 (103) (0 property flop bits)
+# Latches:       0 (0)
+# Gates:         306 (3255)
+# Nets:          406
+# Ports:         42
+# RTL Lines:     653
+# RTL Instances: 2
+# Embedded Assumptions: 0
+# Embedded Assertions:  0
+# Embedded Covers:      0
+103
+[<embedded>] % 
+[<embedded>] % # Prove properties
+[<embedded>] % prove -all
+Ncustom1: Custom engine code is hT3Ng7hPPfiYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSl+CwjiTMAQA
+Bcustom2: Custom engine code is hT3Nm7hPr1Vp3Di1Ra2USNIGL4JypRnLKLAdF6JAyuavO2JfGCiY9OZJhcAcOUnLx5xwNdhILGrAWX9s+z2WDkKwNR7tAfClBEjRFVQeq6DU54boFgEA
+AMcustom3: Custom engine code is hT3Ng7hP/feYQOTDZ3qhYOwGAM51eA+J/FjkM5shLioAsqhgLR4Ft+O1BuKG6ilQ83B9tLXSmmqwm7g9AQA
+Mpcustom4: Custom engine code is hT3NZbhP9fmY2AbBQnsjfOxn6c+6e6yL+/e8fZFmaQrnlgEA
+
+==============================================================
+SUMMARY
+==============================================================
+           Properties Considered              : 0
+                 assertions                   : 0
+                  - proven                    : 0
+                  - bounded_proven (user)     : 0
+                  - bounded_proven (auto)     : 0
+                  - marked_proven             : 0
+                  - cex                       : 0
+                  - ar_cex                    : 0
+                  - undetermined              : 0
+                  - unknown                   : 0
+                  - error                     : 0
+                 covers                       : 0
+                  - unreachable               : 0
+                  - bounded_unreachable (user): 0
+                  - covered                   : 0
+                  - ar_covered                : 0
+                  - undetermined              : 0
+                  - unknown                   : 0
+                  - error                     : 0
+no_properties
+[<embedded>] % 
+[<embedded>] % # Report proof results
+[<embedded>] % report
+
+==============================================================
+    Jasper Verification Results
+==============================================================
+    2024.03 FCS 64 bits for Linux64 3.10.0-1160.21.1.el7.x86_64
+    Host Name: pal-achieve-08.uic.edu
+    User Name: vpulav2
+    Printed on: Tuesday, Jun 4, 2024 01:49:27 PM CDT
+    Working Directory: /data/vpulav2/Work/Jasper_llama/communication_controller_10_100_1000_mbps_tri-mode_ethernet_mac/MAC_tx_Ctrl
+
+
+==============================================================
+RESULTS
+==============================================================
+
+-------------------------------------------------------------
+       Name |    Result    |  Engine  |  Bound  |  Time    
+-------------------------------------------------------------
+
+---[ <embedded> ]--------------------------------------------
+
+==============================================================
+ASSUMPTIONS
+==============================================================
+
+-------------------------------------------------------------------------------
+       Name    |  Expression  |  Location     |  Status      |  Dependencies                  
+-------------------------------------------------------------------------------
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % 
+[<embedded>] % exit
+INFO (IPL005): Received request to exit from the console.
+INFO: Waiting for proof threads to stop...
+INFO: Proof threads stopped.
+INFO (IPL018): The peak resident set memory use for this session was 0.000 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

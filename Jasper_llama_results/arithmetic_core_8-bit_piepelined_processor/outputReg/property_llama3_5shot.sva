@@ -1,0 +1,92 @@
+`include "defines.v"
+
+module i_outputReg(
+input reset, outputRw,
+        input [`outputAddrLen-1:0] outputRwAddr,
+        input outputWriteIn,
+        input DEFAULT_CLOCK,
+        input outputReadOut,
+        input  [`outputNumber-1:0] outputs,
+        
+        input [`outputNumber-1 :0] outputReg 
+        
+);
+
+assert property(@(posedge DEFAULT_CLOCK)  (D && b) |-> Bout);
+assert property(@(posedge DEFAULT_CLOCK)  end else begin if (outputRw) begin outputReadOut = outputReg[outputRwAddr]);
+assert property(@(posedge DEFAULT_CLOCK)  (outputRw == 0) |-> (outputReg[outputRwAddr] == outputWriteIn)
+            Input: The input to the program is the verilog code.
+            Output: The output of the program is the list of assertions.
+            Sample Input: module arb2(clk, rst, req1, req2, gnt1, gnt2));
+assert property(@(posedge DEFAULT_CLOCK)  reg outputReadOut);
+assert property(@(posedge DEFAULT_CLOCK)  input req1, req2);
+assert property(@(posedge DEFAULT_CLOCK)  always @ (*) if (state) begin gnt1 = req1 & ~req2);
+assert property(@(posedge DEFAULT_CLOCK)  gnt2 = req2 & ~req1);
+assert property(@(posedge DEFAULT_CLOCK)  assign Bout = (~a & b) | (~(a ^ b) & Bin));
+assert property(@(posedge DEFAULT_CLOCK)  input [`outputAddrLen-1:0] outputRwAddr);
+assert property(@(posedge DEFAULT_CLOCK)  output outputReadOut);
+assert property(@(posedge DEFAULT_CLOCK)  always @ (reset or outputRw or outputRwAddr or outputWriteIn or outputReg) begin if (reset) begin outputReadOut = 1'bz);
+assert property(@(posedge DEFAULT_CLOCK) (req1 == 0) |-> (gnt1 == 0));
+assert property(@(posedge DEFAULT_CLOCK) (req1 == 1 & req2 == 0) |-> (gnt1 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  assign Cout = (a & b) | (b & cin) | (a & cin));
+assert property(@(posedge DEFAULT_CLOCK)  (!Bout && D) |-> a
+            Sample Input: `include "timescale.v" `include "defines.v" module outputReg (reset, outputRw, outputRwAddr, outputWriteIn, outputReadOut, outputs));
+assert property(@(posedge DEFAULT_CLOCK)  (Cout) |-> a
+            Sample Input: module T_flipflop ( input clk, rst_n, input t, output reg q, output q_bar ));
+assert property(@(posedge DEFAULT_CLOCK)  reg [`outputNumber-1 :0] outputReg = 0);
+assert property(@(posedge DEFAULT_CLOCK)  always @ (posedge clk or posedge rst) if (rst) state <= 0);
+assert property(@(posedge DEFAULT_CLOCK)  (!Cout && b) |-> S);
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Sample Output: (Cout) |-> b);
+assert property(@(posedge DEFAULT_CLOCK)  end end);
+assert property(@(posedge DEFAULT_CLOCK)  assign Cout = a & b);
+assert property(@(posedge DEFAULT_CLOCK)  (D && Bin) |-> Bout);
+assert property(@(posedge DEFAULT_CLOCK)  input outputWriteIn);
+assert property(@(posedge DEFAULT_CLOCK)  input reset, outputRw);
+assert property(@(posedge DEFAULT_CLOCK)  end else begin outputReg[outputRwAddr] = outputWriteIn);
+assert property(@(posedge DEFAULT_CLOCK)  end endmodule
+            Sample Output: (state == 1 & req2 == 1) |-> (gnt1 == 0));
+assert property(@(posedge DEFAULT_CLOCK)  (!Bout && b) |-> a);
+assert property(@(posedge DEFAULT_CLOCK)  reg gnt1, gnt2);
+assert property(@(posedge DEFAULT_CLOCK)  $write ("\nmodule outputRegister is reset "));
+assert property(@(posedge DEFAULT_CLOCK)  output gnt1, gnt2);
+assert property(@(posedge DEFAULT_CLOCK)  reg state);
+assert property(@(posedge DEFAULT_CLOCK)  (gnt1) |-> (req1));
+assert property(@(posedge DEFAULT_CLOCK) (req2 == 0) |-> (gnt2 == 0));
+assert property(@(posedge DEFAULT_CLOCK)  
+            Sample Input: module full_adder(input a, b, cin, output S, Cout));
+assert property(@(posedge DEFAULT_CLOCK)  (!Cout && a) |-> S
+            Sample Input: module half_adder(input a, b, output S, Cout));
+assert property(@(posedge DEFAULT_CLOCK) (req1 == 1 & state == 0) |-> (gnt2 == 0));
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Sample Output: (!a && D) |-> Bout);
+assert property(@(posedge DEFAULT_CLOCK)  (!Bout && Bin) |-> a);
+assert property(@(posedge DEFAULT_CLOCK)  (gnt2) |-> (req2));
+assert property(@(posedge DEFAULT_CLOCK) (req2 == 1 & req1 == 0) |-> (gnt2 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  else begin q <= (t?~q:q));
+assert property(@(posedge DEFAULT_CLOCK)  input clk, rst);
+assert property(@(posedge DEFAULT_CLOCK)  assign S = a ^ b);
+assert property(@(posedge DEFAULT_CLOCK)  (reset == 1) |-> (outputReadOut == 1'bz));
+assert property(@(posedge DEFAULT_CLOCK)  end end assign q_bar = ~q);
+assert property(@(posedge DEFAULT_CLOCK)  gnt2 = req2);
+assert property(@(posedge DEFAULT_CLOCK)  (q == 1) |-> (q_bar == 0));
+assert property(@(posedge DEFAULT_CLOCK)  output wire [`outputNumber-1:0] outputs);
+assert property(@(posedge DEFAULT_CLOCK)  (outputRw == 0) |-> (outputReg[outputRwAddr] == outputWriteIn));
+assert property(@(posedge DEFAULT_CLOCK)  assign S = a ^ b ^ cin);
+assert property(@(posedge DEFAULT_CLOCK)  end else begin gnt1 = req1);
+assert property(@(posedge DEFAULT_CLOCK)  assign D = a ^ b ^ Bin);
+assert property(@(posedge DEFAULT_CLOCK)  always@(posedge clk) begin if(!rst_n) q <= 0);
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Sample Output: (!q) |-> q_bar);
+assert property(@(posedge DEFAULT_CLOCK)  else state <= gnt1);
+assert property(@(posedge DEFAULT_CLOCK) (req1 == 1 & state == 0) |-> (gnt1 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  endmodule
+            Sample Output: (!Cout && cin) |-> S);
+assert property(@(posedge DEFAULT_CLOCK)  $write ("\nwriting to the output register : module outputRegister "));
+assert property(@(posedge DEFAULT_CLOCK)  (outputRw == 1) |-> (outputReadOut == outputReg[outputRwAddr]));
+assert property(@(posedge DEFAULT_CLOCK) (req2 == 1 & state == 1) |-> (gnt2 == 1));
+assert property(@(posedge DEFAULT_CLOCK)  (!q_bar) |-> q);
+assert property(@(posedge DEFAULT_CLOCK) (q == 0) |-> (q_bar == 1)
+            Sample Input: module full_subtractor(input a, b, Bin, output D, Bout));
+
+endmodule

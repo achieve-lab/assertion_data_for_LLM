@@ -1,0 +1,23 @@
+bind rxStateMachine
+ i_rxStateMachine v_rxStateMachine(
+.good_frame_get(good_frame_get),
+.rxstate_next(rxstate_next),
+.local_invalid(local_invalid),
+.wait_crc_check(wait_crc_check),
+.get_error_code(get_error_code),
+.get_terminator(get_terminator),
+.get_sfd(get_sfd),
+.bad_frame_get(bad_frame_get),
+.rxclk(rxclk),
+.receiving_d1(receiving_d1),
+.rxstate(rxstate),
+.start_lt(start_lt),
+.crc_check_invalid(crc_check_invalid),
+.check_reset(check_reset),
+.reset(reset),
+.recv_enable(recv_enable),
+.start_da(start_da),
+.length_error(length_error),
+.crc_check_valid(crc_check_valid),
+.receiving(receiving)
+);

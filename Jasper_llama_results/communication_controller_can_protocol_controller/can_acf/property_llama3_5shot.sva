@@ -1,0 +1,60 @@
+module i_can_acf(
+input         rst,
+input          match,
+input   [7:0] acceptance_mask_0,
+input         no_byte0,
+input   [7:0] acceptance_mask_1,
+input   [7:0] acceptance_mask_3,
+input         no_byte1,
+input   [7:0] acceptance_code_3,
+input   [7:0] acceptance_mask_2,
+input  [28:0] id,
+input         go_rx_crc_lim,
+input         clk,
+  /* Mode inputister */
+input   [7:0] data0,
+input        id_ok,
+input   [7:0] acceptance_code_1,
+input   [7:0] acceptance_code_2,
+input          match_sf_ext,
+input         reset_mode,
+input   [7:0] acceptance_code_0,
+input         extended_mode,
+input          match_df_std,
+input         rtr2,
+input         ide,
+input         acceptance_filter_mode,
+input   [7:0] data1,
+input          match_df_ext,
+input         go_rx_inter,
+input         go_error_frame,
+input         rtr1,
+input          match_sf_std
+);
+
+assert property(@(posedge clk)  (!acceptance_filter_mode && extended_mode && ide && go_rx_crc_lim &&!go_rx_inter &&!go_error_frame) |-> match_sf_ext);
+assert property(@(posedge clk)  (acceptance_filter_mode && extended_mode && ide) |-> match_df_ext);
+assert property(@(posedge clk)  (go_rx_crc_lim &&!go_rx_inter &&!go_error_frame) |-> id_ok);
+assert property(@(posedge clk)  (acceptance_filter_mode &&!extended_mode) |-> match);
+assert property(@(posedge clk)  (acceptance_filter_mode && extended_mode &&!ide) |-> match_df_std);
+assert property(@(posedge clk)  (go_rx_crc_lim &&!go_rx_inter);
+assert property(@(posedge clk)  (go_rx_crc_lim &&!go_rx_inter &&!go_error_frame && extended_mode && acceptance_filter_mode && ide) |-> match_sf_ext);
+assert property(@(posedge clk)  (acceptance_filter_mode && extended_mode &&!ide && go_rx_crc_lim &&!go_rx_inter &&!go_error_frame) |-> match_df_std);
+assert property(@(posedge clk)  (go_rx_crc_lim &&!go_rx_inter &&!go_error_frame && extended_mode &&!acceptance_filter_mode &&!ide) |-> match_sf_std);
+assert property(@(posedge clk)  (!acceptance_filter_mode && extended_mode &&!ide) |-> match_sf_std);
+assert property(@(posedge clk)  (!acceptance_filter_mode && extended_mode && ide) |-> match_sf_ext);
+assert property(@(posedge clk)  (acceptance_filter_mode && extended_mode && ide && go_rx_crc_lim &&!go_rx_inter &&!go_error_frame) |-> match_df_ext);
+assert property(@(posedge clk)  (match_sf_ext && go_rx_crc_lim &&!go_rx_inter &&!go_error_frame && extended_mode && acceptance_filter_mode && ide) |-> id_ok);
+assert property(@(posedge clk)  (!acceptance_filter_mode && extended_mode &&!ide && go_rx_crc_lim &&!go_rx_inter &&!go_error_frame) |-> match_sf_std);
+assert property(@(posedge clk)  (acceptance_filter_mode &&!extended_mode && go_rx_crc_lim &&!go_rx_inter &&!go_error_frame) |-> match);
+assert property(@(posedge clk)  (reset_mode || go_rx_inter || go_error_frame) |-> (id_ok == 0));
+assert property(@(posedge clk)  (match && go_rx_crc_lim &&!go_rx_inter &&!go_error_frame &&!extended_mode && acceptance_filter_mode) |-> id_ok);
+assert property(@(posedge clk)  (match_sf_std && go_rx_crc_lim &&!go_rx_inter &&!go_error_frame && extended_mode &&!acceptance_filter_mode &&!ide) |-> id_ok);
+assert property(@(posedge clk)  (go_rx_crc_lim &&!go_rx_inter &&!go_error_frame &&!extended_mode &&!acceptance_filter_mode) |-> match_df_std);
+assert property(@(posedge clk)  (match_df_ext && go_rx_crc_lim &&!go_rx_inter &&!go_error_frame && extended_mode &&!acceptance_filter_mode && ide) |-> id_ok);
+assert property(@(posedge clk)  (go_rx_crc_lim &&!go_rx_inter &&!go_error_frame &&!extended_mode && acceptance_filter_mode) |-> match);
+assert property(@(posedge clk)  (rst) |-> (id_ok == 0));
+assert property(@(posedge clk)  (match_df_std && go_rx_crc_lim &&!go_rx_inter &&!go_error_frame &&!extended_mode &&!acceptance_filter_mode) |-> id_ok);
+assert property(@(posedge clk)  (go_rx_crc_lim &&!go_rx_inter &&!go_error_frame && extended_mode &&!acceptance_filter_mode && ide) |-> match_df_ext);
+
+endmodule

@@ -1,0 +1,13 @@
+module i_ppReg1(
+		input clk,
+		input [`instOpCodeLen-1:0] opcodeOut,
+		input [`instOpCodeLen-1:0] opcodeIn,
+		input [`instFieldLen-1:0] fieldIn,
+		input [`instFieldLen-1:0] fieldOut
+);
+
+assert property(@(posedge clk)              (opcodeIn == 0) |-> (opcodeOut == 0));
+assert property(@(posedge clk) (fieldIn == 0) |-> (fieldOut == 0));
+assert property(@(posedge clk) (opcodeIn == 0) |-> (opcodeOut == 0));
+
+endmodule

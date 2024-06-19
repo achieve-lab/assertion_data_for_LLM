@@ -1,0 +1,8 @@
+bind rxClkgen
+ i_rxClkgen v_rxClkgen(
+.reset(reset),
+.rxclk_in(rxclk_in),
+.rxclk(rxclk),
+.locked(locked),
+.rxclk_180(rxclk_180)
+);

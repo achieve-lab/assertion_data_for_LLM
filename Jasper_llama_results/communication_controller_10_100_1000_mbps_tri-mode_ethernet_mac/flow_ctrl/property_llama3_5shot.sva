@@ -1,0 +1,101 @@
+module i_flow_ctrl(
+input           xon_cpu             ,
+input             xon_cpu_dl1             ,   
+input           Clk                 ,
+input           Reset               ,
+input             tx_pause_en_dl1         ,
+input           tx_pause_en         ,
+input             pause_quanta_val_dl2    ,       
+input           xoff_cpu            ,
+input           pause_quanta_val    ,
+input           xon_gen_complete    ,
+input           xoff_gen_complete   ,
+input             pause_apply             ,
+input [15:0]      pause_quanta_dl1        ,
+input             xoff_gen                ,
+input             pause_quanta_val_dl1    ,
+input             tx_pause_en_dl2         ,
+input             xoff_cpu_dl1            ,
+input             xoff_cpu_dl2            ,
+input [15:0]      pause_quanta_counter    ,
+input             xon_cpu_dl2             ,
+input             xon_gen                 ,
+input   [15:0]  pause_quanta        ,
+input           pause_quanta_sub    
+);
+
+assert property(@(posedge Clk)  end else begin tx_pause_en_dl1 <=tx_pause_en);
+assert property(@(posedge Clk)  (pause_quanta_counter == 0) |-> pause_apply);
+assert property(@(posedge Clk)  (tx_pause_en == 0) |-> tx_pause_en_dl1
+Sample Test Program:module flow_ctrl ( Reset, Clk, tx_pause_en, xoff_cpu, xon_cpu, pause_quanta, pause_quanta_val, pause_apply, pause_quanta_sub, xoff_gen, xoff_gen_complete, xon_gen, xon_gen_complete ));
+assert property(@(posedge Clk)  input xon_gen_complete );
+assert property(@(posedge Clk)  input Reset );
+assert property(@(posedge Clk)  reg pause_quanta_val_dl2 );
+assert property(@(posedge Clk)  end else begin pause_quanta_dl1 <=pause_quanta);
+assert property(@(posedge Clk)  reg xoff_cpu_dl2 );
+assert property(@(posedge Clk)  reg xon_cpu_dl1 );
+assert property(@(posedge Clk)  (pause_quanta == 1) |-> pause_quanta_dl1);
+assert property(@(posedge Clk)  (tx_pause_en_dl2 == 1 & pause_quanta_counter!= 0) |-> pause_apply);
+assert property(@(posedge Clk)  input [15:0] pause_quanta );
+assert property(@(posedge Clk)  (pause_quanta_val_dl1 == 0) |-> pause_quanta_val_dl2);
+assert property(@(posedge Clk)  xoff_cpu_dl2 <=0);
+assert property(@(posedge Clk)  tx_pause_en_dl2 <=tx_pause_en_dl1);
+assert property(@(posedge Clk)  input pause_quanta_sub );
+assert property(@(posedge Clk)  (pause_quanta_val_dl1 == 1 & pause_quanta_val_dl2 == 0) |-> pause_quanta_counter);
+assert property(@(posedge Clk)  end always @ (posedge Clk or posedge Reset) if (Reset) xoff_gen <=0);
+assert property(@(posedge Clk)  else if(pause_quanta_val_dl1&&!pause_qu);
+assert property(@(posedge Clk)  reg [15:0] pause_quanta_dl1 );
+assert property(@(posedge Clk)  (tx_pause_en_dl1 == 1) |-> tx_pause_en_dl2);
+assert property(@(posedge Clk)  (pause_quanta_val_dl1 == 0 & pause_quanta_val_dl2 == 1) |-> pause_quanta_dl1);
+assert property(@(posedge Clk)  (xoff_cpu == 0) |-> xoff_cpu_dl1);
+assert property(@(posedge Clk)  output xon_gen );
+assert property(@(posedge Clk)  always @ (posedge Clk or posedge Reset) if (Reset) xon_gen <=0);
+assert property(@(posedge Clk)  input tx_pause_en );
+assert property(@(posedge Clk)  (tx_pause_en_dl1 == 0) |-> tx_pause_en_dl2);
+assert property(@(posedge Clk)  reg tx_pause_en_dl2 );
+assert property(@(posedge Clk)  (pause_quanta == 0) |-> pause_quanta_dl1);
+assert property(@(posedge Clk)  xon_cpu_dl2 <=0);
+assert property(@(posedge Clk)  else if (xon_cpu_dl1&&!xon_cpu_dl2) xon_gen <=1);
+assert property(@(posedge Clk)  (xoff_gen_complete == 1) |-> xoff_gen);
+assert property(@(posedge Clk)  pause_quanta_val_dl2 <=0);
+assert property(@(posedge Clk)  reg tx_pause_en_dl1 );
+assert property(@(posedge Clk)  input Clk );
+assert property(@(posedge Clk)  end else begin xon_cpu_dl1 <=xon_cpu);
+assert property(@(posedge Clk)  else if (xon_gen_complete) xon_gen <=0);
+assert property(@(posedge Clk)  reg xoff_cpu_dl1 );
+assert property(@(posedge Clk)  (xon_cpu_dl1 == 0 & xon_cpu_dl2 == 1) |-> xon_gen);
+assert property(@(posedge Clk)  input xoff_cpu );
+assert property(@(posedge Clk)  always @ (posedge Clk or posedge Reset) if (Reset) begin xoff_cpu_dl1 <=0);
+assert property(@(posedge Clk)  output pause_apply );
+assert property(@(posedge Clk)  tx_pause_en_dl2 <=0);
+assert property(@(posedge Clk)  end always @ (posedge Clk or posedge Reset) if (Reset) begin pause_quanta_val_dl1 <=0);
+assert property(@(posedge Clk)  else if (xoff_cpu_dl1&&!xoff_cpu_dl2) xoff_gen <=1);
+assert property(@(posedge Clk)  (xon_gen_complete == 1) |-> xon_gen);
+assert property(@(posedge Clk)  input xoff_gen_complete );
+assert property(@(posedge Clk)  end always @ (posedge Clk or posedge Reset) if (Reset) begin tx_pause_en_dl1 <=0);
+assert property(@(posedge Clk)  end else begin pause_quanta_val_dl1 <=pause_quanta_val);
+assert property(@(posedge Clk)  input xon_cpu );
+assert property(@(posedge Clk)  input pause_quanta_val );
+assert property(@(posedge Clk)  reg xon_gen );
+assert property(@(posedge Clk)  reg xon_cpu_dl2 );
+assert property(@(posedge Clk)  output xoff_gen );
+assert property(@(posedge Clk)  reg [15:0] pause_quanta_counter );
+assert property(@(posedge Clk)  end else begin xoff_cpu_dl1 <=xoff_cpu);
+assert property(@(posedge Clk)  end always @ (posedge Clk or posedge Reset) if (Reset) begin pause_quanta_dl1 <=0);
+assert property(@(posedge Clk)  reg xoff_gen );
+assert property(@(posedge Clk)  (xon_cpu == 0) |-> xon_cpu_dl1);
+assert property(@(posedge Clk)  xoff_cpu_dl2 <=xoff_cpu_dl1);
+assert property(@(posedge Clk)  (xoff_cpu_dl1 == 0 & xoff_cpu_dl2 == 1) |-> xoff_gen);
+assert property(@(posedge Clk)  end always @ (posedge Clk or posedge Reset) if (Reset) begin xon_cpu_dl1 <=0);
+assert property(@(posedge Clk)  (tx_pause_en == 1) |-> tx_pause_en_dl1);
+assert property(@(posedge Clk)  (xoff_cpu == 1) |-> xoff_cpu_dl1);
+assert property(@(posedge Clk)  pause_quanta_val_dl2 <=pause_quanta_val_dl1);
+assert property(@(posedge Clk)  (pause_quanta_val_dl1 == 1) |-> pause_quanta_val_dl2);
+assert property(@(posedge Clk)  xon_cpu_dl2 <=xon_cpu_dl1);
+assert property(@(posedge Clk)  reg pause_quanta_val_dl1 );
+assert property(@(posedge Clk)  reg pause_apply );
+assert property(@(posedge Clk)  (xon_cpu == 1) |-> xon_cpu_dl1);
+assert property(@(posedge Clk)  always @ (posedge Clk or posedge Reset) if (Reset) pause_quanta_counter <=0);
+assert property(@(posedge Clk)  else if (xoff_gen_complete) xoff_gen <=0);
+
+endmodule

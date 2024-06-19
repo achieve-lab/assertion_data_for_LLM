@@ -1,0 +1,11 @@
+module i_rxClkgen(
+    input reset,
+    input locked,
+  //  input rxclk_2x,
+    input rxclk,
+    input rxclk_in,
+    input rxclk_180
+);
+
+assert property(@(posedge rxclk_in) (gnt1) |-> (req1));assert property(@(posedge rxclk_in) (gnt2) |-> (req2));
+endmodule

@@ -1,0 +1,32 @@
+parameter       StateIdle       =4'd0;
+parameter       StatePktLength  =4'd1;
+parameter       StatePktNumber  =4'd2;
+parameter       StatePktType    =4'd3;
+parameter       StatePktRange   =4'd4;
+module i_RMON_addr_gen(
+input [2:0]       Pkt_err_type_rmon_dl1   ,
+input           Clk                 ,
+input [2:0]       Pkt_type_rmon_dl1       ,
+input [3:0]       CurrentState /* synthesys syn_keep*/,
+input           Apply_rmon          ,//pluse signal looks like eop
+input          Reg_apply           ,
+input [15:0]      PktLengthReg    ,
+input          Reg_drop_apply      ,
+input   [2:0]   Pkt_type_rmon       ,
+input [4:0]       Reg_addr            ,
+input             Apply_rmon_pulse,
+input [2:0]       PktTypeReg      ,
+input   [2:0]   Pkt_err_type_rmon   ,
+input [15:0]      Reg_data            ,
+input           Reset               ,
+input           Reg_next            ,
+input   [15:0]  Pkt_length_rmon     ,
+input [3:0]       NextState,
+input [2:0]       PktErrTypeReg   ,
+input             Apply_rmon_dl2,
+input [15:0]      Pkt_length_rmon_dl1     ,
+input             Apply_rmon_dl1
+);
+
+assert property(@(posedge Clk)  (Reset) |-> (Pkt_type_rmon_dl1 == 0 && Pkt_length_rmon_dl1 == 0 && Pkt_err_type_rmon_dl1 == 0));assert property(@(posedge Clk)  (Reset) |-> (Apply_rmon_dl1 == 0 && Apply_rmon_dl2 == 0));assert property(@(posedge Clk)  (Apply_rmon_dl1 && !Apply_rmon_dl2) |-> (Apply_rmon_pulse == 1));assert property(@(posedge Clk)  (!Apply_rmon_dl1 || Apply_rmon_dl2) |-> (Apply_rmon_pulse == 0));assert property(@(posedge Clk)  (Reset) |-> (PktTypeReg == 0 && PktLengthReg == 0 && PktErrTypeReg == 0));assert property(@(posedge Clk)  (Apply_rmon_pulse && CurrentState == StateIdle) |-> (PktTypeReg == Pkt_type_rmon_dl1 && PktLengthReg == Pkt_length_rmon_dl1 && PktErrTypeReg == Pkt_err_type_rmon_dl1));assert property(@(posedge Clk)  (Reset) |-> (CurrentState == StateIdle));assert property(@(posedge Clk)  (CurrentState == StateIdle && Apply_rmon_pulse) |-> (NextState == StatePktLength));assert property(@(posedge Clk)  (CurrentState == StatePktLength && Reg_next) |-> (NextState == StatePktNumber));assert property(@(posedge Clk)  (CurrentState == StatePktNumber && Reg_next) |-> (NextState == StatePktType));assert property(@(posedge Clk)  (CurrentState == StatePktType && Reg_next) |-> (NextState == StatePktRange));assert property(@(posedge Clk)  (CurrentState == StatePktRange && Reg_next) |-> (NextState == StateIdle));assert property(@(posedge Clk)  (CurrentState == StatePktLength || CurrentState == StatePktNumber || CurrentState == StatePktType || CurrentState == StatePktRange) |-> (Reg_apply == 1));assert property(@(posedge Clk)  (!(CurrentState == StatePktLength || CurrentState == StatePktNumber || CurrentState == StatePktType || CurrentState == StatePktRange)) |-> (Reg_apply == 0));assert property(@(posedge Clk)  (Reset) |-> (Reg_addr == 0));assert property(@(posedge Clk)  (CurrentState == StatePktLength) |-> (Reg_addr == 5'd00));assert property(@(posedge Clk)  (CurrentState == StatePktNumber) |-> (Reg_addr == 5'd01));assert property(@(posedge Clk)  (CurrentState == StatePktType && PktTypeReg == 3'b011) |-> (Reg_addr == 5'd02));assert property(@(posedge Clk)  (CurrentState == StatePktType && PktTypeReg == 3'b001) |-> (Reg_addr == 5'd03));assert property(@(posedge Clk)  (CurrentState == StatePktType && PktTypeReg == 3'b100) |-> (Reg_addr == 5'd16));assert property(@(posedge Clk)  (CurrentState == StatePktType && !(PktTypeReg == 3'b011 || PktTypeReg == 3'b001 || PktTypeReg == 3'b100)) |-> (Reg_addr == 5'd04));assert property(@(posedge Clk)  (CurrentState == StatePktRange && PktErrTypeReg == 3'b001) |-> (Reg_addr == 5'd05));assert property(@(posedge Clk)  (CurrentState == StatePktRange && PktErrTypeReg == 3'b010) |-> (Reg_addr == 5'd06));assert property(@(posedge Clk)  (CurrentState == StatePktRange && PktErrTypeReg == 3'b011) |-> (Reg_addr == 5'd07));assert property(@(posedge Clk)  (CurrentState == StatePktRange && PktErrTypeReg == 3'b100 && PktLengthReg < 64) |-> (Reg_addr == 5'd08));assert property(@(posedge Clk)  (CurrentState == StatePktRange && PktErrTypeReg == 3'b100 && PktLengthReg == 64) |-> (Reg_addr == 5'd09));assert property(@(posedge Clk)  (CurrentState == StatePktRange && PktErrTypeReg == 3'b100 && PktLengthReg > 64 && PktLengthReg < 128) |-> (Reg_addr == 5'd10));assert property(@(posedge Clk)  (CurrentState == StatePktRange && PktErrTypeReg == 3'b100 && PktLengthReg >= 128 && PktLengthReg < 256) |-> (Reg_addr == 5'd11));assert property(@(posedge Clk)  (CurrentState == StatePktRange && PktErrTypeReg == 3'b100 && PktLengthReg >= 256 && PktLengthReg < 512) |-> (Reg_addr == 5'd12));assert property(@(posedge Clk)  (CurrentState == StatePktRange && PktErrTypeReg == 3'b100 && PktLengthReg >= 512 && PktLengthReg < 1024) |-> (Reg_addr == 5'd13));assert property(@(posedge Clk)  (CurrentState == StatePktRange && PktErrTypeReg == 3'b100 && PktLengthReg >= 1024 && PktLength);
+endmodule

@@ -1,0 +1,96 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.9.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-05-01 18:51:12 CDT
+# hostname  : pal-achieve-07.(none)
+# pid       : 132986
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:35865' '-nowindow' '-style' 'windows' '-data' 'AAABIHicfYzLDsFAGIW/IRqx8AAeQULYWXTdbYnEVmhLiJimlMSGR/Um47RRyWycP/NfzmUMED6dc9RoP9QCYiLVD+b9XUKDj+pu+czi5U3oNOHGEuj1GXHGsmZPyUHMUMyGk8pyF19Kv6jnKkvBlYxUfMxS7q7cOym3OhkxZyUtUyaRO9VW6J6xZcpEfax8or+hp2Qu1XLUNfiTqfABcjQjKg==' '-proj' '/home/vpulav2/Work/Jasper/encoder_8b10b/encoder_8b10b/sessionLogs/session_0' '-init' '-hidden' '/home/vpulav2/Work/Jasper/encoder_8b10b/encoder_8b10b/.tmp/.initCmds.tcl' 'FPV_encoder_8b10b.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /home/vpulav2/Work/Jasper/encoder_8b10b/encoder_8b10b/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/encoder_8b10b.v
+[-- (VERI-1482)] Analyzing Verilog file './/encoder_8b10b.v'
+[INFO (VERI-1328)] .//encoder_8b10b.v(62): analyzing included file './/timescale.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top encoder_8b10b
+INFO (ISW003): Top module name is "encoder_8b10b".
+[INFO (VERI-9030)] .//bindings.sva(21): undeclared symbol 'ABCDEFGH' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(35): undeclared symbol 'abcdeifghj' in bind instance actual, assumed default net type 'wire'
+[ERROR (VERI-1010)] .//bindings.sva(35): cannot find port 'abcdeifghj' on this module
+[INFO (VERI-1310)] .//property.sva(1): 'i_encoder_8b10b' is declared here
+[ERROR (VERI-1010)] .//bindings.sva(21): cannot find port 'ABCDEFGH' on this module
+[INFO (VERI-1310)] .//property.sva(1): 'i_encoder_8b10b' is declared here
+[ERROR (VDB-9017)] Module encoder_8b10b could not be elaborated
+Summary of errors detected:
+	[ERROR (VERI-1010)] .//bindings.sva(35): cannot find port 'abcdeifghj' on this module
+	[ERROR (VERI-1010)] .//bindings.sva(21): cannot find port 'ABCDEFGH' on this module
+	[ERROR (VDB-9017)] Module encoder_8b10b could not be elaborated
+ERROR (ENL034): 3 errors detected in the design file(s).
+
+ERROR: problem encountered at line 17 in file FPV_encoder_8b10b.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.461 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

@@ -1,0 +1,122 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-06-04 18:26:30 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 135440
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:42285' '-nowindow' '-style' 'windows' '-data' 'AAABYniclY67CsJAEEVvFINY+CGCgtgGS7GLItiGEI0P1A15CTb6qf5JPFmMkNIZdnfmzJ3LOpK8Z1VVstF9cLnytSB/4by/heeoHXXfaZP1q/VKvWa5kbicoca6ySjQQYVOkBEk1IU0usML5hl3QhqlyrXXDu5rg7qPOmZSUs/560pbZhEOJQ4RdYo+tBs5+7n1rhUGHpOZJtAIKg1wS9gwOtMt//QJ7K9DXTkzuinsaLV1fABCoDHT' '-proj' '/data/vpulav2/Work/Jasper_llama/arithmetic_core_cavlc_decoder/cavlc_read_total_coeffs/cavlc_read_total_coeffs_llama3_1shot/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper_llama/arithmetic_core_cavlc_decoder/cavlc_read_total_coeffs/cavlc_read_total_coeffs_llama3_1shot/.tmp/.initCmds.tcl' 'FPV_cavlc_read_total_coeffs.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper_llama/arithmetic_core_cavlc_decoder/cavlc_read_total_coeffs/cavlc_read_total_coeffs_llama3_1shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/cavlc_read_total_coeffs.v
+[-- (VERI-1482)] Analyzing Verilog file './/cavlc_read_total_coeffs.v'
+[INFO (VERI-1328)] .//cavlc_read_total_coeffs.v(42): analyzing included file './/defines.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_llama3_1shot.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_llama3_1shot.sva'
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(37): 'state' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(39): 'state' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(40): 'state' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(41): 'TrailingOnes2' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(41): 'TrailingOnes2' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(41): 'TrailingOnes2' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(41): 'TrailingOnes2' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(41): 'TrailingOnes2' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(41): 'TrailingOnes2' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(41): 'TrailingOnes2' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(41): 'TrailingOnes2' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(42): 'state' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(43): 'state' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(45): 'state' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(46): 'state' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(48): 'state' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(49): 'state' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(50): 'state' is not declared
+[ERROR (VERI-1128)] .//property_llama3_1shot.sva(51): 'state' is not declared
+[-- (SYS-1004)] Too many errors. Further error messages will be suppressed.
+[INFO (VMSG-1000)] Too many errors. Further error messages will be suppressed.
+Summary of errors detected:
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(37): 'state' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(39): 'state' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(40): 'state' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(41): 'TrailingOnes2' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(41): 'TrailingOnes2' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(41): 'TrailingOnes2' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(41): 'TrailingOnes2' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(41): 'TrailingOnes2' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(41): 'TrailingOnes2' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(41): 'TrailingOnes2' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(41): 'TrailingOnes2' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(42): 'state' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(43): 'state' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(45): 'state' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(46): 'state' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(48): 'state' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(49): 'state' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(50): 'state' is not declared
+	[ERROR (VERI-1128)] .//property_llama3_1shot.sva(51): 'state' is not declared
+ERROR (ENL034): 19 errors detected in the design file(s).
+
+ERROR: problem encountered at line 12 in file FPV_cavlc_read_total_coeffs.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.399 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

@@ -1,0 +1,15 @@
+parameter WIDTH =8;
+module i_can_register (
+input [WIDTH-1:0] data_in,
+input             we,
+input    [WIDTH-1:0] data_out,
+input             clk
+);
+
+assert property(@(posedge clk) (we == 1) |-> (data_out == data_in));assert property(@(posedge clk) 
+(we == 0) |-> (data_out == $past(data_out)));assert property(@(posedge clk) 
+(we == 1) |-> (data_out == $past(data_in, 1)));assert property(@(posedge clk) 
+(we == 0) |-> (data_out == $past(data_out, 1)));assert property(@(posedge clk) 
+(we == 1) |-> (data_out == $past(data_in)));assert property(@(posedge clk) 
+(we == 0) |-> (data_out == $past(data_out)));
+endmodule

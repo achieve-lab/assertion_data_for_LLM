@@ -1,0 +1,29 @@
+module i_ack_counter(
+input ready,
+input tx_ack,
+input [15:0] counter,
+input tx_start,
+input start_count,
+input [15:0] max_count,
+input clock,
+input reset,
+input start_count_del
+);
+
+assert property(@(posedge clock)  (counter == max_count) |-> (start_count_del == 0));
+assert property(@(posedge clock)  (counter == max_count) |-> (tx_ack == 1));
+assert property(@(posedge clock)  (counter == max_count) |-> (start_count == 1));
+assert property(@(posedge clock)  (counter == max_count) |-> (tx_ack == 0));
+assert property(@(posedge clock)  (counter == max_count) |-> (start_count == 0));
+assert property(@(posedge clock)  (counter == max_count) |-> (tx_start == 1));
+assert property(@(posedge clock)  (tx_ack) |-> (start_count == 1));
+assert property(@(posedge clock)  (counter == max_count) |-> (tx_start == 0));
+assert property(@(posedge clock)  (tx_ack) |-> (start_count_del == 0));
+assert property(@(posedge clock)  (counter == max_count) |-> (start_count_del == 1));
+assert property(@(posedge clock)  (start_count_del) |-> (tx_start == 1));
+assert property(@(posedge clock)  (tx_start) |-> (start_count_del == 0));
+assert property(@(posedge clock)  (start_count_del) |-> (start_count == 1));
+assert property(@(posedge clock)  (tx_start) |-> (start_count == 1));
+assert property(@(posedge clock)  (counter == max_count) |-> (ready == 0));
+
+endmodule

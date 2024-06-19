@@ -1,0 +1,121 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-06-04 13:31:03 CDT
+# hostname  : pal-achieve-08.(none)
+# pid       : 46936
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:37543' '-nowindow' '-style' 'windows' '-data' 'AAABMnicdY69CsJAEIS/KAax8DEsBEWt00jATqIItiH4L+qFmKjY6KP6JnEMRrjCXW5nd3b2GAfwHnmeU0T1ruISMFL+wnl9G8/Bjs9csZnp00KolcelxNVr0uGEIWRDxk5MW0zEQWm4is+0P6vGSkNCyoql+ICZ1HWp19pc1LfkdcJcuzFDfGHKTdUXJvqvK1wIoaGrWJxhr6n3Rx8WLiKOegNNffnY6iYt3L8BH7cnCg==' '-proj' '/data/vpulav2/Work/Jasper_llama/communication_controller_10_100_1000_mbps_tri-mode_ethernet_mac/MAC_tx_Ctrl/MAC_tx_Ctrl_llama2_1shot/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper_llama/communication_controller_10_100_1000_mbps_tri-mode_ethernet_mac/MAC_tx_Ctrl/MAC_tx_Ctrl_llama2_1shot/.tmp/.initCmds.tcl' 'FPV_MAC_tx_Ctrl.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper_llama/communication_controller_10_100_1000_mbps_tri-mode_ethernet_mac/MAC_tx_Ctrl/MAC_tx_Ctrl_llama2_1shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/MAC_tx_Ctrl.v
+[-- (VERI-1482)] Analyzing Verilog file './/MAC_tx_Ctrl.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_llama2_1shot.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_llama2_1shot.sva'
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(80): 'req1' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(80): 'state' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(80): 'gnt2' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(81): 'state' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(81): 'req2' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(81): 'gnt1' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(82): 'req1' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(82): 'req2' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(82): 'gnt1' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(83): 'req1' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(83): 'gnt1' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(84): 'gnt2' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(84): 'req2' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(85): 'gnt1' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(85): 'req1' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(86): 'req2' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(86): 'gnt2' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(87): 'req2' is not declared
+[ERROR (VERI-1128)] .//property_llama2_1shot.sva(87): 'req1' is not declared
+[-- (SYS-1004)] Too many errors. Further error messages will be suppressed.
+[INFO (VMSG-1000)] Too many errors. Further error messages will be suppressed.
+Summary of errors detected:
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(80): 'req1' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(80): 'state' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(80): 'gnt2' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(81): 'state' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(81): 'req2' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(81): 'gnt1' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(82): 'req1' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(82): 'req2' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(82): 'gnt1' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(83): 'req1' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(83): 'gnt1' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(84): 'gnt2' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(84): 'req2' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(85): 'gnt1' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(85): 'req1' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(86): 'req2' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(86): 'gnt2' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(87): 'req2' is not declared
+	[ERROR (VERI-1128)] .//property_llama2_1shot.sva(87): 'req1' is not declared
+ERROR (ENL034): 19 errors detected in the design file(s).
+
+ERROR: problem encountered at line 12 in file FPV_MAC_tx_Ctrl.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.412 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

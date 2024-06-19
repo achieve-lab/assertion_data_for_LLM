@@ -1,0 +1,57 @@
+module i_eth_l3_checksum(
+input   [15:0]   CheckSum,
+input    Reset,
+input    MRxClk,
+input [15:0] ByteCnt,
+input            Divided_2_clk ,
+input        CSready,
+input   [1:0]    StartCalc,
+input            Divided_4_clk ,
+input   [31:0]   Sum,
+input [7:0] prev_latched_Rx,
+input [7:0] prev_latched_Rx1,
+input [7:0] RxData
+);
+
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h1C));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h20));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h1D));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h3A));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h33));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h29));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h2A));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h2C));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h1F));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h26));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h21));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h1B));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h27));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h28));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h31));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h34));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h18));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h3B));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h19));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h22));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h35));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h36));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h2B));
+assert property(@(posedge MRxClk)  (CheckSum[15:0] == 16'd0) |-> (ByteCnt[15:0] == 16'h16));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h39));
+assert property(@(posedge MRxClk)  (CheckSum[15:0] == 16'd0) |-> (ByteCnt[15:0] == 16'h15));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h38));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h1E));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h37));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h1A));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h3C));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h25));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h17));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h24));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h2D));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h2F));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h23));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h32));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h2E));
+assert property(@(posedge MRxClk)  (CSready == 1'b1) |-> (ByteCnt[15:0] == 16'h30));
+
+endmodule

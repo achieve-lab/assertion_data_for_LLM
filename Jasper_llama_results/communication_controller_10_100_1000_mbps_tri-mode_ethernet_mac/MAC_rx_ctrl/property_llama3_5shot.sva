@@ -1,0 +1,111 @@
+
+parameter       State_idle          =4'd00;
+parameter       State_preamble      =4'd01;
+parameter       State_SFD           =4'd02;
+parameter       State_data          =4'd03;
+parameter       State_checkCRC      =4'd04;
+parameter       State_OkEnd         =4'd07;
+parameter       State_drop          =4'd08;
+parameter       State_ErrEnd        =4'd09;
+parameter       State_CRCErrEnd     =4'd10;
+parameter       State_FFFullDrop    =4'd11;
+parameter       State_FFFullErrEnd  =4'd12;
+parameter       State_IFG           =4'd13;
+
+parameter       Pause_idle          =4'd0;   
+parameter       Pause_pre_syn       =4'd1;    
+parameter       Pause_quanta_hi     =4'd2;   
+parameter       Pause_quanta_lo     =4'd3;   
+parameter       Pause_syn           =4'd4;   
+module i_MAC_rx_ctrl(
+input  [2:0]   Rx_pkt_type_rmon        ,
+input [3:0]       Pause_next,                             
+input             Too_short,
+input             broadcast_ptr           ,
+input [15:0]      Frame_length_counter,
+input [7:0]       pause_quanta_h      ,
+input  [15:0]  pause_quanta        ,   
+input          Fifo_data_end   ,
+input           Fifo_full,
+input [3:0]       Pause_current /* synthesis syn_keep*/,
+input   [7:0]   MRxD    ,                                       
+input [3:0]       Next_state, 
+input [5:0]       IFG_counter,   
+input           MRxErr  ,                                       
+input             RxErr   ,
+input             pause_quanta_val_tmp,
+input             pause_frame_ptr     ,
+input [7:0]       RxD_dl1 ,
+input             Rx_apply_rmon_tmp,
+input  [7:0]   Fifo_data       ,
+input             Fifo_data_en,
+input   [5:0]   RX_IFG_SET    ,
+input   [6:0]   RX_MIN_LENGTH   ,// 64
+input   [15:0]  RX_MAX_LENGTH   ,// 1518
+input          CRC_en  ,       
+input [7:0]       RxD ,
+input [2:0]       Rx_pkt_err_type_rmon,
+input           MCrs_dv ,                                       
+input             Rx_apply_rmon,
+input          CRC_init,       
+input             Too_long,
+input             Fifo_data_err,
+input             Crs_dv  ,      
+input          pause_quanta_val    ,   
+input  [15:0]  Rx_pkt_length_rmon      ,
+input             MAC_add_en,
+input             Rx_apply_rmon_tmp_pl1,
+input           Reset   ,         
+input           Clk     ,         
+input           CRC_err ,
+input           MAC_rx_add_chk_err  ,
+input           broadcast_drop          ,
+input [3:0]       Current_state /* synthesis syn_keep*/
+);
+
+assert property(@(posedge Clk)  (pause_quanta == 0) |-> (pause_quanta_val == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_idle) |-> (pause_quanta == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_syn) |-> (pause_quanta_val == 0));
+assert property(@(posedge Clk)  (pause_frame_ptr == 1) |-> (pause_quanta_val == 1));
+assert property(@(posedge Clk)  (pause_quanta == 0) |-> (pause_quanta_h == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_pre_syn) |-> (pause_quanta_val == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_pre_syn) |-> (pause_frame_ptr == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_quanta_hi) |-> (pause_quanta_val_tmp == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_idle) |-> (pause_quanta_val_tmp == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_quanta_lo) |-> (pause_frame_ptr == 0));
+assert property(@(posedge Clk)  (pause_quanta_val == 1) |-> (Current_state == State_OkEnd));
+assert property(@(posedge Clk)  (pause_quanta == 0) |-> (pause_quanta_val_tmp == 0));
+assert property(@(posedge Clk)  (pause_quanta_h == 0) |-> (pause_quanta_val == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_syn) |-> (pause_quanta_h == 0));
+assert property(@(posedge Clk)  (pause_quanta_h == 0) |-> (pause_frame_ptr == 0));
+assert property(@(posedge Clk)  (pause_quanta_h == 0) |-> (pause_quanta == 0));
+assert property(@(posedge Clk)  (pause_quanta_val_tmp == 1) |-> (Pause_current == Pause_syn));
+assert property(@(posedge Clk)  (pause_quanta_h == 0) |-> (pause_quanta_val_tmp == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_quanta_lo) |-> (pause_quanta_h == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_idle) |-> (pause_frame_ptr == 0));
+assert property(@(posedge Clk)  (pause_quanta_val == 1) |-> (pause_frame_ptr == 1));
+assert property(@(posedge Clk)  (Pause_current == Pause_quanta_lo) |-> (pause_quanta_val_tmp == 0));
+assert property(@(posedge Clk)  (pause_quanta_val_tmp == 1) |-> (Current_state == State_OkEnd));
+assert property(@(posedge Clk)  (Pause_current == Pause_syn) |-> (pause_quanta == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_quanta_lo) |-> (pause_quanta_val == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_pre_syn) |-> (pause_quanta_val_tmp == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_quanta_lo) |-> (pause_quanta == 0));
+assert property(@(posedge Clk)  (pause_quanta_val == 1) |-> (pause_quanta_val_tmp == 1));
+assert property(@(posedge Clk)  (Pause_current == Pause_quanta_hi) |-> (pause_quanta_h == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_syn) |-> (pause_frame_ptr == 0));
+assert property(@(posedge Clk)  (pause_frame_ptr == 1) |-> (Pause_current == Pause_syn));
+assert property(@(posedge Clk)  (pause_quanta == 0) |-> (Pause_current == Pause_idle));
+assert property(@(posedge Clk)  (Pause_current == Pause_pre_syn) |-> (pause_quanta == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_pre_syn) |-> (pause_quanta_h == 0));
+assert property(@(posedge Clk)  (pause_quanta_val == 1) |-> (Pause_current == Pause_syn));
+assert property(@(posedge Clk)  (Pause_current == Pause_idle) |-> (pause_quanta_h == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_quanta_hi) |-> (pause_frame_ptr == 0));
+assert property(@(posedge Clk)  (pause_quanta_h == 0) |-> (Pause_current == Pause_idle));
+assert property(@(posedge Clk)  (Pause_current == Pause_quanta_hi) |-> (pause_quanta_val == 0));
+assert property(@(posedge Clk)  (pause_quanta_val_tmp == 1) |-> (pause_quanta_val == 1));
+assert property(@(posedge Clk)  (Pause_current == Pause_syn) |-> (pause_quanta_val_tmp == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_idle) |-> (pause_quanta_val == 0));
+assert property(@(posedge Clk)  (pause_quanta == 0) |-> (pause_frame_ptr == 0));
+assert property(@(posedge Clk)  (Pause_current == Pause_quanta_hi) |-> (pause_quanta == 0));
+
+endmodule

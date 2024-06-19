@@ -1,0 +1,35 @@
+`include "defines.v"
+module i_tcLoad(
+	input [`tcAddrLen-1:0] tcAddr,
+	input [`tcNumbers-1:0] dnIn, ttIn, cuIn, cdIn,
+	input dnSel, ttSel, cuSel, cdSel,
+	input [7:0] tcLoadOut,
+	input DEFAULT_CLOCK, DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (ttSel == 1 & cuSel == 1) |-> (tcLoadOut == 8'b0000_0110));
+assert property(@(posedge DEFAULT_CLOCK) (dnSel == 1 & ttSel == 1) |-> (tcLoadOut == 8'b0000_1001));
+assert property(@(posedge DEFAULT_CLOCK) (cdSel == 1) |-> (tcLoadOut == 8'b0000_1000));
+assert property(@(posedge DEFAULT_CLOCK) (dnSel == 1 & cuSel == 1) |-> (tcLoadOut == 8'b0000_0101));
+assert property(@(posedge DEFAULT_CLOCK) (dnSel == 1 & cuSel == 1 & cdSel == 1) |-> (tcLoadOut == 8'b0001_0001));
+assert property(@(posedge DEFAULT_CLOCK) (cuSel == 1 & cdSel == 1) |-> (tcLoadOut == 8'b0001_0000));
+assert property(@(posedge DEFAULT_CLOCK) (ttSel == 1 & cuSel == 1 & cdSel == 1) |-> (tcLoadOut == 8'b0001_0010));
+assert property(@(posedge DEFAULT_CLOCK) (cdSel == 1) |-> (tcLoadOut == 8'b0000_0010));
+assert property(@(posedge DEFAULT_CLOCK) (cuSel == 1 & cdSel == 1) |-> (tcLoadOut == 8'b0000_0011));
+assert property(@(posedge DEFAULT_CLOCK)              (dnSel == 1) |-> (tcLoadOut == 8'b0000_0001));
+assert property(@(posedge DEFAULT_CLOCK) (ttSel == 1 & cdSel == 1) |-> (tcLoadOut == 8'b0000_1010));
+assert property(@(posedge DEFAULT_CLOCK) (dnSel == 1 & cdSel == 1) |-> (tcLoadOut == 8'b0001_0001));
+assert property(@(posedge DEFAULT_CLOCK) (dnSel == 1 & cdSel == 1) |-> (tcLoadOut == 8'b0000_1001));
+assert property(@(posedge DEFAULT_CLOCK) (dnSel == 1 & ttSel == 1 & cdSel == 1) |-> (tcLoadOut == 8'b0000_1011));
+assert property(@(posedge DEFAULT_CLOCK) (dnSel == 1 & ttSel == 1 & cuSel == 1 & cdSel == 1) |-> (tcLoadOut == 8'b0001_0011));
+assert property(@(posedge DEFAULT_CLOCK) (ttSel == 1) |-> (tcLoadOut == 8'b0000_0010));
+assert property(@(posedge DEFAULT_CLOCK)  endmoduleTest Assertions:             (dnSel == 1) |-> (tcLoadOut == 8'b0001_0000));
+assert property(@(posedge DEFAULT_CLOCK) (dnSel == 1 & ttSel == 1 & cuSel == 1) |-> (tcLoadOut == 8'b0000_0111));
+assert property(@(posedge DEFAULT_CLOCK) (ttSel == 1) |-> (tcLoadOut == 8'b0000_1000));
+assert property(@(posedge DEFAULT_CLOCK) (ttSel == 1 & cuSel == 1 & cdSel == 1) |-> (tcLoadOut == 8'b0000_1110));
+assert property(@(posedge DEFAULT_CLOCK) (cuSel == 1) |-> (tcLoadOut == 8'b0000_0100));
+assert property(@(posedge DEFAULT_CLOCK) (dnSel == 1 & ttSel == 1 & cuSel == 1 & cdSel == 1) |-> (tcLoadOut == 8'b0001_1111));
+assert property(@(posedge DEFAULT_CLOCK) (dnSel == 1 & cuSel == 1 & cdSel == 1) |-> (tcLoadOut == 8'b0001_0011));
+assert property(@(posedge DEFAULT_CLOCK) (dnSel == 1 & ttSel == 1) |-> (tcLoadOut == 8'b0000_0011));
+
+endmodule

@@ -1,0 +1,17 @@
+module i_eth_l3_checksum(
+input   [15:0]   CheckSum,
+input    Reset,
+input    MRxClk,
+input [15:0] ByteCnt,
+input            Divided_2_clk ,
+input        CSready,
+input   [1:0]    StartCalc,
+input            Divided_4_clk ,
+input   [31:0]   Sum,
+input [7:0] prev_latched_Rx,
+input [7:0] prev_latched_Rx1,
+input [7:0] RxData
+);
+
+assert property(@(posedge MRxClk)  (Reset) |-> (CheckSum == 16'd0 && CSready == 1'd0));assert property(@(posedge MRxClk)  (ByteCnt == 16'h15) |-> (StartCalc[0] == (RxData == 8'h8)));assert property(@(posedge MRxClk)  (ByteCnt == 16'h16) |-> (StartCalc[0] == ((RxData == 8'h0) && StartCalc[0]) && CheckSum == 16'h0 && Sum == 32'h0 && CSready == 1'b0));assert property(@(posedge MRxClk)  (ByteCnt >= 16'h17 && ByteCnt < (16'h17 + 16'd20)) |-> (StartCalc[1] == ((ByteCnt > 16'h17) && StartCalc[0])));assert property(@(posedge MRxClk)  (ByteCnt - 16'h17 == 16'd20) |-> (CSready == 1'b1 && CheckSum == ~(Sum[15:0] + Sum[31:16])));assert property(@(posedge MRxClk)  (posedge MRxClk && ByteCnt >= 16'h17 && ByteCnt < (16'h17 + 16'd20)) |-> (prev_latched_Rx == RxData));assert property(@(posedge MRxClk)  (posedge MRxClk && ByteCnt >= 16'h17 && ByteCnt < (16'h17 + 16'd20)) |-> (prev_latched_Rx1 == prev_latched_Rx));assert property(@(posedge MRxClk)  (negedge Divided_4_clk && &StartCalc) |-> (Sum == Sum + {prev_latched_Rx1, RxData}));assert property(@(posedge MRxClk)  (posedge Divided_2_clk) |-> (Divided_4_clk == (Divided_4_clk ^ Divided_2_clk)));assert property(@(posedge MRxClk)  (posedge MRxClk) |-> (Divided_2_clk == (MRxClk ^ Divided_2_clk)));
+endmodule

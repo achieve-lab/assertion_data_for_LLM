@@ -1,0 +1,39 @@
+module i_Phy_sim(
+input			Rx_dv,
+input			Col,
+input			Rx_er,
+input			Crs,
+input	[2:0]	Speed,				
+input	[7:0]	Txd,		
+input			Tx_clk	,//used only in MII mode
+input			Tx_en	,
+input			Gtx_clk		,//used only in GMII mode
+input				Clk_25m	,//used for 100 Mbps mode
+input				Clk_2_5m	,//used for 10 Mbps mode
+input			Tx_er	,
+input			Rx_clk	,
+input 	[7:0]	Rxd						
+);
+
+assert property(@(posedge Gtx_clk) (Col) |-> (0));
+assert property(@(posedge Gtx_clk) (Speed[0] & Rx_clk == Clk_2_5m) |-> (Tx_clk == Clk_2_5m));
+assert property(@(posedge Gtx_clk) (Speed[0] & Tx_clk == Clk_2_5m) |-> (Rx_clk == Clk_2_5m));
+assert property(@(posedge Gtx_clk) (out == in2) |-> (sel == 2'b01));
+assert property(@(posedge Gtx_clk) (out == in1) |-> (sel == 2'b00));
+assert property(@(posedge Gtx_clk) (sel == 2'b01) |-> (out == in2));
+assert property(@(posedge Gtx_clk) (Speed[2] & Tx_clk == Gtx_clk) |-> (Rx_clk == Gtx_clk));
+assert property(@(posedge Gtx_clk) (out == in4) |-> (sel == 2'b11));
+assert property(@(posedge Gtx_clk) (out == in3) |-> (sel == 2'b10));
+assert property(@(posedge Gtx_clk)  endcase endmodule"            Assertions 3: (sel == 2'b00) |-> (out == in1));
+assert property(@(posedge Gtx_clk) (sel == 2'b10) |-> (out == in3));
+assert property(@(posedge Gtx_clk)  endcase endmodule"            Assertions 2: (sel == 2'b00) |-> (out == in1));
+assert property(@(posedge Gtx_clk) (Rx_er) |-> (0));
+assert property(@(posedge Gtx_clk) (Crs) |-> (Tx_en));
+assert property(@(posedge Gtx_clk) (sel == 2'b11) |-> (out == in4));
+assert property(@(posedge Gtx_clk) (Speed[1] & Tx_clk == Clk_25m) |-> (Rx_clk == Clk_25m));
+assert property(@(posedge Gtx_clk) (Rx_dv) |-> (Tx_en));
+assert property(@(posedge Gtx_clk) (Rxd) |-> (Txd));
+assert property(@(posedge Gtx_clk)  (Speed[2] & Rx_clk == Gtx_clk) |-> (Tx_clk == Gtx_clk));
+assert property(@(posedge Gtx_clk) (Speed[1] & Rx_clk == Clk_25m) |-> (Tx_clk == Clk_25m));
+
+endmodule

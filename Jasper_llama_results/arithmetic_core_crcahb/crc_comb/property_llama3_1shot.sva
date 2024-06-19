@@ -1,0 +1,70 @@
+
+parameter CRC_SIZE      = 8;         // Define the size of CRC Code
+parameter MASK          = 8'hff ;
+module i_crc_comb(
+input [CRC_SIZE - 2 : 0] MASK_REVERSED,
+input [CRC_SIZE - 2 : 0] crc_in_masked,
+	input                    data_in,    // One bit of data block
+	input [CRC_SIZE - 1 : 0] crc_in,     // In cascated mode, this input is the previous calculated CRC code
+	input [CRC_SIZE - 1 : 0] crc_poly,   // Generator Polynomial
+input [CRC_SIZE - 2 : 0] crc_poly_size_reversed,
+  input [CRC_SIZE - 2 : 0] crc_poly_size,
+	input [CRC_SIZE - 1 : 0] crc_out,   // CRC code after one round of calculation
+  input DEFAULT_CLOCK,
+  input DEFAULT_RESET,
+input [CRC_SIZE - 1 : 0] feedback
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[2] == 1 & crc_poly[7] == 1 & crc_poly_size[1] == 1) |-> (crc_out[2] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[4] == 0 & crc_poly[7] == 1 & crc_poly_size[3] == 0) |-> (crc_out[4] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[2] == 1 & crc_poly[7] == 1 & crc_poly_size[1] == 0) |-> (crc_out[2] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[1] == 0 & crc_poly[7] == 0 & crc_poly_size[0] == 1) |-> (crc_out[1] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[4] == 1 & crc_poly[7] == 0 & crc_poly_size[3] == 0) |-> (crc_out[4] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[3] == 0 & crc_poly[7] == 1 & crc_poly_size[2] == 0) |-> (crc_out[3] == 0));
+assert property(@(posedge DEFAULT_CLOCK)              (data_in == 1 & crc_in[7] == 1) |-> (crc_out[7] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[1] == 0 & crc_poly[7] == 1 & crc_poly_size[0] == 1) |-> (crc_out[1] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[4] == 0 & crc_poly[7] == 0 & crc_poly_size[3] == 0) |-> (crc_out[4] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[4] == 0 & crc_poly[7] == 0 & crc_poly_size[3] == 1) |-> (crc_out[4] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[5] == 1 & crc_poly[7] == 1 & crc_poly_size[4] == 1) |-> (crc_out[5] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[3] == 1 & crc_poly[7] == 1 & crc_poly_size[2] == 0) |-> (crc_out[3] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (data_in == 1 & crc_in[7] == 0) |-> (crc_out[7] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[4] == 1 & crc_poly[7] == 1 & crc_poly_size[3] == 1) |-> (crc_out[4] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[3] == 1 & crc_poly[7] == 0 & crc_poly_size[2] == 1) |-> (crc_out[3] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[1] == 1 & crc_poly[7] == 1 & crc_poly_size[0] == 0) |-> (crc_out[1] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[6] == 1 & crc_poly[7] == 1 & crc_poly_size[5] == 1) |-> (crc_out[6] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[6] == 0 & crc_poly[7] == 0 & crc_poly_size[5] == 1) |-> (crc_out[6] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[6] == 1 & crc_poly[7] == 0 & crc_poly_size[5] == 0) |-> (crc_out[6] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[4] == 1 & crc_poly[7] == 1 & crc_poly_size[3] == 0) |-> (crc_out[4] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[6] == 0 & crc_poly[7] == 1 & crc_poly_size[5] == 0) |-> (crc_out[6] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[1] == 1 & crc_poly[7] == 1 & crc_poly_size[0] == 1) |-> (crc_out[1] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[3] == 1 & crc_poly[7] == 0 & crc_poly_size[2] == 0) |-> (crc_out[3] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[6] == 0 & crc_poly[7] == 0 & crc_poly_size[5] == 0) |-> (crc_out[6] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[1] == 0 & crc_poly[7] == 1 & crc_poly_size[0] == 0) |-> (crc_out[1] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[6] == 1 & crc_poly[7] == 0 & crc_poly_size[5] == 1) |-> (crc_out[6] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[2] == 0 & crc_poly[7] == 0 & crc_poly_size[1] == 1) |-> (crc_out[2] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[2] == 0 & crc_poly[7] == 0 & crc_poly_size[1] == 0) |-> (crc_out[2] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[2] == 1 & crc_poly[7] == 0 & crc_poly_size[1] == 0) |-> (crc_out[2] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[6] == 1 & crc_poly[7] == 1 & crc_poly_size[5] == 0) |-> (crc_out[6] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[5] == 0 & crc_poly[7] == 1 & crc_poly_size[4] == 0) |-> (crc_out[5] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[3] == 1 & crc_poly[7] == 1 & crc_poly_size[2] == 1) |-> (crc_out[3] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[2] == 0 & crc_poly[7] == 1 & crc_poly_size[1] == 1) |-> (crc_out[2] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[4] == 1 & crc_poly[7] == 0 & crc_poly_size[3] == 1) |-> (crc_out[4] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[5] == 0 & crc_poly[7] == 0 & crc_poly_size[4] == 0) |-> (crc_out[5] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[4] == 0 & crc_poly[7] == 1 & crc_poly_size[3] == 1) |-> (crc_out[4] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[2] == 0 & crc_poly[7] == 1 & crc_poly_size[1] == 0) |-> (crc_out[2] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[1] == 1 & crc_poly[7] == 0 & crc_poly_size[0] == 1) |-> (crc_out[1] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[3] == 0 & crc_poly[7] == 0 & crc_poly_size[2] == 1) |-> (crc_out[3] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[5] == 1 & crc_poly[7] == 1 & crc_poly_size[4] == 0) |-> (crc_out[5] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[5] == 1 & crc_poly[7] == 0 & crc_poly_size[4] == 1) |-> (crc_out[5] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[6] == 0 & crc_poly[7] == 1 & crc_poly_size[5] == 1) |-> (crc_out[6] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[3] == 0 & crc_poly[7] == 0 & crc_poly_size[2] == 0) |-> (crc_out[3] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (data_in == 0 & crc_in[7] == 0) |-> (crc_out[7] == 0));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[5] == 0 & crc_poly[7] == 1 & crc_poly_size[4] == 1) |-> (crc_out[5] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[3] == 0 & crc_poly[7] == 1 & crc_poly_size[2] == 1) |-> (crc_out[3] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[2] == 1 & crc_poly[7] == 0 & crc_poly_size[1] == 1) |-> (crc_out[2] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[1] == 1 & crc_poly[7] == 0 & crc_poly_size[0] == 0) |-> (crc_out[1] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[5] == 1 & crc_poly[7] == 0 & crc_poly_size[4] == 0) |-> (crc_out[5] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (data_in == 0 & crc_in[7] == 1) |-> (crc_out[7] == 1));
+assert property(@(posedge DEFAULT_CLOCK) (crc_in[5] == 0 & crc_poly[7] == 0 & crc_poly_size[4] == 1) |-> (crc_out[5] == 0));
+
+endmodule

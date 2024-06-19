@@ -1,0 +1,67 @@
+ parameter WIDTH = 8;
+module i_counter(
+    input en,
+    input clk,
+    input reset,
+    input [WIDTH-1:0] value,
+    input load
+);
+
+assert property(@(posedge clk)  else if(K) Q <= 0);
+assert property(@(posedge clk)  endmodule
+            Assertions 9: (!q) |-> q_bar);
+assert property(@(posedge clk) (Q == 0) |-> (Qbar == 1)
+            Program 7: module D_flipflop ( input clk, input d, input reset, output reg q, output q_bar ));
+assert property(@(posedge clk) (Q == 0) |-> (Q_bar == 1)
+            Program 11: module D_flipflop ( input clk, input d, input reset, output reg q, output q_bar ));
+assert property(@(posedge clk)  (Q == 1) |-> (Qbar == 0));
+assert property(@(posedge clk)  (!en) |-> value == value
+            Program 6: module JK_FF ( input clk, input J, input K, input reset, output reg Q, output Qbar ));
+assert property(@(posedge clk)  endmodule
+            Assertions 6: (!Q) |-> Qbar);
+assert property(@(posedge clk)  endmodule
+            Assertions 8: (!Q) |-> Q_bar);
+assert property(@(posedge clk) (q == 0) |-> (q_bar == 1)
+            Program 8: module S_R_flipflop ( input clk, input S, input R, input reset, output reg Q, output Q_bar ));
+assert property(@(posedge clk)  else begin if(S) Q <= 1);
+assert property(@(posedge clk)  (reset) |-> value == 0);
+assert property(@(posedge clk)  (en) |-> value == value + 1);
+assert property(@(posedge clk)  always @(posedge clk) begin if(!reset) Q <= 0);
+assert property(@(posedge clk)  endmodule
+            Assertions 13: (!q) |-> q_bar);
+assert property(@(posedge clk)  always @(posedge clk) begin if(reset) Q <= 0);
+assert property(@(posedge clk)  end end assign Qbar = ~Q);
+assert property(@(posedge clk)  (Q == 1) |-> (Q_bar == 0));
+assert property(@(posedge clk) (Q == 0) |-> (Q_bar == 1)
+            Program 13: module T_flipflop ( input clk, input t, input reset, output reg q, output q_bar ));
+assert property(@(posedge clk)  endmodule
+            Assertions 7: (!q) |-> q_bar);
+assert property(@(posedge clk)  else if(J) Q <= 1);
+assert property(@(posedge clk) (q == 0) |-> (q_bar == 1)
+            Program 12: module S_R_flipflop ( input clk, input S, input R, input reset, output reg Q, output Q_bar ));
+assert property(@(posedge clk)  (!Q_bar) |-> Q);
+assert property(@(posedge clk)  else q <= d);
+assert property(@(posedge clk)  endmodule
+            Assertions 11: (!q) |-> q_bar);
+assert property(@(posedge clk)  end end assign Q_bar = ~Q);
+assert property(@(posedge clk)  always @(posedge clk) begin if(!reset) q <= 0);
+assert property(@(posedge clk)  else if(R) Q <= 0);
+assert property(@(posedge clk)  (load) |-> value == 0);
+assert property(@(posedge clk)  endmodule
+            Assertions 12: (!Q) |-> Q_bar);
+assert property(@(posedge clk)  (!Qbar) |-> Q);
+assert property(@(posedge clk)  else begin q <= (t?~q:q));
+assert property(@(posedge clk)  end end assign q_bar = ~q);
+assert property(@(posedge clk)  (q == 1) |-> (q_bar == 0));
+assert property(@(posedge clk) (q == 0) |-> (q_bar == 1)
+            Program 10: module JK_FF ( input clk, input J, input K, input reset, output reg Q, output Qbar ));
+assert property(@(posedge clk)  endmodule
+            Assertions 10: (!Q) |-> Qbar);
+assert property(@(posedge clk) (Q == 0) |-> (Q_bar == 1)
+            Program 9: module T_flipflop ( input clk, input t, input reset, output reg q, output q_bar ));
+assert property(@(posedge clk) (q);
+assert property(@(posedge clk)  end assign q_bar = ~q);
+assert property(@(posedge clk)  (!q_bar) |-> q);
+assert property(@(posedge clk)  else begin if(J && K) Q <= ~Q);
+
+endmodule
