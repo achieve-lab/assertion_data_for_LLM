@@ -1,0 +1,10 @@
+bind dpll
+ i_dpll v_dpll(
+.Lag(Lag),
+.Positive(Positive),
+.Lead(Lead),
+.Negative(Negative),
+.SignalOut(SignalOut),
+.MainClock(MainClock),
+.SignalIn(SignalIn)
+);

@@ -1,0 +1,31 @@
+parameter IDLE = 0, LinkFaultDetect = 1, NewFaultType = 2, GetFault = 3;
+module i_rxLinkFaultState(
+    input  get_one_fault,
+    input[1:0] last_seq_type,
+    input[2:0] linkstate, linkstate_next,
+    input      seq_cnt,
+    input      reset_col_cnt,
+    input     seq_cnt_3,
+    input local_fault,
+    input  fault_type,
+    input remote_fault,
+    input     col_cnt_64,
+    input rxclk,
+    input[1:0] seq_type,
+    input  no_new_type,
+    input reset,
+    input[5:0] col_cnt,
+    input[1:0] link_fault
+);
+
+assert property(@(posedge rxclk) (reset) |-> (linkstate == IDLE));
+assert property(@(posedge rxclk) (linkstate == IDLE & get_one_fault) |-> (linkstate == LinkFaultDetect));
+assert property(@(posedge rxclk) (linkstate == LinkFaultDetect & get_one_fault & no_new_type & seq_cnt) |-> (linkstate == IDLE & link_fault == seq_type));
+assert property(@(posedge rxclk) (linkstate == LinkFaultDetect & get_one_fault & no_new_type & ~seq_cnt) |-> (seq_cnt == seq_cnt + 1));
+assert property(@(posedge rxclk) (linkstate == LinkFaultDetect & ~get_one_fault & col_cnt_64) |-> (linkstate == IDLE));
+assert property(@(posedge rxclk) (linkstate == LinkFaultDetect & get_one_fault & ~no_new_type) |-> (linkstate == NewFaultType));
+assert property(@(posedge rxclk) (linkstate == NewFaultType) |-> (linkstate == LinkFaultDetect & seq_cnt == 0 & reset_col_cnt == 1));
+assert property(@(posedge rxclk) (reset) |-> (col_cnt == 0));
+assert property(@(posedge rxclk) (reset_col_cnt) |-> (col_cnt == 0));
+assert property(@(posedge rxclk) (~reset & ~reset_col_cnt) |-> (col_cnt == col_cnt + 1));
+endmodule

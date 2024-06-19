@@ -1,0 +1,161 @@
+module i_eth_maccontrol(
+input         r_PassAll,
+input        CrcEnOut,                 // Crc append (input to TxEthMAC)
+input          BlockTxDone,
+input           TxEndFrmOut_uc,
+input   [7:0] TxDataIn,                 // Transmit packet data byte (from host)
+input          Pause,                    
+input          L2_wrap_en,
+input        TxAbortOut,               // Transmit packet aborted (to host)
+input    [7:0] ControlData,              
+input           MuxedAbort,               
+input         TxAbortIn,                // Transmit packet abort (input from TxEthMAC)
+input  [15:0] TxPauseTV,                // Transmit Pause Timer Value (from inputisters)
+input  [7:0] TxDataOut,                // Transmit Packet Data (to TxEthMAC)
+input         CrcEnIn,                  // Crc append (input from inputisters)
+input         DlyCrcEn,                 // Delayed CRC enabled (from inputisters)
+input         TxEndFrmIn,               // Transmit packet end frame input (from host)
+input          CtrlMux,                  
+input         TxUsedDataIn,             // Transmit packet used data (from TxEthMAC)
+input         PadIn,                    // Padding (input from inputisters)
+input        ControlFrmAddressOK,
+input         RxValid,                  // Received a valid packet
+input         TxStartFrmIn,             // Transmit packet start frame input (from host)
+input         TxReset,                  // Transmit reset
+input   [7:0]   TxData_wrapped_out,
+input         MTxClk,                   // Transmit clock (from PHY)
+input           TxAbortInLatched,         
+input        SetPauseTimer,
+input          TxCtrlStartFrm,
+input         ReceivedLengthOK,         // Length of the received packet is OK
+input           MuxedDone,                
+input         RxStartFrm,               // Receive packet start frame (input from RxEthMAC)
+input          SendingCtrlFrm,           // Sending Control Frame (enables padding and CRC)
+input         TxFlow,                   // Tx flow control (from inputisters)
+input           TxDoneInLatched,          
+input         TPauseRq,                 // Transmit control frame (from host)
+input        TxEndFrmOut,              // Transmit packet end frame (input to TxEthMAC)
+input  [47:0] MAC , DMAC,                      // MAC address (from inputisters)
+input        TxCtrlEndFrm,
+input        TxUsedDataOut,            // Transmit packet used data (to host)
+input        WillSendControlFrame,
+input        PadOut,                   // Padding (input to TxEthMAC)
+input        ReceivedPauseFrm,
+input         RxFlow,                   // Rx flow control (from inputisters)
+input        TxDoneOut,                // Transmit packet done (to host)
+input         RxReset,                  // Receive reset
+
+
+input [15:0]  LatchedTimerValue,
+input [7:0] RxData,
+input       RxStatusWriteLatched_sync2,
+input       ReceivedPacketGood,
+input        ResetSlotTimer,           // 
+input         DetectionWindow,          // Detection of the PAUSE frame is possible within this window
+input        SlotFinished,             // 
+input        PauseTimerEq0,            // 
+input         OpCodeOK,                 // PAUSE opcode detected (0x0001)
+input        ByteCntEq1,               // ByteCnt ,
+input        ByteCntEq5,               // ByteCnt ,
+input        ByteCntEq17,              // ByteCnt ,
+input        ByteCntEq15,              // ByteCnt ,
+input [15:0]  PauseTimer,
+input        ByteCntEq16,              // ByteCnt ,
+input  [4:0]  ByteCnt,
+input        IncrementSlotTimer,       // 
+input [15:0] TypeLength,               // 0x8808
+input  [2:0]  DlyCrcCnt,
+input         Divider2,
+input         PauseTimerEq0_sync2,
+input        ByteCntEq2,               // ByteCnt ,
+input        ByteCntEq4,               // ByteCnt ,
+input         ReceivedPauseFrmWAddr,
+input       MRxClk,
+input         TypeLengthOK,             // Type/Length field contains 0x8808
+input [15:0]  AssembledTimerValue,
+input [47:0] ReservedMulticast,        // 0x0180C2000001
+input  [5:0]  SlotTimer,
+input       TxUsedDataOutDetected,
+input        ByteCntEq0,               // ByteCnt ,
+input        ByteCntEq18,              // ByteCnt ,
+input        DecrementPauseTimer,      // 
+input       TxStartFrmOut,
+input        IncrementByteCnt,         // 
+input        ByteCntEq3,               // ByteCnt ,
+input        ByteCntEq13,              // ByteCnt ,
+input       ReceiveEnd,
+input         AddressOK,                // Multicast or unicast address detected
+input         PauseTimerEq0_sync1,
+input        ByteCntEq12,              // ByteCnt ,
+input       RxEndFrm,
+input        ByteCntEq14,              // ByteCnt ,
+
+
+input            write_fifo,
+input           ControlEnd_q,
+input         TxDoneIn,
+input          ResetByteCnt,
+input            clear,
+input           TxUsedDataIn_q,
+input     [7:0]  TxData_wrapped_out_input,
+input            TxBufferEmpty,
+input          EnableCnt,
+input            TxBufferAlmostFull,
+input            StateCount , StateLeftinQ,
+input            TxBufferFull,
+input      [8:0] PreNib15State,
+input          IncrementByteCntBy2,
+input          IncrementDlyCrcCnt,
+input    [7:0]  MuxedCtrlData,
+input            read_fifo,
+input    [4:0]  txfifo_cnt,
+input            Divided_2_clk ,
+input            TxBufferAlmostEmpty,
+       //inputs: startFrm,EndFrm,bufferempty
+input          ControlEnd,
+input           TxCtrlStartFrm_q,
+
+input [31:0] data_out,
+input [2:0] read_pointer,
+input full,
+input TxData_wrapped_out_wire,
+input [2:0] write_pointer,
+input [31:0] data_in,
+input reset,
+input [3:0] cnt,
+input almost_empty,
+input almost_full,
+input empty,
+input clk,
+input                     write,
+input                     read,
+input TxFifoClear
+);
+
+assert property(@(posedge MTxClk) (TxReset) |-> (TxUsedDataOutDetected == 0);
+assert property(@(posedge MTxClk) (TxDoneIn | TxAbortIn) |-> (TxUsedDataOutDetected == 0);
+assert property(@(posedge MTxClk) (TxUsedDataOut) |-> (TxUsedDataOutDetected == 1);
+assert property(@(posedge MTxClk) (TxReset) |-> (TxAbortInLatched == 0 && TxDoneInLatched == 0);
+assert property(@(posedge MTxClk) (TxAbortIn) |-> (TxAbortInLatched == 1);
+assert property(@(posedge MTxClk) (TxDoneIn) |-> (TxDoneInLatched == 1);
+assert property(@(posedge MTxClk) (TxReset) |-> (MuxedAbort == 0);
+assert property(@(posedge MTxClk) (TxStartFrmIn) |-> (MuxedAbort == 0);
+assert property(@(posedge MTxClk) (TxAbortIn & ~TxAbortInLatched & TxUsedDataOutDetected) |-> (MuxedAbort == 1);
+assert property(@(posedge MTxClk) (TxReset) |-> (MuxedDone == 0);
+assert property(@(posedge MTxClk) (TxStartFrmIn) |-> (MuxedDone == 0);
+assert property(@(posedge MTxClk) (TxDoneIn & ~TxDoneInLatched & TxUsedDataOutDetected) |-> (MuxedDone == 1);
+assert property(@(posedge MTxClk) (CtrlMux) |-> (TxDoneOut == (~TxStartFrmIn & ~BlockTxDone & MuxedDone));
+assert property(@(posedge MTxClk) (~CtrlMux) |-> (TxDoneOut == (~TxStartFrmIn & ~BlockTxDone & TxDoneIn));
+assert property(@(posedge MTxClk) (CtrlMux) |-> (TxAbortOut == (~TxStartFrmIn & ~BlockTxDone & MuxedAbort));
+assert property(@(posedge MTxClk) (~CtrlMux) |-> (TxAbortOut == (~TxStartFrmIn & ~BlockTxDone & TxAbortIn));
+assert property(@(posedge MTxClk) (~CtrlMux) |-> (TxUsedDataOut == TxUsedDataIn);
+assert property(@(posedge MTxClk) (CtrlMux) |-> (TxStartFrmOut == TxCtrlStartFrm);
+assert property(@(posedge MTxClk) (~CtrlMux) |-> (TxStartFrmOut == (TxStartFrmIn & ~Pause));
+assert property(@(posedge MTxClk) (CtrlMux) |-> (TxEndFrmOut == TxCtrlEndFrm);
+assert property(@(posedge MTxClk) (~CtrlMux) |-> (TxEndFrmOut == TxEndFrmOut_uc);
+assert property(@(posedge MTxClk) (CtrlMux) |-> (TxDataOut == ControlData);
+assert property(@(posedge MTxClk) (~CtrlMux & L2_wrap_en) |-> (TxDataOut == TxData_wrapped_out);
+assert property(@(posedge MTxClk) (~CtrlMux & ~L2_wrap_en) |-> (TxDataOut == TxDataIn);
+assert property(@(posedge MTxClk) (PadIn | SendingCtrlFrm) |-> (PadOut == 1);
+assert property(@(posedge MTxClk) (CrcEnIn | SendingCtrlFrm) |-> (CrcEnOut == 1);
+endmodule

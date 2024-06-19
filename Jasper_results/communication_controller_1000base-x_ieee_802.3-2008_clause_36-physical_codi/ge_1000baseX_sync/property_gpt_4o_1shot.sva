@@ -1,0 +1,74 @@
+module i_ge_1000baseX_sync(
+   input 		       running_disparity,
+   input               ebi_K,
+   input          sync_status,
+   input 	  rx_even_m_init, rx_even_m_set, rx_even_m_clr, rx_even_m_toggle,
+   input [7:0]    ebi_rxd_out,
+	input VALID,
+	input K28_1_RX,
+	input K28_5_RX,
+	input K28_7_RX,
+	input COMMA_RX,
+	input COMMA_match,
+	input cggood,
+	input cgbad,
+   input 	      INVALID,
+   input 		       good_cgs_m_init, good_cgs_m_inc, good_cgs_m_cnt,
+   input 		       running_disparity_positive_m_set,
+    input [3:0] pcs_sync_present, pcs_sync_next,
+   input               decoder_disparity_err,
+   // rx_even input
+   input               startup_enable,
+   input 		       sync_m_acquired, sync_m_lost,
+   input          ebi_K_out,
+   input [7:0]    ebi_rxd_d1,  input          ebi_K_d1,
+   input 		       running_disparity_negative_m_set,
+   input           rx_even,
+   input               ck,
+   input               reset,
+   input               loopback,
+   input [4:0] ebi_rxd_X,  input [2:0] ebi_rxd_Y,
+   input [2:0] 	       good_cgs,
+   input [7:0] 	       ebi_rxd,
+   input               decoder_coding_err,		     
+   input               signal_detect
+   // sync state machine inputistered part.
+);
+
+assert property(@(posedge ck) (reset) |-> (running_disparity == 0));
+assert property(@(posedge ck) (running_disparity_positive_m_set) |-> (running_disparity == 1));
+assert property(@(posedge ck) (running_disparity_negative_m_set) |-> (running_disparity == 0));
+assert property(@(posedge ck) (reset) |-> (sync_status == 0));
+assert property(@(posedge ck) (sync_m_acquired) |-> (sync_status == 1));
+assert property(@(posedge ck) (sync_m_lost) |-> (sync_status == 0));
+assert property(@(posedge ck) (reset) |-> (rx_even == 1));
+assert property(@(posedge ck) (rx_even_m_init) |-> (rx_even == 1));
+assert property(@(posedge ck) (rx_even_m_set) |-> (rx_even == 1));
+assert property(@(posedge ck) (rx_even_m_clr) |-> (rx_even == 0));
+assert property(@(posedge ck) (rx_even_m_toggle) |-> (rx_even == ~rx_even));
+assert property(@(posedge ck) (reset) |-> (ebi_rxd_d1 == 0));
+assert property(@(posedge ck) (reset) |-> (ebi_K_d1 == 0));
+assert property(@(posedge ck) (reset) |-> (ebi_rxd_out == 0));
+assert property(@(posedge ck) (reset) |-> (ebi_K_out == 0));
+assert property(@(posedge ck) (ebi_rxd_d1 == `K28_1_symbol) |-> (K28_1_RX == 1));
+assert property(@(posedge ck) (ebi_rxd_d1 == `K28_5_symbol) |-> (K28_5_RX == 1));
+assert property(@(posedge ck) (ebi_rxd_d1 == `K28_7_symbol) |-> (K28_7_RX == 1));
+assert property(@(posedge ck) (COMMA_RX & ebi_K_d1) |-> (COMMA_match == 1));
+assert property(@(posedge ck) (reset) |-> (INVALID == 0));
+assert property(@(posedge ck) (decoder_disparity_err | decoder_coding_err) |-> (INVALID == 1));
+assert property(@(posedge ck) (~INVALID) |-> (VALID == 1));
+assert property(@(posedge ck) (reset) |-> (good_cgs == 0));
+assert property(@(posedge ck) (good_cgs_m_init) |-> (good_cgs == 0));
+assert property(@(posedge ck) (good_cgs_m_cnt) |-> (good_cgs == 1));
+assert property(@(posedge ck) (good_cgs_m_inc) |-> (good_cgs == good_cgs + 1));
+assert property(@(posedge ck) (good_cgs == 3) |-> (good_cgs_done == 1));
+assert property(@(posedge ck) (INVALID | (COMMA_match & rx_even)) |-> (cgbad == 1));
+assert property(@(posedge ck) (~cgbad) |-> (cggood == 1));
+assert property(@(posedge ck) (pcs_sync_present == S_PCS_SYNC_RUN & startup_enable) |-> (pcs_sync_next == S_PCS_SYNC_LOSS_OF_SYNC));
+assert property(@(posedge ck) (pcs_sync_present == S_PCS_SYNC_LOSS_OF_SYNC & (signal_detect | loopback) & COMMA_match) |-> (pcs_sync_next == S_PCS_SYNC_COMMA_DETECT_1));
+assert property(@(posedge ck) (pcs_sync_present == S_PCS_SYNC_COMMA_DETECT_1 & ~ebi_K_d1 & ~cgbad) |-> (pcs_sync_next == S_PCS_SYNC_ACQUIRE_SYNC_1));
+assert property(@(posedge ck) (pcs_sync_present == S_PCS_SYNC_ACQUIRE_SYNC_1 & ~rx_even & COMMA_match) |-> (pcs_sync_next == S_PCS_SYNC_COMMA_DETECT_2));
+assert property(@(posedge ck) (pcs_sync_present == S_PCS_SYNC_COMMA_DETECT_2 & ~ebi_K_d1 & ~cgbad) |-> (pcs_sync_next == S_PCS_SYNC_ACQUIRE_SYNC_2));
+assert property(@(posedge ck) (pcs_sync_present == S_PCS_SYNC_ACQUIRE_SYNC_2 & ~rx_even & COMMA_match) |-> (pcs_sync_next == S_PCS_SYNC_COMMA_DETECT_3));
+assert property(@(posedge ck) (pcs_sync_present == S_PCS_SYNC_COMMA_DETECT_3 & ~ebi_K_d1 & ~cgbad) |-> (pcs_sync_next == S_PCS_SYNC_ACQUIRED_1
+endmodule

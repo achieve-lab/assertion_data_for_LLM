@@ -1,0 +1,85 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-05-08 15:18:35 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 29183
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:40887' '-nowindow' '-style' 'windows' '-data' 'AAABEHicbY47CgJBEETfKi5iYOARDAU9gbGGqwimIv5FnMUvmOhRvcn6FFdYsJru6a6qbiYCuvcsy/igfLPEJPSMH6Lnt+lGFPGeS0Vm+Ci8UMmXc0ts1mmzJzBhxZmNTEtmys4IXOXP6kdragQOnFgwl08Y6a7qXqpc7Jv+dcBYbaDWN9deSvUf6Lg38ybU3EhlAlunxh/vGy80+iB8' '-proj' '/data/vpulav2/Work/Jasper/PSGShaper/PSGShaper/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper/PSGShaper/PSGShaper/.tmp/.initCmds.tcl' 'FPV_PSGShaper.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper/PSGShaper/PSGShaper/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/PSGShaper.v
+[-- (VERI-1482)] Analyzing Verilog file './/PSGShaper.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property.sva'
+[ERROR (VERI-2285)] .//property.sva(4): ANSI port 'o' cannot be redeclared
+[ERROR (VERI-1072)] .//property.sva(3674): module 'i_PSGShaper' is ignored due to previous errors
+Summary of errors detected:
+	[ERROR (VERI-2285)] .//property.sva(4): ANSI port 'o' cannot be redeclared
+	[ERROR (VERI-1072)] .//property.sva(3674): module 'i_PSGShaper' is ignored due to previous errors
+ERROR (ENL034): 2 errors detected in the design file(s).
+
+ERROR: problem encountered at line 12 in file FPV_PSGShaper.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.412 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

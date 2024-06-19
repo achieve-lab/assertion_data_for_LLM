@@ -1,0 +1,13 @@
+module i_fifo_mem#(parameter DEPTH=8, DATA_WIDTH=8, PTR_WIDTH=3)(
+  input full, empty,
+  input [PTR_WIDTH:0] b_wptr, b_rptr,
+  input [DATA_WIDTH-1:0] fifo[0:DEPTH-1],
+  input [DATA_WIDTH-1:0] data_out,
+  input [DATA_WIDTH-1:0] data_in,
+  input DEFAULT_CLOCK,
+  input DEFAULT_RESET,
+  input wclk, w_en, rclk, r_en
+);
+
+assert property(@(posedge rclk) (data_out == data_in) |-> (empty == 0)); assert property(@(posedge wclk) (full == 1) |-> (w_en == 0)); assert property(@(posedge wclk) (full == 0) |-> (w_en == 1)); assert property(@(posedge rclk) (empty == 1) |-> (r_en == 0)); assert property(@(posedge rclk) (empty == 0) |-> (r_en == 1));
+endmodule

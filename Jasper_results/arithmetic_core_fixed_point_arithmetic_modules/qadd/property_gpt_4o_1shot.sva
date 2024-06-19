@@ -1,0 +1,22 @@
+parameter Q = 15;
+        parameter N = 32;
+module i_qadd(
+input [N-1:0] res,
+    input [N-1:0] b,
+    input [N-1:0] c,
+    input [N-1:0] a,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET
+);
+
+assert property(@(posedge clk) (a[N-1] == 1 && b[N-1] == 1) |-> (c[N-1] == 1));
+assert property(@(posedge clk) (a[N-1] == 0 && b[N-1] == 0) |-> (c[N-1] == 0));
+assert property(@(posedge clk) (a[N-1] == 0 && b[N-1] == 1 && a[N-2:0] > b[N-2:0]) |-> (c[N-1] == 1));
+assert property(@(posedge clk) (a[N-1] == 0 && b[N-1] == 1 && a[N-2:0] <= b[N-2:0]) |-> (c[N-1] == 0));
+assert property(@(posedge clk) (a[N-1] == 1 && b[N-1] == 0 && a[N-2:0] < b[N-2:0]) |-> (c[N-1] == 1));
+assert property(@(posedge clk) (a[N-1] == 1 && b[N-1] == 0 && a[N-2:0] >= b[N-2:0]) |-> (c[N-1] == 0));
+assert property(@(posedge clk) (a[N-1] == 1 && b[N-1] == 1) |-> (c[N-2:0] == a[N-2:0] + b[N-2:0]));
+assert property(@(posedge clk) (a[N-1] == 0 && b[N-1] == 0) |-> (c[N-2:0] == a[N-2:0] + b[N-2:0]));
+assert property(@(posedge clk) (a[N-1] == 0 && b[N-1] == 1) |-> (c[N-2:0] == (a[N-2:0] > b[N-2:0] ? a[N-2:0] - b[N-2:0] : b[N-2:0] - a[N-2:0]));
+assert property(@(posedge clk) (a[N-1] == 1 && b[N-1] == 0) |-> (c[N-2:0] == (a[N-2:0] < b[N-2:0] ? b[N-2:0] - a[N-2:0] : a[N-2:0] - b[N-2:0]));
+endmodule

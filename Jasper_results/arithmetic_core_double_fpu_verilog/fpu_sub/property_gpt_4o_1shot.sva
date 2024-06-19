@@ -1,0 +1,74 @@
+module i_fpu_sub(
+input		clk,
+input   subtra_fraction_enable ,
+input   small_is_nonzero,
+input   diffshift_et_55, // when the difference ,
+input   [51:0] mantissa_small,
+input   diffshift_gt_exponent,
+input   [54:0] subtra_shift_2 ,
+input		rst,
+input   [54:0] subtra_shift,
+input   [54:0] diff,
+input   [10:0] exponent_small,
+input   small_is_denorm,
+input   subtra_shift_nonzero ,
+input		enable,
+input   [10:0] exponent,
+input   mana_gtet_manb,
+input [6:0] 	diff_shift_2,
+input   [10:0] exponent_large,
+input   large_norm_small_denorm,
+input   [10:0] exponent_a,
+input   [10:0] exponent_b,
+input	[63:0]	opa, opb,	  
+input   in_norm_out_denorm ,
+input   [54:0] subtra_shift_3,
+input   large_is_denorm,
+input [6:0] 	diff_shift,
+input   [51:0] mantissa_b,
+input   [10:0] exponent_diff,
+input   [51:0] mantissa_a,
+input   [55:0] diff_2,
+input   [54:0] minuend,
+input   [10:0] exponent_2,
+input	[2:0]	fpu_op,
+input   [51:0] mantissa_large,
+input   expa_et_expb,
+input   [54:0] diff_1,
+input   expa_gt_expb,
+input   a_gtet_b,
+input   sign,
+input   [54:0] subtrahend
+);
+
+assert property(@(posedge clk) (enable == 1) |-> (exponent_a == opa[62:52]);
+assert property(@(posedge clk) (enable == 1) |-> (exponent_b == opb[62:52]);
+assert property(@(posedge clk) (enable == 1) |-> (mantissa_a == opa[51:0]);
+assert property(@(posedge clk) (enable == 1) |-> (mantissa_b == opb[51:0]);
+assert property(@(posedge clk) (enable == 1) |-> (expa_gt_expb == (exponent_a > exponent_b));
+assert property(@(posedge clk) (enable == 1) |-> (expa_et_expb == (exponent_a == exponent_b));
+assert property(@(posedge clk) (enable == 1) |-> (mana_gtet_manb == (mantissa_a >= mantissa_b));
+assert property(@(posedge clk) (enable == 1) |-> (a_gtet_b == (expa_gt_expb | (expa_et_expb & mana_gtet_manb)));
+assert property(@(posedge clk) (enable == 1) |-> (sign == (a_gtet_b ? opa[63] : !opb[63] ^ (fpu_op == 3'b000)));
+assert property(@(posedge clk) (enable == 1) |-> (exponent_small == (a_gtet_b ? exponent_b : exponent_a));
+assert property(@(posedge clk) (enable == 1) |-> (exponent_large == (a_gtet_b ? exponent_a : exponent_b));
+assert property(@(posedge clk) (enable == 1) |-> (mantissa_small == (a_gtet_b ? mantissa_b : mantissa_a));
+assert property(@(posedge clk) (enable == 1) |-> (mantissa_large == (a_gtet_b ? mantissa_a : mantissa_b));
+assert property(@(posedge clk) (enable == 1) |-> (small_is_denorm == !(exponent_small > 0));
+assert property(@(posedge clk) (enable == 1) |-> (large_is_denorm == !(exponent_large > 0));
+assert property(@(posedge clk) (enable == 1) |-> (large_norm_small_denorm == (small_is_denorm == 1 && large_is_denorm == 0));
+assert property(@(posedge clk) (enable == 1) |-> (small_is_nonzero == ((exponent_small > 0) | |mantissa_small[51:0]));
+assert property(@(posedge clk) (enable == 1) |-> (exponent_diff == (exponent_large - exponent_small - large_norm_small_denorm));
+assert property(@(posedge clk) (enable == 1) |-> (minuend == { !large_is_denorm, mantissa_large, 2'b00 });
+assert property(@(posedge clk) (enable == 1) |-> (subtrahend == { !small_is_denorm, mantissa_small, 2'b00 });
+assert property(@(posedge clk) (enable == 1) |-> (subtra_shift == (subtrahend >> exponent_diff));
+assert property(@(posedge clk) (enable == 1) |-> (subtra_shift_3 == (subtra_fraction_enable ? subtra_shift_2 : subtra_shift));
+assert property(@(posedge clk) (enable == 1) |-> (diff == (minuend - subtra_shift_3));
+assert property(@(posedge clk) (enable == 1) |-> (diffshift_gt_exponent == (diff_shift_2 > exponent_large));
+assert property(@(posedge clk) (enable == 1) |-> (diffshift_et_55 == (diff_shift_2 == 55));
+assert property(@(posedge clk) (enable == 1) |-> (diff_1 == (diffshift_gt_exponent ? diff << exponent_large : diff << diff_shift_2));
+assert property(@(posedge clk) (enable == 1) |-> (exponent == (diffshift_gt_exponent ? 0 : (exponent_large - diff_shift_2)));
+assert property(@(posedge clk) (enable == 1) |-> (exponent_2 == (diffshift_et_55 ? 0 : exponent));
+assert property(@(posedge clk) (enable == 1) |-> (diff_2 == (in_norm_out_denorm ? { 1'b0, diff_1 >> 1} : {1'b0, diff_1}));
+assert property(@(posedge clk) (enable == 1) |-> (diff_shift == (diff == 55'b1?????????????????????????????????????????????????????? ? 0
+endmodule

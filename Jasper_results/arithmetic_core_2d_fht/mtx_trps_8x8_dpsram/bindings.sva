@@ -1,0 +1,25 @@
+bind mtx_trps_8x8_dpsram
+ i_mtx_trps_8x8_dpsram v_mtx_trps_8x8_dpsram(
+.rd_DATA(rd_DATA),
+.rd_CSN(rd_CSN),
+.cnt128d_rd_valid_stop(cnt128d_rd_valid_stop),
+.indicator_neg_edge(indicator_neg_edge),
+.sclk(sclk),
+.indicator_pos_edge(indicator_pos_edge),
+.mem_valid(mem_valid),
+.cnt128d_rd_valid(cnt128d_rd_valid),
+.inp_valid(inp_valid),
+.mem_data(mem_data),
+.rstn(rstn),
+.cnt128d_rd_valid_start(cnt128d_rd_valid_start),
+.wr_DATA(wr_DATA),
+.indicator(indicator),
+.wr_ADDR(wr_ADDR),
+.indicator_1d(indicator_1d),
+.wr_WEN(wr_WEN),
+.wr_CSN(wr_CSN),
+.cnt128d_rd(cnt128d_rd),
+.inp_data(inp_data),
+.cnt128d_wr(cnt128d_wr),
+.rd_ADDR(rd_ADDR)
+);

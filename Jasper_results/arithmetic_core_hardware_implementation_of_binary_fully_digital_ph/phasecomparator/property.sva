@@ -1,0 +1,25 @@
+module i_phasecomparator(
+input MainClock,                    // System Clock
+input InputSignalEdge ,
+input Lead, Lag,                   // inputs "Lead", "Lag" are inputistered
+input [1:0] InputSignalEdgeDet,       // detector of the rising edge
+input InputSignal, OutputSignal
+);
+
+assert property(@(posedge MainClock) ((InputSignalEdgeDet == 1)) |-> InputSignalEdge);
+assert property(@(posedge MainClock) ((InputSignalEdgeDet == 1)) |-> InputSignal);
+assert property(@(posedge MainClock) (InputSignalEdge) |-> InputSignal);
+assert property(@(posedge MainClock) ((InputSignalEdgeDet == 3)) |-> InputSignal);
+assert property(@(posedge MainClock) (Lead) |-> OutputSignal);
+assert property(@(posedge MainClock) (Lag ##2 Lag ##2 !Lead && (InputSignalEdgeDet == 2)) |-> Lag);
+assert property(@(posedge MainClock) (Lag ##2 Lag ##2 !OutputSignal && (InputSignalEdgeDet == 2)) |-> Lag);
+assert property(@(posedge MainClock) (Lag ##1 OutputSignal ##1 Lag ##2 (InputSignalEdgeDet == 2)) |-> Lag);
+assert property(@(posedge MainClock) (OutputSignal ##1 Lag ##1 (InputSignalEdgeDet == 0) ##1 !OutputSignal ##1 (InputSignalEdgeDet == 3)) |-> Lead);
+assert property(@(posedge MainClock) (Lag ##2 Lag ##1 (InputSignalEdgeDet == 2) ##1 OutputSignal) |-> InputSignalEdge);
+assert property(@(posedge MainClock) (Lag ##2 Lag ##1 !OutputSignal && (InputSignalEdgeDet == 2) ##1 1) |-> InputSignalEdge);
+assert property(@(posedge MainClock) (Lead ##1 !OutputSignal ##1 Lag ##2 Lag) |-> InputSignal);
+assert property(@(posedge MainClock) (Lag ##2 Lag ##1 (InputSignalEdgeDet == 2) ##1 (InputSignalEdgeDet == 1)) |-> OutputSignal);
+assert property(@(posedge MainClock) (Lag ##2 Lag ##1 (InputSignalEdgeDet == 2) ##1 InputSignal) |-> OutputSignal);
+assert property(@(posedge MainClock) (Lag ##2 Lag ##1 (InputSignalEdgeDet == 2) ##1 InputSignalEdge) |-> OutputSignal);
+assert property(@(posedge MainClock) (Lag ##2 Lag ##1 !OutputSignal && (InputSignalEdgeDet == 2) ##1 1) |-> OutputSignal);
+endmodule

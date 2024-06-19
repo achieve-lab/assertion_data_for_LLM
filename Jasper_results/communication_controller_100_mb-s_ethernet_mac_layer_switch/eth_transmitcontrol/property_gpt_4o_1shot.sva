@@ -1,0 +1,93 @@
+module i_eth_transmitcontrol(
+input [15:0]  LatchedTimerValue,
+input [7:0] RxData,
+input       RxStatusWriteLatched_sync2,
+input       ReceivedPacketGood,
+input        ResetSlotTimer,           // 
+input       TxDoneIn,
+input         DetectionWindow,          // Detection of the PAUSE frame is possible within this window
+input        SlotFinished,             // 
+input        PauseTimerEq0,            // 
+input       RxStartFrm,
+input       TxReset, 
+input         OpCodeOK,                 // PAUSE opcode detected (0x0001)
+input        ByteCntEq1,               // ByteCnt ,
+input        ByteCntEq5,               // ByteCnt ,
+input        ByteCntEq17,              // ByteCnt ,
+input        ByteCntEq15,              // ByteCnt ,
+input [15:0]  PauseTimer,
+input        ByteCntEq16,              // ByteCnt ,
+input       RxFlow,
+input  [4:0]  ByteCnt,
+input        IncrementSlotTimer,       // 
+input [15:0] TypeLength,               // 0x8808
+input       RxValid,
+input  [2:0]  DlyCrcCnt,
+input      Pause,
+input       RxReset, 
+input      ReceivedPauseFrm,
+input         Divider2,
+input       r_PassAll,
+input         PauseTimerEq0_sync2,
+input        ByteCntEq2,               // ByteCnt ,
+input        ByteCntEq4,               // ByteCnt ,
+input         ReceivedPauseFrmWAddr,
+input       MRxClk,
+input         TypeLengthOK,             // Type/Length field contains 0x8808
+input [15:0]  AssembledTimerValue,
+input [47:0] ReservedMulticast,        // 0x0180C2000001
+input  [5:0]  SlotTimer,
+input       DlyCrcEn,
+input       TxUsedDataOutDetected,
+input        ByteCntEq0,               // ByteCnt ,
+input        ByteCntEq18,              // ByteCnt ,
+input        DecrementPauseTimer,      // 
+input       TxStartFrmOut,
+input        ResetByteCnt,             // 
+input        IncrementByteCnt,         // 
+input        ByteCntEq3,               // ByteCnt ,
+input        ByteCntEq13,              // ByteCnt ,
+input       ReceiveEnd,
+input      SetPauseTimer,
+input         AddressOK,                // Multicast or unicast address detected
+input         PauseTimerEq0_sync1,
+input        ByteCntEq12,              // ByteCnt ,
+input       RxEndFrm,
+input        ByteCntEq14,              // ByteCnt ,
+input       MTxClk,
+input [47:0]MAC,
+input       TxAbortIn,
+input       ReceivedLengthOK
+);
+
+assert property(@(posedge MTxClk) (TxReset) |-> (WillSendControlFrame == 0);
+assert property(@(posedge MTxClk) (TxCtrlEndFrm & CtrlMux) |-> (WillSendControlFrame == 0);
+assert property(@(posedge MTxClk) (TPauseRq & TxFlow) |-> (WillSendControlFrame == 1);
+assert property(@(posedge MTxClk) (TxReset) |-> (TxCtrlStartFrm == 0);
+assert property(@(posedge MTxClk) (TxUsedDataIn_q & CtrlMux) |-> (TxCtrlStartFrm == 0);
+assert property(@(posedge MTxClk) (WillSendControlFrame & ~TxUsedDataOut & (TxDoneIn | TxAbortIn | TxStartFrmIn | (~TxUsedDataOutDetected))) |-> (TxCtrlStartFrm == 1);
+assert property(@(posedge MTxClk) (TxReset) |-> (TxCtrlEndFrm == 0);
+assert property(@(posedge MTxClk) (ControlEnd | ControlEnd_q) |-> (TxCtrlEndFrm == 1);
+assert property(@(posedge MTxClk) (TxReset) |-> (CtrlMux == 0);
+assert property(@(posedge MTxClk) (WillSendControlFrame & ~TxUsedDataOut) |-> (CtrlMux == 1);
+assert property(@(posedge MTxClk) (TxDoneIn) |-> (CtrlMux == 0);
+assert property(@(posedge MTxClk) (TxReset) |-> (SendingCtrlFrm == 0);
+assert property(@(posedge MTxClk) (WillSendControlFrame & TxCtrlStartFrm) |-> (SendingCtrlFrm == 1);
+assert property(@(posedge MTxClk) (TxDoneIn) |-> (SendingCtrlFrm == 0);
+assert property(@(posedge MTxClk) (TxReset) |-> (TxUsedDataIn_q == 0);
+assert property(@(posedge MTxClk) (TxReset) |-> (BlockTxDone == 0);
+assert property(@(posedge MTxClk) (TxCtrlStartFrm) |-> (BlockTxDone == 1);
+assert property(@(posedge MTxClk) (TxStartFrmIn) |-> (BlockTxDone == 0);
+assert property(@(posedge MTxClk) (TxReset) |-> (DlyCrcCnt == 4'h0);
+assert property(@(posedge MTxClk) (ResetByteCnt) |-> (DlyCrcCnt == 4'h0);
+assert property(@(posedge MTxClk) (IncrementDlyCrcCnt) |-> (DlyCrcCnt == DlyCrcCnt + 4'd1);
+assert property(@(posedge MTxClk) (TxReset) |-> (ByteCnt == 6'h0);
+assert property(@(posedge MTxClk) (ResetByteCnt) |-> (ByteCnt == 6'h0);
+assert property(@(posedge MTxClk) (IncrementByteCntBy2 & EnableCnt) |-> (ByteCnt == (ByteCnt[5:0]) + 6'd2);
+assert property(@(posedge MTxClk) (IncrementByteCnt & EnableCnt) |-> (ByteCnt == (ByteCnt[5:0]) + 6'd1);
+assert property(@(posedge MTxClk) (ByteCnt[5:0] == 6'h22) |-> (ControlEnd == 1);
+assert property(@(posedge MTxClk) (TxBufferEmpty & StateLeftinQ) |-> (TxEndFrmOut_uc == 1);
+assert property(@(posedge MTxClk) (StateCount | StateLeftinQ | TxStartFrmIn) |-> (ByteCnt == ByteCnt + 1);
+assert property(@(posedge MTxClk) (StateCount & PreNib15State >= 8) |-> (ByteCnt == ByteCnt + 1);
+assert property(@(posedge MTxClk) (StateCount) |-> (PreNib15State == PreNib15State + 1);
+endmodule

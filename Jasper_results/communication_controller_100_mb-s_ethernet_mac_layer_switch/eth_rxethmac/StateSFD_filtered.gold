@@ -1,0 +1,210 @@
+property a147;
+@(posedge clk) (MRxDV == 0) |=> (StateSFD == 0);
+endproperty
+assert_a147: assert property(a147);
+
+property a176;
+@(posedge clk) (MRxDEq5 == 1 & MRxDV == 1 & MaxFL[2] == 0 & r_IFG == 1) |=> (StateSFD == 1);
+endproperty
+assert_a176: assert property(a176);
+
+property a153;
+@(posedge clk) (MRxDEq5 == 0 & MaxFL[4] == 0 & r_IFG == 1) |=> (StateSFD == 0);
+endproperty
+assert_a153: assert property(a153);
+
+property a148;
+@(posedge clk) (MRxDEqD == 1) |=> (StateSFD == 0);
+endproperty
+assert_a148: assert property(a148);
+
+property a163;
+@(posedge clk) (Transmitting == 1 & MaxFL[11] == 0 & r_IFG == 1) |=> (StateSFD == 0);
+endproperty
+assert_a163: assert property(a163);
+
+property a161;
+@(posedge clk) (Transmitting == 1 & HugEn == 1 & r_IFG == 1) |=> (StateSFD == 0);
+endproperty
+assert_a161: assert property(a161);
+
+property a164;
+@(posedge clk) (MRxD[0] == 0 & MaxFL[12] == 1 & r_IFG == 0) |=> (StateSFD == 0);
+endproperty
+assert_a164: assert property(a164);
+
+property a157;
+@(posedge clk) (MaxFL[2] == 1 & MRxD[1] == 1 & r_IFG == 0) |=> (StateSFD == 0);
+endproperty
+assert_a157: assert property(a157);
+
+property a156;
+@(posedge clk) (MRxD[0] == 0 & MaxFL[7] == 1 & r_IFG == 0) |=> (StateSFD == 0);
+endproperty
+assert_a156: assert property(a156);
+
+property a180;
+@(posedge clk) (MRxDV == 1 & MRxDEq5 == 1 & MaxFL[14] == 0 & r_IFG == 1 & MaxFL[3] == 1) |=> (StateSFD == 1);
+endproperty
+assert_a180: assert property(a3180);
+
+property a168;
+@(posedge clk) (MaxFL[6] == 1 & MaxFL[1] == 0 & r_IFG == 0) |=> (StateSFD == 0);
+endproperty
+assert_a168: assert property(a168);
+
+property a169;
+@(posedge clk) (MaxFL[10] == 1 & MaxFL[1] == 0 & r_IFG == 0) |=> (StateSFD == 0);
+endproperty
+assert_a169: assert property(a169);
+
+property a170;
+@(posedge clk) (MaxFL[6] == 1 & MaxFL[2] == 0 & r_IFG == 1) |=> (StateSFD == 0);
+endproperty
+assert_a170: assert property(a170);
+
+property a173;
+@(posedge clk) (MaxFL[4] == 0 & MaxFL[0] == 0 & r_IFG == 0) |=> (StateSFD == 0);
+endproperty
+assert_a173: assert property(a173);
+
+property a165;
+@(posedge clk) (MaxFL[10] == 1 & MaxFL[11] == 0 & r_IFG == 0) |=> (StateSFD == 0);
+endproperty
+assert_a165: assert property(a165);
+
+property a149;
+@(posedge clk) (MRxD[1] == 1 & MRxD[2] == 0) |=> (StateSFD == 0);
+endproperty
+assert_a149: assert property(a149);
+
+property a154;
+@(posedge clk) (MRxDEq5 == 0 & MaxFL[13] == 1 & MRxD[0] == 1) |=> (StateSFD == 0);
+endproperty
+assert_a154: assert property(a154);
+
+property a178;
+@(posedge clk) (MRxDEq5 == 1 & MRxDV == 1 & MaxFL[10] == 0 & MaxFL[2] == 0) |=> (StateSFD == 1);
+endproperty
+assert_a178: assert property(a178);
+
+property a183;
+@(posedge clk) (MRxDV == 1 & MaxFL[4] == 1 & HugEn == 0 & MaxFL[5] == 1 & MaxFL[9] == 0 & r_IFG == 1 & MRxD[0] == 1 & MRxD[1] == 0) |=> (StateSFD == 1);
+endproperty
+assert_a183: assert property(a183);
+
+property a175;
+@(posedge clk) (MaxFL[2] == 1 & MaxFL[6] == 0 & r_IFG == 0 & MaxFL[4] == 1) |=> (StateSFD == 0);
+endproperty
+assert_a175: assert property(a175);
+
+property a182;
+@(posedge clk) (MRxDV == 1 & MaxFL[5] == 1 & MaxFL[7] == 0 & MaxFL[12] == 0 & MRxD[0] == 0 & r_IFG == 0 & MaxFL[2] == 0 & MaxFL[4] == 0) |=> (StateSFD == 1);
+endproperty
+assert_a182: assert property(a182);
+
+property a186;
+@(posedge clk) (MRxDV == 1 & MaxFL[2] == 0 & MaxFL[4] == 1 & MRxD[1] == 0 & MaxFL[1] == 1 & r_IFG == 0 & MaxFL[0] == 0 & MaxFL[3] == 1 & MRxD[0] == 0) |=> (StateSFD == 1);
+endproperty
+assert_a186: assert property(a186);
+
+property a179;
+@(posedge clk) (MRxDEq5 == 1 & MRxDV == 1 & MaxFL[1] == 0 & MaxFL[7] == 1 & MaxFL[3] == 0) |=> (StateSFD == 1);
+endproperty
+assert_a179: assert property(a179);
+
+property a30;
+@(posedge clk) (MRxDEq5 == 1 & MRxDV == 1 & MaxFL[0] == 1 & MaxFL[4] == 0 & MaxFL[1] == 1) |=> (StateSFD == 1);
+endproperty
+assert_a30: assert property(a30);
+
+property a12;
+@(posedge clk) (MRxD[0] == 0 & MaxFL[10] == 1 & MRxD[1] == 0) |=> (StateSFD == 0);
+endproperty
+assert_a12: assert property(a12);
+
+property a11;
+@(posedge clk) (MaxFL[10] == 1 & MRxD[2] == 0) |=> (StateSFD == 0);
+endproperty
+assert_a11: assert property(a11);
+
+property a13;
+@(posedge clk) (MRxD[1] == 1 & HugEn == 1) |=> (StateSFD == 0);
+endproperty
+assert_a13: assert property(a13);
+
+property a15;
+@(posedge clk) (MaxFL[6] == 1 & MRxD[2] == 0) |=> (StateSFD == 0);
+endproperty
+assert_a15: assert property(a15);
+
+property a37;
+@(posedge clk) (MRxDV == 1 & MaxFL[4] == 1 & HugEn == 0 & MRxD[2] == 1 & MRxD[0] == 0 & MaxFL[9] == 0 & MRxD[1] == 1 & MaxFL[12] == 0 & MaxFL[6] == 1) |=> (StateSFD == 1);
+endproperty
+assert_a37: assert property(a37);
+
+property a3;
+@(posedge clk) (MRxD[1] == 1 & MaxFL[4] == 0) |=> (StateSFD == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a5;
+@(posedge clk) (MRxD[1] == 1 & MaxFL[9] == 1) |=> (StateSFD == 0);
+endproperty
+assert_a5: assert property(a5);
+
+property a4;
+@(posedge clk) (MRxD[2] == 0 & MaxFL[3] == 0) |=> (StateSFD == 0);
+endproperty
+assert_a4: assert property(a4);
+
+property a8;
+@(posedge clk) (MRxD[0] == 0 & MaxFL[5] == 0) |=> (StateSFD == 0);
+endproperty
+assert_a8: assert property(a8);
+
+property a38;
+@(posedge clk) (MRxDV == 1 & MaxFL[2] == 0 & MaxFL[4] == 1 & HugEn == 0 & MaxFL[13] == 0 & Transmitting == 1 & MaxFL[7] == 0 & MaxFL[5] == 1) |=> (StateSFD == 1);
+endproperty
+assert_a38: assert property(a38);
+
+property a40;
+@(posedge clk) (MaxFL[13] == 0 & MRxDV == 1 & MaxFL[7] == 1 & HugEn == 0 & MaxFL[11] == 1 & MaxFL[12] == 1 & MaxFL[2] == 0 & Transmitting == 0) |=> (StateSFD == 1);
+endproperty
+assert_a40: assert property(a40);
+
+property a20;
+@(posedge clk) (MaxFL[2] == 1 & MaxFL[6] == 0 & MRxD[0] == 0) |=> (StateSFD == 0);
+endproperty
+assert_a20: assert property(a20);
+
+property a24;
+@(posedge clk) (MaxFL[10] == 1 & MaxFL[11] == 0 & MRxD[0] == 1) |=> (StateSFD == 0);
+endproperty
+assert_a24: assert property(a24);
+
+property a27;
+@(posedge clk) (MRxD[1] == 1 & MaxFL[12] == 1 & MaxFL[1] == 1) |=> (StateSFD == 0);
+endproperty
+assert_a27: assert property(a27);
+
+property a19;
+@(posedge clk) (MaxFL[2] == 1 & MRxD[0] == 0 & MaxFL[0] == 1) |=> (StateSFD == 0);
+endproperty
+assert_a19: assert property(a19);
+
+property a34;
+@(posedge clk) (MRxDV == 1 & MaxFL[13] == 0 & HugEn == 0 & MaxFL[4] == 1 & MaxFL[9] == 0 & MaxFL[14] == 0 & MaxFL[6] == 1) |=> (StateSFD == 1);
+endproperty
+assert_a34: assert property(a34);
+
+property a41;
+@(posedge clk) (MaxFL[14] == 0 & MaxFL[13] == 0 & MaxFL[0] == 1 & MaxFL[11] == 1 & MaxFL[6] == 0 & MRxD[0] == 0 & MaxFL[2] == 0) |=> (StateSFD == 1);
+endproperty
+assert_a41: assert property(a41);
+
+property a25;
+@(posedge clk) (MaxFL[6] == 1 & MaxFL[2] == 0 & MaxFL[0] == 1) |=> (StateSFD == 0);
+endproperty
+assert_a25: assert property(a25);
+

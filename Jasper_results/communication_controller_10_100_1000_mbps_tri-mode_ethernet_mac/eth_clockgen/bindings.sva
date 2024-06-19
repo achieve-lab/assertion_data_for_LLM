@@ -1,0 +1,13 @@
+bind eth_clockgen
+ i_eth_clockgen v_eth_clockgen(
+.MdcEn(MdcEn),
+.Counter(Counter),
+.CountEq0(CountEq0),
+.Mdc(Mdc),
+.Clk(Clk),
+.TempDivider(TempDivider),
+.CounterPreset(CounterPreset),
+.Divider(Divider),
+.MdcEn_n(MdcEn_n),
+.Reset(Reset)
+);

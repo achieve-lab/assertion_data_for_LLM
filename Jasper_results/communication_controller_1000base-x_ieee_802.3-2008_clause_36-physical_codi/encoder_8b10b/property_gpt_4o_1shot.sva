@@ -1,0 +1,55 @@
+module i_encoder_8b10b(
+   input   A,B,C,D,E,F,G,H,      
+   input   illegalk, DISPARITY6,
+   input SBYTECLK,
+   input   ND_1S4, PD_1S4, NDOS4, PDOS4,
+   input   NFO, NGO, NHO, NJO,
+   input alt7, tNFO, tNGO, tNHO, tNJO,
+   input 	  a,b,c,d,e,i,f,g,h,j, 
+   input reset,
+   // --- TB (Ten Bt Interface) input bus
+   // --- Eight Bt input bus	  
+   input [9:0] tbi,
+   input    COMPLS6, COMPLS4,
+   input   L40, L04, L13, L31, L22, AeqB, CeqD,
+   input   PD_1S6, NDOS6, PDOS6, ND_1S6,
+   input [7:0] ebi,
+   input   NAO, NBO, NCO, NDO, NEO, NIO,
+   input [9:0] tst,
+   input disparity,
+   // --- Control (K) input	  
+   input tNAO, tNBOx, tNBOy, tNCOx, tNCOy, tNDO , tNEOx, tNEOy, tNIOw, tNIOx, tNIOy, tNIOz,
+   // Figures 7 & 8 - Latched 5B/6B and 3B/4B encoder inputs 
+   input K
+);
+
+assert property(@(posedge SBYTECLK) (reset) |-> (disparity == 0);
+assert property(@(posedge SBYTECLK) (reset) |-> ({a,b,c,d,e,i,f,g,h,j} == 10'b0);
+assert property(@(posedge SBYTECLK) (!reset && PDOS4 | NDOS4) |-> (disparity == !DISPARITY6);
+assert property(@(posedge SBYTECLK) (!reset) |-> ({a,b,c,d,e,i,f,g,h,j} == {NAO^COMPLS6, NBO^COMPLS6, NCO^COMPLS6, NDO^COMPLS6, NEO^COMPLS6, NIO^COMPLS6, NFO^COMPLS4, NGO^COMPLS4, NHO^COMPLS4, NJO^COMPLS4});
+assert property(@(posedge SBYTECLK) (reset) |-> (COMPLS4 == 0 && COMPLS6 == 0);
+assert property(@(posedge SBYTECLK) (!reset && PD_1S4 & !DISPARITY6) |-> (COMPLS4 == 1);
+assert property(@(posedge SBYTECLK) (!reset && ND_1S4 & DISPARITY6) |-> (COMPLS4 == 1);
+assert property(@(posedge SBYTECLK) (!reset && PD_1S6 & !disparity) |-> (COMPLS6 == 1);
+assert property(@(posedge SBYTECLK) (!reset && ND_1S6 & disparity) |-> (COMPLS6 == 1);
+assert property(@(posedge SBYTECLK) (reset) |-> (tNAO == 0 && tNBOx == 0 && tNBOy == 0 && tNCOx == 0 && tNCOy == 0 && tNDO == 0 && tNEOx == 0 && tNEOy == 0 && tNIOw == 0 && tNIOx == 0 && tNIOy == 0 && tNIOz == 0);
+assert property(@(posedge SBYTECLK) (!reset) |-> (tNAO == A);
+assert property(@(posedge SBYTECLK) (!reset) |-> (tNBOx == B & !L40);
+assert property(@(posedge SBYTECLK) (!reset) |-> (tNBOy == L04);
+assert property(@(posedge SBYTECLK) (!reset) |-> (tNCOx == L04 | C);
+assert property(@(posedge SBYTECLK) (!reset) |-> (tNCOy == E & D & !C & !B & !A);
+assert property(@(posedge SBYTECLK) (!reset) |-> (tNDO == D & !(A & B & C));
+assert property(@(posedge SBYTECLK) (!reset) |-> (tNEOx == E | L13);
+assert property(@(posedge SBYTECLK) (!reset) |-> (tNEOy == !(E & D & !C & !B & !A));
+assert property(@(posedge SBYTECLK) (!reset) |-> (tNIOw == (L22 & !E) | (E & L40));
+assert property(@(posedge SBYTECLK) (!reset) |-> (tNIOx == E & !D & !C & !(A & B));
+assert property(@(posedge SBYTECLK) (!reset) |-> (tNIOy == K & E & D & C & !B & !A);
+assert property(@(posedge SBYTECLK) (!reset) |-> (tNIOz == E & !D & C & !B & !A);
+assert property(@(posedge SBYTECLK) (reset) |-> (alt7 == 0 && tNFO == 0 && tNGO == 0 && tNHO == 0 && tNJO == 0);
+assert property(@(posedge SBYTECLK) (!reset) |-> (alt7 == F & G & H & (K | (disparity ? (!E & D & L31) : (E & !D & L13))));
+assert property(@(posedge SBYTECLK) (!reset) |-> (tNFO == F);
+assert property(@(posedge SBYTECLK) (!reset) |-> (tNGO == G | (!F & !G & !H));
+assert property(@(posedge SBYTECLK) (!reset) |-> (tNHO == H);
+assert property(@(posedge SBYTECLK) (!reset) |-> (tNJO == !H & (G ^ F));
+assert property(@(posedge SBYTECLK) (!reset) |->
+endmodule

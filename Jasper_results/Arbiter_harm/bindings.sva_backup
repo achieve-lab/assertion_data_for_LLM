@@ -1,0 +1,10 @@
+bind arb2
+  v_arb2 i_arb2 (
+  .clk(clk),
+  .rst(rst),
+  .gnt1(gnt1),
+  .gnt2(gnt2),
+  .req1(req1),
+  .req2(req2),
+  .state(state)
+  );

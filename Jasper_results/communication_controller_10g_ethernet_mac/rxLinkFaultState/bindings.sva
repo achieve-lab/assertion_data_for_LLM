@@ -1,0 +1,20 @@
+bind rxLinkFaultState
+ i_rxLinkFaultState v_rxLinkFaultState(
+.reset_col_cnt(reset_col_cnt),
+.col_cnt_64(col_cnt_64),
+.rxclk(rxclk),
+.local_fault(local_fault),
+.seq_cnt(seq_cnt),
+.seq_type(seq_type),
+.link_fault(link_fault),
+.linkstate(linkstate),
+.seq_cnt_3(seq_cnt_3),
+.get_one_fault(get_one_fault),
+.linkstate_next(linkstate_next),
+.remote_fault(remote_fault),
+.reset(reset),
+.fault_type(fault_type),
+.col_cnt(col_cnt),
+.no_new_type(no_new_type),
+.last_seq_type(last_seq_type)
+);

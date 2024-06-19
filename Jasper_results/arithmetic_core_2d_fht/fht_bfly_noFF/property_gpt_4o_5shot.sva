@@ -1,0 +1,29 @@
+parameter N = 8;
+module i_fht_bfly_noFF(
+input [N-1:0] b_FF,
+input	[N  :0]	c, // additive input
+input [N-1:0] a_FF,
+input			clk,
+  	input [N-1:0] ainv,
+input	[N-1:0]	b, // input
+input			rstn,
+input			valid,
+  	input [N:0] plus1,
+input	[N  :0]	d, // subtractive input
+	input  ci,
+input	[N-1:0]	a, // input
+	input [N-1:0] co,
+	input [N-1:0] sum
+);
+
+assert property(@(posedge clk) (!rstn) |-> (a_FF == 0));
+assert property(@(posedge clk) (!rstn) |-> (b_FF == 0));
+assert property(@(posedge clk) (valid && rstn) |-> (a_FF == a));
+assert property(@(posedge clk) (valid && rstn) |-> (b_FF == b));
+assert property(@(posedge clk) (c == rca_N(a_FF, b_FF)));
+assert property(@(posedge clk) (d == rca_N(a_FF, twos_complement(b_FF)));
+assert property(@(posedge clk) (a_FF == 0 && b_FF == 0) |-> (c == 0));
+assert property(@(posedge clk) (a_FF == 0 && b_FF == 0) |-> (d == 0));
+assert property(@(posedge clk) (a_FF == b_FF) |-> (c[N] == 0));
+assert property(@(posedge clk) (a_FF == b_FF) |-> (d[N] == 0));
+endmodule

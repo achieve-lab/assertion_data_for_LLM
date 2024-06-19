@@ -1,0 +1,14 @@
+`include "defines.v"
+module i_tcLoad(
+	input [`tcAddrLen-1:0] tcAddr,
+	input [`tcNumbers-1:0] dnIn, ttIn, cuIn, cdIn,
+	input dnSel, ttSel, cuSel, cdSel,
+	input [7:0] tcLoadOut,
+	input DEFAULT_CLOCK, DEFAULT_RESET
+);
+
+assert property(@(posedge clk) (dnIn[tcAddr] == 1) |-> (tcLoadOut[3:0] == 4'b0000));
+assert property(@(posedge clk) (ttIn[tcAddr] == 1) |-> (tcLoadOut[7:4] == 4'b0000));
+assert property(@(posedge clk) (cuIn[tcAddr] == 1) |-> (tcLoadOut[6:4] == 3'b000));
+assert property(@(posedge clk) (cdIn[tcAddr] == 1) |-> (tcLoadOut[7] == 1'b0));
+endmodule

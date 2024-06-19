@@ -1,0 +1,10 @@
+property a9;
+@(posedge clk) (Rx_er_dl1 == 1) |-> (MRxErr == 1);
+endproperty
+assert_a9: assert property(a9);
+
+property a8;
+@(posedge clk) (Rx_er_dl1 == 0) |-> (MRxErr == 0);
+endproperty
+assert_a8: assert property(a8);
+

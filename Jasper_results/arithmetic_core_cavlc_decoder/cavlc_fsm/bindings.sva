@@ -1,0 +1,17 @@
+bind cavlc_fsm
+ i_cavlc_fsm v_cavlc_fsm(
+.TotalCoeff_comb(TotalCoeff_comb),
+.TrailingOnes_comb(TrailingOnes_comb),
+.i(i),
+.ena(ena),
+.clk(clk),
+.max_coeff_num(max_coeff_num),
+.TrailingOnes(TrailingOnes),
+.ZeroLeft(ZeroLeft),
+.state(state),
+.idle(idle),
+.TotalCoeff(TotalCoeff),
+.valid(valid),
+.rst_n(rst_n),
+.start(start)
+);

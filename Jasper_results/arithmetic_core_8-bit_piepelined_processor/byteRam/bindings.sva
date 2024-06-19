@@ -1,0 +1,11 @@
+bind byteRam 
+ i_ramByte v_ramByte(
+.byteRamRw(byteRamRw),
+.byteRamAddr(byteRamAddr),
+.clk(clk),
+.byteRam(byteRam),
+.reset(reset),
+.byteRamOut(byteRamOut),
+.byteRamIn(byteRamIn),
+.byteRamEn(byteRamEn)
+);

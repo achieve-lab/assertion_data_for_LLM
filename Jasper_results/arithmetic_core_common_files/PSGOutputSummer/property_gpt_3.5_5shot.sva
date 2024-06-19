@@ -1,0 +1,10 @@
+module i_PSGOutputSummer(
+input [21:0] o,	// summed input
+input [21:0] ufi,	// unfiltered audio input
+input [7:0] cnt,	// clock divider
+input [21:0] fi,	// filtered audio input
+input clk_i		// master clock
+);
+
+assert property(@(posedge clk_i) (cnt == 8'd0) |-> (o == ufi + fi));
+endmodule

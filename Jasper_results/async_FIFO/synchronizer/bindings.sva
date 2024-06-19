@@ -1,0 +1,8 @@
+bind synchronizer
+ i_synchronizer v_synchronizer(
+.clk(clk),
+.q1(q1),
+.d_in(d_in),
+.rst_n(rst_n),
+.d_out(d_out)
+);

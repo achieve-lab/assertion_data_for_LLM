@@ -1,0 +1,12 @@
+bind Broadcast_filter
+ i_Broadcast_filter v_Broadcast_filter(
+.broadcast_bucket_depth(broadcast_bucket_depth),
+.Reset(Reset),
+.broadcast_bucket_interval(broadcast_bucket_interval),
+.broadcast_counter(broadcast_counter),
+.broadcast_filter_en(broadcast_filter_en),
+.Clk(Clk),
+.time_counter(time_counter),
+.broadcast_drop(broadcast_drop),
+.broadcast_ptr(broadcast_ptr)
+);

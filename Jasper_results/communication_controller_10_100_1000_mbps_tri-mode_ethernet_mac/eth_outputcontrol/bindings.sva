@@ -1,0 +1,18 @@
+bind eth_outputcontrol
+ i_eth_outputcontrol v_eth_outputcontrol(
+.Clk(Clk),
+.Reset(Reset),
+.Mdo_d(Mdo_d),
+.MdoEn_d(MdoEn_d),
+.InProgress(InProgress),
+.MdcEn_n(MdcEn_n),
+.Mdo_2d(Mdo_2d),
+.WriteOp(WriteOp),
+.MdoEn_2d(MdoEn_2d),
+.ShiftedBit(ShiftedBit),
+.BitCounter(BitCounter),
+.SerialEn(SerialEn),
+.NoPre(NoPre),
+.MdoEn(MdoEn),
+.Mdo(Mdo)
+);

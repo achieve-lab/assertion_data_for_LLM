@@ -1,0 +1,38 @@
+module i_arb2(
+input req1, req2,
+input gnt1, gnt2,
+input state,
+input clk,
+input rst
+);
+
+assert property(@(posedge clk) (gnt2) |-> req2);
+assert property(@(posedge clk) (state) |-> req1);
+assert property(@(posedge clk) (gnt1) |-> req1);
+assert property(@(posedge clk) (!state && gnt1) |-> req2);
+assert property(@(posedge clk) (!gnt1 && state ##1 state ##2 req1) |-> state);
+assert property(@(posedge clk) (!gnt1 && state ##1 state ##2 gnt1) |-> state);
+assert property(@(posedge clk) (gnt1 ##1 !gnt1 && state ##1 state ##1 gnt2 ##1 1) |-> gnt1);
+assert property(@(posedge clk) (gnt1 ##1 !gnt1 && state ##1 state ##1 !req1 ##1 state) |-> gnt1);
+assert property(@(posedge clk) (gnt1 ##1 !gnt1 && state ##1 state ##1 !gnt1 ##1 state) |-> gnt1);
+assert property(@(posedge clk) (rst ##3 1) |-> gnt1);
+assert property(@(posedge clk) (rst ##4 1) |-> gnt1);
+assert property(@(posedge clk) (rst ##2 1) |-> state);
+assert property(@(posedge clk) (rst ##4 1) |-> state);
+assert property(@(posedge clk) (rst ##2 1) |-> gnt2);
+assert property(@(posedge clk) (rst ##1 1) |-> gnt2);
+assert property(@(posedge clk) (!state && gnt1 ##1 !req2 && !state ##1 gnt1 ##1 req2) |-> req1);
+assert property(@(posedge clk) (!state && gnt1 ##1 !req2 && !state ##1 !gnt2 && state ##1 req2) |-> req1);
+assert property(@(posedge clk) (!state && gnt1 ##1 !req2 && !state ##1 !gnt2 && req1 ##1 req2) |-> req1);
+assert property(@(posedge clk) (rst ##2 1) |-> req1);
+assert property(@(posedge clk) (rst ##3 1) |-> req1);
+assert property(@(posedge clk) (rst ##4 1) |-> req1);
+assert property(@(posedge clk) (rst ##3 1) |-> req2);
+assert property(@(posedge clk) (rst ##2 1) |-> req2);
+assert property(@(posedge clk) (rst ##1 1) |-> req2);
+assert property(@(posedge clk) (gnt1 ##1 !state && gnt1 ##1 gnt1 ##1 !state && gnt1 ##1 state) |-> gnt2);
+assert property(@(posedge clk) (gnt1 ##1 !state && gnt1 ##1 !gnt2 ##1 !state && gnt1 ##1 state) |-> gnt2);
+assert property(@(posedge clk) (gnt1 ##1 !state && gnt1 ##1 !req2 ##1 !state && gnt1 ##1 state) |-> gnt2);
+assert property(@(posedge clk) (state ##1 state ##1 state ##1 state ##1 gnt1) |-> req2);
+assert property(@(posedge clk) (state ##1 state ##1 state ##1 !req2 ##1 gnt1) |-> req2);
+endmodule

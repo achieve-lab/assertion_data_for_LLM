@@ -1,0 +1,51 @@
+module i_cavlc_read_total_zeros(
+input   chroma_DC_sel,
+input     [3:0]   len_comb,
+input     [3:0]   TotalZeros_G3,
+input     [0:2]   rbsp_chroma_DC,         
+input   ena,
+input     [1:0]   len_chroma_DC,
+input     [3:0]   TotalZeros_LE3,
+input     [0:5]   rbsp_G3,        
+input   [0:8]   rbsp,
+input     [1:0]   TotalZeros_chroma_DC,
+input     [0:8]   rbsp_LE3,       
+input     [3:0]   len_LE3,
+input   sel,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET,
+input  [3:0]   TotalZeros_comb,
+input     [2:0]   len_G3,
+input   [3:0]   TotalCoeff
+);
+
+assert property(@(posedge clk) (ena && sel && chroma_DC_sel && TotalCoeff == 1 && rbsp[0]) |-> (TotalZeros_comb == 0);
+assert property(@(posedge clk) (ena && sel && chroma_DC_sel && TotalCoeff == 1 && rbsp[1]) |-> (TotalZeros_comb == 1);
+assert property(@(posedge clk) (ena && sel && chroma_DC_sel && TotalCoeff == 1 && rbsp[2]) |-> (TotalZeros_comb == 2);
+assert property(@(posedge clk) (ena && sel && chroma_DC_sel && TotalCoeff == 1) |-> (TotalZeros_comb == 3);
+assert property(@(posedge clk) (ena && sel && TotalCoeff[3:2] == 2'b00 && rbsp[0]) |-> (TotalZeros_comb == 0);
+assert property(@(posedge clk) (ena && sel && TotalCoeff[3:2] == 2'b00 && rbsp[1]) |-> (TotalZeros_comb == 1);
+assert property(@(posedge clk) (ena && sel && TotalCoeff[3:2] == 2'b00) |-> (TotalZeros_comb == 2);
+assert property(@(posedge clk) (ena && sel && TotalCoeff != 1 && TotalCoeff != 2 && TotalCoeff != 4 && TotalCoeff != 5) |-> (TotalZeros_comb == 0);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 2 && rbsp[0]) |-> (TotalZeros_comb == 0);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 2 && rbsp[1]) |-> (TotalZeros_comb == 1);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 2) |-> (TotalZeros_comb == 2);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 4 && rbsp[0]) |-> (TotalZeros_comb == 1);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 4 && rbsp[1]) |-> (TotalZeros_comb == 4);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 4 && rbsp[2]) |-> (TotalZeros_comb == 5);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 5 && rbsp[0]) |-> (TotalZeros_comb == 3);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 5 && rbsp[1]) |-> (TotalZeros_comb == 4);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 5 && rbsp[2]) |-> (TotalZeros_comb == 5);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 5 && rbsp[3]) |-> (TotalZeros_comb == 6);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 5 && rbsp[4]) |-> (TotalZeros_comb == 7);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 5 && rbsp[5]) |-> (TotalZeros_comb == 9);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 5 && rbsp[6]) |-> (TotalZeros_comb == 11);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 5 && rbsp[7]) |-> (TotalZeros_comb == 13);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 5 && rbsp[8]) |-> (TotalZeros_comb == 15);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 6 && rbsp[0]) |-> (TotalZeros_comb == 3);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 6 && rbsp[1]) |-> (TotalZeros_comb == 4);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 6 && rbsp[2]) |-> (TotalZeros_comb == 5);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 6 && rbsp[3]) |-> (TotalZeros_comb == 6);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 6 && rbsp[4]) |-> (TotalZeros_comb == 7);
+assert property(@(posedge clk) (ena && sel && TotalCoeff == 6 && rbsp[5]) |-> (TotalZeros_comb == 8
+endmodule

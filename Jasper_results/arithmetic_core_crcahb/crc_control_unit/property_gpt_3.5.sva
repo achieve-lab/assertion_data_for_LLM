@@ -1,0 +1,49 @@
+module i_crc_control_unit(
+ input byte_en,
+ input [1:0] byte_sel,
+input [2:0] state_byte,
+ input [1:0] size_in,
+ input read_wait,
+ input write,
+ input bypass_size,
+ input rst_n,
+ input clk,
+input [2:0] state_reset,
+ input clear_crc_init_sel,
+input [2:0] next_state_reset,
+ input reset_pending,
+input [1:0] next_state_full,
+ input reset_chain,
+ input set_crc_init_sel,
+ input buffer_full,
+input [1:0] state_full,
+input last_byte,
+ input bypass_byte0,
+ input crc_out_en,
+input has_data,
+input [2:0] next_state_byte
+);
+
+assert property(@(posedge clk) (state_full == WRITE_1 && write) |-> (next_state_full == WRITE_2);
+assert property(@(posedge clk) (state_full == WRITE_1 && !write) |-> (next_state_full == EMPTY);
+assert property(@(posedge clk) (state_full == WRITE_2 && last_byte) |-> (next_state_full == BYPASS);
+assert property(@(posedge clk) (state_full == WRITE_2 && !last_byte) |-> (next_state_full == WRITE_1);
+assert property(@(posedge clk) (state_full == BYPASS && last_byte && !write) |-> (next_state_full == WRITE_1);
+assert property(@(posedge clk) (state_byte == IDLE && write) |-> (next_state_byte == BYTE_0);
+assert property(@(posedge clk) (state_byte == IDLE && !write && !has_data) |-> (next_state_byte == IDLE);
+assert property(@(posedge clk) (state_byte == BYTE_1 && size_in == HALF_WORD && (has_data || (write && !buffer_full))) |-> (next_state_byte == BYTE_0);
+assert property(@(posedge clk) (state_byte == BYTE_1 && !(size_in == HALF_WORD && (has_data || (write && !buffer_full)))) |-> (next_state_byte == IDLE);
+assert property(@(posedge clk) (state_byte == BYTE_1 && size_in == WORD) |-> (next_state_byte == BYTE_2);
+assert property(@(posedge clk) (state_byte == BYTE_2) |-> (next_state_byte == BYTE_3);
+assert property(@(posedge clk) (state_byte == BYTE_3 && (has_data || (write && !buffer_full))) |-> (next_state_byte == BYTE_0);
+assert property(@(posedge clk) (state_byte == BYTE_3 && !(has_data || (write && !buffer_full))) |-> (next_state_byte == IDLE);
+assert property(@(posedge clk) (state_reset == NO_RESET && reset_chain && has_data && !last_byte) |-> (next_state_reset == WAIT);
+assert property(@(posedge clk) (state_reset == NO_RESET && reset_chain && has_data && last_byte) |-> (next_state_reset == RESET);
+assert property(@(posedge clk) (state_reset == RESET && last_byte) |-> (next_state_reset == NO_RESET);
+assert property(@(posedge clk) (state_reset == RESET && !last_byte) |-> (next_state_reset == WRITE);
+assert property(@(posedge clk) (state_reset == WRITE && reset_chain && last_byte) |-> (next_state_reset == RESET_2);
+assert property(@(posedge clk) (state_reset == WRITE && !reset_chain && last_byte) |-> (next_state_reset == NO_RESET);
+assert property(@(posedge clk) (state_reset == WRITE && !last_byte) |-> (next_state_reset == WRITE);
+assert property(@(posedge clk) (state_reset == RESET_2 && last_byte) |-> (next_state_reset == RESET);
+assert property(@(posedge clk) (state_reset == RESET_2 && !last_byte) |-> (next_state_reset == RESET_2);
+endmodule

@@ -1,0 +1,16 @@
+bind ca_prng
+ i_ca_prng v_ca_prng(
+.tmp_ca_state_new(tmp_ca_state_new),
+.init_pattern_data(init_pattern_data),
+.ca_state_new(ca_state_new),
+.next_pattern(next_pattern),
+.update_rule(update_rule),
+.clk(clk),
+.ca_state_we(ca_state_we),
+.reset_n(reset_n),
+.load_update_rule(load_update_rule),
+.update_rule_reg(update_rule_reg),
+.prng_data(prng_data),
+.load_init_pattern(load_init_pattern),
+.ca_state_reg(ca_state_reg)
+);

@@ -1,0 +1,34 @@
+module i_eth_crc(
+input  [31:0] Crc,
+input Reset,
+input Enable,
+input CrcError,
+input Initialize,
+input [3:0] Data,
+input Clk,
+input [31:0] CrcNext
+);
+
+assert property(@(posedge Clk) (Reset) |-> (Crc == 32'hffffffff);
+assert property(@(posedge Clk) (Initialize) |-> (Crc == 32'hffffffff);
+assert property(@(posedge Clk) (Enable & (Data[0] ^ Crc[28])) |-> (CrcNext[0] == 1);
+assert property(@(posedge Clk) (Enable & (Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29])) |-> (CrcNext[1] == 1);
+assert property(@(posedge Clk) (Enable & (Data[2] ^ Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29] ^ Crc[30])) |-> (CrcNext[2] == 1);
+assert property(@(posedge Clk) (Enable & (Data[3] ^ Data[2] ^ Data[1] ^ Crc[29] ^ Crc[30] ^ Crc[31])) |-> (CrcNext[3] == 1);
+assert property(@(posedge Clk) (Enable & (Data[3] ^ Data[2] ^ Data[0] ^ Crc[28] ^ Crc[30] ^ Crc[31])) |-> (CrcNext[4] == Crc[0]);
+assert property(@(posedge Clk) (Enable & (Data[3] ^ Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29] ^ Crc[31])) |-> (CrcNext[5] == Crc[1]);
+assert property(@(posedge Clk) (Enable & (Data[2] ^ Data[1] ^ Crc[29] ^ Crc[30])) |-> (CrcNext[6] == Crc[2]);
+assert property(@(posedge Clk) (Enable & (Data[3] ^ Data[2] ^ Data[0] ^ Crc[28] ^ Crc[30] ^ Crc[31])) |-> (CrcNext[7] == Crc[3]);
+assert property(@(posedge Clk) (Enable & (Data[3] ^ Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29] ^ Crc[31])) |-> (CrcNext[8] == Crc[4]);
+assert property(@(posedge Clk) (Enable & (Data[2] ^ Data[1] ^ Crc[29] ^ Crc[30])) |-> (CrcNext[9] == Crc[5]);
+assert property(@(posedge Clk) (Enable & (Data[3] ^ Data[2] ^ Data[0] ^ Crc[28] ^ Crc[30] ^ Crc[31])) |-> (CrcNext[10] == Crc[6]);
+assert property(@(posedge Clk) (Enable & (Data[3] ^ Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29] ^ Crc[31])) |-> (CrcNext[11] == Crc[7]);
+assert property(@(posedge Clk) (Enable & (Data[2] ^ Data[1] ^ Data[0] ^ Crc[28] ^ Crc[29] ^ Crc[30])) |-> (CrcNext[12] == Crc[8]);
+assert property(@(posedge Clk) (Enable & (Data[3] ^ Data[2] ^ Data[1] ^ Crc[29] ^ Crc[30] ^ Crc[31])) |-> (CrcNext[13] == Crc[9]);
+assert property(@(posedge Clk) (Enable & (Data[3] ^ Data[2] ^ Crc[30] ^ Crc[31])) |-> (CrcNext[14] == Crc[10]);
+assert property(@(posedge Clk) (Enable & (Data[3] ^ Crc[31])) |-> (CrcNext[15] == Crc[11]);
+assert property(@(posedge Clk) (Enable & (Data[0] ^ Crc[28])) |-> (CrcNext[16] == Crc[12]);
+assert property(@(posedge Clk) (Enable & (Data[1] ^ Crc[29])) |-> (CrcNext[17] == Crc[13]);
+assert property(@(posedge Clk) (Enable & (Data[2] ^ Crc[30])) |-> (CrcNext[18] == Crc[14]);
+assert property(@(posedge Clk) (Enable & (Data[3] ^ Crc[31
+endmodule

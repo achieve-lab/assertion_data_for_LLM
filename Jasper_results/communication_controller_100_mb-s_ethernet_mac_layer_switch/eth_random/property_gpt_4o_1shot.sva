@@ -1,0 +1,41 @@
+module i_eth_random(
+input  [9:0] RandomLatched,
+input [15:0] NibCnt,
+input Feedback,
+input [9:0] Random,
+input StateJam_q,
+input [9:0] ByteCnt,
+input RandomEqByteCnt,
+input MTxClk,
+input RandomEq0,
+input [9:0] x,
+input [3:0] RetryCnt,
+input StateJam,
+input Reset
+);
+
+assert property(@(posedge MTxClk) (Reset) |-> (x == 10'h000);
+assert property(@(posedge MTxClk) (!Reset && $rose(MTxClk)) |-> (x == {x[8:0], ~(x[2] ^ x[9])});
+assert property(@(posedge MTxClk) (RetryCnt <= 1) |-> (Random[1:0] == {1'b0, x[0]});
+assert property(@(posedge MTxClk) (RetryCnt <= 2) |-> (Random[2:0] == {2'b00, x[0]});
+assert property(@(posedge MTxClk) (RetryCnt <= 3) |-> (Random[3:0] == {3'b000, x[0]});
+assert property(@(posedge MTxClk) (RetryCnt <= 4) |-> (Random[4:0] == {4'b0000, x[0]});
+assert property(@(posedge MTxClk) (RetryCnt <= 5) |-> (Random[5:0] == {5'b00000, x[0]});
+assert property(@(posedge MTxClk) (RetryCnt <= 6) |-> (Random[6:0] == {6'b000000, x[0]});
+assert property(@(posedge MTxClk) (RetryCnt <= 7) |-> (Random[7:0] == {7'b0000000, x[0]});
+assert property(@(posedge MTxClk) (RetryCnt <= 8) |-> (Random[8:0] == {8'b00000000, x[0]});
+assert property(@(posedge MTxClk) (RetryCnt <= 9) |-> (Random[9:0] == {9'b000000000, x[0]});
+assert property(@(posedge MTxClk) (RetryCnt > 1) |-> (Random[1] == x[1]);
+assert property(@(posedge MTxClk) (RetryCnt > 2) |-> (Random[2] == x[2]);
+assert property(@(posedge MTxClk) (RetryCnt > 3) |-> (Random[3] == x[3]);
+assert property(@(posedge MTxClk) (RetryCnt > 4) |-> (Random[4] == x[4]);
+assert property(@(posedge MTxClk) (RetryCnt > 5) |-> (Random[5] == x[5]);
+assert property(@(posedge MTxClk) (RetryCnt > 6) |-> (Random[6] == x[6]);
+assert property(@(posedge MTxClk) (RetryCnt > 7) |-> (Random[7] == x[7]);
+assert property(@(posedge MTxClk) (RetryCnt > 8) |-> (Random[8] == x[8]);
+assert property(@(posedge MTxClk) (RetryCnt > 9) |-> (Random[9] == x[9]);
+assert property(@(posedge MTxClk) (Reset) |-> (RandomLatched == 10'h000);
+assert property(@(posedge MTxClk) (StateJam && StateJam_q && !Reset && $rose(MTxClk)) |-> (RandomLatched == Random);
+assert property(@(posedge MTxClk) (RandomLatched == 10'h0) |-> (RandomEq0 == 1);
+assert property(@(posedge MTxClk) (ByteCnt[9:0] == RandomLatched && (&NibCnt[6:0])) |-> (RandomEqByteCnt == 1);
+endmodule

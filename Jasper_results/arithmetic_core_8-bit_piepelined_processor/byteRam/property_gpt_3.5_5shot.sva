@@ -1,0 +1,11 @@
+`include "defines.v"
+module i_ramByte(
+		input [`byteRamAddrLen-1:0] byteRamAddr,
+		input [`byteRamLen-1:0] byteRamIn,
+		input [`byteRamLen-1:0] byteRam [`byteRamDepth-1:0],
+		input [`byteRamLen-1:0] byteRamOut,
+		input clk, reset, byteRamEn, byteRamRw
+);
+
+assert property(@(posedge clk) (byteRamEn && byteRamRw && byteRamAddr == 0) |-> (byteRamOut == byteRam[0])); assert property(@(posedge clk) (!byteRamEn) |-> (byteRamOut == `byteRamLen'bz)); assert property(@(posedge clk) (byteRamEn && !byteRamRw) |-> (byteRam[byteRamAddr] == byteRamIn));
+endmodule

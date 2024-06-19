@@ -1,0 +1,17 @@
+bind uartRec
+ i_uartRec v_uartRec(
+.bNext(bNext),
+.stateReg(stateReg),
+.nNext(nNext),
+.clk(clk),
+.sTick(sTick),
+.rxDoneTick(rxDoneTick),
+.nReg(nReg),
+.bReg(bReg),
+.rx(rx),
+.sReg(sReg),
+.dOut(dOut),
+.reset(reset),
+.stateNext(stateNext),
+.sNext(sNext)
+);

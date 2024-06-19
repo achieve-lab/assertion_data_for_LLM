@@ -1,0 +1,11 @@
+parameter WIDTH = 8;
+module i_can_register_asyn(
+input             clk,
+input             rst,
+input             we,
+input [WIDTH-1:0] data_out,
+input [WIDTH-1:0] data_in
+);
+
+assert property(@(posedge clk) (we && !rst) |-> (data_out == data_in)); assert property(@(posedge clk) (!we && !rst) |-> (data_out == $past(data_out)));
+endmodule

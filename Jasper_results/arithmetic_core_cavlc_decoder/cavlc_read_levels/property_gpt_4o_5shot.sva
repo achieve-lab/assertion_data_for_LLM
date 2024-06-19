@@ -1,0 +1,78 @@
+module i_cavlc_read_levels(
+input  [8:0]   level_4,
+input   [3:0]   i,
+input  [8:0]   level_14,
+input  [8:0]   level_5,
+input   [4:0]   TotalCoeff,
+input     [3:0]   level_prefix_comb,
+input    [2:0]   tmp1,
+input   t1s_sel,
+input     [4:0]   len_comb,
+input  [8:0]   level_3,
+input   prefix_sel,
+input   clk,
+input  [8:0]   level_1,
+input  [8:0]   level_15,
+input level_abs_refresh,
+input first_level,
+input   ena,
+input  [8:0]   level_9,
+input  [8:0]   level_6,
+input  [8:0]   level_8,
+input   rst_n,
+input  [8:0]   level_2,
+input     [8:0]   level_suffix,
+input   [0:15]  rbsp,
+input     [8:0]   level,
+input   suffix_sel,
+input   [1:0]   TrailingOnes,
+input  [8:0]   level_12,
+input  [8:0]   level_13,
+input  [8:0]   level_10,
+input     [3:0]   level_prefix,
+input     [8:0]   level_abs,
+input  [8:0]   level_0,
+input     [0:15]  rbsp_internal,        // reduce toggle rate
+input  [8:0]   level_7,
+input     [8:0]   level_code_tmp,
+input   calc_sel,
+input  [8:0]   level_11,
+input     [2:0]   suffixLength   // range from 0 to 6
+);
+
+assert property(@(posedge clk) (t1s_sel || prefix_sel || suffix_sel) && ena |-> rbsp_internal == rbsp);
+assert property(@(posedge clk) !(t1s_sel || prefix_sel || suffix_sel) && ena |-> rbsp_internal == 'hffff);
+assert property(@(posedge clk) rbsp_internal[0] |-> level_prefix_comb == 0);
+assert property(@(posedge clk) rbsp_internal[1] |-> level_prefix_comb == 1);
+assert property(@(posedge clk) rbsp_internal[2] |-> level_prefix_comb == 2);
+assert property(@(posedge clk) rbsp_internal[3] |-> level_prefix_comb == 3);
+assert property(@(posedge clk) rbsp_internal[4] |-> level_prefix_comb == 4);
+assert property(@(posedge clk) rbsp_internal[5] |-> level_prefix_comb == 5);
+assert property(@(posedge clk) rbsp_internal[6] |-> level_prefix_comb == 6);
+assert property(@(posedge clk) rbsp_internal[7] |-> level_prefix_comb == 7);
+assert property(@(posedge clk) rbsp_internal[8] |-> level_prefix_comb == 8);
+assert property(@(posedge clk) rbsp_internal[9] |-> level_prefix_comb == 9);
+assert property(@(posedge clk) rbsp_internal[10] |-> level_prefix_comb == 10);
+assert property(@(posedge clk) rbsp_internal[11] |-> level_prefix_comb == 11);
+assert property(@(posedge clk) rbsp_internal[12] |-> level_prefix_comb == 12);
+assert property(@(posedge clk) rbsp_internal[13] |-> level_prefix_comb == 13);
+assert property(@(posedge clk) rbsp_internal[14] |-> level_prefix_comb == 14);
+assert property(@(posedge clk) rbsp_internal[15] |-> level_prefix_comb == 15);
+assert property(@(posedge clk) prefix_sel && ena |-> level_prefix == level_prefix_comb);
+assert property(@(posedge clk) prefix_sel && ena && TotalCoeff > 10 && TrailingOnes < 3 && first_level |-> suffixLength == 1);
+assert property(@(posedge clk) prefix_sel && ena && first_level && !(TotalCoeff > 10 && TrailingOnes < 3) |-> suffixLength == 0);
+assert property(@(posedge clk) prefix_sel && ena && suffixLength == 0 && level_abs > 2'd3 |-> suffixLength == 2);
+assert property(@(posedge clk) prefix_sel && ena && suffixLength == 0 && !(level_abs > 2'd3) |-> suffixLength == 1);
+assert property(@(posedge clk) prefix_sel && ena && level_abs > (2'd3 << (suffixLength - 1'b1)) && suffixLength < 6 |-> suffixLength == suffixLength + 1'b1);
+assert property(@(posedge clk) suffixLength > 0 && level_prefix <= 14 |-> level_suffix == {3'b0, rbsp_internal[0:5] >> (3'd6 - suffixLength)});
+assert property(@(posedge clk) level_prefix == 14 |-> level_suffix == {3'b0, rbsp_internal[0:3]});
+assert property(@(posedge clk) level_prefix == 15 |-> level_suffix == rbsp_internal[3:11]);
+assert property(@(posedge clk) suffix_sel && ena |-> level_code_tmp == (level_prefix << suffixLength) + level_suffix + ((suffixLength == 0 && level_prefix == 15) ? 4'd15 : 0));
+assert property(@(posedge clk) level_code_tmp % 2 == 0 |-> level == (level_code_tmp + tmp1 + 2) >> 1);
+assert property(@(posedge clk) !(level_code_tmp % 2 == 0) |-> level == (-level_code_tmp - tmp1 - 1) >> 1);
+assert property(@(posedge clk) calc_sel && ena |-> level_abs == (level[8] ? -level : level);
+assert property(@(posedge clk) t1s_sel && ena && i == 0 |-> level_0 == (rbsp_internal[0] ? -1 : 1);
+assert property(@(posedge clk) t1s_sel && ena && i == 1 |-> level_1 == (rbsp_internal[0] ? -1 : 1);
+assert property(@(posedge clk) t1s_sel && ena && i == 1 && TrailingOnes[1] |-> level_0 == (rbsp_internal[1] ? -1 : 1);
+assert property(@(posedge clk) t1s_sel && ena && i ==
+endmodule

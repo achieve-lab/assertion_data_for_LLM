@@ -1,0 +1,31 @@
+module i_eth_random(
+input  [9:0] RandomLatched,
+input [15:0] NibCnt,
+input Feedback,
+input [9:0] Random,
+input StateJam_q,
+input [9:0] ByteCnt,
+input RandomEqByteCnt,
+input MTxClk,
+input RandomEq0,
+input [9:0] x,
+input [3:0] RetryCnt,
+input StateJam,
+input Reset
+);
+
+assert property(@(posedge MTxClk) (Reset) |-> (x == 10'h000);
+assert property(@(posedge MTxClk) (!Reset && StateJam && StateJam_q) |-> (RandomLatched == Random);
+assert property(@(posedge MTxClk) (RandomEq0) |-> (RandomLatched == 10'h000);
+assert property(@(posedge MTxClk) (RandomEqByteCnt) |-> (ByteCnt[9:0] == RandomLatched && (&NibCnt[6:0]));
+assert property(@(posedge MTxClk) (RetryCnt <= 1) |-> (Random[1] == 1'b0);
+assert property(@(posedge MTxClk) (RetryCnt <= 2) |-> (Random[2] == 1'b0);
+assert property(@(posedge MTxClk) (RetryCnt <= 3) |-> (Random[3] == 1'b0);
+assert property(@(posedge MTxClk) (RetryCnt <= 4) |-> (Random[4] == 1'b0);
+assert property(@(posedge MTxClk) (RetryCnt <= 5) |-> (Random[5] == 1'b0);
+assert property(@(posedge MTxClk) (RetryCnt <= 6) |-> (Random[6] == 1'b0);
+assert property(@(posedge MTxClk) (RetryCnt <= 7) |-> (Random[7] == 1'b0);
+assert property(@(posedge MTxClk) (RetryCnt <= 8) |-> (Random[8] == 1'b0);
+assert property(@(posedge MTxClk) (RetryCnt <= 9) |-> (Random[9] == 1'b0);
+assert property(@(posedge MTxClk) (!Reset) |-> (Feedback == ~(x[2] ^ x[9]));
+endmodule

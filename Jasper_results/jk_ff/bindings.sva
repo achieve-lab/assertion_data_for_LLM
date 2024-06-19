@@ -1,0 +1,9 @@
+bind JK_flipflop 
+ i_jk_ff v_jk_ff(
+.q(q),
+.q_bar(q_bar),
+.j(j),
+.k(k),
+.rst_n(rst_n),
+.clk(clk)
+);

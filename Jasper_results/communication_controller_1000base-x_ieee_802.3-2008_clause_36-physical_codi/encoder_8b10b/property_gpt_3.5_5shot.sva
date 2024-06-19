@@ -1,0 +1,27 @@
+module i_encoder_8b10b(
+   input   A,B,C,D,E,F,G,H,      
+   input   illegalk, DISPARITY6,
+   input SBYTECLK,
+   input   ND_1S4, PD_1S4, NDOS4, PDOS4,
+   input   NFO, NGO, NHO, NJO,
+   input alt7, tNFO, tNGO, tNHO, tNJO,
+   input 	  a,b,c,d,e,i,f,g,h,j, 
+   input reset,
+   // --- TB (Ten Bt Interface) input bus
+   // --- Eight Bt input bus	  
+   input [9:0] tbi,
+   input    COMPLS6, COMPLS4,
+   input   L40, L04, L13, L31, L22, AeqB, CeqD,
+   input   PD_1S6, NDOS6, PDOS6, ND_1S6,
+   input [7:0] ebi,
+   input   NAO, NBO, NCO, NDO, NEO, NIO,
+   input [9:0] tst,
+   input disparity,
+   // --- Control (K) input	  
+   input tNAO, tNBOx, tNBOy, tNCOx, tNCOy, tNDO , tNEOx, tNEOy, tNIOw, tNIOx, tNIOy, tNIOz,
+   // Figures 7 & 8 - Latched 5B/6B and 3B/4B encoder inputs 
+   input K
+);
+
+assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NBO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NAO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NJO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NHO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NGO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NFO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NIO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NEO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NDO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NCO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NBO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NAO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NJO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NHO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NGO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NFO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NIO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NEO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NDO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NCO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NBO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NAO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NJO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NHO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NGO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NFO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NIO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NEO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NDO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NCO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NBO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NAO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NJO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NHO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NGO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NFO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NIO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NEO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NDO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NCO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NBO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NAO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NJO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NHO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NGO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NFO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NIO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NEO; assert property(@(posedge SBYTECLK) (NDO && NCO) |-> NDO; assert property(@(posedge
+endmodule

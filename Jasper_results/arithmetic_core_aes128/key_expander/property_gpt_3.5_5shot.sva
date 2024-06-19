@@ -1,0 +1,26 @@
+module i_key_expander(
+	input add_w_out,
+	input  [ 31:0] g_out,
+input   [     8 - 1 : 0] rc_dir, rc_inv,
+input  [     8 - 1 : 0] rot_in[0 : 4 - 1],
+	input  [127:0] key_out,
+	input enc_dec,
+input  [32 - 1 : 0] g_func,
+	input  [  3:0] round,
+	input  [127:0] key_in,
+input  [     8 - 1 : 0] rc,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET,
+input  [32 - 1 : 0] key   [0 : 4 - 1],
+	input  [ 31:0] g_in
+
+);
+
+assert property(@(posedge clk) (key_out[127:96] == key_in[127:96] ^ g_func) |-> (key_out[95:64] == key_in[95:64] ^ g_func));
+assert property(@(posedge clk) (key_out[95:64] == key_in[95:64] ^ g_func) |-> (key_out[63:32] == key_in[63:32] ^ g_func));
+assert property(@(posedge clk) (key_out[63:32] == key_in[63:32] ^ g_func) |-> (key_out[31:0] == key_in[31:0] ^ g_func));
+assert property(@(posedge clk) (add_w_out) |-> (key_out[95:64] == key_in[95:64] ^ key_in[127:96] ^ g_func));
+assert property(@(posedge clk) (!add_w_out) |-> (key_out[95:64] == key_in[95:64] ^ key_in[127:96]));
+assert property(@(posedge clk) (enc_dec) |-> (g_in[31:24] == rot_in[3]));
+assert property(@(posedge clk) (!enc_dec) |-> (g_in[31:24] == rot_in[3] ^ rot_in[2]));
+endmodule

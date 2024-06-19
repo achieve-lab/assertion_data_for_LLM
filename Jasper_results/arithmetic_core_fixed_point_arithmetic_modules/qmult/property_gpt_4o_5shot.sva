@@ -1,0 +1,28 @@
+module i_qmult(
+	input [63:0] a_ext,
+    input [31:0] a,
+	input [63:0] a_mult,    
+    input [63:0] flip,
+        input [63:0] out,
+        input [63:0] data,
+    input [31:0] b,
+	input [63:0] result,
+	input [31:0] retVal,
+	input [63:0] r_ext,
+	input [63:0] b_mult,
+	input [63:0] b_ext,
+    input [31:0] c,
+	input DEFAULT_CLOCK,
+input DEFAULT_RESET
+);
+
+assert property(@(posedge clk) (a[31] == 1) |-> (a_mult == a_ext));
+assert property(@(posedge clk) (a[31] == 0) |-> (a_mult == a));
+assert property(@(posedge clk) (b[31] == 1) |-> (b_mult == b_ext));
+assert property(@(posedge clk) (b[31] == 0) |-> (b_mult == b));
+assert property(@(posedge clk) (a_mult * b_mult == result));
+assert property(@(posedge clk) ((a[31] == 1 && b[31] == 0) || (a[31] == 0 && b[31] == 1)) |-> (retVal[31] == 1));
+assert property(@(posedge clk) ((a[31] == 1 && b[31] == 0) || (a[31] == 0 && b[31] == 1)) |-> (retVal[30:0] == r_ext[30:0]));
+assert property(@(posedge clk) ((a[31] == 0 && b[31] == 0) || (a[31] == 1 && b[31] == 1)) |-> (retVal[31] == 0));
+assert property(@(posedge clk) ((a[31] == 0 && b[31] == 0) || (a[31] == 1 && b[31] == 1)) |-> (retVal[30:0] == result[47:15]));
+endmodule

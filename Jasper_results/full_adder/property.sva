@@ -1,0 +1,52 @@
+module i_full_adder(
+input a, b, cin,
+input S, Cout,
+input DEFAULT_CLOCK, DEFAULT_RESET
+);
+
+assert property(@(posedge DEFAULT_CLOCK) (Cout) |-> Cout);
+assert property(@(posedge DEFAULT_CLOCK) (cin) |-> cin);
+assert property(@(posedge DEFAULT_CLOCK) (b) |-> b);
+assert property(@(posedge DEFAULT_CLOCK) (a) |-> a);
+assert property(@(posedge DEFAULT_CLOCK) (S) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) (!Cout && cin) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) (!Cout && b) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) (!Cout && a) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) (Cout && S ##1 cin ##1 !Cout && b ##1 S ##1 !Cout) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) (Cout && S ##1 cin ##1 cin ##1 Cout && S ##1 !Cout) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) (Cout && S ##1 S && cin ##1 !Cout ##1 Cout && S ##1 !Cout) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) (Cout && S ##1 cin ##1 !a ##1 Cout && S ##1 !Cout) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) (!cin && !S ##1 Cout ##1 Cout && S ##1 !b && Cout ##1 cin) |-> Cout);
+assert property(@(posedge DEFAULT_CLOCK) (Cout && S ##1 !b && cin ##1 !Cout ##1 Cout && S ##1 !Cout) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) (Cout && S ##1 !Cout && cin ##1 !Cout ##1 Cout && S ##1 !Cout) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) (Cout && S ##1 a && cin ##1 !Cout ##1 Cout && S ##1 !Cout) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) (Cout && S ##1 cin ##1 !S && !Cout ##1 Cout && S ##1 !Cout) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) (Cout && S ##1 cin ##1 !Cout && !S ##1 Cout && S ##1 !Cout) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) (!a && Cout ##1 !Cout && !S ##1 b ##1 !cin && Cout ##1 !a) |-> cin);
+assert property(@(posedge DEFAULT_CLOCK) (!a && Cout ##1 !Cout && !S ##1 a && b ##1 !cin && Cout ##1 1) |-> cin);
+assert property(@(posedge DEFAULT_CLOCK) (!cin && !S ##1 cin ##1 Cout && S ##1 !b && Cout ##1 cin) |-> Cout);
+assert property(@(posedge DEFAULT_CLOCK) (!a && Cout ##1 !Cout && !S ##1 !cin && b ##1 !cin && Cout ##1 !Cout) |-> cin);
+assert property(@(posedge DEFAULT_CLOCK) (!cin && !S ##1 a && b ##1 Cout && S ##1 !b && Cout ##1 cin) |-> Cout);
+assert property(@(posedge DEFAULT_CLOCK) (!cin && !S ##1 b && a ##1 Cout && S ##1 !b && Cout ##1 cin) |-> Cout);
+assert property(@(posedge DEFAULT_CLOCK) (!a ##1 Cout && S ##1 !b && Cout ##1 Cout ##1 !cin && S) |-> b);
+assert property(@(posedge DEFAULT_CLOCK) (DEFAULT_RESET ##2 1) |-> S);
+assert property(@(posedge DEFAULT_CLOCK) (DEFAULT_RESET ##3 1) |-> a);
+assert property(@(posedge DEFAULT_CLOCK) (DEFAULT_RESET ##4 1) |-> a);
+assert property(@(posedge DEFAULT_CLOCK) (DEFAULT_RESET ##2 1) |-> a);
+assert property(@(posedge DEFAULT_CLOCK) (DEFAULT_RESET ##2 1) |-> b);
+assert property(@(posedge DEFAULT_CLOCK) (DEFAULT_RESET ##1 1) |-> b);
+assert property(@(posedge DEFAULT_CLOCK) (DEFAULT_RESET ##4 1) |-> cin);
+assert property(@(posedge DEFAULT_CLOCK) (DEFAULT_RESET ##3 1) |-> cin);
+assert property(@(posedge DEFAULT_CLOCK) (DEFAULT_RESET ##2 1) |-> cin);
+assert property(@(posedge DEFAULT_CLOCK) (DEFAULT_RESET ##1 1) |-> cin);
+assert property(@(posedge DEFAULT_CLOCK) (DEFAULT_RESET ##4 1) |-> Cout);
+assert property(@(posedge DEFAULT_CLOCK) (DEFAULT_RESET ##3 1) |-> Cout);
+assert property(@(posedge DEFAULT_CLOCK) (DEFAULT_RESET ##2 1) |-> Cout);
+assert property(@(posedge DEFAULT_CLOCK) (DEFAULT_RESET ##1 1) |-> Cout);
+assert property(@(posedge DEFAULT_CLOCK) (!Cout && !S ##1 b ##1 Cout && S ##1 !b && Cout ##1 cin) |-> Cout);
+assert property(@(posedge DEFAULT_CLOCK) (!cin && !S && !a ##1 b ##1 Cout && S ##1 !b && Cout ##1 cin) |-> Cout);
+assert property(@(posedge DEFAULT_CLOCK) (!a && !cin && !S ##1 b ##1 Cout && S ##1 !b && Cout ##1 cin) |-> Cout);
+assert property(@(posedge DEFAULT_CLOCK) (!cin && !b ##1 b ##1 Cout && S ##1 !b && Cout ##1 cin) |-> Cout);
+assert property(@(posedge DEFAULT_CLOCK) (!b && !cin ##1 b ##1 Cout && S ##1 !b && Cout ##1 cin) |-> Cout);
+assert property(@(posedge DEFAULT_CLOCK) (!a && !b ##1 !b && Cout ##1 !b && Cout ##1 Cout && S ##1 !cin) |-> a);
+endmodule

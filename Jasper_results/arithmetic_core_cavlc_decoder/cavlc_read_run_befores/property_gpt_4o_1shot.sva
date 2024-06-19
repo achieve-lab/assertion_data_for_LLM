@@ -1,0 +1,73 @@
+module i_cavlc_read_run_befores(
+input  [8:0]   coeff_6,
+input   [8:0]   level_5,
+input  [8:0]   coeff_9,
+input   sel,
+input  [3:0]   len_comb,
+input     [8:0]   coeff,
+input   [8:0]   level_6,
+input   ena,
+input  [8:0]   coeff_14,
+input     [8:0]   coeff_12,
+input   clr,
+input  [8:0]   coeff_1,
+input   [0:10]  rbsp,
+input  [8:0]   coeff_4,
+input   [8:0]   level_7,
+input   [8:0]   level_15,
+input   clk,
+input   [3:0]   i,          //range from TotalCoeff-1 to 0
+input   [8:0]   level_0,
+input   [8:0]   level_12,
+input  [8:0]   coeff_11,
+input     [8:0]   coeff_10,
+input  [8:0]   coeff_3,
+input   [8:0]   level_14,
+input   [8:0]   level_4,
+input     [8:0]   coeff_13,
+input   [8:0]   level_3,
+input     [8:0]   coeff_5,
+input     [3:0]   run,
+input  [8:0]   coeff_7,
+input  [8:0]   coeff_15,
+input     [8:0]   coeff_0,
+input   [8:0]   level_1,
+input     [3:0]   len,
+input  [8:0]   coeff_2,
+input   [8:0]   level_10,
+input   [8:0]   level_9,
+input   ZeroLeft_init,
+input   [8:0]   level_13,
+input  [8:0]   coeff_8,
+input   [8:0]   level_11,
+input     [3:0]   ZeroLeft,
+input   [3:0]   TotalZeros_comb,
+input   rst_n,
+input  [8:0] level_8,
+input   [8:0]   level_2
+);
+
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 0) |-> (len == 0 && run == 0);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 1 && rbsp[0] == 1) |-> (len == 1 && run == 0);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 1 && rbsp[0] == 0) |-> (len == 1 && run == 1);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 2 && rbsp[0] == 1) |-> (len == 1 && run == 0);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 2 && rbsp[0] == 0 && rbsp[1] == 1) |-> (len == 2 && run == 1);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 2 && rbsp[0] == 0 && rbsp[1] == 0) |-> (len == 2 && run == 2);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 3) |-> (len == 2 && run == 3 - rbsp[0:1]);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 4 && rbsp[0:1] != 0) |-> (len == 2 && run == 3 - rbsp[0:1]);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 4 && rbsp[0:1] == 0 && rbsp[2] == 1) |-> (len == 3 && run == 3);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 4 && rbsp[0:1] == 0 && rbsp[2] == 0) |-> (len == 3 && run == 4);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 5 && rbsp[0] == 1 && rbsp[1] == 1) |-> (len == 2 && run == 0);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 5 && rbsp[0] == 1 && rbsp[1] == 0) |-> (len == 2 && run == 1);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 5 && rbsp[0] == 0 && rbsp[1] == 1 && rbsp[2] == 1) |-> (len == 3 && run == 2);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 5 && rbsp[0] == 0 && rbsp[1] == 1 && rbsp[2] == 0) |-> (len == 3 && run == 3);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 5 && rbsp[0] == 0 && rbsp[1] == 0 && rbsp[2] == 1) |-> (len == 3 && run == 4);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 5 && rbsp[0] == 0 && rbsp[1] == 0 && rbsp[2] == 0) |-> (len == 3 && run == 5);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 6 && rbsp[0:1] == 2'b11) |-> (len == 2 && run == 0);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 6 && rbsp[0:1] != 2'b11) |-> (len == 3);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 6 && rbsp[0:2] == 3'b000) |-> (run == 1);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 6 && rbsp[0:2] == 3'b001) |-> (run == 2);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 6 && rbsp[0:2] == 3'b011) |-> (run == 3);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 6 && rbsp[0:2] == 3'b010) |-> (run == 4);
+assert property(@(posedge clk) (ena && sel && ZeroLeft == 6
+endmodule

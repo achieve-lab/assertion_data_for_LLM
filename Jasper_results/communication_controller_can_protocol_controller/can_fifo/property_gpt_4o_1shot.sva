@@ -1,0 +1,74 @@
+module i_can_fifo(
+  input           overrun_info[0:63],
+input     [5:0] rd_info_pointer,
+input         rst,
+input     [5:0] wr_pointer,
+input         wr,
+input         release_buffer,
+input           latch_overrun,
+input [`CAN_MBIST_CTRL_WIDTH - 1:0] mbist_ctrl_i,       // bist chain shift control
+input    [3:0] length_info,
+input           wr_q,
+input          fifo_full,
+input     [3:0] len_cnt,
+input   [7:0] data_in,
+input     [5:0] read_address,
+  input     [7:0] fifo [0:63],
+input          mbist_s_0,
+input          info_full,
+input        overrun,
+input     [6:0] fifo_cnt,
+input        info_empty,
+input         reset_mode,
+input           initialize_memories,
+input         clk,
+input          write_length_info,
+input         fifo_selected,
+input        mbist_so_o,
+  input     [3:0] length_fifo[0:63],
+input   [5:0] addr,
+input     [5:0] rd_pointer,
+input         mbist_si_i,
+input     [6:0] info_cnt,
+input  [7:0] data_out,
+input          fifo_empty,
+input     [5:0] wr_info_pointer,
+input         extended_mode
+);
+
+assert property(@(posedge clk) (rst) |-> (wr_q == 0));
+assert property(@(posedge clk) (reset_mode) |-> (wr_q == 0));
+assert property(@(posedge clk) (wr) |-> (wr_q == 1));
+assert property(@(posedge clk) (rst) |-> (len_cnt == 4'h0));
+assert property(@(posedge clk) (reset_mode | write_length_info) |-> (len_cnt == 4'h0));
+assert property(@(posedge clk) (wr & (~fifo_full)) |-> (len_cnt == len_cnt + 1'b1));
+assert property(@(posedge clk) (rst) |-> (wr_info_pointer == 6'h0));
+assert property(@(posedge clk) (write_length_info & (~info_full) | initialize_memories) |-> (wr_info_pointer == wr_info_pointer + 1'b1));
+assert property(@(posedge clk) (reset_mode) |-> (wr_info_pointer == rd_info_pointer));
+assert property(@(posedge clk) (rst) |-> (rd_info_pointer == 6'h0));
+assert property(@(posedge clk) (release_buffer & (~info_full)) |-> (rd_info_pointer == rd_info_pointer + 1'b1));
+assert property(@(posedge clk) (rst) |-> (rd_pointer == 5'h0));
+assert property(@(posedge clk) (release_buffer & (~fifo_empty)) |-> (rd_pointer == rd_pointer + {2'h0, length_info}));
+assert property(@(posedge clk) (rst) |-> (wr_pointer == 5'h0));
+assert property(@(posedge clk) (reset_mode) |-> (wr_pointer == rd_pointer));
+assert property(@(posedge clk) (wr & (~fifo_full)) |-> (wr_pointer == wr_pointer + 1'b1));
+assert property(@(posedge clk) (rst) |-> (latch_overrun == 1'b0));
+assert property(@(posedge clk) (reset_mode | write_length_info) |-> (latch_overrun == 1'b0));
+assert property(@(posedge clk) (wr & fifo_full) |-> (latch_overrun == 1'b1));
+assert property(@(posedge clk) (rst) |-> (fifo_cnt == 7'h0));
+assert property(@(posedge clk) (reset_mode) |-> (fifo_cnt == 7'h0));
+assert property(@(posedge clk) (wr & (~release_buffer) & (~fifo_full)) |-> (fifo_cnt == fifo_cnt + 1'b1));
+assert property(@(posedge clk) ((~wr) & release_buffer & (~fifo_empty)) |-> (fifo_cnt == fifo_cnt - {3'h0, length_info}));
+assert property(@(posedge clk) (wr & release_buffer & (~fifo_full) & (~fifo_empty)) |-> (fifo_cnt == fifo_cnt - {3'h0, length_info} + 1'b1));
+assert property(@(posedge clk) (fifo_cnt == 7'd64) |-> (fifo_full == 1'b1));
+assert property(@(posedge clk) (fifo_cnt == 7'd0) |-> (fifo_empty == 1'b1));
+assert property(@(posedge clk) (rst) |-> (info_cnt == 7'h0));
+assert property(@(posedge clk) (reset_mode) |-> (info_cnt == 7'h0));
+assert property(@(posedge clk) (write_length_info ^ release_buffer) |-> ((release_buffer & (~info_empty)) ? (info_cnt == info_cnt - 1'b1) : (write_length_info & (~info_full)) ? (info_cnt == info_cnt + 1'b1) : 1'b1));
+assert property(@(posedge clk) (info_cnt == 7'd64) |-> (info_full == 1'b1));
+assert property(@(posedge clk) (info_cnt == 7'd0) |-> (info_empty == 1'b1));
+assert property(@(posedge clk) (extended_mode) |-> (read_address == rd_pointer + (addr - 6'd16)));
+assert property(@(posedge clk) (~extended_mode) |-> (read_address == rd_pointer + (addr - 6'd20)));
+assert property(@(posedge clk) (rst) |-> (initialize_memories == 1'b1));
+assert property(@(posedge clk) (&wr_info_pointer) |-> (initialize_memories == 1'b0));
+endmodule

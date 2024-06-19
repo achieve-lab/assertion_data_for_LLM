@@ -1,0 +1,22 @@
+module i_rptr_handler #(parameter PTR_WIDTH=3)(
+  input rclk, rrst_n, r_en,
+  input [PTR_WIDTH:0] g_wptr_sync,
+  input [PTR_WIDTH:0] b_rptr, g_rptr,
+  input [PTR_WIDTH:0] g_rptr_next,
+  input [PTR_WIDTH:0] b_rptr_next,
+  input empty,
+  input rempty
+);
+
+assert property(@(posedge rclk or negedge rrst_n) (!rrst_n) |-> (b_rptr == 0));
+assert property(@(posedge rclk or negedge rrst_n) (!rrst_n) |-> (g_rptr == 0));
+assert property(@(posedge rclk or negedge rrst_n) (!rrst_n) |-> (empty == 1));
+assert property(@(posedge rclk or negedge rrst_n) (r_en && !empty) |-> (b_rptr_next == b_rptr + 1));
+assert property(@(posedge rclk or negedge rrst_n) (!r_en || empty) |-> (b_rptr_next == b_rptr));
+assert property(@(posedge rclk or negedge rrst_n) (b_rptr_next == b_rptr + 1) |-> (g_rptr_next == (b_rptr_next >> 1) ^ b_rptr_next));
+assert property(@(posedge rclk or negedge rrst_n) (g_wptr_sync == g_rptr_next) |-> (rempty == 1));
+assert property(@(posedge rclk or negedge rrst_n) (g_wptr_sync != g_rptr_next) |-> (rempty == 0));
+assert property(@(posedge rclk or negedge rrst_n) (b_rptr == b_rptr_next));
+assert property(@(posedge rclk or negedge rrst_n) (g_rptr == g_rptr_next));
+assert property(@(posedge rclk or negedge rrst_n) (empty == rempty));
+endmodule

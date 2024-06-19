@@ -1,0 +1,18 @@
+`include "defines.v"
+module i_uartTrans(
+		// input bit-stream
+		input [1:0] stateReg, stateNext,	// current and next states
+		input [2:0] nReg, nNext,		// counter
+		input tx, txDoneTick,
+		input		 txReg, txNext,	// current bit being transferred
+		input [3:0] sReg, sNext,		//	counter
+		input clk, reset, sTick, txStart,
+		input [7:0] bReg, bNext,		// perhaps keeps data to be sent
+		input [`dataBits-1 :0] din
+);
+
+assert property(@(posedge clk) (stateReg == idle && txStart) |-> (tx == 1));
+assert property(@(posedge clk) (stateReg == start && sTick && sReg == 15) |-> (stateNext == data));
+assert property(@(posedge clk) (stateReg == data && sTick && sReg == 15 && nReg == (dataBits-1)) |-> (stateNext == stop));
+assert property(@(posedge clk) (stateReg == stop && sTick && sReg == sbTick-1) |-> (stateNext == idle));
+endmodule

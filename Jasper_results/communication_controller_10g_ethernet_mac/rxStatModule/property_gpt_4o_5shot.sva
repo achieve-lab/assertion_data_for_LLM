@@ -1,0 +1,42 @@
+module i_rxStatModule(
+   input[17:0] rxStatRegPlus_tmp,
+   input jumbo_frame,
+   input multi_valid,
+   input padded_frame,
+   input get_error_code,
+   input crc_check_invalid,
+   input broad_valid,
+   input receiving,
+   input length_256_511,
+   input length_512_1023,
+   input good_frame_get, 
+   input large_error,
+   input rxclk,
+   input reset,
+   input length_65_127,
+   input length_128_255,
+   input pause_frame,
+   input [17:0] rxStatRegPlus,
+   input length_1024_max,
+   input small_error
+);
+
+assert property(@(posedge rxclk) (good_frame_get) |-> (rxStatRegPlus[0] == 1);
+assert property(@(posedge rxclk) (crc_check_invalid) |-> (rxStatRegPlus[1] == 1);
+assert property(@(posedge rxclk) (broad_valid & good_frame_get) |-> (rxStatRegPlus[2] == 1);
+assert property(@(posedge rxclk) (multi_valid & good_frame_get) |-> (rxStatRegPlus[3] == 1);
+assert property(@(posedge rxclk) (padded_frame & good_frame_get) |-> (rxStatRegPlus[4] == 1);
+assert property(@(posedge rxclk) (length_65_127 & good_frame_get) |-> (rxStatRegPlus[5] == 1);
+assert property(@(posedge rxclk) (length_128_255 & good_frame_get) |-> (rxStatRegPlus[6] == 1);
+assert property(@(posedge rxclk) (length_256_511 & good_frame_get) |-> (rxStatRegPlus[7] == 1);
+assert property(@(posedge rxclk) (length_512_1023 & good_frame_get) |-> (rxStatRegPlus[8] == 1);
+assert property(@(posedge rxclk) (length_1024_max & good_frame_get) |-> (rxStatRegPlus[9] == 1);
+assert property(@(posedge rxclk) (pause_frame & good_frame_get) |-> (rxStatRegPlus[10] == 1);
+assert property(@(posedge rxclk) (large_error) |-> (rxStatRegPlus[11] == 1);
+assert property(@(posedge rxclk) (pause_frame & good_frame_get) |-> (rxStatRegPlus[12] == 1);
+assert property(@(posedge rxclk) (jumbo_frame & good_frame_get) |-> (rxStatRegPlus[14] == 1);
+assert property(@(posedge rxclk) (small_error) |-> (rxStatRegPlus[15] == 1);
+assert property(@(posedge rxclk) (receiving & get_error_code) |-> (rxStatRegPlus[16] == 1);
+assert property(@(posedge rxclk) (receiving) |-> (rxStatRegPlus[17] == 1);
+assert property(@(posedge rxclk) (reset) |-> (rxStatRegPlus == 0);
+endmodule

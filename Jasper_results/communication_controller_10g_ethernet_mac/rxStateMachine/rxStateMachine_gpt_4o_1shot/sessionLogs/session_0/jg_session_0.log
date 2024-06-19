@@ -1,0 +1,123 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-06-01 23:18:46 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 338541
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:35273' '-nowindow' '-style' 'windows' '-data' 'AAABPnicfY/NCoJQEIU/iyRa9CBRQRCtXLcLi6CthP1ohFfsWtGmHrU3saNk4KYZ7vycc2aY6wDesygKKms/FFx85vKfOe9v4Tk0rexbTWT1amTo1MO1xNXrMyLBEHAkJxYyELLlLDfchOfiL4qp3JBh2bMT7rOWuiv1QcxV9VC3LtmIy7iLtdpTqhfKIZG2J+rGwkJth55mU2kNJ3Wzv1PlfanwgGl17UQ3Raps9ZMPYjkqSg==' '-proj' '/data/vpulav2/Work/Jasper/communication_controller_10g_ethernet_mac/rxStateMachine/rxStateMachine_gpt_4o_1shot/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper/communication_controller_10g_ethernet_mac/rxStateMachine/rxStateMachine_gpt_4o_1shot/.tmp/.initCmds.tcl' 'FPV_rxStateMachine.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper/communication_controller_10g_ethernet_mac/rxStateMachine/rxStateMachine_gpt_4o_1shot/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/rxStateMachine.v
+[-- (VERI-1482)] Analyzing Verilog file './/rxStateMachine.v'
+[INFO (VERI-1328)] .//rxStateMachine.v(53): analyzing included file './/timescale.v'
+[INFO (VERI-1328)] .//rxStateMachine.v(54): analyzing included file './/xgiga_define.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_gpt_4o_1shot.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_gpt_4o_1shot.sva'
+[ERROR (VERI-1137)] .//property_gpt_4o_1shot.sva(35): syntax error near 'posedge'
+[ERROR (VERI-2344)] .//property_gpt_4o_1shot.sva(35): SystemVerilog 2005 keyword 'posedge' used in incorrect context
+[ERROR (VERI-1137)] .//property_gpt_4o_1shot.sva(42): syntax error near 'posedge'
+[ERROR (VERI-2344)] .//property_gpt_4o_1shot.sva(42): SystemVerilog 2005 keyword 'posedge' used in incorrect context
+[ERROR (VERI-1137)] .//property_gpt_4o_1shot.sva(46): syntax error near 'posedge'
+[ERROR (VERI-2344)] .//property_gpt_4o_1shot.sva(46): SystemVerilog 2005 keyword 'posedge' used in incorrect context
+[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(23): 'IDLE' is not declared
+[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(24): 'IDLE' is not declared
+[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(24): 'rxReceiveDA' is not declared
+[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(25): 'IDLE' is not declared
+[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(25): 'IDLE' is not declared
+[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(26): 'rxReceiveDA' is not declared
+[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(26): 'rxReceiveLT' is not declared
+[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(27): 'rxReceiveLT' is not declared
+[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(27): 'rxReceiveData' is not declared
+[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(28): 'rxReceiveData' is not declared
+[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(28): 'rxGetError' is not declared
+[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(29): 'rxReceiveData' is not declared
+[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(29): 'rxIFGWait' is not declared
+[-- (SYS-1004)] Too many errors. Further error messages will be suppressed.
+[INFO (VMSG-1000)] Too many errors. Further error messages will be suppressed.
+Summary of errors detected:
+	[ERROR (VERI-1137)] .//property_gpt_4o_1shot.sva(35): syntax error near 'posedge'
+	[ERROR (VERI-2344)] .//property_gpt_4o_1shot.sva(35): SystemVerilog 2005 keyword 'posedge' used in incorrect context
+	[ERROR (VERI-1137)] .//property_gpt_4o_1shot.sva(42): syntax error near 'posedge'
+	[ERROR (VERI-2344)] .//property_gpt_4o_1shot.sva(42): SystemVerilog 2005 keyword 'posedge' used in incorrect context
+	[ERROR (VERI-1137)] .//property_gpt_4o_1shot.sva(46): syntax error near 'posedge'
+	[ERROR (VERI-2344)] .//property_gpt_4o_1shot.sva(46): SystemVerilog 2005 keyword 'posedge' used in incorrect context
+	[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(23): 'IDLE' is not declared
+	[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(24): 'IDLE' is not declared
+	[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(24): 'rxReceiveDA' is not declared
+	[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(25): 'IDLE' is not declared
+	[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(25): 'IDLE' is not declared
+	[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(26): 'rxReceiveDA' is not declared
+	[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(26): 'rxReceiveLT' is not declared
+	[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(27): 'rxReceiveLT' is not declared
+	[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(27): 'rxReceiveData' is not declared
+	[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(28): 'rxReceiveData' is not declared
+	[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(28): 'rxGetError' is not declared
+	[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(29): 'rxReceiveData' is not declared
+	[ERROR (VERI-1128)] .//property_gpt_4o_1shot.sva(29): 'rxIFGWait' is not declared
+ERROR (ENL034): 19 errors detected in the design file(s).
+
+ERROR: problem encountered at line 12 in file FPV_rxStateMachine.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.395 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

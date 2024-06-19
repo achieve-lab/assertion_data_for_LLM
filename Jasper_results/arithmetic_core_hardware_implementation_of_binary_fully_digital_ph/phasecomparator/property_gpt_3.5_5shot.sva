@@ -1,0 +1,10 @@
+module i_phasecomparator(
+input MainClock,                    // System Clock
+input InputSignalEdge ,
+input Lead, Lag,                   // inputs "Lead", "Lag" are inputistered
+input [1:0] InputSignalEdgeDet,       // detector of the rising edge
+input InputSignal, OutputSignal
+);
+
+assert property(@(posedge MainClock) (InputSignalEdge && !OutputSignal) |-> Lag); assert property(@(posedge MainClock) (InputSignalEdge && OutputSignal) |-> Lead);
+endmodule

@@ -1,0 +1,10 @@
+property a4;
+@(posedge clk) (WCtrlData_q2 == 1) |=> (WCtrlDataStart == 1);
+endproperty
+assert_a4: assert property(a4);
+
+property a5;
+@(posedge clk) (WCtrlData_q3 == 1) |=> (WCtrlDataStart == 1);
+endproperty
+assert_a5: assert property(a5);
+

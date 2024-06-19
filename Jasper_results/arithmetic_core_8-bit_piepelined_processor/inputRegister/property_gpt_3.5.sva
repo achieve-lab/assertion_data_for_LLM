@@ -1,0 +1,11 @@
+module i_inputRegister(
+	input [`inputNumber-1:0] inputs,
+	input inputReadOut,
+	input [`inputAddrLen-1:0] inputReadAddr,
+	input DEFAULT_CLOCK,
+	input DEFAULT_RESET
+);
+
+assert property(@(posedge clk) (gnt1) |-> (req1));
+assert property(@(posedge clk) (gnt2) |-> (req2));
+endmodule

@@ -1,0 +1,19 @@
+parameter               N = 8;
+parameter mult_constant = {1'b0, 17'd92681};
+
+module i_signed_mult_const_fpga(
+input			valid,
+input			rstn,
+input  signed [N-1:0] a, // variable - positive/negative
+input signed [(16+1)+N-1:0] p_tmp ,
+input signed [N-1:0] a_FF,
+input signed [N  :0] p, // product input
+input			clk
+);
+
+assert property(@(posedge clk) (valid == 1) |-> (a_FF == a));
+assert property(@(posedge clk) (!rstn) |-> (a_FF == 0));
+assert property(@(posedge clk) (valid == 0) |-> (a_FF == a_FF));
+assert property(@(posedge clk) (p == (a_FF * mult_constant) >> 16));
+assert property(@(posedge clk) (valid == 1) |-> (p == ($signed(a) * $signed(mult_constant)) >> 16));
+endmodule

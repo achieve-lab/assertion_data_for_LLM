@@ -1,0 +1,34 @@
+
+parameter N_FilterLength      = 8;
+parameter N_FilterResetValue  = 8;
+parameter N_FilterMaxValue    = N_FilterResetValue;
+parameter ResetterCounterLength   = 4;
+
+module i_variableresetrandomwalkfilter(
+input Up, Down,
+ input  MainClock, Lead, Lag, // System Clock and Phase Comparator signals
+ input Positive, Negative,   // "positive shift" and "negative shift" inputs
+input [N_FilterLength-1 : 0] N_FilterCounter,
+input [ResetterCounterLength-1 : 0] ResetterCounter,
+input DEFAULT_RESET,
+input [N_FilterLength-1 : 0] ResetterValue
+);
+
+assert property(@(posedge MainClock) (Up) |-> (ResetterCounter < ResetterCounterMaxValue || ResetterCounter >= ResetterCounterMinValue));
+assert property(@(posedge MainClock) (Down) |-> (ResetterCounter <= ResetterCounterMaxValue || ResetterCounter > ResetterCounterMinValue));
+assert property(@(posedge MainClock) ((ResetterCounter > ResetterCounterMaxValue) && (ResetterCounter < ResetterCounterMinValue)) |-> (ResetterCounter == 0));
+assert property(@(posedge MainClock) (ResetterCounter == 16 - 3) |-> (ResetterValue == 256 - 7));
+assert property(@(posedge MainClock) (ResetterCounter == 16 - 2) |-> (ResetterValue == 256 - 6));
+assert property(@(posedge MainClock) (ResetterCounter == 16 - 1) |-> (ResetterValue == 256 - 4));
+assert property(@(posedge MainClock) (ResetterCounter == 0) |-> (ResetterValue == 0));
+assert property(@(posedge MainClock) (ResetterCounter == 1) |-> (ResetterValue == 4));
+assert property(@(posedge MainClock) (ResetterCounter == 2) |-> (ResetterValue == 6));
+assert property(@(posedge MainClock) (ResetterCounter == 3) |-> (ResetterValue == 7));
+assert property(@(posedge MainClock) (N_FilterCounter == N_FilterMaxValue || N_FilterCounter == N_FilterMinValue) |-> (N_FilterCounter == ResetterValue));
+assert property(@(posedge MainClock) (Lead) |-> (N_FilterCounter <= N_FilterMaxValue));
+assert property(@(posedge MainClock) (Lag) |-> (N_FilterCounter >= N_FilterMinValue));
+assert property(@(posedge MainClock) (N_FilterCounter == N_FilterMaxValue) |-> (Positive == 1));
+assert property(@(posedge MainClock) (N_FilterCounter == N_FilterMinValue) |-> (Negative == 1));
+assert property(@(posedge MainClock) (Positive) |-> (N_FilterCounter == N_FilterMaxValue));
+assert property(@(posedge MainClock) (Negative) |-> (N_FilterCounter == N_FilterMinValue));
+endmodule

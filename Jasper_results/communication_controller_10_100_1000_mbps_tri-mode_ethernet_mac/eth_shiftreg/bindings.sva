@@ -1,0 +1,17 @@
+bind eth_shiftreg
+ i_eth_shiftreg v_eth_shiftreg(
+.ByteSelect(ByteSelect),
+.LinkFail(LinkFail),
+.ShiftReg(ShiftReg),
+.LatchByte(LatchByte),
+.MdcEn_n(MdcEn_n),
+.Rgad(Rgad),
+.Prsd(Prsd),
+.Clk(Clk),
+.WriteOp(WriteOp),
+.CtrlData(CtrlData),
+.Mdi(Mdi),
+.Reset(Reset),
+.ShiftedBit(ShiftedBit),
+.Fiad(Fiad)
+);

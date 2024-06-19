@@ -1,0 +1,200 @@
+
+module i_eth_rxstatem(
+input         MRxDV,
+input        StateDrop,
+input         MRxDEqD,
+input          StartPreamble,
+input         ByteCntMaxFrame,
+input           StateData0,
+input           StateData1,
+input          StartData1,
+input         ByteCntGreat2,
+input [1:0]  StateData,
+input         MRxDEq5,
+input         MRxClk,
+input           StatePreamble,
+input        StateIdle,
+input          StartSFD,
+input         Transmitting,
+input         IFGCounterEq24,
+input         ByteCntEq0,
+input        StateSFD,
+input          StartDrop,
+input         Reset,
+input          StartData0,
+input          StartIdle
+);
+
+
+property a7;
+@(posedge MRxClk) (StartPreamble == 1) |=> (StatePreamble == 1);
+endproperty
+assert_a7: assert property(a7);
+
+property a0;
+@(posedge MRxClk) (StartDrop == 1) |=> (StatePreamble == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a6;
+@(posedge MRxClk) (StateSFD == 1) |=> (StatePreamble == 0);
+endproperty
+assert_a6: assert property(a6);
+
+property a3;
+@(posedge MRxClk) (StateData[0] == 1) |=> (StatePreamble == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a2;
+@(posedge MRxClk) (StateDrop == 1) |=> (StatePreamble == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a5;
+@(posedge MRxClk) (StateData1 == 1) |=> (StatePreamble == 0);
+endproperty
+assert_a5: assert property(a5);
+
+property a8;
+@(posedge MRxClk) (StatePreamble == 1 & MRxDEq5 == 0 & MRxDV == 1) |=> (StatePreamble == 1);
+endproperty
+assert_a8: assert property(a8);
+
+property a1;
+@(posedge MRxClk) (MRxDEq5 == 1) |=> (StatePreamble == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a4;
+@(posedge MRxClk) (MRxDV == 0) |=> (StatePreamble == 0);
+endproperty
+assert_a4: assert property(a4);
+
+
+property a17;
+@(posedge MRxClk) (StartSFD == 1) |=> (StateSFD == 1);
+endproperty
+assert_a17: assert property(a17);
+
+property a14;
+@(posedge MRxClk) (StartIdle == 1) |=> (StateSFD == 0);
+endproperty
+assert_a14: assert property(a14);
+
+property a9;
+@(posedge MRxClk) (StartDrop == 1) |=> (StateSFD == 0);
+endproperty
+assert_a9: assert property(a9);
+
+property a12;
+@(posedge MRxClk) (StartData0 == 1) |=> (StateSFD == 0);
+endproperty
+assert_a12: assert property(a12);
+
+property a10;
+@(posedge MRxClk) (StartPreamble == 1) |=> (StateSFD == 0);
+endproperty
+assert_a10: assert property(a10);
+
+property a18;
+@(posedge MRxClk) (StateSFD == 1 & StartIdle == 0 & MRxDEqD == 0) |=> (StateSFD == 1);
+endproperty
+assert_a18: assert property(a18);
+
+property a11;
+@(posedge MRxClk) (StateData[0] == 1) |=> (StateSFD == 0);
+endproperty
+assert_a11: assert property(a11);
+
+property a13;
+@(posedge MRxClk) (StateDrop == 1) |=> (StateSFD == 0);
+endproperty
+assert_a13: assert property(a13);
+
+property a16;
+@(posedge MRxClk) (MRxDEq5 == 0 & StatePreamble == 1) |=> (StateSFD == 0);
+endproperty
+assert_a16: assert property(a16);
+
+property a15;
+@(posedge MRxClk) (MRxDV == 0) |=> (StateSFD == 0);
+endproperty
+assert_a15: assert property(a15);
+
+property a20;
+@(posedge MRxClk) (StartIdle == 1) |=> (StateDrop == 0);
+endproperty
+assert_a20: assert property(a20);
+
+property a26;
+@(posedge MRxClk) (StartDrop == 1) |=> (StateDrop == 1);
+endproperty
+assert_a26: assert property(a26);
+
+property a27;
+@(posedge MRxClk) (StateDrop == 1 & StartIdle == 0) |=> (StateDrop == 1);
+endproperty
+assert_a27: assert property(a27);
+
+property a23;
+@(posedge MRxClk) (StateSFD == 1 & StartDrop == 0) |=> (StateDrop == 0);
+endproperty
+assert_a23: assert property(a23);
+
+property a24;
+@(posedge MRxClk) (StateData[0] == 1 & StartDrop == 0) |=> (StateDrop == 0);
+endproperty
+assert_a24: assert property(a24);
+
+property a28;
+@(posedge MRxClk) (StatePreamble == 1) |=> (StateDrop == 0);
+endproperty
+assert_a28: assert property(a28);
+
+property a21;
+@(posedge MRxClk) (StateData1 == 1) |=> (StateDrop == 0);
+endproperty
+assert_a21: assert property(a21);
+
+property a22;
+@(posedge MRxClk) (MRxDV == 0) |=> (StateDrop == 0);
+endproperty
+assert_a22: assert property(a22);
+
+property a25;
+@(posedge MRxClk) (Transmitting == 0 & StateIdle == 1) |=> (StateDrop == 0);
+endproperty
+assert_a25: assert property(a25);
+
+property a33;
+@(posedge MRxClk) (StartIdle == 1) |=> (StateIdle == 1);
+endproperty
+assert_a33: assert property(a33);
+
+property a29;
+@(posedge MRxClk) (StartDrop == 1) |=> (StateIdle == 0);
+endproperty
+assert_a29: assert property(a29);
+
+property a30;
+@(posedge MRxClk) (StartSFD == 1) |=> (StateIdle == 0);
+endproperty
+assert_a30: assert property(a30);
+
+property a31;
+@(posedge MRxClk) (StartPreamble == 1) |=> (StateIdle == 0);
+endproperty
+assert_a31: assert property(a31);
+
+property a32;
+@(posedge MRxClk) (MRxDV == 1) |=> (StateIdle == 0);
+endproperty
+assert_a32: assert property(a32);
+
+property a34;
+@(posedge MRxClk) (MRxDV == 0) |=> (StateIdle == 1);
+endproperty
+assert_a34: assert property(a34);
+
+endmodule

@@ -1,0 +1,12 @@
+bind crc_comb
+ i_crc_comb v_crc_comb(
+.crc_poly(crc_poly),
+.crc_out(crc_out),
+.crc_in_masked(crc_in_masked),
+.crc_in(crc_in),
+.crc_poly_size(crc_poly_size),
+.data_in(data_in),
+.MASK_REVERSED(MASK_REVERSED),
+.feedback(feedback),
+.crc_poly_size_reversed(crc_poly_size_reversed)
+);

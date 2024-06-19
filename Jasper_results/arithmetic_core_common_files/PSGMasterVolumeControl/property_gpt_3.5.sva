@@ -1,0 +1,21 @@
+module i_PSGMasterVolumeControl(
+input [15:0] i,
+input rst_i,
+input [3:0] volume,
+input clk_i,
+input [19:0] o,
+input [19:0] v2 ,
+input [19:0] v1 ,
+input [19:0] vo ,
+input [19:0] v3 
+);
+
+assert property(@(posedge clk_i) (volume[0] == 1) |-> (o == i));
+assert property(@(posedge clk_i) (volume[1] == 1) |-> (o == i + 1));
+assert property(@(posedge clk_i) (volume[2] == 1) |-> (o == i + 3));
+assert property(@(posedge clk_i) (volume[3] == 1) |-> (o == i + 7));
+assert property(@(posedge clk_i) (volume[0] == 0) |-> (o == 0));
+assert property(@(posedge clk_i) (volume[1] == 0) |-> (o == i));
+assert property(@(posedge clk_i) (volume[2] == 0) |-> (o == i));
+assert property(@(posedge clk_i) (volume[3] == 0) |-> (o == i));
+endmodule

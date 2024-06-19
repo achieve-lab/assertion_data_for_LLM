@@ -1,0 +1,25 @@
+`include "defines.v"
+module i_uartRec(
+		input [7:0] bReg, bNext,		// data recieved in this..
+		// recvd data input
+		input [1:0] stateReg, stateNext,	// current and next states
+		input rxDoneTick,
+		input [3:0] sReg, sNext,		//	counter
+		input clk, reset, sTick, rx,
+		input [`dataBits-1:0] dOut,
+		input [2:0] nReg,
+		input [2:0] nNext		// counter
+);
+
+assert property(@(posedge clk) (rx && sTick) |-> (stateNext == start));
+assert property(@(posedge clk) (stateReg == start && sTick) |-> (sNext == sReg + 1));
+assert property(@(posedge clk) (stateReg == data && sTick) |-> (sNext == sReg + 1));
+assert property(@(posedge clk) (stateReg == stop && sTick) |-> (sNext == sReg + 1));
+assert property(@(posedge clk) (stateReg == idle && ~rx) |-> (stateNext == start));
+assert property(@(posedge clk) (stateReg == start && sReg == 7) |-> (stateNext == data));
+assert property(@(posedge clk) (stateReg == data && sReg == 15) |-> (stateNext == stop));
+assert property(@(posedge clk) (stateReg == stop && sReg == (sbTick-1)) |-> (stateNext == idle));
+assert property(@(posedge clk) (stateReg == data && sReg == 15) |-> (bNext == {rx, bReg[7:1]}));
+assert property(@(posedge clk) (nReg == (dataBits-1) && stateReg == data) |-> (stateNext == stop));
+assert property(@(posedge clk) (nReg != (dataBits-1) && stateReg == data) |-> (stateNext == data));
+endmodule

@@ -1,0 +1,17 @@
+module i_can_crc(
+input         initialize,
+input          crc_next,
+input         enable,
+input         clk,
+input   [14:0] crc_tmp,
+input         data,
+input    [14:0] crc
+);
+
+assert property(@(posedge clk) (initialize) |-> (crc == 15'h0));
+assert property(@(posedge clk) (enable && !initialize && crc_next) |-> (crc == (crc_tmp ^ 15'h4599)));
+assert property(@(posedge clk) (enable && !initialize && !crc_next) |-> (crc == crc_tmp));
+assert property(@(posedge clk) (!enable && !initialize) |-> (crc == $past(crc)));
+assert property(@(posedge clk) (crc_next == (data ^ crc[14])));
+assert property(@(posedge clk) (crc_tmp == {crc[13:0], 1'b0}));
+endmodule

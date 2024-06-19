@@ -1,0 +1,13 @@
+module i_dpll(
+input  SignalIn,                // input signal
+input  MainClock,               // reference signal
+input SignalOut,               // input
+input Lead, Lag,               // internal DPLL signals
+input Positive, Negative,      // internal DPLL signals
+input InputSignalEdgeDet,
+input InputSignalEdge,
+input InputSignal
+);
+
+assert property(@(posedge MainClock) (SignalIn && Positive) |-> (SignalOut)); assert property(@(posedge MainClock) (SignalIn && Negative) |-> (SignalOut)); assert property(@(posedge MainClock) (Lead && !Lag) |-> Positive); assert property(@(posedge MainClock) (!Lead && Lag) |-> Negative); assert property(@(posedge MainClock) (Positive && !Negative) |-> SignalOut); assert property(@(posedge MainClock) (!Positive && Negative) |-> SignalOut); assert property(@(posedge MainClock) (Positive && !Negative) |-> SignalOut); assert property(@(posedge MainClock) (!Positive && Negative) |-> SignalOut); assert property(@(posedge MainClock) (Lead && !Lag) |-> SignalOut); assert property(@(posedge MainClock) (!Lead && Lag) |-> SignalOut); assert property(@(posedge MainClock) (Positive && !Negative) |-> Lead); assert property(@(posedge MainClock) (!Positive && Negative) |-> Lag); assert property(@(posedge MainClock) (Positive && !Negative) |-> Lead); assert property(@(posedge MainClock) (!Positive && Negative) |-> Lag); assert property(@(posedge MainClock) (Lead && !Lag) |-> Positive); assert property(@(posedge MainClock) (!Lead && Lag) |-> Negative); assert property(@(posedge MainClock) (Positive && !Negative) |-> SignalOut); assert property(@(posedge MainClock) (!Positive && Negative) |-> SignalOut); assert property(@(posedge MainClock) (Positive && !Negative) |-> SignalOut); assert property(@(posedge MainClock) (!Positive && Negative) |-> SignalOut); assert property(@(posedge MainClock) (Lead && !Lag) |-> SignalOut); assert property(@(posedge MainClock) (!Lead && Lag) |-> SignalOut); assert property(@(posedge MainClock) (Positive && !Negative) |-> Lead); assert property(@(posedge MainClock) (!Positive && Negative) |-> Lag);
+endmodule

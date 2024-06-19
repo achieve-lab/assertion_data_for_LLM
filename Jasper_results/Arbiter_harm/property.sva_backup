@@ -1,0 +1,31 @@
+module v_arb2(clk, rst, req1, req2, gnt1, gnt2, state);
+
+input clk, rst;
+input req1, req2;
+input gnt1, gnt2;
+
+input state;
+
+property a0;
+    @(posedge clk) (gnt2) |-> (req2);
+endproperty
+
+property a1;
+    @(posedge clk) (gnt1) |-> (req1);
+endproperty
+
+property a2;
+    @(posedge clk) (rst) ##4 (1) |-> gnt1;
+endproperty
+
+property a3;
+    @(posedge clk) (state) |-> (req1);
+endproperty
+
+assert_a0: assert property(a0);
+assert_a1: assert property(a1);
+assert_a2: assert property(a2);
+assert_a3: assert property(a3);
+assert_a4: assert property(@(posedge clk) ((!state && gnt1)) |-> req2);
+
+endmodule

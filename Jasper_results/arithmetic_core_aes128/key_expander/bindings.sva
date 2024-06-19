@@ -1,0 +1,13 @@
+bind key_expander
+ i_key_expander v_key_expander(
+.key_in(key_in),
+.round(round),
+.key_out(key_out),
+.g_out(g_out),
+.rc(rc),
+.rc_inv(rc_inv),
+.g_in(g_in),
+.enc_dec(enc_dec),
+.add_w_out(add_w_out),
+.g_func(g_func)
+);

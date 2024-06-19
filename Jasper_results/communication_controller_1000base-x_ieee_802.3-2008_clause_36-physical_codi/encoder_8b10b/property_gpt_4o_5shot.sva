@@ -1,0 +1,44 @@
+module i_encoder_8b10b(
+   input   A,B,C,D,E,F,G,H,      
+   input   illegalk, DISPARITY6,
+   input SBYTECLK,
+   input   ND_1S4, PD_1S4, NDOS4, PDOS4,
+   input   NFO, NGO, NHO, NJO,
+   input alt7, tNFO, tNGO, tNHO, tNJO,
+   input 	  a,b,c,d,e,i,f,g,h,j, 
+   input reset,
+   // --- TB (Ten Bt Interface) input bus
+   // --- Eight Bt input bus	  
+   input [9:0] tbi,
+   input    COMPLS6, COMPLS4,
+   input   L40, L04, L13, L31, L22, AeqB, CeqD,
+   input   PD_1S6, NDOS6, PDOS6, ND_1S6,
+   input [7:0] ebi,
+   input   NAO, NBO, NCO, NDO, NEO, NIO,
+   input [9:0] tst,
+   input disparity,
+   // --- Control (K) input	  
+   input tNAO, tNBOx, tNBOy, tNCOx, tNCOy, tNDO , tNEOx, tNEOy, tNIOw, tNIOx, tNIOy, tNIOz,
+   // Figures 7 & 8 - Latched 5B/6B and 3B/4B encoder inputs 
+   input K
+);
+
+assert property(@(posedge SBYTECLK) (reset) |-> (disparity == 0);
+assert property(@(posedge SBYTECLK) (reset) |-> ({a,b,c,d,e,i,f,g,h,j} == 10'b0);
+assert property(@(posedge SBYTECLK) (PDOS4 | NDOS4) |-> (disparity == ~DISPARITY6);
+assert property(@(posedge SBYTECLK) (PD_1S4 & !DISPARITY6) |-> (COMPLS4 == 1);
+assert property(@(posedge SBYTECLK) (ND_1S4 & DISPARITY6) |-> (COMPLS4 == 1);
+assert property(@(posedge SBYTECLK) (PD_1S6 & !disparity) |-> (COMPLS6 == 1);
+assert property(@(posedge SBYTECLK) (ND_1S6 & disparity) |-> (COMPLS6 == 1);
+assert property(@(posedge SBYTECLK) (tNAO) |-> (NAO == A);
+assert property(@(posedge SBYTECLK) (tNBOx | tNBOy) |-> (NBO == (B & !L40) | L04);
+assert property(@(posedge SBYTECLK) (tNCOx | tNCOy) |-> (NCO == (L04 | C) | (E & D & !C & !B & !A));
+assert property(@(posedge SBYTECLK) (tNDO) |-> (NDO == D & !(A & B & C));
+assert property(@(posedge SBYTECLK) (tNEOx & tNEOy) |-> (NEO == (E | L13) & !(E & D & !C & !B & !A));
+assert property(@(posedge SBYTECLK) (tNIOw | tNIOx | tNIOy | tNIOz) |-> (NIO == ((L22 & !E) | (E & L40)) | (E & !D & !C & !(A & B)) | (K & E & D & C & !B & !A) | (E & !D & C & !B & !A));
+assert property(@(posedge SBYTECLK) (tNFO & !alt7) |-> (NFO == F);
+assert property(@(posedge SBYTECLK) (tNGO) |-> (NGO == G | (!F & !G & !H));
+assert property(@(posedge SBYTECLK) (tNHO) |-> (NHO == H);
+assert property(@(posedge SBYTECLK) (tNJO | alt7) |-> (NJO == (!H & (G ^ F)) | (F & G & H & (K | (disparity ? (!E & D & L31) : (E & !D & L13))));
+assert property(@(posedge SBYTECLK) (alt7) |-> (alt7 == (F & G & H & (K | (disparity ? (!E & D & L31) : (E & !D & L13)))));
+endmodule

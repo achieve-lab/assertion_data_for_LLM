@@ -1,0 +1,120 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-05-29 13:27:03 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 24630
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:37817' '-nowindow' '-style' 'windows' '-data' 'AAABJHicfY5LCsJAEERrFIO48AQ5gagnyNptFCFbkRh/RCdoouBGj+pNxpdghNlYxfSnuroZIyl6OufUoPsgBIo1gz+Y97eIjHzUfcdXFi8vS712ubUEvKEmOstqpZ0qHVBGKGvl0OqOXjG/EgtodVGpTBv0WEvcfdxbJjfqMX+dK2GW4dqTT1xKoeVGya7l6pQqJUsDdotGPdKFf7dqfABJGSWa' '-proj' '/data/vpulav2/Work/Jasper/communication_controller_100_mb-s_ethernet_mac_layer_switch/eth_maccontrol/eth_maccontrol/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper/communication_controller_100_mb-s_ethernet_mac_layer_switch/eth_maccontrol/eth_maccontrol/.tmp/.initCmds.tcl' 'FPV_eth_maccontrol.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper/communication_controller_100_mb-s_ethernet_mac_layer_switch/eth_maccontrol/eth_maccontrol/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/eth_maccontrol.v
+[-- (VERI-1482)] Analyzing Verilog file './/eth_maccontrol.v'
+[INFO (VERI-1328)] .//eth_maccontrol.v(86): analyzing included file './/eth_transmitcontrol.v'
+[INFO (VERI-1328)] .//eth_transmitcontrol.v(81): analyzing included file './/eth_fifo.v'
+[INFO (VERI-1328)] .//eth_fifo.v(59): analyzing included file './/ethmac_defines.v'
+[INFO (VERI-1328)] .//eth_fifo.v(60): analyzing included file './/timescale.v'
+[INFO (VERI-1328)] .//eth_transmitcontrol.v(82): analyzing included file './/timescale.v'
+[INFO (VERI-2561)] .//eth_transmitcontrol.v(452): undeclared symbol 'TxFifoClear', assumed default net type 'wire'
+[INFO (VERI-1328)] .//eth_maccontrol.v(87): analyzing included file './/eth_receivecontrol.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top eth_maccontrol
+INFO (ISW003): Top module name is "eth_maccontrol".
+[INFO (HIER-8002)] .//eth_maccontrol.v(275): Disabling old hierarchical reference handler
+[WARN (VERI-1927)] .//bindings.sva(58): port 'LatchedTimerValue' remains unconnected for this instance
+[WARN (VERI-2435)] .//bindings.sva(58): port 'ReservedMulticast' is not connected on this instance
+[INFO (VERI-1018)] .//eth_receivecontrol.v(80): compiling module 'eth_receivecontrol'
+[INFO (VERI-1018)] .//eth_transmitcontrol.v(85): compiling module 'eth_transmitcontrol'
+[INFO (VERI-1018)] .//eth_fifo.v(62): compiling module 'eth_fifo:(DATA_WIDTH=8,DEPTH=32,CNT_WIDTH=5)'
+[WARN (VERI-1209)] .//eth_fifo.v(107): expression size 32 truncated to fit in target size 5
+[WARN (VERI-1209)] .//eth_fifo.v(109): expression size 32 truncated to fit in target size 5
+[INFO (VERI-1018)] .//eth_transmitcontrol.v(325): compiling module 'eth_L2_Uc_Wrapper'
+[WARN (VERI-1060)] .//eth_transmitcontrol.v(363): 'initial' construct is ignored
+[INFO (VERI-8005)] .//eth_transmitcontrol.v(345): Unintentional sequential element inferred for Divided_2_clk read before write using blocking assignment
+[WARN (VERI-2334)] .//eth_transmitcontrol.v(372): clock signal 'MTxClk' cannot be used as a data signal
+[WARN (VERI-1209)] .//eth_transmitcontrol.v(428): expression size 32 truncated to fit in target size 9
+[WARN (VERI-1209)] .//eth_transmitcontrol.v(432): expression size 32 truncated to fit in target size 8
+[WARN (VDB-1000)] .//eth_transmitcontrol.v(369): net 'Divided_2_clk' is constantly driven from multiple places
+[WARN (VDB-1001)] .//eth_transmitcontrol.v(391): found another driver here
+[INFO (VERI-1018)] .//property.sva(1): compiling module 'i_eth_maccontrol'
+INFO (IPL017): The host machine is running out of memory.
+    This message was triggered because the system reached 10% memory.
+    System memory use information:
+    [Process]
+        Memory In Use: 3045252 kB (65%)
+        Peak Memory Usage: 3045252 kB (65%)
+    [Host]
+        Available Memory: 442096 kB (9%)
+        Total Memory: 4648700 kB
+        Free Swap: 9292028 kB (95%)
+        Total Swap: 9768956 kB
+INFO (IPL017): The host machine is running out of memory.
+    This message was triggered because the system reached 1% memory.
+    System memory use information:
+    [Process]
+        Memory In Use: 3496500 kB (75%)
+        Peak Memory Usage: 3496500 kB (75%)
+    [Host]
+        Available Memory: 90072 kB (1%)
+        Total Memory: 4648700 kB
+        Free Swap: 8993788 kB (92%)
+        Total Swap: 9768956 kB

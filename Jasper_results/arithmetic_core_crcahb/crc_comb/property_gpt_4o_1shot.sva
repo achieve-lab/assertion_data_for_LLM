@@ -1,0 +1,36 @@
+
+parameter CRC_SIZE      = 8;         // Define the size of CRC Code
+parameter MASK          = 8'hff ;
+module i_crc_comb(
+input [CRC_SIZE - 2 : 0] MASK_REVERSED,
+input [CRC_SIZE - 2 : 0] crc_in_masked,
+	input                    data_in,    // One bit of data block
+	input [CRC_SIZE - 1 : 0] crc_in,     // In cascated mode, this input is the previous calculated CRC code
+	input [CRC_SIZE - 1 : 0] crc_poly,   // Generator Polynomial
+input [CRC_SIZE - 2 : 0] crc_poly_size_reversed,
+  input [CRC_SIZE - 2 : 0] crc_poly_size,
+	input [CRC_SIZE - 1 : 0] crc_out,   // CRC code after one round of calculation
+  input DEFAULT_CLOCK,
+  input DEFAULT_RESET,
+input [CRC_SIZE - 1 : 0] feedback
+);
+
+assert property(@(posedge clk) (crc_in[CRC_SIZE - 1] ^ data_in) |-> (feedback == (crc_poly & {CRC_SIZE{crc_in[CRC_SIZE - 1] ^ data_in}}));
+assert property(@(posedge clk) (crc_in[CRC_SIZE - 2 : 0] & (~(crc_poly_size_reversed[CRC_SIZE - 2 : 0] & MASK_REVERSED))) |-> (crc_in_masked == crc_in[CRC_SIZE - 2 : 0] & (~(crc_poly_size_reversed[CRC_SIZE - 2 : 0] & MASK_REVERSED)));
+assert property(@(posedge clk) (crc_in_masked ^ feedback[CRC_SIZE - 1 : 1]) |-> (crc_out[CRC_SIZE - 1 : 1] == crc_in_masked ^ feedback[CRC_SIZE - 1 : 1]));
+assert property(@(posedge clk) (feedback[0]) |-> (crc_out[0] == feedback[0]));
+assert property(@(posedge clk) (crc_poly_size[CRC_SIZE - 2 - 0]) |-> (crc_poly_size_reversed[0] == crc_poly_size[CRC_SIZE - 2 - 0]));
+assert property(@(posedge clk) (MASK[CRC_SIZE - 2 - 0]) |-> (MASK_REVERSED[0] == MASK[CRC_SIZE - 2 - 0]));
+assert property(@(posedge clk) (crc_poly_size[CRC_SIZE - 2 - 1]) |-> (crc_poly_size_reversed[1] == crc_poly_size[CRC_SIZE - 2 - 1]));
+assert property(@(posedge clk) (MASK[CRC_SIZE - 2 - 1]) |-> (MASK_REVERSED[1] == MASK[CRC_SIZE - 2 - 1]));
+assert property(@(posedge clk) (crc_poly_size[CRC_SIZE - 2 - 2]) |-> (crc_poly_size_reversed[2] == crc_poly_size[CRC_SIZE - 2 - 2]));
+assert property(@(posedge clk) (MASK[CRC_SIZE - 2 - 2]) |-> (MASK_REVERSED[2] == MASK[CRC_SIZE - 2 - 2]));
+assert property(@(posedge clk) (crc_poly_size[CRC_SIZE - 2 - 3]) |-> (crc_poly_size_reversed[3] == crc_poly_size[CRC_SIZE - 2 - 3]));
+assert property(@(posedge clk) (MASK[CRC_SIZE - 2 - 3]) |-> (MASK_REVERSED[3] == MASK[CRC_SIZE - 2 - 3]));
+assert property(@(posedge clk) (crc_poly_size[CRC_SIZE - 2 - 4]) |-> (crc_poly_size_reversed[4] == crc_poly_size[CRC_SIZE - 2 - 4]));
+assert property(@(posedge clk) (MASK[CRC_SIZE - 2 - 4]) |-> (MASK_REVERSED[4] == MASK[CRC_SIZE - 2 - 4]));
+assert property(@(posedge clk) (crc_poly_size[CRC_SIZE - 2 - 5]) |-> (crc_poly_size_reversed[5] == crc_poly_size[CRC_SIZE - 2 - 5]));
+assert property(@(posedge clk) (MASK[CRC_SIZE - 2 - 5]) |-> (MASK_REVERSED[5] == MASK[CRC_SIZE - 2 - 5]));
+assert property(@(posedge clk) (crc_poly_size[CRC_SIZE - 2 - 6]) |-> (crc_poly_size_reversed[6] == crc_poly_size[CRC_SIZE - 2 - 6]));
+assert property(@(posedge clk) (MASK[CRC_SIZE - 2 - 6]) |-> (MASK_REVERSED[6] == MASK[CRC_SIZE - 2 - 6]));
+endmodule

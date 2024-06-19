@@ -1,0 +1,38 @@
+module i_cavlc_read_total_coeffs(
+input   [0:15]   rbsp,
+input     [1:0]   TrailingOnes_3,
+input     [4:0]   TotalCoeff,
+input     [4:0]   len_5,
+input     [4:0]   TotalCoeff_5,
+input     [4:0]   len_1,
+input     [1:0]   TrailingOnes,
+input   sel,
+input     [4:0]   len_2,
+input   start,
+input     [4:0]   TotalCoeff_comb,
+input     [1:0]   TrailingOnes_4,
+input     [4:0]   TotalCoeff_1,
+input     [4:0]   len_3,
+input     [4:0]   TotalCoeff_4,
+input     [4:0]   TotalCoeff_3,
+input     [0:15]  rbsp_1,         
+input     [4:0]   len_4,
+input     [4:0]   len_comb,
+input     [0:9]   rbsp_3,
+input     [0:5]   rbsp_4,
+input   rst_n,
+input     [1:0]   TrailingOnes_comb,
+input     [0:7]   rbsp_5,
+input   ena,
+input   signed   [5:0]   nC,
+input     [1:0]   TrailingOnes_5,
+input     [1:0]   TrailingOnes_1,
+input     [0:13]  rbsp_2,
+input     [4:0]   TotalCoeff_2,
+input     [1:0]   TrailingOnes_2,
+input DEFAULT_RESET,
+input   clk
+);
+
+assert property(@(posedge clk) (nC == -1) |-> (TrailingOnes_comb == 3); assert property(@(posedge clk) (nC == -1) |-> (TotalCoeff_comb == 4); assert property(@(posedge clk) (nC[4] | nC[3]) |-> (TrailingOnes_comb == 0); assert property(@(posedge clk) (nC[4] | nC[3]) |-> (TotalCoeff_comb == 0); assert property(@(posedge clk) (nC[2]) |-> (TrailingOnes_comb == 3); assert property(@(posedge clk) (nC[2]) |-> (TotalCoeff_comb == 3); assert property(@(posedge clk) (nC[1]) |-> (TrailingOnes_comb == 1); assert property(@(posedge clk) (nC[1]) |-> (TotalCoeff_comb == 2); assert property(@(posedge clk) (!(nC == -1) && !(nC[4] | nC[3]) && !(nC[2]) && !(nC[1])) |-> (TrailingOnes_comb == 1); assert property(@(posedge clk) (!(nC == -1) && !(nC[4] | nC[3]) && !(nC[2]) && !(nC[1])) |-> (TotalCoeff_comb == 1); assert property(@(posedge clk) (!rst_n) |-> (TrailingOnes == 0); assert property(@(posedge clk) (!rst_n) |-> (TotalCoeff == 0); assert property(@(posedge clk) (ena && sel) |-> (TrailingOnes == TrailingOnes_comb); assert property(@(posedge clk) (ena && sel) |-> (TotalCoeff == TotalCoeff_comb);
+endmodule

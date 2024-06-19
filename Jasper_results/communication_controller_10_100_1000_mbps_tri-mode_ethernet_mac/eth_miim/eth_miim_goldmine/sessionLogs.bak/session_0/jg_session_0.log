@@ -1,0 +1,112 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-04-24 11:25:35 CDT
+# hostname  : pal-achieve-08.(none)
+# pid       : 56409
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:33437' '-nowindow' '-style' 'windows' '-data' 'AAABHnicZY7NDsFAFIXPEI1YeAaxlPAEXduWSGxFtKjQaVASGx7Vm4xvGpVMnJu5P+ecublGUvx0zqlG+0GKlGhK/GDe3yY2CuHnVsjMX0GVOs3nxhLx+hqrkNVKO1XKYUYwax0Jqzt8hX4hl4TVWVdlSuETLXB3cW9RbvQDbp1piZbh2lNPbMzJE+YNG6Ue/pItVgem4Z/T32FxpjVToHt8AEj2JDY=' '-proj' '/data/vpulav2/Work/Jasper/eth_miim/eth_miim_goldmine/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper/eth_miim/eth_miim_goldmine/.tmp/.initCmds.tcl' 'FPV_eth_miim.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper/eth_miim/eth_miim_goldmine/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/eth_miim.v \
+  ${RTL_PATH}/eth_shiftreg.v \
+  ${RTL_PATH}/eth_outputcontrol.v
+[-- (VERI-1482)] Analyzing Verilog file './/eth_miim.v'
+[INFO (VERI-1328)] .//eth_miim.v(99): analyzing included file './/eth_shiftreg.v'
+[INFO (VERI-1328)] .//eth_miim.v(100): analyzing included file './/eth_clockgen.v'
+[INFO (VERI-1328)] .//eth_miim.v(101): analyzing included file './/eth_outputcontrol.v'
+[INFO (VERI-2561)] .//eth_miim.v(466): undeclared symbol 'MdcEn_n', assumed default net type 'wire'
+[-- (VERI-1482)] Analyzing Verilog file './/eth_shiftreg.v'
+[WARN (VERI-1206)] .//eth_shiftreg.v(161): overwriting previous definition of module 'eth_shiftreg'
+[INFO (VERI-2142)] .//eth_shiftreg.v(161): previous definition of design element 'eth_shiftreg' is here
+[-- (VERI-1482)] Analyzing Verilog file './/eth_outputcontrol.v'
+[WARN (VERI-1206)] .//eth_outputcontrol.v(159): overwriting previous definition of module 'eth_outputcontrol'
+[INFO (VERI-2142)] .//eth_outputcontrol.v(159): previous definition of design element 'eth_outputcontrol' is here
+%   
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property_goldmine.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property_goldmine.sva'
+[ERROR (VERI-1128)] .//property_goldmine.sva(75): 'clk' is not declared
+[ERROR (VERI-1128)] .//property_goldmine.sva(80): 'clk' is not declared
+[ERROR (VERI-1128)] .//property_goldmine.sva(85): 'clk' is not declared
+[ERROR (VERI-1128)] .//property_goldmine.sva(90): 'clk' is not declared
+[ERROR (VERI-1128)] .//property_goldmine.sva(95): 'clk' is not declared
+[ERROR (VERI-1128)] .//property_goldmine.sva(100): 'clk' is not declared
+[ERROR (VERI-1128)] .//property_goldmine.sva(105): 'clk' is not declared
+[ERROR (VERI-1128)] .//property_goldmine.sva(110): 'clk' is not declared
+[ERROR (VERI-1072)] .//property_goldmine.sva(114): module 'i_eth_miim' is ignored due to previous errors
+Summary of errors detected:
+	[ERROR (VERI-1128)] .//property_goldmine.sva(75): 'clk' is not declared
+	[ERROR (VERI-1128)] .//property_goldmine.sva(80): 'clk' is not declared
+	[ERROR (VERI-1128)] .//property_goldmine.sva(85): 'clk' is not declared
+	[ERROR (VERI-1128)] .//property_goldmine.sva(90): 'clk' is not declared
+	[ERROR (VERI-1128)] .//property_goldmine.sva(95): 'clk' is not declared
+	[ERROR (VERI-1128)] .//property_goldmine.sva(100): 'clk' is not declared
+	[ERROR (VERI-1128)] .//property_goldmine.sva(105): 'clk' is not declared
+	[ERROR (VERI-1128)] .//property_goldmine.sva(110): 'clk' is not declared
+	[ERROR (VERI-1072)] .//property_goldmine.sva(114): module 'i_eth_miim' is ignored due to previous errors
+ERROR (ENL034): 9 errors detected in the design file(s).
+
+ERROR: problem encountered at line 15 in file FPV_eth_miim.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.414 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

@@ -1,0 +1,81 @@
+parameter N = 8;
+
+module i_fht_1d_x8(
+input			x_valid,
+input [N:0] stg1_sum2,
+input [N+1:0] stg2_sum1,
+input			rstn,
+input [N+1:0] stg2_sub1,
+// Data input [N-1:0] ,
+input [N+2:0] stg3_sum1,
+	// input data - x0,x1,x2,x3,x4,x5,x6,x7,x0,x1...
+input [N+2:0] stg3_sub3,
+input h6_valid,
+input	fht_valid_or,
+input h4_valid,
+input [N+1:0] stg2_sub3,
+input [N:0] mult_dat_1,
+input [N+2:0] stg3_sub1,
+input [13:0] xi_ready_d,
+	// 1D FHT input data - h0,h1,h2,h3,h4,h5,h6,h7,h0,h1...
+input [2:0] cnt,
+input [N+1:0] stg2_sum3,
+input h7_valid,
+input h0_valid,
+input [N+1:0] mult_res1,
+input [N:0] stg1_sum4,
+input x_valid_1d,
+input [N-1:0] x0,x1,x2,x3,x4,x5,x6,x7,
+input [N+2:0] stg3_sub2,
+input h2_valid,
+input h5_valid,
+input [N+2:0] h0_FF,h1_FF,h2_FF,h3_FF,h4_FF,h5_FF,h6_FF,h7_FF,
+input [N+1:0] mult_res2,
+input h3_valid,
+input [N:0] stg1_sub1,
+input [N:0] stg1_sub2,
+input [N+2:0] stg3_sum3,
+input	[N+2:0]	fht_data,
+input h1_valid,
+input [N+2:0] stg3_sum2,
+input xi_ready,
+input [N+2:0] stg3_sum4,
+input [N+2:0] stg3_sub4,
+input	[N-1:0]	x_data,
+input [N-1:0] x0_FF,x1_FF,x2_FF,x3_FF,x4_FF,x5_FF,x6_FF,x7_FF,
+input			sclk,
+input [N:0] stg1_sum3,
+input [N+1:0] stg2_sub2,
+input [N:0] stg1_sub3,
+input [N:0] stg1_sub4,
+input [N+1:0] stg2_sum2,
+input			fht_valid,
+input [N:0] mult_dat_2,
+input [N+2:0] h_or_data,
+input [N:0] stg1_sum1
+// On the input of the 1st bfly is [N:0] 
+);
+
+assert property(@(posedge sclk) (!rstn) |-> (x0 == 0 && x1 == 0 && x2 == 0 && x3 == 0 && x4 == 0 && x5 == 0 && x6 == 0 && x7 == 0));
+assert property(@(posedge sclk) (x_valid) |-> (x0 == x_data && x1 == x0 && x2 == x1 && x3 == x2 && x4 == x3 && x5 == x4 && x6 == x5 && x7 == x6));
+assert property(@(posedge sclk) (!rstn) |-> (x_valid_1d == 0));
+assert property(@(posedge sclk) (x_valid) |-> (x_valid_1d == x_valid));
+assert property(@(posedge sclk) (!rstn) |-> (cnt == 0));
+assert property(@(posedge sclk) (x_valid_1d) |-> (cnt == cnt + 1));
+assert property(@(posedge sclk) (cnt == 7 && x_valid_1d) |-> (xi_ready == 1));
+assert property(@(posedge sclk) (!rstn) |-> (x0_FF == 0 && x1_FF == 0 && x2_FF == 0 && x3_FF == 0 && x4_FF == 0 && x5_FF == 0 && x6_FF == 0 && x7_FF == 0));
+assert property(@(posedge sclk) (xi_ready) |-> (x0_FF == x7 && x1_FF == x6 && x2_FF == x5 && x3_FF == x4 && x4_FF == x3 && x5_FF == x2 && x6_FF == x1 && x7_FF == x0));
+assert property(@(posedge sclk) (!rstn) |-> (xi_ready_d == 0));
+assert property(@(posedge sclk) (xi_ready) |-> (xi_ready_d == {xi_ready_d[12:0], xi_ready}));
+assert property(@(posedge sclk) (xi_ready_d[5]) |-> (h0_FF == stg3_sum1 && h4_FF == stg3_sub1 && h2_FF == stg3_sum2 && h6_FF == stg3_sub2 && h1_FF == stg3_sum3 && h5_FF == stg3_sub3 && h3_FF == stg3_sum4 && h7_FF == stg3_sub4));
+assert property(@(posedge sclk) (xi_ready_d[6]) |-> (h0_valid == 1));
+assert property(@(posedge sclk) (xi_ready_d[7]) |-> (h1_valid == 1));
+assert property(@(posedge sclk) (xi_ready_d[8]) |-> (h2_valid == 1));
+assert property(@(posedge sclk) (xi_ready_d[9]) |-> (h3_valid == 1));
+assert property(@(posedge sclk) (xi_ready_d[10]) |-> (h4_valid == 1));
+assert property(@(posedge sclk) (xi_ready_d[11]) |-> (h5_valid == 1));
+assert property(@(posedge sclk) (xi_ready_d[12]) |-> (h6_valid == 1));
+assert property(@(posedge sclk) (xi_ready_d[13]) |-> (h7_valid == 1));
+assert property(@(posedge sclk) (fht_valid_or) |-> (fht_valid == 1));
+assert property(@(posedge sclk) (fht_valid_or) |-> (fht_data == h_or_data);
+endmodule

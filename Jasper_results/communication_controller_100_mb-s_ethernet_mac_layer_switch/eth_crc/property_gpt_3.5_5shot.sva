@@ -1,0 +1,16 @@
+module i_eth_crc(
+input  [31:0] Crc,
+input Reset,
+input Enable,
+input CrcError,
+input Initialize,
+input [3:0] Data,
+input Clk,
+input [31:0] CrcNext
+);
+
+assert property(@(posedge Clk) (Crc[31:0] == 32'hc704dd7b) |-> (CrcError == 0);
+assert property(@(posedge Clk) (Crc[31:0] != 32'hc704dd7b) |-> (CrcError == 1);
+assert property(@(posedge Clk) (Crc[31:0] == 32'hffffffff) |-> (CrcError == 1);
+assert property(@(posedge Clk) (Crc[31:0] != 32'hffffffff) |-> (CrcError == 0);
+endmodule

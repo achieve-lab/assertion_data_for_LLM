@@ -1,0 +1,74 @@
+module i_can_btl(
+input   [2:0] time_segment2,
+/* Bus Timing 1 inputister */
+input sampled_bit,
+input           sampled_bit_q,
+input         triple_sampling,
+input         go_tx,
+input        hard_sync,
+input           seg2,
+/* Bus Timing 0 inputister */
+input           hard_sync_blocked,
+input     [3:0] delay,
+input          go_sync,
+input   [1:0] sync_jump_width,
+input          go_seg2,
+input     [1:0] sample,
+input         tx_next,
+input           tx_next_sp,
+input           sync,
+input           clk_en_q,
+input           resync_latched,
+input         rx_idle,
+input          sync_window,
+input           tx_point,
+input          go_seg1,
+input [7:0]    preset_cnt,
+input         go_rx_inter,
+input        sample_point,
+input           seg1,
+input         go_overload_frame,
+input   [5:0] baud_r_presc,
+input         clk,
+input         tx,
+input         transmitting,
+input     [4:0] quant_cnt,
+input         send_ack,
+input     [6:0] clk_cnt,
+input         rx,
+input         transmitter,
+input         node_error_passive,
+input   [3:0] time_segment1,
+input           sync_blocked,
+input           clk_en,
+input         rx_inter,
+input          resync,
+input         rst,
+input         go_error_frame
+);
+
+assert property(@(posedge clk) (rst) |-> (clk_cnt == 7'h0));
+assert property(@(posedge clk) (clk_cnt >= (preset_cnt-1'b1)) |-> (clk_cnt == 7'h0));
+assert property(@(posedge clk) (clk_en) |-> (clk_cnt == (preset_cnt-1'b1)));
+assert property(@(posedge clk) (clk_en_q) |-> (clk_en));
+assert property(@(posedge clk) (go_sync) |-> (clk_en_q & seg2 & (quant_cnt[2:0] == time_segment2) & (~hard_sync) & (~resync)));
+assert property(@(posedge clk) (go_seg1) |-> (clk_en_q & (sync | hard_sync | (resync & seg2 & sync_window) | (resync_latched & sync_window))));
+assert property(@(posedge clk) (go_seg2) |-> (clk_en_q & (seg1 & (~hard_sync) & (quant_cnt == (time_segment1 + delay)))));
+assert property(@(posedge clk) (tx_point) |-> (seg2 & (clk_en & (quant_cnt[2:0] == time_segment2) | (clk_en | clk_en_q) & (resync | hard_sync))));
+assert property(@(posedge clk) (resync_latched) |-> (resync & seg2 & (~sync_window)));
+assert property(@(posedge clk) (sync) |-> (clk_en_q & go_sync));
+assert property(@(posedge clk) (seg1) |-> (go_seg1));
+assert property(@(posedge clk) (seg2) |-> (go_seg2));
+assert property(@(posedge clk) (quant_cnt == 5'h0) |-> (go_sync | go_seg1 | go_seg2));
+assert property(@(posedge clk) (delay == 4'h0) |-> (go_sync | go_seg1));
+assert property(@(posedge clk) (sample == 2'b11) |-> (clk_en_q));
+assert property(@(posedge clk) (sampled_bit == 1'b1) |-> (rst));
+assert property(@(posedge clk) (sampled_bit_q == 1'b1) |-> (rst));
+assert property(@(posedge clk) (sample_point == 1'b0) |-> (rst));
+assert property(@(posedge clk) (sample_point) |-> (seg1 & (quant_cnt == (time_segment1 + delay))));
+assert property(@(posedge clk) (sampled_bit) |-> (triple_sampling ? ((sample[0] & sample[1]) | (sample[0] & rx) | (sample[1] & rx)) : rx));
+assert property(@(posedge clk) (tx_next_sp) |-> (go_overload_frame | (go_error_frame & (~node_error_passive)) | go_tx | send_ack));
+assert property(@(posedge clk) (sync_blocked) |-> (resync));
+assert property(@(posedge clk) (hard_sync_blocked) |-> (hard_sync & clk_en_q | (transmitting & transmitter | go_tx) & tx_point & (~tx_next)));
+assert property(@(posedge clk) (hard_sync_blocked) |-> (go_rx_inter | (rx_idle | rx_inter) & sample_point & sampled_bit));
+endmodule

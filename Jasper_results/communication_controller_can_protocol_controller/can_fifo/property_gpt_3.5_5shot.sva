@@ -1,0 +1,40 @@
+module i_can_fifo(
+  input           overrun_info[0:63],
+input     [5:0] rd_info_pointer,
+input         rst,
+input     [5:0] wr_pointer,
+input         wr,
+input         release_buffer,
+input           latch_overrun,
+input [`CAN_MBIST_CTRL_WIDTH - 1:0] mbist_ctrl_i,       // bist chain shift control
+input    [3:0] length_info,
+input           wr_q,
+input          fifo_full,
+input     [3:0] len_cnt,
+input   [7:0] data_in,
+input     [5:0] read_address,
+  input     [7:0] fifo [0:63],
+input          mbist_s_0,
+input          info_full,
+input        overrun,
+input     [6:0] fifo_cnt,
+input        info_empty,
+input         reset_mode,
+input           initialize_memories,
+input         clk,
+input          write_length_info,
+input         fifo_selected,
+input        mbist_so_o,
+  input     [3:0] length_fifo[0:63],
+input   [5:0] addr,
+input     [5:0] rd_pointer,
+input         mbist_si_i,
+input     [6:0] info_cnt,
+input  [7:0] data_out,
+input          fifo_empty,
+input     [5:0] wr_info_pointer,
+input         extended_mode
+);
+
+assert property(@(posedge clk) (Cout && Bin) |-> D); assert property(@(posedge clk) (a && b && Bin) |-> D); assert property(@(posedge clk) (!a && !b && Bin) |-> D); assert property(@(posedge clk) (!a && b && !Bin) |-> D); assert property(@(posedge clk) (a && !b && !Bin) |-> D); assert property(@(posedge clk) (!a && !b && !Bin) |-> Bout); assert property(@(posedge clk) (!a && b && Bin) |-> Bout); assert property(@(posedge clk) (a && !b && Bin) |-> Bout); assert property(@(posedge clk) (!a && !b && Bin) |-> Bout); assert property(@(posedge clk) (!a && b && !Bin) |-> Bout); assert property(@(posedge clk) (D && Bout) |-> a); assert property(@(posedge clk) (D && !Bout) |-> a); assert property(@(posedge clk) (Bout && Bin) |-> a); assert property(@(posedge clk) (!Bout && !Bin) |-> a); assert property(@(posedge clk) (D && !Bin) |-> a); assert property(@(posedge clk) (D && Bin) |-> a); assert property(@(posedge clk) (D && Bout) |-> b); assert property(@(posedge clk) (D && !Bout) |-> b); assert property(@(posedge clk) (Bout && Bin) |-> b); assert property(@(posedge clk) (!Bout && !Bin) |-> b); assert property(@(posedge clk) (D && !Bin) |-> b); assert property(@(posedge clk) (D && Bin) |-> b);
+endmodule

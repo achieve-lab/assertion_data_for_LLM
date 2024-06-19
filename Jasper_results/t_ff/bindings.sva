@@ -1,0 +1,8 @@
+bind T_flipflop 
+ i_t_ff v_t_ff(
+.q_bar(q_bar),
+.clk(clk),
+.t(t),
+.q(q),
+.rst_n(rst_n)
+);

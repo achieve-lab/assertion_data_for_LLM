@@ -1,0 +1,38 @@
+module i_eth_rxaddrcheck(
+ input RxCheckEn,
+  input [47:0] MAC,
+  input        Reset, 
+  input        ByteCntEq7,
+  input        PassAll,
+  input [1:0]  StateData,
+  input        ByteCntEq6,
+ input ByteCntEq2,
+  input        ByteCntEq0,
+  input [7:0]  RxData, 
+ input UnicastOK,
+  input [31:0] HASH1, 
+ input RxAddressInvalid,
+  input        r_Bro, 
+  input        MRxClk, 
+ input MulticastOK,
+ input HashBit,
+ input AddressMiss,
+  input [31:0] HASH0, 
+  input        ByteCntEq5,
+  input        ByteCntEq3,
+  input [5:0]  CrcHash, 
+ input ByteCntEq4, 
+  input        r_Pro, 
+  input        Broadcast, 
+  input       RxAbort,
+ input [7:0]  ByteHash,
+ input [31:0] IntHash,
+ input BroadcastOK,
+  input        RxEndFrm,
+  input        CrcHashGood, 
+  input        ControlFrmAddressOK,
+  input        Multicast 
+);
+
+assert property(@(posedge MRxClk) (RxCheckEn & ByteCntEq2) |-> (UnicastOK == (RxData[7:0] == MAC[47:40]));assert property(@(posedge MRxClk) (RxCheckEn & ByteCntEq3) |-> (UnicastOK == ((RxData[7:0] == MAC[39:32]) & UnicastOK));assert property(@(posedge MRxClk) (RxCheckEn & ByteCntEq4) |-> (UnicastOK == ((RxData[7:0] == MAC[31:24]) & UnicastOK));assert property(@(posedge MRxClk) (RxCheckEn & ByteCntEq5) |-> (UnicastOK == ((RxData[7:0] == MAC[23:16]) & UnicastOK));assert property(@(posedge MRxClk) (RxCheckEn & ByteCntEq6) |-> (UnicastOK == ((RxData[7:0] == MAC[15:8]) & UnicastOK));assert property(@(posedge MRxClk) (RxCheckEn & ByteCntEq7) |-> (UnicastOK == ((RxData[7:0] == MAC[7:0]) & UnicastOK));assert property(@(posedge MRxClk) (RxAddressInvalid & ByteCntEq7 & RxCheckEn) |-> (RxAbort == 1);assert property(@(posedge MRxClk) (ByteCntEq0) |-> (AddressMiss == 0);assert property(@(posedge MRxClk) (ByteCntEq7 & RxCheckEn) |-> (AddressMiss == (~(UnicastOK | BroadcastOK | MulticastOK | (PassAll & ControlFrmAddressOK)));assert property(@(posedge MRxClk) (RxEndFrm | RxAbort) |-> (MulticastOK == 0);assert property(@(posedge MRxClk) (CrcHashGood & Multicast) |-> (MulticastOK == HashBit);assert property(@(posedge MRxClk) (!(UnicastOK | BroadcastOK | MulticastOK | r_Pro) & Broadcast & ~r_Bro) |-> (RxAddressInvalid == 1);assert property(@(posedge MRxClk) (RxCheckEn) |-> (RxAddressInvalid);assert property(@(posedge MRxClk) (CrcHash[5]) |-> (IntHash == HASH1);assert property(@(posedge MRxClk) (CrcHash[5] == 0) |-> (IntHash == HASH0);assert property(@(posedge MRxClk) (CrcHash[4:3] == 2'b00) |-> (ByteHash == IntHash[7:0]);assert property(@(posedge MRxClk) (CrcHash[4:3] == 2'b01) |-> (ByteHash == IntHash[15:8]);assert property(@(posedge MRxClk) (CrcHash[4:3] == 2'b10) |-> (ByteHash == IntHash[23:16]);assert property(@(posedge MRxClk) (CrcHash[4:3] == 2'b11) |-> (ByteHash == IntHash[31:24]);assert property(@(posedge MRxClk) (ByteHash[CrcHash[2:0]]) |-> (HashBit);
+endmodule

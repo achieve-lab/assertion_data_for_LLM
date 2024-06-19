@@ -1,0 +1,25 @@
+property a16;
+@(posedge clk) (write_en == 0) |-> (crc_poly_en == 0);
+endproperty
+assert_a16: assert property(a16);
+
+property a13;
+@(posedge clk) (write_en == 1 & haddr_pp[1] == 0) |-> (crc_poly_en == 1);
+endproperty
+assert_a13: assert property(a13);
+
+property a15;
+@(posedge clk) (hselx_pp == 0) |-> (crc_poly_en == 0);
+endproperty
+assert_a15: assert property(a15);
+
+property a14;
+@(posedge clk) (hwrite_pp == 0) |-> (crc_poly_en == 0);
+endproperty
+assert_a14: assert property(a14);
+
+property a17;
+@(posedge clk) (haddr_pp[1] == 1) |-> (crc_poly_en == 0);
+endproperty
+assert_a17: assert property(a17);
+

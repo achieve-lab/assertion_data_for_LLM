@@ -1,0 +1,40 @@
+module i_fpu_add(
+
+input           clk,
+input           rst,
+input           enable,
+input   [63:0]  opa, opb,
+input          sign,
+input  [55:0]  sum_2,
+input  [10:0]  exponent_2,
+
+input   [10:0] exponent_a,
+input   [10:0] exponent_b,
+input   [51:0] mantissa_a,
+input   [51:0] mantissa_b,
+input   expa_gt_expb,
+input   [10:0] exponent_small,
+input   [10:0] exponent_large,
+input   [51:0] mantissa_small,
+input   [51:0] mantissa_large,
+input   small_is_denorm,
+input   large_is_denorm,
+input   large_norm_small_denorm,
+input   [10:0] exponent_diff,
+input   [55:0] large_add,
+input   [55:0] small_add,
+input   [55:0] small_shift,
+input   small_shift_nonzero ,
+input    small_is_nonzero ,
+input   small_fraction_enable ,
+input   [55:0] small_shift_2,
+input   [55:0] small_shift_3,
+input   [55:0] sum,
+input   sum_overflow, // sum[55] will be 0 if there was no carry from adding the 2 numbers
+input   [10:0] exponent,
+input   sum_leading_one , // this is where the leading one resides, unless denorm
+input   denorm_to_norm
+);
+
+assert property(@(posedge clk) (sign) |-> (sum_leading_one)); assert property(@(posedge clk) (sum_overflow) |-> (exponent_2 == exponent_large + 1)); assert property(@(posedge clk) (small_is_denorm && !large_is_denorm) |-> (large_norm_small_denorm)); assert property(@(posedge clk) (exponent_large > exponent_small) |-> (expa_gt_expb)); assert property(@(posedge clk) (exponent_large > exponent_small) |-> (exponent_diff == exponent_large - exponent_small - large_norm_small_denorm)); assert property(@(posedge clk) (exponent_large > exponent_small) |-> (mantissa_large == mantissa_a)); assert property(@(posedge clk) (exponent_large > exponent_small) |-> (mantissa_small == mantissa_b)); assert property(@(posedge clk) (!(exponent_small > 0)) |-> (small_is_denorm)); assert property(@(posedge clk) (!(exponent_large > 0)) |-> (large_is_denorm)); assert property(@(posedge clk) (!(exponent_small > 0)) |-> (small_fraction_enable)); assert property(@(posedge clk) (!(exponent_large > 0)) |-> (large_add == { 1'b0, !large_is_denorm, mantissa_large, 2'b0 })); assert property(@(posedge clk) (!(exponent_small > 0)) |-> (small_add == { 1'b0, !small_is_denorm, mantissa_small, 2'b0 })); assert property(@(posedge clk) (!(exponent_large > 0)) |-> (small_shift == small_add >> exponent_diff)); assert property(@(posedge clk) (!(exponent_large > 0)) |-> (small_shift_3 == (small_fraction_enable ? small_shift_2 : small_shift))); assert property(@(posedge clk) (!(exponent_large > 0)) |-> (sum == large_add + small_shift_3)); assert property(@(posedge clk) (!(exponent_large > 0)) |-> (sum_2 == (sum_overflow ? sum >> 1 : sum)); assert property(@(posedge clk) (!(exponent_large > 0)) |-> (exponent == (sum_overflow ? exponent_large + 1: exponent_large)); assert property(@(posedge clk) (!(exponent_large > 0)) |-> (denorm_to_norm == (sum_leading_one & large_is_denorm)); assert property(@(posedge clk) (!(exponent_large > 0)) |-> (exponent_2 == (denorm_to_norm ? exponent + 1 : exponent));
+endmodule

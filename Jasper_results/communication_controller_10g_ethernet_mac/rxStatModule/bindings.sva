@@ -1,0 +1,23 @@
+bind rxStatModule
+ i_rxStatModule v_rxStatModule(
+.jumbo_frame(jumbo_frame),
+.broad_valid(broad_valid),
+.padded_frame(padded_frame),
+.multi_valid(multi_valid),
+.crc_check_invalid(crc_check_invalid),
+.receiving(receiving),
+.length_128_255(length_128_255),
+.pause_frame(pause_frame),
+.small_error(small_error),
+.length_512_1023(length_512_1023),
+.reset(reset),
+.rxStatRegPlus_tmp(rxStatRegPlus_tmp),
+.get_error_code(get_error_code),
+.length_1024_max(length_1024_max),
+.length_65_127(length_65_127),
+.length_256_511(length_256_511),
+.rxStatRegPlus(rxStatRegPlus),
+.rxclk(rxclk),
+.large_error(large_error),
+.good_frame_get(good_frame_get)
+);

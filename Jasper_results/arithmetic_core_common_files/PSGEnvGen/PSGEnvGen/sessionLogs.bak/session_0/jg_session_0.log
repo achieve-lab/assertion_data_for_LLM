@@ -1,0 +1,146 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2024.03
+# platform  : Linux 4.18.0-513.24.1.el8_9.x86_64
+# version   : 2024.03 FCS 64 bits
+# build date: 2024.03.27 15:42:27 UTC
+# ----------------------------------------
+# started   : 2024-05-10 19:02:03 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 39045
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:38185' '-nowindow' '-style' 'windows' '-data' 'AAABEHicbY7NCgFhFIafIZKFhUuwVFzBbLEcUraSv0hmwoyy4VLdyXjIqCnv6Ts/73nf0xcA4T3Pcz6o3kx1IobGD8Hz24QBZbznSpmZPEoVaoW5kNR9LXociZmzJWUn05VZcDBirvKp+7M5MWJOXFizko+Yqm6o3rjJ7Dv+dczM3djdiIHOzLq29vUtvQlNHYl3YvZO7T/aN14s9iA8' '-proj' '/data/vpulav2/Work/Jasper/arithmetic_core_common_files/PSGEnvGen/PSGEnvGen/sessionLogs/session_0' '-init' '-hidden' '/data/vpulav2/Work/Jasper/arithmetic_core_common_files/PSGEnvGen/PSGEnvGen/.tmp/.initCmds.tcl' 'FPV_PSGEnvGen.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2024 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /data/vpulav2/Work/Jasper/arithmetic_core_common_files/PSGEnvGen/PSGEnvGen/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% 
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/PSGEnvGen.v
+[-- (VERI-1482)] Analyzing Verilog file './/PSGEnvGen.v'
+[INFO (VERI-1328)] .//PSGEnvGen.v(91): analyzing included file './/mux4to1.v'
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2024.03/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property.sva'
+% 
+% # Elaborate design and properties
+% elaborate -top PSGEnvGen
+INFO (ISW003): Top module name is "PSGEnvGen".
+[WARN (VERI-2418)] .//property.sva(1): parameter 'pChannels' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[WARN (VERI-2418)] .//property.sva(2): parameter 'pPrescalerBits' declared inside compilation unit '\$unit____bindings_sva ' shall be treated as localparam
+[INFO (VERI-9030)] .//bindings.sva(4): undeclared symbol 'the' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(12): undeclared symbol 'uses' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(18): undeclared symbol 'clock' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(23): undeclared symbol 'which' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(30): undeclared symbol 'system' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(33): undeclared symbol 'should' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(34): undeclared symbol 'using' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(36): undeclared symbol 'signal' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(37): undeclared symbol 'master' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(44): undeclared symbol 'accomplished' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(48): undeclared symbol 'is' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(52): undeclared symbol 'seven' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(53): undeclared symbol 'of' in bind instance actual, assumed default net type 'wire'
+[INFO (VERI-9030)] .//bindings.sva(56): undeclared symbol 'a' in bind instance actual, assumed default net type 'wire'
+[ERROR (VERI-1010)] .//bindings.sva(56): cannot find port 'a' on this module
+[INFO (VERI-1310)] .//property.sva(3): 'i_PSGEnvGen' is declared here
+[ERROR (VERI-1010)] .//bindings.sva(53): cannot find port 'of' on this module
+[INFO (VERI-1310)] .//property.sva(3): 'i_PSGEnvGen' is declared here
+[ERROR (VERI-1010)] .//bindings.sva(52): cannot find port 'seven' on this module
+[INFO (VERI-1310)] .//property.sva(3): 'i_PSGEnvGen' is declared here
+[ERROR (VERI-1010)] .//bindings.sva(48): cannot find port 'is' on this module
+[INFO (VERI-1310)] .//property.sva(3): 'i_PSGEnvGen' is declared here
+[ERROR (VERI-1010)] .//bindings.sva(44): cannot find port 'accomplished' on this module
+[INFO (VERI-1310)] .//property.sva(3): 'i_PSGEnvGen' is declared here
+[ERROR (VERI-1010)] .//bindings.sva(37): cannot find port 'master' on this module
+[INFO (VERI-1310)] .//property.sva(3): 'i_PSGEnvGen' is declared here
+[ERROR (VERI-1010)] .//bindings.sva(36): cannot find port 'signal' on this module
+[INFO (VERI-1310)] .//property.sva(3): 'i_PSGEnvGen' is declared here
+[ERROR (VERI-1010)] .//bindings.sva(34): cannot find port 'using' on this module
+[INFO (VERI-1310)] .//property.sva(3): 'i_PSGEnvGen' is declared here
+[ERROR (VERI-1010)] .//bindings.sva(33): cannot find port 'should' on this module
+[INFO (VERI-1310)] .//property.sva(3): 'i_PSGEnvGen' is declared here
+[ERROR (VERI-1010)] .//bindings.sva(30): cannot find port 'system' on this module
+[INFO (VERI-1310)] .//property.sva(3): 'i_PSGEnvGen' is declared here
+[ERROR (VERI-1010)] .//bindings.sva(23): cannot find port 'which' on this module
+[INFO (VERI-1310)] .//property.sva(3): 'i_PSGEnvGen' is declared here
+[ERROR (VERI-1010)] .//bindings.sva(18): cannot find port 'clock' on this module
+[INFO (VERI-1310)] .//property.sva(3): 'i_PSGEnvGen' is declared here
+[ERROR (VERI-1010)] .//bindings.sva(12): cannot find port 'uses' on this module
+[INFO (VERI-1310)] .//property.sva(3): 'i_PSGEnvGen' is declared here
+[ERROR (VERI-1010)] .//bindings.sva(4): cannot find port 'the' on this module
+[INFO (VERI-1310)] .//property.sva(3): 'i_PSGEnvGen' is declared here
+[ERROR (VDB-9017)] Module PSGEnvGen could not be elaborated
+Summary of errors detected:
+	[ERROR (VERI-1010)] .//bindings.sva(56): cannot find port 'a' on this module
+	[ERROR (VERI-1010)] .//bindings.sva(53): cannot find port 'of' on this module
+	[ERROR (VERI-1010)] .//bindings.sva(52): cannot find port 'seven' on this module
+	[ERROR (VERI-1010)] .//bindings.sva(48): cannot find port 'is' on this module
+	[ERROR (VERI-1010)] .//bindings.sva(44): cannot find port 'accomplished' on this module
+	[ERROR (VERI-1010)] .//bindings.sva(37): cannot find port 'master' on this module
+	[ERROR (VERI-1010)] .//bindings.sva(36): cannot find port 'signal' on this module
+	[ERROR (VERI-1010)] .//bindings.sva(34): cannot find port 'using' on this module
+	[ERROR (VERI-1010)] .//bindings.sva(33): cannot find port 'should' on this module
+	[ERROR (VERI-1010)] .//bindings.sva(30): cannot find port 'system' on this module
+	[ERROR (VERI-1010)] .//bindings.sva(23): cannot find port 'which' on this module
+	[ERROR (VERI-1010)] .//bindings.sva(18): cannot find port 'clock' on this module
+	[ERROR (VERI-1010)] .//bindings.sva(12): cannot find port 'uses' on this module
+	[ERROR (VERI-1010)] .//bindings.sva(4): cannot find port 'the' on this module
+	[ERROR (VDB-9017)] Module PSGEnvGen could not be elaborated
+ERROR (ENL034): 15 errors detected in the design file(s).
+
+ERROR: problem encountered at line 17 in file FPV_PSGEnvGen.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 2.155 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

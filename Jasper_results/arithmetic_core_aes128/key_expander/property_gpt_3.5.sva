@@ -1,0 +1,27 @@
+module i_key_expander(
+	input add_w_out,
+	input  [ 31:0] g_out,
+input   [     8 - 1 : 0] rc_dir, rc_inv,
+input  [     8 - 1 : 0] rot_in[0 : 4 - 1],
+	input  [127:0] key_out,
+	input enc_dec,
+input  [32 - 1 : 0] g_func,
+	input  [  3:0] round,
+	input  [127:0] key_in,
+input  [     8 - 1 : 0] rc,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET,
+input  [32 - 1 : 0] key   [0 : 4 - 1],
+	input  [ 31:0] g_in
+
+);
+
+assert property(@(posedge clk) (g_out[7:0] == rc) |-> (g_func[7:0] == g_out[7:0] ^ rc));
+assert property(@(posedge clk) (g_out[7:0] != rc) |-> (g_func[7:0] == g_out[7:0] ^ rc));
+assert property(@(posedge clk) (round == 8) |-> (rc_dir == 8'h1b));
+assert property(@(posedge clk) (round == 9) |-> (rc_dir == 8'h36));
+assert property(@(posedge clk) (round != 8 && round != 9) |-> (rc_dir == 8'h01 << round));
+assert property(@(posedge clk) (round == 1) |-> (rc_inv == 8'h1b));
+assert property(@(posedge clk) (round == 0) |-> (rc_inv == 8'h36));
+assert property(@(posedge clk) (round != 1 && round != 0) |-> (rc_inv == 8'h80 >> (round - 2));
+endmodule

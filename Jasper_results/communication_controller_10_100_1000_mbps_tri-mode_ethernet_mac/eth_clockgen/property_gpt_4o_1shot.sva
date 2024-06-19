@@ -1,0 +1,24 @@
+module i_eth_clockgen(
+input      MdcEn_n,          // Enable signal is asserted for one Clk period before Mdc falls.
+input  [7:0] TempDivider,
+input      MdcEn,            // Enable signal is asserted for one Clk period before Mdc rises.
+input [7:0] Divider,          // Divider (input clock will be divided by the Divider[7:0])
+input  [7:0] CounterPreset,
+input         Mdc,
+input       Clk,              // Input clock (Host clock)
+input   [7:0] Counter,
+input       Reset,            // Reset signal
+input        CountEq0
+);
+
+assert property(@(posedge Clk) (Reset) |-> (Counter == 8'h1));
+assert property(@(posedge Clk) (Reset) |-> (Mdc == 1'b0));
+assert property(@(posedge Clk) (CountEq0 && !Reset) |-> (Counter == CounterPreset));
+assert property(@(posedge Clk) (!CountEq0 && !Reset) |-> (Counter == $past(Counter) - 8'h1));
+assert property(@(posedge Clk) (CountEq0 && !Reset) |-> (Mdc == ~($past(Mdc)));
+assert property(@(posedge Clk) (!CountEq0 && !Reset) |-> (Mdc == $past(Mdc)));
+assert property(@(posedge Clk) (CountEq0) |-> (MdcEn == ~Mdc));
+assert property(@(posedge Clk) (CountEq0) |-> (MdcEn_n == Mdc));
+assert property(@(posedge Clk) (MdcEn) |-> (CountEq0 && !Mdc));
+assert property(@(posedge Clk) (MdcEn_n) |-> (CountEq0 && Mdc));
+endmodule

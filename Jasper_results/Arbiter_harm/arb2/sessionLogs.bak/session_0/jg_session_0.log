@@ -1,0 +1,96 @@
+# ----------------------------------------
+# Jasper Version Info
+# tool      : Jasper 2022.06
+# platform  : Linux 4.18.0-513.9.1.el8_9.x86_64
+# version   : 2022.06p002 64 bits
+# build date: 2022.08.24 16:38:21 UTC
+# ----------------------------------------
+# started   : 2024-04-04 20:59:42 CDT
+# hostname  : pal-achieve-06.(none)
+# pid       : 11881
+# arguments : '-label' 'session_0' '-console' '//127.0.0.1:45171' '-nowindow' '-style' 'windows' '-data' 'AAABLHicJZDBSsNAFEVPEIp0If2OgkUExUUW3dSFKIpCt0Na05ISO8EmVdz0V/sn8XQ6w7x35+W+++4kA/JD3/ekdfFnGPHMC+/MjK/MzfDEHbc8cMOUJQWflGxFJR2VecKPeMGOlsi3eGK9dlfyonFnpbSvO0/KjudMnhkGniuuEzWwTqJwaWVFw158zyNvmgneSgecxKPMoPBeQ8Hqr/lLfp3Gt9qq7Ryq0tgR2STNQrzwMTD2S5FMRu0Hp25V62Q36RFtMhz8CR8np/+6vjDg' '-proj' '/home/vpulav2/Work/Jasper/Arbiter_harm/arb2/sessionLogs/session_0' '-init' '-hidden' '/home/vpulav2/Work/Jasper/Arbiter_harm/arb2/.tmp/.initCmds.tcl' 'FPV_verilog_sva_example.tcl'
+
+Any disclosure about the Cadence Design Systems software or its use
+model to any third party violates the written Non-Disclosure Agreement
+between Cadence Design Systems, Inc. and the customer.
+
+THIS SOFTWARE CONTAINS CONFIDENTIAL INFORMATION AND TRADE SECRETS OF
+CADENCE DESIGN SYSTEMS, INC. USE, DISCLOSURE, OR REPRODUCTION IS
+PROHIBITED WITHOUT THE PRIOR EXPRESS WRITTEN PERMISSION OF CADENCE
+DESIGN SYSTEMS, INC.
+
+Copyright (C) 2000-2022 Cadence Design Systems, Inc. All Rights
+Reserved.  Unpublished -- rights reserved under the copyright laws of
+the United States.
+
+This product includes software developed by others and redistributed
+according to license agreement. See doc/third_party_readme.txt for
+further details.
+
+RESTRICTED RIGHTS LEGEND
+
+Use, duplication, or disclosure by the Government is subject to
+restrictions as set forth in subparagraph (c) (1) (ii) of the Rights in
+Technical Data and Computer Software clause at DFARS 252.227-7013 or
+subparagraphs (c) (1) and (2) of Commercial Computer Software -- Restricted
+Rights at 48 CFR 52.227-19, as applicable.
+
+
+                          Cadence Design Systems, Inc.
+                          2655 Seely Avenue
+                          San Jose, CA 95134
+                          Phone: 408.943.1234
+
+For technical assistance visit http://support.cadence.com.
+
+Jasper Apps Analysis Session - /home/vpulav2/Work/Jasper/Arbiter_harm/arb2/sessionLogs/session_0
+
+INFO: successfully checked out licenses "jasper_interactive" and "jasper_fao".
+INFO: reading configuration file "/home/vpulav2/.config/cadence/jasper.conf".
+% # ----------------------------------------
+% #  Copyright (c) 2017 Cadence Design Systems, Inc. All Rights
+% #  Reserved.  Unpublished -- rights reserved under the copyright 
+% #  laws of the United States.
+% # ----------------------------------------
+% 
+% # Analyze design under verification files
+% set ROOT_PATH ./
+./
+% set RTL_PATH ${ROOT_PATH}
+./
+% set PROP_PATH ${ROOT_PATH}
+./
+% 
+% analyze -v2k \
+  ${RTL_PATH}/arb2.v
+[-- (VERI-1482)] Analyzing Verilog file './/arb2.v'
+% #  ${RTL_PATH}/port_select.v \
+#  ${RTL_PATH}/bridge.v \
+#  ${RTL_PATH}/egress.v \
+#  ${RTL_PATH}/ingress.v \
+#  ${RTL_PATH}/top.v
+% 
+% # Analyze property files
+% analyze -sva \
+  ${RTL_PATH}/bindings.sva \
+  ${RTL_PATH}/property.sva
+[-- (VERI-1482)] Analyzing Verilog file '/tools/Cadence/Jasper/jasper_2022.06p002/lib/verilog/packages/std/std.sv' into library 'std'
+[-- (VERI-1482)] Analyzing Verilog file './/bindings.sva'
+[-- (VERI-1482)] Analyzing Verilog file './/property.sva'
+[ERROR (VERI-1137)] .//property.sva(23): syntax error near 'endproperty'
+[ERROR (VERI-2344)] .//property.sva(23): SystemVerilog 2005 keyword 'endproperty' used in incorrect context
+[ERROR (VERI-1072)] .//property.sva(31): module 'v_arb2' is ignored due to previous errors
+Summary of errors detected:
+	[ERROR (VERI-1137)] .//property.sva(23): syntax error near 'endproperty'
+	[ERROR (VERI-2344)] .//property.sva(23): SystemVerilog 2005 keyword 'endproperty' used in incorrect context
+	[ERROR (VERI-1072)] .//property.sva(31): module 'v_arb2' is ignored due to previous errors
+ERROR (ENL034): 3 errors detected in the design file(s).
+
+ERROR: problem encountered at line 21 in file FPV_verilog_sva_example.tcl
+
+% exit
+INFO (IPL005): Received request to exit from the console.
+INFO (IPL018): The peak resident set memory use for this session was 0.425 GB.
+INFO (IPL014): Waiting for the Tcl-thread to exit.
+INFO (IPL015): The Tcl-thread exited with status 0.
+INFO (IPL016): Exiting the analysis session with status 0.

@@ -1,0 +1,23 @@
+parameter pTaps = 16;
+
+module i_PSGFilter(
+input [7:0] cnt,
+input [14:0] o,
+input wr,
+input [11:0] coeff [0:pTaps-1],   // magnitude of coefficient
+input clk,
+input [14:0] tap [0:pTaps-1],     // tap inputisters
+input [14:0] i,
+input [12:0] din,
+input [pTaps-1:0] sgn,            // sign of coefficient
+input [26:0] mult ,
+input [30:0] acc,                 // accumulator
+input rst,
+input [3:0] adr
+);
+
+assert property1 @(posedge clk) disable iff (rst) (wr && (adr == cnt[3:0]) |-> (coeff[adr] == din[11:0] && sgn[adr] == din[12]));
+assert property2 @(posedge clk) disable iff (rst) (cnt == 8'd0 && tap[0] == i && $past(tap[pTaps-1]) == tap[pTaps-2]);
+assert property3 @(posedge clk) disable iff (rst) (cnt == 8'd0 |-> (acc == 0));
+assert property4 @(posedge clk) disable iff (rst) (cnt == 8'd0 |-> (o == acc[30:16]));
+endmodule

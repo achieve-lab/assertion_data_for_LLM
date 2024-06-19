@@ -1,0 +1,9 @@
+bind cavlc_len_gen
+ i_cavlc_len_gen v_cavlc_len_gen(
+.len_read_run_befores_comb(len_read_run_befores_comb),
+.len_comb(len_comb),
+.len_read_total_coeffs_comb(len_read_total_coeffs_comb),
+.len_read_levels_comb(len_read_levels_comb),
+.cavlc_state(cavlc_state),
+.len_read_total_zeros_comb(len_read_total_zeros_comb)
+);

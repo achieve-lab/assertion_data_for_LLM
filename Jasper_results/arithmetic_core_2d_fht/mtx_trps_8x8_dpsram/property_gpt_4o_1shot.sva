@@ -1,0 +1,41 @@
+parameter N = 8;
+module i_mtx_trps_8x8_dpsram(
+input			sclk,
+input [15:0] rd_DATA,
+input		indicator,				// 64 words written - Indication(pos. or neg. edge)
+input			mem_valid,
+input		cnt128d_rd_valid_start,	// Counter start increment
+input [6:0]	cnt128d_wr,				// Write Mode Counter
+input	[N-1:0]	inp_data,
+input	[N-1:0]	mem_data,
+input		wr_WEN,
+input			rstn,
+input			indicator_1d,			// Indication 1 clock delay
+input		rd_CSN,
+input		indicator_pos_edge,		// positive edge
+input [ 6:0] wr_ADDR,
+input [15:0] wr_DATA,
+input		cnt128d_rd_valid_stop,	// Counter stop increment
+input		wr_CSN,
+input		indicator_neg_edge,		// negative edge
+input			inp_valid,
+input	[6:0]	cnt128d_rd,				// Read Counter
+input [ 6:0] rd_ADDR,
+input			cnt128d_rd_valid		// valid time for cnt128d_rd counter
+);
+
+assert property(@(posedge sclk) (cnt128d_wr == 0) |-> (wr_ADDR == 0);
+assert property(@(posedge sclk) (inp_valid == 1) |-> (wr_CSN == 0);
+assert property(@(posedge sclk) (inp_valid == 1) |-> (wr_WEN == 0);
+assert property(@(posedge sclk) (indicator_pos_edge || indicator_neg_edge) |-> (cnt128d_rd_valid_start == 1);
+assert property(@(posedge sclk) (cnt128d_rd[5:0] == 63) |-> (cnt128d_rd_valid_stop == 1);
+assert property(@(posedge sclk) (cnt128d_rd_valid_start == 1) |-> (cnt128d_rd_valid == 1);
+assert property(@(posedge sclk) (cnt128d_rd_valid_stop == 1) |-> (cnt128d_rd_valid == 0);
+assert property(@(posedge sclk) (cnt128d_rd_valid == 1) |-> (rd_CSN == 0);
+assert property(@(posedge sclk) (cnt128d_rd_valid == 0) |-> (rd_CSN == 1);
+assert property(@(posedge sclk) (cnt128d_rd_valid == 1) |-> (mem_valid == 1);
+assert property(@(posedge sclk) (cnt128d_rd_valid == 0) |-> (mem_valid == 0);
+assert property(@(posedge sclk) (mem_valid == 1) |-> (mem_data == rd_DATA[7:0]);
+assert property(@(posedge sclk) (wr_CSN == 0 && wr_WEN == 0) |-> (sram[wr_ADDR] == wr_DATA);
+assert property(@(posedge sclk) (rd_CSN == 0) |-> (rd_DATA == sram[rd_ADDR]);
+endmodule

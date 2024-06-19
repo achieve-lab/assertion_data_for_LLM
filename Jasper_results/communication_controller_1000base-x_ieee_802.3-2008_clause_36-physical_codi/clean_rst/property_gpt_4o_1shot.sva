@@ -1,0 +1,11 @@
+module i_clean_rst(
+  input rstt,
+  input      rsti,
+  input      clk,
+  input  rsto
+);
+
+assert property(@(posedge clk) (rsti == 1) |-> (rsto == 1));
+assert property(@(posedge clk) (rsti == 0 && rstt == 1) |-> (rsto == 1));
+assert property(@(posedge clk) (rsti == 0 && rstt == 0) |-> (rsto == 0));
+endmodule

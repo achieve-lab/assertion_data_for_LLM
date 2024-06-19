@@ -1,0 +1,37 @@
+module i_ge_1000baseX_mdio(
+   input              mdio,
+   input [4:0] phy_addr, input phy_addr_shift,
+   input [1:0] op_code, 
+   input             mdio_out,
+   input [15:0] data_in, input data_in_shift,
+   input     strobe_wr,
+   input [15:0] data_out, input data_out_load, data_out_shift, next ,
+   input     [15:0]   data_rd,	op_code_shift ,
+   input              reset, 
+   // mdio/mdc state machine inputistered part.
+   input st,
+	 input st_latch,
+   input [4:0] input_addr,
+	 input input_addr_shift,
+   input [3:0] present, 
+   input [5:0] preamble_cnt,
+   input             mdio_oe,
+   input     [4:0]   data_addr,    
+   input    [15:0]   data_wr, 
+   input              mdc,
+	input reg_addr_shift,
+	input [4:0] reg_addr,
+	input pos_cnt_inc,
+	input pos_cnt,
+	input st_match
+);
+
+assert property (@(posedge mdc) disable iff (reset) (preamble_cnt == 31'b11111) |-> (present == S_ST));
+assert property (@(posedge mdc) disable iff (reset) (present == S_ST && mdio) |-> (next == S_OP_CODE));
+assert property (@(posedge mdc) disable iff (reset) (present == S_OP_CODE && op_code_done) |-> (next == S_PHY_ADDR));
+assert property (@(posedge mdc) disable iff (reset) (present == S_PHY_ADDR && phy_addr_done) |-> (next == S_REG_ADDR));
+assert property (@(posedge mdc) disable iff (reset) (present == S_REG_ADDR && phy_addr_match) |-> (next == S_TA));
+assert property (@(posedge mdc) disable iff (reset) (present == S_TA && ta1_done && op_is_rd) |-> (next == S_RD_DATA));
+assert property (@(posedge mdc) disable iff (reset) (present == S_WR_DATA && data_done) |-> (next == S_WR_COMMIT));
+assert property (@(posedge mdc) disable iff (reset) (present == S_RD_DATA && data_done) |-> (next == S_PREAMBLE));
+endmodule

@@ -1,0 +1,12 @@
+parameter WID = 12;
+module i_PSGNoteOutMux(
+input [WID-1:0] o1,o2,o3,o4,o5,
+input [WID-1:0] o,
+input DEFAULT_CLOCK,
+input DEFAULT_RESET,
+input [4:0] s,
+input [WID-1:0] a,b,c,d,e
+);
+
+There are no assertions provided in the given Verilog design.
+endmodule

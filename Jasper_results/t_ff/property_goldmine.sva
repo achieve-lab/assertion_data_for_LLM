@@ -1,0 +1,22 @@
+
+module i_t_ff(
+  input q,
+  input t,
+  input clk, rst_n,
+  input q_bar,
+  input DEFAULT_RESET
+);
+
+property a0;
+@(posedge clk) (q == 1) |-> (q_bar == 0);
+endproperty
+
+assert_a0: assert property(a0);
+
+
+property a1;
+@(posedge clk) (q == 0) |-> (q_bar == 1);
+endproperty
+assert_a1: assert property(a1);
+
+endmodule

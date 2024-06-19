@@ -1,0 +1,12 @@
+bind Ramdon_gen
+ i_Ramdon_gen v_Ramdon_gen(
+.Random_sequence(Random_sequence),
+.Clk(Clk),
+.Slot_time_counter(Slot_time_counter),
+.Random_time_meet(Random_time_meet),
+.Init(Init),
+.Ramdom(Ramdom),
+.Reset(Reset),
+.RetryCnt(RetryCnt),
+.Ramdom_counter(Ramdom_counter)
+);

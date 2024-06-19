@@ -1,0 +1,55 @@
+
+module i_apb(
+			input PRESETn,
+			input [31:0] READ_DATA_ON_RX,
+			input ERROR,
+	    		input PCLK,
+			input [13:0] INTERNAL_I2C_REGISTER_TIMEOUT,
+			input [31:0] PWDATA,
+			input INT_TX,
+			input [31:0] WRITE_DATA_ON_TX,
+			input  WR_ENA,
+			input [31:0] PRDATA,
+			input  RD_ENA,
+			input [13:0] INTERNAL_I2C_REGISTER_CONFIG,
+			input RX_EMPTY,
+			input PREADY,
+			input [31:0] PADDR,
+			input PWRITE,
+			input PENABLE,
+			input INT_RX,
+			input PSELx,
+			input TX_EMPTY,
+			input PSLVERR
+);
+property a5;
+@(posedge PCLK) (ERROR == 0) |-> (PSLVERR == 0);
+endproperty
+assert_a5: assert property(a5);
+
+property a4;
+@(posedge PCLK) (ERROR == 1) |-> (PSLVERR == 1);
+endproperty
+assert_a4: assert property(a4);
+property a3;
+@(posedge PCLK) (TX_EMPTY == 1) |-> (INT_TX == 1);
+endproperty
+assert_a3: assert property(a3);
+
+property a2;
+@(posedge PCLK) (TX_EMPTY == 0) |-> (INT_TX == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a1;
+@(posedge PCLK) (RX_EMPTY == 0) |-> (INT_RX == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge PCLK) (RX_EMPTY == 1) |-> (INT_RX == 1);
+endproperty
+assert_a0: assert property(a0);
+
+
+endmodule

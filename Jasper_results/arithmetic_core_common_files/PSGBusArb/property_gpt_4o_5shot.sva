@@ -1,0 +1,34 @@
+module i_PSGBusArb(
+input req3,
+input sel4,
+input sel3,
+input sel6,
+input sel1,
+input req4,
+input req2,		// ...
+input req6,
+input ack,		// bus transfer completed
+input req1,		// requester 1 wants the bus
+input sel7,
+input req0,		// requester 0 wants the bus
+input sel2,
+input req5,
+input rst,		// reset
+input req7,
+input ce,		// clock enable (eg 25MHz)
+input clk,		// clock (eg 100MHz)
+input sel5,
+input [2:0] seln,
+input sel0
+);
+
+assert property(@(posedge clk) (ce && ack && req0) |-> (sel0 == 1 && seln == 3'd0);
+assert property(@(posedge clk) (ce && ack && req1) |-> (sel1 == 1 && seln == 3'd1);
+assert property(@(posedge clk) (ce && ack && req2) |-> (sel2 == 1 && seln == 3'd2);
+assert property(@(posedge clk) (ce && ack && req3) |-> (sel3 == 1 && seln == 3'd3);
+assert property(@(posedge clk) (ce && ack && req4) |-> (sel4 == 1 && seln == 3'd4);
+assert property(@(posedge clk) (ce && ack && req5) |-> (sel5 == 1 && seln == 3'd5);
+assert property(@(posedge clk) (ce && ack && req6) |-> (sel6 == 1 && seln == 3'd6);
+assert property(@(posedge clk) (ce && ack && req7) |-> (sel7 == 1 && seln == 3'd7);
+assert property(@(posedge clk) (!req0 && !req1 && !req2 && !req3 && !req4 && !req5 && !req6 && !req7) |-> (sel0 == sel0 && sel1 == sel1 && sel2 == sel2 && sel3 == sel3 && sel4 == sel4 && sel5 == sel5 && sel6 == sel6 && sel7 == sel7 && seln == seln);
+endmodule

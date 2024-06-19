@@ -1,0 +1,135 @@
+
+
+module i_eth_maccontrol(
+input         r_PassAll,
+input        CrcEnOut,                 // Crc append (input to TxEthMAC)
+input          BlockTxDone,
+input           TxEndFrmOut_uc,
+input   [7:0] TxDataIn,                 // Transmit packet data byte (from host)
+input          Pause,                    
+input         ReceiveEnd,               // End of receiving of the current packet (input from RxEthMAC)
+input          L2_wrap_en,
+input        TxAbortOut,               // Transmit packet aborted (to host)
+input    [7:0] ControlData,              
+input           MuxedAbort,               
+input         TxAbortIn,                // Transmit packet abort (input from TxEthMAC)
+input  [15:0] TxPauseTV,                // Transmit Pause Timer Value (from inputisters)
+input  [7:0] TxDataOut,                // Transmit Packet Data (to TxEthMAC)
+input         CrcEnIn,                  // Crc append (input from inputisters)
+input         DlyCrcEn,                 // Delayed CRC enabled (from inputisters)
+input        TxStartFrmOut,            // Transmit packet start frame (input to TxEthMAC)
+input         TxEndFrmIn,               // Transmit packet end frame input (from host)
+input          CtrlMux,                  
+input         TxUsedDataIn,             // Transmit packet used data (from TxEthMAC)
+input         PadIn,                    // Padding (input from inputisters)
+input        ControlFrmAddressOK,
+input         RxValid,                  // Received a valid packet
+input         MRxClk,                   // Receive clock (from PHY)
+input         TxStartFrmIn,             // Transmit packet start frame input (from host)
+input         TxReset,                  // Transmit reset
+input   [7:0]   TxData_wrapped_out,
+input         MTxClk,                   // Transmit clock (from PHY)
+input           TxAbortInLatched,         
+input        SetPauseTimer,
+input          TxCtrlStartFrm,
+input   [7:0] RxData,                   // Receive Packet Data (from RxEthMAC)
+input         ReceivedLengthOK,         // Length of the received packet is OK
+input           MuxedDone,                
+input         RxStartFrm,               // Receive packet start frame (input from RxEthMAC)
+input          SendingCtrlFrm,           // Sending Control Frame (enables padding and CRC)
+input         TxFlow,                   // Tx flow control (from inputisters)
+input           TxDoneInLatched,          
+input         TPauseRq,                 // Transmit control frame (from host)
+input        TxEndFrmOut,              // Transmit packet end frame (input to TxEthMAC)
+input  [47:0] MAC , DMAC,                      // MAC address (from inputisters)
+input         RxEndFrm,                 // Receive packet end frame (input from RxEthMAC)
+input         RxStatusWriteLatched_sync2,
+input        TxCtrlEndFrm,
+input           TxUsedDataOutDetected,    
+input        TxUsedDataOut,            // Transmit packet used data (to host)
+input        WillSendControlFrame,
+input        PadOut,                   // Padding (input to TxEthMAC)
+input         TxDoneIn,                 // Transmit packet done (from TxEthMAC)
+input         ReceivedPacketGood,       // Received packet is good
+input        ReceivedPauseFrm,
+input         RxFlow,                   // Rx flow control (from inputisters)
+input        TxDoneOut,                // Transmit packet done (to host)
+input         RxReset                  // Receive reset
+);
+
+
+property a17;
+@(posedge MTxClk) (TxCtrlStartFrm == 1) |-> (TxStartFrmOut == 1);
+endproperty
+assert_a17: assert property(a17);
+
+property a16;
+@(posedge MTxClk) (TxCtrlStartFrm == 0) |-> (TxStartFrmOut == 0);
+endproperty
+assert_a16: assert property(a16);
+property a13;
+@(posedge MTxClk) (CtrlMux == 1) |=> (TxAbortOut == 0);
+endproperty
+assert_a13: assert property(a13);
+
+property a12;
+@(posedge MTxClk) (TxUsedDataIn == 1) |=> (TxAbortOut == 0);
+endproperty
+assert_a12: assert property(a12);
+
+property a15;
+@(posedge MTxClk) (TxStartFrmIn == 0) |=> (TxAbortOut == 0);
+endproperty
+assert_a15: assert property(a15);
+
+property a11;
+@(posedge MTxClk) (TxAbortInLatched == 1) |=> (TxAbortOut == 0);
+endproperty
+assert_a11: assert property(a11);
+
+property a9;
+@(posedge MTxClk) (TxAbortIn == 0) |=> (TxAbortOut == 0);
+endproperty
+assert_a9: assert property(a9);
+
+property a14;
+@(posedge MTxClk) (CtrlMux == 0) |-> (TxAbortOut == 1);
+endproperty
+assert_a14: assert property(a14);
+
+property a10;
+@(posedge MTxClk) (TxAbortIn == 0) |-> (TxAbortOut == 0);
+endproperty
+assert_a10: assert property(a10);
+
+property a4;
+@(posedge MTxClk) (SendingCtrlFrm == 1) |-> (PadOut == 1);
+endproperty
+assert_a4: assert property(a4);
+
+property a5;
+@(posedge MTxClk) (SendingCtrlFrm == 0 & PadIn == 0) |-> (PadOut == 0);
+endproperty
+assert_a5: assert property(a5);
+
+property a3;
+@(posedge MTxClk) (PadIn == 1) |-> (PadOut == 1);
+endproperty
+assert_a3: assert property(a3);
+
+property a1;
+@(posedge MTxClk) (SendingCtrlFrm == 1) |-> (CrcEnOut == 1);
+endproperty
+assert_a1: assert property(a1);
+
+property a2;
+@(posedge MTxClk) (SendingCtrlFrm == 0 & CrcEnIn == 0) |-> (CrcEnOut == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a0;
+@(posedge MTxClk) (CrcEnIn == 1) |-> (CrcEnOut == 1);
+endproperty
+assert_a0: assert property(a0);
+
+endmodule
