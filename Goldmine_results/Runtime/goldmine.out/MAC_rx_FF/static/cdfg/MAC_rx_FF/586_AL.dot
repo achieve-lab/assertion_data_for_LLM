@@ -1,0 +1,50 @@
+strict digraph "" {
+	node [label="\N"];
+	"593:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fbd1c2e6d50>",
+		fillcolor=turquoise,
+		label="593:BL
+Rx_Hwmark_pl <= Rx_Hwmark;
+Rx_Lwmark_pl <= Rx_Lwmark;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fbd1c2e6a50>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7fbd1c2e6bd0>]",
+		style=filled,
+		typ=Block];
+	"Leaf_586:AL"	 [def_var="['Rx_Hwmark_pl', 'Rx_Lwmark_pl']",
+		label="Leaf_586:AL"];
+	"593:BL" -> "Leaf_586:AL"	 [cond="[]",
+		lineno=None];
+	"586:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fbd1c2e6d90>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="586:AL",
+		sens="['Clk_SYS', 'Reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['Reset', 'Rx_Lwmark', 'Rx_Hwmark']"];
+	"587:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fbd1c2e6f10>",
+		fillcolor=springgreen,
+		label="587:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"586:AL" -> "587:IF"	 [cond="[]",
+		lineno=None];
+	"588:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fbd1c2e6f50>",
+		fillcolor=turquoise,
+		label="588:BL
+Rx_Hwmark_pl <= 0;
+Rx_Lwmark_pl <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fbd1c2e6f90>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7fbd1c2d2150>]",
+		style=filled,
+		typ=Block];
+	"588:BL" -> "Leaf_586:AL"	 [cond="[]",
+		lineno=None];
+	"587:IF" -> "593:BL"	 [cond="['Reset']",
+		label="!(Reset)",
+		lineno=587];
+	"587:IF" -> "588:BL"	 [cond="['Reset']",
+		label=Reset,
+		lineno=587];
+}

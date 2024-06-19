@@ -1,0 +1,13 @@
+wfull	full
+PTR_WIDTH	wfull
+full	b_wptr_next
+g_wptr_next	wfull
+g_wptr_next	g_wptr
+w_en	b_wptr_next
+b_wptr_next	g_wptr_next
+b_wptr_next	b_wptr
+g_rptr_sync	wfull
+b_wptr	b_wptr_next
+wrst_n	g_wptr
+wrst_n	full
+wrst_n	b_wptr

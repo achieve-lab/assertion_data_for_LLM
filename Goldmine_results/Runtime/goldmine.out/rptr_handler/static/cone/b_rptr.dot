@@ -1,0 +1,93 @@
+strict digraph "" {
+	"[3]empty"	 [complexity=30,
+		importance=1.65839242614,
+		rank=0.0552797475381];
+	"[3]b_rptr_next"	 [complexity=26,
+		importance=1.52667716135,
+		rank=0.0587183523595];
+	"[3]empty" -> "[3]b_rptr_next";
+	"[1]r_en"	 [complexity=6,
+		importance=0.408484831378,
+		rank=0.0680808052296];
+	"[1]b_rptr_next"	 [complexity=2,
+		importance=0.347351095925,
+		rank=0.173675547962];
+	"[1]r_en" -> "[1]b_rptr_next";
+	"[3]r_en"	 [complexity=30,
+		importance=1.5878108968,
+		rank=0.0529270298933];
+	"[3]r_en" -> "[3]b_rptr_next";
+	"[2]r_en"	 [complexity=18,
+		importance=0.998147864089,
+		rank=0.055452659116];
+	"[2]b_rptr_next"	 [complexity=14,
+		importance=0.937014128636,
+		rank=0.0669295806168];
+	"[2]r_en" -> "[2]b_rptr_next";
+	"[3]g_rptr_next"	 [complexity=23,
+		importance=1.30585411967,
+		rank=0.0567762660726];
+	"[3]rempty"	 [complexity=20,
+		importance=1.18951503073,
+		rank=0.0594757515365];
+	"[3]g_rptr_next" -> "[3]rempty";
+	"[2]rrst_n"	 [complexity=7,
+		importance=1.01926645689,
+		rank=0.145609493842];
+	"[1]b_rptr"	 [complexity=6,
+		importance=0.473879150172,
+		rank=0.0789798583621];
+	"[2]rrst_n" -> "[1]b_rptr";
+	"[1]empty"	 [complexity=6,
+		importance=0.479066360721,
+		rank=0.0798443934534];
+	"[2]rrst_n" -> "[1]empty";
+	b_rptr	 [complexity=0,
+		importance=0.126528054248,
+		rank=0.0];
+	"[2]rempty"	 [complexity=8,
+		importance=0.599851998019,
+		rank=0.0749814997524];
+	"[2]rempty" -> "[1]empty";
+	"[1]rrst_n"	 [complexity=1,
+		importance=0.314189843949,
+		rank=0.314189843949];
+	"[1]rrst_n" -> b_rptr;
+	"[2]g_wptr_sync"	 [complexity=11,
+		importance=0.660985733472,
+		rank=0.0600896121338];
+	"[2]g_wptr_sync" -> "[2]rempty";
+	"[3]b_rptr_next" -> "[3]g_rptr_next";
+	"[2]b_rptr"	 [complexity=18,
+		importance=1.06354218288,
+		rank=0.0590856768269];
+	"[3]b_rptr_next" -> "[2]b_rptr";
+	"[2]empty"	 [complexity=18,
+		importance=1.06872939343,
+		rank=0.0593738551906];
+	"[2]empty" -> "[2]b_rptr_next";
+	"[1]b_rptr" -> "[1]b_rptr_next";
+	"[3]rempty" -> "[2]empty";
+	"[3]g_wptr_sync"	 [complexity=23,
+		importance=1.25064876618,
+		rank=0.0543760333123];
+	"[3]g_wptr_sync" -> "[3]rempty";
+	"[3]b_rptr"	 [complexity=30,
+		importance=1.65320521559,
+		rank=0.0551068405198];
+	"[3]b_rptr" -> "[3]b_rptr_next";
+	"[1]b_rptr_next" -> b_rptr;
+	"[2]b_rptr_next" -> "[1]b_rptr";
+	"[2]g_rptr_next"	 [complexity=11,
+		importance=0.716191086959,
+		rank=0.0651082806326];
+	"[2]b_rptr_next" -> "[2]g_rptr_next";
+	"[3]rrst_n"	 [complexity=19,
+		importance=2.19859252232,
+		rank=0.115715395911];
+	"[3]rrst_n" -> "[2]empty";
+	"[3]rrst_n" -> "[2]b_rptr";
+	"[1]empty" -> "[1]b_rptr_next";
+	"[2]b_rptr" -> "[2]b_rptr_next";
+	"[2]g_rptr_next" -> "[2]rempty";
+}

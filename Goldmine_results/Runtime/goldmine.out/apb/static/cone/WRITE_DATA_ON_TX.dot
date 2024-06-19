@@ -1,0 +1,13 @@
+strict digraph "" {
+	PWDATA	 [complexity=4,
+		importance=0.0727425631126,
+		rank=0.0181856407781];
+	WRITE_DATA_ON_TX	 [complexity=0,
+		importance=0.0399263820656,
+		rank=0.0];
+	PWDATA -> WRITE_DATA_ON_TX;
+	PADDR	 [complexity=4,
+		importance=0.0727425631126,
+		rank=0.0181856407781];
+	PADDR -> WRITE_DATA_ON_TX;
+}

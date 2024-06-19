@@ -1,0 +1,80 @@
+strict digraph "" {
+	cnt	 [complexity=9,
+		importance=0.0377540180142,
+		rank=0.00419489089047];
+	dma_req_wr	 [complexity=0,
+		importance=0.0196987967642,
+		rank=0.0];
+	cnt -> dma_req_wr;
+	enable	 [complexity=13,
+		importance=0.228523377281,
+		rank=0.0175787213293];
+	enable -> cnt;
+	state	 [complexity=12,
+		importance=0.10884397178,
+		rank=0.00907033098163];
+	enable -> state;
+	enable -> dma_req_wr;
+	CTR	 [complexity=15,
+		importance=0.169939766828,
+		rank=0.0113293177885];
+	aes_cr	 [complexity=11,
+		importance=0.0809525964358,
+		rank=0.00735932694871];
+	CTR -> aes_cr;
+	aes_cr -> enable;
+	dma_in_en	 [complexity=9,
+		importance=0.030534230486,
+		rank=0.00339269227622];
+	aes_cr -> dma_in_en;
+	aes_cr_wr_en	 [complexity=14,
+		importance=0.741936336986,
+		rank=0.0529954526418];
+	aes_cr_wr_en -> aes_cr;
+	state -> cnt;
+	state -> dma_req_wr;
+	START	 [complexity=12,
+		importance=0.0835426099849,
+		rank=0.00696188416541];
+	START -> cnt;
+	IDLE	 [complexity=9,
+		importance=0.0277333707206,
+		rank=0.00308148563562];
+	IDLE -> dma_req_wr;
+	enable_clear	 [complexity=12,
+		importance=0.174466220508,
+		rank=0.014538851709];
+	enable_clear -> aes_cr;
+	PRESETn	 [complexity=10,
+		importance=0.0666347039707,
+		rank=0.00666347039707];
+	PRESETn -> cnt;
+	PRESETn -> aes_cr;
+	PRESETn -> state;
+	dma_req	 [complexity=9,
+		importance=0.0293000650072,
+		rank=0.00325556277857];
+	PRESETn -> dma_req;
+	dma_in_en -> dma_req_wr;
+	DECRYP_W_DERIV	 [complexity=15,
+		importance=0.169939766828,
+		rank=0.0113293177885];
+	DECRYP_W_DERIV -> aes_cr;
+	INPUT	 [complexity=9,
+		importance=0.0277333707206,
+		rank=0.00308148563562];
+	INPUT -> dma_req_wr;
+	access_permission	 [complexity=13,
+		importance=0.657495948733,
+		rank=0.050576611441];
+	access_permission -> aes_cr;
+	cnt_en	 [complexity=10,
+		importance=0.0609882187357,
+		rank=0.00609882187357];
+	cnt_en -> cnt;
+	dma_req -> dma_req_wr;
+	chmod_in	 [complexity=15,
+		importance=0.17034149114,
+		rank=0.0113560994094];
+	chmod_in -> aes_cr;
+}

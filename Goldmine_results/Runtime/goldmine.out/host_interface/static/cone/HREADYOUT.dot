@@ -1,0 +1,97 @@
+strict digraph "" {
+	ahb_enable	 [complexity=14,
+		importance=0.137473310227,
+		rank=0.00981952215907];
+	write_en	 [complexity=10,
+		importance=0.109454867493,
+		rank=0.0109454867493];
+	ahb_enable -> write_en;
+	read_en	 [complexity=10,
+		importance=0.119693734363,
+		rank=0.0119693734363];
+	ahb_enable -> read_en;
+	HREADYOUT	 [complexity=0,
+		importance=0.060901187397,
+		rank=0.0];
+	buffer_read_en	 [complexity=7,
+		importance=0.0901172024368,
+		rank=0.0128738860624];
+	buffer_read_en -> HREADYOUT;
+	reset_pending	 [complexity=7,
+		importance=0.0721462254394,
+		rank=0.0103066036342];
+	reset_pending -> HREADYOUT;
+	buffer_full	 [complexity=7,
+		importance=0.0721462254394,
+		rank=0.0103066036342];
+	buffer_full -> HREADYOUT;
+	NON_SEQ	 [complexity=17,
+		importance=0.148718348269,
+		rank=0.00874813813349];
+	NON_SEQ -> ahb_enable;
+	sample_bus	 [complexity=14,
+		importance=0.168599916045,
+		rank=0.0120428511461];
+	hwrite_pp	 [complexity=14,
+		importance=0.131756689427,
+		rank=0.00941119210192];
+	sample_bus -> hwrite_pp;
+	hselx_pp	 [complexity=14,
+		importance=0.132459506451,
+		rank=0.00946139331795];
+	sample_bus -> hselx_pp;
+	haddr_pp	 [complexity=13,
+		importance=0.121277905437,
+		rank=0.00932906964901];
+	sample_bus -> haddr_pp;
+	htrans_pp	 [complexity=17,
+		importance=0.159775132161,
+		rank=0.00939853718592];
+	sample_bus -> htrans_pp;
+	CRC_DR	 [complexity=13,
+		importance=0.108629615881,
+		rank=0.00835612429856];
+	crc_dr_sel	 [complexity=10,
+		importance=0.0973845778388,
+		rank=0.00973845778388];
+	CRC_DR -> crc_dr_sel;
+	hwrite_pp -> write_en;
+	hwrite_pp -> read_en;
+	hselx_pp -> write_en;
+	hselx_pp -> read_en;
+	crc_init_sel	 [complexity=10,
+		importance=0.0989760835034,
+		rank=0.00989760835034];
+	haddr_pp -> crc_init_sel;
+	haddr_pp -> crc_dr_sel;
+	read_wait	 [complexity=7,
+		importance=0.0721462254394,
+		rank=0.0103066036342];
+	read_wait -> HREADYOUT;
+	buffer_write_en	 [complexity=7,
+		importance=0.0782868299022,
+		rank=0.0111838328432];
+	write_en -> buffer_write_en;
+	crc_init_en	 [complexity=7,
+		importance=0.0798783355668,
+		rank=0.0114111907953];
+	write_en -> crc_init_en;
+	read_en -> buffer_read_en;
+	crc_init_sel -> crc_init_en;
+	buffer_write_en -> HREADYOUT;
+	crc_dr_sel -> buffer_read_en;
+	crc_dr_sel -> buffer_write_en;
+	crc_init_en -> HREADYOUT;
+	htrans_pp -> ahb_enable;
+	HRESETn	 [complexity=14,
+		importance=0.13252294348,
+		rank=0.00946592453425];
+	HRESETn -> hwrite_pp;
+	HRESETn -> hselx_pp;
+	HRESETn -> haddr_pp;
+	HRESETn -> htrans_pp;
+	CRC_INIT	 [complexity=13,
+		importance=0.110221121546,
+		rank=0.00847854781122];
+	CRC_INIT -> crc_init_sel;
+}

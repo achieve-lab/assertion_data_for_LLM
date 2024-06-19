@@ -1,0 +1,25 @@
+strict digraph "" {
+	Reset	 [complexity=1,
+		importance=0.228778574029,
+		rank=0.228778574029];
+	MCrs_dv	 [complexity=0,
+		importance=0.0513392764897,
+		rank=0.0];
+	Reset -> MCrs_dv;
+	"[1]Tx_en"	 [complexity=2,
+		importance=0.0788861662704,
+		rank=0.0394430831352];
+	"[1]Tx_en" -> MCrs_dv;
+	Line_loop_en	 [complexity=1,
+		importance=0.177439297539,
+		rank=0.177439297539];
+	Line_loop_en -> MCrs_dv;
+	"[1]Reset"	 [complexity=2,
+		importance=0.285722144786,
+		rank=0.142861072393];
+	Rx_dv_dl2	 [complexity=1,
+		importance=0.131150338358,
+		rank=0.131150338358];
+	"[1]Reset" -> Rx_dv_dl2;
+	Rx_dv_dl2 -> MCrs_dv;
+}

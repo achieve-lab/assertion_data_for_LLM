@@ -1,0 +1,11 @@
+mult_constant	mult_wo_sign
+b	mult_wo_sign
+[1]rstn	a_FF
+div256	p
+N	p
+N	b
+[1]a	a_FF
+a_FF	p
+a_FF	b
+[1]valid	a_FF
+mult_wo_sign	div256

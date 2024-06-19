@@ -1,0 +1,17 @@
+strict digraph "" {
+	"[1]rst_n"	 [complexity=3,
+		importance=0.402547091334,
+		rank=0.134182363778];
+	waddr	 [complexity=2,
+		importance=0.173495767889,
+		rank=0.0867478839445];
+	"[1]rst_n" -> waddr;
+	"[1]valid"	 [complexity=3,
+		importance=0.232296199805,
+		rank=0.0774320666016];
+	"[1]valid" -> waddr;
+	"[1]waddr"	 [complexity=4,
+		importance=0.346991535778,
+		rank=0.0867478839445];
+	"[1]waddr" -> waddr;
+}

@@ -1,0 +1,64 @@
+strict digraph "" {
+	"[1]check_end_T_R_K28_5"	 [complexity=2,
+		importance=0.027398807849,
+		rank=0.0136994039245];
+	"[1]receiving_m_clr"	 [complexity=1,
+		importance=0.0209089951472,
+		rank=0.0209089951472];
+	"[1]check_end_T_R_K28_5" -> "[1]receiving_m_clr";
+	"[1]xmit_DATA_CD"	 [complexity=2,
+		importance=0.027696857949,
+		rank=0.0138484289745];
+	"[1]receiving_m_set"	 [complexity=1,
+		importance=0.0295375700492,
+		rank=0.0295375700492];
+	"[1]xmit_DATA_CD" -> "[1]receiving_m_set";
+	"[1]xmit_DATA_CD" -> "[1]receiving_m_clr";
+	"[1]early_end"	 [complexity=2,
+		importance=0.0316448396148,
+		rank=0.0158224198074];
+	"[1]early_end" -> "[1]receiving_m_clr";
+	"[1]pcs_rx_present"	 [complexity=2,
+		importance=0.193231178067,
+		rank=0.0966155890335];
+	"[1]pcs_rx_present" -> "[1]receiving_m_set";
+	"[1]pcs_rx_present" -> "[1]receiving_m_clr";
+	"[1]xmit"	 [complexity=7,
+		importance=0.0372625241029,
+		rank=0.00532321772899];
+	"[1]xmit_DATA"	 [complexity=5,
+		importance=0.0328476075275,
+		rank=0.0065695215055];
+	"[1]xmit" -> "[1]xmit_DATA";
+	"[1]receiving"	 [complexity=2,
+		importance=0.0327880263435,
+		rank=0.0163940131717];
+	"[1]receiving" -> "[1]receiving_m_clr";
+	receiving	 [complexity=0,
+		importance=0.0118790311963,
+		rank=0.0];
+	"[1]receiving_m_set" -> receiving;
+	"[1]carrier_detect_d3"	 [complexity=5,
+		importance=0.0360439720843,
+		rank=0.00720879441685];
+	"[1]carrier_detect_d3" -> "[1]xmit_DATA_CD";
+	"[1]check_end_R_R_K28_5"	 [complexity=2,
+		importance=0.027398807849,
+		rank=0.0136994039245];
+	"[1]check_end_R_R_K28_5" -> "[1]receiving_m_clr";
+	"[1]xmit_DATA" -> "[1]xmit_DATA_CD";
+	"[1]xmit_DATA" -> "[1]receiving_m_set";
+	"[1]receiving_m_clr" -> receiving;
+	"[1]reset"	 [complexity=1,
+		importance=0.0400520101644,
+		rank=0.0400520101644];
+	"[1]reset" -> receiving;
+	"[1]check_end_R_R_R"	 [complexity=2,
+		importance=0.0268469330967,
+		rank=0.0134234665483];
+	"[1]check_end_R_R_R" -> "[1]receiving_m_clr";
+	"[1]K28_5_match"	 [complexity=2,
+		importance=0.0342901048194,
+		rank=0.0171450524097];
+	"[1]K28_5_match" -> "[1]receiving_m_set";
+}

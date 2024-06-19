@@ -1,0 +1,30 @@
+strict digraph "" {
+	datao	 [complexity=0,
+		importance=0.198128541241,
+		rank=0.0];
+	dout	 [complexity=2,
+		importance=0.444618697987,
+		rank=0.222309348993];
+	dout -> datao;
+	"[1]mem"	 [complexity=5,
+		importance=0.594384427341,
+		rank=0.118876885468];
+	"[1]mem" -> dout;
+	"[1]aidx"	 [complexity=5,
+		importance=0.550702763363,
+		rank=0.110140552673];
+	"[1]aidx" -> dout;
+	"[1]sel"	 [complexity=5,
+		importance=1.40873897078,
+		rank=0.281747794156];
+	"[1]sel" -> dout;
+	"[1]w_n"	 [complexity=3,
+		importance=0.519501574808,
+		rank=0.173167191603];
+	"[1]w_n" -> dout;
+	"[1]addr"	 [complexity=9,
+		importance=1.72699116691,
+		rank=0.191887907434];
+	"[1]addr" -> dout;
+	"[1]addr" -> "[1]aidx";
+}

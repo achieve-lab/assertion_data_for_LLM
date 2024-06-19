@@ -1,0 +1,31 @@
+digraph "" {
+	rst_n -> i	 [weight=9.0];
+	rst_n -> state	 [weight=16.0];
+	rst_n -> valid	 [weight=4.0];
+	TotalCoeff -> i	 [weight=5.0];
+	TotalCoeff -> state	 [weight=5.0];
+	TotalCoeff_comb -> i	 [weight=1.0];
+	TotalCoeff_comb -> state	 [weight=5.0];
+	TotalCoeff_comb -> valid	 [weight=2.0];
+	ena -> i	 [weight=8.0];
+	ena -> state	 [weight=15.0];
+	ena -> valid	 [weight=3.0];
+	i -> i	 [weight=8.0];
+	i -> state	 [weight=7.0];
+	i -> valid	 [weight=1.0];
+	start -> state	 [weight=2.0];
+	start -> valid	 [weight=1.0];
+	state -> i	 [weight=8.0];
+	state -> idle	 [weight=1.0];
+	state -> state	 [weight=15.0];
+	state -> valid	 [weight=3.0];
+	TrailingOnes_comb -> state	 [weight=3.0];
+	TrailingOnes_comb -> valid	 [weight=1.0];
+	max_coeff_num -> i	 [weight=2.0];
+	max_coeff_num -> state	 [weight=3.0];
+	ZeroLeft -> i	 [weight=1.0];
+	ZeroLeft -> state	 [weight=2.0];
+	ZeroLeft -> valid	 [weight=1.0];
+	TrailingOnes -> i	 [weight=2.0];
+	TrailingOnes -> state	 [weight=2.0];
+}

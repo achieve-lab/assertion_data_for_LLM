@@ -1,0 +1,17 @@
+strict digraph "" {
+	"wptr_h.wfull"	 [complexity=2,
+		importance=0.0714099849776,
+		rank=0.0357049924888];
+	"wptr_h.full"	 [complexity=0,
+		importance=0.0424717232149,
+		rank=0.0];
+	"wptr_h.wfull" -> "wptr_h.full";
+	"wptr_h.wrst_n"	 [complexity=1,
+		importance=0.0970852877447,
+		rank=0.0970852877447];
+	"wptr_h.wrst_n" -> "wptr_h.full";
+	full	 [complexity=0,
+		importance=0.016265827378,
+		rank=0.0];
+	"wptr_h.full" -> full;
+}

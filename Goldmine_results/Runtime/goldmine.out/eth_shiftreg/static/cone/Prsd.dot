@@ -1,0 +1,29 @@
+strict digraph "" {
+	"[1]MdcEn_n"	 [complexity=1,
+		importance=0.344883636624,
+		rank=0.344883636624];
+	Prsd	 [complexity=0,
+		importance=0.147036971999,
+		rank=0.0];
+	"[1]MdcEn_n" -> Prsd;
+	"[1]ByteSelect"	 [complexity=1,
+		importance=0.344883636624,
+		rank=0.344883636624];
+	"[1]ByteSelect" -> Prsd;
+	"[1]LatchByte"	 [complexity=2,
+		importance=0.491920608623,
+		rank=0.245960304312];
+	"[1]LatchByte" -> Prsd;
+	"[1]ShiftReg"	 [complexity=6,
+		importance=0.515733833933,
+		rank=0.0859556389889];
+	"[1]ShiftReg" -> Prsd;
+	"[1]Mdi"	 [complexity=6,
+		importance=0.344883636624,
+		rank=0.0574806061041];
+	"[1]Mdi" -> Prsd;
+	"[1]Reset"	 [complexity=1,
+		importance=0.491920608623,
+		rank=0.491920608623];
+	"[1]Reset" -> Prsd;
+}

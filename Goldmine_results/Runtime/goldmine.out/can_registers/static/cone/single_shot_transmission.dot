@@ -1,0 +1,46 @@
+strict digraph "" {
+	single_shot_transmission	 [complexity=0,
+		importance=0.00485719200698,
+		rank=0.0];
+	"[1]rst"	 [complexity=1,
+		importance=0.0165140130739,
+		rank=0.0165140130739];
+	"[1]rst" -> single_shot_transmission;
+	"[1]tx_state"	 [complexity=2,
+		importance=0.00679962905994,
+		rank=0.00339981452997];
+	"[1]tx_state" -> single_shot_transmission;
+	"[1]command"	 [complexity=6,
+		importance=0.0271187046328,
+		rank=0.00451978410547];
+	"[1]command" -> single_shot_transmission;
+	"[1]tx_request"	 [complexity=3,
+		importance=0.0122296506265,
+		rank=0.00407655020883];
+	"[1]command" -> "[1]tx_request";
+	"[1]COMMAND_REG4.data_out"	 [complexity=6,
+		importance=0.033489925076,
+		rank=0.00558165417933];
+	"[1]COMMAND_REG4.data_out" -> "[1]command";
+	"[1]COMMAND_REG.data_out"	 [complexity=6,
+		importance=0.0333928487291,
+		rank=0.00556547478819];
+	"[1]COMMAND_REG.data_out" -> "[1]command";
+	"[1]tx_request" -> single_shot_transmission;
+	"[1]COMMAND_REG1.data_out"	 [complexity=6,
+		importance=0.0340023520398,
+		rank=0.00566705867331];
+	"[1]COMMAND_REG1.data_out" -> "[1]command";
+	"[1]COMMAND_REG0.data_out"	 [complexity=6,
+		importance=0.033489925076,
+		rank=0.00558165417933];
+	"[1]COMMAND_REG0.data_out" -> "[1]command";
+	"[1]tx_state_q"	 [complexity=2,
+		importance=0.00679962905994,
+		rank=0.00339981452997];
+	"[1]tx_state_q" -> single_shot_transmission;
+	"[1]sample_point"	 [complexity=3,
+		importance=0.0116568210669,
+		rank=0.00388560702231];
+	"[1]sample_point" -> single_shot_transmission;
+}

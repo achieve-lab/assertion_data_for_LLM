@@ -1,0 +1,130 @@
+strict digraph "" {
+	"[1]PACKETLEN_0.Reset"	 [complexity=3,
+		importance=0.048821561766,
+		rank=0.016273853922];
+	"PACKETLEN_0.DataOut"	 [complexity=2,
+		importance=0.0158496164821,
+		rank=0.00792480824106];
+	"[1]PACKETLEN_0.Reset" -> "PACKETLEN_0.DataOut";
+	"[1]PACKETLEN_0.SyncReset"	 [complexity=3,
+		importance=0.0329659122337,
+		rank=0.0109886374112];
+	"[1]PACKETLEN_0.SyncReset" -> "PACKETLEN_0.DataOut";
+	"[1]PACKETLEN_3.DataIn"	 [complexity=4,
+		importance=0.0171270325358,
+		rank=0.00428175813395];
+	"PACKETLEN_3.DataOut"	 [complexity=2,
+		importance=0.0158496164821,
+		rank=0.00792480824106];
+	"[1]PACKETLEN_3.DataIn" -> "PACKETLEN_3.DataOut";
+	"[1]PACKETLEN_1.SyncReset"	 [complexity=3,
+		importance=0.0329659122337,
+		rank=0.0109886374112];
+	"PACKETLEN_1.DataOut"	 [complexity=2,
+		importance=0.0158496164821,
+		rank=0.00792480824106];
+	"[1]PACKETLEN_1.SyncReset" -> "PACKETLEN_1.DataOut";
+	"PACKETLEN_2.DataOut"	 [complexity=2,
+		importance=0.0158496164821,
+		rank=0.00792480824106];
+	PACKETLENOut	 [complexity=2,
+		importance=0.0119168393805,
+		rank=0.00595841969026];
+	"PACKETLEN_2.DataOut" -> PACKETLENOut;
+	"[1]PACKETLEN_2.DataIn"	 [complexity=4,
+		importance=0.0171270325358,
+		rank=0.00428175813395];
+	"[1]PACKETLEN_2.DataIn" -> "PACKETLEN_2.DataOut";
+	"[1]Write"	 [complexity=15,
+		importance=0.0792875140498,
+		rank=0.00528583426999];
+	"[1]PACKETLEN_Wr"	 [complexity=3,
+		importance=0.0193468411285,
+		rank=0.00644894704284];
+	"[1]Write" -> "[1]PACKETLEN_Wr";
+	"[1]PACKETLEN_3.SyncReset"	 [complexity=3,
+		importance=0.0329659122337,
+		rank=0.0109886374112];
+	"[1]PACKETLEN_3.SyncReset" -> "PACKETLEN_3.DataOut";
+	"[1]PACKETLEN_2.SyncReset"	 [complexity=3,
+		importance=0.0329659122337,
+		rank=0.0109886374112];
+	"[1]PACKETLEN_2.SyncReset" -> "PACKETLEN_2.DataOut";
+	"[1]Address"	 [complexity=17,
+		importance=0.0799339203503,
+		rank=0.00470199531472];
+	"[1]PACKETLEN_Sel"	 [complexity=15,
+		importance=0.0786672410808,
+		rank=0.00524448273872];
+	"[1]Address" -> "[1]PACKETLEN_Sel";
+	"[1]PACKETLEN_1.DataIn"	 [complexity=4,
+		importance=0.0171270325358,
+		rank=0.00428175813395];
+	"[1]PACKETLEN_1.DataIn" -> "PACKETLEN_1.DataOut";
+	"[1]PACKETLEN_1.Write"	 [complexity=3,
+		importance=0.0173641020369,
+		rank=0.0057880340123];
+	"[1]PACKETLEN_1.Write" -> "PACKETLEN_1.DataOut";
+	"[1]PACKETLEN_2.Write"	 [complexity=3,
+		importance=0.0173641020369,
+		rank=0.0057880340123];
+	"[1]PACKETLEN_2.Write" -> "PACKETLEN_2.DataOut";
+	"[1]Cs"	 [complexity=18,
+		importance=0.0805541933193,
+		rank=0.00447523296218];
+	"[1]Cs" -> "[1]Write";
+	"[1]Rw"	 [complexity=18,
+		importance=0.0805541933193,
+		rank=0.00447523296218];
+	"[1]Rw" -> "[1]Write";
+	"PACKETLEN_3.DataOut" -> PACKETLENOut;
+	"[1]PACKETLEN_0.DataIn"	 [complexity=4,
+		importance=0.0171270325358,
+		rank=0.00428175813395];
+	"[1]PACKETLEN_0.DataIn" -> "PACKETLEN_0.DataOut";
+	r_MaxFL	 [complexity=0,
+		importance=0.00278797022335,
+		rank=0.0];
+	PACKETLENOut -> r_MaxFL;
+	"PACKETLEN_1.DataOut" -> PACKETLENOut;
+	"PACKETLEN_0.DataOut" -> PACKETLENOut;
+	"[1]Reset"	 [complexity=3,
+		importance=0.0500882410355,
+		rank=0.0166960803452];
+	"[1]Reset" -> "[1]PACKETLEN_0.Reset";
+	"[1]PACKETLEN_2.Reset"	 [complexity=3,
+		importance=0.048821561766,
+		rank=0.016273853922];
+	"[1]Reset" -> "[1]PACKETLEN_2.Reset";
+	"[1]PACKETLEN_3.Reset"	 [complexity=3,
+		importance=0.048821561766,
+		rank=0.016273853922];
+	"[1]Reset" -> "[1]PACKETLEN_3.Reset";
+	"[1]PACKETLEN_1.Reset"	 [complexity=3,
+		importance=0.048821561766,
+		rank=0.016273853922];
+	"[1]Reset" -> "[1]PACKETLEN_1.Reset";
+	"[1]PACKETLEN_3.Write"	 [complexity=3,
+		importance=0.0173641020369,
+		rank=0.0057880340123];
+	"[1]PACKETLEN_3.Write" -> "PACKETLEN_3.DataOut";
+	"[1]PACKETLEN_0.Write"	 [complexity=3,
+		importance=0.0173641020369,
+		rank=0.0057880340123];
+	"[1]PACKETLEN_0.Write" -> "PACKETLEN_0.DataOut";
+	"[1]PACKETLEN_Wr" -> "[1]PACKETLEN_1.Write";
+	"[1]PACKETLEN_Wr" -> "[1]PACKETLEN_2.Write";
+	"[1]PACKETLEN_Wr" -> "[1]PACKETLEN_3.Write";
+	"[1]PACKETLEN_Wr" -> "[1]PACKETLEN_0.Write";
+	"[1]DataIn"	 [complexity=4,
+		importance=0.0183937118053,
+		rank=0.00459842795132];
+	"[1]DataIn" -> "[1]PACKETLEN_3.DataIn";
+	"[1]DataIn" -> "[1]PACKETLEN_2.DataIn";
+	"[1]DataIn" -> "[1]PACKETLEN_1.DataIn";
+	"[1]DataIn" -> "[1]PACKETLEN_0.DataIn";
+	"[1]PACKETLEN_2.Reset" -> "PACKETLEN_2.DataOut";
+	"[1]PACKETLEN_Sel" -> "[1]PACKETLEN_Wr";
+	"[1]PACKETLEN_3.Reset" -> "PACKETLEN_3.DataOut";
+	"[1]PACKETLEN_1.Reset" -> "PACKETLEN_1.DataOut";
+}

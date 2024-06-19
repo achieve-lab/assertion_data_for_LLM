@@ -1,0 +1,334 @@
+Report file generated at: Mar-27-2024 10:04:00 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a22: (bitRamRw == 0) ##1 (bitRamAddr[3] == 1 & bitRamAddr[4] == 1 & bitRamAddr[2] == 0) |-> (bitRamOut == 1)
+IRank: : 0.14593
+Importance: : 1.89703
+Complexity: : 13
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a10: (bitRamRw == 0) ##1 (bitRamAddr[5] == 1 & bitRamAddr[3] == 0 & bitRamAddr[1] == 0) |-> (bitRamOut == 0)
+IRank: : 0.14593
+Importance: : 1.89703
+Complexity: : 13
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a14: (bitRamRw == 0) ##1 (bitRamAddr[1] == 1 & bitRamAddr[2] == 0 & bitRamAddr[0] == 0 & bitRamAddr[3] == 0) |-> (bitRamOut == 0)
+IRank: : 0.14517
+Importance: : 2.32277
+Complexity: : 16
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a16: (bitRamRw == 1) ##1 (bitRamAddr[1] == 1 & bitRamAddr[2] == 1 & bitRamAddr[0] == 1 & bitRamAddr[5] == 1 & bitRamAddr[3] == 0) |-> (bitRamOut == 1)
+IRank: : 0.14466
+Importance: : 2.74851
+Complexity: : 19
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a13: (bitRamRw == 0) ##1 (bitRamAddr[2] == 1 & bitRamAddr[1] == 0 & bitRamAddr[0] == 1 & bitRamAddr[4] == 0 & bitRamAddr[3] == 0) |-> (bitRamOut == 0)
+IRank: : 0.14466
+Importance: : 2.74851
+Complexity: : 19
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a20: (bitRamAddr[4] == 0 & bitRamAddr[2] == 0 & bitRamAddr[3] == 0 & bitRamAddr[5] == 0) |-> (bitRamOut == 1)
+IRank: : 0.14191
+Importance: : 1.70297
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a17: (bitRamAddr[2] == 0 & bitRamAddr[1] == 0 & bitRamAddr[3] == 0 & bitRamAddr[5] == 0) |-> (bitRamOut == 1)
+IRank: : 0.14191
+Importance: : 1.70297
+Complexity: : 12
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a19: (bitRamAddr[3] == 1 & bitRamAddr[1] == 1 & bitRamAddr[2] == 1 & bitRamAddr[0] == 1 & bitRamAddr[4] == 1 & bitRamAddr[5] == 1) |-> (bitRamOut == 1)
+IRank: : 0.14191
+Importance: : 2.55445
+Complexity: : 18
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a9: (bitRamAddr[0] == 0 & bitRamAddr[4] == 1 & bitRamAddr[1] == 0 & bitRamAddr[3] == 1 & bitRamAddr[2] == 0) |-> (bitRamOut == 0)
+IRank: : 0.14191
+Importance: : 2.12871
+Complexity: : 15
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a21: (bitRamRw == 1) ##1 (bitRamAddr[3] == 1 & bitRamIn == 0 & bitRamAddr[1] == 1 & bitRamAddr[0] == 0 & bitRamAddr[2] == 1) |-> (bitRamOut == 1)
+IRank: : 0.13375
+Importance: : 2.94257
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a23: (bitRamRw == 1) ##1 (bitRamAddr[3] == 1 & bitRamIn == 0 & bitRamAddr[1] == 1 & bitRamAddr[0] == 0 & bitRamAddr[4] == 0) |-> (bitRamOut == 1)
+IRank: : 0.13375
+Importance: : 2.94257
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a25: (bitRamRw == 0) ##1 (bitRamAddr[4] == 0 & bitRamAddr[0] == 0 & bitRamIn == 0 & bitRamAddr[1] == 0 & bitRamAddr[2] == 1) |-> (bitRamOut == 1)
+IRank: : 0.13375
+Importance: : 2.94257
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a29: (bitRamRw == 1) ##1 (bitRamAddr[3] == 1 & bitRamIn == 0 & bitRamAddr[1] == 1 & bitRamAddr[4] == 1 & bitRamAddr[5] == 1) |-> (bitRamOut == 1)
+IRank: : 0.13375
+Importance: : 2.94257
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a32: (bitRamRw == 0) ##1 (bitRamAddr[3] == 1 & bitRamAddr[4] == 1 & bitRamAddr[1] == 1 & bitRamIn == 0 & bitRamAddr[5] == 0) |-> (bitRamOut == 1)
+IRank: : 0.13375
+Importance: : 2.94257
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a11: (bitRamRw == 1) ##1 (bitRamAddr[2] == 1 & bitRamAddr[1] == 0 & bitRamIn == 1 & bitRamAddr[4] == 1 & bitRamAddr[0] == 1) |-> (bitRamOut == 0)
+IRank: : 0.13375
+Importance: : 2.94257
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a6: (bitRamRw == 1) ##1 (bitRamAddr[0] == 0 & bitRamAddr[4] == 1 & bitRamAddr[2] == 0 & bitRamIn == 0 & bitRamAddr[3] == 0) |-> (bitRamOut == 0)
+IRank: : 0.13375
+Importance: : 2.94257
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a8: (bitRamRw == 1) ##1 (bitRamAddr[5] == 0 & bitRamIn == 0 & bitRamAddr[4] == 0 & bitRamAddr[3] == 1 & bitRamAddr[0] == 1) |-> (bitRamOut == 0)
+IRank: : 0.13375
+Importance: : 2.94257
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a24: (bitRamRw == 0) ##1 (bitRamAddr[3] == 1 & bitRamAddr[4] == 1 & bitRamIn == 1 & bitRamAddr[0] == 1) |-> (bitRamOut == 1)
+IRank: : 0.13246
+Importance: : 2.51683
+Complexity: : 19
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a27: (bitRamRw == 0) ##1 (bitRamAddr[3] == 1 & bitRamIn == 0 & bitRamAddr[5] == 1 & bitRamAddr[0] == 1) |-> (bitRamOut == 1)
+IRank: : 0.13246
+Importance: : 2.51683
+Complexity: : 19
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a33: (bitRamRw == 0) ##1 (bitRamAddr[3] == 1 & bitRamAddr[5] == 1 & bitRamAddr[4] == 1 & bitRamIn == 1) |-> (bitRamOut == 1)
+IRank: : 0.13246
+Importance: : 2.51683
+Complexity: : 19
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a15: (bitRamRw == 1) ##1 (bitRamAddr[1] == 1 & bitRamAddr[2] == 1 & bitRamAddr[0] == 1 & bitRamIn == 0) |-> (bitRamOut == 1)
+IRank: : 0.13246
+Importance: : 2.51683
+Complexity: : 19
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a12: (bitRamRw == 0) ##1 (bitRamAddr[1] == 1 & bitRamIn == 1 & bitRamAddr[3] == 1 & bitRamAddr[4] == 0) |-> (bitRamOut == 0)
+IRank: : 0.13246
+Importance: : 2.51683
+Complexity: : 19
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (bitRamRw == 0) ##1 (bitRamAddr[1] == 0 & bitRamAddr[2] == 1 & bitRamIn == 1 & bitRamAddr[0] == 0) |-> (bitRamOut == 0)
+IRank: : 0.13246
+Importance: : 2.51683
+Complexity: : 19
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (bitRamRw == 0) ##1 (bitRamAddr[1] == 0 & bitRamAddr[2] == 1 & bitRamIn == 1 & bitRamAddr[3] == 0) |-> (bitRamOut == 0)
+IRank: : 0.13246
+Importance: : 2.51683
+Complexity: : 19
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a28: (bitRamAddr[4] == 0 & bitRamAddr[0] == 0 & bitRamIn == 0 & bitRamAddr[5] == 1 & bitRamAddr[1] == 0 & bitRamAddr[2] == 1 & bitRamAddr[3] == 0) |-> (bitRamOut == 1)
+IRank: : 0.13226
+Importance: : 3.17426
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a30: (bitRamAddr[3] == 1 & bitRamIn == 0 & bitRamAddr[5] == 1 & bitRamAddr[0] == 1 & bitRamAddr[1] == 0 & bitRamAddr[4] == 0) |-> (bitRamOut == 1)
+IRank: : 0.13088
+Importance: : 2.74851
+Complexity: : 21
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (bitRamRw == 0) ##1 (bitRamAddr[5] == 1 & bitRamIn == 1 & bitRamAddr[1] == 0) |-> (bitRamOut == 0)
+IRank: : 0.13069
+Importance: : 2.09109
+Complexity: : 16
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a5: (bitRamRw == 0) ##1 (bitRamAddr[5] == 1 & bitRamIn == 1 & bitRamAddr[2] == 0) |-> (bitRamOut == 0)
+IRank: : 0.13069
+Importance: : 2.09109
+Complexity: : 16
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a26: (bitRamAddr[4] == 0 & bitRamAddr[0] == 0 & bitRamAddr[2] == 0 & bitRamAddr[3] == 0 & bitRamIn == 1) |-> (bitRamOut == 1)
+IRank: : 0.12904
+Importance: : 2.32277
+Complexity: : 18
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a31: (bitRamAddr[1] == 1 & bitRamAddr[2] == 1 & bitRamAddr[5] == 0 & bitRamAddr[4] == 0 & bitRamIn == 1) |-> (bitRamOut == 1)
+IRank: : 0.12904
+Importance: : 2.32277
+Complexity: : 18
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a18: (bitRamAddr[3] == 1 & bitRamAddr[1] == 1 & bitRamIn == 0 & bitRamAddr[4] == 1 & bitRamAddr[0] == 1) |-> (bitRamOut == 1)
+IRank: : 0.12904
+Importance: : 2.32277
+Complexity: : 18
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (bitRamAddr[1] == 0 & bitRamAddr[2] == 1 & bitRamIn == 1 & bitRamAddr[3] == 0 & bitRamAddr[0] == 0) |-> (bitRamOut == 0)
+IRank: : 0.12904
+Importance: : 2.32277
+Complexity: : 18
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (bitRamAddr[1] == 0 & bitRamAddr[2] == 1 & bitRamIn == 1 & bitRamAddr[3] == 0 & bitRamAddr[4] == 1) |-> (bitRamOut == 0)
+IRank: : 0.12904
+Importance: : 2.32277
+Complexity: : 18
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a7: (bitRamAddr[1] == 0 & bitRamAddr[2] == 1 & bitRamIn == 1 & bitRamAddr[0] == 0 & bitRamAddr[4] == 0) |-> (bitRamOut == 0)
+IRank: : 0.12904
+Importance: : 2.32277
+Complexity: : 18
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a22       | 0.14593 |  1.89703   |     13     |  Unknown  | Unknown |   Unknown   
+      a10       | 0.14593 |  1.89703   |     13     |  Unknown  | Unknown |   Unknown   
+      a14       | 0.14517 |  2.32277   |     16     |  Unknown  | Unknown |   Unknown   
+      a16       | 0.14466 |  2.74851   |     19     |  Unknown  | Unknown |   Unknown   
+      a13       | 0.14466 |  2.74851   |     19     |  Unknown  | Unknown |   Unknown   
+      a20       | 0.14191 |  1.70297   |     12     |  Unknown  | Unknown |   Unknown   
+      a17       | 0.14191 |  1.70297   |     12     |  Unknown  | Unknown |   Unknown   
+      a19       | 0.14191 |  2.55445   |     18     |  Unknown  | Unknown |   Unknown   
+      a9        | 0.14191 |  2.12871   |     15     |  Unknown  | Unknown |   Unknown   
+      a21       | 0.13375 |  2.94257   |     22     |  Unknown  | Unknown |   Unknown   
+      a23       | 0.13375 |  2.94257   |     22     |  Unknown  | Unknown |   Unknown   
+      a25       | 0.13375 |  2.94257   |     22     |  Unknown  | Unknown |   Unknown   
+      a29       | 0.13375 |  2.94257   |     22     |  Unknown  | Unknown |   Unknown   
+      a32       | 0.13375 |  2.94257   |     22     |  Unknown  | Unknown |   Unknown   
+      a11       | 0.13375 |  2.94257   |     22     |  Unknown  | Unknown |   Unknown   
+      a6        | 0.13375 |  2.94257   |     22     |  Unknown  | Unknown |   Unknown   
+      a8        | 0.13375 |  2.94257   |     22     |  Unknown  | Unknown |   Unknown   
+      a24       | 0.13246 |  2.51683   |     19     |  Unknown  | Unknown |   Unknown   
+      a27       | 0.13246 |  2.51683   |     19     |  Unknown  | Unknown |   Unknown   
+      a33       | 0.13246 |  2.51683   |     19     |  Unknown  | Unknown |   Unknown   
+      a15       | 0.13246 |  2.51683   |     19     |  Unknown  | Unknown |   Unknown   
+      a12       | 0.13246 |  2.51683   |     19     |  Unknown  | Unknown |   Unknown   
+      a1        | 0.13246 |  2.51683   |     19     |  Unknown  | Unknown |   Unknown   
+      a0        | 0.13246 |  2.51683   |     19     |  Unknown  | Unknown |   Unknown   
+      a28       | 0.13226 |  3.17426   |     24     |  Unknown  | Unknown |   Unknown   
+      a30       | 0.13088 |  2.74851   |     21     |  Unknown  | Unknown |   Unknown   
+      a3        | 0.13069 |  2.09109   |     16     |  Unknown  | Unknown |   Unknown   
+      a5        | 0.13069 |  2.09109   |     16     |  Unknown  | Unknown |   Unknown   
+      a26       | 0.12904 |  2.32277   |     18     |  Unknown  | Unknown |   Unknown   
+      a31       | 0.12904 |  2.32277   |     18     |  Unknown  | Unknown |   Unknown   
+      a18       | 0.12904 |  2.32277   |     18     |  Unknown  | Unknown |   Unknown   
+      a2        | 0.12904 |  2.32277   |     18     |  Unknown  | Unknown |   Unknown   
+      a4        | 0.12904 |  2.32277   |     18     |  Unknown  | Unknown |   Unknown   
+      a7        | 0.12904 |  2.32277   |     18     |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 34
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 34
+Hit rate: 0.0
+Miss rate: 1.0

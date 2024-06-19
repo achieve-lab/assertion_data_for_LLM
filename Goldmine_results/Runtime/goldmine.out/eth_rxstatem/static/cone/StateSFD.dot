@@ -1,0 +1,97 @@
+strict digraph "" {
+	StateSFD	 [complexity=0,
+		importance=0.0732540979302,
+		rank=0.0];
+	"[1]StartDrop"	 [complexity=4,
+		importance=0.229839852434,
+		rank=0.0574599631085];
+	"[1]StartDrop" -> StateSFD;
+	"[1]StartPreamble"	 [complexity=4,
+		importance=0.19423916345,
+		rank=0.0485597908625];
+	"[1]StartPreamble" -> StateSFD;
+	"[1]MRxDEq5"	 [complexity=9,
+		importance=0.21923916345,
+		rank=0.02435990705];
+	"[1]MRxDEq5" -> "[1]StartPreamble";
+	"[1]StartSFD"	 [complexity=1,
+		importance=0.136281889516,
+		rank=0.136281889516];
+	"[1]MRxDEq5" -> "[1]StartSFD";
+	"[1]StateData"	 [complexity=10,
+		importance=0.299235934342,
+		rank=0.0299235934342];
+	"[1]StartIdle"	 [complexity=4,
+		importance=0.247150222864,
+		rank=0.0617875557161];
+	"[1]StateData" -> "[1]StartIdle";
+	"[1]Transmitting"	 [complexity=13,
+		importance=0.254839852434,
+		rank=0.0196030655718];
+	"[1]Transmitting" -> "[1]StartDrop";
+	"[1]Transmitting" -> "[1]StartPreamble";
+	"[1]Transmitting" -> "[1]StartSFD";
+	"[1]IFGCounterEq24"	 [complexity=10,
+		importance=0.239494948858,
+		rank=0.0239494948858];
+	"[1]IFGCounterEq24" -> "[1]StartDrop";
+	"[1]StartData0"	 [complexity=4,
+		importance=0.214494948858,
+		rank=0.0536237372144];
+	"[1]IFGCounterEq24" -> "[1]StartData0";
+	"[1]StatePreamble"	 [complexity=10,
+		importance=0.308336807135,
+		rank=0.0308336807135];
+	"[1]StatePreamble" -> "[1]StartIdle";
+	"[1]StatePreamble" -> "[1]StartSFD";
+	"[1]StateData0"	 [complexity=13,
+		importance=0.364584129422,
+		rank=0.0280449330325];
+	"[1]StateData0" -> "[1]StartDrop";
+	"[1]StateData0" -> "[1]StateData";
+	"[1]StartData0" -> StateSFD;
+	"[1]StateIdle"	 [complexity=13,
+		importance=0.291224862917,
+		rank=0.0224019125321];
+	"[1]StateIdle" -> "[1]StartDrop";
+	"[1]StateIdle" -> "[1]StartPreamble";
+	"[1]StateIdle" -> "[1]StartSFD";
+	"[1]StateDrop"	 [complexity=10,
+		importance=0.287170584986,
+		rank=0.0287170584986];
+	"[1]StateDrop" -> "[1]StartIdle";
+	"[1]MRxDEqD"	 [complexity=10,
+		importance=0.239494948858,
+		rank=0.0239494948858];
+	"[1]MRxDEqD" -> "[1]StartDrop";
+	"[1]MRxDEqD" -> "[1]StartData0";
+	"[1]StartIdle" -> StateSFD;
+	"[1]ByteCntMaxFrame"	 [complexity=13,
+		importance=0.254839852434,
+		rank=0.0196030655718];
+	"[1]ByteCntMaxFrame" -> "[1]StartDrop";
+	"[1]Reset"	 [complexity=1,
+		importance=0.244762293791,
+		rank=0.244762293791];
+	"[1]Reset" -> StateSFD;
+	"[1]StartSFD" -> StateSFD;
+	"[1]StateData1"	 [complexity=10,
+		importance=0.279270968012,
+		rank=0.0279270968012];
+	"[1]StateData1" -> "[1]StateData";
+	"[1]StateData1" -> "[1]StartData0";
+	"[1]StateSFD"	 [complexity=10,
+		importance=0.287749046788,
+		rank=0.0287749046788];
+	"[1]StateSFD" -> "[1]StartDrop";
+	"[1]StateSFD" -> "[1]StartData0";
+	"[1]StateSFD" -> "[1]StartIdle";
+	"[1]MRxDV"	 [complexity=10,
+		importance=0.239494948858,
+		rank=0.0239494948858];
+	"[1]MRxDV" -> "[1]StartDrop";
+	"[1]MRxDV" -> "[1]StartPreamble";
+	"[1]MRxDV" -> "[1]StartData0";
+	"[1]MRxDV" -> "[1]StartIdle";
+	"[1]MRxDV" -> "[1]StartSFD";
+}

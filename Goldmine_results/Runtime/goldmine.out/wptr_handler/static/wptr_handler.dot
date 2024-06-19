@@ -1,0 +1,15 @@
+strict digraph "" {
+	wfull -> full	 [weight=1.0];
+	PTR_WIDTH -> wfull	 [weight=1.0];
+	full -> b_wptr_next	 [weight=1.0];
+	g_wptr_next -> wfull	 [weight=1.0];
+	g_wptr_next -> g_wptr	 [weight=1.0];
+	w_en -> b_wptr_next	 [weight=1.0];
+	b_wptr_next -> g_wptr_next	 [weight=1.0];
+	b_wptr_next -> b_wptr	 [weight=1.0];
+	g_rptr_sync -> wfull	 [weight=1.0];
+	b_wptr -> b_wptr_next	 [weight=1.0];
+	wrst_n -> full	 [weight=2.0];
+	wrst_n -> g_wptr	 [weight=2.0];
+	wrst_n -> b_wptr	 [weight=2.0];
+}

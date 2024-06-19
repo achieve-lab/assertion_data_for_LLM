@@ -1,0 +1,33 @@
+Assertion report generated on: 10-Apr-2024 01:36:52 PM
+
+Assertion summary report for design: MAC_tx_ctrl
+################################################
+
+     Target       | Total | Passed | Failed | Vacuous | Hit | Miss
+----------------- | ----- | ------ | ------ | ------- | --- | ----
+    CRC_init      |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+     CRC_rd       |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+     Data_en      |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+     Fifo_rd      |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+ Fifo_rd_finish   |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+  Fifo_rd_retry   |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+MAC_tx_addr_init  |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+ MAC_tx_addr_rd   |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+   Random_init    |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+      TxEn        |   2   |   0    |   0    |    2    | 0.0 | 1.0 
+  Tx_apply_rmon   |   3   |   0    |   0    |    3    | 0.0 | 1.0 
+pause_quanta_sub  |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+xoff_gen_complete |   5   |   0    |   0    |    5    | 0.0 | 1.0 
+xon_gen_complete  |   5   |   0    |   0    |    5    | 0.0 | 1.0 
+
+
+Resource usage summary report for the desing: MAC_tx_ctrl
+#########################################################
+
+      Phase       | Time (in [H]H:MM:SS:UUUUUU) | Memory (in MB)
+----------------- | --------------------------- | --------------
+V Parse & Ranking |       0:00:03.142598        |     906.78    
+   Simulation     |       0:00:02.030104        |     971.53    
+     D Parse      |       0:00:11.816482        |     983.51    
+     Mining       |       0:00:44.348620        |    1059.93    
+     Overall      |       0:01:33.802042        |    1059.93    

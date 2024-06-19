@@ -1,0 +1,27 @@
+strict digraph "" {
+	outputReadOut	 [complexity=0,
+		importance=0.257322163945,
+		rank=0.0];
+	reset	 [complexity=4,
+		importance=0.550209061149,
+		rank=0.137552265287];
+	reset -> outputReadOut;
+	outputReg	 [complexity=3,
+		importance=0.44979065119,
+		rank=0.149930217063];
+	reset -> outputReg;
+	outputRwAddr	 [complexity=3,
+		importance=0.357740573904,
+		rank=0.119246857968];
+	outputRwAddr -> outputReadOut;
+	outputRw	 [complexity=4,
+		importance=0.550209061149,
+		rank=0.137552265287];
+	outputRw -> outputReadOut;
+	outputRw -> outputReg;
+	outputWriteIn	 [complexity=6,
+		importance=0.550209061149,
+		rank=0.0917015101916];
+	outputWriteIn -> outputReg;
+	outputReg -> outputReadOut;
+}

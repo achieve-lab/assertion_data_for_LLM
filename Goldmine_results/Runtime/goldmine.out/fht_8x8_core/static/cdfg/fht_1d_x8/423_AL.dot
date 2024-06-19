@@ -1,0 +1,78 @@
+strict digraph "" {
+	node [label="\N"];
+	"424:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f9d7db76e10>",
+		fillcolor=turquoise,
+		label="424:BL
+x0_FF <= #1 0;
+x1_FF <= #1 0;
+x2_FF <= #1 0;
+x3_FF <= #1 0;
+x4_FF <= #1 0;
+x5_FF <= #1 0;
+x6_FF <= #1 0;
+x7_FF <= #1 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9d7db95e50>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f9d7db761d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9d7db76390>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9d7db76550>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9d7db76710>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9d7db768d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9d7db76a90>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9d7db76c50>]",
+		style=filled,
+		typ=Block];
+	"Leaf_423:AL"	 [def_var="['x7_FF', 'x3_FF', 'x0_FF', 'x1_FF', 'x4_FF', 'x6_FF', 'x5_FF', 'x2_FF']",
+		label="Leaf_423:AL"];
+	"424:BL" -> "Leaf_423:AL"	 [cond="[]",
+		lineno=None];
+	"434:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f9d7db76e50>",
+		fillcolor=springgreen,
+		label="434:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"434:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f9d7db76f10>",
+		fillcolor=turquoise,
+		label="434:BL
+x0_FF <= #1 x7;
+x1_FF <= #1 x6;
+x2_FF <= #1 x5;
+x3_FF <= #1 x4;
+x4_FF <= #1 x3;
+x5_FF <= #1 x2;
+x6_FF <= #1 x1;
+x7_FF <= #\
+1 x0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9d7db76f50>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f9d7db74150>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9d7db74310>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9d7db744d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9d7db95d90>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9d7db747d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f9d7db74990>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f9d7db74b50>]",
+		style=filled,
+		typ=Block];
+	"434:IF" -> "434:BL"	 [cond="['xi_ready']",
+		label=xi_ready,
+		lineno=434];
+	"434:BL" -> "Leaf_423:AL"	 [cond="[]",
+		lineno=None];
+	"424:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f9d7db74d50>",
+		fillcolor=springgreen,
+		label="424:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"424:IF" -> "424:BL"	 [cond="['rstn']",
+		label="(!rstn)",
+		lineno=424];
+	"424:IF" -> "434:IF"	 [cond="['rstn']",
+		label="!((!rstn))",
+		lineno=424];
+	"423:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f9d7db74e10>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="423:AL",
+		sens="['sclk', 'rstn']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['x1', 'xi_ready', 'x2', 'x3', 'x0', 'rstn', 'x6', 'x7', 'x4', 'x5']"];
+	"423:AL" -> "424:IF"	 [cond="[]",
+		lineno=None];
+}

@@ -1,0 +1,288 @@
+strict digraph "" {
+	StateJam	 [complexity=4,
+		importance=0.0637354551704,
+		rank=0.0159338637926];
+	Random_init	 [complexity=0,
+		importance=0.0276520996204,
+		rank=0.0];
+	StateJam -> Random_init;
+	RetryCnt	 [complexity=9,
+		importance=0.762872870068,
+		rank=0.0847636522298];
+	Next_state	 [complexity=4,
+		importance=0.148116774857,
+		rank=0.0370291937142];
+	RetryCnt -> Next_state;
+	CRS	 [complexity=22,
+		importance=2.839994744,
+		rank=0.129090670182];
+	Collision	 [complexity=19,
+		importance=2.83156348807,
+		rank=0.149029657267];
+	CRS -> Collision;
+	CRS -> Next_state;
+	"[1]IFG_counter"	 [complexity=13,
+		importance=0.621198220543,
+		rank=0.0477844785033];
+	IFG_counter	 [complexity=11,
+		importance=0.606832659985,
+		rank=0.0551666054532];
+	"[1]IFG_counter" -> IFG_counter;
+	"[1]Next_state"	 [complexity=13,
+		importance=0.855685445684,
+		rank=0.0658219573603];
+	"[1]IFG_counter" -> "[1]Next_state";
+	Current_state	 [complexity=29,
+		importance=7.86647676369,
+		rank=0.271257819438];
+	Current_state -> Random_init;
+	Current_state -> Next_state;
+	"[1]StateSwitchNext"	 [complexity=11,
+		importance=1.53417699607,
+		rank=0.139470636006];
+	"[1]StateSwitchNext" -> RetryCnt;
+	"[1]StateBackOff"	 [complexity=13,
+		importance=0.771304125998,
+		rank=0.0593310866152];
+	"[1]StateBackOff" -> RetryCnt;
+	"[1]StateDefer"	 [complexity=10,
+		importance=2.10644776395,
+		rank=0.210644776395];
+	IPLengthCounter	 [complexity=8,
+		importance=1.04900825401,
+		rank=0.131126031751];
+	"[1]StateDefer" -> IPLengthCounter;
+	"[1]StateFCS"	 [complexity=38,
+		importance=5.74069397156,
+		rank=0.151070893988];
+	"[1]TxEn_tmp"	 [complexity=24,
+		importance=2.86613135782,
+		rank=0.119422139909];
+	"[1]StateFCS" -> "[1]TxEn_tmp";
+	xoff_gen	 [complexity=15,
+		importance=0.600898355357,
+		rank=0.0400598903572];
+	xoff_gen -> Next_state;
+	Fifo_ra	 [complexity=12,
+		importance=0.600898355357,
+		rank=0.0500748629464];
+	Fifo_ra -> Next_state;
+	JamCounter	 [complexity=7,
+		importance=0.455810165846,
+		rank=0.0651157379779];
+	JamCounter -> Next_state;
+	"[1]pause_frame_send_en_dl1"	 [complexity=24,
+		importance=3.43551097112,
+		rank=0.143146290463];
+	"[1]pause_frame_send_en_dl1" -> "[1]Next_state";
+	"[1]StatePreamble"	 [complexity=38,
+		importance=5.74069397156,
+		rank=0.151070893988];
+	"[1]StatePreamble" -> "[1]TxEn_tmp";
+	Preamble_counter	 [complexity=9,
+		importance=0.604490592502,
+		rank=0.0671656213891];
+	"[1]StatePreamble" -> Preamble_counter;
+	"[1]IPLengthCounter"	 [complexity=17,
+		importance=6.0019889498,
+		rank=0.353058173518];
+	"[1]IPLengthCounter" -> IPLengthCounter;
+	"[1]IPLengthCounter" -> "[1]Next_state";
+	"[1]xon_gen"	 [complexity=24,
+		importance=3.43117303867,
+		rank=0.142965543278];
+	"[1]xon_gen" -> "[1]Next_state";
+	"[1]Fifo_data_err_empty"	 [complexity=14,
+		importance=3.43117303867,
+		rank=0.245083788476];
+	"[1]Fifo_data_err_empty" -> "[1]Next_state";
+	TxEn	 [complexity=22,
+		importance=2.84878841166,
+		rank=0.129490382348];
+	TxEn -> Collision;
+	"[1]pause_frame_send_en"	 [complexity=17,
+		importance=0.613667543741,
+		rank=0.0360980908083];
+	pause_frame_send_en_dl1	 [complexity=15,
+		importance=0.605236287812,
+		rank=0.0403490858541];
+	"[1]pause_frame_send_en" -> pause_frame_send_en_dl1;
+	"[1]CRC_end"	 [complexity=14,
+		importance=1.7198021473,
+		rank=0.122843010521];
+	"[1]CRC_end" -> "[1]Next_state";
+	StateBackOff	 [complexity=4,
+		importance=0.0637354551704,
+		rank=0.0159338637926];
+	StateBackOff -> Random_init;
+	Random_time_meet	 [complexity=5,
+		importance=0.304664805643,
+		rank=0.0609329611287];
+	Random_time_meet -> Next_state;
+	"[1]IFGset"	 [complexity=20,
+		importance=3.43117303867,
+		rank=0.171558651933];
+	"[1]IFGset" -> "[1]Next_state";
+	"[1]TxEn_tmp" -> TxEn;
+	"[1]FullDuplex"	 [complexity=50,
+		importance=34.2358490833,
+		rank=0.684716981666];
+	"[1]FullDuplex" -> "[1]Next_state";
+	pause_counter	 [complexity=5,
+		importance=0.310599110271,
+		rank=0.0621198220543];
+	pause_counter -> Next_state;
+	IFGset	 [complexity=11,
+		importance=0.600898355357,
+		rank=0.0546271232143];
+	IFGset -> Next_state;
+	"[1]StateSFD"	 [complexity=38,
+		importance=5.74069397156,
+		rank=0.151070893988];
+	"[1]StateSFD" -> "[1]TxEn_tmp";
+	"[1]Random_time_meet"	 [complexity=14,
+		importance=1.7198021473,
+		rank=0.122843010521];
+	"[1]Random_time_meet" -> "[1]Next_state";
+	"[1]Fifo_ra"	 [complexity=21,
+		importance=3.43117303867,
+		rank=0.163389192317];
+	"[1]Fifo_ra" -> "[1]Next_state";
+	"[1]Preamble_counter"	 [complexity=18,
+		importance=3.43476527581,
+		rank=0.190820293101];
+	"[1]Preamble_counter" -> Preamble_counter;
+	"[1]Preamble_counter" -> "[1]Next_state";
+	"[1]StatePAD"	 [complexity=38,
+		importance=5.74069397156,
+		rank=0.151070893988];
+	"[1]StatePAD" -> "[1]TxEn_tmp";
+	"[1]StatePAD" -> IPLengthCounter;
+	pause_frame_send_en_dl1 -> Next_state;
+	CRC_end	 [complexity=5,
+		importance=0.304664805643,
+		rank=0.0609329611287];
+	CRC_end -> Next_state;
+	"[1]RetryCnt"	 [complexity=18,
+		importance=4.3007162242,
+		rank=0.238928679122];
+	"[1]RetryCnt" -> RetryCnt;
+	"[1]RetryCnt" -> "[1]Next_state";
+	"[1]xoff_gen"	 [complexity=24,
+		importance=3.43117303867,
+		rank=0.142965543278];
+	"[1]xoff_gen" -> "[1]Next_state";
+	"[1]TxEn"	 [complexity=31,
+		importance=16.2925931574,
+		rank=0.525567521206];
+	"[1]Collision"	 [complexity=28,
+		importance=16.2753682338,
+		rank=0.581263151207];
+	"[1]TxEn" -> "[1]Collision";
+	Preamble_counter -> Next_state;
+	Fifo_eop	 [complexity=9,
+		importance=1.34148222964,
+		rank=0.149053581071];
+	Fifo_eop -> Next_state;
+	"[1]Fifo_eop"	 [complexity=18,
+		importance=7.70960026709,
+		rank=0.428311125949];
+	"[1]Fifo_eop" -> "[1]Next_state";
+	"[1]Current_state"	 [complexity=7,
+		importance=0.637485916817,
+		rank=0.0910694166882];
+	"[1]Current_state" -> RetryCnt;
+	"[1]Current_state" -> JamCounter;
+	"[1]Current_state" -> "[1]TxEn_tmp";
+	"[1]Current_state" -> pause_counter;
+	"[1]Current_state" -> Preamble_counter;
+	"[1]Current_state" -> IPLengthCounter;
+	"[1]Current_state" -> IFG_counter;
+	"[1]Current_state" -> "[1]Next_state";
+	"[1]StateJam"	 [complexity=38,
+		importance=5.74069397156,
+		rank=0.151070893988];
+	"[1]StateJam" -> RetryCnt;
+	"[1]StateJam" -> JamCounter;
+	"[1]StateJam" -> "[1]TxEn_tmp";
+	"[1]JamCounter"	 [complexity=16,
+		importance=2.57851617833,
+		rank=0.161157261145];
+	"[1]JamCounter" -> JamCounter;
+	"[1]JamCounter" -> "[1]Next_state";
+	pause_apply	 [complexity=5,
+		importance=0.4527815805,
+		rank=0.0905563161001];
+	pause_apply -> Next_state;
+	"[1]Reset"	 [complexity=6,
+		importance=0.940228586743,
+		rank=0.156704764457];
+	"[1]Reset" -> RetryCnt;
+	"[1]Reset" -> Current_state;
+	"[1]Reset" -> JamCounter;
+	"[1]Reset" -> TxEn;
+	"[1]Reset" -> pause_counter;
+	"[1]Reset" -> pause_frame_send_en_dl1;
+	"[1]Reset" -> Preamble_counter;
+	"[1]Reset" -> IPLengthCounter;
+	"[1]Reset" -> IFG_counter;
+	xon_gen	 [complexity=15,
+		importance=0.600898355357,
+		rank=0.0400598903572];
+	xon_gen -> Next_state;
+	MaxRetry	 [complexity=9,
+		importance=0.749015130214,
+		rank=0.0832239033571];
+	MaxRetry -> Next_state;
+	IPLengthCounter -> Next_state;
+	FullDuplex	 [complexity=41,
+		importance=5.93310225021,
+		rank=0.144709810981];
+	FullDuplex -> Next_state;
+	"[1]StateSendPauseFrame"	 [complexity=38,
+		importance=5.74069397156,
+		rank=0.151070893988];
+	"[1]StateSendPauseFrame" -> "[1]TxEn_tmp";
+	"[1]StateSendPauseFrame" -> IPLengthCounter;
+	"[1]StatePause"	 [complexity=7,
+		importance=0.629629476472,
+		rank=0.0899470680675];
+	"[1]StatePause" -> pause_counter;
+	"[1]StateData"	 [complexity=38,
+		importance=5.74069397156,
+		rank=0.151070893988];
+	"[1]StateData" -> "[1]TxEn_tmp";
+	"[1]StateData" -> IPLengthCounter;
+	"[1]Collision" -> "[1]Next_state";
+	Collision -> Next_state;
+	IFG_counter -> Next_state;
+	"[1]StateIFG"	 [complexity=13,
+		importance=1.2220965759,
+		rank=0.0940074289154];
+	"[1]StateIFG" -> IFG_counter;
+	"[1]MaxRetry"	 [complexity=18,
+		importance=4.28685848435,
+		rank=0.238158804686];
+	"[1]MaxRetry" -> "[1]Next_state";
+	"[1]Next_state" -> RetryCnt;
+	"[1]Next_state" -> Current_state;
+	"[1]pause_counter"	 [complexity=7,
+		importance=0.324964670829,
+		rank=0.0464235244041];
+	"[1]pause_counter" -> pause_counter;
+	"[1]pause_counter" -> "[1]Next_state";
+	"[1]pause_apply"	 [complexity=14,
+		importance=2.57548759298,
+		rank=0.183963399499];
+	"[1]pause_apply" -> "[1]Next_state";
+	Next_state -> Random_init;
+	Fifo_data_err_empty	 [complexity=5,
+		importance=0.600898355357,
+		rank=0.120179671071];
+	Fifo_data_err_empty -> Next_state;
+	"[1]CRS"	 [complexity=31,
+		importance=16.2837994897,
+		rank=0.525283854507];
+	"[1]CRS" -> "[1]Collision";
+	"[1]CRS" -> "[1]Next_state";
+}

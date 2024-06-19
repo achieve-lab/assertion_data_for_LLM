@@ -1,0 +1,105 @@
+strict digraph "" {
+	"[3]empty"	 [complexity=36,
+		importance=1.90070436293,
+		rank=0.0527973434147];
+	"[3]b_rptr_next"	 [complexity=32,
+		importance=1.76898909813,
+		rank=0.0552809093166];
+	"[3]empty" -> "[3]b_rptr_next";
+	"[1]r_en"	 [complexity=12,
+		importance=0.650796768164,
+		rank=0.0542330640137];
+	"[1]b_rptr_next"	 [complexity=8,
+		importance=0.589663032711,
+		rank=0.0737078790889];
+	"[1]r_en" -> "[1]b_rptr_next";
+	"[3]r_en"	 [complexity=36,
+		importance=1.83012283359,
+		rank=0.0508367453774];
+	"[3]r_en" -> "[3]b_rptr_next";
+	"[2]r_en"	 [complexity=24,
+		importance=1.24045980087,
+		rank=0.0516858250364];
+	"[2]b_rptr_next"	 [complexity=20,
+		importance=1.17932606542,
+		rank=0.0589663032711];
+	"[2]r_en" -> "[2]b_rptr_next";
+	"[3]g_rptr_next"	 [complexity=29,
+		importance=1.54816605646,
+		rank=0.0533850364295];
+	"[3]rempty"	 [complexity=26,
+		importance=1.43182696752,
+		rank=0.0550702679814];
+	"[3]g_rptr_next" -> "[3]rempty";
+	"[1]g_wptr_sync"	 [complexity=5,
+		importance=0.313634637547,
+		rank=0.0627269275095];
+	"[1]rempty"	 [complexity=2,
+		importance=0.252500902094,
+		rank=0.126250451047];
+	"[1]g_wptr_sync" -> "[1]rempty";
+	"[2]rrst_n"	 [complexity=13,
+		importance=1.50389033047,
+		rank=0.115683871574];
+	"[1]b_rptr"	 [complexity=12,
+		importance=0.716191086959,
+		rank=0.0596825905799];
+	"[2]rrst_n" -> "[1]b_rptr";
+	"[1]empty"	 [complexity=12,
+		importance=0.721378297507,
+		rank=0.0601148581256];
+	"[2]rrst_n" -> "[1]empty";
+	"[2]rempty"	 [complexity=14,
+		importance=0.842163934805,
+		rank=0.0601545667718];
+	"[2]rempty" -> "[1]empty";
+	empty	 [complexity=0,
+		importance=0.131715264796,
+		rank=0.0];
+	"[1]rrst_n"	 [complexity=1,
+		importance=0.324564265045,
+		rank=0.324564265045];
+	"[1]rrst_n" -> empty;
+	"[2]g_wptr_sync"	 [complexity=17,
+		importance=0.903297670258,
+		rank=0.053135157074];
+	"[2]g_wptr_sync" -> "[2]rempty";
+	"[3]b_rptr_next" -> "[3]g_rptr_next";
+	"[2]b_rptr"	 [complexity=24,
+		importance=1.30585411967,
+		rank=0.0544105883196];
+	"[3]b_rptr_next" -> "[2]b_rptr";
+	"[2]empty"	 [complexity=24,
+		importance=1.31104133022,
+		rank=0.0546267220924];
+	"[2]empty" -> "[2]b_rptr_next";
+	"[1]b_rptr" -> "[1]b_rptr_next";
+	"[3]rempty" -> "[2]empty";
+	"[3]g_wptr_sync"	 [complexity=29,
+		importance=1.49296070297,
+		rank=0.0514814035507];
+	"[3]g_wptr_sync" -> "[3]rempty";
+	"[3]b_rptr"	 [complexity=36,
+		importance=1.89551715238,
+		rank=0.0526532542328];
+	"[3]b_rptr" -> "[3]b_rptr_next";
+	"[1]g_rptr_next"	 [complexity=5,
+		importance=0.368839991034,
+		rank=0.0737679982068];
+	"[1]b_rptr_next" -> "[1]g_rptr_next";
+	"[2]b_rptr_next" -> "[1]b_rptr";
+	"[2]g_rptr_next"	 [complexity=17,
+		importance=0.958503023745,
+		rank=0.0563825308085];
+	"[2]b_rptr_next" -> "[2]g_rptr_next";
+	"[1]g_rptr_next" -> "[1]rempty";
+	"[2]g_rptr_next" -> "[2]rempty";
+	"[1]empty" -> "[1]b_rptr_next";
+	"[2]b_rptr" -> "[2]b_rptr_next";
+	"[3]rrst_n"	 [complexity=25,
+		importance=2.68321639589,
+		rank=0.107328655836];
+	"[3]rrst_n" -> "[2]empty";
+	"[3]rrst_n" -> "[2]b_rptr";
+	"[1]rempty" -> empty;
+}

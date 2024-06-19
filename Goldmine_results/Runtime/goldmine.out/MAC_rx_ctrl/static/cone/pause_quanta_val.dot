@@ -1,0 +1,29 @@
+strict digraph "" {
+	pause_quanta_val	 [complexity=0,
+		importance=0.0252087175766,
+		rank=0.0];
+	"[1]Pause_syn"	 [complexity=5,
+		importance=0.0628296502495,
+		rank=0.0125659300499];
+	"[1]Pause_syn" -> pause_quanta_val;
+	"[1]pause_quanta_val_tmp"	 [complexity=5,
+		importance=0.0672230727756,
+		rank=0.0134446145551];
+	"[1]pause_quanta_val_tmp" -> pause_quanta_val;
+	"[1]Pause_current"	 [complexity=5,
+		importance=0.08404719699,
+		rank=0.016809439398];
+	"[1]Pause_current" -> pause_quanta_val;
+	"[1]Current_state"	 [complexity=5,
+		importance=0.079553568333,
+		rank=0.0159107136666];
+	"[1]Current_state" -> pause_quanta_val;
+	"[1]Reset"	 [complexity=1,
+		importance=0.0880383678261,
+		rank=0.0880383678261];
+	"[1]Reset" -> pause_quanta_val;
+	"[1]State_OkEnd"	 [complexity=5,
+		importance=0.0628296502495,
+		rank=0.0125659300499];
+	"[1]State_OkEnd" -> pause_quanta_val;
+}

@@ -1,0 +1,13 @@
+strict digraph "" {
+	q	 [complexity=2,
+		importance=0.684210401494,
+		rank=0.342105200747];
+	q_bar	 [complexity=0,
+		importance=0.263157987269,
+		rank=0.0];
+	q -> q_bar;
+	rst_n	 [complexity=3,
+		importance=1.52631560224,
+		rank=0.508771867414];
+	rst_n -> q;
+}

@@ -1,0 +1,189 @@
+strict digraph "" {
+	"[1]MAC_ADDR0_2.DataIn"	 [complexity=4,
+		importance=0.0192169476929,
+		rank=0.00480423692323];
+	"MAC_ADDR0_2.DataOut"	 [complexity=2,
+		importance=0.0179395316393,
+		rank=0.00896976581963];
+	"[1]MAC_ADDR0_2.DataIn" -> "MAC_ADDR0_2.DataOut";
+	"MAC_ADDR1_0.DataOut"	 [complexity=2,
+		importance=0.0142466738201,
+		rank=0.00712333691005];
+	MAC_ADDR1Out	 [complexity=2,
+		importance=0.0101948073711,
+		rank=0.00509740368553];
+	"MAC_ADDR1_0.DataOut" -> MAC_ADDR1Out;
+	"[1]MAC_ADDR1_Wr"	 [complexity=3,
+		importance=0.0179442125283,
+		rank=0.0059814041761];
+	"[1]MAC_ADDR1_0.Write"	 [complexity=3,
+		importance=0.0159994715272,
+		rank=0.00533315717573];
+	"[1]MAC_ADDR1_Wr" -> "[1]MAC_ADDR1_0.Write";
+	"[1]MAC_ADDR1_1.Write"	 [complexity=3,
+		importance=0.0159994715272,
+		rank=0.00533315717573];
+	"[1]MAC_ADDR1_Wr" -> "[1]MAC_ADDR1_1.Write";
+	r_MAC	 [complexity=0,
+		importance=0.00487788538049,
+		rank=0.0];
+	"[1]Write"	 [complexity=9,
+		importance=0.0377885745923,
+		rank=0.00419873051026];
+	"[1]Write" -> "[1]MAC_ADDR1_Wr";
+	"[1]MAC_ADDR0_Wr"	 [complexity=3,
+		importance=0.0214367562857,
+		rank=0.00714558542855];
+	"[1]Write" -> "[1]MAC_ADDR0_Wr";
+	"[1]MAC_ADDR0_2.Write"	 [complexity=3,
+		importance=0.019454017194,
+		rank=0.00648467239801];
+	"[1]MAC_ADDR0_Wr" -> "[1]MAC_ADDR0_2.Write";
+	"[1]MAC_ADDR0_1.Write"	 [complexity=3,
+		importance=0.019454017194,
+		rank=0.00648467239801];
+	"[1]MAC_ADDR0_Wr" -> "[1]MAC_ADDR0_1.Write";
+	"[1]MAC_ADDR0_3.Write"	 [complexity=3,
+		importance=0.019454017194,
+		rank=0.00648467239801];
+	"[1]MAC_ADDR0_Wr" -> "[1]MAC_ADDR0_3.Write";
+	"[1]MAC_ADDR0_0.Write"	 [complexity=3,
+		importance=0.019454017194,
+		rank=0.00648467239801];
+	"[1]MAC_ADDR0_Wr" -> "[1]MAC_ADDR0_0.Write";
+	"[1]MAC_ADDR0_2.Write" -> "MAC_ADDR0_2.DataOut";
+	"[1]Address"	 [complexity=11,
+		importance=0.0384349808928,
+		rank=0.00349408917208];
+	"[1]MAC_ADDR1_Sel"	 [complexity=9,
+		importance=0.0371683016233,
+		rank=0.00412981129148];
+	"[1]Address" -> "[1]MAC_ADDR1_Sel";
+	"[1]MAC_ADDR0_Sel"	 [complexity=15,
+		importance=0.0870269017093,
+		rank=0.00580179344729];
+	"[1]Address" -> "[1]MAC_ADDR0_Sel";
+	"[1]MAC_ADDR0_0.Reset"	 [complexity=3,
+		importance=0.0550913072374,
+		rank=0.0183637690791];
+	"MAC_ADDR0_0.DataOut"	 [complexity=2,
+		importance=0.0179395316393,
+		rank=0.00896976581963];
+	"[1]MAC_ADDR0_0.Reset" -> "MAC_ADDR0_0.DataOut";
+	"[1]DataIn"	 [complexity=4,
+		importance=0.0167907691433,
+		rank=0.00419769228582];
+	"[1]DataIn" -> "[1]MAC_ADDR0_2.DataIn";
+	"[1]MAC_ADDR0_0.DataIn"	 [complexity=4,
+		importance=0.0192169476929,
+		rank=0.00480423692323];
+	"[1]DataIn" -> "[1]MAC_ADDR0_0.DataIn";
+	"[1]MAC_ADDR0_1.DataIn"	 [complexity=4,
+		importance=0.0192169476929,
+		rank=0.00480423692323];
+	"[1]DataIn" -> "[1]MAC_ADDR0_1.DataIn";
+	"[1]MAC_ADDR0_3.DataIn"	 [complexity=4,
+		importance=0.0192169476929,
+		rank=0.00480423692323];
+	"[1]DataIn" -> "[1]MAC_ADDR0_3.DataIn";
+	"[1]MAC_ADDR1_0.DataIn"	 [complexity=4,
+		importance=0.0155240898738,
+		rank=0.00388102246844];
+	"[1]DataIn" -> "[1]MAC_ADDR1_0.DataIn";
+	"[1]MAC_ADDR1_1.DataIn"	 [complexity=4,
+		importance=0.0155240898738,
+		rank=0.00388102246844];
+	"[1]DataIn" -> "[1]MAC_ADDR1_1.DataIn";
+	"[1]MAC_ADDR0_1.Reset"	 [complexity=3,
+		importance=0.0550913072374,
+		rank=0.0183637690791];
+	"MAC_ADDR0_1.DataOut"	 [complexity=2,
+		importance=0.0179395316393,
+		rank=0.00896976581963];
+	"[1]MAC_ADDR0_1.Reset" -> "MAC_ADDR0_1.DataOut";
+	MAC_ADDR0Out	 [complexity=2,
+		importance=0.0140067545377,
+		rank=0.00700337726883];
+	MAC_ADDR0Out -> r_MAC;
+	"[1]Cs"	 [complexity=12,
+		importance=0.0390552538618,
+		rank=0.00325460448849];
+	"[1]Cs" -> "[1]Write";
+	"MAC_ADDR0_0.DataOut" -> MAC_ADDR0Out;
+	"[1]MAC_ADDR0_0.DataIn" -> "MAC_ADDR0_0.DataOut";
+	"[1]MAC_ADDR1_Sel" -> "[1]MAC_ADDR1_Wr";
+	"MAC_ADDR0_2.DataOut" -> MAC_ADDR0Out;
+	MAC_ADDR1Out -> r_MAC;
+	"[1]MAC_ADDR0_3.Reset"	 [complexity=3,
+		importance=0.0550913072374,
+		rank=0.0183637690791];
+	"MAC_ADDR0_3.DataOut"	 [complexity=2,
+		importance=0.0179395316393,
+		rank=0.00896976581963];
+	"[1]MAC_ADDR0_3.Reset" -> "MAC_ADDR0_3.DataOut";
+	"[1]MAC_ADDR0_2.Reset"	 [complexity=3,
+		importance=0.0550913072374,
+		rank=0.0183637690791];
+	"[1]MAC_ADDR0_2.Reset" -> "MAC_ADDR0_2.DataOut";
+	"[1]MAC_ADDR0_2.SyncReset"	 [complexity=3,
+		importance=0.037145742548,
+		rank=0.0123819141827];
+	"[1]MAC_ADDR0_2.SyncReset" -> "MAC_ADDR0_2.DataOut";
+	"[1]MAC_ADDR1_0.Write" -> "MAC_ADDR1_0.DataOut";
+	"[1]MAC_ADDR0_3.SyncReset"	 [complexity=3,
+		importance=0.037145742548,
+		rank=0.0123819141827];
+	"[1]MAC_ADDR0_3.SyncReset" -> "MAC_ADDR0_3.DataOut";
+	"[1]MAC_ADDR0_1.Write" -> "MAC_ADDR0_1.DataOut";
+	"[1]MAC_ADDR1_1.SyncReset"	 [complexity=3,
+		importance=0.0297600269097,
+		rank=0.0099200089699];
+	"MAC_ADDR1_1.DataOut"	 [complexity=2,
+		importance=0.0142466738201,
+		rank=0.00712333691005];
+	"[1]MAC_ADDR1_1.SyncReset" -> "MAC_ADDR1_1.DataOut";
+	"MAC_ADDR1_1.DataOut" -> MAC_ADDR1Out;
+	"[1]MAC_ADDR0_1.DataIn" -> "MAC_ADDR0_1.DataOut";
+	"[1]MAC_ADDR0_1.SyncReset"	 [complexity=3,
+		importance=0.037145742548,
+		rank=0.0123819141827];
+	"[1]MAC_ADDR0_1.SyncReset" -> "MAC_ADDR0_1.DataOut";
+	"[1]MAC_ADDR0_0.SyncReset"	 [complexity=3,
+		importance=0.037145742548,
+		rank=0.0123819141827];
+	"[1]MAC_ADDR0_0.SyncReset" -> "MAC_ADDR0_0.DataOut";
+	"[1]Reset"	 [complexity=3,
+		importance=0.0452794130495,
+		rank=0.0150931376832];
+	"[1]Reset" -> "[1]MAC_ADDR0_0.Reset";
+	"[1]Reset" -> "[1]MAC_ADDR0_1.Reset";
+	"[1]Reset" -> "[1]MAC_ADDR0_3.Reset";
+	"[1]Reset" -> "[1]MAC_ADDR0_2.Reset";
+	"[1]MAC_ADDR1_0.Reset"	 [complexity=3,
+		importance=0.04401273378,
+		rank=0.01467091126];
+	"[1]Reset" -> "[1]MAC_ADDR1_0.Reset";
+	"[1]MAC_ADDR1_1.Reset"	 [complexity=3,
+		importance=0.04401273378,
+		rank=0.01467091126];
+	"[1]Reset" -> "[1]MAC_ADDR1_1.Reset";
+	"[1]MAC_ADDR1_0.Reset" -> "MAC_ADDR1_0.DataOut";
+	"MAC_ADDR0_1.DataOut" -> MAC_ADDR0Out;
+	"[1]MAC_ADDR0_3.DataIn" -> "MAC_ADDR0_3.DataOut";
+	"[1]MAC_ADDR0_3.Write" -> "MAC_ADDR0_3.DataOut";
+	"[1]MAC_ADDR0_0.Write" -> "MAC_ADDR0_0.DataOut";
+	"[1]MAC_ADDR1_0.DataIn" -> "MAC_ADDR1_0.DataOut";
+	"[1]MAC_ADDR1_0.SyncReset"	 [complexity=3,
+		importance=0.0297600269097,
+		rank=0.0099200089699];
+	"[1]MAC_ADDR1_0.SyncReset" -> "MAC_ADDR1_0.DataOut";
+	"MAC_ADDR0_3.DataOut" -> MAC_ADDR0Out;
+	"[1]MAC_ADDR1_1.DataIn" -> "MAC_ADDR1_1.DataOut";
+	"[1]Rw"	 [complexity=12,
+		importance=0.0390552538618,
+		rank=0.00325460448849];
+	"[1]Rw" -> "[1]Write";
+	"[1]MAC_ADDR0_Sel" -> "[1]MAC_ADDR0_Wr";
+	"[1]MAC_ADDR1_1.Reset" -> "MAC_ADDR1_1.DataOut";
+	"[1]MAC_ADDR1_1.Write" -> "MAC_ADDR1_1.DataOut";
+}

@@ -1,0 +1,118 @@
+Report file generated at: Apr-10-2024 04:30:09 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a5: (SetInvalidSymbol == 0 & LoadRxStatus == 1) |=> (InvalidSymbol == 0)
+IRank: : 0.03741
+Importance: : 0.18705
+Complexity: : 5
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a9: (SetInvalidSymbol == 1) |=> (InvalidSymbol == 1)
+IRank: : 0.03706
+Importance: : 0.11118
+Complexity: : 3
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (MRxD[1] == 0 & LoadRxStatus == 1) |=> (InvalidSymbol == 0)
+IRank: : 0.02233
+Importance: : 0.20101
+Complexity: : 9
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (MRxD[0] == 1 & LoadRxStatus == 1) |=> (InvalidSymbol == 0)
+IRank: : 0.02233
+Importance: : 0.20101
+Complexity: : 9
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (MRxDV == 0 & LoadRxStatus == 1) |=> (InvalidSymbol == 0)
+IRank: : 0.02233
+Importance: : 0.20101
+Complexity: : 9
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (MRxD[0] == 1 & MRxErr == 1 & MRxD[2] == 0) |=> (InvalidSymbol == 0)
+IRank: : 0.01788
+Importance: : 0.37541
+Complexity: : 21
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (MRxD[0] == 1 & MRxD[1] == 0 & MRxDV == 1 & MRxD[2] == 0) |=> (InvalidSymbol == 0)
+IRank: : 0.01788
+Importance: : 0.50054
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a7: (MRxD[0] == 1 & MRxD[2] == 1 & MRxDV == 0 & MRxD[1] == 1 & MRxErr == 0) |=> (InvalidSymbol == 0)
+IRank: : 0.01788
+Importance: : 0.62568
+Complexity: : 35
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a6: (MRxD[0] == 1 & MRxErr == 1 & MRxDV == 0 & MRxD[1] == 0) |=> (InvalidSymbol == 0)
+IRank: : 0.01788
+Importance: : 0.50054
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a8: (MRxD[1] == 0 & MRxD[2] == 1 & MRxD[0] == 0 & MRxErr == 1) |=> (InvalidSymbol == 0)
+IRank: : 0.01788
+Importance: : 0.50054
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a5        | 0.03741 |  0.18705   |     5      |  Unknown  | Unknown |   Unknown   
+      a9        | 0.03706 |  0.11118   |     3      |  Unknown  | Unknown |   Unknown   
+      a1        | 0.02233 |  0.20101   |     9      |  Unknown  | Unknown |   Unknown   
+      a0        | 0.02233 |  0.20101   |     9      |  Unknown  | Unknown |   Unknown   
+      a2        | 0.02233 |  0.20101   |     9      |  Unknown  | Unknown |   Unknown   
+      a3        | 0.01788 |  0.37541   |     21     |  Unknown  | Unknown |   Unknown   
+      a4        | 0.01788 |  0.50054   |     28     |  Unknown  | Unknown |   Unknown   
+      a7        | 0.01788 |  0.62568   |     35     |  Unknown  | Unknown |   Unknown   
+      a6        | 0.01788 |  0.50054   |     28     |  Unknown  | Unknown |   Unknown   
+      a8        | 0.01788 |  0.50054   |     28     |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 10
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 10
+Hit rate: 0.0
+Miss rate: 1.0

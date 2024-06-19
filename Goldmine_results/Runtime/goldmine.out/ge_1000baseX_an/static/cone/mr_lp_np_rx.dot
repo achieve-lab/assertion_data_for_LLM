@@ -1,0 +1,17 @@
+strict digraph "" {
+	"[1]rx_config"	 [complexity=2,
+		importance=0.0252785077967,
+		rank=0.0126392538984];
+	mr_lp_np_rx	 [complexity=0,
+		importance=0.0157418323951,
+		rank=0.0];
+	"[1]rx_config" -> mr_lp_np_rx;
+	"[1]reset"	 [complexity=1,
+		importance=0.0410203401918,
+		rank=0.0410203401918];
+	"[1]reset" -> mr_lp_np_rx;
+	"[1]mr_lp_np_rx_m_set"	 [complexity=1,
+		importance=0.0252785077967,
+		rank=0.0252785077967];
+	"[1]mr_lp_np_rx_m_set" -> mr_lp_np_rx;
+}

@@ -1,0 +1,46 @@
+Report file generated at: Apr-10-2024 12:31:46 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a1: (Mdo_d == 1 & MdcEn_n == 1) |=> (Mdo == 1)
+IRank: : 0.09264
+Importance: : 0.37057
+Complexity: : 4
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (Mdo_d == 0 & MdcEn_n == 1) |=> (Mdo == 0)
+IRank: : 0.09264
+Importance: : 0.37057
+Complexity: : 4
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a1        | 0.09264 |  0.37057   |     4      |  Unknown  | Unknown |   Unknown   
+      a0        | 0.09264 |  0.37057   |     4      |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 2
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 2
+Hit rate: 0.0
+Miss rate: 1.0

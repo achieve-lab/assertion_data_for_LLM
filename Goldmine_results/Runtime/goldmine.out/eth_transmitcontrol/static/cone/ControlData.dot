@@ -1,0 +1,34 @@
+strict digraph "" {
+	"[1]TxPauseTV"	 [complexity=6,
+		importance=0.315594815033,
+		rank=0.0525991358389];
+	"[1]MuxedCtrlData"	 [complexity=2,
+		importance=0.148627184143,
+		rank=0.0743135920715];
+	"[1]TxPauseTV" -> "[1]MuxedCtrlData";
+	"[1]MAC"	 [complexity=14,
+		importance=0.910103551605,
+		rank=0.0650073965432];
+	"[1]MAC" -> "[1]MuxedCtrlData";
+	ControlData	 [complexity=0,
+		importance=0.0632652703016,
+		rank=0.0];
+	"[1]MuxedCtrlData" -> ControlData;
+	"[1]ByteCnt"	 [complexity=3,
+		importance=3.05092463202,
+		rank=1.01697487734];
+	"[1]ByteCnt" -> "[1]MuxedCtrlData";
+	"[1]ByteCnt" -> ControlData;
+	"[1]DlyCrcCnt"	 [complexity=5,
+		importance=0.340685217371,
+		rank=0.0681370434742];
+	"[1]DlyCrcCnt" -> "[1]MuxedCtrlData";
+	"[1]TxReset"	 [complexity=1,
+		importance=0.14487098735,
+		rank=0.14487098735];
+	"[1]TxReset" -> ControlData;
+	"[1]DlyCrcEn"	 [complexity=5,
+		importance=0.612849183319,
+		rank=0.122569836664];
+	"[1]DlyCrcEn" -> "[1]MuxedCtrlData";
+}

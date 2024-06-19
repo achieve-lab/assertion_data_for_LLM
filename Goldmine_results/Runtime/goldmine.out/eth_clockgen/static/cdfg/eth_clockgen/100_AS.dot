@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"100:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f94c7fab850>",
+		def_var="['TempDivider']",
+		fillcolor=deepskyblue,
+		label="100:AS
+TempDivider[7:0] = (Divider[7:0] < 2)? 8'h02 : Divider[7:0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['Divider', 'Divider']"];
+}

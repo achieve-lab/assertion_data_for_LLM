@@ -1,0 +1,21 @@
+strict digraph "" {
+	"[1]EndBusy"	 [complexity=1,
+		importance=0.0365546035968,
+		rank=0.0365546035968];
+	WCtrlDataStart	 [complexity=0,
+		importance=0.0134479849784,
+		rank=0.0];
+	"[1]EndBusy" -> WCtrlDataStart;
+	"[1]Reset"	 [complexity=1,
+		importance=0.0462086772888,
+		rank=0.0462086772888];
+	"[1]Reset" -> WCtrlDataStart;
+	"[1]WCtrlData_q2"	 [complexity=2,
+		importance=0.0228524886797,
+		rank=0.0114262443398];
+	"[1]WCtrlData_q2" -> WCtrlDataStart;
+	"[1]WCtrlData_q3"	 [complexity=2,
+		importance=0.0217429985434,
+		rank=0.0108714992717];
+	"[1]WCtrlData_q3" -> WCtrlDataStart;
+}

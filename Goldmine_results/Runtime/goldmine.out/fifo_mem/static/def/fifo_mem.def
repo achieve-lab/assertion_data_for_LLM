@@ -1,0 +1,12 @@
+{'data_out': {'CDeps': [[[]]],
+              'CLines': [[None]],
+              'Clocked': False,
+              'DDeps': [['fifo', 'b_rptr']],
+              'DLines': ['23:D'],
+              'Expressions': [<pyverilog.vparser.ast.BlockingSubstitution object at 0x7f30c7462690>]},
+ 'fifo': {'CDeps': [[[], [], ['w_en', 'full']]],
+          'CLines': [[None, None, '11:C']],
+          'Clocked': False,
+          'DDeps': [['data_in']],
+          'DLines': ['12:D'],
+          'Expressions': [<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f30c75df290>]}}

@@ -1,0 +1,34 @@
+digraph "" {
+	DMAC -> TxData_wrapped_out	 [weight=6.0];
+	StateLeftinQ -> StateLeftinQ	 [weight=2.0];
+	StateLeftinQ -> TxEndFrmOut_uc	 [weight=1.0];
+	StateLeftinQ -> PreNib15State	 [weight=1.0];
+	StateLeftinQ -> read_fifo	 [weight=14.0];
+	StateLeftinQ -> TxData_wrapped_out	 [weight=14.0];
+	StateLeftinQ -> ByteCnt	 [weight=1.0];
+	TxBufferEmpty -> StateLeftinQ	 [weight=2.0];
+	TxBufferEmpty -> TxEndFrmOut_uc	 [weight=1.0];
+	StateCount -> write_fifo	 [weight=2.0];
+	StateCount -> StateCount	 [weight=2.0];
+	StateCount -> PreNib15State	 [weight=2.0];
+	StateCount -> read_fifo	 [weight=14.0];
+	StateCount -> TxData_wrapped_out	 [weight=14.0];
+	StateCount -> ByteCnt	 [weight=2.0];
+	TxStartFrmIn -> StateCount	 [weight=2.0];
+	TxStartFrmIn -> PreNib15State	 [weight=1.0];
+	TxStartFrmIn -> read_fifo	 [weight=14.0];
+	TxStartFrmIn -> TxData_wrapped_out	 [weight=14.0];
+	TxStartFrmIn -> ByteCnt	 [weight=1.0];
+	MTxClk -> Divided_2_clk	 [weight=1.0];
+	TxEndFrmIn -> StateLeftinQ	 [weight=2.0];
+	TxEndFrmIn -> StateCount	 [weight=2.0];
+	MAC -> TxData_wrapped_out	 [weight=6.0];
+	PreNib15State -> write_fifo	 [weight=2.0];
+	PreNib15State -> PreNib15State	 [weight=1.0];
+	PreNib15State -> ByteCnt	 [weight=1.0];
+	Divided_2_clk -> Divided_2_clk	 [weight=1.0];
+	ByteCnt -> read_fifo	 [weight=13.0];
+	ByteCnt -> TxData_wrapped_out	 [weight=13.0];
+	ByteCnt -> ByteCnt	 [weight=1.0];
+	TxData_wrapped_out_wire -> TxData_wrapped_out	 [weight=1.0];
+}

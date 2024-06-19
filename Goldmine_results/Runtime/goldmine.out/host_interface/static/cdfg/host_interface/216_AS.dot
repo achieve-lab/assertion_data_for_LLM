@@ -1,0 +1,14 @@
+strict digraph "" {
+	node [label="\N"];
+	"216:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fba378b3f10>",
+		def_var="['HRDATA']",
+		fillcolor=deepskyblue,
+		label="216:AS
+HRDATA = { 32{ crc_dr_sel } } & crc_out | { 32{ crc_init_sel } } & crc_init_out | { 32{ crc_idr_sel } } & { 24'h0, crc_idr_\
+out } | { 32{ crc_poly_sel } } & crc_poly_out | { 32{ crc_cr_sel } } & crc_cr_rd;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_dr_sel', 'crc_out', 'crc_init_sel', 'crc_init_out', 'crc_idr_sel', 'crc_idr_out', 'crc_poly_sel', 'crc_poly_out', 'crc_cr_\
+sel', 'crc_cr_rd']"];
+}

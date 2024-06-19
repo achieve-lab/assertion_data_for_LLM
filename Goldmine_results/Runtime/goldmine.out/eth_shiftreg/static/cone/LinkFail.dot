@@ -1,0 +1,29 @@
+strict digraph "" {
+	"[1]MdcEn_n"	 [complexity=1,
+		importance=0.151850108418,
+		rank=0.151850108418];
+	LinkFail	 [complexity=0,
+		importance=0.101040415792,
+		rank=0.0];
+	"[1]MdcEn_n" -> LinkFail;
+	"[1]ByteSelect"	 [complexity=1,
+		importance=0.151850108418,
+		rank=0.151850108418];
+	"[1]ByteSelect" -> LinkFail;
+	"[1]LatchByte"	 [complexity=1,
+		importance=0.151850108418,
+		rank=0.151850108418];
+	"[1]LatchByte" -> LinkFail;
+	"[1]Rgad"	 [complexity=1,
+		importance=0.151850108418,
+		rank=0.151850108418];
+	"[1]Rgad" -> LinkFail;
+	"[1]ShiftReg"	 [complexity=2,
+		importance=0.322700305727,
+		rank=0.161350152864];
+	"[1]ShiftReg" -> LinkFail;
+	"[1]Reset"	 [complexity=1,
+		importance=0.25289052421,
+		rank=0.25289052421];
+	"[1]Reset" -> LinkFail;
+}

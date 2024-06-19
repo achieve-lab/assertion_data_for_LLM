@@ -1,0 +1,33 @@
+strict digraph "" {
+	"[1]clk_en_i"	 [complexity=1,
+		importance=0.359812476478,
+		rank=0.359812476478];
+	done_o	 [complexity=0,
+		importance=0.0552178763823,
+		rank=0.0];
+	"[1]clk_en_i" -> done_o;
+	"[1]S_PP"	 [complexity=4,
+		importance=0.138940970949,
+		rank=0.0347352427372];
+	"[1]S_PP" -> done_o;
+	"[1]divide_i"	 [complexity=1,
+		importance=0.138940970949,
+		rank=0.138940970949];
+	"[1]divide_i" -> done_o;
+	"[1]R_PP"	 [complexity=4,
+		importance=0.138940970949,
+		rank=0.0347352427372];
+	"[1]R_PP" -> done_o;
+	"[1]divide_count"	 [complexity=4,
+		importance=0.154714829807,
+		rank=0.0386787074517];
+	"[1]divide_count" -> done_o;
+	"[1]rst_i"	 [complexity=1,
+		importance=0.41503035286,
+		rank=0.41503035286];
+	"[1]rst_i" -> done_o;
+	"[1]M_PP"	 [complexity=4,
+		importance=0.138940970949,
+		rank=0.0347352427372];
+	"[1]M_PP" -> done_o;
+}

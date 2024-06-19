@@ -1,0 +1,10 @@
+strict digraph "" {
+	reset -> local_valid	 [weight=2.0];
+	reset -> broad_valid	 [weight=2.0];
+	reset -> multi_valid	 [weight=2.0];
+	MAC_Addr -> local_valid	 [weight=1.0];
+	local_invalid;
+	da_addr -> local_valid	 [weight=1.0];
+	da_addr -> broad_valid	 [weight=1.0];
+	da_addr -> multi_valid	 [weight=1.0];
+}

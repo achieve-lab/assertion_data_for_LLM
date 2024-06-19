@@ -1,0 +1,131 @@
+strict digraph "" {
+	"[1]pop_ok"	 [complexity=4,
+		importance=1.75279999483,
+		rank=0.438199998707];
+	counter	 [complexity=1,
+		importance=1.71585140872,
+		rank=1.71585140872];
+	"[1]pop_ok" -> counter;
+	reg6	 [complexity=2,
+		importance=0.237227735572,
+		rank=0.118613867786];
+	DATA_OUT	 [complexity=0,
+		importance=0.182447875233,
+		rank=0.0];
+	reg6 -> DATA_OUT;
+	reg7	 [complexity=2,
+		importance=0.237228203457,
+		rank=0.118614101729];
+	reg7 -> DATA_OUT;
+	reg4	 [complexity=2,
+		importance=0.237241181047,
+		rank=0.118620590524];
+	reg4 -> DATA_OUT;
+	reg5	 [complexity=2,
+		importance=0.237230842879,
+		rank=0.11861542144];
+	reg5 -> DATA_OUT;
+	reg2	 [complexity=2,
+		importance=0.237443892831,
+		rank=0.118721946415];
+	reg2 -> DATA_OUT;
+	reg3	 [complexity=2,
+		importance=0.237281122524,
+		rank=0.118640561262];
+	reg3 -> DATA_OUT;
+	reg0	 [complexity=2,
+		importance=0.24068835804,
+		rank=0.12034417902];
+	reg0 -> DATA_OUT;
+	reg1	 [complexity=2,
+		importance=0.238092734088,
+		rank=0.119046367044];
+	reg1 -> DATA_OUT;
+	"[1]EN"	 [complexity=5,
+		importance=0.272404862261,
+		rank=0.0544809724523];
+	"[1]EN" -> reg6;
+	"[1]EN" -> reg7;
+	"[1]EN" -> reg4;
+	"[1]EN" -> reg5;
+	"[1]EN" -> reg2;
+	"[1]EN" -> reg3;
+	"[1]EN" -> reg0;
+	"[1]EN" -> reg1;
+	"[1]EN" -> counter;
+	"[1]push_ok"	 [complexity=5,
+		importance=0.275041320198,
+		rank=0.0550082640396];
+	"[1]push_ok" -> reg6;
+	"[1]push_ok" -> reg7;
+	"[1]push_ok" -> reg4;
+	"[1]push_ok" -> reg5;
+	"[1]push_ok" -> reg2;
+	"[1]push_ok" -> reg3;
+	"[1]push_ok" -> reg0;
+	"[1]push_ok" -> reg1;
+	"[1]push_ok" -> counter;
+	"[1]PUSH_POPn"	 [complexity=5,
+		importance=0.272404862261,
+		rank=0.0544809724523];
+	"[1]PUSH_POPn" -> reg6;
+	"[1]PUSH_POPn" -> reg7;
+	"[1]PUSH_POPn" -> reg4;
+	"[1]PUSH_POPn" -> reg5;
+	"[1]PUSH_POPn" -> reg2;
+	"[1]PUSH_POPn" -> reg3;
+	"[1]PUSH_POPn" -> reg0;
+	"[1]PUSH_POPn" -> reg1;
+	"[1]PUSH_POPn" -> counter;
+	"[1]DATA_IN"	 [complexity=4,
+		importance=0.275000486214,
+		rank=0.0687501215535];
+	"[1]DATA_IN" -> reg0;
+	"[1]RST"	 [complexity=3,
+		importance=0.510497596349,
+		rank=0.17016586545];
+	"[1]RST" -> reg6;
+	"[1]RST" -> reg7;
+	"[1]RST" -> reg4;
+	"[1]RST" -> reg5;
+	"[1]RST" -> reg2;
+	"[1]RST" -> reg3;
+	"[1]RST" -> reg0;
+	"[1]RST" -> reg1;
+	"[1]RST" -> counter;
+	"[1]counter"	 [complexity=7,
+		importance=0.34886185182,
+		rank=0.0498374074029];
+	"[1]counter" -> "[1]pop_ok";
+	"[1]counter" -> "[1]push_ok";
+	"[1]counter" -> counter;
+	counter -> DATA_OUT;
+	"[1]reg4"	 [complexity=4,
+		importance=0.292024148693,
+		rank=0.0730060371734];
+	"[1]reg4" -> reg5;
+	"[1]reg5"	 [complexity=4,
+		importance=0.292010703218,
+		rank=0.0730026758044];
+	"[1]reg5" -> reg6;
+	"[1]reg6"	 [complexity=4,
+		importance=0.292008063796,
+		rank=0.073002015949];
+	"[1]reg6" -> reg7;
+	"[1]reg0"	 [complexity=4,
+		importance=0.296333216895,
+		rank=0.0740833042237];
+	"[1]reg0" -> reg1;
+	"[1]reg1"	 [complexity=4,
+		importance=0.293088751685,
+		rank=0.0732721879214];
+	"[1]reg1" -> reg2;
+	"[1]reg2"	 [complexity=4,
+		importance=0.292277140122,
+		rank=0.0730692850304];
+	"[1]reg2" -> reg3;
+	"[1]reg3"	 [complexity=4,
+		importance=0.292074428338,
+		rank=0.0730186070846];
+	"[1]reg3" -> reg4;
+}

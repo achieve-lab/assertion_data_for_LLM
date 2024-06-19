@@ -1,0 +1,97 @@
+strict digraph "" {
+	"[1]StartDrop"	 [complexity=6,
+		importance=0.31819946969,
+		rank=0.0530332449483];
+	StateData1	 [complexity=3,
+		importance=0.116861730633,
+		rank=0.0389539102109];
+	"[1]StartDrop" -> StateData1;
+	StateData0	 [complexity=3,
+		importance=0.117433906558,
+		rank=0.0391446355194];
+	"[1]StartDrop" -> StateData0;
+	"[1]IFGCounterEq24"	 [complexity=10,
+		importance=0.210420659556,
+		rank=0.0210420659556];
+	"[1]IFGCounterEq24" -> "[1]StartDrop";
+	"[1]StartData0"	 [complexity=4,
+		importance=0.185420659556,
+		rank=0.0463551648889];
+	"[1]IFGCounterEq24" -> "[1]StartData0";
+	"[1]StatePreamble"	 [complexity=12,
+		importance=0.396696424391,
+		rank=0.0330580353659];
+	"[1]StartIdle"	 [complexity=6,
+		importance=0.33550984012,
+		rank=0.0559183066867];
+	"[1]StatePreamble" -> "[1]StartIdle";
+	"[1]Transmitting"	 [complexity=15,
+		importance=0.34319946969,
+		rank=0.022879964646];
+	"[1]Transmitting" -> "[1]StartDrop";
+	"[1]StateDrop"	 [complexity=12,
+		importance=0.375530202242,
+		rank=0.0312941835202];
+	"[1]StateDrop" -> "[1]StartIdle";
+	"[1]StateData"	 [complexity=12,
+		importance=0.387595551598,
+		rank=0.0322996292999];
+	"[1]StateData" -> "[1]StartIdle";
+	"[1]StateIdle"	 [complexity=15,
+		importance=0.379584480173,
+		rank=0.0253056320115];
+	"[1]StateIdle" -> "[1]StartDrop";
+	"[1]StateData0"	 [complexity=10,
+		importance=0.344440831929,
+		rank=0.0344440831929];
+	"[1]StateData0" -> "[1]StartDrop";
+	"[1]StateData0" -> "[1]StateData";
+	"[1]StartData1"	 [complexity=6,
+		importance=0.279092636849,
+		rank=0.0465154394748];
+	"[1]StateData0" -> "[1]StartData1";
+	"[1]StartData0" -> StateData1;
+	"[1]StartData0" -> StateData0;
+	"[1]StartData1" -> StateData1;
+	"[1]StartData1" -> StateData0;
+	StateData	 [complexity=0,
+		importance=0.0520857114781,
+		rank=0.0];
+	"[1]MRxDV"	 [complexity=10,
+		importance=0.304092636849,
+		rank=0.0304092636849];
+	"[1]MRxDV" -> "[1]StartDrop";
+	"[1]MRxDV" -> "[1]StartData0";
+	"[1]MRxDV" -> "[1]StartData1";
+	"[1]MRxDV" -> "[1]StartIdle";
+	"[1]MRxDEqD"	 [complexity=10,
+		importance=0.210420659556,
+		rank=0.0210420659556];
+	"[1]MRxDEqD" -> "[1]StartDrop";
+	"[1]MRxDEqD" -> "[1]StartData0";
+	"[1]StartIdle" -> StateData1;
+	"[1]StartIdle" -> StateData0;
+	"[1]ByteCntMaxFrame"	 [complexity=10,
+		importance=0.304092636849,
+		rank=0.0304092636849];
+	"[1]ByteCntMaxFrame" -> "[1]StartDrop";
+	"[1]ByteCntMaxFrame" -> "[1]StartData1";
+	"[1]Reset"	 [complexity=4,
+		importance=0.377301719675,
+		rank=0.0943254299187];
+	"[1]Reset" -> StateData1;
+	"[1]Reset" -> StateData0;
+	"[1]StateData1"	 [complexity=10,
+		importance=0.25019667871,
+		rank=0.025019667871];
+	"[1]StateData1" -> "[1]StateData";
+	"[1]StateData1" -> "[1]StartData0";
+	"[1]StateSFD"	 [complexity=10,
+		importance=0.258674757486,
+		rank=0.0258674757486];
+	"[1]StateSFD" -> "[1]StartDrop";
+	"[1]StateSFD" -> "[1]StartData0";
+	"[1]StateSFD" -> "[1]StartIdle";
+	StateData1 -> StateData;
+	StateData0 -> StateData;
+}

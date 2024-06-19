@@ -1,0 +1,18 @@
+strict digraph "" {
+	node [label="\N"];
+	"105:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fa03f8b4f50>",
+		def_var="['crc_bit']",
+		fillcolor=deepskyblue,
+		label="105:AS
+crc_bit = (bit[5:0] == 6'b101000) & ((cmd == 4'b0000) | (cmd == 4'b0001) | (cmd == 4'b0111)) | (bit[5:0] == 6'b101001) & ((\
+cmd == 4'b0010) | (cmd == 4'b0011) | (cmd == 4'b0111) | (cmd == 4'b1011)) | (bit[5:0] == 6'b101010) & ((cmd == 4'b0001) | (cmd == \
+4'b0011) | (cmd == 4'b1011)) | (bit[5:0] == 6'b101011) & ((cmd == 4'b0000) | (cmd == 4'b0011) | (cmd == 4'b0111) | (cmd == 4'b1011)) | (\
+bit[5:0] == 6'b101100) & ((cmd == 4'b0001) | (cmd == 4'b0010) | (cmd == 4'b0011) | (cmd == 4'b0111)) | (bit[5:0] == 6'b101101) & ((\
+cmd == 4'b0000) | (cmd == 4'b0001) | (cmd == 4'b0010) | (cmd == 4'b0011) | (cmd == 4'b0111) | (cmd == 4'b1011)) | (bit[5:0] == 6'\
+b101110) & ((cmd == 4'b0001) | (cmd == 4'b0011) | (cmd == 4'b1011));",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['bit', 'cmd', 'cmd', 'cmd', 'bit', 'cmd', 'cmd', 'cmd', 'cmd', 'bit', 'cmd', 'cmd', 'cmd', 'bit', 'cmd', 'cmd', 'cmd', 'cmd', '\
+bit', 'cmd', 'cmd', 'cmd', 'cmd', 'bit', 'cmd', 'cmd', 'cmd', 'cmd', 'cmd', 'cmd', 'bit', 'cmd', 'cmd', 'cmd']"];
+}

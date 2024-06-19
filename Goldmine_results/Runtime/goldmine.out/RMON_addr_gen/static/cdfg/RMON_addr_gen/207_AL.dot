@@ -1,0 +1,46 @@
+strict digraph "" {
+	node [label="\N"];
+	"207:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f8c06320390>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="207:AL",
+		sens="['CurrentState']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['StatePktLength', 'StatePktRange', 'StatePktType', 'StatePktNumber', 'CurrentState']"];
+	"208:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f8c06323110>",
+		fillcolor=springgreen,
+		label="208:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"207:AL" -> "208:IF"	 [cond="[]",
+		lineno=None];
+	"212:BS"	 [ast="<pyverilog.vparser.ast.BlockingSubstitution object at 0x7f8c06323190>",
+		fillcolor=cadetblue,
+		label="212:BS
+Reg_apply = 0;",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7f8c06323190>]",
+		style=filled,
+		typ=BlockingSubstitution];
+	"Leaf_207:AL"	 [def_var="['Reg_apply']",
+		label="Leaf_207:AL"];
+	"212:BS" -> "Leaf_207:AL"	 [cond="[]",
+		lineno=None];
+	"210:BS"	 [ast="<pyverilog.vparser.ast.BlockingSubstitution object at 0x7f8c06323350>",
+		fillcolor=cadetblue,
+		label="210:BS
+Reg_apply = 1;",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7f8c06323350>]",
+		style=filled,
+		typ=BlockingSubstitution];
+	"210:BS" -> "Leaf_207:AL"	 [cond="[]",
+		lineno=None];
+	"208:IF" -> "212:BS"	 [cond="['CurrentState', 'StatePktLength', 'CurrentState', 'StatePktNumber', 'CurrentState', 'StatePktType', 'CurrentState', 'StatePktRange']",
+		label="!(((CurrentState == StatePktLength) || (CurrentState == StatePktNumber) || (CurrentState == StatePktType) || (CurrentState == StatePktRange)))",
+		lineno=208];
+	"208:IF" -> "210:BS"	 [cond="['CurrentState', 'StatePktLength', 'CurrentState', 'StatePktNumber', 'CurrentState', 'StatePktType', 'CurrentState', 'StatePktRange']",
+		label="((CurrentState == StatePktLength) || (CurrentState == StatePktNumber) || (CurrentState == StatePktType) || (CurrentState == StatePktRange))",
+		lineno=208];
+}

@@ -1,0 +1,10 @@
+[1]ebi_K_d3	[1]rx_config_hi_read
+[1]ebi_K_d3	[1]rx_config_lo_read
+[1]rx_config_lo	[1]rx_config_tmp
+[1]pcs_rx_present	[1]rx_config_hi_read
+[1]pcs_rx_present	[1]rx_config_lo_read
+[1]rx_config_tmp	rx_config_set
+[1]ebi_rxd_d3	[1]rx_config_tmp
+[1]rx_config_hi_read	rx_config_set
+[1]rx_config_lo_read	rx_config_set
+[1]reset	rx_config_set

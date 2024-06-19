@@ -1,0 +1,41 @@
+strict digraph "" {
+	"[1]RxByteCntMaxFrame"	 [complexity=7,
+		importance=0.0695545029308,
+		rank=0.00993635756154];
+	"[1]TakeSample"	 [complexity=1,
+		importance=0.0555942842789,
+		rank=0.0555942842789];
+	"[1]RxByteCntMaxFrame" -> "[1]TakeSample";
+	ReceivedPacketTooBig	 [complexity=0,
+		importance=0.0322608070698,
+		rank=0.0];
+	"[1]TakeSample" -> ReceivedPacketTooBig;
+	"[1]LoadRxStatus"	 [complexity=1,
+		importance=0.0827197788844,
+		rank=0.0827197788844];
+	"[1]LoadRxStatus" -> ReceivedPacketTooBig;
+	"[1]MRxDV"	 [complexity=7,
+		importance=0.0695545029308,
+		rank=0.00993635756154];
+	"[1]MRxDV" -> "[1]TakeSample";
+	"[1]RxByteCnt"	 [complexity=4,
+		importance=0.0462210257217,
+		rank=0.0115552564304];
+	"[1]RxByteCnt" -> ReceivedPacketTooBig;
+	"[1]Reset"	 [complexity=1,
+		importance=0.110742639861,
+		rank=0.110742639861];
+	"[1]Reset" -> ReceivedPacketTooBig;
+	"[1]r_HugEn"	 [complexity=4,
+		importance=0.0462210257217,
+		rank=0.0115552564304];
+	"[1]r_HugEn" -> ReceivedPacketTooBig;
+	"[1]RxStateData"	 [complexity=7,
+		importance=0.0695545029308,
+		rank=0.00993635756154];
+	"[1]RxStateData" -> "[1]TakeSample";
+	"[1]r_MaxFL"	 [complexity=4,
+		importance=0.0462210257217,
+		rank=0.0115552564304];
+	"[1]r_MaxFL" -> ReceivedPacketTooBig;
+}

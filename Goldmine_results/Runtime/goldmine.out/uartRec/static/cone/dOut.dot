@@ -1,0 +1,37 @@
+strict digraph "" {
+	"[1]sTick"	 [complexity=5,
+		importance=0.376512087847,
+		rank=0.0753024175694];
+	"[1]bNext"	 [complexity=4,
+		importance=0.174100486083,
+		rank=0.0435251215207];
+	"[1]sTick" -> "[1]bNext";
+	dOut	 [complexity=0,
+		importance=0.0366908094353,
+		rank=0.0];
+	"[1]bReg"	 [complexity=9,
+		importance=0.589337550049,
+		rank=0.0654819500054];
+	"[1]bReg" -> "[1]bNext";
+	bReg	 [complexity=2,
+		importance=0.103726901235,
+		rank=0.0518634506177];
+	bReg -> dOut;
+	"[1]rx"	 [complexity=7,
+		importance=0.202411601764,
+		rank=0.0289159431091];
+	"[1]rx" -> "[1]bNext";
+	"[1]stateReg"	 [complexity=5,
+		importance=0.450764290084,
+		rank=0.0901528580169];
+	"[1]stateReg" -> "[1]bNext";
+	"[1]bNext" -> bReg;
+	"[1]reset"	 [complexity=3,
+		importance=0.235764918152,
+		rank=0.0785883060506];
+	"[1]reset" -> bReg;
+	"[1]sReg"	 [complexity=5,
+		importance=0.422889462559,
+		rank=0.0845778925119];
+	"[1]sReg" -> "[1]bNext";
+}

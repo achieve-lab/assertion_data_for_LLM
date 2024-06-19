@@ -1,0 +1,13 @@
+strict digraph "" {
+	"[1]pause_counter"	 [complexity=1,
+		importance=0.0373408976821,
+		rank=0.0373408976821];
+	pause_quanta_sub	 [complexity=0,
+		importance=0.0114876685623,
+		rank=0.0];
+	"[1]pause_counter" -> pause_quanta_sub;
+	"[1]Reset"	 [complexity=1,
+		importance=0.0428942616166,
+		rank=0.0428942616166];
+	"[1]Reset" -> pause_quanta_sub;
+}

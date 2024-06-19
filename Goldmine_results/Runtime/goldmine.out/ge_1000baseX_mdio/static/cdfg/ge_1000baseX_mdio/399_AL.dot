@@ -1,0 +1,25 @@
+strict digraph "" {
+	node [label="\N"];
+	"Leaf_399:AL"	 [def_var="['present']",
+		label="Leaf_399:AL"];
+	"399:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f2608ceec90>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="399:AL",
+		sens="['mdc', 'reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['reset', 'S_PREAMBLE', 'next']"];
+	"401:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2608ceee10>",
+		fillcolor=firebrick,
+		label="401:NS
+present <= (reset)? S_PREAMBLE : next;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2608ceee10>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"399:AL" -> "401:NS"	 [cond="[]",
+		lineno=None];
+	"401:NS" -> "Leaf_399:AL"	 [cond="[]",
+		lineno=None];
+}

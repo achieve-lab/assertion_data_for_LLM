@@ -1,0 +1,16 @@
+[1]we	[1]we_acceptance_code_3
+[1]ACCEPTANCE_CODE_REG3.data_in	ACCEPTANCE_CODE_REG3.data_out
+[1]CLOCK_DIVIDER_REG_3.data_out	[1]clock_divider
+[1]CLOCK_DIVIDER_REG_LOW.data_out	[1]clock_divider
+[1]ACCEPTANCE_CODE_REG3.we	ACCEPTANCE_CODE_REG3.data_out
+[1]reset_mode	[1]we_acceptance_code_3
+[1]cs	[1]we_acceptance_code_3
+[1]mode	[1]reset_mode
+[1]we_acceptance_code_3	[1]ACCEPTANCE_CODE_REG3.we
+[1]clock_divider	[1]extended_mode
+[1]addr	[1]we_acceptance_code_3
+ACCEPTANCE_CODE_REG3.data_out	acceptance_code_3
+[1]extended_mode	[1]we_acceptance_code_3
+[1]MODE_REG0.data_out	[1]mode
+[1]CLOCK_DIVIDER_REG_7.data_out	[1]clock_divider
+[1]data_in	[1]ACCEPTANCE_CODE_REG3.data_in

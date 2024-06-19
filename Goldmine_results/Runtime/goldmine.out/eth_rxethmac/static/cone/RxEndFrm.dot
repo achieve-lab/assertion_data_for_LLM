@@ -1,0 +1,49 @@
+strict digraph "" {
+	"[1]rxcounters1.ByteCnt"	 [complexity=9,
+		importance=0.0332055418202,
+		rank=0.00368950464669];
+	"[1]rxcounters1.ByteCntGreat2"	 [complexity=7,
+		importance=0.0204172324467,
+		rank=0.00291674749239];
+	"[1]rxcounters1.ByteCnt" -> "[1]rxcounters1.ByteCntGreat2";
+	"[1]rxstatem1.StateData"	 [complexity=7,
+		importance=0.0230013911107,
+		rank=0.00328591301581];
+	"[1]StateData"	 [complexity=7,
+		importance=0.0168073442638,
+		rank=0.00240104918054];
+	"[1]rxstatem1.StateData" -> "[1]StateData";
+	"[1]DribbleRxEndFrm"	 [complexity=3,
+		importance=0.0122467758865,
+		rank=0.00408225862882];
+	"[1]StateData" -> "[1]DribbleRxEndFrm";
+	"[1]rxstatem1.StateData0"	 [complexity=10,
+		importance=0.0306723947852,
+		rank=0.00306723947852];
+	"[1]rxstatem1.StateData0" -> "[1]rxstatem1.StateData";
+	"[1]rxstatem1.StateData1"	 [complexity=10,
+		importance=0.0306134743802,
+		rank=0.00306134743802];
+	"[1]rxstatem1.StateData1" -> "[1]rxstatem1.StateData";
+	RxEndFrm	 [complexity=0,
+		importance=0.00801777775633,
+		rank=0.0];
+	"[1]ByteCntGreat2"	 [complexity=7,
+		importance=0.0169785548713,
+		rank=0.00242550783875];
+	"[1]ByteCntGreat2" -> "[1]DribbleRxEndFrm";
+	"[1]Reset"	 [complexity=1,
+		importance=0.0190479517297,
+		rank=0.0190479517297];
+	"[1]Reset" -> RxEndFrm;
+	"[1]rxcounters1.ByteCntGreat2" -> "[1]ByteCntGreat2";
+	"[1]DribbleRxEndFrm" -> RxEndFrm;
+	"[1]MRxDV"	 [complexity=7,
+		importance=0.0152591721035,
+		rank=0.00217988172908];
+	"[1]MRxDV" -> "[1]DribbleRxEndFrm";
+	"[1]RxEndFrm_d"	 [complexity=3,
+		importance=0.0136408063188,
+		rank=0.00454693543961];
+	"[1]RxEndFrm_d" -> RxEndFrm;
+}

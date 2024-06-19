@@ -1,0 +1,46 @@
+strict digraph "" {
+	WORD	 [complexity=30,
+		importance=0.207682431001,
+		rank=0.00692274770004];
+	rot_in	 [complexity=9,
+		importance=0.174903909376,
+		rank=0.0194337677085];
+	WORD -> rot_in;
+	g_in	 [complexity=0,
+		importance=0.0965425860498,
+		rank=0.0];
+	rot_in -> g_in;
+	i	 [complexity=38,
+		importance=0.281434338838,
+		rank=0.00740616681154];
+	key	 [complexity=30,
+		importance=0.248655817213,
+		rank=0.00828852724044];
+	i -> key;
+	k	 [complexity=30,
+		importance=0.207682431001,
+		rank=0.00692274770004];
+	k -> rot_in;
+	l	 [complexity=9,
+		importance=0.129321107675,
+		rank=0.0143690119639];
+	l -> g_in;
+	enc_dec	 [complexity=30,
+		importance=0.207682431001,
+		rank=0.00692274770004];
+	enc_dec -> rot_in;
+	key_in	 [complexity=38,
+		importance=0.281434338838,
+		rank=0.00740616681154];
+	key_in -> key;
+	key -> rot_in;
+	KEY_NUM	 [complexity=30,
+		importance=0.207682431001,
+		rank=0.00692274770004];
+	KEY_NUM -> rot_in;
+	KEY_NUM -> g_in;
+	KEY_WIDTH	 [complexity=38,
+		importance=0.281434338838,
+		rank=0.00740616681154];
+	KEY_WIDTH -> key;
+}

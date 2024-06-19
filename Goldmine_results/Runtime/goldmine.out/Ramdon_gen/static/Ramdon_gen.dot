@@ -1,0 +1,18 @@
+digraph "" {
+	Reset -> Slot_time_counter	 [weight=3.0];
+	Reset -> Random_time_meet	 [weight=3.0];
+	Reset -> Random_sequence	 [weight=2.0];
+	Reset -> Ramdom_counter	 [weight=3.0];
+	RetryCnt -> Ramdom	 [weight=11.0];
+	Slot_time_counter -> Slot_time_counter	 [weight=1.0];
+	Slot_time_counter -> Ramdom_counter	 [weight=1.0];
+	Random_time_meet -> Slot_time_counter	 [weight=1.0];
+	Init -> Slot_time_counter	 [weight=2.0];
+	Init -> Random_time_meet	 [weight=2.0];
+	Init -> Ramdom_counter	 [weight=2.0];
+	Random_sequence -> Random_sequence	 [weight=1.0];
+	Random_sequence -> Ramdom	 [weight=11.0];
+	Ramdom -> Ramdom_counter	 [weight=1.0];
+	Ramdom_counter -> Random_time_meet	 [weight=1.0];
+	Ramdom_counter -> Ramdom_counter	 [weight=2.0];
+}

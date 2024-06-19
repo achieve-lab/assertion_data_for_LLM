@@ -1,0 +1,13 @@
+strict digraph "" {
+	ebi_K_out	 [complexity=0,
+		importance=0.0116499368614,
+		rank=0.0];
+	"[1]ebi_K_d1"	 [complexity=2,
+		importance=0.0270059164048,
+		rank=0.0135029582024];
+	"[1]ebi_K_d1" -> ebi_K_out;
+	"[1]reset"	 [complexity=1,
+		importance=0.0332712890035,
+		rank=0.0332712890035];
+	"[1]reset" -> ebi_K_out;
+}

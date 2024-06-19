@@ -1,0 +1,25 @@
+strict digraph "" {
+	node [label="\N"];
+	"Leaf_389:AL"	 [def_var="['sustain']",
+		label="Leaf_389:AL"];
+	"389:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fc6850ad910>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="389:AL",
+		sens="['sustain_x']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['sustain_x']"];
+	"390:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fc6850ad650>",
+		fillcolor=firebrick,
+		label="390:NS
+sustain <= { sustain_x, sustain_x };",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fc6850ad650>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"389:AL" -> "390:NS"	 [cond="[]",
+		lineno=None];
+	"390:NS" -> "Leaf_389:AL"	 [cond="[]",
+		lineno=None];
+}

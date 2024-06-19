@@ -1,0 +1,105 @@
+strict digraph "" {
+	"[1]w_en"	 [complexity=9,
+		importance=0.454996427362,
+		rank=0.0505551585958];
+	"[1]b_wptr_next"	 [complexity=5,
+		importance=0.400496038911,
+		rank=0.0800992077823];
+	"[1]w_en" -> "[1]b_wptr_next";
+	"[2]PTR_WIDTH"	 [complexity=18,
+		importance=0.721718110431,
+		rank=0.0400954505795];
+	"[2]wfull"	 [complexity=11,
+		importance=0.66721772198,
+		rank=0.0606561565437];
+	"[2]PTR_WIDTH" -> "[2]wfull";
+	"[2]g_wptr_next"	 [complexity=18,
+		importance=0.772915035351,
+		rank=0.0429397241862];
+	"[2]g_wptr_next" -> "[2]wfull";
+	"[3]b_wptr_next"	 [complexity=37,
+		importance=1.55491451003,
+		rank=0.0420247164872];
+	"[2]b_wptr"	 [complexity=25,
+		importance=1.09248599868,
+		rank=0.0436994399474];
+	"[3]b_wptr_next" -> "[2]b_wptr";
+	"[3]g_wptr_next"	 [complexity=34,
+		importance=1.35012427091,
+		rank=0.0397095373796];
+	"[3]b_wptr_next" -> "[3]g_wptr_next";
+	"[1]wrst_n"	 [complexity=1,
+		importance=0.234517361298,
+		rank=0.234517361298];
+	g_wptr	 [complexity=0,
+		importance=0.0900084864234,
+		rank=0.0];
+	"[1]wrst_n" -> g_wptr;
+	"[3]PTR_WIDTH"	 [complexity=34,
+		importance=1.29892734599,
+		rank=0.0382037454702];
+	"[3]wfull"	 [complexity=27,
+		importance=1.24442695754,
+		rank=0.0460898873162];
+	"[3]PTR_WIDTH" -> "[3]wfull";
+	"[1]g_wptr_next"	 [complexity=2,
+		importance=0.195705799794,
+		rank=0.097852899897];
+	"[1]b_wptr_next" -> "[1]g_wptr_next";
+	"[3]full"	 [complexity=41,
+		importance=1.68621065244,
+		rank=0.041127089084];
+	"[3]full" -> "[3]b_wptr_next";
+	"[1]full"	 [complexity=9,
+		importance=0.531792181329,
+		rank=0.0590880201477];
+	"[2]wfull" -> "[1]full";
+	"[2]wrst_n"	 [complexity=10,
+		importance=1.11808475111,
+		rank=0.111808475111];
+	"[1]b_wptr"	 [complexity=9,
+		importance=0.515276763127,
+		rank=0.0572529736808];
+	"[2]wrst_n" -> "[1]b_wptr";
+	"[2]wrst_n" -> "[1]full";
+	"[2]b_wptr_next"	 [complexity=21,
+		importance=0.977705274468,
+		rank=0.0465573940223];
+	"[2]b_wptr_next" -> "[2]g_wptr_next";
+	"[2]b_wptr_next" -> "[1]b_wptr";
+	"[2]b_wptr" -> "[2]b_wptr_next";
+	"[1]b_wptr" -> "[1]b_wptr_next";
+	"[3]g_rptr_sync"	 [complexity=34,
+		importance=1.29892734599,
+		rank=0.0382037454702];
+	"[3]g_rptr_sync" -> "[3]wfull";
+	"[2]g_rptr_sync"	 [complexity=18,
+		importance=0.721718110431,
+		rank=0.0400954505795];
+	"[2]g_rptr_sync" -> "[2]wfull";
+	"[3]wrst_n"	 [complexity=26,
+		importance=2.27250322222,
+		rank=0.0874039700855];
+	"[3]wrst_n" -> "[2]b_wptr";
+	"[2]full"	 [complexity=25,
+		importance=1.10900141689,
+		rank=0.0443600566754];
+	"[3]wrst_n" -> "[2]full";
+	"[1]full" -> "[1]b_wptr_next";
+	"[2]w_en"	 [complexity=25,
+		importance=1.03220566292,
+		rank=0.0412882265168];
+	"[2]w_en" -> "[2]b_wptr_next";
+	"[2]full" -> "[2]b_wptr_next";
+	"[3]b_wptr"	 [complexity=41,
+		importance=1.66969523424,
+		rank=0.0407242740059];
+	"[3]b_wptr" -> "[3]b_wptr_next";
+	"[3]wfull" -> "[2]full";
+	"[3]g_wptr_next" -> "[3]wfull";
+	"[1]g_wptr_next" -> g_wptr;
+	"[3]w_en"	 [complexity=41,
+		importance=1.60941489848,
+		rank=0.039254021914];
+	"[3]w_en" -> "[3]b_wptr_next";
+}

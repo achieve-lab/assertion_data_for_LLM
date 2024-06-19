@@ -1,0 +1,21 @@
+strict digraph "" {
+	"[2]rst_n"	 [complexity=3,
+		importance=1.48936128095,
+		rank=0.496453760318];
+	"[1]q1"	 [complexity=2,
+		importance=0.659574187302,
+		rank=0.329787093651];
+	"[2]rst_n" -> "[1]q1";
+	"[1]rst_n"	 [complexity=1,
+		importance=0.893617158959,
+		rank=0.893617158959];
+	d_out	 [complexity=0,
+		importance=0.361702126305,
+		rank=0.0];
+	"[1]rst_n" -> d_out;
+	"[2]d_in"	 [complexity=4,
+		importance=0.829787093651,
+		rank=0.207446773413];
+	"[2]d_in" -> "[1]q1";
+	"[1]q1" -> d_out;
+}

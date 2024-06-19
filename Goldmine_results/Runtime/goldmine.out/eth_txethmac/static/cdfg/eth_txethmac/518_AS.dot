@@ -1,0 +1,13 @@
+strict digraph "" {
+	node [label="\N"];
+	"518:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8274bda50>",
+		def_var="['Data_Crc']",
+		fillcolor=deepskyblue,
+		label="518:AS
+Data_Crc[0] = (StateData[0])? TxData[3] : 
+(StateData[1])? TxData[7] : 1'b0;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['StateData', 'TxData', 'StateData', 'TxData']"];
+}

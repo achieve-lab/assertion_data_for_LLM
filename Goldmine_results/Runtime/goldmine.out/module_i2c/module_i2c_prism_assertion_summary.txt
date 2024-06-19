@@ -1,0 +1,26 @@
+Assertion report generated on: 01-Apr-2024 03:45:12 PM
+
+Assertion summary report for design: module_i2c
+###############################################
+
+   Target     | Total | Passed | Failed | Vacuous | Hit | Miss
+------------- | ----- | ------ | ------ | ------- | --- | ----
+ ENABLE_SCL   |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+ ENABLE_SDA   |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+    ERROR     |   3   |   0    |   0    |    3    | 0.0 | 1.0 
+  RX_EMPTY    |   2   |   0    |   0    |    2    | 0.0 | 1.0 
+  TX_EMPTY    |   2   |   0    |   0    |    2    | 0.0 | 1.0 
+fifo_rx_wr_en |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+fifo_tx_rd_en |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+
+
+Resource usage summary report for the desing: module_i2c
+########################################################
+
+      Phase       | Time (in [H]H:MM:SS:UUUUUU) | Memory (in MB)
+----------------- | --------------------------- | --------------
+V Parse & Ranking |       0:00:07.804940        |     912.78    
+   Simulation     |       0:00:02.030556        |     978.03    
+     D Parse      |       0:00:22.028971        |     989.44    
+     Mining       |       0:00:23.732620        |    1063.14    
+     Overall      |       0:01:09.747450        |    1063.14    

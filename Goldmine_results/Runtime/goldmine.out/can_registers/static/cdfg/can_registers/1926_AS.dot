@@ -1,0 +1,13 @@
+strict digraph "" {
+	node [label="\N"];
+	"1926:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fd77326db10>",
+		def_var="['irq_reg']",
+		fillcolor=deepskyblue,
+		label="1926:AS
+irq_reg = { bus_error_irq, arbitration_lost_irq, error_passive_irq, 1'b0, data_overrun_irq, error_irq, transmit_irq, receive_\
+irq };",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['bus_error_irq', 'arbitration_lost_irq', 'error_passive_irq', 'data_overrun_irq', 'error_irq', 'transmit_irq', 'receive_irq']"];
+}

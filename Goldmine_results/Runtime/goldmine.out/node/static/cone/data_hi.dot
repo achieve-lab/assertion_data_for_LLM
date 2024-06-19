@@ -1,0 +1,23 @@
+strict digraph "" {
+	data_hi	 [complexity=0,
+		importance=0.217948786626,
+		rank=0.0];
+	data_a	 [complexity=3,
+		importance=1.71794896692,
+		rank=0.572649655639];
+	data_a -> data_hi;
+	sel0	 [complexity=1,
+		importance=0.807692440149,
+		rank=0.807692440149];
+	data_a -> sel0;
+	sel0 -> data_hi;
+	HI_MUX	 [complexity=2,
+		importance=0.538461659872,
+		rank=0.269230829936];
+	HI_MUX -> data_hi;
+	data_b	 [complexity=3,
+		importance=1.71794896692,
+		rank=0.572649655639];
+	data_b -> data_hi;
+	data_b -> sel0;
+}

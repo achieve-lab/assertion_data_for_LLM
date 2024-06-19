@@ -1,0 +1,17 @@
+strict digraph "" {
+	Reset	 [complexity=3,
+		importance=0.0362974536806,
+		rank=0.0120991512269];
+	Dout_dl1	 [complexity=2,
+		importance=0.014849794818,
+		rank=0.00742489740902];
+	Reset -> Dout_dl1;
+	Rx_mac_eop	 [complexity=0,
+		importance=0.00777672290075,
+		rank=0.0];
+	Dout_dl1 -> Rx_mac_eop;
+	"[1]Dout"	 [complexity=4,
+		importance=0.0214476588626,
+		rank=0.00536191471565];
+	"[1]Dout" -> Dout_dl1;
+}

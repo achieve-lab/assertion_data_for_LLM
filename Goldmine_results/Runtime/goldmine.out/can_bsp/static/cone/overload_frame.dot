@@ -1,0 +1,252 @@
+strict digraph "" {
+	"[1]rx_id1"	 [complexity=34,
+		importance=0.0242620410441,
+		rank=0.000713589442474];
+	"[1]arbitration_field"	 [complexity=28,
+		importance=0.0219011169922,
+		rank=0.000782182749723];
+	"[1]rx_id1" -> "[1]arbitration_field";
+	"[1]rst"	 [complexity=1,
+		importance=0.00713473462032,
+		rank=0.00713473462032];
+	overload_frame	 [complexity=0,
+		importance=0.00185209034132,
+		rank=0.0];
+	"[1]rst" -> overload_frame;
+	"[1]rx_inter"	 [complexity=19,
+		importance=0.00872533653682,
+		rank=0.00045922823878];
+	"[1]go_overload_frame"	 [complexity=1,
+		importance=0.00655554751995,
+		rank=0.00655554751995];
+	"[1]rx_inter" -> "[1]go_overload_frame";
+	"[1]bit_cnt"	 [complexity=19,
+		importance=0.0110616115414,
+		rank=0.000582190081125];
+	"[1]bit_cnt" -> "[1]go_overload_frame";
+	"[1]bit_err_exc5"	 [complexity=24,
+		importance=0.0186565426911,
+		rank=0.000777355945463];
+	"[1]bit_err"	 [complexity=9,
+		importance=0.0163781179831,
+		rank=0.00181979088701];
+	"[1]bit_err_exc5" -> "[1]bit_err";
+	"[1]bit_err_exc6"	 [complexity=24,
+		importance=0.0184103790099,
+		rank=0.000767099125413];
+	"[1]bit_err_exc6" -> "[1]bit_err";
+	"[1]bit_err_exc1"	 [complexity=24,
+		importance=0.0190959228212,
+		rank=0.000795663450881];
+	"[1]bit_err_exc1" -> "[1]bit_err";
+	"[1]overload_request"	 [complexity=19,
+		importance=0.00813401111631,
+		rank=0.000428105848227];
+	"[1]overload_request" -> "[1]go_overload_frame";
+	"[1]bit_err_exc3"	 [complexity=24,
+		importance=0.0182812766998,
+		rank=0.000761719862492];
+	"[1]bit_err_exc3" -> "[1]bit_err";
+	"[1]overload_cnt1"	 [complexity=31,
+		importance=0.0210347970272,
+		rank=0.000678541839587];
+	"[1]bit_err_exc4"	 [complexity=24,
+		importance=0.0187280611433,
+		rank=0.000780335880972];
+	"[1]overload_cnt1" -> "[1]bit_err_exc4";
+	"[1]overload_cnt2"	 [complexity=29,
+		importance=0.0212433401569,
+		rank=0.000732528970929];
+	"[1]overload_cnt2" -> "[1]bit_err_exc5";
+	"[1]overload_cnt2" -> "[1]go_overload_frame";
+	"[1]overload_frame_ended"	 [complexity=19,
+		importance=0.00851807186601,
+		rank=0.000448319571895];
+	"[1]overload_cnt2" -> "[1]overload_frame_ended";
+	"[1]bit_de_stuff"	 [complexity=15,
+		importance=0.0109468180004,
+		rank=0.000729787866693];
+	"[1]form_err"	 [complexity=9,
+		importance=0.00937212637046,
+		rank=0.0010413473745];
+	"[1]bit_de_stuff" -> "[1]form_err";
+	"[1]stuff_err"	 [complexity=9,
+		importance=0.00888173410012,
+		rank=0.000986859344457];
+	"[1]bit_de_stuff" -> "[1]stuff_err";
+	"[1]go_overload_frame" -> overload_frame;
+	"[1]reset_mode"	 [complexity=24,
+		importance=0.0179565815794,
+		rank=0.000748190899143];
+	"[1]reset_mode" -> "[1]bit_err";
+	"[1]rx_ack_lim"	 [complexity=23,
+		importance=0.0114104556804,
+		rank=0.000496106768713];
+	"[1]rx_ack_lim" -> "[1]form_err";
+	"[1]go_rx_eof"	 [complexity=9,
+		importance=0.00865357654155,
+		rank=0.000961508504617];
+	"[1]rx_ack_lim" -> "[1]go_rx_eof";
+	"[1]tx_point"	 [complexity=22,
+		importance=0.0100965354624,
+		rank=0.000458933430108];
+	"[1]tx_point" -> "[1]overload_frame_ended";
+	"[1]error_frame_ended"	 [complexity=19,
+		importance=0.00848057074754,
+		rank=0.000446345828818];
+	"[1]tx_point" -> "[1]error_frame_ended";
+	"[1]self_test_mode"	 [complexity=15,
+		importance=0.0110719997563,
+		rank=0.000738133317083];
+	"[1]ack_err"	 [complexity=9,
+		importance=0.00949353615989,
+		rank=0.0010548373511];
+	"[1]self_test_mode" -> "[1]ack_err";
+	"[1]overload_frame"	 [complexity=29,
+		importance=0.0205086330324,
+		rank=0.000707194242498];
+	"[1]overload_frame" -> "[1]bit_err_exc5";
+	"[1]overload_frame" -> "[1]bit_err";
+	"[1]overload_frame" -> "[1]bit_err_exc4";
+	"[1]rx_id2"	 [complexity=34,
+		importance=0.0243672805712,
+		rank=0.000716684722683];
+	"[1]rx_id2" -> "[1]arbitration_field";
+	"[1]node_error_passive"	 [complexity=28,
+		importance=0.0227416095971,
+		rank=0.000812200342753];
+	"[1]node_error_passive" -> "[1]bit_err_exc3";
+	"[1]enable_error_cnt2"	 [complexity=31,
+		importance=0.0208463462769,
+		rank=0.000672462783124];
+	"[1]enable_error_cnt2" -> "[1]bit_err_exc4";
+	"[1]tx_state"	 [complexity=28,
+		importance=0.0214931725975,
+		rank=0.000767613307053];
+	"[1]tx_state" -> "[1]bit_err_exc1";
+	"[1]tx_state" -> "[1]bit_err";
+	"[1]tx_state" -> "[1]ack_err";
+	"[1]go_error_frame"	 [complexity=2,
+		importance=0.00689381768383,
+		rank=0.00344690884192];
+	"[1]bit_err" -> "[1]go_error_frame";
+	"[1]ack_err" -> "[1]go_error_frame";
+	"[1]tx"	 [complexity=28,
+		importance=0.0305223884184,
+		rank=0.00109008530066];
+	"[1]tx" -> "[1]bit_err_exc1";
+	"[1]tx" -> "[1]bit_err";
+	"[1]bit_err_exc2"	 [complexity=24,
+		importance=0.0187952552373,
+		rank=0.000783135634888];
+	"[1]tx" -> "[1]bit_err_exc2";
+	"[1]overload_frame_ended" -> "[1]go_overload_frame";
+	"[1]overload_frame_ended" -> overload_frame;
+	"[1]rx_ide"	 [complexity=34,
+		importance=0.0246611659188,
+		rank=0.000725328409376];
+	"[1]rx_ide" -> "[1]arbitration_field";
+	"[1]sampled_bit_q"	 [complexity=15,
+		importance=0.0104601976965,
+		rank=0.000697346513099];
+	"[1]sampled_bit_q" -> "[1]stuff_err";
+	"[1]rx_eof"	 [complexity=28,
+		importance=0.0204707200187,
+		rank=0.000731097143525];
+	"[1]rx_eof" -> "[1]bit_err_exc6";
+	"[1]rx_eof" -> "[1]go_overload_frame";
+	"[1]rx_eof" -> "[1]form_err";
+	"[1]bit_err_exc4" -> "[1]bit_err";
+	"[1]rx_ack"	 [complexity=27,
+		importance=0.0207937705648,
+		rank=0.000770139650548];
+	"[1]rx_ack" -> "[1]bit_err";
+	"[1]rx_ack" -> "[1]ack_err";
+	"[1]rx_ack" -> "[1]bit_err_exc2";
+	"[1]rx_crc_lim"	 [complexity=23,
+		importance=0.0114148388616,
+		rank=0.000496297341808];
+	"[1]rx_crc_lim" -> "[1]form_err";
+	"[1]error_cnt1"	 [complexity=31,
+		importance=0.0207854774601,
+		rank=0.000670499272906];
+	"[1]error_cnt1" -> "[1]bit_err_exc3";
+	"[1]error_cnt1" -> "[1]bit_err_exc4";
+	"[1]bit_stuff_cnt_en"	 [complexity=15,
+		importance=0.0113974128268,
+		rank=0.000759827521784];
+	"[1]bit_stuff_cnt_en" -> "[1]stuff_err";
+	"[1]rx_rtr1"	 [complexity=34,
+		importance=0.0245135002002,
+		rank=0.000720985300007];
+	"[1]rx_rtr1" -> "[1]arbitration_field";
+	"[1]transmitter"	 [complexity=28,
+		importance=0.0210857433531,
+		rank=0.00075306226261];
+	"[1]transmitter" -> "[1]bit_err_exc6";
+	"[1]transmitter" -> "[1]go_overload_frame";
+	"[1]transmitter" -> "[1]form_err";
+	"[1]bit_err_exc2" -> "[1]bit_err";
+	"[1]sampled_bit"	 [complexity=24,
+		importance=0.0179565815794,
+		rank=0.000748190899143];
+	"[1]sampled_bit" -> "[1]go_overload_frame";
+	"[1]sampled_bit" -> "[1]bit_err";
+	"[1]sampled_bit" -> "[1]ack_err";
+	"[1]sampled_bit" -> "[1]form_err";
+	"[1]sampled_bit" -> "[1]stuff_err";
+	"[1]error_frame_ended" -> "[1]go_overload_frame";
+	"[1]sample_point"	 [complexity=24,
+		importance=0.0179565815794,
+		rank=0.000748190899143];
+	"[1]sample_point" -> "[1]go_overload_frame";
+	"[1]sample_point" -> "[1]bit_err";
+	"[1]sample_point" -> "[1]ack_err";
+	"[1]sample_point" -> "[1]form_err";
+	"[1]sample_point" -> "[1]stuff_err";
+	"[1]sample_point" -> "[1]go_rx_eof";
+	"[1]crc_err"	 [complexity=9,
+		importance=0.00976270836416,
+		rank=0.0010847453738];
+	"[1]crc_err" -> "[1]go_error_frame";
+	"[1]rx_rtr2"	 [complexity=34,
+		importance=0.0244806439877,
+		rank=0.000720018940816];
+	"[1]rx_rtr2" -> "[1]arbitration_field";
+	"[1]form_err" -> "[1]go_error_frame";
+	"[1]stuff_err" -> "[1]go_error_frame";
+	"[1]go_error_frame" -> overload_frame;
+	"[1]overload_frame_blocked"	 [complexity=19,
+		importance=0.0092221652943,
+		rank=0.000485377120753];
+	"[1]overload_frame_blocked" -> "[1]go_overload_frame";
+	"[1]bit_stuff_cnt"	 [complexity=17,
+		importance=0.015812553259,
+		rank=0.000930150191705];
+	"[1]bit_stuff_cnt" -> "[1]bit_de_stuff";
+	"[1]eof_cnt"	 [complexity=28,
+		importance=0.0207052015888,
+		rank=0.000739471485313];
+	"[1]eof_cnt" -> "[1]bit_err_exc6";
+	"[1]eof_cnt" -> "[1]go_overload_frame";
+	"[1]eof_cnt" -> "[1]form_err";
+	"[1]error_cnt2"	 [complexity=29,
+		importance=0.0209433767168,
+		rank=0.000722185404029];
+	"[1]error_cnt2" -> "[1]bit_err_exc5";
+	"[1]error_cnt2" -> "[1]go_overload_frame";
+	"[1]error_cnt2" -> "[1]error_frame_ended";
+	"[1]enable_overload_cnt2"	 [complexity=31,
+		importance=0.0217233148781,
+		rank=0.000700752092841];
+	"[1]enable_overload_cnt2" -> "[1]bit_err_exc4";
+	"[1]error_frame"	 [complexity=29,
+		importance=0.0206160775172,
+		rank=0.000710899224731];
+	"[1]error_frame" -> "[1]bit_err_exc5";
+	"[1]error_frame" -> "[1]bit_err_exc3";
+	"[1]error_frame" -> "[1]bit_err";
+	"[1]error_frame" -> "[1]bit_err_exc4";
+	"[1]go_rx_eof" -> "[1]go_error_frame";
+	"[1]arbitration_field" -> "[1]bit_err_exc1";
+}

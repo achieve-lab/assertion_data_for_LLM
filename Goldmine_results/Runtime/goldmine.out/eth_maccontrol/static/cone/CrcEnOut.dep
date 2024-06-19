@@ -1,0 +1,9 @@
+[1]transmitcontrol1.TxDoneIn	transmitcontrol1.SendingCtrlFrm
+transmitcontrol1.SendingCtrlFrm	SendingCtrlFrm
+[1]TxDoneIn	[1]transmitcontrol1.TxDoneIn
+[1]TxReset	[1]transmitcontrol1.TxReset
+[1]transmitcontrol1.TxReset	transmitcontrol1.SendingCtrlFrm
+CrcEnIn	CrcEnOut
+[1]transmitcontrol1.WillSendControlFrame	transmitcontrol1.SendingCtrlFrm
+[1]transmitcontrol1.TxCtrlStartFrm	transmitcontrol1.SendingCtrlFrm
+SendingCtrlFrm	CrcEnOut

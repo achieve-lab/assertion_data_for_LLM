@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"275:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f14ceedfe90>",
+		def_var="['feqg']",
+		fillcolor=deepskyblue,
+		label="275:AS
+feqg = f & g | !f & !g;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['f', 'g', 'f', 'g']"];
+}

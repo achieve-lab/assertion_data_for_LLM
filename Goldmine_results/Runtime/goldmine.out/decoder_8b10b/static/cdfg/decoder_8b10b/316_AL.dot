@@ -1,0 +1,59 @@
+strict digraph "" {
+	node [label="\N"];
+	"316:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f14ceedee90>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="316:AL",
+		sens="['RBYTECLK', 'reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['reset', 'derr8', 'derr6', 'derr7', 'derr4', 'derr5', 'derr2', 'derr3', 'derr1', 'fghj22', 'fghjP31', 'DISPARITY6b']"];
+	"317:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f14ceeea050>",
+		fillcolor=springgreen,
+		label="317:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"316:AL" -> "317:IF"	 [cond="[]",
+		lineno=None];
+	"Leaf_316:AL"	 [def_var="['derr56', 'disparity', 'derr34', 'derr12', 'derr78']",
+		label="Leaf_316:AL"];
+	"318:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f14ceeeaad0>",
+		fillcolor=turquoise,
+		label="318:BL
+disparity <= 1'b0;
+derr12 <= 1;
+derr34 <= 1;
+derr56 <= 1;
+derr78 <= 1;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f14ceeeab10>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f14ceeeac50>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f14ceeead90>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f14ceeeaed0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f14ceded050>]",
+		style=filled,
+		typ=Block];
+	"317:IF" -> "318:BL"	 [cond="['reset']",
+		label=reset,
+		lineno=317];
+	"326:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f14ceeea0d0>",
+		fillcolor=turquoise,
+		label="326:BL
+disparity <= fghjP31 | DISPARITY6b & fghj22;
+derr12 <= derr1 | derr2;
+derr34 <= derr3 | derr4;
+derr56 <= derr5 | derr6;
+derr78 <= \
+derr7 | derr8;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f14ceeea110>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f14ceeea390>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f14ceeea550>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f14ceeea710>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f14ceeea8d0>]",
+		style=filled,
+		typ=Block];
+	"317:IF" -> "326:BL"	 [cond="['reset']",
+		label="!(reset)",
+		lineno=317];
+	"318:BL" -> "Leaf_316:AL"	 [cond="[]",
+		lineno=None];
+	"326:BL" -> "Leaf_316:AL"	 [cond="[]",
+		lineno=None];
+}

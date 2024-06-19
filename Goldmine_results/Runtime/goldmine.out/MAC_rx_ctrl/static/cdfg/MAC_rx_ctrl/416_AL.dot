@@ -1,0 +1,46 @@
+strict digraph "" {
+	node [label="\N"];
+	"416:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fbb4740eb50>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="416:AL",
+		sens="['Frame_length_counter', 'Fifo_data_en']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['Fifo_data_en', 'Frame_length_counter']"];
+	"417:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fbb4740ed50>",
+		fillcolor=springgreen,
+		label="417:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"416:AL" -> "417:IF"	 [cond="[]",
+		lineno=None];
+	"Leaf_416:AL"	 [def_var="['MAC_add_en']",
+		label="Leaf_416:AL"];
+	"420:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fbb4740e9d0>",
+		fillcolor=firebrick,
+		label="420:NS
+MAC_add_en <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fbb4740e9d0>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"420:NS" -> "Leaf_416:AL"	 [cond="[]",
+		lineno=None];
+	"418:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fbb4740e7d0>",
+		fillcolor=firebrick,
+		label="418:NS
+MAC_add_en <= Fifo_data_en;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fbb4740e7d0>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"418:NS" -> "Leaf_416:AL"	 [cond="[]",
+		lineno=None];
+	"417:IF" -> "420:NS"	 [cond="['Frame_length_counter', 'Frame_length_counter']",
+		label="!(((Frame_length_counter >= 1) && (Frame_length_counter <= 6)))",
+		lineno=417];
+	"417:IF" -> "418:NS"	 [cond="['Frame_length_counter', 'Frame_length_counter']",
+		label="((Frame_length_counter >= 1) && (Frame_length_counter <= 6))",
+		lineno=417];
+}

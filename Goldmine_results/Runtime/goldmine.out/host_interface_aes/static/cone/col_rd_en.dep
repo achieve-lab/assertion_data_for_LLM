@@ -1,0 +1,9 @@
+enable	state
+PSEL	read_en
+state	col_rd_en
+PWRITE	read_en
+PADDR	col_rd_en
+read_en	col_rd_en
+PRESETn	state
+OUTPUT	col_rd_en
+AES_DOUTR	col_rd_en

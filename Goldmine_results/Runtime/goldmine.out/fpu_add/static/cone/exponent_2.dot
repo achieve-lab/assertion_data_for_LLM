@@ -1,0 +1,21 @@
+strict digraph "" {
+	exponent_2	 [complexity=0,
+		importance=0.0511247543282,
+		rank=0.0];
+	"[1]enable"	 [complexity=1,
+		importance=0.0673484103368,
+		rank=0.0673484103368];
+	"[1]enable" -> exponent_2;
+	"[1]denorm_to_norm"	 [complexity=4,
+		importance=0.0900363743601,
+		rank=0.02250909359];
+	"[1]denorm_to_norm" -> exponent_2;
+	"[1]rst"	 [complexity=1,
+		importance=0.118473164665,
+		rank=0.118473164665];
+	"[1]rst" -> exponent_2;
+	"[1]exponent"	 [complexity=4,
+		importance=0.0806035117521,
+		rank=0.020150877938];
+	"[1]exponent" -> exponent_2;
+}

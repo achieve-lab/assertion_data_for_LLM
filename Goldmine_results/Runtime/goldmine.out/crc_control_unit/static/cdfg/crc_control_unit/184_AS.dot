@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"184:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fcd18377a10>",
+		def_var="['buffer_full']",
+		fillcolor=deepskyblue,
+		label="184:AS
+buffer_full = (state_full == WRITE_2) && !last_byte || (state_full == BYPASS) && !last_byte;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['state_full', 'WRITE_2', 'last_byte', 'state_full', 'BYPASS', 'last_byte']"];
+}

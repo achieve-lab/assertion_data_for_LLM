@@ -1,0 +1,76 @@
+strict digraph "" {
+	cnt	 [complexity=7,
+		importance=0.0372183855976,
+		rank=0.00531691222823];
+	dma_req_rd	 [complexity=0,
+		importance=0.0191631643476,
+		rank=0.0];
+	cnt -> dma_req_rd;
+	enable	 [complexity=11,
+		importance=0.226380847614,
+		rank=0.0205800770559];
+	enable -> cnt;
+	enable -> dma_req_rd;
+	state	 [complexity=10,
+		importance=0.107772706946,
+		rank=0.0107772706946];
+	enable -> state;
+	CTR	 [complexity=13,
+		importance=0.168868501995,
+		rank=0.0129898847688];
+	aes_cr	 [complexity=9,
+		importance=0.0804169640192,
+		rank=0.00893521822436];
+	CTR -> aes_cr;
+	aes_cr -> enable;
+	dma_out_en	 [complexity=7,
+		importance=0.0299985980694,
+		rank=0.00428551400991];
+	aes_cr -> dma_out_en;
+	aes_cr_wr_en	 [complexity=12,
+		importance=0.737115645236,
+		rank=0.0614263037697];
+	aes_cr_wr_en -> aes_cr;
+	dma_out_en -> dma_req_rd;
+	START	 [complexity=10,
+		importance=0.0824713451517,
+		rank=0.00824713451517];
+	START -> cnt;
+	state -> cnt;
+	state -> dma_req_rd;
+	enable_clear	 [complexity=10,
+		importance=0.173394955675,
+		rank=0.0173394955675];
+	enable_clear -> aes_cr;
+	PRESETn	 [complexity=8,
+		importance=0.0655634391375,
+		rank=0.00819542989219];
+	PRESETn -> cnt;
+	PRESETn -> aes_cr;
+	PRESETn -> state;
+	dma_req	 [complexity=7,
+		importance=0.0287644325906,
+		rank=0.0041092046558];
+	PRESETn -> dma_req;
+	access_permission	 [complexity=11,
+		importance=0.6532108894,
+		rank=0.0593828081273];
+	access_permission -> aes_cr;
+	DECRYP_W_DERIV	 [complexity=13,
+		importance=0.168868501995,
+		rank=0.0129898847688];
+	DECRYP_W_DERIV -> aes_cr;
+	OUTPUT	 [complexity=7,
+		importance=0.027197738304,
+		rank=0.00388539118628];
+	OUTPUT -> dma_req_rd;
+	cnt_en	 [complexity=8,
+		importance=0.0604525863191,
+		rank=0.00755657328989];
+	cnt_en -> cnt;
+	dma_req -> dma_req_rd;
+	chmod_in	 [complexity=13,
+		importance=0.169270226307,
+		rank=0.013020786639];
+	chmod_in -> aes_cr;
+}

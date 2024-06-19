@@ -1,0 +1,17 @@
+strict digraph "" {
+	crc_idr_en	 [complexity=3,
+		importance=0.0312039071164,
+		rank=0.0104013023721];
+	crc_idr_ff	 [complexity=2,
+		importance=0.0252703483669,
+		rank=0.0126351741834];
+	crc_idr_en -> crc_idr_ff;
+	crc_idr_out	 [complexity=0,
+		importance=0.0123790706825,
+		rank=0.0];
+	crc_idr_ff -> crc_idr_out;
+	rst_n	 [complexity=3,
+		importance=0.0564742554832,
+		rank=0.0188247518277];
+	rst_n -> crc_idr_ff;
+}

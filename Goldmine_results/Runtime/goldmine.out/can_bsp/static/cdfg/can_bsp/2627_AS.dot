@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"2627:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f44f6bbdcd0>",
+		def_var="['bit_de_stuff_reset']",
+		fillcolor=deepskyblue,
+		label="2627:AS
+bit_de_stuff_reset = go_rx_ack | go_error_frame | go_overload_frame;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['go_rx_ack', 'go_error_frame', 'go_overload_frame']"];
+}

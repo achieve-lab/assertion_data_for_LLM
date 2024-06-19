@@ -1,0 +1,37 @@
+Assertion report generated on: 11-Apr-2024 08:27:42 PM
+
+Assertion summary report for design: can_registers
+##################################################
+
+             Target               | Total | Passed | Failed | Vacuous | Hit | Miss
+--------------------------------- | ----- | ------ | ------ | ------- | --- | ----
+            abort_tx              |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+     acceptance_filter_mode       |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+       clear_data_overrun         |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+             clkout               |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+          extended_mode           |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+              irq_n               |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+        listen_only_mode          |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+read_arbitration_lost_capture_reg |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+   read_error_code_capture_reg    |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+         release_buffer           |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+           reset_mode             |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+         self_rx_request          |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+         self_test_mode           |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+    single_shot_transmission      |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+         triple_sampling          |   2   |   0    |   0    |    2    | 0.0 | 1.0 
+           tx_request             |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+          we_rx_err_cnt           |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+          we_tx_err_cnt           |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+
+
+Resource usage summary report for the desing: can_registers
+###########################################################
+
+      Phase       | Time (in [H]H:MM:SS:UUUUUU) | Memory (in MB)
+----------------- | --------------------------- | --------------
+V Parse & Ranking |       0:00:03.901702        |     909.53    
+   Simulation     |       0:00:02.032002        |     974.53    
+     D Parse      |       0:00:30.433801        |    1007.28    
+     Mining       |       0:01:09.235063        |    1070.26    
+     Overall      |       0:03:03.522369        |    1070.26    

@@ -1,0 +1,53 @@
+strict digraph "" {
+	"[1]pause_quanta_set_dl1"	 [complexity=8,
+		importance=0.135117640165,
+		rank=0.0168897050206];
+	"[1]TxD_tmp"	 [complexity=2,
+		importance=0.0611742258903,
+		rank=0.0305871129451];
+	"[1]pause_quanta_set_dl1" -> "[1]TxD_tmp";
+	"[1]MAC_tx_add_en"	 [complexity=6,
+		importance=0.987218870174,
+		rank=0.164536478362];
+	"[1]MAC_tx_add_en" -> "[1]TxD_tmp";
+	"[1]CRC_out"	 [complexity=4,
+		importance=0.0696054818199,
+		rank=0.017401370455];
+	"[1]CRC_out" -> "[1]TxD_tmp";
+	TxD	 [complexity=0,
+		importance=0.0190775125516,
+		rank=0.0];
+	"[1]Src_MAC_ptr"	 [complexity=6,
+		importance=0.989498340804,
+		rank=0.164916390134];
+	"[1]Src_MAC_ptr" -> "[1]TxD_tmp";
+	"[1]Current_state"	 [complexity=3,
+		importance=1.36212066586,
+		rank=0.454040221954];
+	"[1]Current_state" -> "[1]TxD_tmp";
+	"[1]TxD_tmp" -> TxD;
+	"[1]Fifo_data"	 [complexity=4,
+		importance=0.0696054818199,
+		rank=0.017401370455];
+	"[1]Fifo_data" -> "[1]TxD_tmp";
+	"[1]Reset"	 [complexity=1,
+		importance=0.0465862810328,
+		rank=0.0465862810328];
+	"[1]Reset" -> TxD;
+	"[1]MAC_tx_addr_data"	 [complexity=6,
+		importance=0.13077970771,
+		rank=0.0217966179517];
+	"[1]MAC_tx_addr_data" -> "[1]TxD_tmp";
+	"[1]IPLengthCounter"	 [complexity=3,
+		importance=0.807455766587,
+		rank=0.269151922196];
+	"[1]IPLengthCounter" -> "[1]TxD_tmp";
+	"[1]xon_gen"	 [complexity=8,
+		importance=0.13077970771,
+		rank=0.0163474634638];
+	"[1]xon_gen" -> "[1]TxD_tmp";
+	"[1]Tx_pkt_length_rmon"	 [complexity=8,
+		importance=3.97053033321,
+		rank=0.496316291651];
+	"[1]Tx_pkt_length_rmon" -> "[1]Src_MAC_ptr";
+}

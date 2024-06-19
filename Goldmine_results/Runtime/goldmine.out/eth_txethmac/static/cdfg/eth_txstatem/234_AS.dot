@@ -1,0 +1,15 @@
+strict digraph "" {
+	node [label="\N"];
+	"234:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff80673ee50>",
+		def_var="['StartDefer']",
+		fillcolor=deepskyblue,
+		label="234:AS
+StartDefer = StateIPG & ~Rule1 & CarrierSense & (NibCnt[6:0] <= IPGR1) & (NibCnt[6:0] != IPGR2) | StateIdle & CarrierSense | \
+StateJam & NibCntEq7 & (NoBckof | RandomEq0 | ~ColWindow | RetryMax) | StateBackOff & (TxUnderRun | RandomEqByteCnt) | StartTxDone | \
+TooBig;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['StateIPG', 'Rule1', 'CarrierSense', 'NibCnt', 'IPGR1', 'NibCnt', 'IPGR2', 'StateIdle', 'CarrierSense', 'StateJam', 'NibCntEq7', '\
+NoBckof', 'RandomEq0', 'ColWindow', 'RetryMax', 'StateBackOff', 'TxUnderRun', 'RandomEqByteCnt', 'StartTxDone', 'TooBig']"];
+}

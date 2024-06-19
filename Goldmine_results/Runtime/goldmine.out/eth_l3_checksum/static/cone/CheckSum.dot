@@ -1,0 +1,29 @@
+strict digraph "" {
+	Reset	 [complexity=1,
+		importance=0.239583350154,
+		rank=0.239583350154];
+	CheckSum	 [complexity=0,
+		importance=0.0957889797742,
+		rank=0.0];
+	Reset -> CheckSum;
+	"[1]Sum"	 [complexity=3,
+		importance=0.253585191034,
+		rank=0.0845283970112];
+	"[1]Sum" -> CheckSum;
+	"[1]StartCalc"	 [complexity=4,
+		importance=0.377599475306,
+		rank=0.0943998688265];
+	"[1]StartCalc" -> "[1]Sum";
+	"[1]ByteCnt"	 [complexity=5,
+		importance=0.555175772673,
+		rank=0.111035154535];
+	"[1]ByteCnt" -> "[1]Sum";
+	"[1]Reset"	 [complexity=4,
+		importance=0.30159058164,
+		rank=0.0753976454099];
+	"[1]Reset" -> "[1]Sum";
+	ByteCnt	 [complexity=3,
+		importance=0.335372329929,
+		rank=0.111790776643];
+	ByteCnt -> CheckSum;
+}

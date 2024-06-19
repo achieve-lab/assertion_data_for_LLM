@@ -1,0 +1,82 @@
+strict digraph "" {
+	"[1]Fifo_full"	 [complexity=5,
+		importance=0.483273393956,
+		rank=0.0966546787913];
+	"[1]Next_state"	 [complexity=4,
+		importance=0.156953726287,
+		rank=0.0392384315717];
+	"[1]Fifo_full" -> "[1]Next_state";
+	"[1]CRC_err"	 [complexity=5,
+		importance=0.32631966767,
+		rank=0.0652639335339];
+	"[1]CRC_err" -> "[1]Next_state";
+	"[1]Current_state"	 [complexity=15,
+		importance=5.20860910064,
+		rank=0.347240606709];
+	"[1]Current_state" -> "[1]Next_state";
+	"[1]broadcast_drop"	 [complexity=8,
+		importance=0.32631966767,
+		rank=0.0407899584587];
+	"[1]broadcast_drop" -> "[1]Next_state";
+	"[1]RxD"	 [complexity=8,
+		importance=1.11340526256,
+		rank=0.13917565782];
+	"[1]RxD" -> "[1]Next_state";
+	"[1]IFG_counter"	 [complexity=6,
+		importance=0.332088238238,
+		rank=0.0553480397063];
+	"[1]IFG_counter" -> "[1]Next_state";
+	Current_state	 [complexity=2,
+		importance=0.0581015699305,
+		rank=0.0290507849653];
+	"[1]Next_state" -> Current_state;
+	"[1]RX_IFG_SET"	 [complexity=6,
+		importance=0.32631966767,
+		rank=0.0543866112783];
+	"[1]RX_IFG_SET" -> "[1]Next_state";
+	"[1]Crs_dv"	 [complexity=16,
+		importance=3.6288023179,
+		rank=0.226800144868];
+	"[1]Crs_dv" -> "[1]Next_state";
+	CRC_en	 [complexity=0,
+		importance=0.0144827183754,
+		rank=0.0];
+	Current_state -> CRC_en;
+	"[1]Too_short"	 [complexity=10,
+		importance=1.43171563632,
+		rank=0.143171563632];
+	"[1]Too_short" -> "[1]Next_state";
+	"[1]RX_MAX_LENGTH"	 [complexity=16,
+		importance=3.50365839287,
+		rank=0.218978649555];
+	"[1]Too_long"	 [complexity=14,
+		importance=1.74562308889,
+		rank=0.124687363492];
+	"[1]RX_MAX_LENGTH" -> "[1]Too_long";
+	State_data	 [complexity=2,
+		importance=0.041377651847,
+		rank=0.0206888259235];
+	State_data -> CRC_en;
+	"[1]RX_MIN_LENGTH"	 [complexity=12,
+		importance=2.87584348773,
+		rank=0.239653623977];
+	"[1]RX_MIN_LENGTH" -> "[1]Too_short";
+	"[1]Too_long" -> "[1]Next_state";
+	"[1]Frame_length_counter"	 [complexity=16,
+		importance=3.50717173489,
+		rank=0.219198233431];
+	"[1]Frame_length_counter" -> "[1]Too_short";
+	"[1]Frame_length_counter" -> "[1]Too_long";
+	"[1]Reset"	 [complexity=3,
+		importance=0.128615354957,
+		rank=0.0428717849858];
+	"[1]Reset" -> Current_state;
+	"[1]MAC_rx_add_chk_err"	 [complexity=8,
+		importance=0.32631966767,
+		rank=0.0407899584587];
+	"[1]MAC_rx_add_chk_err" -> "[1]Next_state";
+	"[1]RxErr"	 [complexity=10,
+		importance=1.27449642359,
+		rank=0.127449642359];
+	"[1]RxErr" -> "[1]Next_state";
+}

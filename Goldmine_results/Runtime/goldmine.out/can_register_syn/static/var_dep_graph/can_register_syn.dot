@@ -1,0 +1,5 @@
+strict digraph "" {
+	we -> data_out	 [weight=1.0];
+	rst_sync -> data_out	 [weight=2.0];
+	data_in -> data_out	 [weight=1.0];
+}

@@ -1,0 +1,95 @@
+strict digraph "" {
+	"[1]TooBig"	 [complexity=22,
+		importance=0.14613368929,
+		rank=0.00664244042229];
+	"[1]StartDefer"	 [complexity=1,
+		importance=0.135255780099,
+		rank=0.135255780099];
+	"[1]TooBig" -> "[1]StartDefer";
+	"[1]StateBackOff"	 [complexity=22,
+		importance=0.159316977855,
+		rank=0.00724168081159];
+	"[1]StateBackOff" -> "[1]StartDefer";
+	"[1]NoBckof"	 [complexity=22,
+		importance=0.14613368929,
+		rank=0.00664244042229];
+	"[1]StartBackoff"	 [complexity=1,
+		importance=0.0540291787669,
+		rank=0.0540291787669];
+	"[1]NoBckof" -> "[1]StartBackoff";
+	"[1]NoBckof" -> "[1]StartDefer";
+	"[1]CarrierSense"	 [complexity=22,
+		importance=0.14613368929,
+		rank=0.00664244042229];
+	"[1]CarrierSense" -> "[1]StartDefer";
+	"[1]StateIPG"	 [complexity=22,
+		importance=0.172821494246,
+		rank=0.00785552246572];
+	"[1]StateIPG" -> "[1]StartDefer";
+	StateBackOff	 [complexity=0,
+		importance=0.0240611977555,
+		rank=0.0];
+	"[1]NibCntEq7"	 [complexity=22,
+		importance=0.14613368929,
+		rank=0.00664244042229];
+	"[1]NibCntEq7" -> "[1]StartBackoff";
+	"[1]NibCntEq7" -> "[1]StartDefer";
+	"[1]StartTxDone"	 [complexity=22,
+		importance=0.14613368929,
+		rank=0.00664244042229];
+	"[1]StartTxDone" -> "[1]StartDefer";
+	"[1]RandomEqByteCnt"	 [complexity=22,
+		importance=0.14613368929,
+		rank=0.00664244042229];
+	"[1]RandomEqByteCnt" -> "[1]StartDefer";
+	"[1]TxUnderRun"	 [complexity=22,
+		importance=0.14613368929,
+		rank=0.00664244042229];
+	"[1]TxUnderRun" -> "[1]StartDefer";
+	"[1]IPGR2"	 [complexity=22,
+		importance=0.14613368929,
+		rank=0.00664244042229];
+	"[1]IPGR2" -> "[1]StartDefer";
+	"[1]IPGR1"	 [complexity=22,
+		importance=0.14613368929,
+		rank=0.00664244042229];
+	"[1]IPGR1" -> "[1]StartDefer";
+	"[1]NibCnt"	 [complexity=22,
+		importance=0.14613368929,
+		rank=0.00664244042229];
+	"[1]NibCnt" -> "[1]StartDefer";
+	"[1]Reset"	 [complexity=1,
+		importance=0.0830615024576,
+		rank=0.0830615024576];
+	"[1]Reset" -> StateBackOff;
+	"[1]StartBackoff" -> StateBackOff;
+	"[1]StateJam"	 [complexity=22,
+		importance=0.168210490965,
+		rank=0.00764593140748];
+	"[1]StateJam" -> "[1]StartBackoff";
+	"[1]StateJam" -> "[1]StartDefer";
+	"[1]StartDefer" -> StateBackOff;
+	"[1]StateIdle"	 [complexity=22,
+		importance=0.168033849228,
+		rank=0.00763790223761];
+	"[1]StateIdle" -> "[1]StartDefer";
+	"[1]RandomEq0"	 [complexity=22,
+		importance=0.14613368929,
+		rank=0.00664244042229];
+	"[1]RandomEq0" -> "[1]StartBackoff";
+	"[1]RandomEq0" -> "[1]StartDefer";
+	"[1]Rule1"	 [complexity=22,
+		importance=0.172104793241,
+		rank=0.00782294514734];
+	"[1]Rule1" -> "[1]StartDefer";
+	"[1]ColWindow"	 [complexity=22,
+		importance=0.14613368929,
+		rank=0.00664244042229];
+	"[1]ColWindow" -> "[1]StartBackoff";
+	"[1]ColWindow" -> "[1]StartDefer";
+	"[1]RetryMax"	 [complexity=22,
+		importance=0.14613368929,
+		rank=0.00664244042229];
+	"[1]RetryMax" -> "[1]StartBackoff";
+	"[1]RetryMax" -> "[1]StartDefer";
+}

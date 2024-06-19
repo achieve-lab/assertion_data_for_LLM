@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"605:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f01261e3c10>",
+		def_var="['feedback']",
+		fillcolor=deepskyblue,
+		label="605:AS
+feedback = crc_poly & { CRC_SIZE{ crc_in[CRC_SIZE - 1] ^ data_in } };",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly', 'crc_in', 'data_in']"];
+}

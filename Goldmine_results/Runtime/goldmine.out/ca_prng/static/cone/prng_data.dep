@@ -1,0 +1,11 @@
+ca_state_reg	prng_data
+[1]init_pattern_data	[1]ca_state_new
+[1]ca_state_we	ca_state_reg
+[1]load_init_pattern	[1]ca_state_we
+[1]load_init_pattern	[1]ca_state_new
+[1]ca_state_reg	[1]tmp_ca_state_new
+[1]tmp_ca_state_new	[1]ca_state_new
+[1]update_rule_reg	[1]tmp_ca_state_new
+[1]reset_n	ca_state_reg
+[1]next_pattern	[1]ca_state_we
+[1]ca_state_new	ca_state_reg

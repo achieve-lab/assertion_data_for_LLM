@@ -1,0 +1,53 @@
+strict digraph "" {
+	ENABLE	 [complexity=10,
+		importance=0.04000252271,
+		rank=0.004000252271];
+	access_permission	 [complexity=8,
+		importance=0.0319679487536,
+		rank=0.00399599359421];
+	ENABLE -> access_permission;
+	PWRITE	 [complexity=7,
+		importance=0.03418324376,
+		rank=0.00488332053715];
+	write_en	 [complexity=3,
+		importance=0.0261486698036,
+		rank=0.00871622326788];
+	PWRITE -> write_en;
+	PRESETn	 [complexity=10,
+		importance=0.203946227471,
+		rank=0.0203946227471];
+	state	 [complexity=9,
+		importance=0.0653038845047,
+		rank=0.00725598716719];
+	PRESETn -> state;
+	iv_en	 [complexity=0,
+		importance=0.013427312202,
+		rank=0.0];
+	write_en -> iv_en;
+	enable	 [complexity=10,
+		importance=0.141443202731,
+		rank=0.0141443202731];
+	enable -> state;
+	state -> access_permission;
+	PENABLE	 [complexity=7,
+		importance=0.03418324376,
+		rank=0.00488332053715];
+	PENABLE -> write_en;
+	DISABLE	 [complexity=10,
+		importance=0.04000252271,
+		rank=0.004000252271];
+	DISABLE -> access_permission;
+	PADDR	 [complexity=8,
+		importance=0.0301273454635,
+		rank=0.00376591818293];
+	iv_sel	 [complexity=3,
+		importance=0.0220927715071,
+		rank=0.00736425716902];
+	PADDR -> iv_sel;
+	iv_sel -> iv_en;
+	access_permission -> iv_sel;
+	PSEL	 [complexity=7,
+		importance=0.03418324376,
+		rank=0.00488332053715];
+	PSEL -> write_en;
+}

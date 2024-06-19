@@ -1,0 +1,75 @@
+property a13;
+@(posedge clk) (PDOS4 == 1 & DISPARITY6 == 0) |=> (disparity == 1);
+endproperty
+assert_a13: assert property(a13);
+
+property a1;
+@(posedge clk) (PDOS4 == 1 & DISPARITY6 == 1) |=> (disparity == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a12;
+@(posedge clk) (NDOS4 == 1 & DISPARITY6 == 0) |=> (disparity == 1);
+endproperty
+assert_a12: assert property(a12);
+
+property a3;
+@(posedge clk) (NDOS4 == 1 & DISPARITY6 == 1) |=> (disparity == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a4;
+@(posedge clk) (DISPARITY6 == 0 & NDOS4 == 0 & PDOS4 == 0) |=> (disparity == 0);
+endproperty
+assert_a4: assert property(a4);
+
+property a14;
+@(posedge clk) (DISPARITY6 == 1 & H == 0 & NDOS4 == 0) |=> (disparity == 1);
+endproperty
+assert_a14: assert property(a14);
+
+property a11;
+@(posedge clk) (DISPARITY6 == 1 & NDOS4 == 0 & ebi[6] == 0) |=> (disparity == 1);
+endproperty
+assert_a11: assert property(a11);
+
+property a0;
+@(posedge clk) (DISPARITY6 == 0 & NDOS4 == 0 & ebi[5] == 0) |=> (disparity == 0);
+endproperty
+assert_a0: assert property(a0);
+
+property a2;
+@(posedge clk) (DISPARITY6 == 0 & NDOS4 == 0 & ebi[6] == 0) |=> (disparity == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a5;
+@(posedge clk) (DISPARITY6 == 1 & NDOS4 == 0 & ebi[5] == 0) |=> (disparity == 1);
+endproperty
+assert_a5: assert property(a5);
+
+property a8;
+@(posedge clk) (ebi[6] == 0 & E == 0 & ebi[4] == 1 & disparity == 1) |=> (disparity == 1);
+endproperty
+assert_a8: assert property(a8);
+
+property a10;
+@(posedge clk) (ebi[6] == 0 & ebi[4] == 0 & L13 == 1 & ebi[5] == 0 & disparity == 1) |=> (disparity == 1);
+endproperty
+assert_a10: assert property(a10);
+
+property a7;
+@(posedge clk) (ebi[6] == 0 & E == 0 & ebi[4] == 1 & AeqB == 0) |=> (disparity == 1);
+endproperty
+assert_a7: assert property(a7);
+
+property a6;
+@(posedge clk) (ebi[6] == 0 & E == 0 & ebi[4] == 1 & CeqD == 1) |=> (disparity == 1);
+endproperty
+assert_a6: assert property(a6);
+
+property a9;
+@(posedge clk) (ebi[6] == 0 & ebi[4] == 0 & CeqD == 0 & ebi[2] == 1 & AeqB == 0 & ebi[0] == 1) |=> (disparity == 1);
+endproperty
+assert_a9: assert property(a9);
+

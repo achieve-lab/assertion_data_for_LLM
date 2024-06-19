@@ -1,0 +1,14 @@
+strict digraph "" {
+	node [label="\N"];
+	"195:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7ff8277fd850>",
+		def_var="['ResetNibCnt']",
+		fillcolor=deepskyblue,
+		label="195:AS
+ResetNibCnt = StateDefer & ExcessiveDefer & ~TxStartFrm | StatePreamble & NibCntEq15 | StateJam & NibCntEq7 | StateIdle | \
+StartDefer | StartIPG | StartFCS | StartJam;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['StateDefer', 'ExcessiveDefer', 'TxStartFrm', 'StatePreamble', 'NibCntEq15', 'StateJam', 'NibCntEq7', 'StateIdle', 'StartDefer', '\
+StartIPG', 'StartFCS', 'StartJam']"];
+}

@@ -1,0 +1,15 @@
+digraph "" {
+	Reset -> time_counter	 [weight=3.0];
+	Reset -> broadcast_counter	 [weight=3.0];
+	Reset -> broadcast_drop	 [weight=3.0];
+	broadcast_bucket_depth -> broadcast_counter	 [weight=1.0];
+	broadcast_bucket_depth -> broadcast_drop	 [weight=2.0];
+	time_counter -> time_counter	 [weight=3.0];
+	time_counter -> broadcast_counter	 [weight=2.0];
+	broadcast_ptr -> broadcast_counter	 [weight=1.0];
+	broadcast_counter -> broadcast_counter	 [weight=2.0];
+	broadcast_counter -> broadcast_drop	 [weight=2.0];
+	broadcast_bucket_interval -> time_counter	 [weight=2.0];
+	broadcast_bucket_interval -> broadcast_counter	 [weight=2.0];
+	broadcast_filter_en -> broadcast_drop	 [weight=2.0];
+}

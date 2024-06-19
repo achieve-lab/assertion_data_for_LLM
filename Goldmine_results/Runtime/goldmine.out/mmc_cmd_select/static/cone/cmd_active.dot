@@ -1,0 +1,17 @@
+strict digraph "" {
+	cmd	 [complexity=6,
+		importance=0.263484030806,
+		rank=0.0439140051343];
+	cmd_bits	 [complexity=2,
+		importance=0.194048283522,
+		rank=0.0970241417609];
+	cmd -> cmd_bits;
+	bit	 [complexity=6,
+		importance=0.263484030806,
+		rank=0.0439140051343];
+	bit -> cmd_bits;
+	cmd_active	 [complexity=0,
+		importance=0.110973276359,
+		rank=0.0];
+	cmd_bits -> cmd_active;
+}

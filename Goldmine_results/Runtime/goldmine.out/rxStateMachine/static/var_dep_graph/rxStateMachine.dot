@@ -1,0 +1,35 @@
+digraph "" {
+	reset -> rxstate	 [weight=2.0];
+	reset -> wait_crc_check	 [weight=4.0];
+	reset -> bad_frame_get	 [weight=4.0];
+	reset -> rxstate_next	 [weight=12.0];
+	reset -> receiving_d1	 [weight=2.0];
+	reset -> good_frame_get	 [weight=4.0];
+	recv_enable -> rxstate_next	 [weight=6.0];
+	rxstate -> wait_crc_check	 [weight=3.0];
+	rxstate -> start_da	 [weight=1.0];
+	rxstate -> bad_frame_get	 [weight=3.0];
+	rxstate -> start_lt	 [weight=1.0];
+	rxstate -> rxstate_next	 [weight=11.0];
+	rxstate -> receiving	 [weight=1.0];
+	rxstate -> good_frame_get	 [weight=3.0];
+	length_error -> wait_crc_check	 [weight=2.0];
+	length_error -> bad_frame_get	 [weight=3.0];
+	length_error -> rxstate_next	 [weight=3.0];
+	length_error -> good_frame_get	 [weight=3.0];
+	crc_check_invalid -> wait_crc_check	 [weight=2.0];
+	crc_check_invalid -> bad_frame_get	 [weight=3.0];
+	crc_check_invalid -> good_frame_get	 [weight=3.0];
+	get_error_code -> rxstate_next	 [weight=3.0];
+	wait_crc_check -> wait_crc_check	 [weight=1.0];
+	get_sfd -> rxstate_next	 [weight=6.0];
+	get_terminator -> rxstate_next	 [weight=2.0];
+	crc_check_valid -> wait_crc_check	 [weight=2.0];
+	crc_check_valid -> bad_frame_get	 [weight=2.0];
+	crc_check_valid -> good_frame_get	 [weight=2.0];
+	rxstate_next -> rxstate	 [weight=1.0];
+	local_invalid -> rxstate_next	 [weight=3.0];
+	receiving -> receiving_d1	 [weight=1.0];
+	check_reset -> bad_frame_get	 [weight=1.0];
+	check_reset -> good_frame_get	 [weight=1.0];
+}

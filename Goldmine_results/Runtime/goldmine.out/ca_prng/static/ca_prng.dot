@@ -1,0 +1,16 @@
+strict digraph "" {
+	ca_state_reg -> tmp_ca_state_new	 [weight=768.0];
+	ca_state_reg -> prng_data	 [weight=1.0];
+	update_rule_reg -> tmp_ca_state_new	 [weight=256.0];
+	ca_state_new -> ca_state_reg	 [weight=1.0];
+	tmp_ca_state_new -> ca_state_new	 [weight=1.0];
+	update_rule -> update_rule_reg	 [weight=1.0];
+	init_pattern_data -> ca_state_new	 [weight=1.0];
+	load_init_pattern -> ca_state_new	 [weight=2.0];
+	load_init_pattern -> ca_state_we	 [weight=2.0];
+	reset_n -> ca_state_reg	 [weight=2.0];
+	reset_n -> update_rule_reg	 [weight=2.0];
+	ca_state_we -> ca_state_reg	 [weight=1.0];
+	next_pattern -> ca_state_we	 [weight=2.0];
+	load_update_rule -> update_rule_reg	 [weight=1.0];
+}

@@ -1,0 +1,48 @@
+strict digraph "" {
+	node [label="\N"];
+	"304:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fbb4740e310>",
+		fillcolor=springgreen,
+		label="304:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"306:BS"	 [ast="<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fbb47408c90>",
+		fillcolor=cadetblue,
+		label="306:BS
+Fifo_data_end = 1;",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fbb47408c90>]",
+		style=filled,
+		typ=BlockingSubstitution];
+	"304:IF" -> "306:BS"	 [cond="['Current_state', 'State_ErrEnd', 'Current_state', 'State_OkEnd', 'Current_state', 'State_CRCErrEnd', 'Current_state', 'State_FFFullErrEnd']",
+		label="((Current_state == State_ErrEnd) || (Current_state == State_OkEnd) || (Current_state == State_CRCErrEnd) || (Current_state == State_\
+FFFullErrEnd))",
+		lineno=304];
+	"308:BS"	 [ast="<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fbb47408e10>",
+		fillcolor=cadetblue,
+		label="308:BS
+Fifo_data_end = 0;",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fbb47408e10>]",
+		style=filled,
+		typ=BlockingSubstitution];
+	"304:IF" -> "308:BS"	 [cond="['Current_state', 'State_ErrEnd', 'Current_state', 'State_OkEnd', 'Current_state', 'State_CRCErrEnd', 'Current_state', 'State_FFFullErrEnd']",
+		label="!(((Current_state == State_ErrEnd) || (Current_state == State_OkEnd) || (Current_state == State_CRCErrEnd) || (Current_state == \
+State_FFFullErrEnd)))",
+		lineno=304];
+	"Leaf_303:AL"	 [def_var="['Fifo_data_end']",
+		label="Leaf_303:AL"];
+	"306:BS" -> "Leaf_303:AL"	 [cond="[]",
+		lineno=None];
+	"308:BS" -> "Leaf_303:AL"	 [cond="[]",
+		lineno=None];
+	"303:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fbb4740e950>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="303:AL",
+		sens="['Current_state']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['State_OkEnd', 'State_FFFullErrEnd', 'Current_state', 'State_ErrEnd', 'State_CRCErrEnd']"];
+	"303:AL" -> "304:IF"	 [cond="[]",
+		lineno=None];
+}

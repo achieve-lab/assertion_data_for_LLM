@@ -1,0 +1,55 @@
+strict digraph "" {
+	hwrite_pp	 [complexity=7,
+		importance=0.0708555020299,
+		rank=0.0101222145757];
+	write_en	 [complexity=3,
+		importance=0.0485536800961,
+		rank=0.016184560032];
+	hwrite_pp -> write_en;
+	crc_init_en	 [complexity=0,
+		importance=0.0189771481698,
+		rank=0.0];
+	NON_SEQ	 [complexity=10,
+		importance=0.0878171608723,
+		rank=0.00878171608723];
+	ahb_enable	 [complexity=7,
+		importance=0.0765721228299,
+		rank=0.01093887469];
+	NON_SEQ -> ahb_enable;
+	hselx_pp	 [complexity=7,
+		importance=0.0715583190542,
+		rank=0.0102226170077];
+	hselx_pp -> write_en;
+	write_en -> crc_init_en;
+	ahb_enable -> write_en;
+	sample_bus	 [complexity=7,
+		importance=0.107698728648,
+		rank=0.015385532664];
+	sample_bus -> hwrite_pp;
+	sample_bus -> hselx_pp;
+	haddr_pp	 [complexity=6,
+		importance=0.0603767180401,
+		rank=0.01006278634];
+	sample_bus -> haddr_pp;
+	htrans_pp	 [complexity=10,
+		importance=0.0988739447636,
+		rank=0.00988739447636];
+	sample_bus -> htrans_pp;
+	crc_init_sel	 [complexity=3,
+		importance=0.0380748961064,
+		rank=0.0126916320355];
+	haddr_pp -> crc_init_sel;
+	crc_init_sel -> crc_init_en;
+	htrans_pp -> ahb_enable;
+	HRESETn	 [complexity=7,
+		importance=0.0716217560826,
+		rank=0.0102316794404];
+	HRESETn -> hwrite_pp;
+	HRESETn -> hselx_pp;
+	HRESETn -> haddr_pp;
+	HRESETn -> htrans_pp;
+	CRC_INIT	 [complexity=6,
+		importance=0.0493199341488,
+		rank=0.0082199890248];
+	CRC_INIT -> crc_init_sel;
+}

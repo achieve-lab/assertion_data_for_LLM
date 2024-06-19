@@ -1,0 +1,122 @@
+strict digraph "" {
+	"[1]cavlc_read_total_coeffs.TotalCoeff_3"	 [complexity=5,
+		importance=0.0539381776533,
+		rank=0.0107876355307];
+	"[1]cavlc_read_total_coeffs.TotalCoeff_comb"	 [complexity=3,
+		importance=0.0504028285713,
+		rank=0.0168009428571];
+	"[1]cavlc_read_total_coeffs.TotalCoeff_3" -> "[1]cavlc_read_total_coeffs.TotalCoeff_comb";
+	"[1]cavlc_read_total_coeffs.TotalCoeff_4"	 [complexity=5,
+		importance=0.0540706009707,
+		rank=0.0108141201941];
+	"[1]cavlc_read_total_coeffs.TotalCoeff_4" -> "[1]cavlc_read_total_coeffs.TotalCoeff_comb";
+	"[1]cavlc_read_run_befores.ZeroLeft"	 [complexity=2,
+		importance=0.0308715033182,
+		rank=0.0154357516591];
+	"[1]ZeroLeft"	 [complexity=2,
+		importance=0.0202872885422,
+		rank=0.0101436442711];
+	"[1]cavlc_read_run_befores.ZeroLeft" -> "[1]ZeroLeft";
+	"[1]cavlc_read_total_coeffs.TotalCoeff_1"	 [complexity=5,
+		importance=0.0540579972843,
+		rank=0.0108115994569];
+	"[1]cavlc_read_total_coeffs.TotalCoeff_1" -> "[1]cavlc_read_total_coeffs.TotalCoeff_comb";
+	"[1]cavlc_read_total_coeffs.TotalCoeff_2"	 [complexity=5,
+		importance=0.0539825111747,
+		rank=0.0107965022349];
+	"[1]cavlc_read_total_coeffs.TotalCoeff_2" -> "[1]cavlc_read_total_coeffs.TotalCoeff_comb";
+	"[1]start"	 [complexity=1,
+		importance=0.0195359934737,
+		rank=0.0195359934737];
+	"[1]cavlc_fsm.start"	 [complexity=1,
+		importance=0.0168304189431,
+		rank=0.0168304189431];
+	"[1]start" -> "[1]cavlc_fsm.start";
+	"[1]cavlc_fsm.state"	 [complexity=1,
+		importance=0.0627815279277,
+		rank=0.0627815279277];
+	"cavlc_fsm.valid"	 [complexity=0,
+		importance=0.0134484404712,
+		rank=0.0];
+	"[1]cavlc_fsm.state" -> "cavlc_fsm.valid";
+	"[1]TrailingOnes_comb"	 [complexity=2,
+		importance=0.0247786731957,
+		rank=0.0123893365979];
+	"[1]cavlc_fsm.TrailingOnes_comb"	 [complexity=2,
+		importance=0.0190290296415,
+		rank=0.00951451482074];
+	"[1]TrailingOnes_comb" -> "[1]cavlc_fsm.TrailingOnes_comb";
+	"[1]cavlc_fsm.start" -> "cavlc_fsm.valid";
+	"[1]cavlc_fsm.ZeroLeft"	 [complexity=2,
+		importance=0.0175317906402,
+		rank=0.00876589532012];
+	"[1]ZeroLeft" -> "[1]cavlc_fsm.ZeroLeft";
+	"[1]cavlc_read_total_coeffs.nC"	 [complexity=8,
+		importance=0.910632892754,
+		rank=0.113829111594];
+	"[1]cavlc_read_total_coeffs.TrailingOnes_comb"	 [complexity=2,
+		importance=0.0369543881,
+		rank=0.01847719405];
+	"[1]cavlc_read_total_coeffs.nC" -> "[1]cavlc_read_total_coeffs.TrailingOnes_comb";
+	"[1]cavlc_read_total_coeffs.nC" -> "[1]cavlc_read_total_coeffs.TotalCoeff_comb";
+	"[1]TotalCoeff_comb"	 [complexity=3,
+		importance=0.0382271136669,
+		rank=0.0127423712223];
+	"[1]cavlc_fsm.TotalCoeff_comb"	 [complexity=3,
+		importance=0.0324774701127,
+		rank=0.0108258233709];
+	"[1]TotalCoeff_comb" -> "[1]cavlc_fsm.TotalCoeff_comb";
+	"[1]ena"	 [complexity=1,
+		importance=0.0460270320513,
+		rank=0.0460270320513];
+	"[1]cavlc_fsm.ena"	 [complexity=1,
+		importance=0.0433214575207,
+		rank=0.0433214575207];
+	"[1]ena" -> "[1]cavlc_fsm.ena";
+	"[1]cavlc_fsm.TrailingOnes_comb" -> "cavlc_fsm.valid";
+	valid	 [complexity=0,
+		importance=0.00628640470406,
+		rank=0.0];
+	"[1]rst_n"	 [complexity=1,
+		importance=0.0595431129166,
+		rank=0.0595431129166];
+	"[1]cavlc_fsm.rst_n"	 [complexity=1,
+		importance=0.0568375383861,
+		rank=0.0568375383861];
+	"[1]rst_n" -> "[1]cavlc_fsm.rst_n";
+	"[1]cavlc_read_total_coeffs.TotalCoeff_5"	 [complexity=5,
+		importance=0.0540588560884,
+		rank=0.0108117712177];
+	"[1]cavlc_read_total_coeffs.TotalCoeff_5" -> "[1]cavlc_read_total_coeffs.TotalCoeff_comb";
+	"[1]cavlc_fsm.rst_n" -> "cavlc_fsm.valid";
+	"[1]cavlc_read_total_coeffs.TrailingOnes_5"	 [complexity=4,
+		importance=0.0406104156172,
+		rank=0.0101526039043];
+	"[1]cavlc_read_total_coeffs.TrailingOnes_5" -> "[1]cavlc_read_total_coeffs.TrailingOnes_comb";
+	"[1]cavlc_fsm.ena" -> "cavlc_fsm.valid";
+	"[1]cavlc_fsm.i"	 [complexity=2,
+		importance=0.0271855176833,
+		rank=0.0135927588416];
+	"[1]cavlc_fsm.i" -> "cavlc_fsm.valid";
+	"[1]cavlc_fsm.ZeroLeft" -> "cavlc_fsm.valid";
+	"[1]cavlc_read_total_coeffs.TrailingOnes_comb" -> "[1]TrailingOnes_comb";
+	"[1]cavlc_fsm.TotalCoeff_comb" -> "cavlc_fsm.valid";
+	"[1]cavlc_read_total_coeffs.TrailingOnes_4"	 [complexity=4,
+		importance=0.0406221604995,
+		rank=0.0101555401249];
+	"[1]cavlc_read_total_coeffs.TrailingOnes_4" -> "[1]cavlc_read_total_coeffs.TrailingOnes_comb";
+	"cavlc_fsm.valid" -> valid;
+	"[1]cavlc_read_total_coeffs.TrailingOnes_1"	 [complexity=4,
+		importance=0.0406095568131,
+		rank=0.0101523892033];
+	"[1]cavlc_read_total_coeffs.TrailingOnes_1" -> "[1]cavlc_read_total_coeffs.TrailingOnes_comb";
+	"[1]cavlc_read_total_coeffs.TrailingOnes_2"	 [complexity=4,
+		importance=0.0405340707035,
+		rank=0.0101335176759];
+	"[1]cavlc_read_total_coeffs.TrailingOnes_2" -> "[1]cavlc_read_total_coeffs.TrailingOnes_comb";
+	"[1]cavlc_read_total_coeffs.TrailingOnes_3"	 [complexity=4,
+		importance=0.0404897371821,
+		rank=0.0101224342955];
+	"[1]cavlc_read_total_coeffs.TrailingOnes_3" -> "[1]cavlc_read_total_coeffs.TrailingOnes_comb";
+	"[1]cavlc_read_total_coeffs.TotalCoeff_comb" -> "[1]TotalCoeff_comb";
+}

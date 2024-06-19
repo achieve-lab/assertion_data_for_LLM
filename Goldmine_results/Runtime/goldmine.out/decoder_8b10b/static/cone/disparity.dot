@@ -1,0 +1,138 @@
+strict digraph "" {
+	"[1]d"	 [complexity=32,
+		importance=0.0665059141689,
+		rank=0.00207830981778];
+	"[1]P22"	 [complexity=16,
+		importance=0.0545789784995,
+		rank=0.00341118615622];
+	"[1]d" -> "[1]P22";
+	"[1]CEQD"	 [complexity=27,
+		importance=0.0607258441384,
+		rank=0.00224910533846];
+	"[1]d" -> "[1]CEQD";
+	"[1]P13"	 [complexity=15,
+		importance=0.0538769305838,
+		rank=0.00359179537225];
+	"[1]d" -> "[1]P13";
+	"[1]P31"	 [complexity=16,
+		importance=0.0545789784995,
+		rank=0.00341118615622];
+	"[1]d" -> "[1]P31";
+	"[1]DISPARITY6a"	 [complexity=12,
+		importance=0.0458422959246,
+		rank=0.00382019132705];
+	"[1]P22" -> "[1]DISPARITY6a";
+	"[1]heqj"	 [complexity=11,
+		importance=0.0349296472396,
+		rank=0.00317542247632];
+	"[1]fghj22"	 [complexity=4,
+		importance=0.0288168579072,
+		rank=0.0072042144768];
+	"[1]heqj" -> "[1]fghj22";
+	"[1]fghjP31"	 [complexity=4,
+		importance=0.0288168579072,
+		rank=0.0072042144768];
+	"[1]heqj" -> "[1]fghjP31";
+	disparity	 [complexity=0,
+		importance=0.0203770908644,
+		rank=0.0];
+	"[1]fghj22" -> disparity;
+	"[1]disparity"	 [complexity=16,
+		importance=0.066219386789,
+		rank=0.00413871167432];
+	"[1]DISPARITY6a0"	 [complexity=12,
+		importance=0.0451402480089,
+		rank=0.00376168733407];
+	"[1]disparity" -> "[1]DISPARITY6a0";
+	"[1]DISPARITY6a2"	 [complexity=12,
+		importance=0.0452182533328,
+		rank=0.00376818777774];
+	"[1]disparity" -> "[1]DISPARITY6a2";
+	"[1]disparity" -> "[1]DISPARITY6a";
+	"[1]fghjP31" -> disparity;
+	"[1]DISPARITY6b"	 [complexity=4,
+		importance=0.0377948657685,
+		rank=0.00944871644213];
+	"[1]DISPARITY6a0" -> "[1]DISPARITY6b";
+	"[1]DISPARITY6a2" -> "[1]DISPARITY6b";
+	"[1]reset"	 [complexity=1,
+		importance=0.0465342517593,
+		rank=0.0465342517593];
+	"[1]reset" -> disparity;
+	"[1]DISPARITY6a" -> "[1]DISPARITY6b";
+	"[1]DISPARITY6b" -> disparity;
+	"[1]CEQD" -> "[1]P22";
+	"[1]CEQD" -> "[1]P13";
+	"[1]CEQD" -> "[1]P31";
+	"[1]c"	 [complexity=32,
+		importance=0.0665059141689,
+		rank=0.00207830981778];
+	"[1]c" -> "[1]P22";
+	"[1]c" -> "[1]CEQD";
+	"[1]c" -> "[1]P13";
+	"[1]c" -> "[1]P31";
+	"[1]b"	 [complexity=32,
+		importance=0.0666551780383,
+		rank=0.0020829743137];
+	"[1]b" -> "[1]P22";
+	"[1]b" -> "[1]P13";
+	"[1]b" -> "[1]P31";
+	"[1]AEQB"	 [complexity=27,
+		importance=0.0608751080079,
+		rank=0.00225463362992];
+	"[1]b" -> "[1]AEQB";
+	"[1]a"	 [complexity=32,
+		importance=0.0695450828318,
+		rank=0.0021732838385];
+	"[1]a" -> "[1]P22";
+	"[1]a" -> "[1]P13";
+	"[1]a" -> "[1]P31";
+	"[1]a" -> "[1]AEQB";
+	"[1]g"	 [complexity=16,
+		importance=0.0406726404023,
+		rank=0.00254204002514];
+	"[1]g" -> "[1]fghj22";
+	"[1]g" -> "[1]fghjP31";
+	"[1]feqg"	 [complexity=11,
+		importance=0.0348925703718,
+		rank=0.00317205185198];
+	"[1]g" -> "[1]feqg";
+	"[1]f"	 [complexity=16,
+		importance=0.0406726404023,
+		rank=0.00254204002514];
+	"[1]f" -> "[1]fghj22";
+	"[1]f" -> "[1]fghjP31";
+	"[1]f" -> "[1]feqg";
+	"[1]e"	 [complexity=12,
+		importance=0.043574935799,
+		rank=0.00363124464992];
+	"[1]e" -> "[1]DISPARITY6b";
+	"[1]P13" -> "[1]DISPARITY6a0";
+	"[1]j"	 [complexity=16,
+		importance=0.04070971727,
+		rank=0.00254435732938];
+	"[1]j" -> "[1]heqj";
+	"[1]j" -> "[1]fghj22";
+	"[1]j" -> "[1]fghjP31";
+	"[1]i"	 [complexity=12,
+		importance=0.043574935799,
+		rank=0.00363124464992];
+	"[1]i" -> "[1]DISPARITY6b";
+	"[1]h"	 [complexity=16,
+		importance=0.04070971727,
+		rank=0.00254435732938];
+	"[1]h" -> "[1]heqj";
+	"[1]h" -> "[1]fghj22";
+	"[1]h" -> "[1]fghjP31";
+	"[1]P31" -> "[1]DISPARITY6a2";
+	"[1]P31" -> "[1]DISPARITY6a";
+	"[1]AEQB" -> "[1]P22";
+	"[1]AEQB" -> "[1]P13";
+	"[1]AEQB" -> "[1]P31";
+	"[1]tbi"	 [complexity=43,
+		importance=0.0753251528623,
+		rank=0.00175174774098];
+	"[1]tbi" -> "[1]a";
+	"[1]feqg" -> "[1]fghj22";
+	"[1]feqg" -> "[1]fghjP31";
+}

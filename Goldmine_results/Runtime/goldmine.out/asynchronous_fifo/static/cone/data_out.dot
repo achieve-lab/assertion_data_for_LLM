@@ -1,0 +1,17 @@
+strict digraph "" {
+	"fifom.data_out"	 [complexity=0,
+		importance=0.0609217132737,
+		rank=0.0];
+	data_out	 [complexity=0,
+		importance=0.0267806157227,
+		rank=0.0];
+	"fifom.data_out" -> data_out;
+	"fifom.b_rptr"	 [complexity=4,
+		importance=0.0777812733518,
+		rank=0.0194453183379];
+	"fifom.b_rptr" -> "fifom.data_out";
+	"fifom.fifo"	 [complexity=4,
+		importance=0.0929150050319,
+		rank=0.023228751258];
+	"fifom.fifo" -> "fifom.data_out";
+}

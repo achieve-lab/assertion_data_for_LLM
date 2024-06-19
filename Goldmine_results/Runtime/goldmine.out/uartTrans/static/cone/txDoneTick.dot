@@ -1,0 +1,66 @@
+strict digraph "" {
+	"[1]idle"	 [complexity=5,
+		importance=0.3145235415,
+		rank=0.0629047083001];
+	stateReg	 [complexity=1,
+		importance=0.18431339351,
+		rank=0.18431339351];
+	"[1]idle" -> stateReg;
+	"[1]stateNext"	 [complexity=3,
+		importance=0.290179975432,
+		rank=0.0967266584775];
+	"[1]idle" -> "[1]stateNext";
+	txDoneTick	 [complexity=0,
+		importance=0.0328385593847,
+		rank=0.0];
+	"[1]stop"	 [complexity=5,
+		importance=0.3145235415,
+		rank=0.0629047083001];
+	"[1]stop" -> "[1]stateNext";
+	"[1]sTick"	 [complexity=6,
+		importance=0.894883492365,
+		rank=0.149147248728];
+	"[1]sTick" -> "[1]stateNext";
+	txStart	 [complexity=1,
+		importance=0.0571821254527,
+		rank=0.0571821254527];
+	txStart -> txDoneTick;
+	"[1]sReg"	 [complexity=7,
+		importance=0.931514754019,
+		rank=0.133073536288];
+	"[1]sReg" -> "[1]stateNext";
+	"[1]nReg"	 [complexity=5,
+		importance=0.347043983768,
+		rank=0.0694087967536];
+	"[1]nReg" -> "[1]stateNext";
+	"[1]start"	 [complexity=5,
+		importance=0.3145235415,
+		rank=0.0629047083001];
+	"[1]start" -> "[1]stateNext";
+	"[1]sbTick"	 [complexity=5,
+		importance=0.3145235415,
+		rank=0.0629047083001];
+	"[1]sbTick" -> "[1]stateNext";
+	"[1]data"	 [complexity=5,
+		importance=0.3145235415,
+		rank=0.0629047083001];
+	"[1]data" -> "[1]stateNext";
+	stateReg -> txDoneTick;
+	"[1]txStart"	 [complexity=4,
+		importance=0.3145235415,
+		rank=0.0786308853751];
+	"[1]txStart" -> "[1]stateNext";
+	"[1]dataBits"	 [complexity=5,
+		importance=0.3145235415,
+		rank=0.0629047083001];
+	"[1]dataBits" -> "[1]stateNext";
+	"[1]reset"	 [complexity=2,
+		importance=0.392970353088,
+		rank=0.196485176544];
+	"[1]reset" -> stateReg;
+	"[1]stateReg"	 [complexity=6,
+		importance=1.53669759252,
+		rank=0.25611626542];
+	"[1]stateReg" -> "[1]stateNext";
+	"[1]stateNext" -> stateReg;
+}

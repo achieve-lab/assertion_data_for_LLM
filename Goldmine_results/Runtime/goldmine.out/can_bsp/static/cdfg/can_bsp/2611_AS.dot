@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"2611:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f44f6b75f90>",
+		def_var="['go_error_frame']",
+		fillcolor=deepskyblue,
+		label="2611:AS
+go_error_frame = form_err | stuff_err | bit_err | ack_err | crc_err & go_rx_eof;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['form_err', 'stuff_err', 'bit_err', 'ack_err', 'crc_err', 'go_rx_eof']"];
+}

@@ -1,0 +1,50 @@
+strict digraph "" {
+	node [label="\N"];
+	"716:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fbd1c2cfb90>",
+		fillcolor=turquoise,
+		label="716:BL
+Rx_mac_sop_tmp_dl1 <= Rx_mac_sop_tmp;
+Rx_mac_sop <= Rx_mac_sop_tmp_dl1;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fbd1c2cf850>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7fbd1c2cfa10>]",
+		style=filled,
+		typ=Block];
+	"Leaf_709:AL"	 [def_var="['Rx_mac_sop', 'Rx_mac_sop_tmp_dl1']",
+		label="Leaf_709:AL"];
+	"716:BL" -> "Leaf_709:AL"	 [cond="[]",
+		lineno=None];
+	"709:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fbd1c2cfbd0>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="709:AL",
+		sens="['Clk_SYS', 'Reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['Reset', 'Rx_mac_sop_tmp', 'Rx_mac_sop_tmp_dl1']"];
+	"710:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fbd1c2cfd50>",
+		fillcolor=springgreen,
+		label="710:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"709:AL" -> "710:IF"	 [cond="[]",
+		lineno=None];
+	"710:IF" -> "716:BL"	 [cond="['Reset']",
+		label="!(Reset)",
+		lineno=710];
+	"711:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fbd1c2cfd90>",
+		fillcolor=turquoise,
+		label="711:BL
+Rx_mac_sop_tmp_dl1 <= 0;
+Rx_mac_sop <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fbd1c2cfdd0>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7fbd1c2cff50>]",
+		style=filled,
+		typ=Block];
+	"710:IF" -> "711:BL"	 [cond="['Reset']",
+		label=Reset,
+		lineno=710];
+	"711:BL" -> "Leaf_709:AL"	 [cond="[]",
+		lineno=None];
+}

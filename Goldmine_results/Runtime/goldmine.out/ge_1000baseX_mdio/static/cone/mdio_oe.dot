@@ -1,0 +1,155 @@
+strict digraph "" {
+	"[1]present"	 [complexity=8,
+		importance=0.153326055168,
+		rank=0.019165756896];
+	"[1]op_code_shift"	 [complexity=7,
+		importance=0.0741588804177,
+		rank=0.010594125774];
+	"[1]present" -> "[1]op_code_shift";
+	"[1]next"	 [complexity=9,
+		importance=0.243621095289,
+		rank=0.0270690105877];
+	"[1]present" -> "[1]next";
+	"[1]pos_cnt_inc"	 [complexity=9,
+		importance=0.0850810114031,
+		rank=0.00945344571146];
+	"[1]present" -> "[1]pos_cnt_inc";
+	"[1]op_code_done"	 [complexity=13,
+		importance=0.257826852111,
+		rank=0.0198328347777];
+	"[1]op_code_done" -> "[1]next";
+	data_out_shift	 [complexity=4,
+		importance=0.0330733418677,
+		rank=0.00826833546692];
+	mdio_oe	 [complexity=0,
+		importance=0.0191581883282,
+		rank=0.0];
+	data_out_shift -> mdio_oe;
+	"[1]phy_addr"	 [complexity=13,
+		importance=0.53381727557,
+		rank=0.0410628673515];
+	"[1]phy_addr_match"	 [complexity=10,
+		importance=0.506369641527,
+		rank=0.0506369641527];
+	"[1]phy_addr" -> "[1]phy_addr_match";
+	"[1]S_ST"	 [complexity=14,
+		importance=0.255886613839,
+		rank=0.0182776152742];
+	"[1]S_ST" -> "[1]next";
+	"[1]op_is_wr"	 [complexity=15,
+		importance=0.260003773017,
+		rank=0.0173335848678];
+	"[1]op_is_wr" -> "[1]next";
+	op_code	 [complexity=6,
+		importance=0.0602437268783,
+		rank=0.0100406211464];
+	"[1]op_code_shift" -> op_code;
+	"[1]S_PHY_ADDR"	 [complexity=17,
+		importance=0.499507709129,
+		rank=0.0293828064193];
+	"[1]S_PHY_ADDR" -> "[1]next";
+	present	 [complexity=5,
+		importance=0.112240516618,
+		rank=0.0224481033236];
+	"[1]next" -> present;
+	"[1]mdio"	 [complexity=9,
+		importance=0.0725092454286,
+		rank=0.0080565828254];
+	"[1]mdio" -> "[1]next";
+	"[1]mdio" -> op_code;
+	"[1]S_REG_ADDR"	 [complexity=17,
+		importance=0.499507709129,
+		rank=0.0293828064193];
+	"[1]S_REG_ADDR" -> "[1]next";
+	"[1]ta1_done"	 [complexity=10,
+		importance=0.257826852111,
+		rank=0.0257826852111];
+	"[1]ta1_done" -> "[1]next";
+	"[1]preamble_cnt"	 [complexity=16,
+		importance=0.286241195854,
+		rank=0.0178900747409];
+	"[1]preamble_match"	 [complexity=14,
+		importance=0.261957624972,
+		rank=0.0187112589265];
+	"[1]preamble_cnt" -> "[1]preamble_match";
+	ta1_done	 [complexity=4,
+		importance=0.0333639451498,
+		rank=0.00834098628744];
+	ta1_done -> mdio_oe;
+	"[1]reset"	 [complexity=7,
+		importance=0.132752972307,
+		rank=0.0189647103296];
+	pos_cnt	 [complexity=6,
+		importance=0.0605267483839,
+		rank=0.0100877913973];
+	"[1]reset" -> pos_cnt;
+	"[1]reset" -> present;
+	"[1]reset" -> op_code;
+	"[1]phy_addr_done"	 [complexity=13,
+		importance=0.257826852111,
+		rank=0.0198328347777];
+	"[1]phy_addr_done" -> "[1]next";
+	"[1]data_done"	 [complexity=17,
+		importance=0.5014479474,
+		rank=0.0294969380823];
+	"[1]data_done" -> "[1]next";
+	pos_cnt -> ta1_done;
+	"[1]op_is_rd"	 [complexity=15,
+		importance=0.260003773017,
+		rank=0.0173335848678];
+	"[1]op_is_rd" -> "[1]next";
+	"[1]preamble_match" -> "[1]next";
+	"[1]S_TA"	 [complexity=13,
+		importance=0.255886613839,
+		rank=0.01968358568];
+	"[1]S_TA" -> "[1]next";
+	"[1]pos_cnt_inc" -> pos_cnt;
+	"[1]op_code"	 [complexity=9,
+		importance=0.0849465877,
+		rank=0.00943850974444];
+	"[1]op_code" -> "[1]op_is_wr";
+	"[1]op_code" -> "[1]op_is_rd";
+	"[1]op_code" -> op_code;
+	"[1]S_OP_CODE"	 [complexity=17,
+		importance=0.499507709129,
+		rank=0.0293828064193];
+	"[1]S_OP_CODE" -> "[1]next";
+	"[1]S_WR_DATA"	 [complexity=19,
+		importance=0.499507709129,
+		rank=0.0262898794278];
+	"[1]S_WR_DATA" -> "[1]next";
+	present -> data_out_shift;
+	op_is_rd	 [complexity=4,
+		importance=0.0355408660566,
+		rank=0.00888521651414];
+	op_is_rd -> mdio_oe;
+	"[1]S_PREAMBLE"	 [complexity=32,
+		importance=1.47399209029,
+		rank=0.0460622528214];
+	"[1]S_PREAMBLE" -> "[1]next";
+	"[1]S_PREAMBLE" -> present;
+	"[1]pos_cnt"	 [complexity=12,
+		importance=0.284989655345,
+		rank=0.0237491379454];
+	"[1]pos_cnt" -> "[1]op_code_done";
+	"[1]pos_cnt" -> "[1]ta1_done";
+	"[1]pos_cnt" -> "[1]phy_addr_done";
+	"[1]pos_cnt" -> "[1]data_done";
+	"[1]pos_cnt" -> pos_cnt;
+	"[1]reg_addr_done"	 [complexity=13,
+		importance=0.257826852111,
+		rank=0.0198328347777];
+	"[1]pos_cnt" -> "[1]reg_addr_done";
+	"[1]S_RD_DATA"	 [complexity=19,
+		importance=0.499507709129,
+		rank=0.0262898794278];
+	"[1]S_RD_DATA" -> "[1]next";
+	"[1]reg_addr_done" -> "[1]next";
+	"[1]phy_addr_match" -> "[1]next";
+	"[1]phy_addr_match" -> "[1]pos_cnt_inc";
+	op_code -> op_is_rd;
+	"[1]S_WR_COMMIT"	 [complexity=13,
+		importance=0.255886613839,
+		rank=0.01968358568];
+	"[1]S_WR_COMMIT" -> "[1]next";
+}

@@ -1,0 +1,45 @@
+strict digraph "" {
+	PWRITE	 [complexity=10,
+		importance=0.0328349814813,
+		rank=0.00328349814813];
+	write_en	 [complexity=6,
+		importance=0.0248004075249,
+		rank=0.00413340125416];
+	PWRITE -> write_en;
+	col_wr_en	 [complexity=0,
+		importance=0.0120790499233,
+		rank=0.0];
+	write_en -> col_wr_en;
+	PSEL	 [complexity=10,
+		importance=0.0328349814813,
+		rank=0.00328349814813];
+	PSEL -> write_en;
+	PENABLE	 [complexity=10,
+		importance=0.0328349814813,
+		rank=0.00328349814813];
+	PENABLE -> write_en;
+	state	 [complexity=6,
+		importance=0.0454149856744,
+		rank=0.00756916427906];
+	state -> col_wr_en;
+	enable	 [complexity=7,
+		importance=0.101665405071,
+		rank=0.0145236292958];
+	enable -> state;
+	PADDR	 [complexity=6,
+		importance=0.0201136238797,
+		rank=0.00335227064661];
+	PADDR -> col_wr_en;
+	AES_DINR	 [complexity=6,
+		importance=0.0201136238797,
+		rank=0.00335227064661];
+	AES_DINR -> col_wr_en;
+	PRESETn	 [complexity=7,
+		importance=0.144279530979,
+		rank=0.0206113615685];
+	PRESETn -> state;
+	INPUT	 [complexity=6,
+		importance=0.0201136238797,
+		rank=0.00335227064661];
+	INPUT -> col_wr_en;
+}

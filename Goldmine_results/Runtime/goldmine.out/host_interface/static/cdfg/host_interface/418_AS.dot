@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"418:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f79abc4f250>",
+		def_var="['dma_req_rd']",
+		fillcolor=deepskyblue,
+		label="418:AS
+dma_req_rd = dma_req ^ cnt[0] & dma_out_en & enable & (state == OUTPUT);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['dma_req', 'cnt', 'dma_out_en', 'enable', 'state', 'OUTPUT']"];
+}

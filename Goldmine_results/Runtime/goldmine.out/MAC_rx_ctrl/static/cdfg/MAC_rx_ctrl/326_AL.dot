@@ -1,0 +1,46 @@
+strict digraph "" {
+	node [label="\N"];
+	"Leaf_326:AL"	 [def_var="['CRC_init']",
+		label="Leaf_326:AL"];
+	"330:BS"	 [ast="<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fbb4740f650>",
+		fillcolor=cadetblue,
+		label="330:BS
+CRC_init = 0;",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fbb4740f650>]",
+		style=filled,
+		typ=BlockingSubstitution];
+	"330:BS" -> "Leaf_326:AL"	 [cond="[]",
+		lineno=None];
+	"327:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fbb4740f810>",
+		fillcolor=springgreen,
+		label="327:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"327:IF" -> "330:BS"	 [cond="['Current_state', 'State_SFD']",
+		label="!((Current_state == State_SFD))",
+		lineno=327];
+	"328:BS"	 [ast="<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fbb4740f850>",
+		fillcolor=cadetblue,
+		label="328:BS
+CRC_init = 1;",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fbb4740f850>]",
+		style=filled,
+		typ=BlockingSubstitution];
+	"327:IF" -> "328:BS"	 [cond="['Current_state', 'State_SFD']",
+		label="(Current_state == State_SFD)",
+		lineno=327];
+	"326:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fbb4740fa90>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="326:AL",
+		sens="['Current_state']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['Current_state', 'State_SFD']"];
+	"326:AL" -> "327:IF"	 [cond="[]",
+		lineno=None];
+	"328:BS" -> "Leaf_326:AL"	 [cond="[]",
+		lineno=None];
+}

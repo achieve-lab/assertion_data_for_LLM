@@ -1,0 +1,118 @@
+strict digraph "" {
+	"[1]IFG_counter"	 [complexity=15,
+		importance=0.725989747107,
+		rank=0.0483993164738];
+	"[1]Next_state"	 [complexity=8,
+		importance=0.177906046637,
+		rank=0.0222382558297];
+	"[1]IFG_counter" -> "[1]Next_state";
+	Current_state	 [complexity=6,
+		importance=0.0850934710214,
+		rank=0.0141822451702];
+	Data_en	 [complexity=0,
+		importance=0.0114676291244,
+		rank=0.0];
+	Current_state -> Data_en;
+	"[1]pause_frame_send_en_dl1"	 [complexity=19,
+		importance=0.724393374934,
+		rank=0.0381259671018];
+	"[1]pause_frame_send_en_dl1" -> "[1]Next_state";
+	"[1]IPLengthCounter"	 [complexity=12,
+		importance=1.25753315648,
+		rank=0.104794429706];
+	"[1]IPLengthCounter" -> "[1]Next_state";
+	"[1]xon_gen"	 [complexity=19,
+		importance=0.72005544248,
+		rank=0.0378976548673];
+	"[1]xon_gen" -> "[1]Next_state";
+	StateData	 [complexity=6,
+		importance=0.0313665141785,
+		rank=0.00522775236308];
+	StateData -> Data_en;
+	"[1]CRC_end"	 [complexity=9,
+		importance=0.364243349205,
+		rank=0.040471483245];
+	"[1]CRC_end" -> "[1]Next_state";
+	"[1]IFGset"	 [complexity=15,
+		importance=0.72005544248,
+		rank=0.0480036961653];
+	"[1]IFGset" -> "[1]Next_state";
+	"[1]FullDuplex"	 [complexity=45,
+		importance=7.12467312143,
+		rank=0.158326069365];
+	"[1]FullDuplex" -> "[1]Next_state";
+	"[1]Fifo_data_err_empty"	 [complexity=9,
+		importance=0.72005544248,
+		rank=0.0800061602755];
+	"[1]Fifo_data_err_empty" -> "[1]Next_state";
+	StatePAD	 [complexity=6,
+		importance=0.0313665141785,
+		rank=0.00522775236308];
+	StatePAD -> Data_en;
+	"[1]MaxRetry"	 [complexity=13,
+		importance=0.897961489117,
+		rank=0.0690739607013];
+	"[1]MaxRetry" -> "[1]Next_state";
+	"[1]Fifo_ra"	 [complexity=16,
+		importance=0.72005544248,
+		rank=0.045003465155];
+	"[1]Fifo_ra" -> "[1]Next_state";
+	"[1]Preamble_counter"	 [complexity=13,
+		importance=0.723647679624,
+		rank=0.0556652061249];
+	"[1]Preamble_counter" -> "[1]Next_state";
+	"[1]RetryCnt"	 [complexity=13,
+		importance=0.911819228971,
+		rank=0.0701399406901];
+	"[1]RetryCnt" -> "[1]Next_state";
+	"[1]xoff_gen"	 [complexity=19,
+		importance=0.72005544248,
+		rank=0.0378976548673];
+	"[1]xoff_gen" -> "[1]Next_state";
+	"[1]TxEn"	 [complexity=26,
+		importance=3.41478457549,
+		rank=0.131337868288];
+	"[1]Collision"	 [complexity=23,
+		importance=3.3975596519,
+		rank=0.147719984865];
+	"[1]TxEn" -> "[1]Collision";
+	"[1]Fifo_eop"	 [complexity=13,
+		importance=1.60958567567,
+		rank=0.123814282744];
+	"[1]Fifo_eop" -> "[1]Next_state";
+	"[1]Current_state"	 [complexity=33,
+		importance=9.44530816806,
+		rank=0.286221459638];
+	"[1]Current_state" -> "[1]Next_state";
+	"[1]JamCounter"	 [complexity=11,
+		importance=0.545177981187,
+		rank=0.0495616346534];
+	"[1]JamCounter" -> "[1]Next_state";
+	"[1]Random_time_meet"	 [complexity=9,
+		importance=0.364243349205,
+		rank=0.040471483245];
+	"[1]Random_time_meet" -> "[1]Next_state";
+	"[1]Reset"	 [complexity=7,
+		importance=0.178618197972,
+		rank=0.0255168854246];
+	"[1]Reset" -> Current_state;
+	"[1]Collision" -> "[1]Next_state";
+	"[1]Next_state" -> Current_state;
+	"[1]pause_counter"	 [complexity=9,
+		importance=0.370177653832,
+		rank=0.0411308504258];
+	"[1]pause_counter" -> "[1]Next_state";
+	"[1]pause_apply"	 [complexity=9,
+		importance=0.542149395842,
+		rank=0.0602388217602];
+	"[1]pause_apply" -> "[1]Next_state";
+	StateSendPauseFrame	 [complexity=6,
+		importance=0.0313665141785,
+		rank=0.00522775236308];
+	StateSendPauseFrame -> Data_en;
+	"[1]CRS"	 [complexity=26,
+		importance=3.40599090783,
+		rank=0.130999650301];
+	"[1]CRS" -> "[1]Collision";
+	"[1]CRS" -> "[1]Next_state";
+}

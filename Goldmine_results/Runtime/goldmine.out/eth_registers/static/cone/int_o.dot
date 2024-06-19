@@ -1,0 +1,147 @@
+strict digraph "" {
+	irq_busy	 [complexity=15,
+		importance=0.00812422106243,
+		rank=0.000541614737495];
+	int_o	 [complexity=0,
+		importance=0.00605770091462,
+		rank=0.0];
+	irq_busy -> int_o;
+	"[1]SetRxCIrq"	 [complexity=16,
+		importance=0.0203028097641,
+		rank=0.00126892561026];
+	irq_rxc	 [complexity=15,
+		importance=0.00882080291908,
+		rank=0.000588053527939];
+	"[1]SetRxCIrq" -> irq_rxc;
+	"[1]INT_MASK_0.SyncReset"	 [complexity=16,
+		importance=0.0287840682012,
+		rank=0.00179900426257];
+	"INT_MASK_0.DataOut"	 [complexity=15,
+		importance=0.0137586944658,
+		rank=0.000917246297722];
+	"[1]INT_MASK_0.SyncReset" -> "INT_MASK_0.DataOut";
+	irq_txb	 [complexity=15,
+		importance=0.00812422106243,
+		rank=0.000541614737495];
+	irq_txb -> int_o;
+	irq_txc	 [complexity=15,
+		importance=0.00871978073369,
+		rank=0.000581318715579];
+	irq_txc -> int_o;
+	irq_txe	 [complexity=15,
+		importance=0.00812422106243,
+		rank=0.000541614737495];
+	irq_txe -> int_o;
+	"[1]Write"	 [complexity=20,
+		importance=0.011950112554,
+		rank=0.000597505627702];
+	"[1]INT_SOURCE_Wr"	 [complexity=17,
+		importance=0.0100499630183,
+		rank=0.000591174295195];
+	"[1]Write" -> "[1]INT_SOURCE_Wr";
+	"[1]INT_MASK_Wr"	 [complexity=16,
+		importance=0.0179138584334,
+		rank=0.00111961615209];
+	"[1]Write" -> "[1]INT_MASK_Wr";
+	"[1]Rw"	 [complexity=23,
+		importance=0.0132167918235,
+		rank=0.000574643122763];
+	"[1]Rw" -> "[1]Write";
+	"[1]RxB_IRQ"	 [complexity=16,
+		importance=0.0175151213944,
+		rank=0.00109469508715];
+	irq_rxb	 [complexity=15,
+		importance=0.00812422106243,
+		rank=0.000541614737495];
+	"[1]RxB_IRQ" -> irq_rxb;
+	"[1]INT_MASK_0.DataIn"	 [complexity=17,
+		importance=0.0150361105195,
+		rank=0.000884477089383];
+	"[1]INT_MASK_0.DataIn" -> "INT_MASK_0.DataOut";
+	"[1]TxE_IRQ"	 [complexity=16,
+		importance=0.0175151213944,
+		rank=0.00109469508715];
+	"[1]TxE_IRQ" -> irq_txe;
+	"[1]DataIn"	 [complexity=17,
+		importance=0.00939090033193,
+		rank=0.000552405901878];
+	"[1]DataIn" -> irq_busy;
+	"[1]DataIn" -> irq_txb;
+	"[1]DataIn" -> irq_txc;
+	"[1]DataIn" -> irq_txe;
+	"[1]DataIn" -> "[1]INT_MASK_0.DataIn";
+	irq_rxe	 [complexity=15,
+		importance=0.00812422106243,
+		rank=0.000541614737495];
+	"[1]DataIn" -> irq_rxe;
+	"[1]DataIn" -> irq_rxb;
+	"[1]DataIn" -> irq_rxc;
+	"[1]INT_SOURCE_Sel"	 [complexity=20,
+		importance=0.011329839585,
+		rank=0.000566491979252];
+	"[1]INT_SOURCE_Sel" -> "[1]INT_SOURCE_Wr";
+	"[1]Cs"	 [complexity=23,
+		importance=0.0132167918235,
+		rank=0.000574643122763];
+	"[1]Cs" -> "[1]Write";
+	"[1]INT_MASK_0.Write"	 [complexity=16,
+		importance=0.0159881164775,
+		rank=0.000999257279844];
+	"[1]INT_MASK_0.Write" -> "INT_MASK_0.DataOut";
+	"[1]Address"	 [complexity=22,
+		importance=0.0125965188545,
+		rank=0.000572569038842];
+	"[1]Address" -> "[1]INT_SOURCE_Sel";
+	"[1]INT_MASK_Sel"	 [complexity=19,
+		importance=0.0191937350001,
+		rank=0.00101019657895];
+	"[1]Address" -> "[1]INT_MASK_Sel";
+	"[1]INT_SOURCE_Wr" -> irq_busy;
+	"[1]INT_SOURCE_Wr" -> irq_txb;
+	"[1]INT_SOURCE_Wr" -> irq_txc;
+	"[1]INT_SOURCE_Wr" -> irq_txe;
+	"[1]INT_SOURCE_Wr" -> irq_rxe;
+	"[1]INT_SOURCE_Wr" -> irq_rxb;
+	"[1]INT_SOURCE_Wr" -> irq_rxc;
+	INT_MASKOut	 [complexity=15,
+		importance=0.00946864932188,
+		rank=0.000631243288125];
+	"INT_MASK_0.DataOut" -> INT_MASKOut;
+	irq_rxe -> int_o;
+	irq_rxb -> int_o;
+	irq_rxc -> int_o;
+	"[1]SetTxCIrq"	 [complexity=16,
+		importance=0.0198970082543,
+		rank=0.00124356301589];
+	"[1]SetTxCIrq" -> irq_txc;
+	INT_MASKOut -> int_o;
+	"[1]RxE_IRQ"	 [complexity=16,
+		importance=0.0175151213944,
+		rank=0.00109469508715];
+	"[1]RxE_IRQ" -> irq_rxe;
+	"[1]TxB_IRQ"	 [complexity=16,
+		importance=0.0175151213944,
+		rank=0.00109469508715];
+	"[1]TxB_IRQ" -> irq_txb;
+	"[1]Reset"	 [complexity=16,
+		importance=0.0256393424568,
+		rank=0.00160245890355];
+	"[1]Reset" -> irq_busy;
+	"[1]Reset" -> irq_txb;
+	"[1]Reset" -> irq_txc;
+	"[1]Reset" -> irq_txe;
+	"[1]Reset" -> irq_rxe;
+	"[1]Reset" -> irq_rxb;
+	"[1]Reset" -> irq_rxc;
+	"[1]INT_MASK_0.Reset"	 [complexity=16,
+		importance=0.0425487957172,
+		rank=0.00265929973232];
+	"[1]Reset" -> "[1]INT_MASK_0.Reset";
+	"[1]Busy_IRQ"	 [complexity=16,
+		importance=0.0175151213944,
+		rank=0.00109469508715];
+	"[1]Busy_IRQ" -> irq_busy;
+	"[1]INT_MASK_0.Reset" -> "INT_MASK_0.DataOut";
+	"[1]INT_MASK_Sel" -> "[1]INT_MASK_Wr";
+	"[1]INT_MASK_Wr" -> "[1]INT_MASK_0.Write";
+}

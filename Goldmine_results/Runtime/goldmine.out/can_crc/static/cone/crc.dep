@@ -1,0 +1,7 @@
+[1]initialize	crc
+[1]crc_next	crc
+[1]crc	[1]crc_next
+[1]crc	[1]crc_tmp
+[1]data	[1]crc_next
+[1]crc_tmp	crc
+[1]enable	crc

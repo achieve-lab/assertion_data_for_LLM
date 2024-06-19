@@ -1,0 +1,13 @@
+ReceivedPacketGood	SetPauseTimer
+[1]RxValid	[1]ByteCntEq16
+[1]OpCodeOK	ReceivedPauseFrmWAddr
+[1]TypeLengthOK	ReceivedPauseFrmWAddr
+ReceiveEnd	SetPauseTimer
+[1]RxReset	ReceivedPauseFrmWAddr
+ReceivedLengthOK	SetPauseTimer
+[1]AddressOK	ReceivedPauseFrmWAddr
+RxFlow	SetPauseTimer
+[1]ReceiveEnd	ReceivedPauseFrmWAddr
+[1]ByteCntEq16	ReceivedPauseFrmWAddr
+ReceivedPauseFrmWAddr	SetPauseTimer
+[1]ByteCnt	[1]ByteCntEq16

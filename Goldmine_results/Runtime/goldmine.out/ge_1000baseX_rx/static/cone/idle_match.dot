@@ -1,0 +1,35 @@
+strict digraph "" {
+	"[1]idle_match"	 [complexity=5,
+		importance=0.0410145197532,
+		rank=0.00820290395063];
+	"[1]idle_cnt_m_inc"	 [complexity=3,
+		importance=0.0327886044178,
+		rank=0.0109295348059];
+	"[1]idle_match" -> "[1]idle_cnt_m_inc";
+	"[1]pcs_rx_present"	 [complexity=4,
+		importance=0.0984271271074,
+		rank=0.0246067817768];
+	"[1]idle_cnt_m_clr"	 [complexity=3,
+		importance=0.0515589150704,
+		rank=0.0171863050235];
+	"[1]pcs_rx_present" -> "[1]idle_cnt_m_clr";
+	"[1]pcs_rx_present" -> "[1]idle_cnt_m_inc";
+	idle_cnt	 [complexity=2,
+		importance=0.0234735157279,
+		rank=0.0117367578639];
+	idle_match	 [complexity=0,
+		importance=0.00822591533533,
+		rank=0.0];
+	idle_cnt -> idle_match;
+	"[1]idle_cnt"	 [complexity=7,
+		importance=0.0562621201457,
+		rank=0.0080374457351];
+	"[1]idle_cnt" -> "[1]idle_match";
+	"[1]idle_cnt" -> idle_cnt;
+	"[1]idle_cnt_m_clr" -> idle_cnt;
+	"[1]idle_cnt_m_inc" -> idle_cnt;
+	"[1]reset"	 [complexity=3,
+		importance=0.0748354637591,
+		rank=0.0249451545864];
+	"[1]reset" -> idle_cnt;
+}

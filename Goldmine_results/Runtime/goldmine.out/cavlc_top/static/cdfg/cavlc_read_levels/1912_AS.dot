@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"1912:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f204c598990>",
+		def_var="['tmp1']",
+		fillcolor=deepskyblue,
+		label="1912:AS
+tmp1 = (first_level && (TrailingOnes < 3))? 2'd2 : 2'd0;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['first_level', 'TrailingOnes']"];
+}

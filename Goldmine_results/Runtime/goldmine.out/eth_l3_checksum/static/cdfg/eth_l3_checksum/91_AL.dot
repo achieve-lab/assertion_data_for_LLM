@@ -1,0 +1,146 @@
+strict digraph "" {
+	node [label="\N"];
+	"115:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fafbe482f90>",
+		fillcolor=firebrick,
+		label="115:NS
+StartCalc[1:0] <= 2'h0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fafbe482f90>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"Leaf_91:AL"	 [def_var="['CSready', 'CheckSum', 'StartCalc', 'Sum']",
+		label="Leaf_91:AL"];
+	"115:NS" -> "Leaf_91:AL"	 [cond="[]",
+		lineno=None];
+	"100:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fafbdf78490>",
+		fillcolor=firebrick,
+		label="100:NS
+StartCalc[0] <= RxData[7:0] == 8'h8;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fafbdf78490>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"100:NS" -> "Leaf_91:AL"	 [cond="[]",
+		lineno=None];
+	"110:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fafbdf78790>",
+		fillcolor=springgreen,
+		label="110:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"110:IF" -> "115:NS"	 [cond="['ByteCnt', 'ByteCnt']",
+		label="!(((ByteCnt[15:0] >= 16'h17) & (ByteCnt[15:0] < 16'h17 + 16'd20)))",
+		lineno=110];
+	"111:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fafbdf78850>",
+		fillcolor=turquoise,
+		label="111:BL
+StartCalc[1] <= (ByteCnt[15:0] > 16'h17) & StartCalc[0];",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fafbdf78890>]",
+		style=filled,
+		typ=Block];
+	"110:IF" -> "111:BL"	 [cond="['ByteCnt', 'ByteCnt']",
+		label="((ByteCnt[15:0] >= 16'h17) & (ByteCnt[15:0] < 16'h17 + 16'd20))",
+		lineno=110];
+	"99:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fafbdf73090>",
+		fillcolor=springgreen,
+		label="99:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"99:IF" -> "100:NS"	 [cond="['ByteCnt']",
+		label="(ByteCnt[15:0] == 16'h15)",
+		lineno=99];
+	"102:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fafbdf730d0>",
+		fillcolor=springgreen,
+		label="102:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"99:IF" -> "102:IF"	 [cond="['ByteCnt']",
+		label="!((ByteCnt[15:0] == 16'h15))",
+		lineno=99];
+	"94:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fafbdf986d0>",
+		fillcolor=turquoise,
+		label="94:BL
+CheckSum[15:0] <= 16'd0;
+CSready <= 1'd0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fafbdf98390>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7fafbdf98590>]",
+		style=filled,
+		typ=Block];
+	"94:BL" -> "Leaf_91:AL"	 [cond="[]",
+		lineno=None];
+	"118:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fafbdf98350>",
+		fillcolor=turquoise,
+		label="118:BL
+CSready <= 1'b1;
+CheckSum[15:0] <= ~(Sum[15:0] + Sum[31:16]);",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fafbdf73d90>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7fafbdf73ed0>]",
+		style=filled,
+		typ=Block];
+	"118:BL" -> "Leaf_91:AL"	 [cond="[]",
+		lineno=None];
+	"103:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fafbdf73110>",
+		fillcolor=turquoise,
+		label="103:BL
+StartCalc[0] <= (RxData[7:0] == 8'h0) & StartCalc[0];
+CheckSum[15:0] <= 16'h0;
+Sum[31:0] <= 32'h0;
+CSready <= 1'b0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fafbdf73150>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7fafbdf73550>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fafbdf73750>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fafbdf73950>]",
+		style=filled,
+		typ=Block];
+	"103:BL" -> "Leaf_91:AL"	 [cond="[]",
+		lineno=None];
+	"93:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fafbdf98910>",
+		fillcolor=springgreen,
+		label="93:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"93:IF" -> "99:IF"	 [cond="['Reset']",
+		label="!(Reset)",
+		lineno=93];
+	"93:IF" -> "94:BL"	 [cond="['Reset']",
+		label=Reset,
+		lineno=93];
+	"117:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fafbdf98990>",
+		fillcolor=springgreen,
+		label="117:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"117:IF" -> "118:BL"	 [cond="['ByteCnt']",
+		label="(ByteCnt[15:0] - 16'h17 == 16'd20)",
+		lineno=117];
+	"111:BL" -> "Leaf_91:AL"	 [cond="[]",
+		lineno=None];
+	"102:IF" -> "110:IF"	 [cond="['ByteCnt']",
+		label="!((ByteCnt[15:0] == 16'h16))",
+		lineno=102];
+	"102:IF" -> "103:BL"	 [cond="['ByteCnt']",
+		label="(ByteCnt[15:0] == 16'h16)",
+		lineno=102];
+	"92:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fafbdf988d0>",
+		fillcolor=turquoise,
+		label="92:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"92:BL" -> "93:IF"	 [cond="[]",
+		lineno=None];
+	"92:BL" -> "117:IF"	 [cond="[]",
+		lineno=None];
+	"91:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fafbdf98710>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="91:AL",
+		sens="['Divided_2_clk', 'Reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['Reset', 'RxData', 'StartCalc', 'ByteCnt', 'Sum']"];
+	"91:AL" -> "92:BL"	 [cond="[]",
+		lineno=None];
+}

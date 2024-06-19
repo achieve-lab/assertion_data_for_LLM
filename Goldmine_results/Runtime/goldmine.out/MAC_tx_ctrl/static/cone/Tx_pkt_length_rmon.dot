@@ -1,0 +1,37 @@
+strict digraph "" {
+	"[1]StatePAD"	 [complexity=10,
+		importance=0.0209682259201,
+		rank=0.00209682259201];
+	Tx_pkt_length_rmon	 [complexity=2,
+		importance=0.0125369699905,
+		rank=0.00626848499523];
+	"[1]StatePAD" -> Tx_pkt_length_rmon;
+	"[1]StateData"	 [complexity=10,
+		importance=0.0209682259201,
+		rank=0.00209682259201];
+	"[1]StateData" -> Tx_pkt_length_rmon;
+	"[1]Current_state"	 [complexity=12,
+		importance=0.0915095162176,
+		rank=0.00762579301813];
+	"[1]Current_state" -> Tx_pkt_length_rmon;
+	"[1]StateFCS"	 [complexity=10,
+		importance=0.0209682259201,
+		rank=0.00209682259201];
+	"[1]StateFCS" -> Tx_pkt_length_rmon;
+	"[1]StateSendPauseFrame"	 [complexity=10,
+		importance=0.0209682259201,
+		rank=0.00209682259201];
+	"[1]StateSendPauseFrame" -> Tx_pkt_length_rmon;
+	"[1]Reset"	 [complexity=3,
+		importance=0.046042165901,
+		rank=0.0153473886337];
+	"[1]Reset" -> Tx_pkt_length_rmon;
+	"[1]StateSFD"	 [complexity=4,
+		importance=0.0335051959106,
+		rank=0.00837629897764];
+	"[1]StateSFD" -> Tx_pkt_length_rmon;
+	"[1]Tx_pkt_length_rmon"	 [complexity=4,
+		importance=0.0250739399809,
+		rank=0.00626848499523];
+	"[1]Tx_pkt_length_rmon" -> Tx_pkt_length_rmon;
+}

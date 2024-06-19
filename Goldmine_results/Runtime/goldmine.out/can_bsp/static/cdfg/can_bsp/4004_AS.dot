@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"4004:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f44f6ae2910>",
+		def_var="['error_capture_code_segment']",
+		fillcolor=deepskyblue,
+		label="4004:AS
+error_capture_code_segment[4] = rx_crc_lim | rx_ack | rx_ack_lim | rx_eof | rx_inter | error_frame | overload_frame;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['rx_crc_lim', 'rx_ack', 'rx_ack_lim', 'rx_eof', 'rx_inter', 'error_frame', 'overload_frame']"];
+}

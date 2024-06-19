@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"33:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f06fec91310>",
+		def_var="['wfull']",
+		fillcolor=deepskyblue,
+		label="33:AS
+wfull = g_wptr_next == { ~g_rptr_sync[PTR_WIDTH:PTR_WIDTH-1], g_rptr_sync[PTR_WIDTH-2:0] };",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['g_wptr_next', 'g_rptr_sync', 'g_rptr_sync', 'PTR_WIDTH']"];
+}

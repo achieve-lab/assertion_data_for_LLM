@@ -1,0 +1,14 @@
+reset	start_count_del	2.0
+reset	start_count	3.0
+reset	tx_ack	2.0
+reset	counter	3.0
+counter	start_count	1.0
+counter	counter	3.0
+start_count_del	tx_ack	1.0
+start_count	start_count_del	1.0
+start_count	counter	1.0
+start_count	tx_ack	1.0
+max_count	start_count	1.0
+max_count	counter	2.0
+tx_start	start_count	2.0
+ready	start_count	1.0

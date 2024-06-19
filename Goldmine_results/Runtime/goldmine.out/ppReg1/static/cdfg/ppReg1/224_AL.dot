@@ -1,0 +1,26 @@
+strict digraph "" {
+	node [label="\N"];
+	"225:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7ff9122698d0>",
+		fillcolor=turquoise,
+		label="225:BL
+opcodeOut = opcodeIn;
+fieldOut = fieldIn;",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7ff912269550>, <pyverilog.vparser.ast.BlockingSubstitution object at 0x7ff912269790>]",
+		style=filled,
+		typ=Block];
+	"Leaf_224:AL"	 [def_var="['fieldOut', 'opcodeOut']",
+		label="Leaf_224:AL"];
+	"225:BL" -> "Leaf_224:AL"	 [cond="[]",
+		lineno=None];
+	"224:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7ff91298dad0>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="224:AL",
+		sens="['clk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['opcodeIn', 'fieldIn']"];
+	"224:AL" -> "225:BL"	 [cond="[]",
+		lineno=None];
+}

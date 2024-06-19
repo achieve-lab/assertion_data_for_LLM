@@ -1,0 +1,29 @@
+strict digraph "" {
+	ReceivedPacketGood	 [complexity=0,
+		importance=0.0298442783004,
+		rank=0.0];
+	LatchedCrcError	 [complexity=2,
+		importance=0.0616120262857,
+		rank=0.0308060131429];
+	LatchedCrcError -> ReceivedPacketGood;
+	"[1]RxCrcError"	 [complexity=5,
+		importance=0.0755722449376,
+		rank=0.0151144489875];
+	"[1]RxCrcError" -> LatchedCrcError;
+	"[1]RxByteCntEq0"	 [complexity=5,
+		importance=0.0755722449376,
+		rank=0.0151144489875];
+	"[1]RxByteCntEq0" -> LatchedCrcError;
+	"[1]RxStateSFD"	 [complexity=3,
+		importance=0.137184271223,
+		rank=0.0457280904078];
+	"[1]RxStateSFD" -> LatchedCrcError;
+	"[1]Reset"	 [complexity=3,
+		importance=0.198796297509,
+		rank=0.066265432503];
+	"[1]Reset" -> LatchedCrcError;
+	"[1]RxStateData"	 [complexity=3,
+		importance=0.0755722449376,
+		rank=0.0251907483125];
+	"[1]RxStateData" -> LatchedCrcError;
+}

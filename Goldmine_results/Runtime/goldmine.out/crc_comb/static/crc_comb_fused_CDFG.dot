@@ -1,0 +1,172 @@
+strict digraph "compose( ,  )" {
+	node [label="\N"];
+	"129:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f159717c390>",
+		def_var="['feedback']",
+		fillcolor=deepskyblue,
+		label="129:AS
+feedback = crc_poly & { CRC_SIZE{ crc_in[CRC_SIZE - 1] ^ data_in } };",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly', 'crc_in', 'data_in']"];
+	"131:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f159717cd50>",
+		def_var="['crc_out']",
+		fillcolor=deepskyblue,
+		label="131:AS
+crc_out = { crc_in_masked ^ feedback[CRC_SIZE-1:1], feedback[0] };",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_in_masked', 'feedback', 'feedback']"];
+	"129:AS" -> "131:AS";
+	"130:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f159717ca10>",
+		def_var="['crc_in_masked']",
+		fillcolor=deepskyblue,
+		label="130:AS
+crc_in_masked = crc_in[CRC_SIZE-2:0] & ~(crc_poly_size_reversed[CRC_SIZE-2:0] & MASK_REVERSED);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_in', 'crc_poly_size_reversed', 'MASK_REVERSED']"];
+	"130:AS" -> "131:AS";
+	"119:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1596d9b5d0>",
+		def_var="['crc_poly_size_reversed']",
+		fillcolor=deepskyblue,
+		label="119:AS
+crc_poly_size_reversed[3] = crc_poly_size[CRC_SIZE - 2 - 3];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly_size']"];
+	"119:AS" -> "130:AS";
+	"115:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1596d99710>",
+		def_var="['crc_poly_size_reversed']",
+		fillcolor=deepskyblue,
+		label="115:AS
+crc_poly_size_reversed[1] = crc_poly_size[CRC_SIZE - 2 - 1];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly_size']"];
+	"115:AS" -> "130:AS";
+	"122:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1596d9c0d0>",
+		def_var="['MASK_REVERSED']",
+		fillcolor=deepskyblue,
+		label="122:AS
+MASK_REVERSED[4] = MASK[CRC_SIZE - 2 - 4];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['CRC_SIZE']"];
+	"122:AS" -> "130:AS";
+	"124:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1596d9c810>",
+		def_var="['MASK_REVERSED']",
+		fillcolor=deepskyblue,
+		label="124:AS
+MASK_REVERSED[5] = MASK[CRC_SIZE - 2 - 5];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['CRC_SIZE']"];
+	"124:AS" -> "130:AS";
+	"125:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1596d9cbd0>",
+		def_var="['crc_poly_size_reversed']",
+		fillcolor=deepskyblue,
+		label="125:AS
+crc_poly_size_reversed[6] = crc_poly_size[CRC_SIZE - 2 - 6];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly_size']"];
+	"125:AS" -> "130:AS";
+	"116:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1596d99a90>",
+		def_var="['MASK_REVERSED']",
+		fillcolor=deepskyblue,
+		label="116:AS
+MASK_REVERSED[1] = MASK[CRC_SIZE - 2 - 1];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['CRC_SIZE']"];
+	"116:AS" -> "130:AS";
+	"118:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1596d9b210>",
+		def_var="['MASK_REVERSED']",
+		fillcolor=deepskyblue,
+		label="118:AS
+MASK_REVERSED[2] = MASK[CRC_SIZE - 2 - 2];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['CRC_SIZE']"];
+	"118:AS" -> "130:AS";
+	"114:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1596d99350>",
+		def_var="['MASK_REVERSED']",
+		fillcolor=deepskyblue,
+		label="114:AS
+MASK_REVERSED[0] = MASK[CRC_SIZE - 2 - 0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['CRC_SIZE']"];
+	"114:AS" -> "130:AS";
+	"113:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f159746da10>",
+		def_var="['crc_poly_size_reversed']",
+		fillcolor=deepskyblue,
+		label="113:AS
+crc_poly_size_reversed[0] = crc_poly_size[CRC_SIZE - 2 - 0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly_size']"];
+	"113:AS" -> "130:AS";
+	"123:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1596d9c490>",
+		def_var="['crc_poly_size_reversed']",
+		fillcolor=deepskyblue,
+		label="123:AS
+crc_poly_size_reversed[5] = crc_poly_size[CRC_SIZE - 2 - 5];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly_size']"];
+	"123:AS" -> "130:AS";
+	"120:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1596d9b950>",
+		def_var="['MASK_REVERSED']",
+		fillcolor=deepskyblue,
+		label="120:AS
+MASK_REVERSED[3] = MASK[CRC_SIZE - 2 - 3];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['CRC_SIZE']"];
+	"120:AS" -> "130:AS";
+	"117:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1596d99e50>",
+		def_var="['crc_poly_size_reversed']",
+		fillcolor=deepskyblue,
+		label="117:AS
+crc_poly_size_reversed[2] = crc_poly_size[CRC_SIZE - 2 - 2];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly_size']"];
+	"117:AS" -> "130:AS";
+	"121:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1596d9bd10>",
+		def_var="['crc_poly_size_reversed']",
+		fillcolor=deepskyblue,
+		label="121:AS
+crc_poly_size_reversed[4] = crc_poly_size[CRC_SIZE - 2 - 4];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly_size']"];
+	"121:AS" -> "130:AS";
+	"126:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f1596d9cf50>",
+		def_var="['MASK_REVERSED']",
+		fillcolor=deepskyblue,
+		label="126:AS
+MASK_REVERSED[6] = MASK[CRC_SIZE - 2 - 6];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['CRC_SIZE']"];
+	"126:AS" -> "130:AS";
+}

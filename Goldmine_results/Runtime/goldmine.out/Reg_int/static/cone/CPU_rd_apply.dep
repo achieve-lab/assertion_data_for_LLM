@@ -1,0 +1,13 @@
+U_0_029.RegOut	CPU_rd_apply
+Reset	U_0_029.Reset
+U_0_029.RegInit	U_0_029.RegOut
+WRB	U_0_029.CWR_pulse
+U_0_029.CWR_pulse	U_0_029.RegOut
+CD_in	U_0_029.CD_in_reg
+CA	U_0_029.CA_reg
+U_0_029.CD_in_reg	U_0_029.RegOut
+U_0_029.CA_reg_set	U_0_029.RegOut
+CSB	U_0_029.CCSB
+U_0_029.CA_reg	U_0_029.RegOut
+U_0_029.Reset	U_0_029.RegOut
+U_0_029.CCSB	U_0_029.RegOut

@@ -1,0 +1,100 @@
+Report file generated at: Mar-22-2024 02:20:52 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a3: (req0 == 0 & ce == 1 & ack == 1) |=> (sel0 == 0)
+IRank: : 0.20455
+Importance: : 2.25
+Complexity: : 11
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a7: (req0 == 1 & ce == 1 & ack == 1) |=> (sel0 == 1)
+IRank: : 0.20455
+Importance: : 2.25
+Complexity: : 11
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (sel0 == 0 & req0 == 0) |=> (sel0 == 0)
+IRank: : 0.13016
+Importance: : 0.91111
+Complexity: : 7
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a6: (sel0 == 1 & req0 == 1) |=> (sel0 == 1)
+IRank: : 0.13016
+Importance: : 0.91111
+Complexity: : 7
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (sel0 == 0 & ack == 0) |=> (sel0 == 0)
+IRank: : 0.11389
+Importance: : 0.91111
+Complexity: : 8
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (sel0 == 0 & ce == 0) |=> (sel0 == 0)
+IRank: : 0.11389
+Importance: : 0.91111
+Complexity: : 8
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a5: (sel0 == 1 & ack == 0) |=> (sel0 == 1)
+IRank: : 0.11389
+Importance: : 0.91111
+Complexity: : 8
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (sel0 == 1 & ce == 0) |=> (sel0 == 1)
+IRank: : 0.11389
+Importance: : 0.91111
+Complexity: : 8
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a3        | 0.20455 |    2.25    |     11     |  Unknown  | Unknown |   Unknown   
+      a7        | 0.20455 |    2.25    |     11     |  Unknown  | Unknown |   Unknown   
+      a2        | 0.13016 |  0.91111   |     7      |  Unknown  | Unknown |   Unknown   
+      a6        | 0.13016 |  0.91111   |     7      |  Unknown  | Unknown |   Unknown   
+      a1        | 0.11389 |  0.91111   |     8      |  Unknown  | Unknown |   Unknown   
+      a0        | 0.11389 |  0.91111   |     8      |  Unknown  | Unknown |   Unknown   
+      a5        | 0.11389 |  0.91111   |     8      |  Unknown  | Unknown |   Unknown   
+      a4        | 0.11389 |  0.91111   |     8      |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 8
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 8
+Hit rate: 0.0
+Miss rate: 1.0

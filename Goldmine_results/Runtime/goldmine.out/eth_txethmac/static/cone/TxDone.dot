@@ -1,0 +1,21 @@
+strict digraph "" {
+	Reset	 [complexity=1,
+		importance=0.0164994966785,
+		rank=0.0164994966785];
+	TxDone	 [complexity=0,
+		importance=0.00455587084407,
+		rank=0.0];
+	Reset -> TxDone;
+	StartTxDone	 [complexity=1,
+		importance=0.0118296321573,
+		rank=0.0118296321573];
+	StartTxDone -> TxDone;
+	TxStartFrm	 [complexity=2,
+		importance=0.0119436258345,
+		rank=0.00597181291723];
+	TxStartFrm -> TxDone;
+	StatusLatch	 [complexity=2,
+		importance=0.013130677161,
+		rank=0.0065653385805];
+	StatusLatch -> TxDone;
+}

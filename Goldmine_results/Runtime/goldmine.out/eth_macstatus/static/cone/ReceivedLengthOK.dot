@@ -1,0 +1,17 @@
+strict digraph "" {
+	RxByteCnt	 [complexity=5,
+		importance=0.0362965406953,
+		rank=0.00725930813906];
+	ReceivedLengthOK	 [complexity=0,
+		importance=0.0223363220434,
+		rank=0.0];
+	RxByteCnt -> ReceivedLengthOK;
+	r_MinFL	 [complexity=5,
+		importance=0.0362965406953,
+		rank=0.00725930813906];
+	r_MinFL -> ReceivedLengthOK;
+	r_MaxFL	 [complexity=5,
+		importance=0.0362965406953,
+		rank=0.00725930813906];
+	r_MaxFL -> ReceivedLengthOK;
+}

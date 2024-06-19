@@ -1,0 +1,144 @@
+strict digraph "" {
+	"[1]TX_BD_NUM_Wr"	 [complexity=4,
+		importance=0.0137820243685,
+		rank=0.00344550609212];
+	"[1]TX_BD_NUM_0.Write"	 [complexity=4,
+		importance=0.0118455456284,
+		rank=0.0029613864071];
+	"[1]TX_BD_NUM_Wr" -> "[1]TX_BD_NUM_0.Write";
+	"[1]MODER_0.Write"	 [complexity=4,
+		importance=0.0146950332784,
+		rank=0.00367375831959];
+	"MODER_0.DataOut"	 [complexity=3,
+		importance=0.0131011103395,
+		rank=0.00436703677983];
+	"[1]MODER_0.Write" -> "MODER_0.DataOut";
+	"[1]MODER_2.DataIn"	 [complexity=5,
+		importance=0.0143785263932,
+		rank=0.00287570527863];
+	"MODER_2.DataOut"	 [complexity=3,
+		importance=0.0131011103395,
+		rank=0.00436703677983];
+	"[1]MODER_2.DataIn" -> "MODER_2.DataOut";
+	"MODER_1.DataOut"	 [complexity=3,
+		importance=0.0131011103395,
+		rank=0.00436703677983];
+	MODEROut	 [complexity=3,
+		importance=0.00912863678874,
+		rank=0.00304287892958];
+	"MODER_1.DataOut" -> MODEROut;
+	"[1]Write"	 [complexity=13,
+		importance=0.0518764695099,
+		rank=0.00399049765461];
+	"[1]Write" -> "[1]TX_BD_NUM_Wr";
+	"[1]MODER_Wr"	 [complexity=4,
+		importance=0.0166587733247,
+		rank=0.00416469333118];
+	"[1]Write" -> "[1]MODER_Wr";
+	"[1]MODER_1.DataIn"	 [complexity=5,
+		importance=0.0143785263932,
+		rank=0.00287570527863];
+	"[1]MODER_1.DataIn" -> "MODER_1.DataOut";
+	"[1]TX_BD_NUM_0.Reset"	 [complexity=4,
+		importance=0.030104990865,
+		rank=0.00752624771625];
+	"TX_BD_NUM_0.DataOut"	 [complexity=3,
+		importance=0.00961075951512,
+		rank=0.00320358650504];
+	"[1]TX_BD_NUM_0.Reset" -> "TX_BD_NUM_0.DataOut";
+	"[1]MODER_1.Write"	 [complexity=4,
+		importance=0.0146950332784,
+		rank=0.00367375831959];
+	"[1]MODER_1.Write" -> "MODER_1.DataOut";
+	TX_BD_NUMOut	 [complexity=3,
+		importance=0.00531803259738,
+		rank=0.00177267753246];
+	"TX_BD_NUM_0.DataOut" -> TX_BD_NUMOut;
+	"[1]DataIn"	 [complexity=5,
+		importance=0.0156452056627,
+		rank=0.00312904113253];
+	"[1]DataIn" -> "[1]TX_BD_NUM_Wr";
+	"[1]DataIn" -> "[1]MODER_2.DataIn";
+	"[1]DataIn" -> "[1]MODER_1.DataIn";
+	"[1]MODER_0.DataIn"	 [complexity=5,
+		importance=0.0143785263932,
+		rank=0.00287570527863];
+	"[1]DataIn" -> "[1]MODER_0.DataIn";
+	"[1]TX_BD_NUM_0.DataIn"	 [complexity=5,
+		importance=0.0108881755688,
+		rank=0.00217763511376];
+	"[1]DataIn" -> "[1]TX_BD_NUM_0.DataIn";
+	"[1]Cs"	 [complexity=16,
+		importance=0.0531431487794,
+		rank=0.00332144679871];
+	"[1]Cs" -> "[1]Write";
+	r_RxEn	 [complexity=0,
+		importance=0.00190574121487,
+		rank=0.0];
+	"[1]Address"	 [complexity=15,
+		importance=0.0525228758104,
+		rank=0.00350152505403];
+	"[1]TX_BD_NUM_Sel"	 [complexity=8,
+		importance=0.0150619009352,
+		rank=0.0018827376169];
+	"[1]Address" -> "[1]TX_BD_NUM_Sel";
+	"[1]MODER_Sel"	 [complexity=13,
+		importance=0.0512561965409,
+		rank=0.0039427843493];
+	"[1]Address" -> "[1]MODER_Sel";
+	"[1]MODER_1.SyncReset"	 [complexity=4,
+		importance=0.0274688999485,
+		rank=0.00686722498712];
+	"[1]MODER_1.SyncReset" -> "MODER_1.DataOut";
+	"[1]MODER_0.Reset"	 [complexity=4,
+		importance=0.0405760433381,
+		rank=0.0101440108345];
+	"[1]MODER_0.Reset" -> "MODER_0.DataOut";
+	"[1]TX_BD_NUM_Sel" -> "[1]TX_BD_NUM_Wr";
+	MODEROut -> r_RxEn;
+	"MODER_0.DataOut" -> MODEROut;
+	"[1]MODER_0.SyncReset"	 [complexity=4,
+		importance=0.0274688999485,
+		rank=0.00686722498712];
+	"[1]MODER_0.SyncReset" -> "MODER_0.DataOut";
+	"[1]MODER_1.Reset"	 [complexity=4,
+		importance=0.0405760433381,
+		rank=0.0101440108345];
+	"[1]MODER_1.Reset" -> "MODER_1.DataOut";
+	"[1]MODER_2.Write"	 [complexity=4,
+		importance=0.0146950332784,
+		rank=0.00367375831959];
+	"[1]MODER_2.Write" -> "MODER_2.DataOut";
+	"[1]Reset"	 [complexity=4,
+		importance=0.0418427226076,
+		rank=0.0104606806519];
+	"[1]Reset" -> "[1]TX_BD_NUM_0.Reset";
+	"[1]Reset" -> "[1]MODER_0.Reset";
+	"[1]Reset" -> "[1]MODER_1.Reset";
+	"[1]MODER_2.Reset"	 [complexity=4,
+		importance=0.0405760433381,
+		rank=0.0101440108345];
+	"[1]Reset" -> "[1]MODER_2.Reset";
+	"MODER_2.DataOut" -> MODEROut;
+	TX_BD_NUMOut -> r_RxEn;
+	"[1]TX_BD_NUM_0.SyncReset"	 [complexity=4,
+		importance=0.0204881982997,
+		rank=0.00512204957493];
+	"[1]TX_BD_NUM_0.SyncReset" -> "TX_BD_NUM_0.DataOut";
+	"[1]MODER_0.DataIn" -> "MODER_0.DataOut";
+	"[1]MODER_Sel" -> "[1]MODER_Wr";
+	"[1]MODER_Wr" -> "[1]MODER_0.Write";
+	"[1]MODER_Wr" -> "[1]MODER_1.Write";
+	"[1]MODER_Wr" -> "[1]MODER_2.Write";
+	"[1]Rw"	 [complexity=16,
+		importance=0.0531431487794,
+		rank=0.00332144679871];
+	"[1]Rw" -> "[1]Write";
+	"[1]MODER_2.SyncReset"	 [complexity=4,
+		importance=0.0274688999485,
+		rank=0.00686722498712];
+	"[1]MODER_2.SyncReset" -> "MODER_2.DataOut";
+	"[1]MODER_2.Reset" -> "MODER_2.DataOut";
+	"[1]TX_BD_NUM_0.DataIn" -> "TX_BD_NUM_0.DataOut";
+	"[1]TX_BD_NUM_0.Write" -> "TX_BD_NUM_0.DataOut";
+}

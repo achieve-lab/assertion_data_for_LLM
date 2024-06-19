@@ -1,0 +1,13 @@
+strict digraph "" {
+	"[1]Reset"	 [complexity=1,
+		importance=0.314946000269,
+		rank=0.314946000269];
+	StateJam_q	 [complexity=0,
+		importance=0.0178863582987,
+		rank=0.0];
+	"[1]Reset" -> StateJam_q;
+	"[1]StateJam"	 [complexity=2,
+		importance=0.050841069164,
+		rank=0.025420534582];
+	"[1]StateJam" -> StateJam_q;
+}

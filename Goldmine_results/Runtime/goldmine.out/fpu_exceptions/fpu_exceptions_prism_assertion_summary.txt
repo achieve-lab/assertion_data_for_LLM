@@ -1,0 +1,25 @@
+Assertion report generated on: 28-Mar-2024 07:39:37 PM
+
+Assertion summary report for design: fpu_exceptions
+###################################################
+
+ Target   | Total | Passed | Failed | Vacuous | Hit | Miss
+--------- | ----- | ------ | ------ | ------- | --- | ----
+ex_enable |   2   |   0    |   0    |    2    | 0.0 | 1.0 
+exception |   2   |   0    |   0    |    2    | 0.0 | 1.0 
+ inexact  |   2   |   0    |   0    |    2    | 0.0 | 1.0 
+ invalid  |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+overflow  |   2   |   0    |   0    |    2    | 0.0 | 1.0 
+underflow |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+
+
+Resource usage summary report for the desing: fpu_exceptions
+############################################################
+
+      Phase       | Time (in [H]H:MM:SS:UUUUUU) | Memory (in MB)
+----------------- | --------------------------- | --------------
+V Parse & Ranking |       0:00:02.828347        |     905.28    
+   Simulation     |       0:00:02.031237        |     969.78    
+     D Parse      |       0:05:29.248020        |     1026.2    
+     Mining       |       0:00:20.564732        |     1087.7    
+     Overall      |       0:06:08.387631        |     1087.7    

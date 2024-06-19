@@ -1,0 +1,44 @@
+strict digraph "" {
+	cdIn	 [complexity=8,
+		importance=0.436507644197,
+		rank=0.0545634555246];
+	cdSel	 [complexity=5,
+		importance=0.37301564152,
+		rank=0.074603128304];
+	cdIn -> cdSel;
+	tcLoadOut	 [complexity=0,
+		importance=0.269840859822,
+		rank=0.0];
+	cdSel -> tcLoadOut;
+	ttSel	 [complexity=5,
+		importance=0.37301564152,
+		rank=0.074603128304];
+	ttSel -> tcLoadOut;
+	dnSel	 [complexity=5,
+		importance=0.37301564152,
+		rank=0.074603128304];
+	dnSel -> tcLoadOut;
+	tcAddr	 [complexity=8,
+		importance=0.436507644197,
+		rank=0.0545634555246];
+	tcAddr -> cdSel;
+	tcAddr -> ttSel;
+	tcAddr -> dnSel;
+	cuSel	 [complexity=5,
+		importance=0.37301564152,
+		rank=0.074603128304];
+	tcAddr -> cuSel;
+	dnIn	 [complexity=8,
+		importance=0.436507644197,
+		rank=0.0545634555246];
+	dnIn -> dnSel;
+	ttIn	 [complexity=8,
+		importance=0.436507644197,
+		rank=0.0545634555246];
+	ttIn -> ttSel;
+	cuSel -> tcLoadOut;
+	cuIn	 [complexity=8,
+		importance=0.436507644197,
+		rank=0.0545634555246];
+	cuIn -> cuSel;
+}

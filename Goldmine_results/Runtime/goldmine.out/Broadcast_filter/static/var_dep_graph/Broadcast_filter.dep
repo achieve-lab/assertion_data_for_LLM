@@ -1,0 +1,13 @@
+Reset	broadcast_counter
+Reset	time_counter
+Reset	broadcast_drop
+broadcast_bucket_depth	broadcast_counter
+broadcast_bucket_depth	broadcast_drop
+time_counter	broadcast_counter
+time_counter	time_counter
+broadcast_ptr	broadcast_counter
+broadcast_counter	broadcast_counter
+broadcast_counter	broadcast_drop
+broadcast_bucket_interval	broadcast_counter
+broadcast_bucket_interval	time_counter
+broadcast_filter_en	broadcast_drop

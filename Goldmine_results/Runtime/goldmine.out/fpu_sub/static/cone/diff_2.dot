@@ -1,0 +1,29 @@
+strict digraph "" {
+	"[1]diff_1"	 [complexity=4,
+		importance=0.0640535378802,
+		rank=0.01601338447];
+	diff_2	 [complexity=0,
+		importance=0.0381259990361,
+		rank=0.0];
+	"[1]diff_1" -> diff_2;
+	"[1]rst"	 [complexity=1,
+		importance=0.0899740025912,
+		rank=0.0899740025912];
+	"[1]rst" -> diff_2;
+	"[1]exponent"	 [complexity=7,
+		importance=0.0855379355615,
+		rank=0.0122197050802];
+	"[1]in_norm_out_denorm"	 [complexity=4,
+		importance=0.0600882460673,
+		rank=0.0150220615168];
+	"[1]exponent" -> "[1]in_norm_out_denorm";
+	"[1]exponent_large"	 [complexity=7,
+		importance=0.0826150778688,
+		rank=0.0118021539813];
+	"[1]exponent_large" -> "[1]in_norm_out_denorm";
+	"[1]in_norm_out_denorm" -> diff_2;
+	"[1]enable"	 [complexity=1,
+		importance=0.0518480035551,
+		rank=0.0518480035551];
+	"[1]enable" -> diff_2;
+}

@@ -1,0 +1,21 @@
+strict digraph "" {
+	"[1]RxStateSFD"	 [complexity=1,
+		importance=0.0523674044478,
+		rank=0.0523674044478];
+	DribbleNibble	 [complexity=0,
+		importance=0.019203592898,
+		rank=0.0];
+	"[1]RxStateSFD" -> DribbleNibble;
+	"[1]Reset"	 [complexity=1,
+		importance=0.0715709973458,
+		rank=0.0715709973458];
+	"[1]Reset" -> DribbleNibble;
+	"[1]RxStateData"	 [complexity=2,
+		importance=0.0331638115499,
+		rank=0.0165819057749];
+	"[1]RxStateData" -> DribbleNibble;
+	"[1]MRxDV"	 [complexity=2,
+		importance=0.0331638115499,
+		rank=0.0165819057749];
+	"[1]MRxDV" -> DribbleNibble;
+}

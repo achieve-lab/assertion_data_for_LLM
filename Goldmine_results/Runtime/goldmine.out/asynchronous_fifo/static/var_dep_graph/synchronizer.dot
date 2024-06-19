@@ -1,0 +1,6 @@
+strict digraph "" {
+	q1 -> d_out	 [weight=1.0];
+	rst_n -> q1	 [weight=2.0];
+	rst_n -> d_out	 [weight=2.0];
+	d_in -> q1	 [weight=1.0];
+}

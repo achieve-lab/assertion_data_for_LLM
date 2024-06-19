@@ -1,0 +1,33 @@
+strict digraph "" {
+	node [label="\N"];
+	"148:SS"	 [ast="<pyverilog.vparser.ast.SingleStatement object at 0x7fe07b3c16d0>",
+		fillcolor=aquamarine,
+		label="148:SS",
+		statements="[]",
+		style=filled,
+		typ=SingleStatement];
+	"Leaf_146:AL"	 [def_var="[]",
+		label="Leaf_146:AL"];
+	"148:SS" -> "Leaf_146:AL"	 [cond="[]",
+		lineno=None];
+	"146:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fe07b3c1a10>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="146:AL",
+		sens="['Clk_user']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['Rx_mac_pa']"];
+	"147:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fe07b3c1b10>",
+		fillcolor=springgreen,
+		label="147:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"146:AL" -> "147:IF"	 [cond="[]",
+		lineno=None];
+	"147:IF" -> "148:SS"	 [cond="['Rx_mac_pa']",
+		label=Rx_mac_pa,
+		lineno=147];
+}

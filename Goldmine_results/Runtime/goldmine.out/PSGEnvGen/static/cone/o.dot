@@ -1,0 +1,21 @@
+strict digraph "" {
+	envCtrx	 [complexity=2,
+		importance=0.0232426732493,
+		rank=0.0116213366246];
+	o	 [complexity=0,
+		importance=0.00799738798112,
+		rank=0.0];
+	envCtrx -> o;
+	"[1]cnt"	 [complexity=7,
+		importance=0.0380339456883,
+		rank=0.00543342081262];
+	"[1]sel"	 [complexity=5,
+		importance=0.0307296136902,
+		rank=0.00614592273804];
+	"[1]cnt" -> "[1]sel";
+	"[1]envCtr"	 [complexity=5,
+		importance=0.038987257027,
+		rank=0.00779745140541];
+	"[1]envCtr" -> envCtrx;
+	"[1]sel" -> envCtrx;
+}

@@ -1,0 +1,61 @@
+strict digraph "" {
+	"[1]CTRLMODER_Sel"	 [complexity=6,
+		importance=0.0148291815074,
+		rank=0.00247153025124];
+	"[1]CTRLMODER_Wr"	 [complexity=3,
+		importance=0.0135493049407,
+		rank=0.00451643498024];
+	"[1]CTRLMODER_Sel" -> "[1]CTRLMODER_Wr";
+	"[1]CTRLMODER_0.DataIn"	 [complexity=4,
+		importance=0.0106715570268,
+		rank=0.00266788925671];
+	"CTRLMODER_0.DataOut"	 [complexity=2,
+		importance=0.00939414097317,
+		rank=0.00469707048659];
+	"[1]CTRLMODER_0.DataIn" -> "CTRLMODER_0.DataOut";
+	"[1]CTRLMODER_0.Write"	 [complexity=3,
+		importance=0.0116235629848,
+		rank=0.00387452099495];
+	"[1]CTRLMODER_0.Write" -> "CTRLMODER_0.DataOut";
+	"[1]CTRLMODER_0.SyncReset"	 [complexity=3,
+		importance=0.0200549612158,
+		rank=0.00668498707195];
+	"[1]CTRLMODER_0.SyncReset" -> "CTRLMODER_0.DataOut";
+	"[1]Cs"	 [complexity=9,
+		importance=0.0167161337459,
+		rank=0.00185734819399];
+	"[1]Write"	 [complexity=6,
+		importance=0.0154494544765,
+		rank=0.00257490907941];
+	"[1]Cs" -> "[1]Write";
+	CTRLMODEROut	 [complexity=2,
+		importance=0.00510409582922,
+		rank=0.00255204791461];
+	"CTRLMODER_0.DataOut" -> CTRLMODEROut;
+	"[1]Write" -> "[1]CTRLMODER_Wr";
+	"[1]CTRLMODER_0.Reset"	 [complexity=3,
+		importance=0.0294551352392,
+		rank=0.00981837841306];
+	"[1]CTRLMODER_0.Reset" -> "CTRLMODER_0.DataOut";
+	r_PassAll	 [complexity=0,
+		importance=0.00169314742196,
+		rank=0.0];
+	"[1]Rw"	 [complexity=9,
+		importance=0.0167161337459,
+		rank=0.00185734819399];
+	"[1]Rw" -> "[1]Write";
+	"[1]Reset"	 [complexity=3,
+		importance=0.0307218145087,
+		rank=0.0102406048362];
+	"[1]Reset" -> "[1]CTRLMODER_0.Reset";
+	CTRLMODEROut -> r_PassAll;
+	"[1]Address"	 [complexity=8,
+		importance=0.0160958607769,
+		rank=0.00201198259712];
+	"[1]Address" -> "[1]CTRLMODER_Sel";
+	"[1]CTRLMODER_Wr" -> "[1]CTRLMODER_0.Write";
+	"[1]DataIn"	 [complexity=4,
+		importance=0.0119382362963,
+		rank=0.00298455907409];
+	"[1]DataIn" -> "[1]CTRLMODER_0.DataIn";
+}

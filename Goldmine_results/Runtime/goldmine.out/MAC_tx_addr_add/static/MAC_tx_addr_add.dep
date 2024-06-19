@@ -1,0 +1,13 @@
+Reset	add_rd
+Reset	MAC_add_prom_wr_dl1
+Reset	MAC_add_prom_wr_dl2
+MAC_add_prom_wr_dl1	MAC_add_prom_wr_dl2
+MAC_add_prom_wr_dl1	wr_en
+MAC_add_prom_wr_dl2	wr_en
+dout	MAC_tx_addr_data
+add_rd	add_rd
+MAC_add_prom_wr	MAC_add_prom_wr_dl1
+MAC_add_prom_data	din
+MAC_add_prom_add	add_wr
+MAC_tx_addr_init	add_rd
+MAC_tx_addr_rd	add_rd

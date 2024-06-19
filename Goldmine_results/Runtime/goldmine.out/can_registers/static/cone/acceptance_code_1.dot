@@ -1,0 +1,69 @@
+strict digraph "" {
+	"[1]we"	 [complexity=7,
+		importance=0.0155364349,
+		rank=0.00221949069999];
+	"[1]we_acceptance_code_1"	 [complexity=1,
+		importance=0.013593997847,
+		rank=0.013593997847];
+	"[1]we" -> "[1]we_acceptance_code_1";
+	"[1]reset_mode"	 [complexity=7,
+		importance=0.0164026438658,
+		rank=0.00234323483797];
+	"[1]reset_mode" -> "[1]we_acceptance_code_1";
+	"[1]CLOCK_DIVIDER_REG_3.data_out"	 [complexity=9,
+		importance=0.0313860690065,
+		rank=0.00348734100072];
+	"[1]clock_divider"	 [complexity=9,
+		importance=0.0261995015982,
+		rank=0.00291105573313];
+	"[1]CLOCK_DIVIDER_REG_3.data_out" -> "[1]clock_divider";
+	"[1]CLOCK_DIVIDER_REG_LOW.data_out"	 [complexity=9,
+		importance=0.031329229713,
+		rank=0.00348102552367];
+	"[1]CLOCK_DIVIDER_REG_LOW.data_out" -> "[1]clock_divider";
+	"[1]ACCEPTANCE_CODE_REG1.data_in"	 [complexity=2,
+		importance=0.0105322547362,
+		rank=0.0052661273681];
+	"ACCEPTANCE_CODE_REG1.data_out"	 [complexity=0,
+		importance=0.00856207481048,
+		rank=0.0];
+	"[1]ACCEPTANCE_CODE_REG1.data_in" -> "ACCEPTANCE_CODE_REG1.data_out";
+	"[1]extended_mode"	 [complexity=7,
+		importance=0.0165064243496,
+		rank=0.00235806062137];
+	"[1]extended_mode" -> "[1]we_acceptance_code_1";
+	"[1]cs"	 [complexity=7,
+		importance=0.0155364349,
+		rank=0.00221949069999];
+	"[1]cs" -> "[1]we_acceptance_code_1";
+	"[1]mode"	 [complexity=9,
+		importance=0.0215960301754,
+		rank=0.00239955890838];
+	"[1]mode" -> "[1]reset_mode";
+	"[1]ACCEPTANCE_CODE_REG1.we"	 [complexity=1,
+		importance=0.0115341585796,
+		rank=0.0115341585796];
+	"[1]we_acceptance_code_1" -> "[1]ACCEPTANCE_CODE_REG1.we";
+	"[1]clock_divider" -> "[1]extended_mode";
+	acceptance_code_1	 [complexity=0,
+		importance=0.00414903029512,
+		rank=0.0];
+	"ACCEPTANCE_CODE_REG1.data_out" -> acceptance_code_1;
+	"[1]addr"	 [complexity=7,
+		importance=0.0155364349,
+		rank=0.00221949069999];
+	"[1]addr" -> "[1]we_acceptance_code_1";
+	"[1]ACCEPTANCE_CODE_REG1.we" -> "ACCEPTANCE_CODE_REG1.data_out";
+	"[1]MODE_REG0.data_out"	 [complexity=9,
+		importance=0.0280981229978,
+		rank=0.00312201366642];
+	"[1]MODE_REG0.data_out" -> "[1]mode";
+	"[1]CLOCK_DIVIDER_REG_7.data_out"	 [complexity=9,
+		importance=0.0313860690065,
+		rank=0.00348734100072];
+	"[1]CLOCK_DIVIDER_REG_7.data_out" -> "[1]clock_divider";
+	"[1]data_in"	 [complexity=2,
+		importance=0.0124746917892,
+		rank=0.00623734589458];
+	"[1]data_in" -> "[1]ACCEPTANCE_CODE_REG1.data_in";
+}

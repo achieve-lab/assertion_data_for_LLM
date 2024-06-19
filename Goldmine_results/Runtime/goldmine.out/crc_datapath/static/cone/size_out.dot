@@ -1,0 +1,34 @@
+strict digraph "" {
+	rst_n	 [complexity=5,
+		importance=0.0754222419779,
+		rank=0.0150844483956];
+	size_ff	 [complexity=4,
+		importance=0.0347443416142,
+		rank=0.00868608540355];
+	rst_n -> size_ff;
+	bf_size_ff	 [complexity=4,
+		importance=0.0358922525962,
+		rank=0.00897306314904];
+	rst_n -> bf_size_ff;
+	buffer_rst	 [complexity=5,
+		importance=0.0418258113457,
+		rank=0.00836516226913];
+	buffer_rst -> bf_size_ff;
+	size_out	 [complexity=0,
+		importance=0.0201401869233,
+		rank=0.0];
+	size_ff -> size_out;
+	bypass_size	 [complexity=4,
+		importance=0.0260737456728,
+		rank=0.00651843641821];
+	bypass_size -> size_out;
+	buffer_en	 [complexity=5,
+		importance=0.0777180639418,
+		rank=0.0155436127884];
+	buffer_en -> bf_size_ff;
+	byte_en	 [complexity=5,
+		importance=0.0406779003637,
+		rank=0.00813558007273];
+	byte_en -> size_ff;
+	bf_size_ff -> size_out;
+}

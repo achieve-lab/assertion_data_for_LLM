@@ -1,0 +1,13 @@
+strict digraph "" {
+	node [label="\N"];
+	"3656:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f44f6b18290>",
+		def_var="['tx_successful']",
+		fillcolor=deepskyblue,
+		label="3656:AS
+tx_successful = transmitter & go_rx_inter & ~go_error_frame & ~error_frame_ended & ~overload_frame_ended & ~arbitration_\
+lost;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['transmitter', 'go_rx_inter', 'go_error_frame', 'error_frame_ended', 'overload_frame_ended', 'arbitration_lost']"];
+}

@@ -1,0 +1,21 @@
+strict digraph "" {
+	full	 [complexity=6,
+		importance=0.675675432144,
+		rank=0.112612572024];
+	fifo	 [complexity=4,
+		importance=0.567567242859,
+		rank=0.141891810715];
+	full -> fifo;
+	b_rptr	 [complexity=4,
+		importance=0.405404567739,
+		rank=0.101351141935];
+	data_out	 [complexity=0,
+		importance=0.297296378454,
+		rank=0.0];
+	b_rptr -> data_out;
+	w_en	 [complexity=6,
+		importance=0.675675432144,
+		rank=0.112612572024];
+	w_en -> fifo;
+	fifo -> data_out;
+}

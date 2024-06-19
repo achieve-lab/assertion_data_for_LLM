@@ -1,0 +1,100 @@
+strict digraph "" {
+	"[1]transmitcontrol1.TxUsedDataOut"	 [complexity=10,
+		importance=0.0401481642192,
+		rank=0.00401481642192];
+	"transmitcontrol1.CtrlMux"	 [complexity=8,
+		importance=0.0180763090557,
+		rank=0.00225953863196];
+	"[1]transmitcontrol1.TxUsedDataOut" -> "transmitcontrol1.CtrlMux";
+	"[1]TxStartFrmIn"	 [complexity=9,
+		importance=0.0313492971704,
+		rank=0.00348325524116];
+	MuxedAbort	 [complexity=8,
+		importance=0.0141795595123,
+		rank=0.00177244493904];
+	"[1]TxStartFrmIn" -> MuxedAbort;
+	"[1]transmitcontrol1.TxStartFrmIn"	 [complexity=9,
+		importance=0.0219657495243,
+		rank=0.00244063883604];
+	"[1]TxStartFrmIn" -> "[1]transmitcontrol1.TxStartFrmIn";
+	"[1]transmitcontrol1.WillSendControlFrame"	 [complexity=10,
+		importance=0.0464935015853,
+		rank=0.00464935015853];
+	"[1]transmitcontrol1.WillSendControlFrame" -> "transmitcontrol1.CtrlMux";
+	"[1]TxUsedDataOutDetected"	 [complexity=11,
+		importance=0.0192564140382,
+		rank=0.00175058309438];
+	"[1]TxUsedDataOutDetected" -> MuxedAbort;
+	"[1]TxUsedDataOut"	 [complexity=10,
+		importance=0.0441694851825,
+		rank=0.00441694851825];
+	"[1]TxUsedDataOut" -> "[1]transmitcontrol1.TxUsedDataOut";
+	TxAbortOut	 [complexity=0,
+		importance=0.00807321419055,
+		rank=0.0];
+	MuxedAbort -> TxAbortOut;
+	"[1]TxReset"	 [complexity=9,
+		importance=0.0455288566827,
+		rank=0.00505876185364];
+	"[1]TxReset" -> MuxedAbort;
+	"[1]transmitcontrol1.TxReset"	 [complexity=9,
+		importance=0.0573125517193,
+		rank=0.00636806130214];
+	"[1]TxReset" -> "[1]transmitcontrol1.TxReset";
+	"[1]transmitcontrol1.TxCtrlStartFrm"	 [complexity=9,
+		importance=0.0486926511688,
+		rank=0.00541029457431];
+	"transmitcontrol1.BlockTxDone"	 [complexity=8,
+		importance=0.0188094444337,
+		rank=0.00235118055421];
+	"[1]transmitcontrol1.TxCtrlStartFrm" -> "transmitcontrol1.BlockTxDone";
+	"[1]transmitcontrol1.TxDoneIn"	 [complexity=9,
+		importance=0.0212800789877,
+		rank=0.00236445322085];
+	"[1]transmitcontrol1.TxDoneIn" -> "transmitcontrol1.CtrlMux";
+	"[1]TxAbortIn"	 [complexity=11,
+		importance=0.0171697376581,
+		rank=0.00156088524164];
+	"[1]TxAbortIn" -> MuxedAbort;
+	CtrlMux	 [complexity=8,
+		importance=0.0114759361835,
+		rank=0.00143449202293];
+	"transmitcontrol1.CtrlMux" -> CtrlMux;
+	TxAbortIn	 [complexity=8,
+		importance=0.0110633923363,
+		rank=0.00138292404204];
+	TxAbortIn -> TxAbortOut;
+	BlockTxDone	 [complexity=8,
+		importance=0.0136454893121,
+		rank=0.00170568616401];
+	"transmitcontrol1.BlockTxDone" -> BlockTxDone;
+	"[1]TxAbortInLatched"	 [complexity=11,
+		importance=0.0175435232841,
+		rank=0.0015948657531];
+	"[1]TxAbortInLatched" -> MuxedAbort;
+	"[1]transmitcontrol1.TxReset" -> "transmitcontrol1.CtrlMux";
+	"[1]transmitcontrol1.TxReset" -> "transmitcontrol1.BlockTxDone";
+	"[1]TxUsedDataIn"	 [complexity=13,
+		importance=0.0471596633282,
+		rank=0.00362766640987];
+	"[1]TxUsedDataIn" -> "[1]TxUsedDataOut";
+	"[1]transmitcontrol1.TxStartFrmIn" -> "transmitcontrol1.BlockTxDone";
+	"[1]CtrlMux"	 [complexity=13,
+		importance=0.0475722071754,
+		rank=0.00365940055196];
+	"[1]CtrlMux" -> "[1]TxUsedDataOut";
+	TxStartFrmIn	 [complexity=8,
+		importance=0.0110633923363,
+		rank=0.00138292404204];
+	TxStartFrmIn -> TxAbortOut;
+	"[1]TxDoneIn"	 [complexity=9,
+		importance=0.0242702571334,
+		rank=0.00269669523705];
+	"[1]TxDoneIn" -> "[1]transmitcontrol1.TxDoneIn";
+	BlockTxDone -> TxAbortOut;
+	CtrlMux -> TxAbortOut;
+	"[1]transmitcontrol1.CtrlMux"	 [complexity=13,
+		importance=0.0541725800476,
+		rank=0.00416712154213];
+	"[1]transmitcontrol1.CtrlMux" -> "[1]CtrlMux";
+}

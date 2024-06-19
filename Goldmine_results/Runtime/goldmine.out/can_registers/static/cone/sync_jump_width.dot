@@ -1,0 +1,53 @@
+strict digraph "" {
+	"[1]BUS_TIMING_0_REG.we"	 [complexity=3,
+		importance=0.0139794614146,
+		rank=0.00465982047153];
+	"BUS_TIMING_0_REG.data_out"	 [complexity=2,
+		importance=0.0110163474108,
+		rank=0.00550817370542];
+	"[1]BUS_TIMING_0_REG.we" -> "BUS_TIMING_0_REG.data_out";
+	"[1]we"	 [complexity=8,
+		importance=0.0179637548535,
+		rank=0.00224546935669];
+	"[1]we_bus_timing_0"	 [complexity=3,
+		importance=0.0160213178005,
+		rank=0.00534043926685];
+	"[1]we" -> "[1]we_bus_timing_0";
+	"[1]we_bus_timing_0" -> "[1]BUS_TIMING_0_REG.we";
+	"[1]reset_mode"	 [complexity=8,
+		importance=0.0188299638194,
+		rank=0.00235374547742];
+	"[1]reset_mode" -> "[1]we_bus_timing_0";
+	bus_timing_0	 [complexity=2,
+		importance=0.00660778836192,
+		rank=0.00330389418096];
+	sync_jump_width	 [complexity=0,
+		importance=0.00246101550432,
+		rank=0.0];
+	bus_timing_0 -> sync_jump_width;
+	"[1]mode"	 [complexity=10,
+		importance=0.024023350129,
+		rank=0.0024023350129];
+	"[1]mode" -> "[1]reset_mode";
+	"BUS_TIMING_0_REG.data_out" -> bus_timing_0;
+	"[1]MODE_REG0.data_out"	 [complexity=10,
+		importance=0.0305254429513,
+		rank=0.00305254429513];
+	"[1]MODE_REG0.data_out" -> "[1]mode";
+	"[1]BUS_TIMING_0_REG.data_in"	 [complexity=4,
+		importance=0.0129865273366,
+		rank=0.00324663183414];
+	"[1]BUS_TIMING_0_REG.data_in" -> "BUS_TIMING_0_REG.data_out";
+	"[1]addr"	 [complexity=8,
+		importance=0.0179637548535,
+		rank=0.00224546935669];
+	"[1]addr" -> "[1]we_bus_timing_0";
+	"[1]cs"	 [complexity=8,
+		importance=0.0179637548535,
+		rank=0.00224546935669];
+	"[1]cs" -> "[1]we_bus_timing_0";
+	"[1]data_in"	 [complexity=4,
+		importance=0.0149289643895,
+		rank=0.00373224109738];
+	"[1]data_in" -> "[1]BUS_TIMING_0_REG.data_in";
+}

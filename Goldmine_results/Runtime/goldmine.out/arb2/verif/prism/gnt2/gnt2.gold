@@ -1,0 +1,64 @@
+Report file generated at: May-21-2024 11:47:58 AM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a1: (req1 == 1 & state == 0) |-> (gnt2 == 0)
+IRank: : 0.25362
+Importance: : 1.01449
+Complexity: : 4
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (req2 == 1 & state == 1) |-> (gnt2 == 1)
+IRank: : 0.20531
+Importance: : 1.23188
+Complexity: : 6
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (req2 == 0) |-> (gnt2 == 0)
+IRank: : 0.10725
+Importance: : 0.53623
+Complexity: : 5
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (req2 == 1 & req1 == 0) |-> (gnt2 == 1)
+IRank: : 0.10688
+Importance: : 0.85507
+Complexity: : 8
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a1        | 0.25362 |  1.01449   |     4      |  Unknown  | Unknown |   Unknown   
+      a3        | 0.20531 |  1.23188   |     6      |  Unknown  | Unknown |   Unknown   
+      a0        | 0.10725 |  0.53623   |     5      |  Unknown  | Unknown |   Unknown   
+      a2        | 0.10688 |  0.85507   |     8      |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 4
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 4
+Hit rate: 0.0
+Miss rate: 1.0

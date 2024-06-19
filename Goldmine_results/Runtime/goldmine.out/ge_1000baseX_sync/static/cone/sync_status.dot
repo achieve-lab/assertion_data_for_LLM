@@ -1,0 +1,30 @@
+strict digraph "" {
+	"[1]ebi_K_d1"	 [complexity=3,
+		importance=0.0879726111118,
+		rank=0.0293242037039];
+	"[1]sync_m_acquired"	 [complexity=1,
+		importance=0.0726166315684,
+		rank=0.0726166315684];
+	"[1]ebi_K_d1" -> "[1]sync_m_acquired";
+	"[1]pcs_sync_present"	 [complexity=2,
+		importance=0.202327795327,
+		rank=0.101163897664];
+	"[1]pcs_sync_present" -> "[1]sync_m_acquired";
+	"[1]sync_m_lost"	 [complexity=1,
+		importance=0.0572136732683,
+		rank=0.0572136732683];
+	"[1]pcs_sync_present" -> "[1]sync_m_lost";
+	"[1]sync_status"	 [complexity=3,
+		importance=0.0874081332202,
+		rank=0.0291360444067];
+	"[1]sync_status" -> "[1]sync_m_lost";
+	sync_status	 [complexity=0,
+		importance=0.0301944599519,
+		rank=0.0];
+	"[1]sync_m_acquired" -> sync_status;
+	"[1]sync_m_lost" -> sync_status;
+	"[1]reset"	 [complexity=1,
+		importance=0.100554795136,
+		rank=0.100554795136];
+	"[1]reset" -> sync_status;
+}

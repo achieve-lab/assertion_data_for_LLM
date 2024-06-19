@@ -1,0 +1,25 @@
+property a1;
+@(posedge clk) (Current_state[0] == 0) |=> (xoff_gen_complete == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a3;
+@(posedge clk) (Current_state[2] == 0) |=> (xoff_gen_complete == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a2;
+@(posedge clk) (Current_state[1] == 1) |=> (xoff_gen_complete == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a0;
+@(posedge clk) (Current_state[1] == 0 & Current_state[0] == 1 & xoff_gen == 1 & Current_state[2] == 1) |=> (xoff_gen_complete == 1);
+endproperty
+assert_a0: assert property(a0);
+
+property a4;
+@(posedge clk) (xoff_gen == 0) |=> (xoff_gen_complete == 0);
+endproperty
+assert_a4: assert property(a4);
+

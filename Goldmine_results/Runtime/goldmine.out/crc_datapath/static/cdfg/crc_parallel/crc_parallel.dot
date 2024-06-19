@@ -1,0 +1,90 @@
+strict digraph "compose( ,  )" {
+	node [label="\N"];
+	"440:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0104d3d890>",
+		def_var="['crc_poly_size_reversed']",
+		fillcolor=deepskyblue,
+		label="440:AS
+crc_poly_size_reversed[l] = crc_poly_size[CRC_SIZE - 1 - l];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly_size', 'l']"];
+	"441:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0104d3db50>",
+		def_var="['sel_out']",
+		fillcolor=deepskyblue,
+		label="441:AS
+sel_out[l] = crc_poly_size_reversed << l;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly_size_reversed', 'l']"];
+	"440:AS" -> "441:AS";
+	"450:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0104d3c990>",
+		def_var="['crc_init_sel']",
+		fillcolor=deepskyblue,
+		label="450:AS
+crc_init_sel[m] = crc_poly_size >> CRC_SIZE - 1 - m;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly_size', 'm']"];
+	"451:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0104d3ccd0>",
+		def_var="['crc_init_justified']",
+		fillcolor=deepskyblue,
+		label="451:AS
+crc_init_justified[m] = |(crc_init & crc_init_sel[m]);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_init', 'crc_init_sel', 'm']"];
+	"450:AS" -> "451:AS";
+	"455:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0104d3ced0>",
+		def_var="['crc_comb_out']",
+		fillcolor=deepskyblue,
+		label="455:AS
+crc_comb_out[0] = crc_init_justified;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_init_justified']"];
+	"442:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0104d3ded0>",
+		def_var="['crc_out']",
+		fillcolor=deepskyblue,
+		label="442:AS
+crc_out[l] = |(sel_out[l] & crc_comb_out[FRAME_SIZE]);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['sel_out', 'l', 'crc_comb_out']"];
+	"455:AS" -> "442:AS";
+	"432:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0104d1de90>",
+		def_var="['poly_mux']",
+		fillcolor=deepskyblue,
+		label="432:AS
+poly_mux[k] = |(crc_poly & poly_sel[k]);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly', 'poly_sel', 'k']"];
+	"451:AS" -> "455:AS";
+	"441:AS" -> "442:AS";
+	"431:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0104d1db90>",
+		def_var="['poly_sel']",
+		fillcolor=deepskyblue,
+		label="431:AS
+poly_sel[CRC_SIZE - k] = crc_poly_size >> k - 1;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly_size', 'k']"];
+	"431:AS" -> "432:AS";
+	"426:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f0104d1d1d0>",
+		def_var="['poly_mux']",
+		fillcolor=deepskyblue,
+		label="426:AS
+poly_mux[0] = crc_poly[0];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['crc_poly']"];
+}

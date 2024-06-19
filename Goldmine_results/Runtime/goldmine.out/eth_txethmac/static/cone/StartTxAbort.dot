@@ -1,0 +1,306 @@
+digraph "" {
+	"txstatem1.StatePAD"	 [complexity=18,
+		importance=0.0341939810822,
+		rank=0.00189966561568];
+	"txstatem1.StartJam"	 [complexity=30,
+		importance=0.203641891042,
+		rank=0.00678806303475];
+	"txstatem1.StatePAD" -> "txstatem1.StartJam";
+	StateFCS	 [complexity=28,
+		importance=0.0893108651607,
+		rank=0.00318967375574];
+	TooBig	 [complexity=22,
+		importance=0.0846278509801,
+		rank=0.0038467204991];
+	StateFCS -> TooBig;
+	ColWindow	 [complexity=29,
+		importance=0.12926140358,
+		rank=0.00445728977862];
+	StateFCS -> ColWindow;
+	"txstatem1.StatePreamble"	 [complexity=18,
+		importance=0.0318978611478,
+		rank=0.0017721033971];
+	"txstatem1.StatePreamble" -> "txstatem1.StartJam";
+	"txcounters1.NibCnt"	 [complexity=32,
+		importance=0.13388534674,
+		rank=0.00418391708562];
+	"txcounters1.NibCnt" -> "txcounters1.NibCnt";
+	"txcounters1.ExcessiveDefer"	 [complexity=27,
+		importance=0.0960021421229,
+		rank=0.00355563489344];
+	"txcounters1.NibCnt" -> "txcounters1.ExcessiveDefer";
+	"txcounters1.NibCntEq15"	 [complexity=18,
+		importance=0.0357922162262,
+		rank=0.00198845645701];
+	"txcounters1.NibCnt" -> "txcounters1.NibCntEq15";
+	MaxRet	 [complexity=13,
+		importance=0.0215161097499,
+		rank=0.00165508536538];
+	RetryMax	 [complexity=22,
+		importance=0.0869929783621,
+		rank=0.00395422628919];
+	MaxRet -> RetryMax;
+	MaxCollisionOccured	 [complexity=6,
+		importance=0.0109459717318,
+		rank=0.00182432862197];
+	StartTxAbort	 [complexity=0,
+		importance=0.00616501659953,
+		rank=0.0];
+	MaxCollisionOccured -> StartTxAbort;
+	"txstatem1.StartFCS"	 [complexity=29,
+		importance=0.106139099199,
+		rank=0.00365996893789];
+	"txstatem1.StartFCS" -> "txstatem1.StatePAD";
+	"txstatem1.StateFCS"	 [complexity=28,
+		importance=0.0967144582255,
+		rank=0.00345408779377];
+	"txstatem1.StartFCS" -> "txstatem1.StateFCS";
+	"txcounters1.Reset"	 [complexity=33,
+		importance=0.404524231064,
+		rank=0.0122583100322];
+	"txcounters1.Reset" -> "txcounters1.NibCnt";
+	"txcounters1.ByteCnt"	 [complexity=34,
+		importance=0.127019047221,
+		rank=0.00373585433003];
+	"txcounters1.Reset" -> "txcounters1.ByteCnt";
+	"txstatem1.StateData"	 [complexity=28,
+		importance=0.0922612996194,
+		rank=0.00329504641498];
+	StateData	 [complexity=28,
+		importance=0.0878291227016,
+		rank=0.0031367543822];
+	"txstatem1.StateData" -> StateData;
+	"txstatem1.StateData" -> "txstatem1.StartJam";
+	TxStartFrm	 [complexity=28,
+		importance=0.182007809287,
+		rank=0.0065002789031];
+	ExcessiveDeferOccured	 [complexity=28,
+		importance=0.0963405000771,
+		rank=0.00344073214561];
+	TxStartFrm -> ExcessiveDeferOccured;
+	StopExcessiveDeferOccured	 [complexity=27,
+		importance=0.0895879625702,
+		rank=0.00331807268778];
+	TxStartFrm -> StopExcessiveDeferOccured;
+	HugEn	 [complexity=32,
+		importance=0.107640259979,
+		rank=0.00336375812435];
+	"txcounters1.HugEn"	 [complexity=32,
+		importance=0.104808375833,
+		rank=0.00327526174478];
+	HugEn -> "txcounters1.HugEn";
+	RetryCnt	 [complexity=13,
+		importance=0.0396273622452,
+		rank=0.00304825863425];
+	TooBig -> RetryCnt;
+	TooBig -> StartTxAbort;
+	NoBckof	 [complexity=20,
+		importance=0.0424592463915,
+		rank=0.00212296231958];
+	NoBckof -> RetryCnt;
+	"txstatem1.StartIPG"	 [complexity=28,
+		importance=0.198312521251,
+		rank=0.00708259004469];
+	"txstatem1.StateDefer"	 [complexity=27,
+		importance=0.0958270298213,
+		rank=0.00354914925264];
+	"txstatem1.StartIPG" -> "txstatem1.StateDefer";
+	StateData -> TooBig;
+	UnderRun	 [complexity=18,
+		importance=0.0310801961774,
+		rank=0.00172667756541];
+	StateData -> UnderRun;
+	StateData -> ColWindow;
+	"txstatem1.UnderRun"	 [complexity=18,
+		importance=0.0276739303982,
+		rank=0.00153744057768];
+	"txstatem1.UnderRun" -> "txstatem1.StartJam";
+	RandomEq0	 [complexity=20,
+		importance=0.0453487215881,
+		rank=0.00226743607941];
+	RandomEq0 -> RetryCnt;
+	"txstatem1.StartDefer"	 [complexity=28,
+		importance=0.120383428563,
+		rank=0.00429940816295];
+	"txstatem1.StartDefer" -> "txstatem1.StateDefer";
+	"txstatem1.StartDefer" -> "txstatem1.StateFCS";
+	StateIdle	 [complexity=31,
+		importance=0.132766981338,
+		rank=0.0042828058496];
+	StateIdle -> ColWindow;
+	"txstatem1.Reset"	 [complexity=28,
+		importance=0.290349280309,
+		rank=0.0103696171539];
+	"txstatem1.Reset" -> "txstatem1.StatePAD";
+	"txstatem1.Reset" -> "txstatem1.StatePreamble";
+	"txstatem1.Reset" -> "txstatem1.StateData";
+	"txstatem1.Reset" -> "txstatem1.StateDefer";
+	"txstatem1.Reset" -> "txstatem1.StateFCS";
+	NibCntEq15	 [complexity=18,
+		importance=0.0317764398449,
+		rank=0.00176535776916];
+	"txstatem1.NibCntEq15"	 [complexity=18,
+		importance=0.0279406173118,
+		rank=0.00155225651732];
+	NibCntEq15 -> "txstatem1.NibCntEq15";
+	RetryCnt -> RetryMax;
+	StartJam	 [complexity=10,
+		importance=0.0144161771317,
+		rank=0.00144161771317];
+	StartJam -> MaxCollisionOccured;
+	LateCollision	 [complexity=6,
+		importance=0.0103850856244,
+		rank=0.00173084760406];
+	StartJam -> LateCollision;
+	UnderRun -> "txstatem1.UnderRun";
+	UnderRun -> RetryCnt;
+	UnderRun -> StartTxAbort;
+	UnderRun -> LateCollision;
+	"txstatem1.StartJam" -> "txstatem1.StatePAD";
+	"txstatem1.StartJam" -> "txstatem1.StatePreamble";
+	"txstatem1.StartJam" -> StartJam;
+	"txstatem1.StartJam" -> "txstatem1.StateFCS";
+	"txcounters1.ResetNibCnt"	 [complexity=33,
+		importance=0.285099706486,
+		rank=0.00863938504503];
+	"txcounters1.ResetNibCnt" -> "txcounters1.NibCnt";
+	RandomEqByteCnt	 [complexity=20,
+		importance=0.0470355610692,
+		rank=0.00235177805346];
+	RandomEqByteCnt -> RetryCnt;
+	StatePAD	 [complexity=37,
+		importance=0.262949376283,
+		rank=0.00710673989953];
+	StatePAD -> ColWindow;
+	ColWindow -> MaxCollisionOccured;
+	ColWindow -> RetryCnt;
+	ColWindow -> LateCollision;
+	"txcounters1.MaxFrame"	 [complexity=28,
+		importance=0.100560530455,
+		rank=0.00359144751624];
+	"txcounters1.HugEn" -> "txcounters1.MaxFrame";
+	ExcessiveDeferOccured -> RetryCnt;
+	ExcessiveDeferOccured -> StartTxAbort;
+	ExcessiveDeferOccured -> StopExcessiveDeferOccured;
+	Reset	 [complexity=28,
+		importance=0.271595771857,
+		rank=0.00969984899489];
+	Reset -> RetryCnt;
+	Reset -> ColWindow;
+	Reset -> StopExcessiveDeferOccured;
+	LateCollision -> StartTxAbort;
+	TxUnderRun	 [complexity=28,
+		importance=0.0874597351264,
+		rank=0.0031235619688];
+	TxUnderRun -> TooBig;
+	TxUnderRun -> RetryCnt;
+	TxUnderRun -> UnderRun;
+	RetryMax -> MaxCollisionOccured;
+	RetryMax -> RetryCnt;
+	CollValid	 [complexity=37,
+		importance=0.261354691306,
+		rank=0.00706364030558];
+	CollValid -> ColWindow;
+	StateDefer	 [complexity=27,
+		importance=0.0902367827815,
+		rank=0.00334210306598];
+	"txstatem1.StateDefer" -> StateDefer;
+	MaxFL	 [complexity=32,
+		importance=0.107640259979,
+		rank=0.00336375812435];
+	"txcounters1.MaxFL"	 [complexity=32,
+		importance=0.104808375833,
+		rank=0.00327526174478];
+	MaxFL -> "txcounters1.MaxFL";
+	NibCntEq7	 [complexity=29,
+		importance=0.122717909269,
+		rank=0.00423165204375];
+	NibCntEq7 -> RetryCnt;
+	NibCnt	 [complexity=37,
+		importance=0.521061390702,
+		rank=0.0140827402892];
+	NibCnt -> ColWindow;
+	ExcessiveDefer	 [complexity=27,
+		importance=0.0898624236936,
+		rank=0.00332823791458];
+	"txcounters1.ExcessiveDefer" -> ExcessiveDefer;
+	MaxFrame	 [complexity=28,
+		importance=0.0918267194686,
+		rank=0.00327952569531];
+	MaxFrame -> TooBig;
+	"txstatem1.StartPAD"	 [complexity=19,
+		importance=0.0402539854394,
+		rank=0.0021186308126];
+	"txstatem1.StartPAD" -> "txstatem1.StatePAD";
+	"txcounters1.ResetByteCnt"	 [complexity=35,
+		importance=0.261540547094,
+		rank=0.00747258705982];
+	"txcounters1.ResetByteCnt" -> "txcounters1.ByteCnt";
+	StateIPG	 [complexity=31,
+		importance=0.13364313512,
+		rank=0.00431106887485];
+	StateIPG -> ColWindow;
+	"txcounters1.NibCntEq15" -> NibCntEq15;
+	"txcounters1.ByteCnt" -> "txcounters1.ByteCnt";
+	"txcounters1.ByteCnt" -> "txcounters1.MaxFrame";
+	"txcounters1.MaxFL" -> "txcounters1.MaxFrame";
+	StateJam	 [complexity=29,
+		importance=0.122672985147,
+		rank=0.00423010293611];
+	StateJam -> RetryCnt;
+	"txcounters1.ExDfrEn"	 [complexity=30,
+		importance=0.100249987501,
+		rank=0.00334166625003];
+	"txcounters1.ExDfrEn" -> "txcounters1.ExcessiveDefer";
+	"txstatem1.StartPreamble"	 [complexity=19,
+		importance=0.0374048457119,
+		rank=0.0019686760901];
+	"txstatem1.StartPreamble" -> "txstatem1.StatePreamble";
+	"txstatem1.NibCntEq15" -> "txstatem1.StartJam";
+	StartTxDone	 [complexity=22,
+		importance=0.0865284858036,
+		rank=0.00393311299107];
+	StartTxDone -> RetryCnt;
+	"txcounters1.IncrementByteCnt"	 [complexity=33,
+		importance=0.12281919132,
+		rank=0.00372179367637];
+	"txcounters1.IncrementByteCnt" -> "txcounters1.ByteCnt";
+	ExcessiveDefer -> ExcessiveDeferOccured;
+	StopExcessiveDeferOccured -> ExcessiveDeferOccured;
+	"txstatem1.StateFCS" -> StateFCS;
+	"txstatem1.StateFCS" -> "txstatem1.StartJam";
+	Collision	 [complexity=28,
+		importance=0.0874597351264,
+		rank=0.0031235619688];
+	Collision -> TooBig;
+	Collision -> UnderRun;
+	Collision -> ColWindow;
+	"txstatem1.Collision"	 [complexity=18,
+		importance=0.027697029408,
+		rank=0.001538723856];
+	Collision -> "txstatem1.Collision";
+	StateDefer -> ExcessiveDeferOccured;
+	"txstatem1.Collision" -> "txstatem1.StartJam";
+	StateBackOff	 [complexity=20,
+		importance=0.043208114621,
+		rank=0.00216040573105];
+	StateBackOff -> RetryCnt;
+	"txstatem1.StartData"	 [complexity=30,
+		importance=0.101867153282,
+		rank=0.00339557177608];
+	"txstatem1.StartData" -> "txstatem1.StatePreamble";
+	"txstatem1.StartData" -> "txstatem1.StateData";
+	"txcounters1.MaxFrame" -> MaxFrame;
+	ByteCnt	 [complexity=37,
+		importance=0.26300873405,
+		rank=0.00710834416352];
+	ByteCnt -> ColWindow;
+	"txcounters1.IncrementNibCnt"	 [complexity=33,
+		importance=0.145448352413,
+		rank=0.0044075258307];
+	"txcounters1.IncrementNibCnt" -> "txcounters1.NibCnt";
+	ExDfrEn	 [complexity=30,
+		importance=0.103081871647,
+		rank=0.00343606238824];
+	ExDfrEn -> "txcounters1.ExDfrEn";
+}

@@ -1,0 +1,39 @@
+strict digraph "" {
+	rca_N	 [complexity=5,
+		importance=0.249999911312,
+		rank=0.0499999822624];
+	d	 [complexity=0,
+		importance=0.183333144656,
+		rank=0.0];
+	rca_N -> d;
+	"[1]rstn"	 [complexity=6,
+		importance=0.6999993592,
+		rank=0.116666559867];
+	a_FF	 [complexity=5,
+		importance=0.316666296272,
+		rank=0.0633332592544];
+	"[1]rstn" -> a_FF;
+	b_FF	 [complexity=5,
+		importance=0.316666296272,
+		rank=0.0633332592544];
+	"[1]rstn" -> b_FF;
+	"[1]b"	 [complexity=7,
+		importance=0.383333062928,
+		rank=0.0547618661326];
+	"[1]b" -> b_FF;
+	"[1]a"	 [complexity=7,
+		importance=0.383333062928,
+		rank=0.0547618661326];
+	"[1]a" -> a_FF;
+	a_FF -> d;
+	"[1]valid"	 [complexity=6,
+		importance=0.383333062928,
+		rank=0.0638888438213];
+	"[1]valid" -> a_FF;
+	"[1]valid" -> b_FF;
+	twos_complement	 [complexity=5,
+		importance=0.249999911312,
+		rank=0.0499999822624];
+	twos_complement -> d;
+	b_FF -> d;
+}

@@ -1,0 +1,17 @@
+strict digraph "" {
+	tcResetEn	 [complexity=3,
+		importance=0.833333413922,
+		rank=0.277777804641];
+	resets	 [complexity=2,
+		importance=0.666666827844,
+		rank=0.333333413922];
+	tcResetEn -> resets;
+	resetOut	 [complexity=0,
+		importance=0.333333258136,
+		rank=0.0];
+	resets -> resetOut;
+	resetIn	 [complexity=5,
+		importance=0.833333413922,
+		rank=0.166666682784];
+	resetIn -> resets;
+}

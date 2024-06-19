@@ -1,0 +1,1483 @@
+strict digraph "" {
+	"[1]COLLCONF_0.Reset"	 [complexity=3,
+		importance=0.131470335676,
+		rank=0.0438234452253];
+	"COLLCONF_0.DataOut"	 [complexity=2,
+		importance=0.0433992077854,
+		rank=0.0216996038927];
+	"[1]COLLCONF_0.Reset" -> "COLLCONF_0.DataOut";
+	"IPGR2_0.DataOut"	 [complexity=2,
+		importance=0.041731412897,
+		rank=0.0208657064485];
+	IPGR2Out	 [complexity=2,
+		importance=0.037441367753,
+		rank=0.0187206838765];
+	"IPGR2_0.DataOut" -> IPGR2Out;
+	MIISTATUSOut	 [complexity=2,
+		importance=0.037197509414,
+		rank=0.018598754707];
+	DataOut	 [complexity=0,
+		importance=0.0340304193458,
+		rank=0.0];
+	MIISTATUSOut -> DataOut;
+	"[1]MODER_2.DataIn"	 [complexity=4,
+		importance=0.0465032045241,
+		rank=0.011625801131];
+	"MODER_2.DataOut"	 [complexity=2,
+		importance=0.0452257884704,
+		rank=0.0226128942352];
+	"[1]MODER_2.DataIn" -> "MODER_2.DataOut";
+	"[1]UpdateMIIRX_DATAReg"	 [complexity=5,
+		importance=0.0475719120444,
+		rank=0.00951438240888];
+	"[1]MIIRX_DATA_Wr"	 [complexity=3,
+		importance=0.0463052327749,
+		rank=0.0154350775916];
+	"[1]UpdateMIIRX_DATAReg" -> "[1]MIIRX_DATA_Wr";
+	MODEROut	 [complexity=2,
+		importance=0.0412533149197,
+		rank=0.0206266574598];
+	"MODER_2.DataOut" -> MODEROut;
+	"TXCTRL_0.DataOut"	 [complexity=2,
+		importance=0.0453840131238,
+		rank=0.0226920065619];
+	TXCTRLOut	 [complexity=2,
+		importance=0.0414115395731,
+		rank=0.0207057697865];
+	"TXCTRL_0.DataOut" -> TXCTRLOut;
+	"MAC_ADDR1_0.DataOut"	 [complexity=2,
+		importance=0.0433992077854,
+		rank=0.0216996038927];
+	MAC_ADDR1Out	 [complexity=2,
+		importance=0.0393473413364,
+		rank=0.0196736706682];
+	"MAC_ADDR1_0.DataOut" -> MAC_ADDR1Out;
+	irq_txc	 [complexity=10,
+		importance=0.0418972637746,
+		rank=0.00418972637746];
+	INT_SOURCEOut	 [complexity=2,
+		importance=0.0392351839555,
+		rank=0.0196175919777];
+	irq_txc -> INT_SOURCEOut;
+	irq_busy	 [complexity=10,
+		importance=0.0413017041033,
+		rank=0.00413017041033];
+	irq_busy -> INT_SOURCEOut;
+	"CTRLMODER_0.DataOut"	 [complexity=2,
+		importance=0.041731412897,
+		rank=0.0208657064485];
+	CTRLMODEROut	 [complexity=2,
+		importance=0.037441367753,
+		rank=0.0187206838765];
+	"CTRLMODER_0.DataOut" -> CTRLMODEROut;
+	"MODER_1.DataOut"	 [complexity=2,
+		importance=0.0452257884704,
+		rank=0.0226128942352];
+	"MODER_1.DataOut" -> MODEROut;
+	"[1]Prsd"	 [complexity=4,
+		importance=0.0453552805127,
+		rank=0.0113388201282];
+	"[1]MIIRX_DATA.DataIn"	 [complexity=4,
+		importance=0.0440886012432,
+		rank=0.0110221503108];
+	"[1]Prsd" -> "[1]MIIRX_DATA.DataIn";
+	MIICOMMANDOut	 [complexity=2,
+		importance=0.0415649909108,
+		rank=0.0207824954554];
+	MIICOMMANDOut -> DataOut;
+	"[1]MIIADDRESS_Sel"	 [complexity=9,
+		importance=0.0954733695539,
+		rank=0.0106081521727];
+	"[1]MIIADDRESS_Wr"	 [complexity=3,
+		importance=0.0470967464936,
+		rank=0.0156989154979];
+	"[1]MIIADDRESS_Sel" -> "[1]MIIADDRESS_Wr";
+	"[1]RXHASH1_0.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"RXHASH1_0.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"[1]RXHASH1_0.SyncReset" -> "RXHASH1_0.DataOut";
+	"[1]MAC_ADDR0_0.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"MAC_ADDR0_0.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"[1]MAC_ADDR0_0.SyncReset" -> "MAC_ADDR0_0.DataOut";
+	"[1]MIIRX_DATA.Reset"	 [complexity=3,
+		importance=0.127838067442,
+		rank=0.0426126891473];
+	"MIIRX_DATA.DataOut"	 [complexity=2,
+		importance=0.0421884517074,
+		rank=0.0210942258537];
+	"[1]MIIRX_DATA.Reset" -> "MIIRX_DATA.DataOut";
+	"[1]MAC_ADDR0_0.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"[1]MAC_ADDR0_0.DataIn" -> "MAC_ADDR0_0.DataOut";
+	"[1]MODER_1.Write"	 [complexity=3,
+		importance=0.0468197114093,
+		rank=0.0156065704698];
+	"[1]MODER_1.Write" -> "MODER_1.DataOut";
+	"[1]MIICOMMAND_Sel"	 [complexity=6,
+		importance=0.0506439923612,
+		rank=0.00844066539353];
+	"[1]MIICOMMAND_Wr"	 [complexity=3,
+		importance=0.0493641157945,
+		rank=0.0164547052648];
+	"[1]MIICOMMAND_Sel" -> "[1]MIICOMMAND_Wr";
+	"[1]MIIMODER_0.Write"	 [complexity=3,
+		importance=0.0451520054925,
+		rank=0.0150506684975];
+	"MIIMODER_0.DataOut"	 [complexity=2,
+		importance=0.0433992077854,
+		rank=0.0216996038927];
+	"[1]MIIMODER_0.Write" -> "MIIMODER_0.DataOut";
+	"[1]RXHASH0_0.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"RXHASH0_0.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"[1]RXHASH0_0.SyncReset" -> "RXHASH0_0.DataOut";
+	"[1]HASH0_Sel"	 [complexity=15,
+		importance=0.203637037571,
+		rank=0.0135758025047];
+	"[1]HASH0_Wr"	 [complexity=3,
+		importance=0.050589290251,
+		rank=0.0168630967503];
+	"[1]HASH0_Sel" -> "[1]HASH0_Wr";
+	"IPv4_L1_0.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	IPv4_L1_out	 [complexity=2,
+		importance=0.043159288503,
+		rank=0.0215796442515];
+	"IPv4_L1_0.DataOut" -> IPv4_L1_out;
+	"[1]IPv4_L1_Sel"	 [complexity=15,
+		importance=0.203637037571,
+		rank=0.0135758025047];
+	"[1]IPv4_L1_Wr"	 [complexity=3,
+		importance=0.050589290251,
+		rank=0.0168630967503];
+	"[1]IPv4_L1_Sel" -> "[1]IPv4_L1_Wr";
+	"[1]MAC_ADDR1_1.Reset"	 [complexity=3,
+		importance=0.131470335676,
+		rank=0.0438234452253];
+	"MAC_ADDR1_1.DataOut"	 [complexity=2,
+		importance=0.0433992077854,
+		rank=0.0216996038927];
+	"[1]MAC_ADDR1_1.Reset" -> "MAC_ADDR1_1.DataOut";
+	"[1]MIITX_DATA_Sel"	 [complexity=9,
+		importance=0.0954733695539,
+		rank=0.0106081521727];
+	"[1]MIITX_DATA_Wr"	 [complexity=3,
+		importance=0.0470967464936,
+		rank=0.0156989154979];
+	"[1]MIITX_DATA_Sel" -> "[1]MIITX_DATA_Wr";
+	"[1]INT_SOURCE_Sel"	 [complexity=15,
+		importance=0.0445073226259,
+		rank=0.00296715484173];
+	"[1]INT_SOURCE_Wr"	 [complexity=12,
+		importance=0.0432274460592,
+		rank=0.0036022871716];
+	"[1]INT_SOURCE_Sel" -> "[1]INT_SOURCE_Wr";
+	MIIADDRESSOut	 [complexity=2,
+		importance=0.0393473413364,
+		rank=0.0196736706682];
+	MIIADDRESSOut -> DataOut;
+	"[1]MIICOMMAND1.Reset"	 [complexity=3,
+		importance=0.138825053285,
+		rank=0.0462750177616];
+	"MIICOMMAND1.DataOut"	 [complexity=2,
+		importance=0.0458507803217,
+		rank=0.0229253901608];
+	"[1]MIICOMMAND1.Reset" -> "MIICOMMAND1.DataOut";
+	"[1]MIICOMMAND0.SyncReset"	 [complexity=3,
+		importance=0.0923352759209,
+		rank=0.030778425307];
+	"MIICOMMAND0.DataOut"	 [complexity=2,
+		importance=0.0455342983257,
+		rank=0.0227671491628];
+	"[1]MIICOMMAND0.SyncReset" -> "MIICOMMAND0.DataOut";
+	"[1]IPGR2_0.Write"	 [complexity=3,
+		importance=0.0439608349087,
+		rank=0.0146536116362];
+	"[1]IPGR2_0.Write" -> "IPGR2_0.DataOut";
+	"[1]MAC_ADDR1_Sel"	 [complexity=9,
+		importance=0.0954733695539,
+		rank=0.0106081521727];
+	"[1]MAC_ADDR1_Wr"	 [complexity=3,
+		importance=0.0470967464936,
+		rank=0.0156989154979];
+	"[1]MAC_ADDR1_Sel" -> "[1]MAC_ADDR1_Wr";
+	"[1]COLLCONF_Wr"	 [complexity=3,
+		importance=0.0470967464936,
+		rank=0.0156989154979];
+	"[1]COLLCONF_0.Write"	 [complexity=3,
+		importance=0.0451520054925,
+		rank=0.0150506684975];
+	"[1]COLLCONF_Wr" -> "[1]COLLCONF_0.Write";
+	"[1]COLLCONF_2.Write"	 [complexity=3,
+		importance=0.0451520054925,
+		rank=0.0150506684975];
+	"[1]COLLCONF_Wr" -> "[1]COLLCONF_2.Write";
+	"PACKETLEN_3.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	PACKETLENOut	 [complexity=2,
+		importance=0.043159288503,
+		rank=0.0215796442515];
+	"PACKETLEN_3.DataOut" -> PACKETLENOut;
+	"IPGR1_0.DataOut"	 [complexity=2,
+		importance=0.041731412897,
+		rank=0.0208657064485];
+	IPGR1Out	 [complexity=2,
+		importance=0.037441367753,
+		rank=0.0187206838765];
+	"IPGR1_0.DataOut" -> IPGR1Out;
+	"[1]MIITX_DATA_1.SyncReset"	 [complexity=3,
+		importance=0.0880650948403,
+		rank=0.0293550316134];
+	"MIITX_DATA_1.DataOut"	 [complexity=2,
+		importance=0.0433992077854,
+		rank=0.0216996038927];
+	"[1]MIITX_DATA_1.SyncReset" -> "MIITX_DATA_1.DataOut";
+	"INT_MASK_0.DataOut"	 [complexity=2,
+		importance=0.041731412897,
+		rank=0.0208657064485];
+	INT_MASKOut	 [complexity=2,
+		importance=0.037441367753,
+		rank=0.0187206838765];
+	"INT_MASK_0.DataOut" -> INT_MASKOut;
+	COLLCONFOut	 [complexity=2,
+		importance=0.0393473413364,
+		rank=0.0196736706682];
+	COLLCONFOut -> DataOut;
+	"[1]IPv4_L1_1.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"IPv4_L1_1.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"[1]IPv4_L1_1.SyncReset" -> "IPv4_L1_1.DataOut";
+	"[1]MIICOMMAND2.Write"	 [complexity=3,
+		importance=0.0474383738386,
+		rank=0.0158127912795];
+	"[1]MIICOMMAND_Wr" -> "[1]MIICOMMAND2.Write";
+	"[1]MIICOMMAND1.Write"	 [complexity=3,
+		importance=0.0474383738386,
+		rank=0.0158127912795];
+	"[1]MIICOMMAND_Wr" -> "[1]MIICOMMAND1.Write";
+	"[1]MIICOMMAND0.Write"	 [complexity=3,
+		importance=0.0471218918426,
+		rank=0.0157072972809];
+	"[1]MIICOMMAND_Wr" -> "[1]MIICOMMAND0.Write";
+	"[1]MIICOMMAND2.Reset"	 [complexity=3,
+		importance=0.138825053285,
+		rank=0.0462750177616];
+	"MIICOMMAND2.DataOut"	 [complexity=2,
+		importance=0.0458507803217,
+		rank=0.0229253901608];
+	"[1]MIICOMMAND2.Reset" -> "MIICOMMAND2.DataOut";
+	INT_MASKOut -> DataOut;
+	"[1]IPv4_L1_2.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"IPv4_L1_2.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"[1]IPv4_L1_2.DataIn" -> "IPv4_L1_2.DataOut";
+	"[1]RXHASH1_3.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"RXHASH1_3.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"[1]RXHASH1_3.SyncReset" -> "RXHASH1_3.DataOut";
+	"[1]TX_BD_NUM_0.SyncReset"	 [complexity=3,
+		importance=0.0847375545616,
+		rank=0.0282458515205];
+	"TX_BD_NUM_0.DataOut"	 [complexity=2,
+		importance=0.041735437646,
+		rank=0.020867718823];
+	"[1]TX_BD_NUM_0.SyncReset" -> "TX_BD_NUM_0.DataOut";
+	"[1]MAC_ADDR0_1.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"MAC_ADDR0_1.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"[1]MAC_ADDR0_1.Write" -> "MAC_ADDR0_1.DataOut";
+	"[1]PACKETLEN_3.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]PACKETLEN_3.Write" -> "PACKETLEN_3.DataOut";
+	"[1]MODER_0.SyncReset"	 [complexity=3,
+		importance=0.0917182562103,
+		rank=0.0305727520701];
+	"MODER_0.DataOut"	 [complexity=2,
+		importance=0.0452257884704,
+		rank=0.0226128942352];
+	"[1]MODER_0.SyncReset" -> "MODER_0.DataOut";
+	"[1]MIICOMMAND2.Write" -> "MIICOMMAND2.DataOut";
+	"[1]MIICOMMAND0.DataIn"	 [complexity=4,
+		importance=0.0468117143794,
+		rank=0.0117029285948];
+	"[1]MIICOMMAND0.DataIn" -> "MIICOMMAND0.DataOut";
+	"[1]MODER_2.Write"	 [complexity=3,
+		importance=0.0468197114093,
+		rank=0.0156065704698];
+	"[1]MODER_2.Write" -> "MODER_2.DataOut";
+	"[1]TXCTRL_0.Write"	 [complexity=3,
+		importance=0.0469779360627,
+		rank=0.0156593120209];
+	"[1]TXCTRL_0.Write" -> "TXCTRL_0.DataOut";
+	"[1]Reset"	 [complexity=3,
+		importance=0.12773363028,
+		rank=0.0425778767601];
+	"[1]Reset" -> "[1]COLLCONF_0.Reset";
+	"[1]Reset" -> irq_txc;
+	"[1]Reset" -> irq_busy;
+	"[1]Reset" -> "[1]MIIRX_DATA.Reset";
+	"[1]Reset" -> "[1]MAC_ADDR1_1.Reset";
+	"[1]Reset" -> "[1]MIICOMMAND1.Reset";
+	"[1]Reset" -> "[1]MIICOMMAND2.Reset";
+	"[1]RXHASH0_0.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]RXHASH0_0.Reset";
+	"[1]PACKETLEN_3.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]PACKETLEN_3.Reset";
+	"[1]TXCTRL_1.Reset"	 [complexity=3,
+		importance=0.137424751691,
+		rank=0.0458082505637];
+	"[1]Reset" -> "[1]TXCTRL_1.Reset";
+	"[1]MODER_2.Reset"	 [complexity=3,
+		importance=0.136950077731,
+		rank=0.0456500259103];
+	"[1]Reset" -> "[1]MODER_2.Reset";
+	"[1]MIITX_DATA_1.Reset"	 [complexity=3,
+		importance=0.131470335676,
+		rank=0.0438234452253];
+	"[1]Reset" -> "[1]MIITX_DATA_1.Reset";
+	"[1]COLLCONF_2.Reset"	 [complexity=3,
+		importance=0.131470335676,
+		rank=0.0438234452253];
+	"[1]Reset" -> "[1]COLLCONF_2.Reset";
+	"[1]TX_BD_NUM_0.Reset"	 [complexity=3,
+		importance=0.126479025258,
+		rank=0.0421596750859];
+	"[1]Reset" -> "[1]TX_BD_NUM_0.Reset";
+	"[1]MIIMODER_1.Reset"	 [complexity=3,
+		importance=0.131470335676,
+		rank=0.0438234452253];
+	"[1]Reset" -> "[1]MIIMODER_1.Reset";
+	"[1]IPv4_L1_0.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]IPv4_L1_0.Reset";
+	irq_txe	 [complexity=10,
+		importance=0.0413017041033,
+		rank=0.00413017041033];
+	"[1]Reset" -> irq_txe;
+	"[1]RXHASH1_0.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]RXHASH1_0.Reset";
+	"[1]RXHASH1_2.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]RXHASH1_2.Reset";
+	"[1]IPv4_L1_3.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]IPv4_L1_3.Reset";
+	"[1]TXCTRL_0.Reset"	 [complexity=3,
+		importance=0.137424751691,
+		rank=0.0458082505637];
+	"[1]Reset" -> "[1]TXCTRL_0.Reset";
+	"[1]MAC_ADDR1_0.Reset"	 [complexity=3,
+		importance=0.131470335676,
+		rank=0.0438234452253];
+	"[1]Reset" -> "[1]MAC_ADDR1_0.Reset";
+	"[1]IPv4_L1_2.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]IPv4_L1_2.Reset";
+	"[1]MIIMODER_0.Reset"	 [complexity=3,
+		importance=0.131470335676,
+		rank=0.0438234452253];
+	"[1]Reset" -> "[1]MIIMODER_0.Reset";
+	"[1]MAC_ADDR0_3.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]MAC_ADDR0_3.Reset";
+	"[1]MIIADDRESS_0.Reset"	 [complexity=3,
+		importance=0.131470335676,
+		rank=0.0438234452253];
+	"[1]Reset" -> "[1]MIIADDRESS_0.Reset";
+	"[1]RXHASH1_3.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]RXHASH1_3.Reset";
+	"[1]CTRLMODER_0.Reset"	 [complexity=3,
+		importance=0.126466951011,
+		rank=0.0421556503369];
+	"[1]Reset" -> "[1]CTRLMODER_0.Reset";
+	irq_rxe	 [complexity=10,
+		importance=0.0413017041033,
+		rank=0.00413017041033];
+	"[1]Reset" -> irq_rxe;
+	"[1]MODER_0.Reset"	 [complexity=3,
+		importance=0.136950077731,
+		rank=0.0456500259103];
+	"[1]Reset" -> "[1]MODER_0.Reset";
+	"[1]MIICOMMAND0.Reset"	 [complexity=3,
+		importance=0.137875607297,
+		rank=0.0459585357656];
+	"[1]Reset" -> "[1]MIICOMMAND0.Reset";
+	"[1]MODER_1.Reset"	 [complexity=3,
+		importance=0.136950077731,
+		rank=0.0456500259103];
+	"[1]Reset" -> "[1]MODER_1.Reset";
+	"[1]IPGT_0.Reset"	 [complexity=3,
+		importance=0.126466951011,
+		rank=0.0421556503369];
+	"[1]Reset" -> "[1]IPGT_0.Reset";
+	"[1]PACKETLEN_1.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]PACKETLEN_1.Reset";
+	"[1]PACKETLEN_2.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]PACKETLEN_2.Reset";
+	"[1]RXHASH0_2.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]RXHASH0_2.Reset";
+	"[1]IPGR1_0.Reset"	 [complexity=3,
+		importance=0.126466951011,
+		rank=0.0421556503369];
+	"[1]Reset" -> "[1]IPGR1_0.Reset";
+	"[1]TXCTRL_2.Reset"	 [complexity=3,
+		importance=0.138374197679,
+		rank=0.0461247325597];
+	"[1]Reset" -> "[1]TXCTRL_2.Reset";
+	"[1]INT_MASK_0.Reset"	 [complexity=3,
+		importance=0.126466951011,
+		rank=0.0421556503369];
+	"[1]Reset" -> "[1]INT_MASK_0.Reset";
+	"[1]RXHASH0_3.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]RXHASH0_3.Reset";
+	"[1]PACKETLEN_0.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]PACKETLEN_0.Reset";
+	irq_txb	 [complexity=10,
+		importance=0.0413017041033,
+		rank=0.00413017041033];
+	"[1]Reset" -> irq_txb;
+	irq_rxb	 [complexity=10,
+		importance=0.0413017041033,
+		rank=0.00413017041033];
+	"[1]Reset" -> irq_rxb;
+	irq_rxc	 [complexity=10,
+		importance=0.0419982859599,
+		rank=0.00419982859599];
+	"[1]Reset" -> irq_rxc;
+	"[1]MAC_ADDR0_1.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]MAC_ADDR0_1.Reset";
+	"[1]RXHASH1_1.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]RXHASH1_1.Reset";
+	"[1]MAC_ADDR0_2.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]MAC_ADDR0_2.Reset";
+	"[1]MAC_ADDR0_0.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]MAC_ADDR0_0.Reset";
+	"[1]IPv4_L1_1.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]IPv4_L1_1.Reset";
+	"[1]RXHASH0_1.Reset"	 [complexity=3,
+		importance=0.142548909133,
+		rank=0.0475163030444];
+	"[1]Reset" -> "[1]RXHASH0_1.Reset";
+	"[1]IPGR2_0.Reset"	 [complexity=3,
+		importance=0.126466951011,
+		rank=0.0421556503369];
+	"[1]Reset" -> "[1]IPGR2_0.Reset";
+	"[1]MIITX_DATA_0.Reset"	 [complexity=3,
+		importance=0.131470335676,
+		rank=0.0438234452253];
+	"[1]Reset" -> "[1]MIITX_DATA_0.Reset";
+	"[1]MIIADDRESS_1.Reset"	 [complexity=3,
+		importance=0.131470335676,
+		rank=0.0438234452253];
+	"[1]Reset" -> "[1]MIIADDRESS_1.Reset";
+	MIIMODEROut	 [complexity=2,
+		importance=0.0393473413364,
+		rank=0.0196736706682];
+	MIIMODEROut -> DataOut;
+	CTRLMODEROut -> DataOut;
+	"[1]RXHASH1_1.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"RXHASH1_1.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"[1]RXHASH1_1.Write" -> "RXHASH1_1.DataOut";
+	"[1]RXHASH0_2.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]HASH0_Wr" -> "[1]RXHASH0_2.Write";
+	"[1]RXHASH0_3.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]HASH0_Wr" -> "[1]RXHASH0_3.Write";
+	"[1]RXHASH0_0.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]HASH0_Wr" -> "[1]RXHASH0_0.Write";
+	"[1]RXHASH0_1.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]HASH0_Wr" -> "[1]RXHASH0_1.Write";
+	"[1]MIIMODER_0.DataIn"	 [complexity=4,
+		importance=0.0446766238391,
+		rank=0.0111691559598];
+	"[1]MIIMODER_0.DataIn" -> "MIIMODER_0.DataOut";
+	"[1]MAC_ADDR0_0.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]MAC_ADDR0_0.Write" -> "MAC_ADDR0_0.DataOut";
+	"[1]RXHASH0_0.Reset" -> "RXHASH0_0.DataOut";
+	"[1]IPGR2_Sel"	 [complexity=6,
+		importance=0.0471664534313,
+		rank=0.00786107557188];
+	"[1]IPGR2_Wr"	 [complexity=3,
+		importance=0.0458865768646,
+		rank=0.0152955256215];
+	"[1]IPGR2_Sel" -> "[1]IPGR2_Wr";
+	"[1]PACKETLEN_3.Reset" -> "PACKETLEN_3.DataOut";
+	"[1]INT_MASK_0.SyncReset"	 [complexity=3,
+		importance=0.0847295050635,
+		rank=0.0282431683545];
+	"[1]INT_MASK_0.SyncReset" -> "INT_MASK_0.DataOut";
+	"TXCTRL_1.DataOut"	 [complexity=2,
+		importance=0.0453840131238,
+		rank=0.0226920065619];
+	"[1]TXCTRL_1.Reset" -> "TXCTRL_1.DataOut";
+	"MAC_ADDR0_2.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	MAC_ADDR0Out	 [complexity=2,
+		importance=0.043159288503,
+		rank=0.0215796442515];
+	"MAC_ADDR0_2.DataOut" -> MAC_ADDR0Out;
+	"[1]IPv4_L1_1.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"[1]IPv4_L1_1.DataIn" -> "IPv4_L1_1.DataOut";
+	"RXHASH0_2.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"[1]RXHASH0_2.Write" -> "RXHASH0_2.DataOut";
+	"[1]RXHASH1_2.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"RXHASH1_2.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"[1]RXHASH1_2.SyncReset" -> "RXHASH1_2.DataOut";
+	"[1]PACKETLEN_Wr"	 [complexity=3,
+		importance=0.050589290251,
+		rank=0.0168630967503];
+	"[1]PACKETLEN_Wr" -> "[1]PACKETLEN_3.Write";
+	"[1]PACKETLEN_2.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]PACKETLEN_Wr" -> "[1]PACKETLEN_2.Write";
+	"[1]PACKETLEN_0.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]PACKETLEN_Wr" -> "[1]PACKETLEN_0.Write";
+	"[1]PACKETLEN_1.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]PACKETLEN_Wr" -> "[1]PACKETLEN_1.Write";
+	"[1]TXCTRL_1.DataIn"	 [complexity=4,
+		importance=0.0466614291775,
+		rank=0.0116653572944];
+	"[1]TXCTRL_1.DataIn" -> "TXCTRL_1.DataOut";
+	"[1]MODER_2.Reset" -> "MODER_2.DataOut";
+	"[1]MIICOMMAND2.DataIn"	 [complexity=4,
+		importance=0.0471281963754,
+		rank=0.0117820490938];
+	"[1]MIICOMMAND2.DataIn" -> "MIICOMMAND2.DataOut";
+	"[1]TX_BD_NUM_0.DataIn"	 [complexity=4,
+		importance=0.0430128536997,
+		rank=0.0107532134249];
+	"[1]TX_BD_NUM_0.DataIn" -> "TX_BD_NUM_0.DataOut";
+	"[1]MIIMODER_1.Write"	 [complexity=3,
+		importance=0.0451520054925,
+		rank=0.0150506684975];
+	"MIIMODER_1.DataOut"	 [complexity=2,
+		importance=0.0433992077854,
+		rank=0.0216996038927];
+	"[1]MIIMODER_1.Write" -> "MIIMODER_1.DataOut";
+	"[1]RXHASH0_1.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"RXHASH0_1.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"[1]RXHASH0_1.SyncReset" -> "RXHASH0_1.DataOut";
+	"[1]RXHASH0_3.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"RXHASH0_3.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"[1]RXHASH0_3.DataIn" -> "RXHASH0_3.DataOut";
+	HASH0Out	 [complexity=2,
+		importance=0.043159288503,
+		rank=0.0215796442515];
+	"RXHASH0_3.DataOut" -> HASH0Out;
+	"[1]RXHASH0_1.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"[1]RXHASH0_1.DataIn" -> "RXHASH0_1.DataOut";
+	IPv4_L1_out -> DataOut;
+	MIIRX_DATAOut	 [complexity=2,
+		importance=0.0375936886134,
+		rank=0.0187968443067];
+	"MIIRX_DATA.DataOut" -> MIIRX_DATAOut;
+	"[1]MIITX_DATA_1.Reset" -> "MIITX_DATA_1.DataOut";
+	"[1]RXHASH0_3.Write" -> "RXHASH0_3.DataOut";
+	"IPGT_0.DataOut"	 [complexity=2,
+		importance=0.041731412897,
+		rank=0.0208657064485];
+	IPGTOut	 [complexity=2,
+		importance=0.037441367753,
+		rank=0.0187206838765];
+	"IPGT_0.DataOut" -> IPGTOut;
+	"[1]IPGR1_Wr"	 [complexity=3,
+		importance=0.0458865768646,
+		rank=0.0152955256215];
+	"[1]IPGR1_0.Write"	 [complexity=3,
+		importance=0.0439608349087,
+		rank=0.0146536116362];
+	"[1]IPGR1_Wr" -> "[1]IPGR1_0.Write";
+	"PACKETLEN_2.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"PACKETLEN_2.DataOut" -> PACKETLENOut;
+	"COLLCONF_2.DataOut"	 [complexity=2,
+		importance=0.0433992077854,
+		rank=0.0216996038927];
+	"[1]COLLCONF_2.Reset" -> "COLLCONF_2.DataOut";
+	"[1]MIIMODER_0.SyncReset"	 [complexity=3,
+		importance=0.0880650948403,
+		rank=0.0293550316134];
+	"[1]MIIMODER_0.SyncReset" -> "MIIMODER_0.DataOut";
+	"[1]MIITX_DATA_1.Write"	 [complexity=3,
+		importance=0.0451520054925,
+		rank=0.0150506684975];
+	"[1]MIITX_DATA_1.Write" -> "MIITX_DATA_1.DataOut";
+	"[1]PACKETLEN_3.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"[1]PACKETLEN_3.DataIn" -> "PACKETLEN_3.DataOut";
+	"[1]PACKETLEN_2.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"[1]PACKETLEN_2.SyncReset" -> "PACKETLEN_2.DataOut";
+	"[1]PACKETLEN_3.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"[1]PACKETLEN_3.SyncReset" -> "PACKETLEN_3.DataOut";
+	"[1]TxB_IRQ"	 [complexity=11,
+		importance=0.0838700874761,
+		rank=0.00762455340692];
+	"[1]TxB_IRQ" -> irq_txb;
+	"[1]PACKETLEN_2.Write" -> "PACKETLEN_2.DataOut";
+	"[1]Address"	 [complexity=8,
+		importance=0.0484331327008,
+		rank=0.0060541415876];
+	"[1]Address" -> "[1]MIIADDRESS_Sel";
+	"[1]Address" -> "[1]MIICOMMAND_Sel";
+	"[1]Address" -> "[1]HASH0_Sel";
+	"[1]Address" -> "[1]IPv4_L1_Sel";
+	"[1]Address" -> "[1]MIITX_DATA_Sel";
+	"[1]Address" -> "[1]INT_SOURCE_Sel";
+	"[1]Address" -> "[1]MAC_ADDR1_Sel";
+	"[1]Address" -> "[1]IPGR2_Sel";
+	"[1]INT_MASK_Sel"	 [complexity=6,
+		importance=0.0471664534313,
+		rank=0.00786107557188];
+	"[1]Address" -> "[1]INT_MASK_Sel";
+	"[1]MAC_ADDR0_Sel"	 [complexity=15,
+		importance=0.203637037571,
+		rank=0.0135758025047];
+	"[1]Address" -> "[1]MAC_ADDR0_Sel";
+	"[1]IPGR1_Sel"	 [complexity=6,
+		importance=0.0471664534313,
+		rank=0.00786107557188];
+	"[1]Address" -> "[1]IPGR1_Sel";
+	"[1]MIIMODER_Sel"	 [complexity=9,
+		importance=0.0954733695539,
+		rank=0.0106081521727];
+	"[1]Address" -> "[1]MIIMODER_Sel";
+	"[1]TXCTRL_Sel"	 [complexity=12,
+		importance=0.149054350882,
+		rank=0.0124211959068];
+	"[1]Address" -> "[1]TXCTRL_Sel";
+	"[1]HASH1_Sel"	 [complexity=15,
+		importance=0.203637037571,
+		rank=0.0135758025047];
+	"[1]Address" -> "[1]HASH1_Sel";
+	"[1]CTRLMODER_Sel"	 [complexity=6,
+		importance=0.0471664534313,
+		rank=0.00786107557188];
+	"[1]Address" -> "[1]CTRLMODER_Sel";
+	"[1]PACKETLEN_Sel"	 [complexity=15,
+		importance=0.203637037571,
+		rank=0.0135758025047];
+	"[1]Address" -> "[1]PACKETLEN_Sel";
+	"[1]COLLCONF_Sel"	 [complexity=9,
+		importance=0.0954733695539,
+		rank=0.0106081521727];
+	"[1]Address" -> "[1]COLLCONF_Sel";
+	"[1]TX_BD_NUM_Sel"	 [complexity=7,
+		importance=0.0471865790661,
+		rank=0.00674093986659];
+	"[1]Address" -> "[1]TX_BD_NUM_Sel";
+	"[1]MODER_Sel"	 [complexity=12,
+		importance=0.147630230934,
+		rank=0.0123025192445];
+	"[1]Address" -> "[1]MODER_Sel";
+	"[1]IPGT_Sel"	 [complexity=6,
+		importance=0.0471664534313,
+		rank=0.00786107557188];
+	"[1]Address" -> "[1]IPGT_Sel";
+	"[1]MIITX_DATA_0.DataIn"	 [complexity=4,
+		importance=0.0446766238391,
+		rank=0.0111691559598];
+	"MIITX_DATA_0.DataOut"	 [complexity=2,
+		importance=0.0433992077854,
+		rank=0.0216996038927];
+	"[1]MIITX_DATA_0.DataIn" -> "MIITX_DATA_0.DataOut";
+	"[1]IPv4_L1_3.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"IPv4_L1_3.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"[1]IPv4_L1_3.DataIn" -> "IPv4_L1_3.DataOut";
+	"[1]INT_MASK_0.DataIn"	 [complexity=4,
+		importance=0.0430088289507,
+		rank=0.0107522072377];
+	"[1]INT_MASK_0.DataIn" -> "INT_MASK_0.DataOut";
+	"[1]RstTxPauseRq"	 [complexity=3,
+		importance=0.0945678190448,
+		rank=0.0315226063483];
+	"[1]TXCTRL_2.SyncReset"	 [complexity=3,
+		importance=0.0933011397753,
+		rank=0.0311003799251];
+	"[1]RstTxPauseRq" -> "[1]TXCTRL_2.SyncReset";
+	"[1]MAC_ADDR0_Wr"	 [complexity=3,
+		importance=0.050589290251,
+		rank=0.0168630967503];
+	"[1]MAC_ADDR0_Wr" -> "[1]MAC_ADDR0_1.Write";
+	"[1]MAC_ADDR0_Wr" -> "[1]MAC_ADDR0_0.Write";
+	"[1]MAC_ADDR0_2.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]MAC_ADDR0_Wr" -> "[1]MAC_ADDR0_2.Write";
+	"[1]MAC_ADDR0_3.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]MAC_ADDR0_Wr" -> "[1]MAC_ADDR0_3.Write";
+	"[1]PACKETLEN_1.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"PACKETLEN_1.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"[1]PACKETLEN_1.DataIn" -> "PACKETLEN_1.DataOut";
+	"[1]INT_MASK_Wr"	 [complexity=3,
+		importance=0.0458865768646,
+		rank=0.0152955256215];
+	"[1]INT_MASK_Sel" -> "[1]INT_MASK_Wr";
+	"[1]COLLCONF_0.Write" -> "COLLCONF_0.DataOut";
+	MAC_ADDR0Out -> DataOut;
+	"MIICOMMAND1.DataOut" -> MIICOMMANDOut;
+	"[1]MAC_ADDR1_0.Write"	 [complexity=3,
+		importance=0.0451520054925,
+		rank=0.0150506684975];
+	"[1]MAC_ADDR1_0.Write" -> "MAC_ADDR1_0.DataOut";
+	"[1]TX_BD_NUM_0.Reset" -> "TX_BD_NUM_0.DataOut";
+	"MIIMODER_1.DataOut" -> MIIMODEROut;
+	"[1]MIIMODER_1.Reset" -> "MIIMODER_1.DataOut";
+	IPGTOut -> DataOut;
+	"[1]IPv4_L1_0.Reset" -> "IPv4_L1_0.DataOut";
+	"IPv4_L1_2.DataOut" -> IPv4_L1_out;
+	"[1]IPv4_L1_0.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]IPv4_L1_0.Write" -> "IPv4_L1_0.DataOut";
+	"[1]MODER_1.SyncReset"	 [complexity=3,
+		importance=0.0917182562103,
+		rank=0.0305727520701];
+	"[1]MODER_1.SyncReset" -> "MODER_1.DataOut";
+	"[1]MIIADDRESS_0.DataIn"	 [complexity=4,
+		importance=0.0446766238391,
+		rank=0.0111691559598];
+	"MIIADDRESS_0.DataOut"	 [complexity=2,
+		importance=0.0433992077854,
+		rank=0.0216996038927];
+	"[1]MIIADDRESS_0.DataIn" -> "MIIADDRESS_0.DataOut";
+	MAC_ADDR1Out -> DataOut;
+	"[1]MAC_ADDR1_1.DataIn"	 [complexity=4,
+		importance=0.0446766238391,
+		rank=0.0111691559598];
+	"[1]MAC_ADDR1_1.DataIn" -> "MAC_ADDR1_1.DataOut";
+	"[1]IPGR1_0.Write" -> "IPGR1_0.DataOut";
+	"TXCTRL_1.DataOut" -> TXCTRLOut;
+	"[1]PACKETLEN_0.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"PACKETLEN_0.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"[1]PACKETLEN_0.DataIn" -> "PACKETLEN_0.DataOut";
+	HASH0Out -> DataOut;
+	"[1]MIIADDRESS_1.Write"	 [complexity=3,
+		importance=0.0451520054925,
+		rank=0.0150506684975];
+	"MIIADDRESS_1.DataOut"	 [complexity=2,
+		importance=0.0433992077854,
+		rank=0.0216996038927];
+	"[1]MIIADDRESS_1.Write" -> "MIIADDRESS_1.DataOut";
+	irq_txe -> INT_SOURCEOut;
+	"[1]MAC_ADDR0_3.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"MAC_ADDR0_3.DataOut"	 [complexity=2,
+		importance=0.0470920656046,
+		rank=0.0235460328023];
+	"[1]MAC_ADDR0_3.SyncReset" -> "MAC_ADDR0_3.DataOut";
+	"[1]RXHASH1_0.Reset" -> "RXHASH1_0.DataOut";
+	"[1]IPv4_L1_2.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"[1]IPv4_L1_2.SyncReset" -> "IPv4_L1_2.DataOut";
+	"[1]MAC_ADDR1_1.SyncReset"	 [complexity=3,
+		importance=0.0880650948403,
+		rank=0.0293550316134];
+	"[1]MAC_ADDR1_1.SyncReset" -> "MAC_ADDR1_1.DataOut";
+	"[1]MIIRX_DATA.Write"	 [complexity=3,
+		importance=0.0444050832392,
+		rank=0.0148016944131];
+	"[1]MIIRX_DATA_Wr" -> "[1]MIIRX_DATA.Write";
+	"[1]RXHASH1_2.Reset" -> "RXHASH1_2.DataOut";
+	"[1]MAC_ADDR0_1.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"[1]MAC_ADDR0_1.DataIn" -> "MAC_ADDR0_1.DataOut";
+	"[1]MAC_ADDR0_Sel" -> "[1]MAC_ADDR0_Wr";
+	"[1]MAC_ADDR0_1.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"[1]MAC_ADDR0_1.SyncReset" -> "MAC_ADDR0_1.DataOut";
+	"[1]RXHASH1_3.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"[1]RXHASH1_3.DataIn" -> "RXHASH1_3.DataOut";
+	"[1]MIITX_DATA_0.Write"	 [complexity=3,
+		importance=0.0451520054925,
+		rank=0.0150506684975];
+	"[1]MIITX_DATA_0.Write" -> "MIITX_DATA_0.DataOut";
+	"[1]PACKETLEN_2.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"[1]PACKETLEN_2.DataIn" -> "PACKETLEN_2.DataOut";
+	"[1]RXHASH1_1.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"[1]RXHASH1_1.SyncReset" -> "RXHASH1_1.DataOut";
+	TX_BD_NUMOut	 [complexity=2,
+		importance=0.0374427107283,
+		rank=0.0187213553641];
+	TX_BD_NUMOut -> DataOut;
+	"[1]COLLCONF_2.SyncReset"	 [complexity=3,
+		importance=0.0880650948403,
+		rank=0.0293550316134];
+	"[1]COLLCONF_2.SyncReset" -> "COLLCONF_2.DataOut";
+	"[1]MIICOMMAND1.Write" -> "MIICOMMAND1.DataOut";
+	"[1]MIITX_DATA_Wr" -> "[1]MIITX_DATA_1.Write";
+	"[1]MIITX_DATA_Wr" -> "[1]MIITX_DATA_0.Write";
+	"[1]IPGR1_0.DataIn"	 [complexity=4,
+		importance=0.0430088289507,
+		rank=0.0107522072377];
+	"[1]IPGR1_0.DataIn" -> "IPGR1_0.DataOut";
+	"[1]IPGR1_Sel" -> "[1]IPGR1_Wr";
+	"[1]IPGT_0.Write"	 [complexity=3,
+		importance=0.0439608349087,
+		rank=0.0146536116362];
+	"[1]IPGT_0.Write" -> "IPGT_0.DataOut";
+	"[1]MIIADDRESS_Wr" -> "[1]MIIADDRESS_1.Write";
+	"[1]MIIADDRESS_0.Write"	 [complexity=3,
+		importance=0.0451520054925,
+		rank=0.0150506684975];
+	"[1]MIIADDRESS_Wr" -> "[1]MIIADDRESS_0.Write";
+	"[1]IPGT_0.DataIn"	 [complexity=4,
+		importance=0.0430088289507,
+		rank=0.0107522072377];
+	"[1]IPGT_0.DataIn" -> "IPGT_0.DataOut";
+	"[1]RXHASH1_0.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"[1]RXHASH1_0.DataIn" -> "RXHASH1_0.DataOut";
+	"[1]RXHASH0_2.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"[1]RXHASH0_2.SyncReset" -> "RXHASH0_2.DataOut";
+	"[1]MIIRX_DATA.Write" -> "MIIRX_DATA.DataOut";
+	"[1]IPv4_L1_3.Reset" -> "IPv4_L1_3.DataOut";
+	"[1]COLLCONF_0.DataIn"	 [complexity=4,
+		importance=0.0446766238391,
+		rank=0.0111691559598];
+	"[1]COLLCONF_0.DataIn" -> "COLLCONF_0.DataOut";
+	"[1]MIIMODER_Wr"	 [complexity=3,
+		importance=0.0470967464936,
+		rank=0.0156989154979];
+	"[1]MIIMODER_Sel" -> "[1]MIIMODER_Wr";
+	"[1]TXCTRL_Wr"	 [complexity=3,
+		importance=0.0492581581051,
+		rank=0.016419386035];
+	"[1]TXCTRL_Sel" -> "[1]TXCTRL_Wr";
+	"[1]MIICOMMAND2.SyncReset"	 [complexity=3,
+		importance=0.0936017101791,
+		rank=0.0312005700597];
+	"[1]MIICOMMAND2.SyncReset" -> "MIICOMMAND2.DataOut";
+	"[1]RXHASH1_2.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"[1]RXHASH1_2.DataIn" -> "RXHASH1_2.DataOut";
+	"[1]MIITX_DATA_0.SyncReset"	 [complexity=3,
+		importance=0.0880650948403,
+		rank=0.0293550316134];
+	"[1]MIITX_DATA_0.SyncReset" -> "MIITX_DATA_0.DataOut";
+	"[1]TXCTRL_0.Reset" -> "TXCTRL_0.DataOut";
+	"RXHASH0_2.DataOut" -> HASH0Out;
+	"[1]TXCTRL_1.SyncReset"	 [complexity=3,
+		importance=0.0920347055171,
+		rank=0.0306782351724];
+	"[1]TXCTRL_1.SyncReset" -> "TXCTRL_1.DataOut";
+	"[1]MAC_ADDR0_2.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"[1]MAC_ADDR0_2.DataIn" -> "MAC_ADDR0_2.DataOut";
+	"[1]HASH1_Wr"	 [complexity=3,
+		importance=0.050589290251,
+		rank=0.0168630967503];
+	"[1]HASH1_Sel" -> "[1]HASH1_Wr";
+	TXCTRLOut -> DataOut;
+	"[1]SetRxCIrq"	 [complexity=11,
+		importance=0.0866577758458,
+		rank=0.00787797962235];
+	"[1]SetRxCIrq" -> irq_rxc;
+	"[1]TXCTRL_0.SyncReset"	 [complexity=3,
+		importance=0.0920347055171,
+		rank=0.0306782351724];
+	"[1]TXCTRL_0.SyncReset" -> "TXCTRL_0.DataOut";
+	"[1]MAC_ADDR1_0.Reset" -> "MAC_ADDR1_0.DataOut";
+	"IPv4_L1_3.DataOut" -> IPv4_L1_out;
+	"PACKETLEN_1.DataOut" -> PACKETLENOut;
+	"[1]IPv4_L1_2.Reset" -> "IPv4_L1_2.DataOut";
+	Busy_stat	 [complexity=4,
+		importance=0.0384641886835,
+		rank=0.00961604717087];
+	Busy_stat -> MIISTATUSOut;
+	"TXCTRL_2.DataOut"	 [complexity=2,
+		importance=0.0457004951198,
+		rank=0.0228502475599];
+	"TXCTRL_2.DataOut" -> TXCTRLOut;
+	"[1]RXHASH1_0.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]RXHASH1_0.Write" -> "RXHASH1_0.DataOut";
+	"[1]Busy_IRQ"	 [complexity=11,
+		importance=0.0838700874761,
+		rank=0.00762455340692];
+	"[1]Busy_IRQ" -> irq_busy;
+	"[1]RXHASH1_3.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]RXHASH1_3.Write" -> "RXHASH1_3.DataOut";
+	"[1]MAC_ADDR0_2.Write" -> "MAC_ADDR0_2.DataOut";
+	"[1]MIIADDRESS_1.SyncReset"	 [complexity=3,
+		importance=0.0880650948403,
+		rank=0.0293550316134];
+	"[1]MIIADDRESS_1.SyncReset" -> "MIIADDRESS_1.DataOut";
+	HASH1Out	 [complexity=2,
+		importance=0.043159288503,
+		rank=0.0215796442515];
+	HASH1Out -> DataOut;
+	"[1]TXCTRL_1.Write"	 [complexity=3,
+		importance=0.0469779360627,
+		rank=0.0156593120209];
+	"[1]TXCTRL_1.Write" -> "TXCTRL_1.DataOut";
+	"MODER_0.DataOut" -> MODEROut;
+	"[1]CTRLMODER_Wr"	 [complexity=3,
+		importance=0.0458865768646,
+		rank=0.0152955256215];
+	"[1]CTRLMODER_Sel" -> "[1]CTRLMODER_Wr";
+	MIITX_DATAOut	 [complexity=2,
+		importance=0.0393473413364,
+		rank=0.0196736706682];
+	MIITX_DATAOut -> DataOut;
+	"[1]MAC_ADDR1_Wr" -> "[1]MAC_ADDR1_0.Write";
+	"[1]MAC_ADDR1_1.Write"	 [complexity=3,
+		importance=0.0451520054925,
+		rank=0.0150506684975];
+	"[1]MAC_ADDR1_Wr" -> "[1]MAC_ADDR1_1.Write";
+	"MIIMODER_0.DataOut" -> MIIMODEROut;
+	"RXHASH1_1.DataOut" -> HASH1Out;
+	"[1]PACKETLEN_0.Write" -> "PACKETLEN_0.DataOut";
+	"[1]TX_BD_NUM_0.Write"	 [complexity=3,
+		importance=0.0439702237593,
+		rank=0.0146567412531];
+	"[1]TX_BD_NUM_0.Write" -> "TX_BD_NUM_0.DataOut";
+	"[1]MIIMODER_0.Reset" -> "MIIMODER_0.DataOut";
+	"RXHASH0_0.DataOut" -> HASH0Out;
+	"[1]IPGT_Wr"	 [complexity=3,
+		importance=0.0458865768646,
+		rank=0.0152955256215];
+	"[1]IPGT_Wr" -> "[1]IPGT_0.Write";
+	"[1]RXHASH0_2.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"[1]RXHASH0_2.DataIn" -> "RXHASH0_2.DataOut";
+	"[1]INT_SOURCE_Wr" -> irq_txc;
+	"[1]INT_SOURCE_Wr" -> irq_busy;
+	"[1]INT_SOURCE_Wr" -> irq_txe;
+	"[1]INT_SOURCE_Wr" -> irq_rxe;
+	"[1]INT_SOURCE_Wr" -> irq_txb;
+	"[1]INT_SOURCE_Wr" -> irq_rxb;
+	"[1]INT_SOURCE_Wr" -> irq_rxc;
+	"[1]MAC_ADDR0_3.Reset" -> "MAC_ADDR0_3.DataOut";
+	"[1]MIIADDRESS_0.Reset" -> "MIIADDRESS_0.DataOut";
+	"RXHASH0_1.DataOut" -> HASH0Out;
+	"[1]RXHASH1_3.Reset" -> "RXHASH1_3.DataOut";
+	dbg_dat	 [complexity=2,
+		importance=0.0352970986153,
+		rank=0.0176485493076];
+	dbg_dat -> DataOut;
+	"MIICOMMAND2.DataOut" -> MIICOMMANDOut;
+	INT_SOURCEOut -> DataOut;
+	"[1]CTRLMODER_0.Reset" -> "CTRLMODER_0.DataOut";
+	"COLLCONF_2.DataOut" -> COLLCONFOut;
+	"[1]COLLCONF_2.Write" -> "COLLCONF_2.DataOut";
+	irq_rxe -> INT_SOURCEOut;
+	"[1]TXCTRL_0.DataIn"	 [complexity=4,
+		importance=0.0466614291775,
+		rank=0.0116653572944];
+	"[1]TXCTRL_0.DataIn" -> "TXCTRL_0.DataOut";
+	"[1]MIIMODER_1.DataIn"	 [complexity=4,
+		importance=0.0446766238391,
+		rank=0.0111691559598];
+	"[1]MIIMODER_1.DataIn" -> "MIIMODER_1.DataOut";
+	"[1]IPv4_L1_3.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"[1]IPv4_L1_3.SyncReset" -> "IPv4_L1_3.DataOut";
+	"[1]MODER_0.Reset" -> "MODER_0.DataOut";
+	"[1]MIICOMMAND0.Reset" -> "MIICOMMAND0.DataOut";
+	MODEROut -> DataOut;
+	"[1]MIICOMMAND1.SyncReset"	 [complexity=3,
+		importance=0.0936017101791,
+		rank=0.0312005700597];
+	"[1]MIICOMMAND1.SyncReset" -> "MIICOMMAND1.DataOut";
+	NValid_stat	 [complexity=4,
+		importance=0.0384641886835,
+		rank=0.00961604717087];
+	NValid_stat -> MIISTATUSOut;
+	"MIIADDRESS_1.DataOut" -> MIIADDRESSOut;
+	"[1]RxE_IRQ"	 [complexity=11,
+		importance=0.0838700874761,
+		rank=0.00762455340692];
+	"[1]RxE_IRQ" -> irq_rxe;
+	"[1]MODER_1.Reset" -> "MODER_1.DataOut";
+	"[1]CTRLMODER_0.SyncReset"	 [complexity=3,
+		importance=0.0847295050635,
+		rank=0.0282431683545];
+	"[1]CTRLMODER_0.SyncReset" -> "CTRLMODER_0.DataOut";
+	"PACKETLEN_0.DataOut" -> PACKETLENOut;
+	"[1]TXCTRL_2.DataIn"	 [complexity=4,
+		importance=0.0469779111735,
+		rank=0.0117444777934];
+	"[1]TXCTRL_2.DataIn" -> "TXCTRL_2.DataOut";
+	"[1]MAC_ADDR1_1.Write" -> "MAC_ADDR1_1.DataOut";
+	"[1]IPGT_0.Reset" -> "IPGT_0.DataOut";
+	"[1]PACKETLEN_1.Reset" -> "PACKETLEN_1.DataOut";
+	"[1]RXHASH0_0.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"[1]RXHASH0_0.DataIn" -> "RXHASH0_0.DataOut";
+	"[1]PACKETLEN_2.Reset" -> "PACKETLEN_2.DataOut";
+	"[1]RXHASH0_2.Reset" -> "RXHASH0_2.DataOut";
+	LinkFail	 [complexity=4,
+		importance=0.0384641886835,
+		rank=0.00961604717087];
+	LinkFail -> MIISTATUSOut;
+	"[1]IPGR1_0.Reset" -> "IPGR1_0.DataOut";
+	IPGR2Out -> DataOut;
+	"[1]PACKETLEN_Sel" -> "[1]PACKETLEN_Wr";
+	"[1]IPGR1_0.SyncReset"	 [complexity=3,
+		importance=0.0847295050635,
+		rank=0.0282431683545];
+	"[1]IPGR1_0.SyncReset" -> "IPGR1_0.DataOut";
+	"[1]TXCTRL_2.Reset" -> "TXCTRL_2.DataOut";
+	"[1]IPGR2_0.SyncReset"	 [complexity=3,
+		importance=0.0847295050635,
+		rank=0.0282431683545];
+	"[1]IPGR2_0.SyncReset" -> "IPGR2_0.DataOut";
+	"[1]MODER_Wr"	 [complexity=3,
+		importance=0.0487834514557,
+		rank=0.0162611504852];
+	"[1]MODER_Wr" -> "[1]MODER_1.Write";
+	"[1]MODER_Wr" -> "[1]MODER_2.Write";
+	"[1]MODER_0.Write"	 [complexity=3,
+		importance=0.0468197114093,
+		rank=0.0156065704698];
+	"[1]MODER_Wr" -> "[1]MODER_0.Write";
+	"[1]TX_BD_NUM_Wr"	 [complexity=3,
+		importance=0.0459067024994,
+		rank=0.0153022341665];
+	"[1]TX_BD_NUM_Wr" -> "[1]TX_BD_NUM_0.Write";
+	"[1]RXHASH0_3.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"[1]RXHASH0_3.SyncReset" -> "RXHASH0_3.DataOut";
+	"MIITX_DATA_1.DataOut" -> MIITX_DATAOut;
+	"[1]INT_MASK_0.Reset" -> "INT_MASK_0.DataOut";
+	"[1]MIIMODER_1.SyncReset"	 [complexity=3,
+		importance=0.0880650948403,
+		rank=0.0293550316134];
+	"[1]MIIMODER_1.SyncReset" -> "MIIMODER_1.DataOut";
+	"MIICOMMAND0.DataOut" -> MIICOMMANDOut;
+	"[1]RXHASH0_3.Reset" -> "RXHASH0_3.DataOut";
+	Cs	 [complexity=4,
+		importance=0.85392731245,
+		rank=0.213481828112];
+	Read	 [complexity=1,
+		importance=0.85266063318,
+		rank=0.85266063318];
+	Cs -> Read;
+	"[1]IPGR2_0.DataIn"	 [complexity=4,
+		importance=0.0430088289507,
+		rank=0.0107522072377];
+	"[1]IPGR2_0.DataIn" -> "IPGR2_0.DataOut";
+	"[1]IPv4_L1_0.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"[1]IPv4_L1_0.SyncReset" -> "IPv4_L1_0.DataOut";
+	"RXHASH1_3.DataOut" -> HASH1Out;
+	IPGR1Out -> DataOut;
+	"[1]PACKETLEN_0.Reset" -> "PACKETLEN_0.DataOut";
+	"[1]IPv4_L1_1.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]IPv4_L1_1.Write" -> "IPv4_L1_1.DataOut";
+	"[1]PACKETLEN_0.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"[1]PACKETLEN_0.SyncReset" -> "PACKETLEN_0.DataOut";
+	"[1]COLLCONF_2.DataIn"	 [complexity=4,
+		importance=0.0446766238391,
+		rank=0.0111691559598];
+	"[1]COLLCONF_2.DataIn" -> "COLLCONF_2.DataOut";
+	"MIIADDRESS_0.DataOut" -> MIIADDRESSOut;
+	"[1]WCtrlDataStart"	 [complexity=3,
+		importance=0.0948683894486,
+		rank=0.0316227964829];
+	"[1]WCtrlDataStart" -> "[1]MIICOMMAND2.SyncReset";
+	"[1]PACKETLEN_1.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"[1]PACKETLEN_1.SyncReset" -> "PACKETLEN_1.DataOut";
+	"[1]IPGT_0.SyncReset"	 [complexity=3,
+		importance=0.0847295050635,
+		rank=0.0282431683545];
+	"[1]IPGT_0.SyncReset" -> "IPGT_0.DataOut";
+	irq_txb -> INT_SOURCEOut;
+	"[1]INT_MASK_0.Write"	 [complexity=3,
+		importance=0.0439608349087,
+		rank=0.0146536116362];
+	"[1]INT_MASK_Wr" -> "[1]INT_MASK_0.Write";
+	"[1]TXCTRL_2.SyncReset" -> "TXCTRL_2.DataOut";
+	MIIRX_DATAOut -> DataOut;
+	"[1]Write"	 [complexity=6,
+		importance=0.0477867264003,
+		rank=0.00796445440005];
+	"[1]Write" -> "[1]COLLCONF_Wr";
+	"[1]Write" -> "[1]MIICOMMAND_Wr";
+	"[1]Write" -> "[1]HASH0_Wr";
+	"[1]Write" -> "[1]PACKETLEN_Wr";
+	"[1]Write" -> "[1]IPGR1_Wr";
+	"[1]Write" -> "[1]MAC_ADDR0_Wr";
+	"[1]Write" -> "[1]MIITX_DATA_Wr";
+	"[1]Write" -> "[1]MIIADDRESS_Wr";
+	"[1]Write" -> "[1]MAC_ADDR1_Wr";
+	"[1]Write" -> "[1]IPGT_Wr";
+	"[1]Write" -> "[1]INT_SOURCE_Wr";
+	"[1]Write" -> "[1]MODER_Wr";
+	"[1]Write" -> "[1]TX_BD_NUM_Wr";
+	"[1]Write" -> "[1]INT_MASK_Wr";
+	"[1]Write" -> "[1]CTRLMODER_Wr";
+	"[1]Write" -> "[1]IPv4_L1_Wr";
+	"[1]Write" -> "[1]TXCTRL_Wr";
+	"[1]Write" -> "[1]MIIMODER_Wr";
+	"[1]Write" -> "[1]HASH1_Wr";
+	"[1]Write" -> "[1]IPGR2_Wr";
+	irq_rxb -> INT_SOURCEOut;
+	"[1]MODER_1.DataIn"	 [complexity=4,
+		importance=0.0465032045241,
+		rank=0.011625801131];
+	"[1]MODER_1.DataIn" -> "MODER_1.DataOut";
+	"[1]Rw"	 [complexity=9,
+		importance=0.0490534056698,
+		rank=0.00545037840775];
+	"[1]Rw" -> "[1]Write";
+	"[1]MIICOMMAND0.Write" -> "MIICOMMAND0.DataOut";
+	irq_rxc -> INT_SOURCEOut;
+	"[1]MAC_ADDR1_0.SyncReset"	 [complexity=3,
+		importance=0.0880650948403,
+		rank=0.0293550316134];
+	"[1]MAC_ADDR1_0.SyncReset" -> "MAC_ADDR1_0.DataOut";
+	"[1]TXCTRL_2.Write"	 [complexity=3,
+		importance=0.0472944180587,
+		rank=0.0157648060196];
+	"[1]TXCTRL_2.Write" -> "TXCTRL_2.DataOut";
+	"TX_BD_NUM_0.DataOut" -> TX_BD_NUMOut;
+	"[1]DataIn"	 [complexity=4,
+		importance=0.0442755082202,
+		rank=0.011068877055];
+	"[1]DataIn" -> "[1]MODER_2.DataIn";
+	"[1]DataIn" -> irq_txc;
+	"[1]DataIn" -> irq_busy;
+	"[1]DataIn" -> "[1]MAC_ADDR0_0.DataIn";
+	"[1]DataIn" -> "[1]IPv4_L1_2.DataIn";
+	"[1]DataIn" -> "[1]MIICOMMAND0.DataIn";
+	"[1]DataIn" -> "[1]MIIMODER_0.DataIn";
+	"[1]DataIn" -> "[1]IPv4_L1_1.DataIn";
+	"[1]DataIn" -> "[1]TXCTRL_1.DataIn";
+	"[1]DataIn" -> "[1]MIICOMMAND2.DataIn";
+	"[1]DataIn" -> "[1]TX_BD_NUM_0.DataIn";
+	"[1]DataIn" -> "[1]RXHASH0_3.DataIn";
+	"[1]DataIn" -> "[1]RXHASH0_1.DataIn";
+	"[1]DataIn" -> "[1]PACKETLEN_3.DataIn";
+	"[1]DataIn" -> "[1]MIITX_DATA_0.DataIn";
+	"[1]DataIn" -> "[1]IPv4_L1_3.DataIn";
+	"[1]DataIn" -> "[1]INT_MASK_0.DataIn";
+	"[1]DataIn" -> "[1]PACKETLEN_1.DataIn";
+	"[1]DataIn" -> "[1]MIIADDRESS_0.DataIn";
+	"[1]DataIn" -> "[1]MAC_ADDR1_1.DataIn";
+	"[1]DataIn" -> "[1]PACKETLEN_0.DataIn";
+	"[1]DataIn" -> irq_txe;
+	"[1]DataIn" -> "[1]MAC_ADDR0_1.DataIn";
+	"[1]DataIn" -> "[1]RXHASH1_3.DataIn";
+	"[1]DataIn" -> "[1]PACKETLEN_2.DataIn";
+	"[1]DataIn" -> "[1]IPGR1_0.DataIn";
+	"[1]DataIn" -> "[1]IPGT_0.DataIn";
+	"[1]DataIn" -> "[1]RXHASH1_0.DataIn";
+	"[1]DataIn" -> "[1]COLLCONF_0.DataIn";
+	"[1]DataIn" -> "[1]RXHASH1_2.DataIn";
+	"[1]DataIn" -> "[1]MAC_ADDR0_2.DataIn";
+	"[1]DataIn" -> "[1]RXHASH0_2.DataIn";
+	"[1]DataIn" -> irq_rxe;
+	"[1]DataIn" -> "[1]TXCTRL_0.DataIn";
+	"[1]DataIn" -> "[1]MIIMODER_1.DataIn";
+	"[1]DataIn" -> "[1]TXCTRL_2.DataIn";
+	"[1]DataIn" -> "[1]RXHASH0_0.DataIn";
+	"[1]DataIn" -> "[1]TX_BD_NUM_Wr";
+	"[1]DataIn" -> "[1]IPGR2_0.DataIn";
+	"[1]DataIn" -> "[1]COLLCONF_2.DataIn";
+	"[1]DataIn" -> irq_txb;
+	"[1]DataIn" -> irq_rxb;
+	"[1]DataIn" -> "[1]MODER_1.DataIn";
+	"[1]DataIn" -> irq_rxc;
+	"[1]RXHASH1_1.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"[1]DataIn" -> "[1]RXHASH1_1.DataIn";
+	"[1]CTRLMODER_0.DataIn"	 [complexity=4,
+		importance=0.0430088289507,
+		rank=0.0107522072377];
+	"[1]DataIn" -> "[1]CTRLMODER_0.DataIn";
+	"[1]MIITX_DATA_1.DataIn"	 [complexity=4,
+		importance=0.0446766238391,
+		rank=0.0111691559598];
+	"[1]DataIn" -> "[1]MIITX_DATA_1.DataIn";
+	"[1]MIICOMMAND1.DataIn"	 [complexity=4,
+		importance=0.0471281963754,
+		rank=0.0117820490938];
+	"[1]DataIn" -> "[1]MIICOMMAND1.DataIn";
+	"[1]MIIADDRESS_1.DataIn"	 [complexity=4,
+		importance=0.0446766238391,
+		rank=0.0111691559598];
+	"[1]DataIn" -> "[1]MIIADDRESS_1.DataIn";
+	"[1]MAC_ADDR0_3.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"[1]DataIn" -> "[1]MAC_ADDR0_3.DataIn";
+	"[1]MODER_0.DataIn"	 [complexity=4,
+		importance=0.0465032045241,
+		rank=0.011625801131];
+	"[1]DataIn" -> "[1]MODER_0.DataIn";
+	"[1]MAC_ADDR1_0.DataIn"	 [complexity=4,
+		importance=0.0446766238391,
+		rank=0.0111691559598];
+	"[1]DataIn" -> "[1]MAC_ADDR1_0.DataIn";
+	"[1]IPv4_L1_0.DataIn"	 [complexity=4,
+		importance=0.0483694816582,
+		rank=0.0120923704146];
+	"[1]DataIn" -> "[1]IPv4_L1_0.DataIn";
+	"[1]MAC_ADDR0_1.Reset" -> "MAC_ADDR0_1.DataOut";
+	Read -> DataOut;
+	"[1]RXHASH1_1.Reset" -> "RXHASH1_1.DataOut";
+	"[1]Cs"	 [complexity=9,
+		importance=0.0490534056698,
+		rank=0.00545037840775];
+	"[1]Cs" -> "[1]Write";
+	"[1]CTRLMODER_0.Write"	 [complexity=3,
+		importance=0.0439608349087,
+		rank=0.0146536116362];
+	"[1]CTRLMODER_0.Write" -> "CTRLMODER_0.DataOut";
+	"[1]MODER_0.Write" -> "MODER_0.DataOut";
+	"[1]INT_MASK_0.Write" -> "INT_MASK_0.DataOut";
+	Rw	 [complexity=4,
+		importance=0.85392731245,
+		rank=0.213481828112];
+	Rw -> Read;
+	"[1]RXHASH1_1.DataIn" -> "RXHASH1_1.DataOut";
+	"[1]CTRLMODER_0.DataIn" -> "CTRLMODER_0.DataOut";
+	"[1]COLLCONF_Sel" -> "[1]COLLCONF_Wr";
+	"[1]RxB_IRQ"	 [complexity=11,
+		importance=0.0838700874761,
+		rank=0.00762455340692];
+	"[1]RxB_IRQ" -> irq_rxb;
+	Address	 [complexity=1,
+		importance=0.817996743568,
+		rank=0.817996743568];
+	Address -> DataOut;
+	"[1]MIITX_DATA_1.DataIn" -> "MIITX_DATA_1.DataOut";
+	"[1]RXHASH0_0.Write" -> "RXHASH0_0.DataOut";
+	"IPv4_L1_1.DataOut" -> IPv4_L1_out;
+	"[1]TX_BD_NUM_Sel" -> "[1]TX_BD_NUM_Wr";
+	"RXHASH1_2.DataOut" -> HASH1Out;
+	"[1]MAC_ADDR0_2.Reset" -> "MAC_ADDR0_2.DataOut";
+	"[1]MAC_ADDR0_2.SyncReset"	 [complexity=3,
+		importance=0.0954508104786,
+		rank=0.0318169368262];
+	"[1]MAC_ADDR0_2.SyncReset" -> "MAC_ADDR0_2.DataOut";
+	PACKETLENOut -> DataOut;
+	"[1]RStatStart"	 [complexity=3,
+		importance=0.0948683894486,
+		rank=0.0316227964829];
+	"[1]RStatStart" -> "[1]MIICOMMAND1.SyncReset";
+	"[1]COLLCONF_0.SyncReset"	 [complexity=3,
+		importance=0.0880650948403,
+		rank=0.0293550316134];
+	"[1]COLLCONF_0.SyncReset" -> "COLLCONF_0.DataOut";
+	"[1]MAC_ADDR0_0.Reset" -> "MAC_ADDR0_0.DataOut";
+	"[1]MIICOMMAND1.DataIn" -> "MIICOMMAND1.DataOut";
+	"[1]MODER_Sel" -> "[1]MODER_Wr";
+	"[1]RXHASH0_1.Write" -> "RXHASH0_1.DataOut";
+	"MAC_ADDR0_0.DataOut" -> MAC_ADDR0Out;
+	"[1]RXHASH1_2.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]RXHASH1_2.Write" -> "RXHASH1_2.DataOut";
+	"[1]IPv4_L1_1.Reset" -> "IPv4_L1_1.DataOut";
+	"[1]RXHASH0_1.Reset" -> "RXHASH0_1.DataOut";
+	"[1]CTRLMODER_Wr" -> "[1]CTRLMODER_0.Write";
+	"[1]IPv4_L1_3.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]IPv4_L1_3.Write" -> "IPv4_L1_3.DataOut";
+	"MIITX_DATA_0.DataOut" -> MIITX_DATAOut;
+	"[1]MIIRX_DATA.SyncReset"	 [complexity=3,
+		importance=0.0856435826844,
+		rank=0.0285478608948];
+	"[1]MIIRX_DATA.SyncReset" -> "MIIRX_DATA.DataOut";
+	"[1]IPv4_L1_Wr" -> "[1]IPv4_L1_0.Write";
+	"[1]IPv4_L1_Wr" -> "[1]IPv4_L1_1.Write";
+	"[1]IPv4_L1_Wr" -> "[1]IPv4_L1_3.Write";
+	"[1]IPv4_L1_2.Write"	 [complexity=3,
+		importance=0.0486065511593,
+		rank=0.0162021837198];
+	"[1]IPv4_L1_Wr" -> "[1]IPv4_L1_2.Write";
+	"[1]TXCTRL_Wr" -> "[1]TXCTRL_0.Write";
+	"[1]TXCTRL_Wr" -> "[1]TXCTRL_1.Write";
+	"[1]TXCTRL_Wr" -> "[1]TXCTRL_2.Write";
+	"[1]PACKETLEN_1.Write" -> "PACKETLEN_1.DataOut";
+	"[1]MIIRX_DATA.DataIn" -> "MIIRX_DATA.DataOut";
+	"[1]MIIADDRESS_1.DataIn" -> "MIIADDRESS_1.DataOut";
+	"MAC_ADDR0_1.DataOut" -> MAC_ADDR0Out;
+	"[1]MIIADDRESS_0.Write" -> "MIIADDRESS_0.DataOut";
+	"[1]MAC_ADDR0_3.DataIn" -> "MAC_ADDR0_3.DataOut";
+	"[1]MAC_ADDR0_3.Write" -> "MAC_ADDR0_3.DataOut";
+	"[1]IPGT_Sel" -> "[1]IPGT_Wr";
+	"[1]MODER_0.DataIn" -> "MODER_0.DataOut";
+	"[1]IPGR2_0.Reset" -> "IPGR2_0.DataOut";
+	"[1]MIIADDRESS_0.SyncReset"	 [complexity=3,
+		importance=0.0880650948403,
+		rank=0.0293550316134];
+	"[1]MIIADDRESS_0.SyncReset" -> "MIIADDRESS_0.DataOut";
+	"[1]TxE_IRQ"	 [complexity=11,
+		importance=0.0838700874761,
+		rank=0.00762455340692];
+	"[1]TxE_IRQ" -> irq_txe;
+	"[1]MIIMODER_Wr" -> "[1]MIIMODER_0.Write";
+	"[1]MIIMODER_Wr" -> "[1]MIIMODER_1.Write";
+	"[1]MAC_ADDR1_0.DataIn" -> "MAC_ADDR1_0.DataOut";
+	"COLLCONF_0.DataOut" -> COLLCONFOut;
+	"RXHASH1_0.DataOut" -> HASH1Out;
+	"MAC_ADDR1_1.DataOut" -> MAC_ADDR1Out;
+	"MAC_ADDR0_3.DataOut" -> MAC_ADDR0Out;
+	"[1]IPv4_L1_2.Write" -> "IPv4_L1_2.DataOut";
+	"[1]HASH1_Wr" -> "[1]RXHASH1_1.Write";
+	"[1]HASH1_Wr" -> "[1]RXHASH1_0.Write";
+	"[1]HASH1_Wr" -> "[1]RXHASH1_3.Write";
+	"[1]HASH1_Wr" -> "[1]RXHASH1_2.Write";
+	"[1]IPGR2_Wr" -> "[1]IPGR2_0.Write";
+	"[1]MODER_2.SyncReset"	 [complexity=3,
+		importance=0.0917182562103,
+		rank=0.0305727520701];
+	"[1]MODER_2.SyncReset" -> "MODER_2.DataOut";
+	"[1]SetTxCIrq"	 [complexity=11,
+		importance=0.086251974336,
+		rank=0.007841088576];
+	"[1]SetTxCIrq" -> irq_txc;
+	"[1]MIITX_DATA_0.Reset" -> "MIITX_DATA_0.DataOut";
+	"[1]MIIADDRESS_1.Reset" -> "MIIADDRESS_1.DataOut";
+	"[1]IPv4_L1_0.DataIn" -> "IPv4_L1_0.DataOut";
+}

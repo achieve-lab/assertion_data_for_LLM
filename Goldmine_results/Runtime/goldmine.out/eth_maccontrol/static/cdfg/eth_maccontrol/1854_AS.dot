@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"1854:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f37fb677790>",
+		def_var="['TxStartFrmOut']",
+		fillcolor=deepskyblue,
+		label="1854:AS
+TxStartFrmOut = (CtrlMux)? TxCtrlStartFrm : TxStartFrmIn & ~Pause;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['CtrlMux', 'TxCtrlStartFrm', 'TxStartFrmIn', 'Pause']"];
+}

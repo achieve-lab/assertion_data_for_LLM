@@ -1,0 +1,11 @@
+digraph "()" {
+	"data_counter.reset" -> "data_counter.value"	 [weight=3.0];
+	reset -> "data_counter.reset"	 [weight=1.0];
+	"data_counter.load" -> "data_counter.value"	 [weight=2.0];
+	rxclk -> "data_counter.clk"	 [weight=1.0];
+	"data_counter.value" -> frame_cnt	 [weight=1.0];
+	"data_counter.value" -> "data_counter.value"	 [weight=1.0];
+	"data_counter.en" -> "data_counter.value"	 [weight=1.0];
+	receiving -> "data_counter.load"	 [weight=1.0];
+	receiving -> "data_counter.en"	 [weight=1.0];
+}

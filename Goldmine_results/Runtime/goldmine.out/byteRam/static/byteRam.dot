@@ -1,0 +1,11 @@
+strict digraph "" {
+	reset -> byteRam	 [weight=1.0];
+	reset -> byteRamOut	 [weight=3.0];
+	byteRam -> byteRamOut	 [weight=1.0];
+	byteRamEn -> byteRam	 [weight=1.0];
+	byteRamEn -> byteRamOut	 [weight=2.0];
+	byteRamAddr -> byteRamOut	 [weight=1.0];
+	byteRamIn -> byteRam	 [weight=1.0];
+	byteRamRw -> byteRam	 [weight=1.0];
+	byteRamRw -> byteRamOut	 [weight=1.0];
+}

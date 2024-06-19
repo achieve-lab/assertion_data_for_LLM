@@ -1,0 +1,7 @@
+strict digraph "" {
+	a -> a_FF	 [weight=1.0];
+	p_tmp -> p	 [weight=1.0];
+	valid -> a_FF	 [weight=1.0];
+	a_FF -> p_tmp	 [weight=1.0];
+	rstn -> a_FF	 [weight=2.0];
+}

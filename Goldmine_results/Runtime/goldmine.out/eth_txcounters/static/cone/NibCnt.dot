@@ -1,0 +1,101 @@
+strict digraph "" {
+	"[1]StateData"	 [complexity=14,
+		importance=0.164336419539,
+		rank=0.0117383156813];
+	"[1]IncrementNibCnt"	 [complexity=3,
+		importance=0.14959293317,
+		rank=0.0498643110565];
+	"[1]StateData" -> "[1]IncrementNibCnt";
+	"[1]StatePreamble"	 [complexity=16,
+		importance=0.28838520497,
+		rank=0.0180240753106];
+	"[1]StatePreamble" -> "[1]IncrementNibCnt";
+	"[1]ResetNibCnt"	 [complexity=3,
+		importance=0.273641718601,
+		rank=0.0912139062004];
+	"[1]StatePreamble" -> "[1]ResetNibCnt";
+	"[1]StateBackOff"	 [complexity=14,
+		importance=0.164336419539,
+		rank=0.0117383156813];
+	"[1]StateBackOff" -> "[1]IncrementNibCnt";
+	"[1]StateDefer"	 [complexity=16,
+		importance=0.28838520497,
+		rank=0.0180240753106];
+	"[1]StateDefer" -> "[1]IncrementNibCnt";
+	"[1]StateDefer" -> "[1]ResetNibCnt";
+	"[1]StateFCS"	 [complexity=14,
+		importance=0.164336419539,
+		rank=0.0117383156813];
+	"[1]StateFCS" -> "[1]IncrementNibCnt";
+	"[1]StateIPG"	 [complexity=14,
+		importance=0.164336419539,
+		rank=0.0117383156813];
+	"[1]StateIPG" -> "[1]IncrementNibCnt";
+	"[1]NibCntEq7"	 [complexity=16,
+		importance=0.29511473794,
+		rank=0.0184446711212];
+	"[1]NibCntEq7" -> "[1]ResetNibCnt";
+	NibCnt	 [complexity=2,
+		importance=0.094219043892,
+		rank=0.047109521946];
+	"[1]IncrementNibCnt" -> NibCnt;
+	"[1]StartFCS"	 [complexity=16,
+		importance=0.28838520497,
+		rank=0.0180240753106];
+	"[1]StartFCS" -> "[1]ResetNibCnt";
+	"[1]StatePAD"	 [complexity=14,
+		importance=0.164336419539,
+		rank=0.0117383156813];
+	"[1]StatePAD" -> "[1]IncrementNibCnt";
+	"[1]TxStartFrm"	 [complexity=16,
+		importance=0.28838520497,
+		rank=0.0180240753106];
+	"[1]TxStartFrm" -> "[1]IncrementNibCnt";
+	"[1]TxStartFrm" -> "[1]ResetNibCnt";
+	"[1]ResetNibCnt" -> NibCnt;
+	"[1]StateIdle"	 [complexity=16,
+		importance=0.28838520497,
+		rank=0.0180240753106];
+	"[1]StateIdle" -> "[1]ResetNibCnt";
+	"[1]NibCnt"	 [complexity=18,
+		importance=0.389333781832,
+		rank=0.0216296545462];
+	"[1]NibCnt" -> "[1]NibCntEq7";
+	"[1]NibCnt" -> NibCnt;
+	"[1]ExcessiveDefer"	 [complexity=16,
+		importance=0.302486516318,
+		rank=0.0189054072699];
+	"[1]NibCnt" -> "[1]ExcessiveDefer";
+	"[1]NibCntEq15"	 [complexity=16,
+		importance=0.29511473794,
+		rank=0.0184446711212];
+	"[1]NibCnt" -> "[1]NibCntEq15";
+	"[1]StartIPG"	 [complexity=16,
+		importance=0.28838520497,
+		rank=0.0180240753106];
+	"[1]StartIPG" -> "[1]ResetNibCnt";
+	"[1]Reset"	 [complexity=3,
+		importance=0.297400618045,
+		rank=0.0991335393484];
+	"[1]Reset" -> NibCnt;
+	"[1]StateJam"	 [complexity=16,
+		importance=0.28838520497,
+		rank=0.0180240753106];
+	"[1]StateJam" -> "[1]IncrementNibCnt";
+	"[1]StateJam" -> "[1]ResetNibCnt";
+	"[1]StartDefer"	 [complexity=16,
+		importance=0.28838520497,
+		rank=0.0180240753106];
+	"[1]StartDefer" -> "[1]ResetNibCnt";
+	"[1]ExDfrEn"	 [complexity=19,
+		importance=0.317230002687,
+		rank=0.0166963159309];
+	"[1]ExDfrEn" -> "[1]ExcessiveDefer";
+	"[1]ExcessiveDefer" -> "[1]IncrementNibCnt";
+	"[1]ExcessiveDefer" -> "[1]ResetNibCnt";
+	"[1]NibCntEq15" -> "[1]ResetNibCnt";
+	"[1]StartJam"	 [complexity=16,
+		importance=0.28838520497,
+		rank=0.0180240753106];
+	"[1]StartJam" -> "[1]ResetNibCnt";
+}

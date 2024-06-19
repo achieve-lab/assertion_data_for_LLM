@@ -1,0 +1,1693 @@
+Report file generated at: Apr-09-2024 07:28:38 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a2: (jumbo_enable == 0 & vlan_enable == 0 & location_reg[1] == 0) |=> (large_error == 1)
+IRank: : 0.34477
+Importance: : 3.44769
+Complexity: : 10
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a9: (jumbo_enable == 0 & vlan_enable == 0 & frame_cnt[1] == 1 & tagged_frame == 1) |=> (large_error == 1)
+IRank: : 0.34193
+Importance: : 6.15475
+Complexity: : 18
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a159: (jumbo_enable == 1 & frame_cnt[5] == 1 & frame_cnt[1] == 1 & vlan_enable == 0 & tagged_frame == 1 & location_reg[0] == 1 & location_reg[1] == 1) |=> (large_error == 0)
+IRank: : 0.31752
+Importance: : 11.43074
+Complexity: : 36
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a85: (frame_cnt[10] == 1 & location_reg[1] == 1 & frame_cnt[1] == 1 & vlan_enable == 1 & tagged_frame == 0 & frame_cnt[8] == 1 & location_reg[0] == 1) |=> (large_error == 1)
+IRank: : 0.31497
+Importance: : 13.22875
+Complexity: : 42
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a32: (jumbo_enable == 0 & vlan_enable == 0 & location_reg[0] == 1 & frame_cnt[2] == 1) |=> (large_error == 1)
+IRank: : 0.30925
+Importance: : 6.18505
+Complexity: : 20
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (jumbo_enable == 0 & vlan_enable == 0 & frame_cnt[1] == 1 & location_reg[0] == 1) |=> (large_error == 1)
+IRank: : 0.30925
+Importance: : 6.18505
+Complexity: : 20
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a97: (frame_cnt[5] == 1 & tagged_frame == 0 & frame_cnt[10] == 0 & location_reg[0] == 1 & location_reg[1] == 0) |=> (large_error == 1)
+IRank: : 0.30841
+Importance: : 9.25237
+Complexity: : 30
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a33: (frame_cnt[4] == 0 & frame_cnt[10] == 0 & tagged_frame == 1 & location_reg[1] == 0) |=> (large_error == 1)
+IRank: : 0.30704
+Importance: : 7.98305
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a21: (frame_cnt[9] == 0 & frame_cnt[3] == 1 & vlan_enable == 1 & location_reg[1] == 0) |=> (large_error == 1)
+IRank: : 0.30704
+Importance: : 7.98305
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a26: (frame_cnt[9] == 0 & frame_cnt[10] == 0 & location_reg[0] == 1 & tagged_frame == 0) |=> (large_error == 1)
+IRank: : 0.30704
+Importance: : 7.98305
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a183: (frame_cnt[10] == 1 & frame_cnt[7] == 1 & location_reg[1] == 1 & frame_cnt[3] == 0 & frame_cnt[2] == 0 & location_reg[0] == 1 & frame_cnt[5] == 0 & vlan_enable == 1 & tagged_frame == 1) |=> (large_error == 0)
+IRank: : 0.30167
+Importance: : 18.70347
+Complexity: : 62
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a154: (jumbo_enable == 1 & frame_cnt[9] == 1 & location_reg[0] == 0 & tagged_frame == 0 & vlan_enable == 0 & frame_cnt[1] == 0 & frame_cnt[5] == 0 & frame_cnt[8] == 0) |=> (large_error == 0)
+IRank: : 0.3007
+Importance: : 15.63615
+Complexity: : 52
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a65: (location_reg[1] == 1 & tagged_frame == 1 & location_reg[0] == 0 & frame_cnt[5] == 0 & frame_cnt[0] == 0 & jumbo_enable == 0) |=> (large_error == 1)
+IRank: : 0.29976
+Importance: : 10.19172
+Complexity: : 34
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a130: (jumbo_enable == 1 & frame_cnt[3] == 0 & frame_cnt[8] == 1 & location_reg[1] == 0 & location_reg[0] == 0 & vlan_enable == 1) |=> (large_error == 0)
+IRank: : 0.29976
+Importance: : 10.19172
+Complexity: : 34
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a96: (location_reg[1] == 1 & frame_cnt[10] == 1 & frame_cnt[5] == 0 & frame_cnt[1] == 1 & location_reg[0] == 0 & vlan_enable == 0) |=> (large_error == 1)
+IRank: : 0.29974
+Importance: : 11.98973
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a76: (frame_cnt[10] == 1 & frame_cnt[0] == 1 & frame_cnt[4] == 1 & location_reg[0] == 1 & tagged_frame == 1 & location_reg[1] == 0) |=> (large_error == 1)
+IRank: : 0.29974
+Importance: : 11.98973
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a84: (frame_cnt[10] == 1 & frame_cnt[1] == 1 & frame_cnt[2] == 1 & tagged_frame == 0 & location_reg[1] == 0 & location_reg[0] == 0) |=> (large_error == 1)
+IRank: : 0.29974
+Importance: : 11.98973
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a64: (location_reg[1] == 1 & tagged_frame == 1 & frame_cnt[5] == 0 & frame_cnt[9] == 1 & frame_cnt[0] == 1 & location_reg[0] == 1) |=> (large_error == 1)
+IRank: : 0.29974
+Importance: : 11.98973
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a51: (location_reg[1] == 1 & location_reg[0] == 0 & frame_cnt[4] == 0 & frame_cnt[7] == 0 & vlan_enable == 0 & frame_cnt[3] == 1) |=> (large_error == 1)
+IRank: : 0.29974
+Importance: : 11.98973
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a55: (location_reg[1] == 1 & frame_cnt[3] == 0 & location_reg[0] == 0 & frame_cnt[4] == 0 & frame_cnt[10] == 0 & tagged_frame == 0) |=> (large_error == 1)
+IRank: : 0.29974
+Importance: : 11.98973
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a48: (location_reg[1] == 1 & location_reg[0] == 0 & frame_cnt[7] == 0 & frame_cnt[2] == 1 & frame_cnt[3] == 1 & tagged_frame == 1) |=> (large_error == 1)
+IRank: : 0.29974
+Importance: : 11.98973
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a49: (location_reg[1] == 1 & frame_cnt[5] == 0 & frame_cnt[4] == 0 & vlan_enable == 0 & frame_cnt[0] == 1 & location_reg[0] == 1) |=> (large_error == 1)
+IRank: : 0.29974
+Importance: : 11.98973
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a68: (location_reg[1] == 1 & tagged_frame == 1 & frame_cnt[6] == 0 & frame_cnt[4] == 0 & frame_cnt[10] == 0) |=> (large_error == 1)
+IRank: : 0.29779
+Importance: : 10.72041
+Complexity: : 36
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a61: (location_reg[1] == 1 & tagged_frame == 1 & frame_cnt[5] == 0 & frame_cnt[9] == 1 & frame_cnt[10] == 0) |=> (large_error == 1)
+IRank: : 0.29779
+Importance: : 10.72041
+Complexity: : 36
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a168: (jumbo_enable == 1 & frame_cnt[10] == 1 & frame_cnt[9] == 1 & location_reg[1] == 1 & tagged_frame == 0 & frame_cnt[2] == 0 & vlan_enable == 0 & frame_cnt[1] == 1 & frame_cnt[6] == 1 & location_reg[0] == 1) |=> (large_error == 0)
+IRank: : 0.29762
+Importance: : 19.64282
+Complexity: : 66
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a47: (location_reg[1] == 1 & frame_cnt[5] == 0 & frame_cnt[4] == 0 & vlan_enable == 0 & jumbo_enable == 0) |=> (large_error == 1)
+IRank: : 0.29741
+Importance: : 8.92241
+Complexity: : 30
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a35: (location_reg[0] == 0 & tagged_frame == 1 & frame_cnt[3] == 1 & frame_cnt[10] == 0 & jumbo_enable == 0) |=> (large_error == 1)
+IRank: : 0.29741
+Importance: : 8.92241
+Complexity: : 30
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a167: (jumbo_enable == 1 & frame_cnt[8] == 1 & location_reg[1] == 1 & tagged_frame == 0 & frame_cnt[2] == 0 & vlan_enable == 0 & frame_cnt[4] == 1 & frame_cnt[10] == 0 & frame_cnt[0] == 0) |=> (large_error == 0)
+IRank: : 0.29635
+Importance: : 18.37351
+Complexity: : 62
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a36: (frame_cnt[4] == 0 & frame_cnt[9] == 0 & frame_cnt[3] == 1 & vlan_enable == 1) |=> (large_error == 1)
+IRank: : 0.29535
+Importance: : 9.4511
+Complexity: : 32
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a28: (frame_cnt[9] == 0 & vlan_enable == 1 & frame_cnt[3] == 1 & frame_cnt[0] == 0) |=> (large_error == 1)
+IRank: : 0.29535
+Importance: : 9.4511
+Complexity: : 32
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a94: (location_reg[1] == 1 & frame_cnt[10] == 1 & frame_cnt[5] == 0 & frame_cnt[1] == 1 & tagged_frame == 1 & frame_cnt[6] == 0 & location_reg[0] == 1) |=> (large_error == 1)
+IRank: : 0.29454
+Importance: : 14.72709
+Complexity: : 50
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a91: (frame_cnt[10] == 1 & frame_cnt[2] == 1 & location_reg[0] == 0 & tagged_frame == 1 & frame_cnt[0] == 0 & frame_cnt[5] == 1 & location_reg[1] == 0) |=> (large_error == 1)
+IRank: : 0.29454
+Importance: : 14.72709
+Complexity: : 50
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a90: (frame_cnt[10] == 1 & location_reg[1] == 1 & tagged_frame == 1 & frame_cnt[6] == 0 & location_reg[0] == 1 & frame_cnt[0] == 1 & frame_cnt[2] == 0) |=> (large_error == 1)
+IRank: : 0.29454
+Importance: : 14.72709
+Complexity: : 50
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a70: (frame_cnt[10] == 1 & location_reg[1] == 1 & tagged_frame == 1 & frame_cnt[7] == 0 & frame_cnt[3] == 0 & location_reg[0] == 1 & frame_cnt[0] == 0) |=> (large_error == 1)
+IRank: : 0.29454
+Importance: : 14.72709
+Complexity: : 50
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a103: (location_reg[1] == 1 & frame_cnt[10] == 1 & frame_cnt[2] == 1 & vlan_enable == 0 & frame_cnt[9] == 1 & frame_cnt[4] == 1 & location_reg[0] == 1) |=> (large_error == 1)
+IRank: : 0.29454
+Importance: : 14.72709
+Complexity: : 50
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a72: (frame_cnt[10] == 1 & jumbo_enable == 0 & frame_cnt[9] == 1 & vlan_enable == 0) |=> (large_error == 1)
+IRank: : 0.29435
+Importance: : 7.65309
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a24: (jumbo_enable == 0 & frame_cnt[8] == 1 & frame_cnt[6] == 1 & tagged_frame == 0) |=> (large_error == 1)
+IRank: : 0.29435
+Importance: : 7.65309
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a15: (jumbo_enable == 0 & frame_cnt[1] == 0 & frame_cnt[7] == 0 & tagged_frame == 1) |=> (large_error == 1)
+IRank: : 0.29435
+Importance: : 7.65309
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a11: (jumbo_enable == 0 & vlan_enable == 0 & frame_cnt[1] == 1 & frame_cnt[0] == 1) |=> (large_error == 1)
+IRank: : 0.29435
+Importance: : 7.65309
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a8: (jumbo_enable == 0 & frame_cnt[4] == 0 & frame_cnt[1] == 1 & tagged_frame == 1) |=> (large_error == 1)
+IRank: : 0.29435
+Importance: : 7.65309
+Complexity: : 26
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a74: (frame_cnt[10] == 1 & location_reg[1] == 1 & location_reg[0] == 0 & frame_cnt[0] == 0 & vlan_enable == 1 & frame_cnt[1] == 0 & jumbo_enable == 1) |=> (large_error == 1)
+IRank: : 0.29384
+Importance: : 12.92908
+Complexity: : 44
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a132: (jumbo_enable == 1 & frame_cnt[3] == 0 & frame_cnt[8] == 1 & vlan_enable == 0 & location_reg[1] == 0 & frame_cnt[0] == 0 & location_reg[0] == 1) |=> (large_error == 0)
+IRank: : 0.29384
+Importance: : 12.92908
+Complexity: : 44
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a116: (jumbo_enable == 1 & frame_cnt[9] == 1 & tagged_frame == 0 & location_reg[1] == 0 & frame_cnt[4] == 1 & frame_cnt[7] == 0 & location_reg[0] == 1) |=> (large_error == 0)
+IRank: : 0.29384
+Importance: : 12.92908
+Complexity: : 44
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a58: (location_reg[1] == 1 & location_reg[0] == 0 & frame_cnt[10] == 1 & frame_cnt[6] == 1 & frame_cnt[2] == 1 & tagged_frame == 0 & jumbo_enable == 1) |=> (large_error == 1)
+IRank: : 0.29384
+Importance: : 12.92908
+Complexity: : 44
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a148: (jumbo_enable == 1 & frame_cnt[8] == 1 & frame_cnt[9] == 1 & frame_cnt[2] == 0 & vlan_enable == 0 & frame_cnt[7] == 1 & tagged_frame == 0 & location_reg[0] == 0 & frame_cnt[1] == 0 & frame_cnt[0] == 1) |=> (large_error == 0)
+IRank: : 0.29321
+Importance: : 21.11087
+Complexity: : 72
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a88: (frame_cnt[10] == 1 & location_reg[1] == 1 & tagged_frame == 1 & frame_cnt[8] == 0 & frame_cnt[0] == 1 & frame_cnt[4] == 1) |=> (large_error == 1)
+IRank: : 0.29256
+Importance: : 13.45777
+Complexity: : 46
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a62: (frame_cnt[10] == 1 & frame_cnt[0] == 1 & frame_cnt[8] == 0 & frame_cnt[6] == 0 & location_reg[0] == 0 & tagged_frame == 0) |=> (large_error == 1)
+IRank: : 0.29256
+Importance: : 13.45777
+Complexity: : 46
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a63: (frame_cnt[10] == 1 & frame_cnt[0] == 1 & frame_cnt[4] == 1 & frame_cnt[5] == 1 & vlan_enable == 0 & location_reg[1] == 0) |=> (large_error == 1)
+IRank: : 0.29256
+Importance: : 13.45777
+Complexity: : 46
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a102: (frame_cnt[3] == 1 & frame_cnt[4] == 1 & frame_cnt[0] == 1 & vlan_enable == 0 & frame_cnt[2] == 0 & location_reg[0] == 1) |=> (large_error == 1)
+IRank: : 0.29256
+Importance: : 13.45777
+Complexity: : 46
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a111: (frame_cnt[10] == 1 & location_reg[0] == 0 & frame_cnt[5] == 1 & frame_cnt[8] == 1 & frame_cnt[6] == 1 & tagged_frame == 0) |=> (large_error == 1)
+IRank: : 0.29256
+Importance: : 13.45777
+Complexity: : 46
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a59: (frame_cnt[10] == 1 & location_reg[0] == 0 & frame_cnt[1] == 1 & frame_cnt[3] == 0 & frame_cnt[5] == 0 & tagged_frame == 0) |=> (large_error == 1)
+IRank: : 0.29256
+Importance: : 13.45777
+Complexity: : 46
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a113: (jumbo_enable == 1 & frame_cnt[9] == 1 & location_reg[1] == 0 & frame_cnt[8] == 1 & vlan_enable == 1 & frame_cnt[7] == 1) |=> (large_error == 0)
+IRank: : 0.29149
+Importance: : 11.65977
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a112: (jumbo_enable == 1 & frame_cnt[9] == 1 & location_reg[1] == 0 & frame_cnt[8] == 1 & frame_cnt[7] == 1 & tagged_frame == 1) |=> (large_error == 0)
+IRank: : 0.29149
+Importance: : 11.65977
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a56: (location_reg[1] == 1 & frame_cnt[3] == 0 & frame_cnt[5] == 0 & tagged_frame == 1 & frame_cnt[9] == 1 & jumbo_enable == 0) |=> (large_error == 1)
+IRank: : 0.29149
+Importance: : 11.65977
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a110: (frame_cnt[4] == 0 & frame_cnt[0] == 0 & tagged_frame == 1 & frame_cnt[3] == 1 & frame_cnt[7] == 1) |=> (large_error == 1)
+IRank: : 0.2902
+Importance: : 12.18846
+Complexity: : 42
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a141: (jumbo_enable == 1 & frame_cnt[9] == 1 & location_reg[0] == 0 & frame_cnt[0] == 1 & location_reg[1] == 1 & frame_cnt[6] == 0 & frame_cnt[2] == 1 & tagged_frame == 1) |=> (large_error == 0)
+IRank: : 0.29012
+Importance: : 15.66644
+Complexity: : 54
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a172: (frame_cnt[4] == 1 & location_reg[1] == 1 & frame_cnt[7] == 1 & jumbo_enable == 0 & frame_cnt[6] == 0 & vlan_enable == 1 & frame_cnt[3] == 0 & location_reg[0] == 0) |=> (large_error == 0)
+IRank: : 0.29012
+Importance: : 15.66644
+Complexity: : 54
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a170: (frame_cnt[4] == 1 & location_reg[1] == 1 & frame_cnt[7] == 1 & jumbo_enable == 0 & frame_cnt[6] == 0 & vlan_enable == 1 & frame_cnt[10] == 0 & location_reg[0] == 1) |=> (large_error == 0)
+IRank: : 0.29012
+Importance: : 15.66644
+Complexity: : 54
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a144: (jumbo_enable == 1 & frame_cnt[9] == 1 & location_reg[0] == 0 & frame_cnt[0] == 1 & frame_cnt[6] == 1 & location_reg[1] == 0 & frame_cnt[4] == 1 & tagged_frame == 1) |=> (large_error == 0)
+IRank: : 0.29012
+Importance: : 15.66644
+Complexity: : 54
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a149: (jumbo_enable == 1 & frame_cnt[8] == 1 & frame_cnt[9] == 1 & frame_cnt[5] == 1 & location_reg[0] == 1 & vlan_enable == 1 & frame_cnt[3] == 1 & location_reg[1] == 0) |=> (large_error == 0)
+IRank: : 0.29012
+Importance: : 15.66644
+Complexity: : 54
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a101: (location_reg[1] == 1 & frame_cnt[10] == 1 & frame_cnt[2] == 1 & vlan_enable == 0 & frame_cnt[7] == 1 & frame_cnt[1] == 0 & frame_cnt[8] == 0) |=> (large_error == 1)
+IRank: : 0.2892
+Importance: : 16.19513
+Complexity: : 56
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a179: (frame_cnt[7] == 1 & location_reg[1] == 1 & frame_cnt[4] == 1 & tagged_frame == 1 & frame_cnt[9] == 0 & frame_cnt[1] == 1 & frame_cnt[2] == 0) |=> (large_error == 0)
+IRank: : 0.2892
+Importance: : 16.19513
+Complexity: : 56
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a106: (frame_cnt[4] == 0 & jumbo_enable == 0 & frame_cnt[6] == 0 & tagged_frame == 1 & frame_cnt[2] == 1) |=> (large_error == 1)
+IRank: : 0.28862
+Importance: : 10.39045
+Complexity: : 36
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a86: (frame_cnt[10] == 1 & location_reg[1] == 1 & frame_cnt[9] == 0 & frame_cnt[0] == 1 & jumbo_enable == 1 & frame_cnt[4] == 0 & tagged_frame == 0) |=> (large_error == 1)
+IRank: : 0.28794
+Importance: : 14.39713
+Complexity: : 50
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a124: (jumbo_enable == 1 & frame_cnt[8] == 1 & frame_cnt[7] == 1 & frame_cnt[5] == 1 & tagged_frame == 0 & frame_cnt[1] == 0 & location_reg[1] == 0) |=> (large_error == 0)
+IRank: : 0.28794
+Importance: : 14.39713
+Complexity: : 50
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a114: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[5] == 1 & location_reg[0] == 1 & tagged_frame == 1 & frame_cnt[6] == 1 & frame_cnt[1] == 1) |=> (large_error == 0)
+IRank: : 0.28794
+Importance: : 14.39713
+Complexity: : 50
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a153: (jumbo_enable == 1 & frame_cnt[8] == 1 & frame_cnt[0] == 1 & location_reg[0] == 0 & frame_cnt[10] == 0 & frame_cnt[2] == 1 & tagged_frame == 1) |=> (large_error == 0)
+IRank: : 0.28794
+Importance: : 14.39713
+Complexity: : 50
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a142: (jumbo_enable == 1 & frame_cnt[3] == 0 & frame_cnt[5] == 1 & tagged_frame == 1 & frame_cnt[6] == 1 & location_reg[0] == 1 & frame_cnt[2] == 1) |=> (large_error == 0)
+IRank: : 0.28794
+Importance: : 14.39713
+Complexity: : 50
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a155: (jumbo_enable == 1 & frame_cnt[8] == 1 & location_reg[1] == 1 & frame_cnt[5] == 1 & frame_cnt[4] == 0 & frame_cnt[7] == 1 & tagged_frame == 0 & frame_cnt[0] == 0 & location_reg[0] == 1) |=> (large_error == 0)
+IRank: : 0.28756
+Importance: : 18.4038
+Complexity: : 64
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a152: (jumbo_enable == 1 & frame_cnt[8] == 1 & location_reg[1] == 1 & frame_cnt[5] == 1 & frame_cnt[9] == 1 & frame_cnt[2] == 0 & frame_cnt[0] == 0 & tagged_frame == 0 & location_reg[0] == 1) |=> (large_error == 0)
+IRank: : 0.28756
+Importance: : 18.4038
+Complexity: : 64
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a89: (frame_cnt[10] == 1 & frame_cnt[3] == 1 & vlan_enable == 0 & frame_cnt[1] == 0 & frame_cnt[7] == 1 & frame_cnt[8] == 0) |=> (large_error == 1)
+IRank: : 0.28704
+Importance: : 14.92582
+Complexity: : 52
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a25: (frame_cnt[9] == 0 & frame_cnt[10] == 0 & location_reg[0] == 1 & location_reg[1] == 0) |=> (large_error == 1)
+IRank: : 0.28619
+Importance: : 8.01335
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a129: (jumbo_enable == 1 & frame_cnt[8] == 1 & frame_cnt[7] == 1 & frame_cnt[5] == 1 & tagged_frame == 0 & location_reg[1] == 1 & frame_cnt[9] == 0 & frame_cnt[2] == 0) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a120: (jumbo_enable == 1 & frame_cnt[9] == 1 & tagged_frame == 0 & frame_cnt[1] == 0 & frame_cnt[0] == 0 & frame_cnt[7] == 0 & frame_cnt[6] == 1 & location_reg[1] == 0) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a121: (jumbo_enable == 1 & frame_cnt[9] == 1 & tagged_frame == 0 & frame_cnt[1] == 0 & frame_cnt[0] == 0 & location_reg[0] == 1 & frame_cnt[2] == 1 & frame_cnt[10] == 0) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a122: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[10] == 1 & tagged_frame == 0 & frame_cnt[1] == 0 & frame_cnt[0] == 0 & frame_cnt[7] == 0 & location_reg[1] == 0) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a139: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[8] == 1 & frame_cnt[7] == 1 & frame_cnt[5] == 1 & frame_cnt[4] == 0 & location_reg[0] == 1 & tagged_frame == 0) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a137: (jumbo_enable == 1 & frame_cnt[3] == 0 & vlan_enable == 0 & frame_cnt[8] == 1 & frame_cnt[0] == 1 & location_reg[0] == 0 & frame_cnt[2] == 1 & frame_cnt[1] == 0) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a136: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[5] == 1 & frame_cnt[0] == 1 & frame_cnt[10] == 0 & tagged_frame == 1 & frame_cnt[1] == 1 & location_reg[0] == 1) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a184: (frame_cnt[4] == 1 & location_reg[1] == 1 & frame_cnt[7] == 1 & tagged_frame == 1 & frame_cnt[0] == 0 & frame_cnt[3] == 0 & frame_cnt[5] == 1 & jumbo_enable == 1) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a158: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[8] == 1 & tagged_frame == 0 & location_reg[0] == 0 & frame_cnt[10] == 0 & frame_cnt[4] == 1 & frame_cnt[1] == 0) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a156: (jumbo_enable == 1 & frame_cnt[8] == 1 & frame_cnt[9] == 1 & frame_cnt[2] == 0 & frame_cnt[5] == 1 & tagged_frame == 1 & location_reg[0] == 1 & frame_cnt[6] == 1) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a151: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[5] == 1 & frame_cnt[7] == 1 & frame_cnt[0] == 1 & tagged_frame == 1 & frame_cnt[2] == 1 & location_reg[0] == 0) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a165: (jumbo_enable == 1 & frame_cnt[10] == 1 & frame_cnt[9] == 1 & tagged_frame == 0 & frame_cnt[2] == 0 & frame_cnt[7] == 0 & frame_cnt[0] == 0 & location_reg[0] == 0) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a161: (jumbo_enable == 1 & frame_cnt[10] == 1 & frame_cnt[2] == 0 & frame_cnt[4] == 0 & frame_cnt[5] == 1 & tagged_frame == 1 & frame_cnt[8] == 0 & location_reg[0] == 0) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a163: (jumbo_enable == 1 & frame_cnt[8] == 1 & location_reg[1] == 1 & frame_cnt[5] == 1 & frame_cnt[9] == 1 & frame_cnt[3] == 0 & frame_cnt[10] == 0 & vlan_enable == 1) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a176: (frame_cnt[10] == 1 & jumbo_enable == 1 & frame_cnt[9] == 1 & tagged_frame == 0 & frame_cnt[2] == 0 & location_reg[0] == 0 & frame_cnt[7] == 0 & frame_cnt[1] == 1) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a174: (jumbo_enable == 1 & frame_cnt[10] == 1 & frame_cnt[9] == 1 & tagged_frame == 0 & frame_cnt[5] == 1 & location_reg[0] == 0 & frame_cnt[0] == 0 & frame_cnt[4] == 1) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a173: (jumbo_enable == 1 & frame_cnt[10] == 1 & frame_cnt[8] == 1 & location_reg[0] == 1 & frame_cnt[4] == 1 & frame_cnt[9] == 0 & vlan_enable == 0 & frame_cnt[7] == 0) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a146: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[5] == 1 & frame_cnt[0] == 1 & frame_cnt[10] == 0 & tagged_frame == 1 & frame_cnt[1] == 1 & location_reg[1] == 1) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a147: (jumbo_enable == 1 & frame_cnt[8] == 1 & frame_cnt[9] == 1 & frame_cnt[7] == 1 & frame_cnt[3] == 0 & frame_cnt[1] == 0 & vlan_enable == 1 & location_reg[0] == 1) |=> (large_error == 0)
+IRank: : 0.28557
+Importance: : 17.13449
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a182: (frame_cnt[10] == 1 & jumbo_enable == 1 & frame_cnt[9] == 1 & tagged_frame == 0 & frame_cnt[8] == 1 & frame_cnt[6] == 0 & frame_cnt[2] == 0 & location_reg[0] == 0 & frame_cnt[7] == 0) |=> (large_error == 0)
+IRank: : 0.28388
+Importance: : 19.87185
+Complexity: : 70
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a175: (frame_cnt[10] == 1 & jumbo_enable == 1 & frame_cnt[4] == 0 & frame_cnt[2] == 0 & frame_cnt[0] == 0 & frame_cnt[3] == 0 & frame_cnt[5] == 1 & location_reg[0] == 0 & tagged_frame == 1) |=> (large_error == 0)
+IRank: : 0.28388
+Importance: : 19.87185
+Complexity: : 70
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a125: (jumbo_enable == 1 & frame_cnt[8] == 1 & frame_cnt[7] == 1 & frame_cnt[5] == 1 & tagged_frame == 0 & frame_cnt[1] == 0 & frame_cnt[3] == 1) |=> (large_error == 0)
+IRank: : 0.28331
+Importance: : 15.86517
+Complexity: : 56
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a119: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[8] == 1 & frame_cnt[7] == 1 & frame_cnt[5] == 1 & tagged_frame == 1 & frame_cnt[4] == 1) |=> (large_error == 0)
+IRank: : 0.28331
+Importance: : 15.86517
+Complexity: : 56
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a78: (frame_cnt[5] == 1 & frame_cnt[4] == 1 & frame_cnt[9] == 0 & location_reg[1] == 0 & location_reg[0] == 1) |=> (large_error == 1)
+IRank: : 0.28291
+Importance: : 10.75071
+Complexity: : 38
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a69: (location_reg[1] == 1 & frame_cnt[7] == 0 & location_reg[0] == 0 & frame_cnt[0] == 0 & frame_cnt[10] == 0) |=> (large_error == 1)
+IRank: : 0.28291
+Importance: : 10.75071
+Complexity: : 38
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a66: (frame_cnt[5] == 1 & frame_cnt[6] == 0 & frame_cnt[4] == 0 & location_reg[1] == 0 & location_reg[0] == 1) |=> (large_error == 1)
+IRank: : 0.28291
+Importance: : 10.75071
+Complexity: : 38
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a44: (frame_cnt[8] == 0 & frame_cnt[7] == 1 & frame_cnt[2] == 0 & location_reg[1] == 0 & location_reg[0] == 0) |=> (large_error == 1)
+IRank: : 0.28291
+Importance: : 10.75071
+Complexity: : 38
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a30: (frame_cnt[8] == 0 & frame_cnt[5] == 0 & frame_cnt[2] == 1 & location_reg[0] == 1 & location_reg[1] == 1) |=> (large_error == 1)
+IRank: : 0.28291
+Importance: : 10.75071
+Complexity: : 38
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a38: (frame_cnt[8] == 0 & frame_cnt[6] == 0 & location_reg[0] == 0 & frame_cnt[10] == 0 & location_reg[1] == 1) |=> (large_error == 1)
+IRank: : 0.28291
+Importance: : 10.75071
+Complexity: : 38
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a178: (frame_cnt[10] == 1 & jumbo_enable == 1 & frame_cnt[8] == 1 & location_reg[0] == 1 & frame_cnt[4] == 1 & frame_cnt[6] == 0 & frame_cnt[5] == 0 & frame_cnt[7] == 0 & tagged_frame == 0 & frame_cnt[0] == 1) |=> (large_error == 0)
+IRank: : 0.28262
+Importance: : 22.60921
+Complexity: : 80
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a45: (location_reg[1] == 1 & location_reg[0] == 0 & frame_cnt[7] == 0 & jumbo_enable == 0) |=> (large_error == 1)
+IRank: : 0.28252
+Importance: : 6.21534
+Complexity: : 22
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a123: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[10] == 1 & tagged_frame == 0 & frame_cnt[1] == 0 & frame_cnt[0] == 0 & frame_cnt[7] == 0 & frame_cnt[2] == 0) |=> (large_error == 0)
+IRank: : 0.28186
+Importance: : 18.60253
+Complexity: : 66
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a127: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[5] == 1 & frame_cnt[7] == 1 & frame_cnt[0] == 1 & frame_cnt[1] == 0 & frame_cnt[6] == 0 & tagged_frame == 0) |=> (large_error == 0)
+IRank: : 0.28186
+Importance: : 18.60253
+Complexity: : 66
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a181: (frame_cnt[10] == 1 & jumbo_enable == 1 & frame_cnt[8] == 1 & frame_cnt[7] == 1 & frame_cnt[1] == 1 & tagged_frame == 1 & frame_cnt[3] == 1 & frame_cnt[5] == 1) |=> (large_error == 0)
+IRank: : 0.28186
+Importance: : 18.60253
+Complexity: : 66
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a92: (frame_cnt[10] == 1 & location_reg[1] == 1 & frame_cnt[5] == 0 & frame_cnt[1] == 1 & location_reg[0] == 0 & frame_cnt[2] == 0) |=> (large_error == 1)
+IRank: : 0.281
+Importance: : 13.48807
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a41: (frame_cnt[4] == 0 & location_reg[0] == 0 & frame_cnt[6] == 1 & frame_cnt[10] == 1 & frame_cnt[8] == 1 & location_reg[1] == 0) |=> (large_error == 1)
+IRank: : 0.281
+Importance: : 13.48807
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a105: (frame_cnt[10] == 1 & location_reg[0] == 0 & frame_cnt[5] == 1 & frame_cnt[2] == 1 & location_reg[1] == 0 & frame_cnt[1] == 1) |=> (large_error == 1)
+IRank: : 0.281
+Importance: : 13.48807
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a53: (frame_cnt[10] == 1 & location_reg[0] == 0 & frame_cnt[1] == 1 & frame_cnt[5] == 0 & frame_cnt[3] == 0 & location_reg[1] == 0) |=> (large_error == 1)
+IRank: : 0.281
+Importance: : 13.48807
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a57: (location_reg[1] == 1 & frame_cnt[3] == 0 & frame_cnt[7] == 0 & frame_cnt[2] == 1 & frame_cnt[4] == 1 & location_reg[0] == 1) |=> (large_error == 1)
+IRank: : 0.281
+Importance: : 13.48807
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a164: (jumbo_enable == 1 & frame_cnt[10] == 1 & frame_cnt[9] == 1 & frame_cnt[5] == 1 & frame_cnt[4] == 0 & frame_cnt[1] == 1 & frame_cnt[6] == 1 & frame_cnt[2] == 0 & tagged_frame == 1) |=> (large_error == 0)
+IRank: : 0.28079
+Importance: : 21.33989
+Complexity: : 76
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a34: (location_reg[1] == 1 & frame_cnt[5] == 0 & frame_cnt[10] == 0 & location_reg[0] == 1 & jumbo_enable == 1) |=> (large_error == 1)
+IRank: : 0.27977
+Importance: : 8.9527
+Complexity: : 32
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a95: (location_reg[1] == 1 & frame_cnt[10] == 1 & location_reg[0] == 0 & frame_cnt[2] == 1 & frame_cnt[7] == 0 & frame_cnt[1] == 1 & frame_cnt[5] == 1) |=> (large_error == 1)
+IRank: : 0.27975
+Importance: : 16.22543
+Complexity: : 58
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a31: (frame_cnt[9] == 0 & location_reg[0] == 0 & frame_cnt[0] == 0 & frame_cnt[4] == 1) |=> (large_error == 1)
+IRank: : 0.27886
+Importance: : 9.48139
+Complexity: : 34
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a22: (frame_cnt[9] == 0 & frame_cnt[3] == 1 & frame_cnt[1] == 0 & location_reg[1] == 0) |=> (large_error == 1)
+IRank: : 0.27886
+Importance: : 9.48139
+Complexity: : 34
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a177: (frame_cnt[10] == 1 & frame_cnt[7] == 1 & location_reg[1] == 1 & frame_cnt[3] == 0 & frame_cnt[2] == 0 & location_reg[0] == 1 & frame_cnt[9] == 1 & frame_cnt[0] == 0) |=> (large_error == 0)
+IRank: : 0.27886
+Importance: : 18.96279
+Complexity: : 68
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a17: (frame_cnt[9] == 0 & frame_cnt[3] == 1 & frame_cnt[0] == 0 & location_reg[1] == 0) |=> (large_error == 1)
+IRank: : 0.27886
+Importance: : 9.48139
+Complexity: : 34
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a73: (frame_cnt[10] == 1 & location_reg[1] == 1 & location_reg[0] == 0 & frame_cnt[6] == 1 & frame_cnt[9] == 1 & jumbo_enable == 0) |=> (large_error == 1)
+IRank: : 0.27833
+Importance: : 11.69006
+Complexity: : 42
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a54: (location_reg[1] == 1 & location_reg[0] == 0 & frame_cnt[10] == 1 & frame_cnt[0] == 0 & frame_cnt[8] == 1 & jumbo_enable == 0) |=> (large_error == 1)
+IRank: : 0.27833
+Importance: : 11.69006
+Complexity: : 42
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a43: (location_reg[1] == 1 & frame_cnt[5] == 0 & frame_cnt[4] == 0 & frame_cnt[1] == 1 & frame_cnt[3] == 1) |=> (large_error == 1)
+IRank: : 0.2777
+Importance: : 12.21875
+Complexity: : 44
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a60: (frame_cnt[0] == 1 & frame_cnt[8] == 0 & frame_cnt[1] == 0 & frame_cnt[3] == 1 & location_reg[0] == 0) |=> (large_error == 1)
+IRank: : 0.2777
+Importance: : 12.21875
+Complexity: : 44
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a40: (location_reg[0] == 0 & frame_cnt[10] == 1 & frame_cnt[1] == 1 & frame_cnt[5] == 0 & frame_cnt[9] == 0) |=> (large_error == 1)
+IRank: : 0.2777
+Importance: : 12.21875
+Complexity: : 44
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a29: (frame_cnt[8] == 0 & frame_cnt[5] == 0 & frame_cnt[7] == 1 & frame_cnt[4] == 1 & location_reg[0] == 0) |=> (large_error == 1)
+IRank: : 0.2777
+Importance: : 12.21875
+Complexity: : 44
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a128: (jumbo_enable == 1 & frame_cnt[8] == 1 & frame_cnt[7] == 1 & frame_cnt[9] == 1 & location_reg[0] == 0 & location_reg[1] == 0 & frame_cnt[1] == 0) |=> (large_error == 0)
+IRank: : 0.27745
+Importance: : 14.42742
+Complexity: : 52
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a126: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[5] == 1 & location_reg[0] == 1 & frame_cnt[3] == 1 & frame_cnt[6] == 1 & location_reg[1] == 0) |=> (large_error == 0)
+IRank: : 0.27745
+Importance: : 14.42742
+Complexity: : 52
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a46: (location_reg[1] == 1 & location_reg[0] == 0 & frame_cnt[10] == 1 & frame_cnt[6] == 1 & frame_cnt[3] == 1 & frame_cnt[1] == 0 & jumbo_enable == 1) |=> (large_error == 1)
+IRank: : 0.27745
+Importance: : 14.42742
+Complexity: : 52
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a131: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[5] == 1 & location_reg[1] == 1 & frame_cnt[7] == 1 & location_reg[0] == 1 & frame_cnt[8] == 0) |=> (large_error == 0)
+IRank: : 0.27745
+Importance: : 14.42742
+Complexity: : 52
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a150: (jumbo_enable == 1 & frame_cnt[8] == 1 & frame_cnt[0] == 1 & location_reg[0] == 0 & frame_cnt[10] == 0 & frame_cnt[5] == 0 & location_reg[1] == 0) |=> (large_error == 0)
+IRank: : 0.27745
+Importance: : 14.42742
+Complexity: : 52
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a166: (jumbo_enable == 1 & frame_cnt[10] == 1 & location_reg[1] == 1 & frame_cnt[0] == 0 & location_reg[0] == 1 & frame_cnt[5] == 1 & frame_cnt[6] == 1) |=> (large_error == 0)
+IRank: : 0.27745
+Importance: : 14.42742
+Complexity: : 52
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a93: (frame_cnt[10] == 1 & frame_cnt[2] == 1 & frame_cnt[4] == 0 & frame_cnt[5] == 0 & location_reg[0] == 1 & frame_cnt[7] == 0) |=> (large_error == 1)
+IRank: : 0.27697
+Importance: : 14.95611
+Complexity: : 54
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a75: (frame_cnt[0] == 1 & frame_cnt[9] == 0 & frame_cnt[3] == 0 & frame_cnt[1] == 1 & frame_cnt[7] == 1 & location_reg[0] == 0) |=> (large_error == 1)
+IRank: : 0.27697
+Importance: : 14.95611
+Complexity: : 54
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a71: (frame_cnt[10] == 1 & frame_cnt[0] == 1 & location_reg[1] == 1 & frame_cnt[7] == 0 & frame_cnt[3] == 0 & frame_cnt[6] == 0) |=> (large_error == 1)
+IRank: : 0.27697
+Importance: : 14.95611
+Complexity: : 54
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a82: (frame_cnt[10] == 1 & frame_cnt[1] == 1 & location_reg[0] == 0 & frame_cnt[0] == 0 & frame_cnt[5] == 0 & frame_cnt[2] == 0) |=> (large_error == 1)
+IRank: : 0.27697
+Importance: : 14.95611
+Complexity: : 54
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a80: (frame_cnt[10] == 1 & frame_cnt[1] == 1 & location_reg[0] == 0 & frame_cnt[5] == 0 & frame_cnt[3] == 0 & frame_cnt[0] == 1) |=> (large_error == 1)
+IRank: : 0.27697
+Importance: : 14.95611
+Complexity: : 54
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a81: (frame_cnt[5] == 1 & frame_cnt[0] == 1 & frame_cnt[1] == 0 & frame_cnt[7] == 0 & frame_cnt[2] == 0 & location_reg[0] == 0) |=> (large_error == 1)
+IRank: : 0.27697
+Importance: : 14.95611
+Complexity: : 54
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a87: (frame_cnt[10] == 1 & frame_cnt[7] == 1 & frame_cnt[3] == 1 & frame_cnt[2] == 0 & frame_cnt[0] == 0 & location_reg[0] == 0) |=> (large_error == 1)
+IRank: : 0.27697
+Importance: : 14.95611
+Complexity: : 54
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a108: (frame_cnt[10] == 1 & frame_cnt[3] == 1 & frame_cnt[7] == 1 & frame_cnt[2] == 0 & frame_cnt[0] == 0 & location_reg[1] == 0) |=> (large_error == 1)
+IRank: : 0.27697
+Importance: : 14.95611
+Complexity: : 54
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a50: (frame_cnt[8] == 0 & frame_cnt[0] == 1 & frame_cnt[10] == 1 & frame_cnt[2] == 1 & frame_cnt[7] == 1 & location_reg[0] == 1) |=> (large_error == 1)
+IRank: : 0.27697
+Importance: : 14.95611
+Complexity: : 54
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a99: (frame_cnt[3] == 1 & frame_cnt[4] == 1 & frame_cnt[5] == 1 & frame_cnt[2] == 0 & frame_cnt[0] == 0 & location_reg[0] == 0) |=> (large_error == 1)
+IRank: : 0.27697
+Importance: : 14.95611
+Complexity: : 54
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a143: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[5] == 1 & frame_cnt[6] == 1 & location_reg[1] == 1 & location_reg[0] == 1 & frame_cnt[0] == 0 & frame_cnt[1] == 0) |=> (large_error == 0)
+IRank: : 0.27685
+Importance: : 17.16478
+Complexity: : 62
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a140: (jumbo_enable == 1 & frame_cnt[9] == 1 & location_reg[0] == 0 & frame_cnt[0] == 1 & frame_cnt[8] == 1 & frame_cnt[6] == 0 & frame_cnt[5] == 0 & location_reg[1] == 0) |=> (large_error == 0)
+IRank: : 0.27685
+Importance: : 17.16478
+Complexity: : 62
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a133: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[5] == 1 & frame_cnt[1] == 1 & frame_cnt[2] == 0 & frame_cnt[6] == 1 & frame_cnt[3] == 0 & location_reg[0] == 0 & location_reg[1] == 0) |=> (large_error == 0)
+IRank: : 0.27642
+Importance: : 19.90214
+Complexity: : 72
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a180: (frame_cnt[10] == 1 & frame_cnt[7] == 1 & location_reg[1] == 1 & frame_cnt[3] == 0 & frame_cnt[2] == 0 & location_reg[0] == 1 & jumbo_enable == 0 & frame_cnt[0] == 1 & frame_cnt[1] == 1) |=> (large_error == 0)
+IRank: : 0.27642
+Importance: : 19.90214
+Complexity: : 72
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a10: (jumbo_enable == 0 & frame_cnt[5] == 0 & location_reg[1] == 0) |=> (large_error == 1)
+IRank: : 0.27478
+Importance: : 4.94603
+Complexity: : 18
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (jumbo_enable == 0 & location_reg[1] == 0 & frame_cnt[0] == 0) |=> (large_error == 1)
+IRank: : 0.27478
+Importance: : 4.94603
+Complexity: : 18
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a67: (location_reg[1] == 1 & frame_cnt[7] == 0 & frame_cnt[8] == 1 & jumbo_enable == 0) |=> (large_error == 1)
+IRank: : 0.27441
+Importance: : 7.68339
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a14: (jumbo_enable == 0 & frame_cnt[1] == 0 & frame_cnt[7] == 0 & location_reg[1] == 0) |=> (large_error == 1)
+IRank: : 0.27441
+Importance: : 7.68339
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a12: (jumbo_enable == 0 & frame_cnt[1] == 0 & frame_cnt[7] == 0 & location_reg[0] == 0) |=> (large_error == 1)
+IRank: : 0.27441
+Importance: : 7.68339
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a5: (jumbo_enable == 0 & frame_cnt[4] == 0 & frame_cnt[1] == 1 & location_reg[0] == 1) |=> (large_error == 1)
+IRank: : 0.27441
+Importance: : 7.68339
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a7: (jumbo_enable == 0 & frame_cnt[4] == 0 & frame_cnt[1] == 1 & location_reg[1] == 0) |=> (large_error == 1)
+IRank: : 0.27441
+Importance: : 7.68339
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a6: (jumbo_enable == 0 & frame_cnt[4] == 0 & frame_cnt[10] == 0 & location_reg[0] == 1) |=> (large_error == 1)
+IRank: : 0.27441
+Importance: : 7.68339
+Complexity: : 28
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a52: (frame_cnt[10] == 1 & location_reg[0] == 0 & frame_cnt[1] == 1 & frame_cnt[3] == 0 & jumbo_enable == 0) |=> (large_error == 1)
+IRank: : 0.27423
+Importance: : 10.42075
+Complexity: : 38
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a39: (location_reg[0] == 0 & frame_cnt[10] == 1 & frame_cnt[1] == 1 & frame_cnt[5] == 0 & jumbo_enable == 0) |=> (large_error == 1)
+IRank: : 0.27423
+Importance: : 10.42075
+Complexity: : 38
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a135: (jumbo_enable == 1 & frame_cnt[3] == 0 & frame_cnt[8] == 1 & frame_cnt[1] == 0 & frame_cnt[7] == 1 & location_reg[1] == 0) |=> (large_error == 0)
+IRank: : 0.27413
+Importance: : 13.15811
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a107: (frame_cnt[4] == 0 & frame_cnt[3] == 0 & jumbo_enable == 0 & frame_cnt[6] == 0 & frame_cnt[5] == 0 & location_reg[0] == 0) |=> (large_error == 1)
+IRank: : 0.27413
+Importance: : 13.15811
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a109: (frame_cnt[4] == 0 & frame_cnt[8] == 0 & frame_cnt[5] == 0 & location_reg[0] == 1 & frame_cnt[0] == 1 & jumbo_enable == 1) |=> (large_error == 1)
+IRank: : 0.27413
+Importance: : 13.15811
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a115: (jumbo_enable == 1 & frame_cnt[9] == 1 & location_reg[1] == 0 & frame_cnt[0] == 0 & frame_cnt[2] == 1 & frame_cnt[3] == 0) |=> (large_error == 0)
+IRank: : 0.27413
+Importance: : 13.15811
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a118: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[8] == 1 & location_reg[1] == 0 & frame_cnt[4] == 1 & frame_cnt[10] == 0) |=> (large_error == 0)
+IRank: : 0.27413
+Importance: : 13.15811
+Complexity: : 48
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a98: (location_reg[1] == 1 & frame_cnt[10] == 1 & frame_cnt[7] == 1 & frame_cnt[9] == 0 & jumbo_enable == 1 & frame_cnt[5] == 0 & frame_cnt[0] == 1) |=> (large_error == 1)
+IRank: : 0.27406
+Importance: : 15.89547
+Complexity: : 58
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a134: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[8] == 1 & frame_cnt[7] == 1 & location_reg[0] == 0 & frame_cnt[10] == 0 & frame_cnt[2] == 1) |=> (large_error == 0)
+IRank: : 0.27406
+Importance: : 15.89547
+Complexity: : 58
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a100: (location_reg[1] == 1 & frame_cnt[10] == 1 & frame_cnt[7] == 1 & frame_cnt[9] == 0 & jumbo_enable == 1 & frame_cnt[5] == 0 & frame_cnt[1] == 0) |=> (large_error == 1)
+IRank: : 0.27406
+Importance: : 15.89547
+Complexity: : 58
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a157: (jumbo_enable == 1 & frame_cnt[8] == 1 & frame_cnt[0] == 1 & location_reg[0] == 0 & frame_cnt[10] == 0 & frame_cnt[5] == 0 & frame_cnt[3] == 0) |=> (large_error == 0)
+IRank: : 0.27406
+Importance: : 15.89547
+Complexity: : 58
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a160: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[5] == 1 & frame_cnt[0] == 1 & frame_cnt[4] == 0 & frame_cnt[7] == 1 & frame_cnt[3] == 0 & location_reg[0] == 0) |=> (large_error == 0)
+IRank: : 0.27401
+Importance: : 18.63283
+Complexity: : 68
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a162: (jumbo_enable == 1 & frame_cnt[8] == 1 & location_reg[1] == 1 & frame_cnt[4] == 1 & frame_cnt[1] == 1 & frame_cnt[7] == 1 & frame_cnt[2] == 1 & frame_cnt[0] == 1) |=> (large_error == 0)
+IRank: : 0.27401
+Importance: : 18.63283
+Complexity: : 68
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a169: (jumbo_enable == 1 & frame_cnt[10] == 1 & frame_cnt[9] == 1 & frame_cnt[5] == 1 & frame_cnt[4] == 0 & frame_cnt[2] == 1 & location_reg[0] == 1 & frame_cnt[7] == 1) |=> (large_error == 0)
+IRank: : 0.27401
+Importance: : 18.63283
+Complexity: : 68
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a145: (jumbo_enable == 1 & frame_cnt[3] == 0 & frame_cnt[2] == 0 & frame_cnt[7] == 0 & frame_cnt[1] == 1 & frame_cnt[8] == 0 & location_reg[1] == 1 & frame_cnt[0] == 0) |=> (large_error == 0)
+IRank: : 0.27401
+Importance: : 18.63283
+Complexity: : 68
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a42: (frame_cnt[4] == 0 & frame_cnt[8] == 0 & frame_cnt[10] == 0 & frame_cnt[6] == 0) |=> (large_error == 1)
+IRank: : 0.27374
+Importance: : 10.94944
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a79: (frame_cnt[5] == 1 & frame_cnt[0] == 1 & frame_cnt[1] == 0 & frame_cnt[7] == 0 & frame_cnt[3] == 1) |=> (large_error == 1)
+IRank: : 0.27374
+Importance: : 13.6868
+Complexity: : 50
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a83: (frame_cnt[9] == 0 & frame_cnt[3] == 0 & frame_cnt[0] == 1 & frame_cnt[5] == 1 & frame_cnt[10] == 0) |=> (large_error == 1)
+IRank: : 0.27374
+Importance: : 13.6868
+Complexity: : 50
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a104: (frame_cnt[3] == 1 & frame_cnt[4] == 1 & frame_cnt[0] == 1 & frame_cnt[6] == 1 & frame_cnt[5] == 1 & frame_cnt[10] == 0) |=> (large_error == 1)
+IRank: : 0.27374
+Importance: : 16.42416
+Complexity: : 60
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a20: (frame_cnt[9] == 0 & frame_cnt[8] == 0 & frame_cnt[4] == 1 & frame_cnt[0] == 0) |=> (large_error == 1)
+IRank: : 0.27374
+Importance: : 10.94944
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a23: (frame_cnt[9] == 0 & frame_cnt[3] == 1 & frame_cnt[1] == 0 & frame_cnt[8] == 0) |=> (large_error == 1)
+IRank: : 0.27374
+Importance: : 10.94944
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a19: (frame_cnt[9] == 0 & frame_cnt[8] == 0 & frame_cnt[10] == 0 & frame_cnt[0] == 0) |=> (large_error == 1)
+IRank: : 0.27374
+Importance: : 10.94944
+Complexity: : 40
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a138: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[8] == 1 & frame_cnt[7] == 1 & frame_cnt[5] == 1 & frame_cnt[4] == 0 & frame_cnt[3] == 0 & frame_cnt[2] == 1) |=> (large_error == 0)
+IRank: : 0.27163
+Importance: : 20.10087
+Complexity: : 74
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a171: (jumbo_enable == 1 & frame_cnt[10] == 1 & frame_cnt[2] == 0 & frame_cnt[4] == 0 & frame_cnt[0] == 0 & frame_cnt[1] == 0 & frame_cnt[3] == 0 & frame_cnt[5] == 0) |=> (large_error == 0)
+IRank: : 0.27163
+Importance: : 20.10087
+Complexity: : 74
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a117: (jumbo_enable == 1 & frame_cnt[9] == 1 & frame_cnt[5] == 1 & frame_cnt[7] == 1 & frame_cnt[2] == 1 & frame_cnt[10] == 0 & frame_cnt[1] == 1) |=> (large_error == 0)
+IRank: : 0.2713
+Importance: : 17.36351
+Complexity: : 64
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a77: (frame_cnt[5] == 1 & frame_cnt[4] == 1 & frame_cnt[2] == 0 & frame_cnt[1] == 0 & jumbo_enable == 0) |=> (large_error == 1)
+IRank: : 0.2702
+Importance: : 11.88879
+Complexity: : 44
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a37: (frame_cnt[8] == 0 & frame_cnt[6] == 0 & frame_cnt[10] == 0 & jumbo_enable == 0) |=> (large_error == 1)
+IRank: : 0.26916
+Importance: : 9.15143
+Complexity: : 34
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a27: (jumbo_enable == 0 & frame_cnt[3] == 1 & frame_cnt[8] == 1 & frame_cnt[7] == 0) |=> (large_error == 1)
+IRank: : 0.26916
+Importance: : 9.15143
+Complexity: : 34
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a16: (frame_cnt[9] == 0 & frame_cnt[10] == 0 & frame_cnt[1] == 0 & jumbo_enable == 0) |=> (large_error == 1)
+IRank: : 0.26916
+Importance: : 9.15143
+Complexity: : 34
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a13: (jumbo_enable == 0 & frame_cnt[4] == 0 & frame_cnt[9] == 1 & frame_cnt[1] == 1) |=> (large_error == 1)
+IRank: : 0.26916
+Importance: : 9.15143
+Complexity: : 34
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a18: (jumbo_enable == 0 & frame_cnt[4] == 0 & frame_cnt[9] == 1 & frame_cnt[3] == 0) |=> (large_error == 1)
+IRank: : 0.26916
+Importance: : 9.15143
+Complexity: : 34
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (jumbo_enable == 0 & frame_cnt[7] == 0 & frame_cnt[4] == 0) |=> (large_error == 1)
+IRank: : 0.26725
+Importance: : 6.41407
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (jumbo_enable == 0 & frame_cnt[7] == 0 & frame_cnt[9] == 0) |=> (large_error == 1)
+IRank: : 0.26725
+Importance: : 6.41407
+Complexity: : 24
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a2        | 0.34477 |  3.44769   |     10     |  Unknown  | Unknown |   Unknown   
+      a9        | 0.34193 |  6.15475   |     18     |  Unknown  | Unknown |   Unknown   
+     a159       | 0.31752 |  11.43074  |     36     |  Unknown  | Unknown |   Unknown   
+      a85       | 0.31497 |  13.22875  |     42     |  Unknown  | Unknown |   Unknown   
+      a32       | 0.30925 |  6.18505   |     20     |  Unknown  | Unknown |   Unknown   
+      a3        | 0.30925 |  6.18505   |     20     |  Unknown  | Unknown |   Unknown   
+      a97       | 0.30841 |  9.25237   |     30     |  Unknown  | Unknown |   Unknown   
+      a33       | 0.30704 |  7.98305   |     26     |  Unknown  | Unknown |   Unknown   
+      a21       | 0.30704 |  7.98305   |     26     |  Unknown  | Unknown |   Unknown   
+      a26       | 0.30704 |  7.98305   |     26     |  Unknown  | Unknown |   Unknown   
+     a183       | 0.30167 |  18.70347  |     62     |  Unknown  | Unknown |   Unknown   
+     a154       | 0.3007  |  15.63615  |     52     |  Unknown  | Unknown |   Unknown   
+      a65       | 0.29976 |  10.19172  |     34     |  Unknown  | Unknown |   Unknown   
+     a130       | 0.29976 |  10.19172  |     34     |  Unknown  | Unknown |   Unknown   
+      a96       | 0.29974 |  11.98973  |     40     |  Unknown  | Unknown |   Unknown   
+      a76       | 0.29974 |  11.98973  |     40     |  Unknown  | Unknown |   Unknown   
+      a84       | 0.29974 |  11.98973  |     40     |  Unknown  | Unknown |   Unknown   
+      a64       | 0.29974 |  11.98973  |     40     |  Unknown  | Unknown |   Unknown   
+      a51       | 0.29974 |  11.98973  |     40     |  Unknown  | Unknown |   Unknown   
+      a55       | 0.29974 |  11.98973  |     40     |  Unknown  | Unknown |   Unknown   
+      a48       | 0.29974 |  11.98973  |     40     |  Unknown  | Unknown |   Unknown   
+      a49       | 0.29974 |  11.98973  |     40     |  Unknown  | Unknown |   Unknown   
+      a68       | 0.29779 |  10.72041  |     36     |  Unknown  | Unknown |   Unknown   
+      a61       | 0.29779 |  10.72041  |     36     |  Unknown  | Unknown |   Unknown   
+     a168       | 0.29762 |  19.64282  |     66     |  Unknown  | Unknown |   Unknown   
+      a47       | 0.29741 |  8.92241   |     30     |  Unknown  | Unknown |   Unknown   
+      a35       | 0.29741 |  8.92241   |     30     |  Unknown  | Unknown |   Unknown   
+     a167       | 0.29635 |  18.37351  |     62     |  Unknown  | Unknown |   Unknown   
+      a36       | 0.29535 |   9.4511   |     32     |  Unknown  | Unknown |   Unknown   
+      a28       | 0.29535 |   9.4511   |     32     |  Unknown  | Unknown |   Unknown   
+      a94       | 0.29454 |  14.72709  |     50     |  Unknown  | Unknown |   Unknown   
+      a90       | 0.29454 |  14.72709  |     50     |  Unknown  | Unknown |   Unknown   
+      a70       | 0.29454 |  14.72709  |     50     |  Unknown  | Unknown |   Unknown   
+     a103       | 0.29454 |  14.72709  |     50     |  Unknown  | Unknown |   Unknown   
+      a91       | 0.29454 |  14.72709  |     50     |  Unknown  | Unknown |   Unknown   
+      a72       | 0.29435 |  7.65309   |     26     |  Unknown  | Unknown |   Unknown   
+      a24       | 0.29435 |  7.65309   |     26     |  Unknown  | Unknown |   Unknown   
+      a15       | 0.29435 |  7.65309   |     26     |  Unknown  | Unknown |   Unknown   
+      a11       | 0.29435 |  7.65309   |     26     |  Unknown  | Unknown |   Unknown   
+      a8        | 0.29435 |  7.65309   |     26     |  Unknown  | Unknown |   Unknown   
+      a74       | 0.29384 |  12.92908  |     44     |  Unknown  | Unknown |   Unknown   
+     a132       | 0.29384 |  12.92908  |     44     |  Unknown  | Unknown |   Unknown   
+     a116       | 0.29384 |  12.92908  |     44     |  Unknown  | Unknown |   Unknown   
+      a58       | 0.29384 |  12.92908  |     44     |  Unknown  | Unknown |   Unknown   
+     a148       | 0.29321 |  21.11087  |     72     |  Unknown  | Unknown |   Unknown   
+      a88       | 0.29256 |  13.45777  |     46     |  Unknown  | Unknown |   Unknown   
+      a62       | 0.29256 |  13.45777  |     46     |  Unknown  | Unknown |   Unknown   
+      a63       | 0.29256 |  13.45777  |     46     |  Unknown  | Unknown |   Unknown   
+     a102       | 0.29256 |  13.45777  |     46     |  Unknown  | Unknown |   Unknown   
+     a111       | 0.29256 |  13.45777  |     46     |  Unknown  | Unknown |   Unknown   
+      a59       | 0.29256 |  13.45777  |     46     |  Unknown  | Unknown |   Unknown   
+     a113       | 0.29149 |  11.65977  |     40     |  Unknown  | Unknown |   Unknown   
+     a112       | 0.29149 |  11.65977  |     40     |  Unknown  | Unknown |   Unknown   
+      a56       | 0.29149 |  11.65977  |     40     |  Unknown  | Unknown |   Unknown   
+     a110       | 0.2902  |  12.18846  |     42     |  Unknown  | Unknown |   Unknown   
+     a172       | 0.29012 |  15.66644  |     54     |  Unknown  | Unknown |   Unknown   
+     a170       | 0.29012 |  15.66644  |     54     |  Unknown  | Unknown |   Unknown   
+     a141       | 0.29012 |  15.66644  |     54     |  Unknown  | Unknown |   Unknown   
+     a144       | 0.29012 |  15.66644  |     54     |  Unknown  | Unknown |   Unknown   
+     a149       | 0.29012 |  15.66644  |     54     |  Unknown  | Unknown |   Unknown   
+     a101       | 0.2892  |  16.19513  |     56     |  Unknown  | Unknown |   Unknown   
+     a179       | 0.2892  |  16.19513  |     56     |  Unknown  | Unknown |   Unknown   
+     a106       | 0.28862 |  10.39045  |     36     |  Unknown  | Unknown |   Unknown   
+     a153       | 0.28794 |  14.39713  |     50     |  Unknown  | Unknown |   Unknown   
+      a86       | 0.28794 |  14.39713  |     50     |  Unknown  | Unknown |   Unknown   
+     a124       | 0.28794 |  14.39713  |     50     |  Unknown  | Unknown |   Unknown   
+     a114       | 0.28794 |  14.39713  |     50     |  Unknown  | Unknown |   Unknown   
+     a142       | 0.28794 |  14.39713  |     50     |  Unknown  | Unknown |   Unknown   
+     a155       | 0.28756 |  18.4038   |     64     |  Unknown  | Unknown |   Unknown   
+     a152       | 0.28756 |  18.4038   |     64     |  Unknown  | Unknown |   Unknown   
+      a89       | 0.28704 |  14.92582  |     52     |  Unknown  | Unknown |   Unknown   
+      a25       | 0.28619 |  8.01335   |     28     |  Unknown  | Unknown |   Unknown   
+     a158       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a151       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a129       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a120       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a121       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a122       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a139       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a137       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a136       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a184       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a156       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a165       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a161       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a163       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a176       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a174       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a173       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a146       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a147       | 0.28557 |  17.13449  |     60     |  Unknown  | Unknown |   Unknown   
+     a182       | 0.28388 |  19.87185  |     70     |  Unknown  | Unknown |   Unknown   
+     a175       | 0.28388 |  19.87185  |     70     |  Unknown  | Unknown |   Unknown   
+     a125       | 0.28331 |  15.86517  |     56     |  Unknown  | Unknown |   Unknown   
+     a119       | 0.28331 |  15.86517  |     56     |  Unknown  | Unknown |   Unknown   
+      a78       | 0.28291 |  10.75071  |     38     |  Unknown  | Unknown |   Unknown   
+      a69       | 0.28291 |  10.75071  |     38     |  Unknown  | Unknown |   Unknown   
+      a66       | 0.28291 |  10.75071  |     38     |  Unknown  | Unknown |   Unknown   
+      a30       | 0.28291 |  10.75071  |     38     |  Unknown  | Unknown |   Unknown   
+      a38       | 0.28291 |  10.75071  |     38     |  Unknown  | Unknown |   Unknown   
+      a44       | 0.28291 |  10.75071  |     38     |  Unknown  | Unknown |   Unknown   
+     a178       | 0.28262 |  22.60921  |     80     |  Unknown  | Unknown |   Unknown   
+      a45       | 0.28252 |  6.21534   |     22     |  Unknown  | Unknown |   Unknown   
+     a123       | 0.28186 |  18.60253  |     66     |  Unknown  | Unknown |   Unknown   
+     a127       | 0.28186 |  18.60253  |     66     |  Unknown  | Unknown |   Unknown   
+     a181       | 0.28186 |  18.60253  |     66     |  Unknown  | Unknown |   Unknown   
+      a41       |  0.281  |  13.48807  |     48     |  Unknown  | Unknown |   Unknown   
+     a105       |  0.281  |  13.48807  |     48     |  Unknown  | Unknown |   Unknown   
+      a53       |  0.281  |  13.48807  |     48     |  Unknown  | Unknown |   Unknown   
+      a57       |  0.281  |  13.48807  |     48     |  Unknown  | Unknown |   Unknown   
+      a92       |  0.281  |  13.48807  |     48     |  Unknown  | Unknown |   Unknown   
+     a164       | 0.28079 |  21.33989  |     76     |  Unknown  | Unknown |   Unknown   
+      a34       | 0.27977 |   8.9527   |     32     |  Unknown  | Unknown |   Unknown   
+      a95       | 0.27975 |  16.22543  |     58     |  Unknown  | Unknown |   Unknown   
+      a31       | 0.27886 |  9.48139   |     34     |  Unknown  | Unknown |   Unknown   
+      a22       | 0.27886 |  9.48139   |     34     |  Unknown  | Unknown |   Unknown   
+     a177       | 0.27886 |  18.96279  |     68     |  Unknown  | Unknown |   Unknown   
+      a17       | 0.27886 |  9.48139   |     34     |  Unknown  | Unknown |   Unknown   
+      a73       | 0.27833 |  11.69006  |     42     |  Unknown  | Unknown |   Unknown   
+      a54       | 0.27833 |  11.69006  |     42     |  Unknown  | Unknown |   Unknown   
+      a60       | 0.2777  |  12.21875  |     44     |  Unknown  | Unknown |   Unknown   
+      a43       | 0.2777  |  12.21875  |     44     |  Unknown  | Unknown |   Unknown   
+      a40       | 0.2777  |  12.21875  |     44     |  Unknown  | Unknown |   Unknown   
+      a29       | 0.2777  |  12.21875  |     44     |  Unknown  | Unknown |   Unknown   
+     a128       | 0.27745 |  14.42742  |     52     |  Unknown  | Unknown |   Unknown   
+     a126       | 0.27745 |  14.42742  |     52     |  Unknown  | Unknown |   Unknown   
+      a46       | 0.27745 |  14.42742  |     52     |  Unknown  | Unknown |   Unknown   
+     a166       | 0.27745 |  14.42742  |     52     |  Unknown  | Unknown |   Unknown   
+     a131       | 0.27745 |  14.42742  |     52     |  Unknown  | Unknown |   Unknown   
+     a150       | 0.27745 |  14.42742  |     52     |  Unknown  | Unknown |   Unknown   
+      a93       | 0.27697 |  14.95611  |     54     |  Unknown  | Unknown |   Unknown   
+      a75       | 0.27697 |  14.95611  |     54     |  Unknown  | Unknown |   Unknown   
+      a71       | 0.27697 |  14.95611  |     54     |  Unknown  | Unknown |   Unknown   
+      a82       | 0.27697 |  14.95611  |     54     |  Unknown  | Unknown |   Unknown   
+      a80       | 0.27697 |  14.95611  |     54     |  Unknown  | Unknown |   Unknown   
+      a81       | 0.27697 |  14.95611  |     54     |  Unknown  | Unknown |   Unknown   
+      a87       | 0.27697 |  14.95611  |     54     |  Unknown  | Unknown |   Unknown   
+     a108       | 0.27697 |  14.95611  |     54     |  Unknown  | Unknown |   Unknown   
+      a99       | 0.27697 |  14.95611  |     54     |  Unknown  | Unknown |   Unknown   
+      a50       | 0.27697 |  14.95611  |     54     |  Unknown  | Unknown |   Unknown   
+     a143       | 0.27685 |  17.16478  |     62     |  Unknown  | Unknown |   Unknown   
+     a140       | 0.27685 |  17.16478  |     62     |  Unknown  | Unknown |   Unknown   
+     a133       | 0.27642 |  19.90214  |     72     |  Unknown  | Unknown |   Unknown   
+     a180       | 0.27642 |  19.90214  |     72     |  Unknown  | Unknown |   Unknown   
+      a10       | 0.27478 |  4.94603   |     18     |  Unknown  | Unknown |   Unknown   
+      a0        | 0.27478 |  4.94603   |     18     |  Unknown  | Unknown |   Unknown   
+      a67       | 0.27441 |  7.68339   |     28     |  Unknown  | Unknown |   Unknown   
+      a14       | 0.27441 |  7.68339   |     28     |  Unknown  | Unknown |   Unknown   
+      a12       | 0.27441 |  7.68339   |     28     |  Unknown  | Unknown |   Unknown   
+      a5        | 0.27441 |  7.68339   |     28     |  Unknown  | Unknown |   Unknown   
+      a7        | 0.27441 |  7.68339   |     28     |  Unknown  | Unknown |   Unknown   
+      a6        | 0.27441 |  7.68339   |     28     |  Unknown  | Unknown |   Unknown   
+      a52       | 0.27423 |  10.42075  |     38     |  Unknown  | Unknown |   Unknown   
+      a39       | 0.27423 |  10.42075  |     38     |  Unknown  | Unknown |   Unknown   
+     a135       | 0.27413 |  13.15811  |     48     |  Unknown  | Unknown |   Unknown   
+     a107       | 0.27413 |  13.15811  |     48     |  Unknown  | Unknown |   Unknown   
+     a115       | 0.27413 |  13.15811  |     48     |  Unknown  | Unknown |   Unknown   
+     a118       | 0.27413 |  13.15811  |     48     |  Unknown  | Unknown |   Unknown   
+     a109       | 0.27413 |  13.15811  |     48     |  Unknown  | Unknown |   Unknown   
+     a100       | 0.27406 |  15.89547  |     58     |  Unknown  | Unknown |   Unknown   
+     a134       | 0.27406 |  15.89547  |     58     |  Unknown  | Unknown |   Unknown   
+      a98       | 0.27406 |  15.89547  |     58     |  Unknown  | Unknown |   Unknown   
+     a157       | 0.27406 |  15.89547  |     58     |  Unknown  | Unknown |   Unknown   
+     a162       | 0.27401 |  18.63283  |     68     |  Unknown  | Unknown |   Unknown   
+     a160       | 0.27401 |  18.63283  |     68     |  Unknown  | Unknown |   Unknown   
+     a169       | 0.27401 |  18.63283  |     68     |  Unknown  | Unknown |   Unknown   
+     a145       | 0.27401 |  18.63283  |     68     |  Unknown  | Unknown |   Unknown   
+      a42       | 0.27374 |  10.94944  |     40     |  Unknown  | Unknown |   Unknown   
+      a79       | 0.27374 |  13.6868   |     50     |  Unknown  | Unknown |   Unknown   
+      a83       | 0.27374 |  13.6868   |     50     |  Unknown  | Unknown |   Unknown   
+     a104       | 0.27374 |  16.42416  |     60     |  Unknown  | Unknown |   Unknown   
+      a20       | 0.27374 |  10.94944  |     40     |  Unknown  | Unknown |   Unknown   
+      a23       | 0.27374 |  10.94944  |     40     |  Unknown  | Unknown |   Unknown   
+      a19       | 0.27374 |  10.94944  |     40     |  Unknown  | Unknown |   Unknown   
+     a138       | 0.27163 |  20.10087  |     74     |  Unknown  | Unknown |   Unknown   
+     a171       | 0.27163 |  20.10087  |     74     |  Unknown  | Unknown |   Unknown   
+     a117       | 0.2713  |  17.36351  |     64     |  Unknown  | Unknown |   Unknown   
+      a77       | 0.2702  |  11.88879  |     44     |  Unknown  | Unknown |   Unknown   
+      a37       | 0.26916 |  9.15143   |     34     |  Unknown  | Unknown |   Unknown   
+      a27       | 0.26916 |  9.15143   |     34     |  Unknown  | Unknown |   Unknown   
+      a16       | 0.26916 |  9.15143   |     34     |  Unknown  | Unknown |   Unknown   
+      a13       | 0.26916 |  9.15143   |     34     |  Unknown  | Unknown |   Unknown   
+      a18       | 0.26916 |  9.15143   |     34     |  Unknown  | Unknown |   Unknown   
+      a1        | 0.26725 |  6.41407   |     24     |  Unknown  | Unknown |   Unknown   
+      a4        | 0.26725 |  6.41407   |     24     |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 185
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 185
+Hit rate: 0.0
+Miss rate: 1.0

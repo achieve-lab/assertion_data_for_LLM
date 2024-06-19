@@ -1,0 +1,54 @@
+strict digraph "" {
+	node [label="\N"];
+	"737:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f702a744950>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="737:AL",
+		sens="['ck', 'reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['reset', 'gmii_rxd_preamble_m_set', 'gmii_rxd_packet_burst_m_set', 'gmii_rxd_ext_err_m_set', 'ebi_rxd_d3', 'gmii_rxd_trr_extend_\
+m_set', 'gmii_rxd_false_carrier_m_set', 'gmii_rxd_m_set']"];
+	"739:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f702a744ad0>",
+		fillcolor=springgreen,
+		label="739:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"737:AL" -> "739:IF"	 [cond="[]",
+		lineno=None];
+	"740:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a680150>",
+		fillcolor=firebrick,
+		label="740:NS
+gmii_rxd <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a680150>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"739:IF" -> "740:NS"	 [cond="['reset']",
+		label=reset,
+		lineno=739];
+	"742:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f702a744b10>",
+		fillcolor=turquoise,
+		label="742:BL
+gmii_rxd <= (gmii_rxd_m_set)? ebi_rxd_d3 : 
+            (gmii_rxd_false_carrier_m_set)? 8'b00001110 : 
+            (gmii_\
+rxd_preamble_m_set)? 8'b01010101 : 
+            (gmii_rxd_ext_err_m_set)? 8'b00011111 : 
+            (gmii_rxd_trr_extend_m_set)? \
+8'b00001111 : 
+            (gmii_rxd_packet_burst_m_set)? 8'b00001111 : 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a744b50>]",
+		style=filled,
+		typ=Block];
+	"739:IF" -> "742:BL"	 [cond="['reset']",
+		label="!(reset)",
+		lineno=739];
+	"Leaf_737:AL"	 [def_var="['gmii_rxd']",
+		label="Leaf_737:AL"];
+	"740:NS" -> "Leaf_737:AL"	 [cond="[]",
+		lineno=None];
+	"742:BL" -> "Leaf_737:AL"	 [cond="[]",
+		lineno=None];
+}

@@ -1,0 +1,45 @@
+strict digraph "" {
+	node [label="\N"];
+	"76:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fafbdf78290>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="76:AL",
+		sens="['MRxClk']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['RxData', 'Divided_2_clk', 'prev_latched_Rx', 'ByteCnt', 'MRxClk']"];
+	"77:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fafbdf78390>",
+		fillcolor=turquoise,
+		label="77:BL
+Divided_2_clk <= MRxClk ^ Divided_2_clk;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fafbdf783d0>]",
+		style=filled,
+		typ=Block];
+	"76:AL" -> "77:BL"	 [cond="[]",
+		lineno=None];
+	"79:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fafbdf78610>",
+		fillcolor=springgreen,
+		label="79:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"80:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fafbdf786d0>",
+		fillcolor=turquoise,
+		label="80:BL
+prev_latched_Rx[7:0] <= RxData[7:0];
+prev_latched_Rx1[7:0] <= prev_latched_Rx[7:0];",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fafbdf78710>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7fafbdf78a10>]",
+		style=filled,
+		typ=Block];
+	"79:IF" -> "80:BL"	 [cond="['ByteCnt', 'ByteCnt']",
+		label="((ByteCnt[15:0] >= 16'h17) & (ByteCnt[15:0] < 16'h17 + 16'd20))",
+		lineno=79];
+	"77:BL" -> "79:IF"	 [cond="[]",
+		lineno=None];
+	"Leaf_76:AL"	 [def_var="['prev_latched_Rx1', 'Divided_2_clk', 'prev_latched_Rx']",
+		label="Leaf_76:AL"];
+	"80:BL" -> "Leaf_76:AL"	 [cond="[]",
+		lineno=None];
+}

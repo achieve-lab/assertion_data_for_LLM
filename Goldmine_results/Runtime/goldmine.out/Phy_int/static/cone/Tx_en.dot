@@ -1,0 +1,13 @@
+strict digraph "" {
+	"[1]Reset"	 [complexity=1,
+		importance=0.106062137412,
+		rank=0.106062137412];
+	Tx_en	 [complexity=0,
+		importance=0.0275468897807,
+		rank=0.0];
+	"[1]Reset" -> Tx_en;
+	"[1]MTxEn_dl1"	 [complexity=1,
+		importance=0.090811613201,
+		rank=0.090811613201];
+	"[1]MTxEn_dl1" -> Tx_en;
+}

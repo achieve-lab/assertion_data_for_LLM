@@ -1,0 +1,37 @@
+strict digraph "" {
+	xmit	 [complexity=0,
+		importance=0.0326522401109,
+		rank=0.0];
+	"[1]mr_an_enable"	 [complexity=2,
+		importance=0.0534127002428,
+		rank=0.0267063501214];
+	"[1]mr_an_enable" -> xmit;
+	"[1]xmit_IDLE_m_set"	 [complexity=1,
+		importance=0.0438760248412,
+		rank=0.0438760248412];
+	"[1]mr_an_enable" -> "[1]xmit_IDLE_m_set";
+	"[1]xmit_CONFIGURATION_m_set"	 [complexity=1,
+		importance=0.109180505063,
+		rank=0.109180505063];
+	"[1]mr_an_enable" -> "[1]xmit_CONFIGURATION_m_set";
+	"[1]xmit_IDLE_m_set" -> xmit;
+	"[1]pcs_an_present"	 [complexity=2,
+		importance=0.149068309426,
+		rank=0.0745341547129];
+	"[1]pcs_an_present" -> "[1]xmit_IDLE_m_set";
+	"[1]pcs_an_present" -> "[1]xmit_CONFIGURATION_m_set";
+	"[1]xmit_DATA_m_set"	 [complexity=1,
+		importance=0.075998432171,
+		rank=0.075998432171];
+	"[1]pcs_an_present" -> "[1]xmit_DATA_m_set";
+	"[1]xmit_CONFIGURATION_m_set" -> xmit;
+	"[1]rudi"	 [complexity=2,
+		importance=0.140145635845,
+		rank=0.0700728179226];
+	"[1]rudi" -> xmit;
+	"[1]reset"	 [complexity=1,
+		importance=0.172797875956,
+		rank=0.172797875956];
+	"[1]reset" -> xmit;
+	"[1]xmit_DATA_m_set" -> xmit;
+}

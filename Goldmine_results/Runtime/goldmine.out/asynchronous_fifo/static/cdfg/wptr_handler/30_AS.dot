@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"30:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fe9918362d0>",
+		def_var="['g_wptr_next']",
+		fillcolor=deepskyblue,
+		label="30:AS
+g_wptr_next = (b_wptr_next >> 1) ^ b_wptr_next;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['b_wptr_next', 'b_wptr_next']"];
+}

@@ -1,0 +1,14 @@
+ca_state_reg	prng_data
+ca_state_reg	tmp_ca_state_new
+update_rule_reg	tmp_ca_state_new
+ca_state_new	ca_state_reg
+tmp_ca_state_new	ca_state_new
+update_rule	update_rule_reg
+init_pattern_data	ca_state_new
+load_init_pattern	ca_state_we
+load_init_pattern	ca_state_new
+reset_n	ca_state_reg
+reset_n	update_rule_reg
+ca_state_we	ca_state_reg
+next_pattern	ca_state_we
+load_update_rule	update_rule_reg

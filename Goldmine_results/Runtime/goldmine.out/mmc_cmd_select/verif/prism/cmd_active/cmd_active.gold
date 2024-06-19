@@ -1,0 +1,46 @@
+Report file generated at: Mar-22-2024 01:58:17 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a1: (cmd_bits == 1) |-> (cmd_active == 1)
+IRank: : 0.09702
+Importance: : 0.19405
+Complexity: : 2
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a0: (cmd_bits == 0) |-> (cmd_active == 0)
+IRank: : 0.09702
+Importance: : 0.19405
+Complexity: : 2
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a1        | 0.09702 |  0.19405   |     2      |  Unknown  | Unknown |   Unknown   
+      a0        | 0.09702 |  0.19405   |     2      |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 2
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 2
+Hit rate: 0.0
+Miss rate: 1.0

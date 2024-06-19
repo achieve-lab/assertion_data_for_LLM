@@ -1,0 +1,21 @@
+strict digraph "compose( ,  )" {
+	node [label="\N"];
+	"2:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f98e5049910>",
+		def_var="['D']",
+		fillcolor=deepskyblue,
+		label="2:AS
+D = a ^ b ^ Bin;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['a', 'b', 'Bin']"];
+	"3:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f98e5093bd0>",
+		def_var="['Bout']",
+		fillcolor=deepskyblue,
+		label="3:AS
+Bout = ~a & b | ~(a ^ b) & Bin;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['a', 'b', 'a', 'b', 'Bin']"];
+}

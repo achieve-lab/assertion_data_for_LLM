@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"68:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f71c80041d0>",
+		def_var="['p']",
+		fillcolor=deepskyblue,
+		label="68:AS
+p = (a_FF[N - 1])? { 1'b1, { ~div256[N-1:0] + { { N - 1{ 1'b0 } }, 1'b1 } } } : { 1'b0, div256[N-1:0] };",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['a_FF', 'div256', 'div256', 'N']"];
+}

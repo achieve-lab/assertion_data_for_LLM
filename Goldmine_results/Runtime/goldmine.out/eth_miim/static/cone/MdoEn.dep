@@ -1,0 +1,10 @@
+[1]MdcEn_n	[1]outctrl.MdcEn_n
+outctrl.MdoEn	MdoEn
+[1]outctrl.MdoEn_d	outctrl.MdoEn
+[1]outctrl.Reset	outctrl.MdoEn
+[1]outctrl.MdcEn_n	outctrl.MdoEn
+[1]clkgen.Counter	[1]clkgen.CountEq0
+[1]clkgen.Mdc	[1]clkgen.MdcEn_n
+[1]clkgen.MdcEn_n	[1]MdcEn_n
+[1]Reset	[1]outctrl.Reset
+[1]clkgen.CountEq0	[1]clkgen.MdcEn_n

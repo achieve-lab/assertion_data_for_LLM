@@ -1,0 +1,35 @@
+Assertion report generated on: 11-Apr-2024 06:56:38 PM
+
+Assertion summary report for design: eth_txstatem
+#################################################
+
+    Target      | Total | Passed | Failed | Vacuous | Hit | Miss
+--------------- | ----- | ------ | ------ | ------- | --- | ----
+DeferIndication |   7   |   0    |   0    |    7    | 0.0 | 1.0 
+ StartBackoff   |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+  StartDefer    |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+   StartFCS     |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+   StartIPG     |   7   |   0    |   0    |    7    | 0.0 | 1.0 
+   StartJam     |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+ StartPreamble  |   7   |   0    |   0    |    7    | 0.0 | 1.0 
+ StateBackOff   |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+  StateDefer    |  13   |   0    |   0    |   13    | 0.0 | 1.0 
+   StateFCS     |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+   StateIPG     |  11   |   0    |   0    |   11    | 0.0 | 1.0 
+   StateIdle    |  15   |   0    |   0    |   15    | 0.0 | 1.0 
+   StateJam     |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+  StateJam_q    |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+   StatePAD     |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+ StatePreamble  |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+
+
+Resource usage summary report for the desing: eth_txstatem
+##########################################################
+
+      Phase       | Time (in [H]H:MM:SS:UUUUUU) | Memory (in MB)
+----------------- | --------------------------- | --------------
+V Parse & Ranking |       0:00:02.310201        |     905.53    
+   Simulation     |       0:00:02.029292        |     969.78    
+     D Parse      |       0:00:11.898990        |     974.07    
+     Mining       |       0:04:34.748725        |    1059.76    
+     Overall      |       0:05:15.822235        |    1059.76    

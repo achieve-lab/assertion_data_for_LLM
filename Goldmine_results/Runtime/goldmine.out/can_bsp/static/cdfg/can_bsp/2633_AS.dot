@@ -1,0 +1,14 @@
+strict digraph "" {
+	node [label="\N"];
+	"2633:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f44f6b5ef90>",
+		def_var="['bit_err']",
+		fillcolor=deepskyblue,
+		label="2633:AS
+bit_err = (tx_state | error_frame | overload_frame | rx_ack) & sample_point & (tx != sampled_bit) & ~bit_err_exc1 & ~bit_\
+err_exc2 & ~bit_err_exc3 & ~bit_err_exc4 & ~bit_err_exc5 & ~bit_err_exc6 & ~reset_mode;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['tx_state', 'error_frame', 'overload_frame', 'rx_ack', 'sample_point', 'tx', 'sampled_bit', 'bit_err_exc1', 'bit_err_exc2', 'bit_\
+err_exc3', 'bit_err_exc4', 'bit_err_exc5', 'bit_err_exc6', 'reset_mode']"];
+}

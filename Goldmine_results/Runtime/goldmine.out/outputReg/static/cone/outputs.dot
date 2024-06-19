@@ -1,0 +1,21 @@
+strict digraph "" {
+	reset	 [complexity=3,
+		importance=0.441422606176,
+		rank=0.147140868725];
+	outputReg	 [complexity=2,
+		importance=0.341004196216,
+		rank=0.170502098108];
+	reset -> outputReg;
+	outputs	 [complexity=0,
+		importance=0.148535708971,
+		rank=0.0];
+	outputRw	 [complexity=3,
+		importance=0.441422606176,
+		rank=0.147140868725];
+	outputRw -> outputReg;
+	outputWriteIn	 [complexity=5,
+		importance=0.441422606176,
+		rank=0.0882845212352];
+	outputWriteIn -> outputReg;
+	outputReg -> outputs;
+}

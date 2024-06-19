@@ -1,0 +1,14 @@
+[1]DataIn	[1]IPGT_0.DataIn
+[1]IPGT_0.DataIn	IPGT_0.DataOut
+[1]IPGT_Sel	[1]IPGT_Wr
+[1]Cs	[1]Write
+[1]IPGT_Wr	[1]IPGT_0.Write
+[1]IPGT_0.Write	IPGT_0.DataOut
+[1]Address	[1]IPGT_Sel
+[1]IPGT_0.SyncReset	IPGT_0.DataOut
+IPGTOut	r_IPGT
+[1]Write	[1]IPGT_Wr
+IPGT_0.DataOut	IPGTOut
+[1]Reset	[1]IPGT_0.Reset
+[1]Rw	[1]Write
+[1]IPGT_0.Reset	IPGT_0.DataOut

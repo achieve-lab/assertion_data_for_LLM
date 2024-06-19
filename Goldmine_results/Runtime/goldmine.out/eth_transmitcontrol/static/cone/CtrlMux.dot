@@ -1,0 +1,21 @@
+strict digraph "" {
+	"[1]TxReset"	 [complexity=1,
+		importance=0.137701684249,
+		rank=0.137701684249];
+	CtrlMux	 [complexity=0,
+		importance=0.0397870791672,
+		rank=0.0];
+	"[1]TxReset" -> CtrlMux;
+	"[1]WillSendControlFrame"	 [complexity=2,
+		importance=0.140191078172,
+		rank=0.070095539086];
+	"[1]WillSendControlFrame" -> CtrlMux;
+	"[1]TxUsedDataOut"	 [complexity=2,
+		importance=0.0979146050815,
+		rank=0.0489573025407];
+	"[1]TxUsedDataOut" -> CtrlMux;
+	"[1]TxDoneIn"	 [complexity=1,
+		importance=0.0581275259143,
+		rank=0.0581275259143];
+	"[1]TxDoneIn" -> CtrlMux;
+}

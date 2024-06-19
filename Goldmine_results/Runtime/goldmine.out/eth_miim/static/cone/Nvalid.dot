@@ -1,0 +1,25 @@
+strict digraph "" {
+	"[1]InProgress_q3"	 [complexity=2,
+		importance=0.0322926881402,
+		rank=0.0161463440701];
+	Nvalid	 [complexity=0,
+		importance=0.0126504875237,
+		rank=0.0];
+	"[1]InProgress_q3" -> Nvalid;
+	"[1]InProgress_q2"	 [complexity=2,
+		importance=0.0331662918196,
+		rank=0.0165831459098];
+	"[1]InProgress_q2" -> Nvalid;
+	"[1]ScanStat_q2"	 [complexity=2,
+		importance=0.0230322746758,
+		rank=0.0115161373379];
+	"[1]ScanStat_q2" -> Nvalid;
+	"[1]SyncStatMdcEn"	 [complexity=2,
+		importance=0.0214511887388,
+		rank=0.0107255943694];
+	"[1]SyncStatMdcEn" -> Nvalid;
+	"[1]Reset"	 [complexity=1,
+		importance=0.0438161849248,
+		rank=0.0438161849248];
+	"[1]Reset" -> Nvalid;
+}

@@ -1,0 +1,214 @@
+strict digraph "" {
+	"[1]ROUND_COL1"	 [complexity=23,
+		importance=0.305042908269,
+		rank=0.0132627351421];
+	"[1]next_state"	 [complexity=15,
+		importance=0.148862955977,
+		rank=0.00992419706514];
+	"[1]ROUND_COL1" -> "[1]next_state";
+	"[1]ROUND_COL0"	 [complexity=27,
+		importance=0.453905864246,
+		rank=0.0168113283054];
+	"[1]ROUND_COL0" -> "[1]next_state";
+	"[1]ROUND_COL3"	 [complexity=27,
+		importance=0.453905864246,
+		rank=0.0168113283054];
+	"[1]ROUND_COL3" -> "[1]next_state";
+	"[1]ROUND_COL2"	 [complexity=23,
+		importance=0.305042908269,
+		rank=0.0132627351421];
+	"[1]ROUND_COL2" -> "[1]next_state";
+	"[1]ROUND0_COL0"	 [complexity=21,
+		importance=0.305042908269,
+		rank=0.0145258527747];
+	"[1]ROUND0_COL0" -> "[1]next_state";
+	"[1]ROUND0_COL1"	 [complexity=23,
+		importance=0.305042908269,
+		rank=0.0132627351421];
+	"[1]ROUND0_COL1" -> "[1]next_state";
+	"[1]ROUND0_COL2"	 [complexity=23,
+		importance=0.305042908269,
+		rank=0.0132627351421];
+	"[1]ROUND0_COL2" -> "[1]next_state";
+	"[1]start"	 [complexity=16,
+		importance=0.900494732177,
+		rank=0.0562809207611];
+	"[1]start" -> "[1]next_state";
+	"[1]ROUND_KEY0"	 [complexity=31,
+		importance=0.602768820223,
+		rank=0.0194441554911];
+	"[1]ROUND_KEY0" -> "[1]next_state";
+	"[1]aes_mode"	 [complexity=29,
+		importance=0.191611539673,
+		rank=0.00660729447148];
+	"[1]mode_ctr"	 [complexity=26,
+		importance=0.184294543358,
+		rank=0.00708825166762];
+	"[1]aes_mode" -> "[1]mode_ctr";
+	"[1]first_round"	 [complexity=16,
+		importance=0.309072811876,
+		rank=0.0193170507423];
+	"[1]first_round" -> "[1]next_state";
+	"[1]op_key_derivation"	 [complexity=19,
+		importance=0.158228274696,
+		rank=0.00832780393139];
+	"[1]op_key_derivation" -> "[1]next_state";
+	"[1]operation_mode"	 [complexity=26,
+		importance=0.17880706314,
+		rank=0.00687719473617];
+	"[1]op_mode"	 [complexity=22,
+		importance=0.171490066826,
+		rank=0.00779500303753];
+	"[1]operation_mode" -> "[1]op_mode";
+	GEN_KEY2	 [complexity=13,
+		importance=0.0241347695729,
+		rank=0.00185652073637];
+	encrypt_decrypt	 [complexity=0,
+		importance=0.0168177732581,
+		rank=0.0];
+	GEN_KEY2 -> encrypt_decrypt;
+	"[1]last_round"	 [complexity=22,
+		importance=0.761758880049,
+		rank=0.0346254036386];
+	"[1]last_round" -> "[1]next_state";
+	GEN_KEY0	 [complexity=13,
+		importance=0.0241347695729,
+		rank=0.00185652073637];
+	GEN_KEY0 -> encrypt_decrypt;
+	GEN_KEY1	 [complexity=13,
+		importance=0.0241347695729,
+		rank=0.00185652073637];
+	GEN_KEY1 -> encrypt_decrypt;
+	"[1]IDLE"	 [complexity=21,
+		importance=0.453905864246,
+		rank=0.0216145649641];
+	state	 [complexity=13,
+		importance=0.0700691203925,
+		rank=0.00538993233789];
+	"[1]IDLE" -> state;
+	"[1]IDLE" -> "[1]next_state";
+	KEY_DERIVATION	 [complexity=13,
+		importance=0.0241347695729,
+		rank=0.00185652073637];
+	KEY_DERIVATION -> encrypt_decrypt;
+	"[1]enc_dec"	 [complexity=57,
+		importance=1.80253906356,
+		rank=0.0316234923431];
+	"[1]mode_ctr" -> "[1]enc_dec";
+	"[1]mode_ctr" -> "[1]op_mode";
+	CTR	 [complexity=20,
+		importance=0.0502010382345,
+		rank=0.00251005191173];
+	mode_ctr	 [complexity=17,
+		importance=0.0428840419197,
+		rank=0.00252259070116];
+	CTR -> mode_ctr;
+	"[1]disable_core"	 [complexity=14,
+		importance=0.1474552371,
+		rank=0.0105325169357];
+	"[1]disable_core" -> state;
+	"[1]ROUND0_COL3"	 [complexity=25,
+		importance=0.453905864246,
+		rank=0.0181562345698];
+	"[1]ROUND0_COL3" -> "[1]next_state";
+	GEN_KEY3	 [complexity=13,
+		importance=0.0241347695729,
+		rank=0.00185652073637];
+	GEN_KEY3 -> encrypt_decrypt;
+	"[1]rd_count"	 [complexity=19,
+		importance=0.331555803902,
+		rank=0.0174503054685];
+	"[1]rd_count" -> "[1]first_round";
+	"[1]rd_count" -> "[1]last_round";
+	state -> encrypt_decrypt;
+	"[1]enc_dec" -> "[1]next_state";
+	"[1]encrypt_decrypt"	 [complexity=60,
+		importance=1.81935683682,
+		rank=0.0303226139469];
+	"[1]encrypt_decrypt" -> "[1]enc_dec";
+	"[1]READY"	 [complexity=25,
+		importance=0.453905864246,
+		rank=0.0181562345698];
+	"[1]READY" -> "[1]next_state";
+	"[1]rst_n"	 [complexity=14,
+		importance=0.217524357492,
+		rank=0.0155374541066];
+	"[1]rst_n" -> state;
+	"[1]INITIAL_ROUND"	 [complexity=19,
+		importance=0.316389808191,
+		rank=0.0166520951679];
+	"[1]INITIAL_ROUND" -> "[1]first_round";
+	"[1]NUMBER_ROUND"	 [complexity=27,
+		importance=0.769075876364,
+		rank=0.0284842917172];
+	"[1]NUMBER_ROUND" -> "[1]last_round";
+	"[1]next_state" -> state;
+	"[1]CTR"	 [complexity=29,
+		importance=0.191611539673,
+		rank=0.00660729447148];
+	"[1]CTR" -> "[1]mode_ctr";
+	"[1]NUMBER_ROUND_INC"	 [complexity=27,
+		importance=0.769075876364,
+		rank=0.0284842917172];
+	"[1]NUMBER_ROUND_INC" -> "[1]last_round";
+	op_mode	 [complexity=13,
+		importance=0.0300795653873,
+		rank=0.0023138127221];
+	mode_ctr -> op_mode;
+	"[1]NOP"	 [complexity=19,
+		importance=0.156179952292,
+		rank=0.00821999748904];
+	"[1]NOP" -> "[1]next_state";
+	op_mode -> encrypt_decrypt;
+	"[1]state"	 [complexity=73,
+		importance=1.87260818395,
+		rank=0.0256521669034];
+	"[1]state" -> "[1]encrypt_decrypt";
+	"[1]state" -> "[1]next_state";
+	"[1]ENCRYPTION"	 [complexity=26,
+		importance=0.17880706314,
+		rank=0.00687719473617];
+	"[1]ENCRYPTION" -> "[1]encrypt_decrypt";
+	"[1]ENCRYPTION" -> "[1]op_mode";
+	ENCRYPTION	 [complexity=17,
+		importance=0.0373965617021,
+		rank=0.00219979774718];
+	ENCRYPTION -> encrypt_decrypt;
+	ENCRYPTION -> op_mode;
+	"[1]op_mode" -> "[1]op_key_derivation";
+	"[1]op_mode" -> "[1]encrypt_decrypt";
+	"[1]op_mode" -> "[1]next_state";
+	aes_mode	 [complexity=20,
+		importance=0.0502010382345,
+		rank=0.00251005191173];
+	aes_mode -> mode_ctr;
+	"[1]GEN_KEY0"	 [complexity=73,
+		importance=1.82667383313,
+		rank=0.025022929221];
+	"[1]GEN_KEY0" -> "[1]encrypt_decrypt";
+	"[1]GEN_KEY0" -> "[1]next_state";
+	"[1]GEN_KEY1"	 [complexity=73,
+		importance=1.82667383313,
+		rank=0.025022929221];
+	"[1]GEN_KEY1" -> "[1]encrypt_decrypt";
+	"[1]GEN_KEY1" -> "[1]next_state";
+	"[1]GEN_KEY2"	 [complexity=73,
+		importance=1.82667383313,
+		rank=0.025022929221];
+	"[1]GEN_KEY2" -> "[1]encrypt_decrypt";
+	"[1]GEN_KEY2" -> "[1]next_state";
+	"[1]GEN_KEY3"	 [complexity=73,
+		importance=1.82667383313,
+		rank=0.025022929221];
+	"[1]GEN_KEY3" -> "[1]encrypt_decrypt";
+	"[1]GEN_KEY3" -> "[1]next_state";
+	operation_mode	 [complexity=17,
+		importance=0.0373965617021,
+		rank=0.00219979774718];
+	operation_mode -> op_mode;
+	"[1]KEY_DERIVATION"	 [complexity=22,
+		importance=0.165545271011,
+		rank=0.00752478504596];
+	"[1]KEY_DERIVATION" -> "[1]op_key_derivation";
+	"[1]KEY_DERIVATION" -> "[1]encrypt_decrypt";
+}

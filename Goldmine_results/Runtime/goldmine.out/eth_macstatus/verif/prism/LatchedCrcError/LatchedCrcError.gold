@@ -1,0 +1,64 @@
+Report file generated at: Apr-10-2024 04:22:17 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a0: (RxStateSFD == 1) |=> (LatchedCrcError == 0)
+IRank: : 0.0775
+Importance: : 0.0775
+Complexity: : 1
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (RxStateSFD == 0 & RxCrcError == 1 & RxByteCntEq0 == 0 & RxStateData[0] == 1) |=> (LatchedCrcError == 1)
+IRank: : 0.02683
+Importance: : 0.21468
+Complexity: : 8
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (RxCrcError == 0 & RxStateData[0] == 1) |=> (LatchedCrcError == 0)
+IRank: : 0.02286
+Importance: : 0.09146
+Complexity: : 4
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (RxByteCntEq0 == 1 & RxStateData[0] == 1) |=> (LatchedCrcError == 0)
+IRank: : 0.02286
+Importance: : 0.09146
+Complexity: : 4
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a0        | 0.0775  |   0.0775   |     1      |  Unknown  | Unknown |   Unknown   
+      a3        | 0.02683 |  0.21468   |     8      |  Unknown  | Unknown |   Unknown   
+      a1        | 0.02286 |  0.09146   |     4      |  Unknown  | Unknown |   Unknown   
+      a2        | 0.02286 |  0.09146   |     4      |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 4
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 4
+Hit rate: 0.0
+Miss rate: 1.0

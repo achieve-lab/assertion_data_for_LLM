@@ -1,0 +1,25 @@
+property a0;
+@(posedge clk) (clear == 1) ##1 (cnt[0] == 0) |-> (empty == 1);
+endproperty
+assert_a0: assert property(a0);
+
+property a3;
+@(posedge clk) (clear == 0 & cnt[0] == 1) ##1 (cnt[1] == 0) |-> (empty == 0);
+endproperty
+assert_a3: assert property(a3);
+
+property a4;
+@(posedge clk) (clear == 0 & cnt[0] == 1) ##1 (cnt[2] == 0) |-> (empty == 0);
+endproperty
+assert_a4: assert property(a4);
+
+property a2;
+@(posedge clk) (cnt[0] == 1) |-> (empty == 0);
+endproperty
+assert_a2: assert property(a2);
+
+property a1;
+@(posedge clk) (cnt[0] == 0) ##1 (cnt[0] == 0 & cnt[1] == 0) |-> (empty == 1);
+endproperty
+assert_a1: assert property(a1);
+

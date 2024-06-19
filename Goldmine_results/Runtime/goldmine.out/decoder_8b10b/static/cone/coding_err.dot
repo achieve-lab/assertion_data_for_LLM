@@ -1,0 +1,21 @@
+strict digraph "" {
+	coding_err	 [complexity=0,
+		importance=0.0437970144046,
+		rank=0.0];
+	"[1]zerr"	 [complexity=4,
+		importance=0.061597622851,
+		rank=0.0153994057128];
+	"[1]zerr" -> coding_err;
+	"[1]reset"	 [complexity=1,
+		importance=0.0933740988396,
+		rank=0.0933740988396];
+	"[1]reset" -> coding_err;
+	"[1]xerr"	 [complexity=4,
+		importance=0.065391128396,
+		rank=0.016347782099];
+	"[1]xerr" -> coding_err;
+	"[1]cerr"	 [complexity=4,
+		importance=0.0799080688643,
+		rank=0.0199770172161];
+	"[1]cerr" -> coding_err;
+}

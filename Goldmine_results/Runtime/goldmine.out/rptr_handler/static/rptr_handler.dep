@@ -1,0 +1,12 @@
+rrst_n	b_rptr
+rrst_n	g_rptr
+rrst_n	empty
+g_rptr_next	g_rptr
+g_rptr_next	rempty
+g_wptr_sync	rempty
+rempty	empty
+r_en	b_rptr_next
+b_rptr_next	b_rptr
+b_rptr_next	g_rptr_next
+b_rptr	b_rptr_next
+empty	b_rptr_next

@@ -1,0 +1,61 @@
+strict digraph "" {
+	"[1]IPGR1_0.Reset"	 [complexity=3,
+		importance=0.0307345396966,
+		rank=0.0102448465655];
+	"IPGR1_0.DataOut"	 [complexity=2,
+		importance=0.00982060912563,
+		rank=0.00491030456282];
+	"[1]IPGR1_0.Reset" -> "IPGR1_0.DataOut";
+	IPGR1Out	 [complexity=2,
+		importance=0.00553056398168,
+		rank=0.00276528199084];
+	"IPGR1_0.DataOut" -> IPGR1Out;
+	"[1]IPGR1_0.DataIn"	 [complexity=4,
+		importance=0.0110980251793,
+		rank=0.00277450629483];
+	"[1]IPGR1_0.DataIn" -> "IPGR1_0.DataOut";
+	"[1]DataIn"	 [complexity=4,
+		importance=0.0123647044488,
+		rank=0.0030911761122];
+	"[1]DataIn" -> "[1]IPGR1_0.DataIn";
+	"[1]Cs"	 [complexity=9,
+		importance=0.0171426018984,
+		rank=0.00190473354427];
+	"[1]Write"	 [complexity=6,
+		importance=0.0158759226289,
+		rank=0.00264598710482];
+	"[1]Cs" -> "[1]Write";
+	"[1]IPGR1_0.SyncReset"	 [complexity=3,
+		importance=0.0209078975208,
+		rank=0.00696929917359];
+	"[1]IPGR1_0.SyncReset" -> "IPGR1_0.DataOut";
+	"[1]IPGR1_Sel"	 [complexity=6,
+		importance=0.0152556496599,
+		rank=0.00254260827665];
+	"[1]IPGR1_Wr"	 [complexity=3,
+		importance=0.0139757730932,
+		rank=0.00465859103106];
+	"[1]IPGR1_Sel" -> "[1]IPGR1_Wr";
+	"[1]Address"	 [complexity=8,
+		importance=0.0165223289294,
+		rank=0.00206529111617];
+	"[1]Address" -> "[1]IPGR1_Sel";
+	r_IPGR1	 [complexity=0,
+		importance=0.00211961557442,
+		rank=0.0];
+	"[1]IPGR1_0.Write"	 [complexity=3,
+		importance=0.0120500311373,
+		rank=0.00401667704577];
+	"[1]IPGR1_0.Write" -> "IPGR1_0.DataOut";
+	"[1]IPGR1_Wr" -> "[1]IPGR1_0.Write";
+	"[1]Write" -> "[1]IPGR1_Wr";
+	"[1]Reset"	 [complexity=3,
+		importance=0.0320012189661,
+		rank=0.0106670729887];
+	"[1]Reset" -> "[1]IPGR1_0.Reset";
+	"[1]Rw"	 [complexity=9,
+		importance=0.0171426018984,
+		rank=0.00190473354427];
+	"[1]Rw" -> "[1]Write";
+	IPGR1Out -> r_IPGR1;
+}

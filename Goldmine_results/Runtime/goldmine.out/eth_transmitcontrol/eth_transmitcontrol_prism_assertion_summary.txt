@@ -1,0 +1,25 @@
+Assertion report generated on: 11-Apr-2024 07:01:26 PM
+
+Assertion summary report for design: eth_transmitcontrol
+########################################################
+
+       Target        | Total | Passed | Failed | Vacuous | Hit | Miss
+-------------------- | ----- | ------ | ------ | ------- | --- | ----
+    BlockTxDone      |   2   |   0    |   0    |    2    | 0.0 | 1.0 
+      CtrlMux        |   3   |   0    |   0    |    3    | 0.0 | 1.0 
+   SendingCtrlFrm    |   3   |   0    |   0    |    3    | 0.0 | 1.0 
+    TxCtrlEndFrm     |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+   TxCtrlStartFrm    |   8   |   0    |   0    |    8    | 0.0 | 1.0 
+WillSendControlFrame |   3   |   0    |   0    |    3    | 0.0 | 1.0 
+
+
+Resource usage summary report for the desing: eth_transmitcontrol
+#################################################################
+
+      Phase       | Time (in [H]H:MM:SS:UUUUUU) | Memory (in MB)
+----------------- | --------------------------- | --------------
+V Parse & Ranking |       0:00:02.813091        |     905.77    
+   Simulation     |       0:00:02.031462        |     970.27    
+     D Parse      |       0:00:17.220396        |     977.61    
+     Mining       |       0:00:29.201403        |    1058.81    
+     Overall      |       0:01:13.187128        |    1058.81    

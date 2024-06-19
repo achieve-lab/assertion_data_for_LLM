@@ -1,0 +1,17 @@
+strict digraph "" {
+	pause_apply	 [complexity=0,
+		importance=0.0872640083824,
+		rank=0.0];
+	"[1]pause_quanta_counter"	 [complexity=1,
+		importance=0.304540149967,
+		rank=0.304540149967];
+	"[1]pause_quanta_counter" -> pause_apply;
+	"[1]Reset"	 [complexity=1,
+		importance=0.289874529247,
+		rank=0.289874529247];
+	"[1]Reset" -> pause_apply;
+	"[1]tx_pause_en_dl2"	 [complexity=1,
+		importance=0.137812674066,
+		rank=0.137812674066];
+	"[1]tx_pause_en_dl2" -> pause_apply;
+}

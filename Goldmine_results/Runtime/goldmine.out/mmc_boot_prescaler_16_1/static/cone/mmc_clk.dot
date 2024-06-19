@@ -1,0 +1,25 @@
+strict digraph "" {
+	prescaler	 [complexity=4,
+		importance=0.59999983651,
+		rank=0.149999959128];
+	mmc_clk	 [complexity=0,
+		importance=0.333333197095,
+		rank=0.0];
+	prescaler -> mmc_clk;
+	"[1]rst"	 [complexity=5,
+		importance=1.33333306085,
+		rank=0.26666661217];
+	"[1]rst" -> prescaler;
+	mode_transfer	 [complexity=4,
+		importance=0.466666584925,
+		rank=0.116666646231];
+	mode_transfer -> mmc_clk;
+	sys_clk	 [complexity=4,
+		importance=0.466666584925,
+		rank=0.116666646231];
+	sys_clk -> mmc_clk;
+	"[1]prescaler"	 [complexity=6,
+		importance=0.866666475925,
+		rank=0.144444412654];
+	"[1]prescaler" -> prescaler;
+}

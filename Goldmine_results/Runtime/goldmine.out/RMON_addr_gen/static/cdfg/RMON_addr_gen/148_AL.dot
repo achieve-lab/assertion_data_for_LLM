@@ -1,0 +1,61 @@
+strict digraph "" {
+	node [label="\N"];
+	"148:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f8c06320f10>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="148:AL",
+		sens="['Clk', 'Reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['Reset', 'Apply_rmon_pulse', 'Pkt_err_type_rmon_dl1', 'StateIdle', 'Pkt_length_rmon_dl1', 'Pkt_type_rmon_dl1', 'CurrentState']"];
+	"149:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f8c063240d0>",
+		fillcolor=springgreen,
+		label="149:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"148:AL" -> "149:IF"	 [cond="[]",
+		lineno=None];
+	"156:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f8c063241d0>",
+		fillcolor=turquoise,
+		label="156:BL
+PktTypeReg <= Pkt_type_rmon_dl1;
+PktLengthReg <= Pkt_length_rmon_dl1;
+PktErrTypeReg <= Pkt_err_type_rmon_dl1;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8c06324210>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f8c06324390>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8c06324510>]",
+		style=filled,
+		typ=Block];
+	"Leaf_148:AL"	 [def_var="['PktTypeReg', 'PktLengthReg', 'PktErrTypeReg']",
+		label="Leaf_148:AL"];
+	"156:BL" -> "Leaf_148:AL"	 [cond="[]",
+		lineno=None];
+	"155:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f8c06324150>",
+		fillcolor=springgreen,
+		label="155:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"155:IF" -> "156:BL"	 [cond="['Apply_rmon_pulse', 'CurrentState', 'StateIdle']",
+		label="(Apply_rmon_pulse && (CurrentState == StateIdle))",
+		lineno=155];
+	"150:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f8c063247d0>",
+		fillcolor=turquoise,
+		label="150:BL
+PktTypeReg <= 0;
+PktLengthReg <= 0;
+PktErrTypeReg <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8c06324810>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f8c06324950>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f8c06324ad0>]",
+		style=filled,
+		typ=Block];
+	"150:BL" -> "Leaf_148:AL"	 [cond="[]",
+		lineno=None];
+	"149:IF" -> "155:IF"	 [cond="['Reset']",
+		label="!(Reset)",
+		lineno=149];
+	"149:IF" -> "150:BL"	 [cond="['Reset']",
+		label=Reset,
+		lineno=149];
+}

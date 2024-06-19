@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"1169:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fd773257290>",
+		def_var="['we_acceptance_code_2']",
+		fillcolor=deepskyblue,
+		label="1169:AS
+we_acceptance_code_2 = cs & we & (addr == 8'd18) & reset_mode & extended_mode;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['cs', 'we', 'addr', 'reset_mode', 'extended_mode']"];
+}

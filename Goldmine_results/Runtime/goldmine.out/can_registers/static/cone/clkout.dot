@@ -1,0 +1,153 @@
+strict digraph "" {
+	"[1]rst"	 [complexity=8,
+		importance=0.0487465220798,
+		rank=0.00609331525998];
+	"[1]CLOCK_DIVIDER_REG_LOW.rst"	 [complexity=8,
+		importance=0.0466904064399,
+		rank=0.00583630080499];
+	"[1]rst" -> "[1]CLOCK_DIVIDER_REG_LOW.rst";
+	clkout_tmp	 [complexity=5,
+		importance=0.00880173392282,
+		rank=0.00176034678456];
+	"[1]rst" -> clkout_tmp;
+	"[1]CLOCK_DIVIDER_REG_7.rst"	 [complexity=8,
+		importance=0.0468040850269,
+		rank=0.00585051062836];
+	"[1]rst" -> "[1]CLOCK_DIVIDER_REG_7.rst";
+	"[1]CLOCK_DIVIDER_REG_3.rst"	 [complexity=8,
+		importance=0.0468040850269,
+		rank=0.00585051062836];
+	"[1]rst" -> "[1]CLOCK_DIVIDER_REG_3.rst";
+	"[1]cs"	 [complexity=15,
+		importance=0.0314134859468,
+		rank=0.00209423239645];
+	"[1]we_clock_divider_low"	 [complexity=11,
+		importance=0.0294710488938,
+		rank=0.00267918626307];
+	"[1]cs" -> "[1]we_clock_divider_low";
+	cd	 [complexity=5,
+		importance=0.00754280863566,
+		rank=0.00150856172713];
+	clkout	 [complexity=0,
+		importance=0.0046303821331,
+		rank=0.0];
+	cd -> clkout;
+	"[1]CLOCK_DIVIDER_REG_3.we"	 [complexity=8,
+		importance=0.0249825640703,
+		rank=0.00312282050879];
+	"CLOCK_DIVIDER_REG_3.data_out"	 [complexity=7,
+		importance=0.0224224532926,
+		rank=0.00320320761323];
+	"[1]CLOCK_DIVIDER_REG_3.we" -> "CLOCK_DIVIDER_REG_3.data_out";
+	"[1]CLOCK_DIVIDER_REG_LOW.we"	 [complexity=8,
+		importance=0.0248122424367,
+		rank=0.00310153030458];
+	"CLOCK_DIVIDER_REG_LOW.data_out"	 [complexity=7,
+		importance=0.0223656139991,
+		rank=0.00319508771416];
+	"[1]CLOCK_DIVIDER_REG_LOW.we" -> "CLOCK_DIVIDER_REG_LOW.data_out";
+	"[1]clkout_div"	 [complexity=7,
+		importance=0.0120389384378,
+		rank=0.00171984834825];
+	"[1]clkout_div" -> clkout_tmp;
+	"[1]cd"	 [complexity=8,
+		importance=0.0992239340048,
+		rank=0.0124029917506];
+	"[1]cd" -> "[1]clkout_div";
+	"[1]CLOCK_DIVIDER_REG_LOW.rst" -> "CLOCK_DIVIDER_REG_LOW.data_out";
+	"[1]clkout_cnt"	 [complexity=7,
+		importance=0.0137142092558,
+		rank=0.00195917275083];
+	"[1]clkout_cnt" -> clkout_tmp;
+	"[1]reset_mode"	 [complexity=11,
+		importance=0.0302624751562,
+		rank=0.00275113410511];
+	"[1]we_clock_divider_hi"	 [complexity=8,
+		importance=0.0274538291374,
+		rank=0.00343172864218];
+	"[1]reset_mode" -> "[1]we_clock_divider_hi";
+	"[1]clkout_tmp"	 [complexity=8,
+		importance=0.0129730857126,
+		rank=0.00162163571407];
+	"[1]clkout_tmp" -> clkout_tmp;
+	"[1]CLOCK_DIVIDER_REG_LOW.data_out"	 [complexity=10,
+		importance=0.114046739368,
+		rank=0.0114046739368];
+	"[1]clock_divider"	 [complexity=10,
+		importance=0.108917011253,
+		rank=0.0108917011253];
+	"[1]CLOCK_DIVIDER_REG_LOW.data_out" -> "[1]clock_divider";
+	"[1]MODE_REG0.data_out"	 [complexity=13,
+		importance=0.0419579542882,
+		rank=0.00322753494525];
+	"[1]mode"	 [complexity=13,
+		importance=0.0354558614659,
+		rank=0.00272737395891];
+	"[1]MODE_REG0.data_out" -> "[1]mode";
+	clk	 [complexity=5,
+		importance=0.00657281918605,
+		rank=0.00131456383721];
+	clk -> clkout;
+	"[1]clock_divider" -> "[1]cd";
+	"[1]mode" -> "[1]reset_mode";
+	clkout_tmp -> clkout;
+	"[1]data_in"	 [complexity=9,
+		importance=0.0263350702713,
+		rank=0.00292611891903];
+	"[1]CLOCK_DIVIDER_REG_3.data_in"	 [complexity=9,
+		importance=0.0243926332183,
+		rank=0.00271029257981];
+	"[1]data_in" -> "[1]CLOCK_DIVIDER_REG_3.data_in";
+	"[1]CLOCK_DIVIDER_REG_7.data_in"	 [complexity=9,
+		importance=0.0243926332183,
+		rank=0.00271029257981];
+	"[1]data_in" -> "[1]CLOCK_DIVIDER_REG_7.data_in";
+	"[1]CLOCK_DIVIDER_REG_LOW.data_in"	 [complexity=9,
+		importance=0.0243357939248,
+		rank=0.00270397710276];
+	"[1]data_in" -> "[1]CLOCK_DIVIDER_REG_LOW.data_in";
+	"[1]we_clock_divider_hi" -> "[1]CLOCK_DIVIDER_REG_3.we";
+	"[1]CLOCK_DIVIDER_REG_7.we"	 [complexity=8,
+		importance=0.0249825640703,
+		rank=0.00312282050879];
+	"[1]we_clock_divider_hi" -> "[1]CLOCK_DIVIDER_REG_7.we";
+	"[1]CLOCK_DIVIDER_REG_3.data_in" -> "CLOCK_DIVIDER_REG_3.data_out";
+	"CLOCK_DIVIDER_REG_7.data_out"	 [complexity=7,
+		importance=0.0224224532926,
+		rank=0.00320320761323];
+	"[1]CLOCK_DIVIDER_REG_7.rst" -> "CLOCK_DIVIDER_REG_7.data_out";
+	"[1]CLOCK_DIVIDER_REG_7.data_in" -> "CLOCK_DIVIDER_REG_7.data_out";
+	clock_off	 [complexity=5,
+		importance=0.00754280863566,
+		rank=0.00150856172713];
+	clock_off -> clkout;
+	"[1]we_clock_divider_low" -> "[1]CLOCK_DIVIDER_REG_LOW.we";
+	"[1]we_clock_divider_low" -> "[1]we_clock_divider_hi";
+	clock_divider	 [complexity=7,
+		importance=0.0172358858843,
+		rank=0.00246226941204];
+	clock_divider -> cd;
+	clock_divider -> clock_off;
+	"CLOCK_DIVIDER_REG_7.data_out" -> clock_divider;
+	"[1]CLOCK_DIVIDER_REG_3.data_out"	 [complexity=10,
+		importance=0.114103578662,
+		rank=0.0114103578662];
+	"[1]CLOCK_DIVIDER_REG_3.data_out" -> "[1]clock_divider";
+	"CLOCK_DIVIDER_REG_LOW.data_out" -> clock_divider;
+	"[1]CLOCK_DIVIDER_REG_3.rst" -> "CLOCK_DIVIDER_REG_3.data_out";
+	"CLOCK_DIVIDER_REG_3.data_out" -> clock_divider;
+	"[1]CLOCK_DIVIDER_REG_LOW.data_in" -> "CLOCK_DIVIDER_REG_LOW.data_out";
+	"[1]we"	 [complexity=15,
+		importance=0.0314134859468,
+		rank=0.00209423239645];
+	"[1]we" -> "[1]we_clock_divider_low";
+	"[1]CLOCK_DIVIDER_REG_7.we" -> "CLOCK_DIVIDER_REG_7.data_out";
+	"[1]addr"	 [complexity=15,
+		importance=0.0314134859468,
+		rank=0.00209423239645];
+	"[1]addr" -> "[1]we_clock_divider_low";
+	"[1]CLOCK_DIVIDER_REG_7.data_out"	 [complexity=10,
+		importance=0.114103578662,
+		rank=0.0114103578662];
+	"[1]CLOCK_DIVIDER_REG_7.data_out" -> "[1]clock_divider";
+}

@@ -1,0 +1,42 @@
+strict digraph "" {
+	crc_poly_size_reversed	 [complexity=11,
+		importance=0.469697759677,
+		rank=0.0426997963343];
+	crc_in_masked	 [complexity=5,
+		importance=0.378788850091,
+		rank=0.0757577700182];
+	crc_poly_size_reversed -> crc_in_masked;
+	crc_poly	 [complexity=11,
+		importance=0.409091384319,
+		rank=0.0371901258471];
+	feedback	 [complexity=5,
+		importance=0.348485368098,
+		rank=0.0696970736196];
+	crc_poly -> feedback;
+	crc_out	 [complexity=0,
+		importance=0.212122118464,
+		rank=0.0];
+	feedback -> crc_out;
+	crc_poly_size	 [complexity=32,
+		importance=3.34849033396,
+		rank=0.104640322936];
+	crc_poly_size -> crc_poly_size_reversed;
+	data_in	 [complexity=11,
+		importance=0.409091384319,
+		rank=0.0371901258471];
+	data_in -> feedback;
+	crc_in_masked -> crc_out;
+	CRC_SIZE	 [complexity=32,
+		importance=3.34849033396,
+		rank=0.104640322936];
+	MASK_REVERSED	 [complexity=11,
+		importance=0.469697759677,
+		rank=0.0426997963343];
+	CRC_SIZE -> MASK_REVERSED;
+	MASK_REVERSED -> crc_in_masked;
+	crc_in	 [complexity=11,
+		importance=0.439394866312,
+		rank=0.0399449878465];
+	crc_in -> feedback;
+	crc_in -> crc_in_masked;
+}

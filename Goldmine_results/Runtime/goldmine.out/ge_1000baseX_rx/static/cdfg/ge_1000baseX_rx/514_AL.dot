@@ -1,0 +1,47 @@
+strict digraph "" {
+	node [label="\N"];
+	"514:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f702a73ba90>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="514:AL",
+		sens="['ck', 'reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['reset', 'rx_even', 'ebi_rxd_d2', 'ebi_K', 'ebi_rxd_d1', 'ebi_rxd', 'ebi_K_d2', 'ebi_K_d1']"];
+	"515:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f702a73bc10>",
+		fillcolor=springgreen,
+		label="515:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"514:AL" -> "515:IF"	 [cond="[]",
+		lineno=None];
+	"518:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a73bc50>",
+		fillcolor=firebrick,
+		label="518:NS
+check_end_R_R_K28_5 <= ebi_K_d2 & (ebi_rxd_d2 == 8'hf7) & (ebi_K_d1 & (ebi_rxd_d1 == 8'hf7)) & (ebi_K & (ebi_rxd == 8'hbc)) & \
+rx_even;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a73bc50>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"Leaf_514:AL"	 [def_var="['check_end_R_R_K28_5']",
+		label="Leaf_514:AL"];
+	"518:NS" -> "Leaf_514:AL"	 [cond="[]",
+		lineno=None];
+	"515:IF" -> "518:NS"	 [cond="['reset']",
+		label="!(reset)",
+		lineno=515];
+	"516:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a744290>",
+		fillcolor=firebrick,
+		label="516:NS
+check_end_R_R_K28_5 <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a744290>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"515:IF" -> "516:NS"	 [cond="['reset']",
+		label=reset,
+		lineno=515];
+	"516:NS" -> "Leaf_514:AL"	 [cond="[]",
+		lineno=None];
+}

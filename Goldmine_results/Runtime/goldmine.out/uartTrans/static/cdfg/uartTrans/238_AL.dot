@@ -1,0 +1,66 @@
+strict digraph "" {
+	node [label="\N"];
+	"240:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fc3769af790>",
+		fillcolor=springgreen,
+		label="240:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"241:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fc3769aff90>",
+		fillcolor=turquoise,
+		label="241:BL
+stateReg <= idle;
+sReg <= 1'b0;
+bReg <= 1'b0;
+nReg <= 1'b0;
+txReg <= 1'b1;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fc3769affd0>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7fc3769ce150>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fc3769ce290>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fc3769ce3d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fc3769ce510>]",
+		style=filled,
+		typ=Block];
+	"240:IF" -> "241:BL"	 [cond="['reset']",
+		label=reset,
+		lineno=240];
+	"250:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fc3769af8d0>",
+		fillcolor=turquoise,
+		label="250:BL
+stateReg <= stateNext;
+sReg <= sNext;
+bReg <= bNext;
+nReg <= nNext;
+txReg <= txNext;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fc3769af910>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7fc3769afa90>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fc3769afbd0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7fc3769afd10>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7fc3769afe50>]",
+		style=filled,
+		typ=Block];
+	"240:IF" -> "250:BL"	 [cond="['reset']",
+		label="!(reset)",
+		lineno=240];
+	"239:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7fc3769ce690>",
+		fillcolor=turquoise,
+		label="239:BL",
+		statements="[]",
+		style=filled,
+		typ=Block];
+	"239:BL" -> "240:IF"	 [cond="[]",
+		lineno=None];
+	"Leaf_238:AL"	 [def_var="['bReg', 'sReg', 'nReg', 'txReg', 'stateReg']",
+		label="Leaf_238:AL"];
+	"241:BL" -> "Leaf_238:AL"	 [cond="[]",
+		lineno=None];
+	"250:BL" -> "Leaf_238:AL"	 [cond="[]",
+		lineno=None];
+	"238:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fc3769ce6d0>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="238:AL",
+		sens="['clk', 'reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['reset', 'stateNext', 'txNext', 'idle', 'nNext', 'sNext', 'bNext']"];
+	"238:AL" -> "239:BL"	 [cond="[]",
+		lineno=None];
+}

@@ -1,0 +1,25 @@
+strict digraph "" {
+	"[1]CurrentState"	 [complexity=1,
+		importance=2.19787633144,
+		rank=2.19787633144];
+	Reg_addr	 [complexity=0,
+		importance=0.11303922685,
+		rank=0.0];
+	"[1]CurrentState" -> Reg_addr;
+	"[1]PktTypeReg"	 [complexity=1,
+		importance=0.501861760263,
+		rank=0.501861760263];
+	"[1]PktTypeReg" -> Reg_addr;
+	"[1]PktErrTypeReg"	 [complexity=1,
+		importance=1.40617557506,
+		rank=1.40617557506];
+	"[1]PktErrTypeReg" -> Reg_addr;
+	"[1]Reset"	 [complexity=1,
+		importance=2.28491375548,
+		rank=2.28491375548];
+	"[1]Reset" -> Reg_addr;
+	"[1]PktLengthReg"	 [complexity=7,
+		importance=4.00607779261,
+		rank=0.572296827516];
+	"[1]PktLengthReg" -> Reg_addr;
+}

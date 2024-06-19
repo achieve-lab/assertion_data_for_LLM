@@ -1,0 +1,82 @@
+Report file generated at: Apr-10-2024 04:05:23 PM
+
+#############################
+# Detailed Assertion Report #
+#############################
+
+
+a0: (clear == 1) |=> (almost_full == 0)
+IRank: : 0.1241
+Importance: : 0.49641
+Complexity: : 4
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a5: (clear == 0 & write == 0 & cnt[0] == 0 & cnt[2] == 0) ##1 (cnt[0] == 1 & cnt[1] == 1 & cnt[2] == 1) |-> (almost_full == 1)
+IRank: : 0.06241
+Importance: : 2.24663
+Complexity: : 36
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a4: (clear == 0 & write == 0 & cnt[0] == 0 & cnt[1] == 0) ##1 (cnt[0] == 1 & cnt[1] == 1 & cnt[2] == 1) |-> (almost_full == 1)
+IRank: : 0.06241
+Importance: : 2.24663
+Complexity: : 36
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a1: (cnt[0] == 0) |-> (almost_full == 0)
+IRank: : 0.05029
+Importance: : 0.15087
+Complexity: : 3
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a3: (cnt[2] == 0) |-> (almost_full == 0)
+IRank: : 0.05029
+Importance: : 0.15087
+Complexity: : 3
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+a2: (cnt[1] == 0) |-> (almost_full == 0)
+IRank: : 0.05029
+Importance: : 0.15087
+Complexity: : 3
+Triggered: : Unknown
+Vacuous: : Unknown
+Verification status: : Unknown
+
+
+################################
+# Tabularized Assertion Report #
+################################
+
+
+Assertion Index |  IRank  | Importance | Complexity | Triggered | Vacuous | Verif Status
+--------------- | ------- | ---------- | ---------- | --------- | ------- | ------------
+      a0        | 0.1241  |  0.49641   |     4      |  Unknown  | Unknown |   Unknown   
+      a5        | 0.06241 |  2.24663   |     36     |  Unknown  | Unknown |   Unknown   
+      a4        | 0.06241 |  2.24663   |     36     |  Unknown  | Unknown |   Unknown   
+      a1        | 0.05029 |  0.15087   |     3      |  Unknown  | Unknown |   Unknown   
+      a3        | 0.05029 |  0.15087   |     3      |  Unknown  | Unknown |   Unknown   
+      a2        | 0.05029 |  0.15087   |     3      |  Unknown  | Unknown |   Unknown   
+
+
+###############################
+# Summarized Assertion Report #
+###############################
+
+
+Total number of mined assertions: 6
+Total number of passed assertions: 0
+Total number of failed assertions: 0
+Total number of vacuous / unexplored assertions: 6
+Hit rate: 0.0
+Miss rate: 1.0

@@ -1,0 +1,57 @@
+strict digraph "" {
+	Reset	 [complexity=1,
+		importance=0.0308170945521,
+		rank=0.0308170945521];
+	"U_0_034.Reset"	 [complexity=1,
+		importance=0.029063591725,
+		rank=0.029063591725];
+	Reset -> "U_0_034.Reset";
+	"U_0_034.RegInit"	 [complexity=2,
+		importance=0.0154021939933,
+		rank=0.00770109699667];
+	"U_0_034.RegOut"	 [complexity=0,
+		importance=0.0136486911662,
+		rank=0.0];
+	"U_0_034.RegInit" -> "U_0_034.RegOut";
+	WRB	 [complexity=4,
+		importance=0.0171685902472,
+		rank=0.00429214756179];
+	"U_0_034.CWR_pulse"	 [complexity=4,
+		importance=0.01541508742,
+		rank=0.00385377185501];
+	WRB -> "U_0_034.CWR_pulse";
+	"U_0_034.CCSB"	 [complexity=4,
+		importance=0.01541508742,
+		rank=0.00385377185501];
+	"U_0_034.CCSB" -> "U_0_034.RegOut";
+	CD_in	 [complexity=2,
+		importance=0.0171830953522,
+		rank=0.00859154767611];
+	"U_0_034.CD_in_reg"	 [complexity=2,
+		importance=0.0154295925251,
+		rank=0.00771479626255];
+	CD_in -> "U_0_034.CD_in_reg";
+	Speed	 [complexity=0,
+		importance=0.00571852560641,
+		rank=0.0];
+	"U_0_034.RegOut" -> Speed;
+	"U_0_034.CA_reg_set"	 [complexity=4,
+		importance=0.0154021939933,
+		rank=0.00385054849833];
+	"U_0_034.CA_reg_set" -> "U_0_034.RegOut";
+	CSB	 [complexity=4,
+		importance=0.0171685902472,
+		rank=0.00429214756179];
+	CSB -> "U_0_034.CCSB";
+	"U_0_034.CD_in_reg" -> "U_0_034.RegOut";
+	"U_0_034.CA_reg"	 [complexity=4,
+		importance=0.01541508742,
+		rank=0.00385377185501];
+	"U_0_034.CA_reg" -> "U_0_034.RegOut";
+	"U_0_034.CWR_pulse" -> "U_0_034.RegOut";
+	"U_0_034.Reset" -> "U_0_034.RegOut";
+	CA	 [complexity=4,
+		importance=0.0171685902472,
+		rank=0.00429214756179];
+	CA -> "U_0_034.CA_reg";
+}

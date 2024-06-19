@@ -1,0 +1,95 @@
+strict digraph "" {
+	node [label="\N"];
+	"420:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f702a653b10>",
+		fillcolor=turquoise,
+		label="420:BL
+ebi_K_d3 <= ebi_K_d2;
+ebi_K_d2 <= ebi_K_d1;
+ebi_K_d1 <= ebi_K;
+rx_even_d3 <= rx_even_d2;
+rx_even_d2 <= rx_even_d1;
+rx_even_\
+d1 <= rx_even;
+ebi_rxd_d3 <= ebi_rxd_d2;
+ebi_rxd_d2 <= ebi_rxd_d1;
+ebi_rxd_d1 <= ebi_rxd;
+sync_status_d3 <= sync_status_d2;
+sync_\
+status_d2 <= sync_status_d1;
+sync_status_d1 <= sync_status;
+carrier_detect_d3 <= carrier_detect_d2;
+carrier_detect_d2 <= carrier_\
+detect_d1;
+carrier_detect_d1 <= carrier_detect;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a73b2d0>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f702a73b690>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a73b7d0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f702a73b910>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a73ba50>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f702a73bb90>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a73bcd0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f702a73be10>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a73bf50>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f702a6530d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a653290>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f702a653450>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a6535d0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f702a653790>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a653950>]",
+		style=filled,
+		typ=Block];
+	"Leaf_410:AL"	 [def_var="['rx_even_d2', 'rx_even_d3', 'rx_even_d1', 'carrier_detect_d1', 'carrier_detect_d2', 'sync_status_d2', 'carrier_detect_d3', 'ebi_\
+rxd_d2', 'ebi_rxd_d3', 'sync_status_d1', 'ebi_rxd_d1', 'sync_status_d3', 'ebi_K_d3', 'ebi_K_d2', 'ebi_K_d1']",
+		label="Leaf_410:AL"];
+	"420:BL" -> "Leaf_410:AL"	 [cond="[]",
+		lineno=None];
+	"411:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f702a653b50>",
+		fillcolor=springgreen,
+		label="411:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"411:IF" -> "420:BL"	 [cond="['reset']",
+		label="!(reset)",
+		lineno=411];
+	"412:BL"	 [ast="<pyverilog.vparser.ast.Block object at 0x7f702a653c10>",
+		fillcolor=turquoise,
+		label="412:BL
+ebi_K_d1 <= 0;
+ebi_K_d2 <= 0;
+ebi_K_d3 <= 0;
+rx_even_d1 <= 0;
+rx_even_d2 <= 0;
+rx_even_d3 <= 0;
+ebi_rxd_d1 <= 0;
+ebi_rxd_\
+d2 <= 0;
+ebi_rxd_d3 <= 0;
+sync_status_d1 <= 0;
+sync_status_d2 <= 0;
+sync_status_d3 <= 0;
+carrier_detect_d1 <= 0;
+carrier_detect_\
+d2 <= 0;
+carrier_detect_d3 <= 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a653c50>, <pyverilog.vparser.ast.NonblockingSubstitution object \
+at 0x7f702a653d90>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a653ed0>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f702a65b050>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a65b190>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f702a65b2d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a65b410>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f702a65b550>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a65b690>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f702a65b7d0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a65b950>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f702a65bad0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a65bc50>, <pyverilog.vparser.ast.NonblockingSubstitution \
+object at 0x7f702a65bdd0>, <pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f702a65bf50>]",
+		style=filled,
+		typ=Block];
+	"411:IF" -> "412:BL"	 [cond="['reset']",
+		label=reset,
+		lineno=411];
+	"412:BL" -> "Leaf_410:AL"	 [cond="[]",
+		lineno=None];
+	"410:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f702a664150>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="410:AL",
+		sens="['ck', 'reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['reset', 'rx_even_d2', 'rx_even_d1', 'carrier_detect_d1', 'carrier_detect_d2', 'ebi_K', 'sync_status', 'rx_even', 'ebi_rxd_d2', '\
+sync_status_d2', 'sync_status_d1', 'ebi_rxd_d1', 'carrier_detect', 'ebi_rxd', 'ebi_K_d2', 'ebi_K_d1']"];
+	"410:AL" -> "411:IF"	 [cond="[]",
+		lineno=None];
+}

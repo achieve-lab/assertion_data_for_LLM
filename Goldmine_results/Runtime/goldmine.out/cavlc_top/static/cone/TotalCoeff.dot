@@ -1,0 +1,65 @@
+strict digraph "" {
+	"[1]cavlc_read_total_coeffs.TotalCoeff_4"	 [complexity=4,
+		importance=0.028891595985,
+		rank=0.00722289899624];
+	"[1]cavlc_read_total_coeffs.TotalCoeff_comb"	 [complexity=2,
+		importance=0.0252238235855,
+		rank=0.0126119117927];
+	"[1]cavlc_read_total_coeffs.TotalCoeff_4" -> "[1]cavlc_read_total_coeffs.TotalCoeff_comb";
+	"[1]cavlc_read_total_coeffs.ena"	 [complexity=2,
+		importance=0.0160242447882,
+		rank=0.00801212239412];
+	"cavlc_read_total_coeffs.TotalCoeff"	 [complexity=0,
+		importance=0.0130481086811,
+		rank=0.0];
+	"[1]cavlc_read_total_coeffs.ena" -> "cavlc_read_total_coeffs.TotalCoeff";
+	"[1]rst_n"	 [complexity=1,
+		importance=0.0318455683941,
+		rank=0.0318455683941];
+	"[1]cavlc_read_total_coeffs.rst_n"	 [complexity=1,
+		importance=0.0291399938635,
+		rank=0.0291399938635];
+	"[1]rst_n" -> "[1]cavlc_read_total_coeffs.rst_n";
+	"[1]cavlc_read_total_coeffs.TotalCoeff_1"	 [complexity=4,
+		importance=0.0288789922985,
+		rank=0.00721974807464];
+	"[1]cavlc_read_total_coeffs.TotalCoeff_1" -> "[1]cavlc_read_total_coeffs.TotalCoeff_comb";
+	"[1]cavlc_read_total_coeffs.TotalCoeff_2"	 [complexity=4,
+		importance=0.0288035061889,
+		rank=0.00720087654724];
+	"[1]cavlc_read_total_coeffs.TotalCoeff_2" -> "[1]cavlc_read_total_coeffs.TotalCoeff_comb";
+	"[1]cavlc_read_total_coeffs.TotalCoeff_3"	 [complexity=4,
+		importance=0.0287591726676,
+		rank=0.00718979316689];
+	"[1]cavlc_read_total_coeffs.TotalCoeff_3" -> "[1]cavlc_read_total_coeffs.TotalCoeff_comb";
+	"[1]cavlc_read_total_coeffs.nC"	 [complexity=7,
+		importance=0.45741080301,
+		rank=0.06534440043];
+	"[1]cavlc_read_total_coeffs.nC" -> "[1]cavlc_read_total_coeffs.TotalCoeff_comb";
+	"[1]cavlc_read_total_coeffs.TotalCoeff_5"	 [complexity=4,
+		importance=0.0288798511026,
+		rank=0.00721996277565];
+	"[1]cavlc_read_total_coeffs.TotalCoeff_5" -> "[1]cavlc_read_total_coeffs.TotalCoeff_comb";
+	"[1]cavlc_fsm.state"	 [complexity=2,
+		importance=0.0414513909831,
+		rank=0.0207256954916];
+	"[1]cavlc_state"	 [complexity=2,
+		importance=0.0190151844691,
+		rank=0.00950759223453];
+	"[1]cavlc_fsm.state" -> "[1]cavlc_state";
+	"[1]ena"	 [complexity=2,
+		importance=0.0187298193188,
+		rank=0.00936490965938];
+	"[1]ena" -> "[1]cavlc_read_total_coeffs.ena";
+	"[1]cavlc_read_total_coeffs.sel"	 [complexity=2,
+		importance=0.0159089914175,
+		rank=0.00795449570873];
+	"[1]cavlc_read_total_coeffs.sel" -> "cavlc_read_total_coeffs.TotalCoeff";
+	TotalCoeff	 [complexity=0,
+		importance=0.00615323630516,
+		rank=0.0];
+	"cavlc_read_total_coeffs.TotalCoeff" -> TotalCoeff;
+	"[1]cavlc_read_total_coeffs.TotalCoeff_comb" -> "cavlc_read_total_coeffs.TotalCoeff";
+	"[1]cavlc_state" -> "[1]cavlc_read_total_coeffs.sel";
+	"[1]cavlc_read_total_coeffs.rst_n" -> "cavlc_read_total_coeffs.TotalCoeff";
+}

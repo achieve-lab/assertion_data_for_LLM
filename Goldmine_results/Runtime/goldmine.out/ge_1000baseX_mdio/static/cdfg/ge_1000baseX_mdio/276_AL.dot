@@ -1,0 +1,47 @@
+strict digraph "" {
+	node [label="\N"];
+	"276:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7f2608cee590>",
+		clk_sens=True,
+		fillcolor=gold,
+		label="276:AL",
+		sens="['mdc', 'reset']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['reset', 'preamble_match', 'mdio', 'preamble_cnt']"];
+	"277:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7f2608cee710>",
+		fillcolor=springgreen,
+		label="277:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"276:AL" -> "277:IF"	 [cond="[]",
+		lineno=None];
+	"280:NS"	 [ast="<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2608cee790>",
+		fillcolor=firebrick,
+		label="280:NS
+preamble_cnt <= (mdio & ~preamble_match)? preamble_cnt + 1 : 
+                (mdio & preamble_match)? preamble_cnt : 0;",
+		statements="[<pyverilog.vparser.ast.NonblockingSubstitution object at 0x7f2608cee790>]",
+		style=filled,
+		typ=NonblockingSubstitution];
+	"277:IF" -> "280:NS"	 [cond="['reset']",
+		label="!(reset)",
+		lineno=277];
+	"278:BS"	 [ast="<pyverilog.vparser.ast.BlockingSubstitution object at 0x7f2608ceed50>",
+		fillcolor=cadetblue,
+		label="278:BS
+preamble_cnt = 0;",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7f2608ceed50>]",
+		style=filled,
+		typ=BlockingSubstitution];
+	"277:IF" -> "278:BS"	 [cond="['reset']",
+		label=reset,
+		lineno=277];
+	"Leaf_276:AL"	 [def_var="['preamble_cnt']",
+		label="Leaf_276:AL"];
+	"280:NS" -> "Leaf_276:AL"	 [cond="[]",
+		lineno=None];
+	"278:BS" -> "Leaf_276:AL"	 [cond="[]",
+		lineno=None];
+}

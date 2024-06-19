@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"232:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7fd83808bb10>",
+		def_var="['StartBackoff']",
+		fillcolor=deepskyblue,
+		label="232:AS
+StartBackoff = StateJam & ~RandomEq0 & ColWindow & ~RetryMax & NibCntEq7 & ~NoBckof;",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['StateJam', 'RandomEq0', 'ColWindow', 'RetryMax', 'NibCntEq7', 'NoBckof']"];
+}

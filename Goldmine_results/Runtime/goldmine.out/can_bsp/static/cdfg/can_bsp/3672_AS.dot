@@ -1,0 +1,13 @@
+strict digraph "" {
+	node [label="\N"];
+	"3672:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f44f6b3bd10>",
+		def_var="['go_tx']",
+		fillcolor=deepskyblue,
+		label="3672:AS
+go_tx = ~listen_only_mode & need_to_tx & ~tx_state & (~suspend | sample_point & (susp_cnt == 3'h7)) & (go_early_tx | rx_\
+idle);",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['listen_only_mode', 'need_to_tx', 'tx_state', 'suspend', 'sample_point', 'susp_cnt', 'go_early_tx', 'rx_idle']"];
+}

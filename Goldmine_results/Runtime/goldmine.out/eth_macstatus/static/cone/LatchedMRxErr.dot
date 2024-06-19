@@ -1,0 +1,37 @@
+strict digraph "" {
+	LatchedMRxErr	 [complexity=0,
+		importance=0.0448637191609,
+		rank=0.0];
+	"[1]MRxErr"	 [complexity=7,
+		importance=0.103687656974,
+		rank=0.0148125224248];
+	"[1]MRxErr" -> LatchedMRxErr;
+	"[1]Transmitting"	 [complexity=7,
+		importance=0.103687656974,
+		rank=0.0148125224248];
+	"[1]Transmitting" -> LatchedMRxErr;
+	"[1]RxStatePreamble"	 [complexity=7,
+		importance=0.103687656974,
+		rank=0.0148125224248];
+	"[1]RxStatePreamble" -> LatchedMRxErr;
+	"[1]RxStateSFD"	 [complexity=7,
+		importance=0.103687656974,
+		rank=0.0148125224248];
+	"[1]RxStateSFD" -> LatchedMRxErr;
+	"[1]MRxDV"	 [complexity=7,
+		importance=0.103687656974,
+		rank=0.0148125224248];
+	"[1]MRxDV" -> LatchedMRxErr;
+	"[1]Reset"	 [complexity=1,
+		importance=0.148551376135,
+		rank=0.148551376135];
+	"[1]Reset" -> LatchedMRxErr;
+	"[1]RxStateData"	 [complexity=7,
+		importance=0.103687656974,
+		rank=0.0148125224248];
+	"[1]RxStateData" -> LatchedMRxErr;
+	"[1]RxStateIdle"	 [complexity=7,
+		importance=0.103687656974,
+		rank=0.0148125224248];
+	"[1]RxStateIdle" -> LatchedMRxErr;
+}

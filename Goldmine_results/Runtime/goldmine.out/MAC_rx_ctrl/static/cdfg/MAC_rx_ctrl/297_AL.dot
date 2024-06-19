@@ -1,0 +1,46 @@
+strict digraph "" {
+	node [label="\N"];
+	"299:BS"	 [ast="<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fbb4740e210>",
+		fillcolor=cadetblue,
+		label="299:BS
+Fifo_data_en = 1;",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fbb4740e210>]",
+		style=filled,
+		typ=BlockingSubstitution];
+	"Leaf_297:AL"	 [def_var="['Fifo_data_en']",
+		label="Leaf_297:AL"];
+	"299:BS" -> "Leaf_297:AL"	 [cond="[]",
+		lineno=None];
+	"298:IF"	 [ast="<pyverilog.vparser.ast.IfStatement object at 0x7fbb47408f10>",
+		fillcolor=springgreen,
+		label="298:IF",
+		statements="[]",
+		style=filled,
+		typ=IfStatement];
+	"298:IF" -> "299:BS"	 [cond="['Current_state', 'State_data']",
+		label="(Current_state == State_data)",
+		lineno=298];
+	"301:BS"	 [ast="<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fbb474080d0>",
+		fillcolor=cadetblue,
+		label="301:BS
+Fifo_data_en = 0;",
+		statements="[<pyverilog.vparser.ast.BlockingSubstitution object at 0x7fbb474080d0>]",
+		style=filled,
+		typ=BlockingSubstitution];
+	"298:IF" -> "301:BS"	 [cond="['Current_state', 'State_data']",
+		label="!((Current_state == State_data))",
+		lineno=298];
+	"301:BS" -> "Leaf_297:AL"	 [cond="[]",
+		lineno=None];
+	"297:AL"	 [ast="<pyverilog.vparser.ast.Always object at 0x7fbb4740e4d0>",
+		clk_sens=False,
+		fillcolor=gold,
+		label="297:AL",
+		sens="['Current_state']",
+		statements="[]",
+		style=filled,
+		typ=Always,
+		use_var="['State_data', 'Current_state']"];
+	"297:AL" -> "298:IF"	 [cond="[]",
+		lineno=None];
+}

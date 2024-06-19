@@ -1,0 +1,165 @@
+strict digraph "" {
+	"[1]rxstatem1.StateDrop"	 [complexity=9,
+		importance=0.0350257130811,
+		rank=0.0038917458979];
+	"[1]rxstatem1.StartIdle"	 [complexity=3,
+		importance=0.0305367681727,
+		rank=0.0101789227242];
+	"[1]rxstatem1.StateDrop" -> "[1]rxstatem1.StartIdle";
+	"[1]rxcounters1.ByteCnt"	 [complexity=16,
+		importance=0.0624229722025,
+		rank=0.00390143576266];
+	"[1]rxcounters1.ByteCntMaxFrame"	 [complexity=12,
+		importance=0.049634662829,
+		rank=0.00413622190242];
+	"[1]rxcounters1.ByteCnt" -> "[1]rxcounters1.ByteCntMaxFrame";
+	"[1]r_IFG"	 [complexity=15,
+		importance=0.059963702717,
+		rank=0.00399758018113];
+	"[1]rxcounters1.r_IFG"	 [complexity=15,
+		importance=0.0569513064999,
+		rank=0.00379675376666];
+	"[1]r_IFG" -> "[1]rxcounters1.r_IFG";
+	"rxstatem1.StatePreamble"	 [complexity=0,
+		importance=0.0111688207359,
+		rank=0.0];
+	"[1]rxstatem1.StartIdle" -> "rxstatem1.StatePreamble";
+	"[1]rxstatem1.StateData"	 [complexity=9,
+		importance=0.0367308150197,
+		rank=0.00408120166885];
+	"[1]rxstatem1.StateData" -> "[1]rxstatem1.StartIdle";
+	"[1]rxcounters1.IFGCounterEq24"	 [complexity=12,
+		importance=0.0524326877775,
+		rank=0.00436939064813];
+	"[1]IFGCounterEq24"	 [complexity=12,
+		importance=0.0436529309181,
+		rank=0.00363774424317];
+	"[1]rxcounters1.IFGCounterEq24" -> "[1]IFGCounterEq24";
+	"[1]rxstatem1.MRxDV"	 [complexity=12,
+		importance=0.0361431561077,
+		rank=0.00301192967564];
+	"[1]rxstatem1.MRxDV" -> "[1]rxstatem1.StartIdle";
+	"[1]rxstatem1.StartPreamble"	 [complexity=1,
+		importance=0.0171435420655,
+		rank=0.0171435420655];
+	"[1]rxstatem1.MRxDV" -> "[1]rxstatem1.StartPreamble";
+	"[1]rxstatem1.StartSFD"	 [complexity=3,
+		importance=0.0294775743986,
+		rank=0.00982585813288];
+	"[1]rxstatem1.MRxDV" -> "[1]rxstatem1.StartSFD";
+	"[1]rxstatem1.StartDrop"	 [complexity=3,
+		importance=0.0328295153896,
+		rank=0.0109431717965];
+	"[1]rxstatem1.MRxDV" -> "[1]rxstatem1.StartDrop";
+	"[1]rxcounters1.MaxFL"	 [complexity=16,
+		importance=0.0541532815514,
+		rank=0.00338458009696];
+	"[1]rxcounters1.MaxFL" -> "[1]rxcounters1.ByteCntMaxFrame";
+	"[1]rxstatem1.Transmitting"	 [complexity=12,
+		importance=0.0365950228593,
+		rank=0.00304958523827];
+	"[1]rxstatem1.Transmitting" -> "[1]rxstatem1.StartPreamble";
+	"[1]rxstatem1.Transmitting" -> "[1]rxstatem1.StartSFD";
+	"[1]rxstatem1.Transmitting" -> "[1]rxstatem1.StartDrop";
+	"[1]ByteCntMaxFrame"	 [complexity=12,
+		importance=0.0416772822695,
+		rank=0.00347310685579];
+	"[1]rxcounters1.ByteCntMaxFrame" -> "[1]ByteCntMaxFrame";
+	StatePreamble	 [complexity=0,
+		importance=0.00417760781431,
+		rank=0.0];
+	"[1]rxstatem1.IFGCounterEq24"	 [complexity=12,
+		importance=0.0384455504971,
+		rank=0.00320379587476];
+	"[1]IFGCounterEq24" -> "[1]rxstatem1.IFGCounterEq24";
+	"[1]MRxDEq5"	 [complexity=9,
+		importance=0.0373313538369,
+		rank=0.0041479282041];
+	"[1]rxstatem1.MRxDEq5"	 [complexity=9,
+		importance=0.0341037829763,
+		rank=0.00378930921958];
+	"[1]MRxDEq5" -> "[1]rxstatem1.MRxDEq5";
+	"[1]MRxD"	 [complexity=14,
+		importance=0.0428887848646,
+		rank=0.00306348463319];
+	"[1]MRxD" -> "[1]MRxDEq5";
+	"[1]MRxDEqD"	 [complexity=12,
+		importance=0.0398763886476,
+		rank=0.0033230323873];
+	"[1]MRxD" -> "[1]MRxDEqD";
+	"[1]rxstatem1.IFGCounterEq24" -> "[1]rxstatem1.StartDrop";
+	"[1]rxstatem1.Reset"	 [complexity=1,
+		importance=0.0365584958592,
+		rank=0.0365584958592];
+	"[1]rxstatem1.Reset" -> "rxstatem1.StatePreamble";
+	"[1]MaxFL"	 [complexity=16,
+		importance=0.0571656777685,
+		rank=0.00357285486053];
+	"[1]MaxFL" -> "[1]rxcounters1.MaxFL";
+	"[1]rxstatem1.StateData0"	 [complexity=12,
+		importance=0.0405005190641,
+		rank=0.00337504325534];
+	"[1]rxstatem1.StateData0" -> "[1]rxstatem1.StateData";
+	"[1]rxstatem1.StateData0" -> "[1]rxstatem1.StartDrop";
+	"[1]rxstatem1.StateData1"	 [complexity=12,
+		importance=0.0443428982892,
+		rank=0.0036952415241];
+	"[1]rxstatem1.StateData1" -> "[1]rxstatem1.StateData";
+	"[1]rxcounters1.r_IFG" -> "[1]rxcounters1.IFGCounterEq24";
+	"[1]rxstatem1.StateIdle"	 [complexity=12,
+		importance=0.0400455257633,
+		rank=0.00333712714694];
+	"[1]rxstatem1.StateIdle" -> "[1]rxstatem1.StartPreamble";
+	"[1]rxstatem1.StateIdle" -> "[1]rxstatem1.StartSFD";
+	"[1]rxstatem1.StateIdle" -> "[1]rxstatem1.StartDrop";
+	"[1]Transmitting"	 [complexity=12,
+		importance=0.0396074190763,
+		rank=0.00330061825636];
+	"[1]Transmitting" -> "[1]rxstatem1.Transmitting";
+	"[1]MRxDV"	 [complexity=12,
+		importance=0.0391555523248,
+		rank=0.00326296269373];
+	"[1]MRxDV" -> "[1]rxstatem1.MRxDV";
+	"[1]rxstatem1.StateSFD"	 [complexity=12,
+		importance=0.0414291184135,
+		rank=0.00345242653445];
+	"[1]rxstatem1.StateSFD" -> "[1]rxstatem1.StartIdle";
+	"[1]rxstatem1.StateSFD" -> "[1]rxstatem1.StartDrop";
+	"[1]rxstatem1.StartPreamble" -> "rxstatem1.StatePreamble";
+	"[1]rxstatem1.StatePreamble"	 [complexity=9,
+		importance=0.0364687873203,
+		rank=0.00405208748003];
+	"[1]rxstatem1.StatePreamble" -> "[1]rxstatem1.StartIdle";
+	"[1]rxstatem1.StatePreamble" -> "[1]rxstatem1.StartSFD";
+	"[1]HugEn"	 [complexity=16,
+		importance=0.0571656777685,
+		rank=0.00357285486053];
+	"[1]rxcounters1.HugEn"	 [complexity=16,
+		importance=0.0541532815514,
+		rank=0.00338458009696];
+	"[1]HugEn" -> "[1]rxcounters1.HugEn";
+	"[1]rxstatem1.MRxDEqD"	 [complexity=12,
+		importance=0.0366488177869,
+		rank=0.00305406814891];
+	"[1]rxstatem1.MRxDEqD" -> "[1]rxstatem1.StartDrop";
+	"[1]rxcounters1.IFGCounter"	 [complexity=15,
+		importance=0.0664656223237,
+		rank=0.00443104148825];
+	"[1]rxcounters1.IFGCounter" -> "[1]rxcounters1.IFGCounterEq24";
+	"[1]rxstatem1.ByteCntMaxFrame"	 [complexity=12,
+		importance=0.0366755336292,
+		rank=0.0030562944691];
+	"[1]ByteCntMaxFrame" -> "[1]rxstatem1.ByteCntMaxFrame";
+	"[1]Reset"	 [complexity=1,
+		importance=0.0395708920762,
+		rank=0.0395708920762];
+	"[1]Reset" -> "[1]rxstatem1.Reset";
+	"[1]rxstatem1.ByteCntMaxFrame" -> "[1]rxstatem1.StartDrop";
+	"rxstatem1.StatePreamble" -> StatePreamble;
+	"[1]rxcounters1.HugEn" -> "[1]rxcounters1.ByteCntMaxFrame";
+	"[1]rxstatem1.MRxDEq5" -> "[1]rxstatem1.StartPreamble";
+	"[1]rxstatem1.MRxDEq5" -> "[1]rxstatem1.StartSFD";
+	"[1]rxstatem1.StartSFD" -> "rxstatem1.StatePreamble";
+	"[1]MRxDEqD" -> "[1]rxstatem1.MRxDEqD";
+	"[1]rxstatem1.StartDrop" -> "rxstatem1.StatePreamble";
+}

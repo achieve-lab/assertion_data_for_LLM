@@ -1,0 +1,3 @@
+#!/bin/bash
+
+iverilog -g2001 -osimv -s asynchronous_fifo_bench /data/vpulav2/Work/GoldMine/Runtime/goldmine.out/asynchronous_fifo/asynchronous_fifo_bench.v /data/vpulav2/Work/GoldMine/verilog/files/async_FIFO/async_FIFO.v /data/vpulav2/Work/GoldMine/verilog/files/async_FIFO/synchronizer.v /data/vpulav2/Work/GoldMine/verilog/files/async_FIFO/rptr_handler.v /data/vpulav2/Work/GoldMine/verilog/files/async_FIFO/wptr_handler.v /data/vpulav2/Work/GoldMine/verilog/files/async_FIFO/fifo_mem.v  -I/data/vpulav2/Work/GoldMine/verilog/files/async_FIFO

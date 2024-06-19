@@ -1,0 +1,9 @@
+strict digraph "" {
+	fifo_rx_f_empty	 [complexity=2,
+		importance=0.0147616749647,
+		rank=0.00738083748236];
+	RX_EMPTY	 [complexity=0,
+		importance=0.00752009891545,
+		rank=0.0];
+	fifo_rx_f_empty -> RX_EMPTY;
+}

@@ -1,0 +1,14 @@
+strict digraph "" {
+	rrst_n -> g_rptr	 [weight=2.0];
+	rrst_n -> b_rptr	 [weight=2.0];
+	rrst_n -> empty	 [weight=2.0];
+	g_rptr_next -> g_rptr	 [weight=1.0];
+	g_rptr_next -> rempty	 [weight=1.0];
+	g_wptr_sync -> rempty	 [weight=1.0];
+	rempty -> empty	 [weight=1.0];
+	r_en -> b_rptr_next	 [weight=1.0];
+	b_rptr_next -> g_rptr_next	 [weight=1.0];
+	b_rptr_next -> b_rptr	 [weight=1.0];
+	b_rptr -> b_rptr_next	 [weight=1.0];
+	empty -> b_rptr_next	 [weight=1.0];
+}

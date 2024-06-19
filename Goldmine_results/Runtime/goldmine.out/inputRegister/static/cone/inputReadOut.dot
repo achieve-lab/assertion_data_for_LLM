@@ -1,0 +1,13 @@
+strict digraph "" {
+	inputReadOut	 [complexity=0,
+		importance=0.499999686387,
+		rank=0.0];
+	inputs	 [complexity=3,
+		importance=0.749999843194,
+		rank=0.249999947731];
+	inputs -> inputReadOut;
+	inputReadAddr	 [complexity=3,
+		importance=0.749999843194,
+		rank=0.249999947731];
+	inputReadAddr -> inputReadOut;
+}

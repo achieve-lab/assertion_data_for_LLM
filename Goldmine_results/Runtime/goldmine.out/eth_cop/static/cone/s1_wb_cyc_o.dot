@@ -1,0 +1,115 @@
+strict digraph "" {
+	"[1]wb_rst_i"	 [complexity=1,
+		importance=0.1196792034,
+		rank=0.1196792034];
+	s1_wb_cyc_o	 [complexity=0,
+		importance=0.0213308856632,
+		rank=0.0];
+	"[1]wb_rst_i" -> s1_wb_cyc_o;
+	"[1]m2_wb_cyc_i"	 [complexity=10,
+		importance=0.1167125401,
+		rank=0.01167125401];
+	"[1]m2_req"	 [complexity=5,
+		importance=0.103687765016,
+		rank=0.0207375530032];
+	"[1]m2_wb_cyc_i" -> "[1]m2_req";
+	"[1]m2_wb_err_o"	 [complexity=10,
+		importance=0.174946291695,
+		rank=0.0174946291695];
+	"[1]m2_wb_cyc_i" -> "[1]m2_wb_err_o";
+	"[1]m2_req" -> s1_wb_cyc_o;
+	"[1]m_wb_access_finished"	 [complexity=5,
+		importance=0.145783748566,
+		rank=0.0291567497131];
+	"[1]m_wb_access_finished" -> s1_wb_cyc_o;
+	"[1]m1_wb_adr_i"	 [complexity=16,
+		importance=0.134621659121,
+		rank=0.00841385369504];
+	"[1]m1_addressed_s2"	 [complexity=15,
+		importance=0.542747994107,
+		rank=0.0361831996071];
+	"[1]m1_wb_adr_i" -> "[1]m1_addressed_s2";
+	"[1]m1_addressed_s1"	 [complexity=15,
+		importance=0.717694285802,
+		rank=0.0478462857201];
+	"[1]m1_wb_adr_i" -> "[1]m1_addressed_s1";
+	"[1]m2_in_progress"	 [complexity=11,
+		importance=0.721374047087,
+		rank=0.0655794588261];
+	"[1]m2_in_progress" -> "[1]m2_wb_err_o";
+	"[1]m2_in_progress" -> s1_wb_cyc_o;
+	"[1]m2_wb_ack_o"	 [complexity=10,
+		importance=0.164055735036,
+		rank=0.0164055735036];
+	"[1]m2_in_progress" -> "[1]m2_wb_ack_o";
+	"[1]m1_req"	 [complexity=5,
+		importance=0.103687765016,
+		rank=0.0207375530032];
+	"[1]m1_req" -> s1_wb_cyc_o;
+	"[1]m1_in_progress"	 [complexity=11,
+		importance=0.721374047087,
+		rank=0.0655794588261];
+	"[1]m1_wb_err_o"	 [complexity=10,
+		importance=0.174946291695,
+		rank=0.0174946291695];
+	"[1]m1_in_progress" -> "[1]m1_wb_err_o";
+	"[1]m1_wb_ack_o"	 [complexity=10,
+		importance=0.164055735036,
+		rank=0.0164055735036];
+	"[1]m1_in_progress" -> "[1]m1_wb_ack_o";
+	"[1]m1_in_progress" -> s1_wb_cyc_o;
+	"[1]m2_wb_err_o" -> "[1]m_wb_access_finished";
+	"[1]MEMORY_WIDTH"	 [complexity=16,
+		importance=0.134621659121,
+		rank=0.00841385369504];
+	"[1]m2_addressed_s2"	 [complexity=10,
+		importance=0.121596884037,
+		rank=0.0121596884037];
+	"[1]MEMORY_WIDTH" -> "[1]m2_addressed_s2";
+	"[1]MEMORY_WIDTH" -> "[1]m1_addressed_s2";
+	"[1]m1_wb_stb_i"	 [complexity=14,
+		importance=0.362917358475,
+		rank=0.0259226684625];
+	"[1]m1_wb_stb_i" -> "[1]m1_req";
+	"[1]m1_wb_stb_i" -> "[1]m1_wb_err_o";
+	"[1]m2_wb_adr_i"	 [complexity=16,
+		importance=0.134621659121,
+		rank=0.00841385369504];
+	"[1]m2_wb_adr_i" -> "[1]m2_addressed_s2";
+	"[1]m2_addressed_s1"	 [complexity=10,
+		importance=0.121596884037,
+		rank=0.0121596884037];
+	"[1]m2_wb_adr_i" -> "[1]m2_addressed_s1";
+	"[1]m2_addressed_s2" -> "[1]m2_req";
+	"[1]m2_addressed_s2" -> "[1]m2_wb_err_o";
+	"[1]m2_addressed_s2" -> "[1]m2_wb_ack_o";
+	"[1]m2_addressed_s1" -> "[1]m2_req";
+	"[1]m2_addressed_s1" -> "[1]m2_wb_err_o";
+	"[1]m2_addressed_s1" -> s1_wb_cyc_o;
+	"[1]m2_addressed_s1" -> "[1]m2_wb_ack_o";
+	"[1]m1_wb_err_o" -> "[1]m_wb_access_finished";
+	"[1]m1_wb_ack_o" -> "[1]m_wb_access_finished";
+	"[1]m1_wb_cyc_i"	 [complexity=14,
+		importance=0.362917358475,
+		rank=0.0259226684625];
+	"[1]m1_wb_cyc_i" -> "[1]m1_req";
+	"[1]m1_wb_cyc_i" -> "[1]m1_wb_err_o";
+	"[1]ETH_WIDTH"	 [complexity=16,
+		importance=0.134621659121,
+		rank=0.00841385369504];
+	"[1]ETH_WIDTH" -> "[1]m2_addressed_s1";
+	"[1]ETH_WIDTH" -> "[1]m1_addressed_s1";
+	"[1]m1_addressed_s2" -> "[1]m1_req";
+	"[1]m1_addressed_s2" -> "[1]m1_wb_err_o";
+	"[1]m1_addressed_s2" -> "[1]m1_wb_ack_o";
+	"[1]m1_addressed_s1" -> "[1]m1_req";
+	"[1]m1_addressed_s1" -> "[1]m1_wb_err_o";
+	"[1]m1_addressed_s1" -> "[1]m1_wb_ack_o";
+	"[1]m1_addressed_s1" -> s1_wb_cyc_o;
+	"[1]m2_wb_ack_o" -> "[1]m_wb_access_finished";
+	"[1]m2_wb_stb_i"	 [complexity=10,
+		importance=0.1167125401,
+		rank=0.01167125401];
+	"[1]m2_wb_stb_i" -> "[1]m2_req";
+	"[1]m2_wb_stb_i" -> "[1]m2_wb_err_o";
+}

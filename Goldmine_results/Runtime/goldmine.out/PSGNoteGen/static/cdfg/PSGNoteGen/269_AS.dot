@@ -1,0 +1,12 @@
+strict digraph "" {
+	node [label="\N"];
+	"269:AS"	 [ast="<pyverilog.vparser.ast.Assign object at 0x7f5d489c5110>",
+		def_var="['msb']",
+		fillcolor=deepskyblue,
+		label="269:AS
+msb = (ringmod[sel])? acc[23] ^ pxacc23 : acc[23];",
+		statements="[]",
+		style=filled,
+		typ=Assign,
+		use_var="['ringmod', 'sel', 'acc', 'pxacc23', 'acc']"];
+}

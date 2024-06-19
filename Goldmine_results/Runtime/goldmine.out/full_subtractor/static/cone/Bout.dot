@@ -1,0 +1,17 @@
+strict digraph "" {
+	a	 [complexity=6,
+		importance=0.423076963957,
+		rank=0.0705128273262];
+	Bout	 [complexity=0,
+		importance=0.269230891871,
+		rank=0.0];
+	a -> Bout;
+	Bin	 [complexity=6,
+		importance=0.423076963957,
+		rank=0.0705128273262];
+	Bin -> Bout;
+	b	 [complexity=6,
+		importance=0.423076963957,
+		rank=0.0705128273262];
+	b -> Bout;
+}

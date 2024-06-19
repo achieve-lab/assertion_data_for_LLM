@@ -1,0 +1,33 @@
+Assertion report generated on: 10-Apr-2024 03:53:32 PM
+
+Assertion summary report for design: Reg_int
+############################################
+
+      Target        | Total | Passed | Failed | Vacuous | Hit | Miss
+------------------- | ----- | ------ | ------ | ------- | --- | ----
+   CPU_rd_apply     |  283  |   0    |   0    |   283   | 0.0 | 1.0 
+    CRC_chk_en      |  233  |   0    |   0    |   233   | 0.0 | 1.0 
+    FullDuplex      |  246  |   0    |   0    |   246   | 0.0 | 1.0 
+   Line_loop_en     |  179  |   0    |   0    |   179   | 0.0 | 1.0 
+ MAC_rx_add_chk_en  |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+MAC_rx_add_prom_wr  |  285  |   0    |   0    |   285   | 0.0 | 1.0 
+   MAC_tx_add_en    |  288  |   0    |   0    |   288   | 0.0 | 1.0 
+MAC_tx_add_prom_wr  |  104  |   0    |   0    |   104   | 0.0 | 1.0 
+   RX_APPEND_CRC    |  N/A  |  N/A   |  N/A   |   N/A   | N/A | N/A 
+broadcast_filter_en |  289  |   0    |   0    |   289   | 0.0 | 1.0 
+pause_frame_send_en |  280  |   0    |   0    |   280   | 0.0 | 1.0 
+    tx_pause_en     |  300  |   0    |   0    |   300   | 0.0 | 1.0 
+     xoff_cpu       |  62   |   0    |   0    |   62    | 0.0 | 1.0 
+      xon_cpu       |  283  |   0    |   0    |   283   | 0.0 | 1.0 
+
+
+Resource usage summary report for the desing: Reg_int
+#####################################################
+
+      Phase       | Time (in [H]H:MM:SS:UUUUUU) | Memory (in MB)
+----------------- | --------------------------- | --------------
+V Parse & Ranking |       0:00:02.404902        |     906.78    
+   Simulation     |       0:00:02.030860        |     971.28    
+     D Parse      |       0:00:20.393775        |     989.52    
+     Mining       |       0:42:49.666919        |    1059.66    
+     Overall      |       0:43:57.012482        |    1059.66    

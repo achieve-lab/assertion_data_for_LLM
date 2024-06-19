@@ -1,0 +1,70 @@
+strict digraph "" {
+	"[1]fifo_full"	 [complexity=5,
+		importance=0.116406182728,
+		rank=0.0232812365457];
+	fifo	 [complexity=3,
+		importance=0.0885206862361,
+		rank=0.029506895412];
+	"[1]fifo_full" -> fifo;
+	"[1]fifo_cnt"	 [complexity=7,
+		importance=0.205328605453,
+		rank=0.0293326579219];
+	"[1]fifo_cnt" -> "[1]fifo_full";
+	"[1]fifo_empty"	 [complexity=11,
+		importance=0.271918255834,
+		rank=0.0247198414394];
+	"[1]fifo_cnt" -> "[1]fifo_empty";
+	addr	 [complexity=9,
+		importance=0.227987669099,
+		rank=0.0253319632332];
+	read_address	 [complexity=3,
+		importance=0.104497241105,
+		rank=0.0348324137016];
+	addr -> read_address;
+	extended_mode	 [complexity=4,
+		importance=0.227987669099,
+		rank=0.0569969172747];
+	extended_mode -> read_address;
+	data_out	 [complexity=0,
+		importance=0.0577511855486,
+		rank=0.0];
+	read_address -> data_out;
+	rd_pointer	 [complexity=9,
+		importance=0.244032759341,
+		rank=0.0271147510379];
+	rd_pointer -> read_address;
+	"[1]fifo_empty" -> rd_pointer;
+	fifo -> data_out;
+	"[1]length_info"	 [complexity=13,
+		importance=0.284562650296,
+		rank=0.0218894346382];
+	"[1]length_info" -> rd_pointer;
+	"[1]rd_pointer"	 [complexity=13,
+		importance=0.279071036473,
+		rank=0.0214670028056];
+	"[1]rd_pointer" -> rd_pointer;
+	"[1]rd_info_pointer"	 [complexity=16,
+		importance=0.310417573101,
+		rank=0.0194010983188];
+	"[1]rd_info_pointer" -> "[1]length_info";
+	"[1]wr"	 [complexity=5,
+		importance=0.107513873125,
+		rank=0.021502774625];
+	"[1]wr" -> fifo;
+	"[1]release_buffer"	 [complexity=11,
+		importance=0.26302594623,
+		rank=0.0239114496573];
+	"[1]release_buffer" -> rd_pointer;
+	"[1]length_fifo"	 [complexity=16,
+		importance=0.321171872989,
+		rank=0.0200732420618];
+	"[1]length_fifo" -> "[1]length_info";
+	"[1]rst"	 [complexity=10,
+		importance=0.507058705572,
+		rank=0.0507058705572];
+	"[1]rst" -> rd_pointer;
+	"[1]data_in"	 [complexity=7,
+		importance=0.107513873125,
+		rank=0.0153591247322];
+	"[1]data_in" -> fifo;
+}

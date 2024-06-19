@@ -1,0 +1,13 @@
+strict digraph "" {
+	a	 [complexity=3,
+		importance=0.5,
+		rank=0.166666666667];
+	Cout	 [complexity=0,
+		importance=0.300000190735,
+		rank=0.0];
+	a -> Cout;
+	b	 [complexity=3,
+		importance=0.5,
+		rank=0.166666666667];
+	b -> Cout;
+}

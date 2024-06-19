@@ -1,0 +1,1134 @@
+strict digraph "" {
+	"ACCEPTANCE_MASK_REG2.data_out"	 [complexity=2,
+		importance=0.0743579494597,
+		rank=0.0371789747298];
+	acceptance_mask_2	 [complexity=2,
+		importance=0.0699449049443,
+		rank=0.0349724524722];
+	"ACCEPTANCE_MASK_REG2.data_out" -> acceptance_mask_2;
+	"[1]MODE_REG_BASIC.rst"	 [complexity=4,
+		importance=0.152572129753,
+		rank=0.0381430324383];
+	"MODE_REG_BASIC.data_out"	 [complexity=3,
+		importance=0.0753064756558,
+		rank=0.0251021585519];
+	"[1]MODE_REG_BASIC.rst" -> "MODE_REG_BASIC.data_out";
+	"[1]BUS_TIMING_1_REG.we"	 [complexity=6,
+		importance=0.143110195209,
+		rank=0.0238516992014];
+	"BUS_TIMING_1_REG.data_out"	 [complexity=5,
+		importance=0.140147081205,
+		rank=0.028029416241];
+	"[1]BUS_TIMING_1_REG.we" -> "BUS_TIMING_1_REG.data_out";
+	"[1]ACCEPTANCE_MASK_REG3.we"	 [complexity=3,
+		importance=0.0773300332288,
+		rank=0.0257766777429];
+	"ACCEPTANCE_MASK_REG3.data_out"	 [complexity=2,
+		importance=0.0743579494597,
+		rank=0.0371789747298];
+	"[1]ACCEPTANCE_MASK_REG3.we" -> "ACCEPTANCE_MASK_REG3.data_out";
+	"[1]TX_DATA_REG5.data_in"	 [complexity=5,
+		importance=0.0763674857173,
+		rank=0.0152734971435];
+	"TX_DATA_REG5.data_out"	 [complexity=3,
+		importance=0.0743973057916,
+		rank=0.0247991019305];
+	"[1]TX_DATA_REG5.data_in" -> "TX_DATA_REG5.data_out";
+	"TX_DATA_REG1.data_out"	 [complexity=3,
+		importance=0.0743973057916,
+		rank=0.0247991019305];
+	tx_data_1	 [complexity=3,
+		importance=0.0699580384431,
+		rank=0.0233193461477];
+	"TX_DATA_REG1.data_out" -> tx_data_1;
+	"[1]IRQ_EN_REG.data_in"	 [complexity=4,
+		importance=0.076318866071,
+		rank=0.0190797165178];
+	"IRQ_EN_REG.data_out"	 [complexity=2,
+		importance=0.0743486861453,
+		rank=0.0371743430727];
+	"[1]IRQ_EN_REG.data_in" -> "IRQ_EN_REG.data_out";
+	"[1]TX_DATA_REG3.data_in"	 [complexity=5,
+		importance=0.0763674857173,
+		rank=0.0152734971435];
+	"TX_DATA_REG3.data_out"	 [complexity=3,
+		importance=0.0743973057916,
+		rank=0.0247991019305];
+	"[1]TX_DATA_REG3.data_in" -> "TX_DATA_REG3.data_out";
+	"[1]read_irq_reg"	 [complexity=14,
+		importance=0.150883459417,
+		rank=0.0107773899584];
+	transmit_irq	 [complexity=12,
+		importance=0.148084563124,
+		rank=0.0123403802604];
+	"[1]read_irq_reg" -> transmit_irq;
+	bus_error_irq	 [complexity=12,
+		importance=0.14674990236,
+		rank=0.01222915853];
+	"[1]read_irq_reg" -> bus_error_irq;
+	arbitration_lost_irq	 [complexity=12,
+		importance=0.14674990236,
+		rank=0.01222915853];
+	"[1]read_irq_reg" -> arbitration_lost_irq;
+	error_irq	 [complexity=12,
+		importance=0.149935989983,
+		rank=0.0124946658319];
+	"[1]read_irq_reg" -> error_irq;
+	data_overrun_irq	 [complexity=12,
+		importance=0.147727372771,
+		rank=0.0123106143976];
+	"[1]read_irq_reg" -> data_overrun_irq;
+	error_passive_irq	 [complexity=12,
+		importance=0.148594779692,
+		rank=0.0123828983076];
+	"[1]read_irq_reg" -> error_passive_irq;
+	"[1]overrun_irq_en_basic"	 [complexity=19,
+		importance=0.302099510967,
+		rank=0.0158999742614];
+	"[1]data_overrun_irq_en"	 [complexity=15,
+		importance=0.299710370553,
+		rank=0.0199806913702];
+	"[1]overrun_irq_en_basic" -> "[1]data_overrun_irq_en";
+	"[1]CLOCK_DIVIDER_REG_LOW.rst"	 [complexity=5,
+		importance=6.2222418592,
+		rank=1.24444837184];
+	"CLOCK_DIVIDER_REG_LOW.data_out"	 [complexity=4,
+		importance=3.11014134038,
+		rank=0.777535335095];
+	"[1]CLOCK_DIVIDER_REG_LOW.rst" -> "CLOCK_DIVIDER_REG_LOW.data_out";
+	"[1]MODE_REG0.rst_sync"	 [complexity=45,
+		importance=1.87420617808,
+		rank=0.0416490261795];
+	"MODE_REG0.data_out"	 [complexity=44,
+		importance=0.93564637024,
+		rank=0.0212646902327];
+	"[1]MODE_REG0.rst_sync" -> "MODE_REG0.data_out";
+	"[1]we"	 [complexity=49,
+		importance=0.941884591692,
+		rank=0.0192221345243];
+	"[1]we_tx_data_0"	 [complexity=4,
+		importance=0.0795860995608,
+		rank=0.0198965248902];
+	"[1]we" -> "[1]we_tx_data_0";
+	"[1]we_tx_data_7"	 [complexity=4,
+		importance=0.0795860995608,
+		rank=0.0198965248902];
+	"[1]we" -> "[1]we_tx_data_7";
+	"[1]we_bus_timing_0"	 [complexity=6,
+		importance=0.145152051595,
+		rank=0.0241920085991];
+	"[1]we" -> "[1]we_bus_timing_0";
+	"[1]we_acceptance_code_1"	 [complexity=3,
+		importance=0.0793898724962,
+		rank=0.0264632908321];
+	"[1]we" -> "[1]we_acceptance_code_1";
+	"[1]we_acceptance_code_0"	 [complexity=6,
+		importance=0.145185747145,
+		rank=0.0241976245242];
+	"[1]we" -> "[1]we_acceptance_code_0";
+	"[1]we_acceptance_code_3"	 [complexity=3,
+		importance=0.0793898724962,
+		rank=0.0264632908321];
+	"[1]we" -> "[1]we_acceptance_code_3";
+	"[1]we_acceptance_code_2"	 [complexity=3,
+		importance=0.0793898724962,
+		rank=0.0264632908321];
+	"[1]we" -> "[1]we_acceptance_code_2";
+	"[1]we_bus_timing_1"	 [complexity=6,
+		importance=0.145152051595,
+		rank=0.0241920085991];
+	"[1]we" -> "[1]we_bus_timing_1";
+	"[1]read"	 [complexity=17,
+		importance=0.152888541667,
+		rank=0.00899344362746];
+	"[1]we" -> "[1]read";
+	"[1]we_tx_data_9"	 [complexity=4,
+		importance=0.0795860995608,
+		rank=0.0198965248902];
+	"[1]we" -> "[1]we_tx_data_9";
+	"[1]we_tx_data_8"	 [complexity=4,
+		importance=0.0795860995608,
+		rank=0.0198965248902];
+	"[1]we" -> "[1]we_tx_data_8";
+	"[1]we_tx_data_5"	 [complexity=4,
+		importance=0.0795860995608,
+		rank=0.0198965248902];
+	"[1]we" -> "[1]we_tx_data_5";
+	"[1]we_tx_data_4"	 [complexity=4,
+		importance=0.0795860995608,
+		rank=0.0198965248902];
+	"[1]we" -> "[1]we_tx_data_4";
+	"[1]we_tx_data_6"	 [complexity=4,
+		importance=0.0795860995608,
+		rank=0.0198965248902];
+	"[1]we" -> "[1]we_tx_data_6";
+	"[1]we_tx_data_1"	 [complexity=4,
+		importance=0.0795860995608,
+		rank=0.0198965248902];
+	"[1]we" -> "[1]we_tx_data_1";
+	"[1]we_tx_data_3"	 [complexity=4,
+		importance=0.0795860995608,
+		rank=0.0198965248902];
+	"[1]we" -> "[1]we_tx_data_3";
+	"[1]we_tx_data_2"	 [complexity=4,
+		importance=0.0795860995608,
+		rank=0.0198965248902];
+	"[1]we" -> "[1]we_tx_data_2";
+	"[1]we_acceptance_mask_3"	 [complexity=3,
+		importance=0.0793898724962,
+		rank=0.0264632908321];
+	"[1]we" -> "[1]we_acceptance_mask_3";
+	"[1]we_clock_divider_low"	 [complexity=8,
+		importance=3.11724677527,
+		rank=0.389655846909];
+	"[1]we" -> "[1]we_clock_divider_low";
+	"[1]we_error_warning_limit"	 [complexity=3,
+		importance=0.0808588150506,
+		rank=0.0269529383502];
+	"[1]we" -> "[1]we_error_warning_limit";
+	"[1]we_acceptance_mask_2"	 [complexity=3,
+		importance=0.0793898724962,
+		rank=0.0264632908321];
+	"[1]we" -> "[1]we_acceptance_mask_2";
+	"[1]we_acceptance_mask_0"	 [complexity=6,
+		importance=0.145185747145,
+		rank=0.0241976245242];
+	"[1]we" -> "[1]we_acceptance_mask_0";
+	"[1]we_acceptance_mask_1"	 [complexity=3,
+		importance=0.0793898724962,
+		rank=0.0264632908321];
+	"[1]we" -> "[1]we_acceptance_mask_1";
+	"[1]we_interrupt_enable"	 [complexity=3,
+		importance=0.0793436783706,
+		rank=0.0264478927902];
+	"[1]we" -> "[1]we_interrupt_enable";
+	"[1]we_mode"	 [complexity=45,
+		importance=0.939942154639,
+		rank=0.0208876034364];
+	"[1]we" -> "[1]we_mode";
+	arbitration_lost_capture	 [complexity=2,
+		importance=0.0677383117022,
+		rank=0.0338691558511];
+	data_out	 [complexity=0,
+		importance=0.0657958746492,
+		rank=0.0];
+	arbitration_lost_capture -> data_out;
+	reset_mode	 [complexity=42,
+		importance=0.923950891108,
+		rank=0.0219988307407];
+	reset_mode -> data_out;
+	"BUS_TIMING_0_REG.data_out"	 [complexity=5,
+		importance=0.140147081205,
+		rank=0.028029416241];
+	bus_timing_0	 [complexity=5,
+		importance=0.135738522156,
+		rank=0.0271477044312];
+	"BUS_TIMING_0_REG.data_out" -> bus_timing_0;
+	"[1]MODE_REG_BASIC.data_out"	 [complexity=23,
+		importance=0.316027346399,
+		rank=0.0137403194087];
+	"[1]mode_basic"	 [complexity=23,
+		importance=0.310981635858,
+		rank=0.0135209406895];
+	"[1]MODE_REG_BASIC.data_out" -> "[1]mode_basic";
+	"[1]ACCEPTANCE_CODE_REG2.we"	 [complexity=3,
+		importance=0.0773300332288,
+		rank=0.0257766777429];
+	"ACCEPTANCE_CODE_REG2.data_out"	 [complexity=2,
+		importance=0.0743579494597,
+		rank=0.0371789747298];
+	"[1]ACCEPTANCE_CODE_REG2.we" -> "ACCEPTANCE_CODE_REG2.data_out";
+	"[1]error_status"	 [complexity=17,
+		importance=0.30181441702,
+		rank=0.0177537892364];
+	"[1]error_status" -> error_irq;
+	"[1]tx_request"	 [complexity=7,
+		importance=0.293256749181,
+		rank=0.0418938213115];
+	transmission_complete	 [complexity=6,
+		importance=0.14687412247,
+		rank=0.0244790204117];
+	"[1]tx_request" -> transmission_complete;
+	"[1]abort_tx"	 [complexity=9,
+		importance=0.296443247004,
+		rank=0.032938138556];
+	"[1]tx_request" -> "[1]abort_tx";
+	transmit_buffer_status	 [complexity=6,
+		importance=0.145370741284,
+		rank=0.0242284568807];
+	"[1]tx_request" -> transmit_buffer_status;
+	"[1]TX_DATA_REG6.we"	 [complexity=4,
+		importance=0.0774216751018,
+		rank=0.0193554187754];
+	"TX_DATA_REG6.data_out"	 [complexity=3,
+		importance=0.0743973057916,
+		rank=0.0247991019305];
+	"[1]TX_DATA_REG6.we" -> "TX_DATA_REG6.data_out";
+	"[1]transmit_buffer_status_q"	 [complexity=15,
+		importance=0.150131585369,
+		rank=0.0100087723579];
+	"[1]transmit_buffer_status_q" -> transmit_irq;
+	acceptance_code_3	 [complexity=2,
+		importance=0.0699449049443,
+		rank=0.0349724524722];
+	acceptance_code_3 -> data_out;
+	acceptance_code_2	 [complexity=2,
+		importance=0.0699449049443,
+		rank=0.0349724524722];
+	acceptance_code_2 -> data_out;
+	acceptance_code_1	 [complexity=2,
+		importance=0.0699449049443,
+		rank=0.0349724524722];
+	acceptance_code_1 -> data_out;
+	acceptance_code_0	 [complexity=5,
+		importance=0.135740779594,
+		rank=0.0271481559187];
+	acceptance_code_0 -> data_out;
+	"[1]ACCEPTANCE_CODE_REG1.we"	 [complexity=3,
+		importance=0.0773300332288,
+		rank=0.0257766777429];
+	"ACCEPTANCE_CODE_REG1.data_out"	 [complexity=2,
+		importance=0.0743579494597,
+		rank=0.0371789747298];
+	"[1]ACCEPTANCE_CODE_REG1.we" -> "ACCEPTANCE_CODE_REG1.data_out";
+	"[1]MODE_REG_BASIC.we"	 [complexity=4,
+		importance=0.0775850402985,
+		rank=0.0193962600746];
+	"[1]MODE_REG_BASIC.we" -> "MODE_REG_BASIC.data_out";
+	"[1]error_passive_irq_en"	 [complexity=18,
+		importance=0.29939123523,
+		rank=0.0166328464017];
+	"[1]error_passive_irq_en" -> error_passive_irq;
+	irq_reg	 [complexity=4,
+		importance=0.142533870463,
+		rank=0.0356334676158];
+	transmit_irq -> irq_reg;
+	acceptance_mask_3	 [complexity=2,
+		importance=0.0699449049443,
+		rank=0.0349724524722];
+	"ACCEPTANCE_MASK_REG3.data_out" -> acceptance_mask_3;
+	"[1]info_empty"	 [complexity=15,
+		importance=0.300459031128,
+		rank=0.0200306020752];
+	receive_buffer_status	 [complexity=6,
+		importance=0.144891832577,
+		rank=0.0241486387628];
+	"[1]info_empty" -> receive_buffer_status;
+	receive_irq	 [complexity=12,
+		importance=0.149258297037,
+		rank=0.0124381914198];
+	"[1]info_empty" -> receive_irq;
+	"[1]mode"	 [complexity=13,
+		importance=0.153154083923,
+		rank=0.0117810833787];
+	"[1]reset_mode"	 [complexity=11,
+		importance=0.147960697613,
+		rank=0.0134509725103];
+	"[1]mode" -> "[1]reset_mode";
+	"[1]TX_DATA_REG2.data_in"	 [complexity=5,
+		importance=0.0763674857173,
+		rank=0.0152734971435];
+	"TX_DATA_REG2.data_out"	 [complexity=3,
+		importance=0.0743973057916,
+		rank=0.0247991019305];
+	"[1]TX_DATA_REG2.data_in" -> "TX_DATA_REG2.data_out";
+	"[1]TX_DATA_REG0.data_in"	 [complexity=5,
+		importance=0.0763674857173,
+		rank=0.0152734971435];
+	"TX_DATA_REG0.data_out"	 [complexity=3,
+		importance=0.0743973057916,
+		rank=0.0247991019305];
+	"[1]TX_DATA_REG0.data_in" -> "TX_DATA_REG0.data_out";
+	"[1]TX_DATA_REG0.we"	 [complexity=4,
+		importance=0.0774216751018,
+		rank=0.0193554187754];
+	"[1]we_tx_data_0" -> "[1]TX_DATA_REG0.we";
+	acceptance_mask_0	 [complexity=5,
+		importance=0.135740779594,
+		rank=0.0271481559187];
+	acceptance_mask_0 -> data_out;
+	acceptance_mask_1	 [complexity=2,
+		importance=0.0699449049443,
+		rank=0.0349724524722];
+	acceptance_mask_1 -> data_out;
+	acceptance_mask_2 -> data_out;
+	acceptance_mask_3 -> data_out;
+	"[1]data_overrun_irq_en" -> data_overrun_irq;
+	"[1]ACCEPTANCE_MASK_REG2.we"	 [complexity=3,
+		importance=0.0773300332288,
+		rank=0.0257766777429];
+	"[1]ACCEPTANCE_MASK_REG2.we" -> "ACCEPTANCE_MASK_REG2.data_out";
+	"TX_DATA_REG7.data_out"	 [complexity=3,
+		importance=0.0743973057916,
+		rank=0.0247991019305];
+	tx_data_7	 [complexity=3,
+		importance=0.0699580384431,
+		rank=0.0233193461477];
+	"TX_DATA_REG7.data_out" -> tx_data_7;
+	"[1]IRQ_EN_REG.data_out"	 [complexity=20,
+		importance=0.307944046726,
+		rank=0.0153972023363];
+	"[1]irq_en_ext"	 [complexity=20,
+		importance=0.303537149621,
+		rank=0.0151768574811];
+	"[1]IRQ_EN_REG.data_out" -> "[1]irq_en_ext";
+	tx_data_5	 [complexity=3,
+		importance=0.0699580384431,
+		rank=0.0233193461477];
+	"TX_DATA_REG5.data_out" -> tx_data_5;
+	irq_reg -> data_out;
+	bus_timing_1	 [complexity=5,
+		importance=0.135738522156,
+		rank=0.0271477044312];
+	"BUS_TIMING_1_REG.data_out" -> bus_timing_1;
+	"[1]CLOCK_DIVIDER_REG_3.rst"	 [complexity=5,
+		importance=6.22235553779,
+		rank=1.24447110756];
+	"CLOCK_DIVIDER_REG_3.data_out"	 [complexity=4,
+		importance=3.11019817967,
+		rank=0.777549544918];
+	"[1]CLOCK_DIVIDER_REG_3.rst" -> "CLOCK_DIVIDER_REG_3.data_out";
+	bus_timing_0 -> data_out;
+	bus_timing_1 -> data_out;
+	"ACCEPTANCE_CODE_REG1.data_out" -> acceptance_code_1;
+	mode	 [complexity=44,
+		importance=0.929144277417,
+		rank=0.0211169153958];
+	mode -> reset_mode;
+	mode -> data_out;
+	"[1]addr"	 [complexity=49,
+		importance=0.941884591692,
+		rank=0.0192221345243];
+	"[1]addr" -> "[1]read_irq_reg";
+	"[1]addr" -> "[1]we_tx_data_0";
+	"[1]addr" -> "[1]we_tx_data_7";
+	"[1]addr" -> "[1]we_bus_timing_0";
+	"[1]addr" -> "[1]we_acceptance_code_1";
+	"[1]addr" -> "[1]we_acceptance_code_0";
+	"[1]addr" -> "[1]we_acceptance_code_3";
+	"[1]addr" -> "[1]we_acceptance_code_2";
+	"[1]addr" -> "[1]we_bus_timing_1";
+	"[1]addr" -> "[1]we_tx_data_9";
+	"[1]addr" -> "[1]we_tx_data_8";
+	"[1]addr" -> "[1]we_tx_data_5";
+	"[1]addr" -> "[1]we_tx_data_4";
+	"[1]addr" -> "[1]we_tx_data_6";
+	"[1]addr" -> "[1]we_tx_data_1";
+	"[1]addr" -> "[1]we_tx_data_3";
+	"[1]addr" -> "[1]we_tx_data_2";
+	"[1]addr" -> "[1]we_acceptance_mask_3";
+	"[1]addr" -> "[1]we_clock_divider_low";
+	"[1]addr" -> "[1]we_error_warning_limit";
+	"[1]addr" -> "[1]we_acceptance_mask_2";
+	"[1]addr" -> "[1]we_acceptance_mask_0";
+	"[1]addr" -> "[1]we_acceptance_mask_1";
+	"[1]addr" -> "[1]we_interrupt_enable";
+	"[1]addr" -> "[1]we_mode";
+	"[1]TX_DATA_REG7.we"	 [complexity=4,
+		importance=0.0774216751018,
+		rank=0.0193554187754];
+	"[1]we_tx_data_7" -> "[1]TX_DATA_REG7.we";
+	"[1]TX_DATA_REG0.we" -> "TX_DATA_REG0.data_out";
+	"[1]extended_mode"	 [complexity=13,
+		importance=0.0824985260634,
+		rank=0.00634604046641];
+	"[1]extended_mode" -> "[1]we_tx_data_0";
+	"[1]extended_mode" -> "[1]data_overrun_irq_en";
+	"[1]extended_mode" -> "[1]we_tx_data_7";
+	"[1]extended_mode" -> "[1]we_acceptance_code_1";
+	"[1]extended_mode" -> "[1]we_acceptance_code_0";
+	"[1]extended_mode" -> "[1]we_acceptance_code_3";
+	"[1]extended_mode" -> "[1]we_acceptance_code_2";
+	"[1]extended_mode" -> "[1]we_tx_data_9";
+	"[1]extended_mode" -> "[1]we_tx_data_8";
+	"[1]extended_mode" -> "[1]we_tx_data_5";
+	"[1]extended_mode" -> "[1]we_tx_data_4";
+	"[1]extended_mode" -> "[1]we_tx_data_6";
+	"[1]extended_mode" -> "[1]we_tx_data_1";
+	"[1]extended_mode" -> "[1]we_tx_data_3";
+	"[1]extended_mode" -> "[1]we_tx_data_2";
+	"[1]extended_mode" -> "[1]we_acceptance_mask_3";
+	"[1]extended_mode" -> "[1]we_error_warning_limit";
+	"[1]receive_irq_en"	 [complexity=15,
+		importance=0.302772219086,
+		rank=0.0201848146057];
+	"[1]extended_mode" -> "[1]receive_irq_en";
+	"[1]extended_mode" -> "[1]we_acceptance_mask_2";
+	"[1]extended_mode" -> "[1]we_acceptance_mask_0";
+	"[1]extended_mode" -> "[1]we_acceptance_mask_1";
+	"[1]extended_mode" -> "[1]we_interrupt_enable";
+	"[1]error_warning_irq_en"	 [complexity=17,
+		importance=0.304127604978,
+		rank=0.0178898591164];
+	"[1]extended_mode" -> "[1]error_warning_irq_en";
+	"[1]transmit_irq_en"	 [complexity=15,
+		importance=0.152340188136,
+		rank=0.0101560125424];
+	"[1]extended_mode" -> "[1]transmit_irq_en";
+	"[1]transmit_buffer_status"	 [complexity=13,
+		importance=0.0829338688595,
+		rank=0.0063795283738];
+	"[1]transmit_buffer_status" -> transmit_irq;
+	"[1]transmit_buffer_status" -> "[1]we_tx_data_0";
+	"[1]transmit_buffer_status" -> "[1]we_tx_data_7";
+	"[1]transmit_buffer_status" -> "[1]we_tx_data_9";
+	"[1]transmit_buffer_status" -> "[1]we_tx_data_8";
+	"[1]transmit_buffer_status" -> "[1]we_tx_data_5";
+	"[1]transmit_buffer_status" -> "[1]we_tx_data_4";
+	"[1]transmit_buffer_status" -> "[1]we_tx_data_6";
+	"[1]transmit_buffer_status" -> "[1]we_tx_data_1";
+	"[1]transmit_buffer_status" -> "[1]we_tx_data_3";
+	"[1]transmit_buffer_status" -> "[1]we_tx_data_2";
+	tx_data_2	 [complexity=3,
+		importance=0.0699580384431,
+		rank=0.0233193461477];
+	"TX_DATA_REG2.data_out" -> tx_data_2;
+	"TX_DATA_REG4.data_out"	 [complexity=3,
+		importance=0.0743973057916,
+		rank=0.0247991019305];
+	tx_data_4	 [complexity=3,
+		importance=0.0699580384431,
+		rank=0.0233193461477];
+	"TX_DATA_REG4.data_out" -> tx_data_4;
+	"[1]tx_successful"	 [complexity=9,
+		importance=0.295690681993,
+		rank=0.0328545202215];
+	"[1]tx_successful" -> transmission_complete;
+	"[1]rst"	 [complexity=45,
+		importance=2.81084072621,
+		rank=0.0624631272492];
+	"[1]rst" -> "[1]MODE_REG_BASIC.rst";
+	"[1]rst" -> "[1]CLOCK_DIVIDER_REG_LOW.rst";
+	"[1]rst" -> transmit_irq;
+	"[1]rst" -> "[1]CLOCK_DIVIDER_REG_3.rst";
+	"[1]rst" -> bus_error_irq;
+	"[1]ERROR_WARNING_REG.rst"	 [complexity=3,
+		importance=0.15361296247,
+		rank=0.0512043208233];
+	"[1]rst" -> "[1]ERROR_WARNING_REG.rst";
+	"[1]rst" -> arbitration_lost_irq;
+	"[1]rst" -> error_irq;
+	"[1]rst" -> transmission_complete;
+	"[1]MODE_REG0.rst"	 [complexity=45,
+		importance=2.80889828916,
+		rank=0.0624199619813];
+	"[1]rst" -> "[1]MODE_REG0.rst";
+	overrun_status	 [complexity=6,
+		importance=0.14622085666,
+		rank=0.0243701427767];
+	"[1]rst" -> overrun_status;
+	"[1]rst" -> receive_buffer_status;
+	"[1]CLOCK_DIVIDER_REG_7.rst"	 [complexity=5,
+		importance=6.22235553779,
+		rank=1.24447110756];
+	"[1]rst" -> "[1]CLOCK_DIVIDER_REG_7.rst";
+	"[1]rst" -> data_overrun_irq;
+	"[1]rst" -> transmit_buffer_status;
+	"[1]rst" -> error_passive_irq;
+	"[1]MODE_REG_EXT.rst"	 [complexity=4,
+		importance=0.152609012938,
+		rank=0.0381522532344];
+	"[1]rst" -> "[1]MODE_REG_EXT.rst";
+	"[1]rst" -> receive_irq;
+	"[1]BUS_TIMING_0_REG.we"	 [complexity=6,
+		importance=0.143110195209,
+		rank=0.0238516992014];
+	"[1]we_bus_timing_0" -> "[1]BUS_TIMING_0_REG.we";
+	"[1]we_acceptance_code_1" -> "[1]ACCEPTANCE_CODE_REG1.we";
+	"[1]ACCEPTANCE_CODE_REG0.we"	 [complexity=6,
+		importance=0.143125907878,
+		rank=0.0238543179797];
+	"[1]we_acceptance_code_0" -> "[1]ACCEPTANCE_CODE_REG0.we";
+	"[1]ACCEPTANCE_CODE_REG3.we"	 [complexity=3,
+		importance=0.0773300332288,
+		rank=0.0257766777429];
+	"[1]we_acceptance_code_3" -> "[1]ACCEPTANCE_CODE_REG3.we";
+	"[1]we_acceptance_code_2" -> "[1]ACCEPTANCE_CODE_REG2.we";
+	"[1]set_reset_mode"	 [complexity=45,
+		importance=1.87614861513,
+		rank=0.0416921914474];
+	"[1]set_reset_mode" -> "[1]MODE_REG0.rst_sync";
+	"MODE_REG0.data_out" -> mode;
+	"[1]MODE_REG_EXT.we"	 [complexity=4,
+		importance=0.0776281185203,
+		rank=0.0194070296301];
+	"MODE_REG_EXT.data_out"	 [complexity=3,
+		importance=0.075324917248,
+		rank=0.0251083057493];
+	"[1]MODE_REG_EXT.we" -> "MODE_REG_EXT.data_out";
+	receive_status	 [complexity=6,
+		importance=0.143965409038,
+		rank=0.0239942348397];
+	status	 [complexity=4,
+		importance=0.142022971985,
+		rank=0.0355057429963];
+	receive_status -> status;
+	rx_err_cnt	 [complexity=2,
+		importance=0.0677383117022,
+		rank=0.0338691558511];
+	rx_err_cnt -> data_out;
+	error_status	 [complexity=6,
+		importance=0.143965409038,
+		rank=0.0239942348397];
+	error_status -> status;
+	bus_error_irq -> irq_reg;
+	"[1]MODE_REG0.data_in"	 [complexity=46,
+		importance=0.937616550165,
+		rank=0.0203829684819];
+	"[1]MODE_REG0.data_in" -> "MODE_REG0.data_out";
+	"[1]clear_data_overrun"	 [complexity=8,
+		importance=0.148736123273,
+		rank=0.0185920154091];
+	"[1]clear_data_overrun" -> overrun_status;
+	"[1]ACCEPTANCE_MASK_REG1.we"	 [complexity=3,
+		importance=0.0773300332288,
+		rank=0.0257766777429];
+	"ACCEPTANCE_MASK_REG1.data_out"	 [complexity=2,
+		importance=0.0743579494597,
+		rank=0.0371789747298];
+	"[1]ACCEPTANCE_MASK_REG1.we" -> "ACCEPTANCE_MASK_REG1.data_out";
+	addr	 [complexity=2,
+		importance=3.09434854557,
+		rank=1.54717427278];
+	addr -> data_out;
+	"[1]command"	 [complexity=16,
+		importance=0.166662617656,
+		rank=0.0104164136035];
+	"[1]command" -> "[1]tx_request";
+	"[1]command" -> "[1]clear_data_overrun";
+	"[1]command" -> "[1]abort_tx";
+	"[1]release_buffer"	 [complexity=14,
+		importance=0.15177356365,
+		rank=0.0108409688321];
+	"[1]command" -> "[1]release_buffer";
+	"[1]we_bus_timing_1" -> "[1]BUS_TIMING_1_REG.we";
+	"[1]mode_basic" -> "[1]overrun_irq_en_basic";
+	"[1]error_irq_en_basic"	 [complexity=21,
+		importance=0.306516745393,
+		rank=0.0145960354949];
+	"[1]mode_basic" -> "[1]error_irq_en_basic";
+	"[1]transmit_irq_en_basic"	 [complexity=19,
+		importance=0.15472932855,
+		rank=0.00814364887106];
+	"[1]mode_basic" -> "[1]transmit_irq_en_basic";
+	"[1]receive_irq_en_basic"	 [complexity=19,
+		importance=0.3051613595,
+		rank=0.0160611241842];
+	"[1]mode_basic" -> "[1]receive_irq_en_basic";
+	"TX_DATA_REG8.data_out"	 [complexity=3,
+		importance=0.0743973057916,
+		rank=0.0247991019305];
+	tx_data_8	 [complexity=3,
+		importance=0.0699580384431,
+		rank=0.0233193461477];
+	"TX_DATA_REG8.data_out" -> tx_data_8;
+	"[1]error_warning_irq_en_ext"	 [complexity=21,
+		importance=0.306329280825,
+		rank=0.0145871086107];
+	"[1]error_warning_irq_en_ext" -> "[1]error_warning_irq_en";
+	"[1]IRQ_EN_REG.we"	 [complexity=3,
+		importance=0.0773084757328,
+		rank=0.0257694919109];
+	"[1]IRQ_EN_REG.we" -> "IRQ_EN_REG.data_out";
+	"ERROR_WARNING_REG.data_out"	 [complexity=2,
+		importance=0.0758268920141,
+		rank=0.037913446007];
+	"[1]ERROR_WARNING_REG.rst" -> "ERROR_WARNING_REG.data_out";
+	"[1]ERROR_WARNING_REG.data_in"	 [complexity=4,
+		importance=0.0777970719398,
+		rank=0.0194492679849];
+	"[1]ERROR_WARNING_REG.data_in" -> "ERROR_WARNING_REG.data_out";
+	"ACCEPTANCE_CODE_REG3.data_out"	 [complexity=2,
+		importance=0.0743579494597,
+		rank=0.0371789747298];
+	"ACCEPTANCE_CODE_REG3.data_out" -> acceptance_code_3;
+	"[1]overrun"	 [complexity=15,
+		importance=0.297397182594,
+		rank=0.0198264788396];
+	"[1]overrun" -> overrun_status;
+	"[1]overrun" -> data_overrun_irq;
+	"[1]ACCEPTANCE_CODE_REG0.data_in"	 [complexity=7,
+		importance=0.142124004035,
+		rank=0.0203034291478];
+	"ACCEPTANCE_CODE_REG0.data_out"	 [complexity=5,
+		importance=0.140153824109,
+		rank=0.0280307648218];
+	"[1]ACCEPTANCE_CODE_REG0.data_in" -> "ACCEPTANCE_CODE_REG0.data_out";
+	"[1]TX_DATA_REG2.we"	 [complexity=4,
+		importance=0.0774216751018,
+		rank=0.0193554187754];
+	"[1]TX_DATA_REG2.we" -> "TX_DATA_REG2.data_out";
+	"[1]TX_DATA_REG9.data_in"	 [complexity=5,
+		importance=0.0763674857173,
+		rank=0.0152734971435];
+	"TX_DATA_REG9.data_out"	 [complexity=3,
+		importance=0.0743973057916,
+		rank=0.0247991019305];
+	"[1]TX_DATA_REG9.data_in" -> "TX_DATA_REG9.data_out";
+	"[1]error_irq_en_basic" -> "[1]error_warning_irq_en";
+	"[1]error_status_q"	 [complexity=17,
+		importance=0.302057167156,
+		rank=0.0177680686563];
+	"[1]error_status_q" -> error_irq;
+	arbitration_lost_irq -> irq_reg;
+	"[1]CLOCK_DIVIDER_REG_3.data_in"	 [complexity=6,
+		importance=3.1121683596,
+		rank=0.5186947266];
+	"[1]CLOCK_DIVIDER_REG_3.data_in" -> "CLOCK_DIVIDER_REG_3.data_out";
+	clock_divider	 [complexity=4,
+		importance=3.10501161226,
+		rank=0.776252903066];
+	"CLOCK_DIVIDER_REG_LOW.data_out" -> clock_divider;
+	error_irq -> irq_reg;
+	"[1]TX_DATA_REG9.we"	 [complexity=4,
+		importance=0.0774216751018,
+		rank=0.0193554187754];
+	"[1]TX_DATA_REG9.we" -> "TX_DATA_REG9.data_out";
+	"[1]COMMAND_REG0.data_out"	 [complexity=16,
+		importance=0.173033838099,
+		rank=0.0108146148812];
+	"[1]COMMAND_REG0.data_out" -> "[1]command";
+	"[1]transmit_irq_en_ext"	 [complexity=19,
+		importance=0.154541863982,
+		rank=0.00813378231486];
+	"[1]transmit_irq_en_ext" -> "[1]transmit_irq_en";
+	"[1]CLOCK_DIVIDER_REG_7.data_in"	 [complexity=6,
+		importance=3.1121683596,
+		rank=0.5186947266];
+	"CLOCK_DIVIDER_REG_7.data_out"	 [complexity=4,
+		importance=3.11019817967,
+		rank=0.777549544918];
+	"[1]CLOCK_DIVIDER_REG_7.data_in" -> "CLOCK_DIVIDER_REG_7.data_out";
+	tx_err_cnt	 [complexity=2,
+		importance=0.0677383117022,
+		rank=0.0338691558511];
+	tx_err_cnt -> data_out;
+	"[1]ACCEPTANCE_CODE_REG3.we" -> "ACCEPTANCE_CODE_REG3.data_out";
+	transmission_complete -> status;
+	"[1]MODE_REG_BASIC.data_in"	 [complexity=5,
+		importance=0.0772766555815,
+		rank=0.0154553311163];
+	"[1]MODE_REG_BASIC.data_in" -> "MODE_REG_BASIC.data_out";
+	"[1]TX_DATA_REG3.we"	 [complexity=4,
+		importance=0.0774216751018,
+		rank=0.0193554187754];
+	"[1]TX_DATA_REG3.we" -> "TX_DATA_REG3.data_out";
+	"[1]MODE_REG0.rst" -> "MODE_REG0.data_out";
+	node_bus_off	 [complexity=6,
+		importance=0.143965409038,
+		rank=0.0239942348397];
+	node_bus_off -> status;
+	"[1]read" -> "[1]read_irq_reg";
+	"[1]ACCEPTANCE_CODE_REG0.we" -> "ACCEPTANCE_CODE_REG0.data_out";
+	"[1]ERROR_WARNING_REG.we"	 [complexity=3,
+		importance=0.0787989757832,
+		rank=0.0262663252611];
+	"[1]ERROR_WARNING_REG.we" -> "ERROR_WARNING_REG.data_out";
+	"[1]abort_tx" -> transmission_complete;
+	overrun_status -> status;
+	"[1]node_error_passive_q"	 [complexity=18,
+		importance=0.596515755929,
+		rank=0.0331397642183];
+	"[1]node_error_passive_q" -> error_passive_irq;
+	"[1]set_arbitration_lost_irq"	 [complexity=14,
+		importance=0.295442241774,
+		rank=0.0211030172696];
+	"[1]set_arbitration_lost_irq" -> arbitration_lost_irq;
+	"[1]transmit_irq_en_basic" -> "[1]transmit_irq_en";
+	"[1]we_tx_data_9" -> "[1]TX_DATA_REG9.we";
+	"[1]TX_DATA_REG8.we"	 [complexity=4,
+		importance=0.0774216751018,
+		rank=0.0193554187754];
+	"[1]we_tx_data_8" -> "[1]TX_DATA_REG8.we";
+	"[1]TX_DATA_REG5.we"	 [complexity=4,
+		importance=0.0774216751018,
+		rank=0.0193554187754];
+	"[1]we_tx_data_5" -> "[1]TX_DATA_REG5.we";
+	"[1]TX_DATA_REG4.we"	 [complexity=4,
+		importance=0.0774216751018,
+		rank=0.0193554187754];
+	"[1]we_tx_data_4" -> "[1]TX_DATA_REG4.we";
+	"[1]cs"	 [complexity=49,
+		importance=0.941884591692,
+		rank=0.0192221345243];
+	"[1]cs" -> "[1]we_tx_data_0";
+	"[1]cs" -> "[1]we_tx_data_7";
+	"[1]cs" -> "[1]we_bus_timing_0";
+	"[1]cs" -> "[1]we_acceptance_code_1";
+	"[1]cs" -> "[1]we_acceptance_code_0";
+	"[1]cs" -> "[1]we_acceptance_code_3";
+	"[1]cs" -> "[1]we_acceptance_code_2";
+	"[1]cs" -> "[1]we_bus_timing_1";
+	"[1]cs" -> "[1]read";
+	"[1]cs" -> "[1]we_tx_data_9";
+	"[1]cs" -> "[1]we_tx_data_8";
+	"[1]cs" -> "[1]we_tx_data_5";
+	"[1]cs" -> "[1]we_tx_data_4";
+	"[1]cs" -> "[1]we_tx_data_6";
+	"[1]cs" -> "[1]we_tx_data_1";
+	"[1]cs" -> "[1]we_tx_data_3";
+	"[1]cs" -> "[1]we_tx_data_2";
+	"[1]cs" -> "[1]we_acceptance_mask_3";
+	"[1]cs" -> "[1]we_clock_divider_low";
+	"[1]cs" -> "[1]we_error_warning_limit";
+	"[1]cs" -> "[1]we_acceptance_mask_2";
+	"[1]cs" -> "[1]we_acceptance_mask_0";
+	"[1]cs" -> "[1]we_acceptance_mask_1";
+	"[1]cs" -> "[1]we_interrupt_enable";
+	"[1]cs" -> "[1]we_mode";
+	"[1]we_tx_data_6" -> "[1]TX_DATA_REG6.we";
+	"[1]TX_DATA_REG1.we"	 [complexity=4,
+		importance=0.0774216751018,
+		rank=0.0193554187754];
+	"[1]we_tx_data_1" -> "[1]TX_DATA_REG1.we";
+	mode_ext	 [complexity=3,
+		importance=0.0702669125253,
+		rank=0.0234223041751];
+	mode_ext -> data_out;
+	"[1]we_tx_data_3" -> "[1]TX_DATA_REG3.we";
+	"[1]we_tx_data_2" -> "[1]TX_DATA_REG2.we";
+	"[1]COMMAND_REG4.data_out"	 [complexity=16,
+		importance=0.173033838099,
+		rank=0.0108146148812];
+	"[1]COMMAND_REG4.data_out" -> "[1]command";
+	receive_buffer_status -> status;
+	"[1]TX_DATA_REG4.data_in"	 [complexity=5,
+		importance=0.0763674857173,
+		rank=0.0152734971435];
+	"[1]TX_DATA_REG4.data_in" -> "TX_DATA_REG4.data_out";
+	"[1]ACCEPTANCE_MASK_REG0.data_in"	 [complexity=7,
+		importance=0.142124004035,
+		rank=0.0203034291478];
+	"ACCEPTANCE_MASK_REG0.data_out"	 [complexity=5,
+		importance=0.140153824109,
+		rank=0.0280307648218];
+	"[1]ACCEPTANCE_MASK_REG0.data_in" -> "ACCEPTANCE_MASK_REG0.data_out";
+	"[1]set_bus_error_irq"	 [complexity=14,
+		importance=0.295442241774,
+		rank=0.0211030172696];
+	"[1]set_bus_error_irq" -> bus_error_irq;
+	"[1]TX_DATA_REG4.we" -> "TX_DATA_REG4.data_out";
+	"[1]MODE_REG0.we"	 [complexity=45,
+		importance=0.937924934882,
+		rank=0.0208427763307];
+	"[1]MODE_REG0.we" -> "MODE_REG0.data_out";
+	"[1]we_acceptance_mask_3" -> "[1]ACCEPTANCE_MASK_REG3.we";
+	"[1]reset_mode" -> transmit_irq;
+	"[1]reset_mode" -> "[1]we_tx_data_0";
+	"[1]reset_mode" -> "[1]we_tx_data_7";
+	"[1]reset_mode" -> "[1]we_bus_timing_0";
+	"[1]reset_mode" -> "[1]we_acceptance_code_1";
+	"[1]reset_mode" -> "[1]we_acceptance_code_0";
+	"[1]reset_mode" -> "[1]we_acceptance_code_3";
+	"[1]reset_mode" -> "[1]we_acceptance_code_2";
+	"[1]reset_mode" -> "[1]MODE_REG_EXT.we";
+	"[1]reset_mode" -> bus_error_irq;
+	"[1]reset_mode" -> "[1]we_bus_timing_1";
+	"[1]reset_mode" -> arbitration_lost_irq;
+	"[1]reset_mode" -> overrun_status;
+	"[1]reset_mode" -> "[1]we_tx_data_9";
+	"[1]reset_mode" -> "[1]we_tx_data_8";
+	"[1]reset_mode" -> "[1]we_tx_data_5";
+	"[1]reset_mode" -> "[1]we_tx_data_4";
+	"[1]reset_mode" -> "[1]we_tx_data_6";
+	"[1]reset_mode" -> "[1]we_tx_data_1";
+	"[1]reset_mode" -> "[1]we_tx_data_3";
+	"[1]reset_mode" -> "[1]we_tx_data_2";
+	"[1]reset_mode" -> receive_buffer_status;
+	"[1]reset_mode" -> "[1]we_acceptance_mask_3";
+	"[1]reset_mode" -> data_overrun_irq;
+	"[1]reset_mode" -> "[1]we_error_warning_limit";
+	"[1]reset_mode" -> transmit_buffer_status;
+	"[1]reset_mode" -> "[1]we_acceptance_mask_2";
+	"[1]reset_mode" -> "[1]we_acceptance_mask_0";
+	"[1]reset_mode" -> "[1]we_acceptance_mask_1";
+	"[1]we_clock_divider_hi"	 [complexity=5,
+		importance=3.11522955552,
+		rank=0.623045911103];
+	"[1]reset_mode" -> "[1]we_clock_divider_hi";
+	"[1]reset_mode" -> error_passive_irq;
+	"[1]reset_mode" -> receive_irq;
+	"[1]ACCEPTANCE_CODE_REG1.data_in"	 [complexity=4,
+		importance=0.0763281293854,
+		rank=0.0190820323464];
+	"[1]ACCEPTANCE_CODE_REG1.data_in" -> "ACCEPTANCE_CODE_REG1.data_out";
+	"[1]TX_DATA_REG7.data_in"	 [complexity=5,
+		importance=0.0763674857173,
+		rank=0.0152734971435];
+	"[1]TX_DATA_REG7.data_in" -> "TX_DATA_REG7.data_out";
+	"[1]need_to_tx"	 [complexity=8,
+		importance=0.147313178337,
+		rank=0.0184141472921];
+	"[1]need_to_tx" -> transmit_buffer_status;
+	tx_data_6	 [complexity=3,
+		importance=0.0699580384431,
+		rank=0.0233193461477];
+	"TX_DATA_REG6.data_out" -> tx_data_6;
+	"[1]bus_error_irq_en"	 [complexity=14,
+		importance=0.295701480567,
+		rank=0.0211215343262];
+	"[1]bus_error_irq_en" -> bus_error_irq;
+	tx_data_9	 [complexity=3,
+		importance=0.0699580384431,
+		rank=0.0233193461477];
+	tx_data_9 -> data_out;
+	tx_data_8 -> data_out;
+	"[1]release_buffer" -> receive_buffer_status;
+	"[1]release_buffer" -> receive_irq;
+	rx_message_counter	 [complexity=2,
+		importance=0.0677383117022,
+		rank=0.0338691558511];
+	rx_message_counter -> data_out;
+	tx_data_0	 [complexity=3,
+		importance=0.0699580384431,
+		rank=0.0233193461477];
+	"TX_DATA_REG0.data_out" -> tx_data_0;
+	"[1]node_bus_off"	 [complexity=17,
+		importance=0.30181441702,
+		rank=0.0177537892364];
+	"[1]node_bus_off" -> error_irq;
+	tx_data_3	 [complexity=3,
+		importance=0.0699580384431,
+		rank=0.0233193461477];
+	tx_data_3 -> data_out;
+	tx_data_2 -> data_out;
+	tx_data_1 -> data_out;
+	tx_data_0 -> data_out;
+	tx_data_7 -> data_out;
+	tx_data_6 -> data_out;
+	tx_data_5 -> data_out;
+	tx_data_4 -> data_out;
+	"[1]overrun_q"	 [complexity=15,
+		importance=0.297591382704,
+		rank=0.0198394255136];
+	"[1]overrun_q" -> overrun_status;
+	"[1]overrun_q" -> data_overrun_irq;
+	"[1]CLOCK_DIVIDER_REG_7.rst" -> "CLOCK_DIVIDER_REG_7.data_out";
+	"CLOCK_DIVIDER_REG_7.data_out" -> clock_divider;
+	"MODE_REG_EXT.data_out" -> mode_ext;
+	data_overrun_irq -> irq_reg;
+	"[1]CLOCK_DIVIDER_REG_LOW.we"	 [complexity=5,
+		importance=3.11258796882,
+		rank=0.622517593763];
+	"[1]we_clock_divider_low" -> "[1]CLOCK_DIVIDER_REG_LOW.we";
+	"[1]we_clock_divider_low" -> "[1]we_clock_divider_hi";
+	"[1]we_error_warning_limit" -> "[1]ERROR_WARNING_REG.we";
+	"[1]receive_irq_en_basic" -> "[1]receive_irq_en";
+	"[1]irq_en_ext" -> "[1]error_passive_irq_en";
+	"[1]irq_en_ext" -> "[1]error_warning_irq_en_ext";
+	"[1]irq_en_ext" -> "[1]transmit_irq_en_ext";
+	"[1]irq_en_ext" -> "[1]bus_error_irq_en";
+	"[1]data_overrun_irq_en_ext"	 [complexity=19,
+		importance=0.301912046399,
+		rank=0.0158901077052];
+	"[1]irq_en_ext" -> "[1]data_overrun_irq_en_ext";
+	"[1]receive_irq_en_ext"	 [complexity=19,
+		importance=0.304973894933,
+		rank=0.016051257628];
+	"[1]irq_en_ext" -> "[1]receive_irq_en_ext";
+	"[1]arbitration_lost_irq_en"	 [complexity=14,
+		importance=0.295701480567,
+		rank=0.0211215343262];
+	"[1]irq_en_ext" -> "[1]arbitration_lost_irq_en";
+	"[1]MODE_REG0.data_out"	 [complexity=13,
+		importance=0.159656176745,
+		rank=0.012281244365];
+	"[1]MODE_REG0.data_out" -> "[1]mode";
+	"[1]receive_irq_en" -> receive_irq;
+	"[1]TX_DATA_REG8.we" -> "TX_DATA_REG8.data_out";
+	"[1]BUS_TIMING_0_REG.we" -> "BUS_TIMING_0_REG.data_out";
+	"[1]data_overrun_irq_en_ext" -> "[1]data_overrun_irq_en";
+	"[1]TX_DATA_REG8.data_in"	 [complexity=5,
+		importance=0.0763674857173,
+		rank=0.0152734971435];
+	"[1]TX_DATA_REG8.data_in" -> "TX_DATA_REG8.data_out";
+	"[1]ACCEPTANCE_MASK_REG1.data_in"	 [complexity=4,
+		importance=0.0763281293854,
+		rank=0.0190820323464];
+	"[1]ACCEPTANCE_MASK_REG1.data_in" -> "ACCEPTANCE_MASK_REG1.data_out";
+	"[1]CLOCK_DIVIDER_REG_LOW.data_in"	 [complexity=6,
+		importance=3.1121115203,
+		rank=0.518685253384];
+	"[1]CLOCK_DIVIDER_REG_LOW.data_in" -> "CLOCK_DIVIDER_REG_LOW.data_out";
+	"[1]ACCEPTANCE_MASK_REG2.data_in"	 [complexity=4,
+		importance=0.0763281293854,
+		rank=0.0190820323464];
+	"[1]ACCEPTANCE_MASK_REG2.data_in" -> "ACCEPTANCE_MASK_REG2.data_out";
+	"[1]BUS_TIMING_0_REG.data_in"	 [complexity=7,
+		importance=0.142117261131,
+		rank=0.0203024658758];
+	"[1]BUS_TIMING_0_REG.data_in" -> "BUS_TIMING_0_REG.data_out";
+	"[1]CLOCK_DIVIDER_REG_7.we"	 [complexity=5,
+		importance=3.11275829045,
+		rank=0.62255165809];
+	"[1]CLOCK_DIVIDER_REG_7.we" -> "CLOCK_DIVIDER_REG_7.data_out";
+	"ACCEPTANCE_CODE_REG0.data_out" -> acceptance_code_0;
+	"[1]data_in"	 [complexity=46,
+		importance=0.939558987218,
+		rank=0.0204251953743];
+	"[1]data_in" -> "[1]TX_DATA_REG5.data_in";
+	"[1]data_in" -> "[1]IRQ_EN_REG.data_in";
+	"[1]data_in" -> "[1]TX_DATA_REG3.data_in";
+	"[1]data_in" -> "[1]TX_DATA_REG2.data_in";
+	"[1]data_in" -> "[1]TX_DATA_REG0.data_in";
+	"[1]data_in" -> "[1]MODE_REG0.data_in";
+	"[1]data_in" -> "[1]ERROR_WARNING_REG.data_in";
+	"[1]data_in" -> "[1]ACCEPTANCE_CODE_REG0.data_in";
+	"[1]data_in" -> "[1]TX_DATA_REG9.data_in";
+	"[1]data_in" -> "[1]CLOCK_DIVIDER_REG_3.data_in";
+	"[1]data_in" -> "[1]CLOCK_DIVIDER_REG_7.data_in";
+	"[1]data_in" -> "[1]MODE_REG_BASIC.data_in";
+	"[1]data_in" -> "[1]TX_DATA_REG4.data_in";
+	"[1]data_in" -> "[1]ACCEPTANCE_MASK_REG0.data_in";
+	"[1]data_in" -> "[1]ACCEPTANCE_CODE_REG1.data_in";
+	"[1]data_in" -> "[1]TX_DATA_REG7.data_in";
+	"[1]data_in" -> "[1]TX_DATA_REG8.data_in";
+	"[1]data_in" -> "[1]ACCEPTANCE_MASK_REG1.data_in";
+	"[1]data_in" -> "[1]CLOCK_DIVIDER_REG_LOW.data_in";
+	"[1]data_in" -> "[1]ACCEPTANCE_MASK_REG2.data_in";
+	"[1]data_in" -> "[1]BUS_TIMING_0_REG.data_in";
+	"[1]TX_DATA_REG6.data_in"	 [complexity=5,
+		importance=0.0763674857173,
+		rank=0.0152734971435];
+	"[1]data_in" -> "[1]TX_DATA_REG6.data_in";
+	"[1]ACCEPTANCE_MASK_REG3.data_in"	 [complexity=4,
+		importance=0.0763281293854,
+		rank=0.0190820323464];
+	"[1]data_in" -> "[1]ACCEPTANCE_MASK_REG3.data_in";
+	"[1]ACCEPTANCE_CODE_REG3.data_in"	 [complexity=4,
+		importance=0.0763281293854,
+		rank=0.0190820323464];
+	"[1]data_in" -> "[1]ACCEPTANCE_CODE_REG3.data_in";
+	"[1]MODE_REG_EXT.data_in"	 [complexity=5,
+		importance=0.0772950971738,
+		rank=0.0154590194348];
+	"[1]data_in" -> "[1]MODE_REG_EXT.data_in";
+	"[1]BUS_TIMING_1_REG.data_in"	 [complexity=7,
+		importance=0.142117261131,
+		rank=0.0203024658758];
+	"[1]data_in" -> "[1]BUS_TIMING_1_REG.data_in";
+	"[1]ACCEPTANCE_CODE_REG2.data_in"	 [complexity=4,
+		importance=0.0763281293854,
+		rank=0.0190820323464];
+	"[1]data_in" -> "[1]ACCEPTANCE_CODE_REG2.data_in";
+	"[1]TX_DATA_REG1.data_in"	 [complexity=5,
+		importance=0.0763674857173,
+		rank=0.0152734971435];
+	"[1]data_in" -> "[1]TX_DATA_REG1.data_in";
+	transmit_buffer_status -> status;
+	irq_en_ext	 [complexity=2,
+		importance=0.0699417890406,
+		rank=0.0349708945203];
+	irq_en_ext -> data_out;
+	"[1]we_acceptance_mask_2" -> "[1]ACCEPTANCE_MASK_REG2.we";
+	"IRQ_EN_REG.data_out" -> irq_en_ext;
+	"[1]ACCEPTANCE_MASK_REG0.we"	 [complexity=6,
+		importance=0.143125907878,
+		rank=0.0238543179797];
+	"[1]we_acceptance_mask_0" -> "[1]ACCEPTANCE_MASK_REG0.we";
+	"[1]we_acceptance_mask_1" -> "[1]ACCEPTANCE_MASK_REG1.we";
+	"[1]ACCEPTANCE_MASK_REG0.we" -> "ACCEPTANCE_MASK_REG0.data_out";
+	"TX_DATA_REG3.data_out" -> tx_data_3;
+	"[1]TX_DATA_REG7.we" -> "TX_DATA_REG7.data_out";
+	"[1]TX_DATA_REG1.we" -> "TX_DATA_REG1.data_out";
+	"[1]CLOCK_DIVIDER_REG_3.we"	 [complexity=5,
+		importance=3.11275829045,
+		rank=0.62255165809];
+	"[1]CLOCK_DIVIDER_REG_3.we" -> "CLOCK_DIVIDER_REG_3.data_out";
+	"[1]CLOCK_DIVIDER_REG_LOW.we" -> "CLOCK_DIVIDER_REG_LOW.data_out";
+	"ACCEPTANCE_MASK_REG0.data_out" -> acceptance_mask_0;
+	error_capture_code	 [complexity=2,
+		importance=0.0677383117022,
+		rank=0.0338691558511];
+	error_capture_code -> data_out;
+	"[1]we_clock_divider_hi" -> "[1]CLOCK_DIVIDER_REG_7.we";
+	"[1]we_clock_divider_hi" -> "[1]CLOCK_DIVIDER_REG_3.we";
+	"[1]CLOCK_DIVIDER_REG_LOW.data_out"	 [complexity=15,
+		importance=0.0973213314268,
+		rank=0.00648808876179];
+	"[1]clock_divider"	 [complexity=15,
+		importance=0.092191603312,
+		rank=0.00614610688747];
+	"[1]CLOCK_DIVIDER_REG_LOW.data_out" -> "[1]clock_divider";
+	"[1]node_error_passive"	 [complexity=18,
+		importance=0.59632155582,
+		rank=0.0331289753233];
+	"[1]node_error_passive" -> error_passive_irq;
+	mode_basic	 [complexity=3,
+		importance=0.0702607651146,
+		rank=0.0234202550382];
+	mode_basic -> data_out;
+	"[1]clock_divider" -> "[1]extended_mode";
+	"[1]TX_DATA_REG6.data_in" -> "TX_DATA_REG6.data_out";
+	"[1]ACCEPTANCE_MASK_REG3.data_in" -> "ACCEPTANCE_MASK_REG3.data_out";
+	error_passive_irq -> irq_reg;
+	transmit_status	 [complexity=6,
+		importance=0.143965409038,
+		rank=0.0239942348397];
+	transmit_status -> status;
+	"[1]we_interrupt_enable" -> "[1]IRQ_EN_REG.we";
+	"[1]receive_irq"	 [complexity=15,
+		importance=0.305241020648,
+		rank=0.0203494013766];
+	"[1]receive_irq" -> receive_irq;
+	"[1]node_error_active"	 [complexity=18,
+		importance=0.299131996436,
+		rank=0.0166184442465];
+	"[1]node_error_active" -> error_passive_irq;
+	"ACCEPTANCE_MASK_REG1.data_out" -> acceptance_mask_1;
+	status -> data_out;
+	"[1]ACCEPTANCE_CODE_REG3.data_in" -> "ACCEPTANCE_CODE_REG3.data_out";
+	"[1]receive_irq_en_ext" -> "[1]receive_irq_en";
+	"[1]tx_successful_q"	 [complexity=9,
+		importance=0.296014348842,
+		rank=0.0328904832047];
+	"[1]tx_successful_q" -> transmission_complete;
+	"[1]node_bus_off_q"	 [complexity=17,
+		importance=0.302057167156,
+		rank=0.0177680686563];
+	"[1]node_bus_off_q" -> error_irq;
+	"[1]arbitration_lost_irq_en" -> arbitration_lost_irq;
+	"[1]MODE_REG_EXT.data_in" -> "MODE_REG_EXT.data_out";
+	"MODE_REG_BASIC.data_out" -> mode_basic;
+	error_warning_limit	 [complexity=2,
+		importance=0.0704344783012,
+		rank=0.0352172391506];
+	error_warning_limit -> data_out;
+	"[1]BUS_TIMING_1_REG.data_in" -> "BUS_TIMING_1_REG.data_out";
+	"[1]ACCEPTANCE_CODE_REG2.data_in" -> "ACCEPTANCE_CODE_REG2.data_out";
+	"[1]MODE_REG_EXT.rst" -> "MODE_REG_EXT.data_out";
+	clock_divider -> data_out;
+	extended_mode	 [complexity=2,
+		importance=3.09531853501,
+		rank=1.54765926751];
+	clock_divider -> extended_mode;
+	"ACCEPTANCE_CODE_REG2.data_out" -> acceptance_code_2;
+	"[1]error_warning_irq_en" -> error_irq;
+	"[1]CLOCK_DIVIDER_REG_3.data_out"	 [complexity=15,
+		importance=0.0973781707203,
+		rank=0.00649187804802];
+	"[1]CLOCK_DIVIDER_REG_3.data_out" -> "[1]clock_divider";
+	"[1]TX_DATA_REG1.data_in" -> "TX_DATA_REG1.data_out";
+	extended_mode -> data_out;
+	"TX_DATA_REG9.data_out" -> tx_data_9;
+	"[1]we_mode" -> "[1]MODE_REG_BASIC.we";
+	"[1]we_mode" -> "[1]MODE_REG_EXT.we";
+	"[1]we_mode" -> "[1]MODE_REG0.we";
+	"CLOCK_DIVIDER_REG_3.data_out" -> clock_divider;
+	"[1]transmit_irq_en" -> transmit_irq;
+	"[1]COMMAND_REG.data_out"	 [complexity=16,
+		importance=0.172936761752,
+		rank=0.0108085476095];
+	"[1]COMMAND_REG.data_out" -> "[1]command";
+	receive_irq -> irq_reg;
+	"[1]TX_DATA_REG5.we" -> "TX_DATA_REG5.data_out";
+	"[1]COMMAND_REG1.data_out"	 [complexity=16,
+		importance=0.173546265063,
+		rank=0.0108466415664];
+	"[1]COMMAND_REG1.data_out" -> "[1]command";
+	"ERROR_WARNING_REG.data_out" -> error_warning_limit;
+	"[1]CLOCK_DIVIDER_REG_7.data_out"	 [complexity=15,
+		importance=0.0973781707203,
+		rank=0.00649187804802];
+	"[1]CLOCK_DIVIDER_REG_7.data_out" -> "[1]clock_divider";
+}

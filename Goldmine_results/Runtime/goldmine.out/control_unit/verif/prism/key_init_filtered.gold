@@ -1,0 +1,10 @@
+property a1;
+@(posedge clk) (start == 0) |-> (key_init == 0);
+endproperty
+assert_a1: assert property(a1);
+
+property a0;
+@(posedge clk) (start == 1) |-> (key_init == 1);
+endproperty
+assert_a0: assert property(a0);
+
