@@ -1,0 +1,29 @@
+<harm>
+	<context name="default">
+
+		<prop exp="full_adder_::cin" loc="c,dt"/>
+		<prop exp="full_adder_::b" loc="c,dt"/>
+		<prop exp="full_adder_::a" loc="c,dt"/>
+		<prop exp="cin" loc="c,dt"/>
+		<prop exp="Cout" loc="c,dt"/>
+		<prop exp="full_adder_::S" loc="c,dt"/>
+		<prop exp="full_adder_::Cout" loc="c,dt"/>
+		<prop exp="b" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<prop exp="S" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<prop exp="a" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

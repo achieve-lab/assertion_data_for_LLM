@@ -1,0 +1,492 @@
+<harm>
+	<context name="default">
+
+		<prop exp="eth_registers_::COLLCONF_0::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::COLLCONF_0::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::COLLCONF_0::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::COLLCONF_0::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::CTRLMODER_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::CTRLMODER_0::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::CTRLMODER_0::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::CTRLMODER_0::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::COLLCONF_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_0::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_0::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DMAC_ADDR0_1::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_1::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_1::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_1::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_2::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_2::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_2::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DMAC_ADDR0_2::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_2::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DMAC_ADDR0_3::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_3::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_3::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_3::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DMAC_ADDR0_3::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_3::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR1_0::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DMAC_ADDR1_0::DataIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DMAC_ADDR1_1::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR1_1::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DMAC_ADDR1_1::DataIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::INT_MASK_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::INT_MASK_0::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::INT_MASK_0::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::INT_MASK_0::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPGR1_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGR1_0::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPGR2_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::INT_MASK_0::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGR2_0::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGR2_0::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGR2_0::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DMAC_ADDR0_0::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGT_0::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPv4_L1_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_0::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPv4_L1_1::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_1::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_1::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPv4_L1_1::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_1::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_2::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_3::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_3::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_3::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MAC_ADDR0_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_0::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_0::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MAC_ADDR0_0::DataIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MAC_ADDR0_1::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_1::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_1::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_1::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MAC_ADDR0_1::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_1::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_2::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_2::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_3::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_3::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR1_0::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MAC_ADDR1_0::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR1_1::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR1_1::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR1_1::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR1_1::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPv4_L1_0::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_2::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIIADDRESS_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::TX_BD_NUM_0::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::r_ScanStat" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH0_2::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::CTRLMODER_0::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGT_0::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::SetTxCIrq" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_Sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DMAC_ADDR1Out" loc="c,dt"/>
+		<prop exp="eth_registers_::r_TxPauseRq" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DMAC_ADDR1_Wr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIITX_DATA_Wr" loc="c,dt"/>
+		<prop exp="eth_registers_::r_WCtrlData" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_3::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIRX_DATA::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::HASH0_Sel" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_0::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::CTRLMODER_Sel" loc="c,dt"/>
+		<prop exp="eth_registers_::HASH1_Sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::HASH1_Wr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::TX_BD_NUMOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPGR1Out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::COLLCONF_2::DataOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::RXHASH1_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::irq_rxb" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIMODER_1::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_Sel" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_0::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::irq_rxc" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MAC_ADDR1_1::DataOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MAC_ADDR1Out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIIADDRESSOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPGR1_0::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::SetRxCIrq_sync1" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH1_3::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIADDRESS_Sel" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND_Sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIICOMMANDOut" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIMODER_Sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIIRX_DATAOut" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_1::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIISTATUSOut" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGR1_0::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::HASH0Out" loc="c,dt"/>
+		<prop exp="eth_registers_::irq_txe" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPGR2Out" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH1_0::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MAC_ADDR0_2::DataIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIITX_DATAOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::Address" loc="c,dt"/>
+		<prop exp="eth_registers_::RXCTRL_Sel" loc="c,dt"/>
+		<prop exp="eth_registers_::TX_BD_NUM_0::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGR1_0::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::MODER_1::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DMAC_ADDR0_2::DataOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::COLLCONFOut" loc="c,dt"/>
+		<prop exp="eth_registers_::COLLCONF_2::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::MODER_Sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::PACKETLEN_Wr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DMAC_ADDR0_1::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_2::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGT_Wr" loc="c,dt"/>
+		<prop exp="eth_registers_::MIITX_DATA_0::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIMODER_1::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::SetRxCIrq_sync2" loc="c,dt"/>
+		<prop exp="eth_registers_::TX_BD_NUM_Sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MAC_ADDR0_Wr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::Cs" loc="c,dt"/>
+		<prop exp="eth_registers_::TXCTRL_0::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::UpdateMIIRX_DATAReg" loc="c,dt"/>
+		<prop exp="eth_registers_::irq_busy" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_0::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::TxClk" loc="c,dt"/>
+		<prop exp="eth_registers_::SetPauseTimer" loc="c,dt"/>
+		<prop exp="eth_registers_::TXCTRL_1::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPv4_L1_Wr" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_0::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::ResetRxCIrq_sync3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::INT_MASKOut" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIADDRESS_0::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::PACKETLEN_3::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::MODER_0::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::TX_BD_NUM_Wr" loc="c,dt"/>
+		<prop exp="eth_registers_::r_Iam" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::INT_MASK_Sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_MaxFL" loc="c,dt"/>
+		<prop exp="eth_registers_::SetRxCIrq" loc="c,dt"/>
+		<prop exp="eth_registers_::DBG_REG_Sel" loc="c,dt"/>
+		<prop exp="eth_registers_::RstTxPauseRq" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPGT_0::DataIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPv4_L1_2::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGR1_Wr" loc="c,dt"/>
+		<prop exp="eth_registers_::irq_txb" loc="c,dt"/>
+		<prop exp="eth_registers_::INT_SOURCE_Wr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIIMODER_0::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_2::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::ResetTxCIrq_sync2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MODER_Wr" loc="c,dt"/>
+		<prop exp="eth_registers_::TxE_IRQ" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPGT_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH1_3::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MAC_ADDR1_Wr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIIMODER_Wr" loc="c,dt"/>
+		<prop exp="eth_registers_::r_RxEn" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH1_2::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::COLLCONF_0::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::TXCTRLOut" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_0::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_3::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH1_0::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_IPGT" loc="c,dt"/>
+		<prop exp="eth_registers_::RStatStart" loc="c,dt"/>
+		<prop exp="eth_registers_::r_RxFlow" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIMODER_0::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIMODER_1::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIIADDRESS_1::DataIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MAC_ADDR0_3::DataIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::TXCTRL_Wr" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_1::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND2::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPv4_L1_3::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::RxB_IRQ" loc="c,dt"/>
+		<prop exp="eth_registers_::SetTxCIrq_sync3" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGR2_Sel" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGR2_0::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_2::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::r_TxFlow" loc="c,dt"/>
+		<prop exp="eth_registers_::TXCTRL_Sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_MaxRet" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_HASH0" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH1_1::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH0_1::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::COLLCONF_2::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MAC_ADDR1_1::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::LinkFail" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::PACKETLEN_3::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::MIITX_DATA_1::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::r_IFG" loc="c,dt"/>
+		<prop exp="eth_registers_::r_PassAll" loc="c,dt"/>
+		<prop exp="eth_registers_::NValid_stat" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::PACKETLEN_1::DataOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DMAC_ADDR0_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::RxE_IRQ" loc="c,dt"/>
+		<prop exp="eth_registers_::MODER_1::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::CTRLMODER_Wr" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_1::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::WCtrlDataStart" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_0::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MODER_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::Read" loc="c,dt"/>
+		<prop exp="eth_registers_::r_ExDfrEn" loc="c,dt"/>
+		<prop exp="eth_registers_::ResetRxCIrq_sync1" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGR1_Sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MODEROut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::dbg_dat" loc="c,dt"/>
+		<prop exp="eth_registers_::RxClk" loc="c,dt"/>
+		<prop exp="eth_registers_::irq_txc" loc="c,dt"/>
+		<prop exp="eth_registers_::r_Bro" loc="c,dt"/>
+		<prop exp="eth_registers_::SetRxCIrq_sync3" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR1_0::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::INT_MASK_Wr" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH1_2::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_2::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::SetTxCIrq_sync2" loc="c,dt"/>
+		<prop exp="eth_registers_::SetTxCIrq_sync1" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH0_0::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_2::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_2::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGT_0::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_TxPauseTV" loc="c,dt"/>
+		<prop exp="eth_registers_::r_NoPre" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DMAC_ADDR0_Wr" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_3::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::SetRxCIrq_rxclk" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGT_Sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::RXHASH0_2::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::r_RecSmall" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGR1_0::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::r_Pad" loc="c,dt"/>
+		<prop exp="eth_registers_::MODER_0::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR1_0::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::Busy_stat" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIIMODER_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::r_CrcEn" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR1_1::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::irq_rxe" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND_Wr" loc="c,dt"/>
+		<prop exp="eth_registers_::COLLCONF_Sel" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_1::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::TXCTRL_2::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::int_o" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_MinFL" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIADDRESS_0::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_HASH1" loc="c,dt"/>
+		<prop exp="eth_registers_::MODER_0::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_IPGR1" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_Sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPv4_L1_3::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::Rw" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIRX_DATA_Wr" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR1_0::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::SetTxCIrq_txclk" loc="c,dt"/>
+		<prop exp="eth_registers_::r_TxEn" loc="c,dt"/>
+		<prop exp="eth_registers_::ResetRxCIrq_sync2" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR1_0::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::RXHASH1_2::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::ResetTxCIrq_sync1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_CollValid" loc="c,dt"/>
+		<prop exp="eth_registers_::MIITX_DATA_Sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::RXHASH0_2::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::TxB_IRQ" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_IPGR2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_TxBDNum" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH0_1::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH0_0::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::MODER_2::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR1_Sel" loc="c,dt"/>
+		<prop exp="eth_registers_::r_RStat" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_DMAC" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_RGAD" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DMAC_ADDR0Out" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR1_0::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::r_Pro" loc="c,dt"/>
+		<prop exp="eth_registers_::Busy_IRQ" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::TXCTRL_1::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::r_NoBckof" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_MAC" loc="c,dt"/>
+		<prop exp="eth_registers_::r_HugEn" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIADDRESS_1::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::CTRLMODEROut" loc="c,dt"/>
+		<prop exp="eth_registers_::TXCTRL_1::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::r_FullD" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPv4_L1_2::DataIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIIRX_DATA::DataIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::COLLCONF_2::DataIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_CtrlData" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_0::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPv4_L1_out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_ClkDiv" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::RXHASH1_0::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::TX_BD_NUM_0::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::TX_BD_NUM_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::TxCtrlEndFrm" loc="c,dt"/>
+		<prop exp="eth_registers_::TXCTRL_2::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::TXCTRL_2::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::Prsd" loc="c,dt"/>
+		<prop exp="eth_registers_::r_LoopBck" loc="c,dt"/>
+		<prop exp="eth_registers_::TXCTRL_2::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::r_DlyCrcEn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIITX_DATA_0::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::TXCTRL_1::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MAC_ADDR0Out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::RXHASH0_3::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND0::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::TXCTRL_1::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::DMAC_ADDR1_0::DataOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::INT_SOURCEOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::RXHASH0_0::DataOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::TXCTRL_1::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIADDRESS_1::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR0_0::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::TXCTRL_0::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::TXCTRL_0::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::TXCTRL_0::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::TXCTRL_0::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::r_FIAD" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::TXCTRL_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH0_2::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIITX_DATA_1::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH1_3::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::CTRLMODER_0::DataIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::PACKETLEN_1::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR1_1::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIITX_DATA_0::DataOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::RXHASH1_3::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::r_MiiNoPre" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH1_2::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH1_2::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND2::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::RXHASH1_2::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::MODER_2::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH1_1::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::RXHASH1_1::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH1_1::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::PACKETLENOut" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH1_1::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MAC_ADDR0_3::DataOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::RXHASH1_1::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR1_1::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGT_0::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIADDRESS_0::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH1_0::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPGR2_0::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH1_0::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH0_3::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::INT_SOURCE_Sel" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH0_2::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::IPGTOut" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH0_3::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH0_3::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::PACKETLEN_0::DataIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::RXHASH0_3::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_0::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH0_2::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::COLLCONF_Wr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::RXHASH1_3::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_2::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_0::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH1_3::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::RXHASH0_1::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH0_1::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::COLLCONF_2::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIMODER_0::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH0_1::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::RXHASH0_1::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH0_0::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH0_0::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::PACKETLEN_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_3::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND1::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR1_Sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MODER_1::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_3::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIMODER_0::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_3::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MAC_ADDR0_2::DataOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::PACKETLEN_2::DataIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIIADDRESS_0::DataIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::PACKETLEN_2::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_2::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_1::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::IPv4_L1_Sel" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_1::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::TX_BD_NUM_0::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::MODER_2::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::PACKETLEN_0::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::DMAC_ADDR1_0::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::MODER_2::DataIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MODER_1::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::MODER_2::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::MODER_2::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MAC_ADDR1_0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND2::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND1::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::COLLCONF_2::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::TXCTRL_2::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::RXHASH0_3::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::MODER_1::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::HASH0_Wr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::MODER_1::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MODER_0::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::MODER_0::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::INT_MASK_0::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::MIITX_DATA_1::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::HASH1Out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIIADDRESS_Wr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIITX_DATA_1::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::MIITX_DATA_1::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::MIITX_DATA_1::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::MIITX_DATA_0::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIIADDRESS_1::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::MIITX_DATA_0::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::TXCTRL_2::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND1::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::MIITX_DATA_0::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIRX_DATA::SyncReset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::RXHASH0_0::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::IPGR2_Wr" loc="c,dt"/>
+		<prop exp="eth_registers_::TX_BD_NUM_0::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND2::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIMODER_1::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIRX_DATA::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIRX_DATA::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIIRX_DATA::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIMODER_1::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIMODER_1::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::StartTxDone" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIMODER_0::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND2::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND2::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND1::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND1::DataOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_registers_::MIIMODEROut" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND0::Clk" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND1::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND0::DataIn" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND0::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::MAC_ADDR0_3::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND0::Write" loc="c,dt"/>
+		<prop exp="eth_registers_::MIICOMMAND0::DataOut" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIADDRESS_1::Reset" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIADDRESS_1::SyncReset" loc="c,dt"/>
+		<prop exp="eth_registers_::MIIADDRESS_0::Write" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

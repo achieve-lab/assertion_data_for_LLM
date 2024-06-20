@@ -1,0 +1,248 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="eth_txethmac_::random1::x" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::random1::RandomLatched" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::random1::NibCnt" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::random1::Random" loc="c,dt"/>
+		<prop exp="eth_txethmac_::random1::RandomEq0" loc="c,dt"/>
+		<prop exp="eth_txethmac_::random1::StateJam" loc="c,dt"/>
+		<prop exp="eth_txethmac_::random1::StateJam_q" loc="c,dt"/>
+		<prop exp="eth_txethmac_::random1::MTxClk" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::NibCntEq15" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::NibCntEq7" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::NibbleMinFl" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::StartBackoff" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::StartDefer" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::StartIPG" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::StateBackOff" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::txcounters1::StateData" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::StateDefer" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::StateFCS" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::StateIPG" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::StateIdle" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::StateJam" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::StatePAD" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::TxStartFrm" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::StartJam" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::StateSFD" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::ResetNibCnt" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::ResetByteCnt" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::txcounters1::MinFL" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::MaxFrame" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::random1::ByteCnt" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::IncrementNibCnt" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::IncrementByteCnt" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::HugEn" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::DlyCrcEn" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcrc::CrcError" loc="c,dt"/>
+		<prop exp="eth_txethmac_::random1::Reset" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcrc::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::txcrc::Data" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcrc::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::txcrc::CrcNext" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StateTraffic" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StatePreamble" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StateJam_q" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StateIdle" loc="c,dt"/>
+		<prop exp="eth_txethmac_::DeferIndication" loc="c,dt"/>
+		<prop exp="eth_txethmac_::CrcError" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StatePreamble" loc="c,dt"/>
+		<prop exp="Reset" loc="c,dt"/>
+		<prop exp="eth_txethmac_::TxUnderRun" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StartTxDone" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StateSFD" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::DlyCrcCnt" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StartTxAbort" loc="c,dt"/>
+		<prop exp="eth_txethmac_::ResetCollision" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::txcrc::Crc" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::IPGR1" loc="c,dt"/>
+		<prop exp="eth_txethmac_::Reset" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StartTxRetry" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::ByteCntMax" loc="c,dt"/>
+		<prop exp="eth_txethmac_::UnderRun" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::MaxFL" loc="c,dt"/>
+		<prop exp="eth_txethmac_::CarrierSense" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MaxFL" loc="c,dt"/>
+		<prop exp="eth_txethmac_::MaxCollisionOccured" loc="c,dt"/>
+		<prop exp="MTxEn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::txstatem1::IPGR1" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StartFCS" loc="c,dt"/>
+		<prop exp="eth_txethmac_::Initialize_Crc" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::StatePreamble" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::IPGT" loc="c,dt"/>
+		<prop exp="eth_txethmac_::HugEn" loc="c,dt"/>
+		<prop exp="eth_txethmac_::FullD" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StatePAD" loc="c,dt"/>
+		<prop exp="Pad" loc="c,dt"/>
+		<prop exp="eth_txethmac_::ExcessiveDeferOccured" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::IPGR2" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::ExcessiveDefer" loc="c,dt"/>
+		<prop exp="eth_txethmac_::ExDfrEn" loc="c,dt"/>
+		<prop exp="TxUsedData" loc="c,dt"/>
+		<prop exp="eth_txethmac_::random1::RandomEqByteCnt" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StartPreamble" loc="c,dt"/>
+		<prop exp="eth_txethmac_::Collision" loc="c,dt"/>
+		<prop exp="eth_txethmac_::Pad" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::StartData" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="TxData" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::txcounters1::MaxFL" loc="c,dt"/>
+		<prop exp="LateCollision" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RetryCnt" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::random1::RetryCnt" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MTxD" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::CollValid" loc="c,dt"/>
+		<prop exp="eth_txethmac_::TxStartFrm" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StartIPG" loc="c,dt"/>
+		<prop exp="CrcEn" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::StartFCS" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::MTxClk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::MaxRet" loc="c,dt"/>
+		<prop exp="MTxErr" loc="c,dt"/>
+		<prop exp="eth_txethmac_::TooBig" loc="c,dt"/>
+		<prop exp="eth_txethmac_::random1::Feedback" loc="c,dt"/>
+		<prop exp="eth_txethmac_::ColWindow" loc="c,dt"/>
+		<prop exp="eth_txethmac_::Enable_Crc" loc="c,dt"/>
+		<prop exp="MaxCollisionOccured" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::TxData" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::NoBckof" loc="c,dt"/>
+		<prop exp="FullD" loc="c,dt"/>
+		<prop exp="StatePreamble" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="StateData" loc="c,dt"/>
+		<prop exp="ExDfrEn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MinFL" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::MaxFrame" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::ExcessiveDefer" loc="c,dt"/>
+		<prop exp="ResetCollision" loc="c,dt"/>
+		<prop exp="WillTransmit" loc="c,dt"/>
+		<prop exp="eth_txethmac_::TxEndFrm" loc="c,dt"/>
+		<prop exp="TxRetry" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::ExDfrEn" loc="c,dt"/>
+		<prop exp="CarrierSense" loc="c,dt"/>
+		<prop exp="TxEndFrm" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::CrcEn" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::RandomEq0" loc="c,dt"/>
+		<prop exp="eth_txethmac_::LateCollision" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::txstatem1::StateData" loc="c,dt"/>
+		<prop exp="eth_txethmac_::CrcEn" loc="c,dt"/>
+		<prop exp="TxStartFrm" loc="c,dt"/>
+		<prop exp="eth_txethmac_::DlyCrcEn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="CollValid" loc="c,dt"/>
+		<prop exp="Collision" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::txstatem1::IPGR2" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::Collision" loc="c,dt"/>
+		<prop exp="NoBckof" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::RandomEqByteCnt" loc="c,dt"/>
+		<prop exp="StartTxDone" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StopExcessiveDeferOccured" loc="c,dt"/>
+		<prop exp="DlyCrcEn" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MaxRet" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StartTxDone" loc="c,dt"/>
+		<prop exp="DeferIndication" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::FullD" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="IPGT" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::ExcessiveDeferCnt" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StateJam" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::MTxD_d" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="IPGR2" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::NibCntEq7" loc="c,dt"/>
+		<prop exp="HugEn" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StateJam_q" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StartPreamble" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::Reset" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StartDefer" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StateJam" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::txcounters1::NibCnt" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StateIdle" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StateIPG" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::txstatem1::IPGT" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StatePAD" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::MinFL" loc="c,dt"/>
+		<prop exp="TxAbort" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StateDefer" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="IPGR1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::StateData" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StartPAD" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StateBackOff" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StartJam" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StartBackoff" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StartIPG" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StartDefer" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StartJam" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StartBackoff" loc="c,dt"/>
+		<prop exp="eth_txethmac_::TxDone" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::TxEndFrm" loc="c,dt"/>
+		<prop exp="eth_txethmac_::RetryMax" loc="c,dt"/>
+		<prop exp="eth_txethmac_::RandomEqByteCnt" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StateBackOff" loc="c,dt"/>
+		<prop exp="eth_txethmac_::RandomEq0" loc="c,dt"/>
+		<prop exp="TxDone" loc="c,dt"/>
+		<prop exp="eth_txethmac_::TxRetry" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::txcounters1::ByteCnt" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::txstatem1::StartData" loc="c,dt"/>
+		<prop exp="eth_txethmac_::NibbleMinFl" loc="c,dt"/>
+		<prop exp="eth_txethmac_::NibCntEq7" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StateFCS" loc="c,dt"/>
+		<prop exp="eth_txethmac_::NibCntEq15" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::TxStartFrm" loc="c,dt"/>
+		<prop exp="MTxClk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::NibCnt" loc="c,dt"/>
+		<prop exp="eth_txethmac_::MaxFrame" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StateFCS" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcounters1::PacketFinished_q" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::Data_Crc" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::Crc" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::ByteCnt" loc="c,dt"/>
+		<prop exp="eth_txethmac_::PacketFinished" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::MTxD" loc="c,dt"/>
+		<prop exp="eth_txethmac_::MTxEn" loc="c,dt"/>
+		<prop exp="eth_txethmac_::MTxClk" loc="c,dt"/>
+		<prop exp="eth_txethmac_::MTxErr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::RetryCnt" loc="c,dt"/>
+		<prop exp="eth_txethmac_::PacketFinished_q" loc="c,dt"/>
+		<prop exp="eth_txethmac_::StatusLatch" loc="c,dt"/>
+		<prop exp="eth_txethmac_::TxAbort" loc="c,dt"/>
+		<prop exp="eth_txethmac_::PacketFinished_d" loc="c,dt"/>
+		<prop exp="eth_txethmac_::WillTransmit" loc="c,dt"/>
+		<prop exp="eth_txethmac_::TxUsedData" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::CarrierSense" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::NibbleMinFl" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::ColWindow" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::DeferIndication" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::MTxClk" loc="c,dt"/>
+		<prop exp="StartTxAbort" loc="c,dt"/>
+		<prop exp="eth_txethmac_::NoBckof" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::txstatem1::NibCnt" loc="c,dt"/>
+		<prop exp="eth_txethmac_::ExcessiveDefer" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::NibCntEq15" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::Pad" loc="c,dt"/>
+		<prop exp="TxUnderRun" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StartFCS" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StartIdle" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::RetryMax" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::TooBig" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcrc::Initialize" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txcrc::Enable" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::TxUnderRun" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txethmac_::txcounters1::DlyCrcCnt" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::Rule1" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StateDefer" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::UnderRun" loc="c,dt"/>
+		<prop exp="eth_txethmac_::txstatem1::StateIPG" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

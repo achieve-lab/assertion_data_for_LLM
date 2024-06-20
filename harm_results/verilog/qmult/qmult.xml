@@ -1,0 +1,47 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="qmult_::comp_a::out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::comp_a::flip" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::comp_a::data" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::comp_a::b" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::comp_a::a" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::comp_b::flip" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::comp_b::b" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::comp_r::out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::comp_b::out" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::comp_r::flip" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::comp_r::data" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::comp_r::b" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::a" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="a" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="b" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="c" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::b_ext" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::a_ext" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::r_ext" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::a_mult" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::retVal" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::b" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::c" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::b_mult" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::result" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::comp_b::data" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::comp_b::a" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="qmult_::comp_r::a" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

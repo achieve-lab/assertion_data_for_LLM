@@ -1,0 +1,27 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="rptr_handler_::g_rptr" loc="c,dt"/>
+		<prop exp="rptr_handler_::empty" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="rptr_handler_::b_rptr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="rptr_handler_::b_rptr_next" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="rptr_handler_::g_rptr_next" loc="c,dt"/>
+		<prop exp="rptr_handler_::rclk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="rptr_handler_::g_wptr_sync" loc="c,dt"/>
+		<prop exp="rptr_handler_::r_en" loc="c,dt"/>
+		<prop exp="rptr_handler_::rempty" loc="c,dt"/>
+		<prop exp="rptr_handler_::rrst_n" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

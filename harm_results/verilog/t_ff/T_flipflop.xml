@@ -1,0 +1,29 @@
+<harm>
+	<context name="default">
+
+		<prop exp="T_flipflop_::t" loc="c,dt"/>
+		<prop exp="T_flipflop_::rst_n" loc="c,dt"/>
+		<prop exp="T_flipflop_::q_bar" loc="c,dt"/>
+		<prop exp="T_flipflop_::clk" loc="c,dt"/>
+		<prop exp="t" loc="c,dt"/>
+		<prop exp="q" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<prop exp="T_flipflop_::q" loc="c,dt"/>
+		<prop exp="q_bar" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<prop exp="clk" loc="c,dt"/>
+		<prop exp="rst_n" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

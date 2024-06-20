@@ -1,0 +1,47 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="Phy_int_::Txd" loc="c,dt"/>
+		<prop exp="Phy_int_::Tx_en" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="Phy_int_::Rxd_dl2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="Phy_int_::Rxd_dl1" loc="c,dt"/>
+		<prop exp="Phy_int_::Rx_odd_data_ptr" loc="c,dt"/>
+		<prop exp="Phy_int_::Rx_dv_dl2" loc="c,dt"/>
+		<prop exp="Phy_int_::MTxEn_dl1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="Phy_int_::MTxD_dl1" loc="c,dt"/>
+		<prop exp="Phy_int_::MCRS" loc="c,dt"/>
+		<prop exp="Phy_int_::MAC_tx_clk" loc="c,dt"/>
+		<prop exp="Phy_int_::MAC_rx_clk" loc="c,dt"/>
+		<prop exp="Phy_int_::Line_loop_en" loc="c,dt"/>
+		<prop exp="Phy_int_::MCrs_dv" loc="c,dt"/>
+		<prop exp="Phy_int_::Col" loc="c,dt"/>
+		<prop exp="Phy_int_::Crs_dl1" loc="c,dt"/>
+		<prop exp="Phy_int_::Crs" loc="c,dt"/>
+		<prop exp="Phy_int_::Rx_dv" loc="c,dt"/>
+		<prop exp="Phy_int_::MRxErr" loc="c,dt"/>
+		<prop exp="Phy_int_::Rx_er_dl1" loc="c,dt"/>
+		<prop exp="Phy_int_::Rx_er" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="Phy_int_::MTxD" loc="c,dt"/>
+		<prop exp="Phy_int_::Reset" loc="c,dt"/>
+		<prop exp="Phy_int_::MTxEn" loc="c,dt"/>
+		<prop exp="Phy_int_::Col_dl1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="Phy_int_::MRxD" loc="c,dt"/>
+		<prop exp="Phy_int_::Tx_er" loc="c,dt"/>
+		<prop exp="Phy_int_::Tx_odd_data_ptr" loc="c,dt"/>
+		<prop exp="Phy_int_::Rx_dv_dl1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="Phy_int_::Rxd" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="Phy_int_::Speed" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

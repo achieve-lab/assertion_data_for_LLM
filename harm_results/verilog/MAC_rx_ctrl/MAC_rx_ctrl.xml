@@ -1,0 +1,60 @@
+<harm>
+	<context name="default">
+
+		<prop exp="MAC_rx_ctrl_::pause_quanta_val_tmp" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::pause_quanta_val" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::pause_quanta_h" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::pause_quanta" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::pause_frame_ptr" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::broadcast_ptr" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::CRC_init" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::Crs_dv" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::Pause_next" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::RX_MAX_LENGTH" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::Reset" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::Fifo_full" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::RxD" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::Too_long" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::RX_IFG_SET" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::Rx_apply_rmon_tmp_pl1" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::MRxErr" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::Fifo_data_en" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::RxErr" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::CRC_err" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::Rx_pkt_length_rmon" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::Fifo_data" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::broadcast_drop" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::RX_MIN_LENGTH" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::MRxD" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::Rx_apply_rmon" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::MAC_rx_add_chk_err" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::MCrs_dv" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::Pause_current" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::Rx_apply_rmon_tmp" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::Current_state" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::Rx_pkt_type_rmon" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::Fifo_data_err" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::Frame_length_counter" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::Fifo_data_end" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::IFG_counter" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::Too_short" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::MAC_add_en" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::Next_state" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::CRC_en" loc="c,dt"/>
+		<prop exp="MAC_rx_ctrl_::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::RxD_dl1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_ctrl_::Rx_pkt_err_type_rmon" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

@@ -1,0 +1,25 @@
+<harm>
+	<context name="default">
+
+		<prop exp="eth_crc_::CrcError" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_crc_::Data" loc="c,dt"/>
+		<prop exp="eth_crc_::Clk" loc="c,dt"/>
+		<prop exp="eth_crc_::Enable" loc="c,dt"/>
+		<prop exp="eth_crc_::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_crc_::Crc" loc="c,dt"/>
+		<prop exp="eth_crc_::Initialize" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_crc_::CrcNext" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

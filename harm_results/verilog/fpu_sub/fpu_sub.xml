@@ -1,0 +1,58 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="fpu_sub_::subtrahend" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::subtra_shift_3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::subtra_shift" loc="c,dt"/>
+		<prop exp="fpu_sub_::small_is_nonzero" loc="c,dt"/>
+		<prop exp="fpu_sub_::small_is_denorm" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::exponent_a" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::diff_2" loc="c,dt"/>
+		<prop exp="fpu_sub_::a_gtet_b" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::diff_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::diff" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::subtra_shift_2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::diff_shift_2" loc="c,dt"/>
+		<prop exp="fpu_sub_::subtra_fraction_enable" loc="c,dt"/>
+		<prop exp="fpu_sub_::rst" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::exponent_large" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::fpu_op" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::diff_shift" loc="c,dt"/>
+		<prop exp="fpu_sub_::enable" loc="c,dt"/>
+		<prop exp="fpu_sub_::expa_et_expb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::opb" loc="c,dt"/>
+		<prop exp="fpu_sub_::diffshift_gt_exponent" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::exponent" loc="c,dt"/>
+		<prop exp="fpu_sub_::in_norm_out_denorm" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::mantissa_large" loc="c,dt"/>
+		<prop exp="fpu_sub_::subtra_shift_nonzero" loc="c,dt"/>
+		<prop exp="fpu_sub_::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::minuend" loc="c,dt"/>
+		<prop exp="fpu_sub_::expa_gt_expb" loc="c,dt"/>
+		<prop exp="fpu_sub_::diffshift_et_55" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::exponent_2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::exponent_diff" loc="c,dt"/>
+		<prop exp="fpu_sub_::large_is_denorm" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::opa" loc="c,dt"/>
+		<prop exp="fpu_sub_::large_norm_small_denorm" loc="c,dt"/>
+		<prop exp="fpu_sub_::mana_gtet_manb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::mantissa_a" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::exponent_b" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::mantissa_b" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::exponent_small" loc="c,dt"/>
+		<prop exp="fpu_sub_::sign" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="fpu_sub_::mantissa_small" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

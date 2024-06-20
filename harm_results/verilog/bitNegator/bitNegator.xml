@@ -1,0 +1,25 @@
+<harm>
+	<context name="default">
+
+		<prop exp="bitNegator_::bitN" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<prop exp="bitOut" loc="c,dt"/>
+		<prop exp="bitNegator_::bitOut" loc="c,dt"/>
+		<prop exp="bitIn" loc="c,dt"/>
+		<prop exp="bitN" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<prop exp="bitNegator_::bitIn" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

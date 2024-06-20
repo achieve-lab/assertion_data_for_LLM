@@ -1,0 +1,23 @@
+<harm>
+	<context name="default">
+
+		<prop exp="JK_flipflop_::q" loc="c,dt"/>
+		<prop exp="JK_flipflop_::q_bar" loc="c,dt"/>
+		<prop exp="JK_flipflop_::rst_n" loc="c,dt"/>
+		<prop exp="JK_flipflop_::k" loc="c,dt"/>
+		<prop exp="JK_flipflop_::clk" loc="c,dt"/>
+		<prop exp="JK_flipflop_::j" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

@@ -1,0 +1,28 @@
+<harm>
+	<context name="default">
+
+		<prop exp="tcReset_::tcResetEn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="tcReset_::resetOut" loc="c,dt"/>
+		<prop exp="tcReset_::resetIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="tcReset_::resets" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<prop exp="resetIn" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="tcAddr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="tcReset_::tcAddr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="resetOut" loc="c,dt"/>
+		<prop exp="tcResetEn" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

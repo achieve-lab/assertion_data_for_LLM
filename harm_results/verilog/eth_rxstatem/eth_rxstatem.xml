@@ -1,0 +1,40 @@
+<harm>
+	<context name="default">
+
+		<prop exp="eth_rxstatem_::StatePreamble" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::StateIdle" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::StateData1" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::StateData0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_rxstatem_::StateData" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::MRxClk" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::IFGCounterEq24" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::StartIdle" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::Reset" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::ByteCntEq0" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::StartPreamble" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::StateDrop" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::ByteCntGreat2" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::MRxDEqD" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::MRxDV" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::StartData0" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::StateSFD" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::StartData1" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::StartDrop" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::StartSFD" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::MRxDEq5" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::ByteCntMaxFrame" loc="c,dt"/>
+		<prop exp="eth_rxstatem_::Transmitting" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

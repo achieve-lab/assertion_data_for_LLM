@@ -1,0 +1,29 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="eth_l3_checksum_::prev_latched_Rx1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_l3_checksum_::prev_latched_Rx" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_l3_checksum_::Sum" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_l3_checksum_::StartCalc" loc="c,dt"/>
+		<prop exp="eth_l3_checksum_::Divided_4_clk" loc="c,dt"/>
+		<prop exp="eth_l3_checksum_::Divided_2_clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_l3_checksum_::ByteCnt" loc="c,dt"/>
+		<prop exp="eth_l3_checksum_::Reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_l3_checksum_::RxData" loc="c,dt"/>
+		<prop exp="eth_l3_checksum_::MRxClk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_l3_checksum_::CheckSum" loc="c,dt"/>
+		<prop exp="eth_l3_checksum_::CSready" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

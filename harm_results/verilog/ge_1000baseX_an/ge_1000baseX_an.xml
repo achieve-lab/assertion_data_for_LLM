@@ -1,0 +1,76 @@
+<harm>
+	<context name="default">
+
+		<prop exp="ge_1000baseX_an_::xmit_IDLE_m_set" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::xmit_DATA_m_set" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::tx_config_NP_m_set" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::tx_config_ABILITY_m_set" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_an_::tx_config" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::toggle_tx_toggle_m_set" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::toggle_tx_adv_m_set" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::tx_config_m_clr" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::toggle_rx_m_set" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::toggle_rx" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::resolve_priority" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_an_::pcs_an_next" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::np_rx_m_set" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::np_page_rx" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::mr_page_rx_m_set" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::mr_loopback" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::rx_config_clr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_an_::rx_config" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_an_::rudi" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::rx_config_set" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::mr_an_complete_m_clr" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::mr_restart_an" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::mr_main_reset" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::link_timer_m_inc" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::np_page_rx_m_set" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::mr_an_enable" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::ability_match" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::mr_lp_adv_ability_set" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_an_::mr_np_tx" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_an_::mr_lp_np_rx" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::tx_config_ACK_m_set" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::consistency_match" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::acknowledge_match" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_an_::xmit" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::startup_enable" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::idle_match" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::signal_detect" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::sync_status" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_an_::link_timer_cnt" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::mr_page_rx_m_clr" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::resolve_priority_m_set" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::np_rx" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::mr_an_complete_m_set" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::mr_lp_np_rx_m_set" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::link_timer_done" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::mr_an_complete" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::xmit_CONFIGURATION_m_set" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_an_::pcs_an_present" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_an_::mr_lp_adv_ability" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::reset" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::mr_lp_adv_ability_clr" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::ck" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::mr_np_loaded" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::mr_np_loaded_m_clr" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::toggle_tx" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::link_timer_m_start" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::mr_np_loaded_m_set" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_an_::mr_adv_ability" loc="c,dt"/>
+		<prop exp="ge_1000baseX_an_::mr_page_rx" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

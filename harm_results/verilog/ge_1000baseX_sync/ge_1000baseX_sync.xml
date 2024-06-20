@@ -1,0 +1,57 @@
+<harm>
+	<context name="default">
+
+		<prop exp="ge_1000baseX_sync_::sync_m_lost" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::sync_m_acquired" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::rx_even_m_toggle" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::K28_7_RX" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::ebi_K" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::decoder_disparity_err" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::decoder_coding_err" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::good_cgs_m_init" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::rx_even_m_clr" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::signal_detect" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_sync_::ebi_rxd" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::K28_5_RX" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::running_disparity_negative_m_set" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::good_cgs_done" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::good_cgs_m_cnt" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::loopback" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::COMMA_match" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::ck" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::VALID" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::COMMA_RX" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::cgbad" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::cggood" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::sync_status" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::rx_even_m_init" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::K28_1_RX" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::ebi_K_out" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::INVALID" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::startup_enable" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::ebi_K_d1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_sync_::ebi_rxd_d1" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::running_disparity" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_sync_::ebi_rxd_out" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::rx_even" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_sync_::good_cgs" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::good_cgs_m_inc" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_sync_::pcs_sync_next" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="ge_1000baseX_sync_::pcs_sync_present" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::running_disparity_positive_m_set" loc="c,dt"/>
+		<prop exp="ge_1000baseX_sync_::rx_even_m_set" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

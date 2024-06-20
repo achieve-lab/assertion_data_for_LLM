@@ -1,0 +1,28 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="node_::data_b" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="node_::data_a" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="node_::data_lo" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="data_hi" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="node_::data_hi" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="data_lo" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="data_a" loc="c,dt"/>
+		<prop exp="node_::sel0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="data_b" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

@@ -1,0 +1,90 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::i" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Wr_en_ptr" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Rx_mac_pa_tmp" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Packet_number_add_tmp_dl2" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Packet_number_add_tmp" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Packet_number_add_dl1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Next_state" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Wr_en_tmp" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Rx_mac_pa" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Full" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Fifo_data_dl1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Fifo_data_byte3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Fifo_data_byte1" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Wr_en" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Rx_mac_sop_tmp" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Empty" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Packet_number_sub" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Din" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Current_state" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Rx_mac_rd" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Add_rd_gray_dl1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Fifo_data_byte2" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::RX_APPEND_CRC" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Packet_number_add" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Rx_Hwmark" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Packet_number_add_edge" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Din_tmp_reg" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Rx_Lwmark" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Fifo_full" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Add_wr_gray_dl1" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Clk_SYS" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Packet_number_inFF" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Reset" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Almost_full" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Clk_MAC" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Rx_mac_eop" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Rx_Lwmark_pl" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Current_state_SYS" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Dout" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Packet_number_add_dl2" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Fifo_data_en_dl1" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Add_wr_jump" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Fifo_data_end" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Add_rd_pl1" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Fifo_data_err" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Packet_number_add_tmp_dl1" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Fifo_data_en" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Rx_mac_ra" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Add_wr_pluse4" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Add_wr_pluse2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Rx_mac_BE" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Add_wr_pluse3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Add_wr" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Rx_mac_sop_tmp_dl1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Rx_Hwmark_pl" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Fifo_data" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Add_wr_pluse" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Next_state_SYS" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Din_tmp" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Add_rd" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Rx_mac_data" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Addr_freshed_ptr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Add_rd_gray" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Fifo_data_count" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Add_wr_gray" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Dout_dl1" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Add_wr_jump_rd_pl1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Add_wr_ungray" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Add_wr_jump_tmp" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Rx_mac_sop" loc="c,dt"/>
+		<prop exp="MAC_rx_FF_::Add_wr_jump_tmp_pl1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Add_rd_ungray" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="MAC_rx_FF_::Add_wr_reg" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

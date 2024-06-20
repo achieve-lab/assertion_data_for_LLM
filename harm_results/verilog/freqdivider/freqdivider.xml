@@ -1,0 +1,22 @@
+<harm>
+	<context name="default">
+
+		<prop exp="freqdivider_::FrequencyOut" loc="c,dt"/>
+		<prop exp="freqdivider_::MainClock" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="freqdivider_::DividerCounter" loc="c,dt"/>
+		<prop exp="freqdivider_::Positive" loc="c,dt"/>
+		<prop exp="freqdivider_::Negative" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

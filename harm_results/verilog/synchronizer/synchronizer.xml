@@ -1,0 +1,22 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="synchronizer_::q1" loc="c,dt"/>
+		<prop exp="synchronizer_::rst_n" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="synchronizer_::d_out" loc="c,dt"/>
+		<prop exp="synchronizer_::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="synchronizer_::d_in" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

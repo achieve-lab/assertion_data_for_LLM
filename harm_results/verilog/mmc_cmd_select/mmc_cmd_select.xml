@@ -1,0 +1,33 @@
+<harm>
+	<context name="default">
+
+		<prop exp="mmc_cmd_select_::arg16_bit" loc="c,dt"/>
+		<prop exp="mmc_cmd_select_::data" loc="c,dt"/>
+		<prop exp="mmc_cmd_select_::crc_bit" loc="c,dt"/>
+		<prop exp="mmc_cmd_select_::cmd_bits" loc="c,dt"/>
+		<prop exp="mmc_cmd_select_::cmd_active" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="mmc_cmd_select_::cmd" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="mmc_cmd_select_::bit" loc="c,dt"/>
+		<prop exp="mmc_cmd_select_::CMD1_dat" loc="c,dt"/>
+		<prop exp="cmd_active" loc="c,dt"/>
+		<prop exp="data" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="bit" loc="c,dt"/>
+		<prop exp="mmc_cmd_select_::start_bit" loc="c,dt"/>
+		<prop exp="mmc_cmd_select_::stop_bit" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cmd" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

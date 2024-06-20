@@ -1,0 +1,29 @@
+<harm>
+	<context name="default">
+
+		<prop exp="full_subtractor_::a" loc="c,dt"/>
+		<prop exp="full_subtractor_::D" loc="c,dt"/>
+		<prop exp="full_subtractor_::Bout" loc="c,dt"/>
+		<prop exp="full_subtractor_::Bin" loc="c,dt"/>
+		<prop exp="full_subtractor_::b" loc="c,dt"/>
+		<prop exp="b" loc="c,dt"/>
+		<prop exp="D" loc="c,dt"/>
+		<prop exp="Bout" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<prop exp="Bin" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<prop exp="a" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

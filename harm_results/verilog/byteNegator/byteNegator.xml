@@ -1,0 +1,25 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="byteNegator_::byteOut" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<prop exp="byteNegator_::byteN" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="byteOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="byteIn" loc="c,dt"/>
+		<prop exp="byteN" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="byteNegator_::byteIn" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

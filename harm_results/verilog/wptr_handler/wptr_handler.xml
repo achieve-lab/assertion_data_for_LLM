@@ -1,0 +1,27 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="wptr_handler_::g_wptr" loc="c,dt"/>
+		<prop exp="wptr_handler_::full" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="wptr_handler_::b_wptr" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="wptr_handler_::b_wptr_next" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="wptr_handler_::g_wptr_next" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="wptr_handler_::g_rptr_sync" loc="c,dt"/>
+		<prop exp="wptr_handler_::wclk" loc="c,dt"/>
+		<prop exp="wptr_handler_::w_en" loc="c,dt"/>
+		<prop exp="wptr_handler_::wfull" loc="c,dt"/>
+		<prop exp="wptr_handler_::wrst_n" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

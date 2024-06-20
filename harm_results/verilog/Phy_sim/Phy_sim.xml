@@ -1,0 +1,31 @@
+<harm>
+	<context name="default">
+
+		<prop exp="Phy_sim_::Clk_25m" loc="c,dt"/>
+		<prop exp="Phy_sim_::Clk_2_5m" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="Phy_sim_::Txd" loc="c,dt"/>
+		<prop exp="Phy_sim_::Tx_en" loc="c,dt"/>
+		<prop exp="Phy_sim_::Tx_clk" loc="c,dt"/>
+		<prop exp="Phy_sim_::Tx_er" loc="c,dt"/>
+		<prop exp="Phy_sim_::Crs" loc="c,dt"/>
+		<prop exp="Phy_sim_::Rx_clk" loc="c,dt"/>
+		<prop exp="Phy_sim_::Col" loc="c,dt"/>
+		<prop exp="Phy_sim_::Rx_dv" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="Phy_sim_::Speed" loc="c,dt"/>
+		<prop exp="Phy_sim_::Gtx_clk" loc="c,dt"/>
+		<prop exp="Phy_sim_::Rx_er" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="Phy_sim_::Rxd" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

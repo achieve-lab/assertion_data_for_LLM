@@ -1,0 +1,56 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_suffix" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level" loc="c,dt"/>
+		<prop exp="cavlc_read_levels_::first_level" loc="c,dt"/>
+		<prop exp="cavlc_read_levels_::suffix_sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::rbsp" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::len_comb" loc="c,dt"/>
+		<prop exp="cavlc_read_levels_::prefix_sel" loc="c,dt"/>
+		<prop exp="cavlc_read_levels_::level_abs_refresh" loc="c,dt"/>
+		<prop exp="cavlc_read_levels_::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_13" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_prefix_comb" loc="c,dt"/>
+		<prop exp="cavlc_read_levels_::rst_n" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_8" loc="c,dt"/>
+		<prop exp="cavlc_read_levels_::calc_sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::i" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_9" loc="c,dt"/>
+		<prop exp="cavlc_read_levels_::t1s_sel" loc="c,dt"/>
+		<prop exp="cavlc_read_levels_::ena" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_10" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_11" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::TrailingOnes" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_14" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::tmp1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_5" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_7" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::TotalCoeff" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_15" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_abs" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::suffixLength" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_4" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_6" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::rbsp_internal" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_code_tmp" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_12" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_levels_::level_prefix" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

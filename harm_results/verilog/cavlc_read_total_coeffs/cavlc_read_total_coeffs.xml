@@ -1,0 +1,63 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::rbsp_4" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::rbsp_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::len_4" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::len_2" loc="c,dt"/>
+		<prop exp="cavlc_read_total_coeffs_::ena" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::TotalCoeff_5" loc="c,dt"/>
+		<prop exp="sel" loc="c,dt"/>
+		<prop exp="DEFAULT_RESET" loc="c,dt"/>
+		<prop exp="rst_n" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::nC" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="TrailingOnes_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::rbsp_5" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::TrailingOnes_2" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="len_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="nC" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::rbsp_2" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::TrailingOnes" loc="c,dt"/>
+		<prop exp="ena" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="rbsp" loc="c,dt"/>
+		<prop exp="clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="TrailingOnes" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::len_5" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::TotalCoeff_4" loc="c,dt"/>
+		<prop exp="start" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::TotalCoeff_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::TrailingOnes_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="TotalCoeff" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="TotalCoeff_comb" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::rbsp" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::rbsp_3" loc="c,dt"/>
+		<prop exp="cavlc_read_total_coeffs_::sel" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::len_comb" loc="c,dt"/>
+		<prop exp="cavlc_read_total_coeffs_::start" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::TotalCoeff" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::len_3" loc="c,dt"/>
+		<prop exp="cavlc_read_total_coeffs_::clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::TotalCoeff_2" loc="c,dt"/>
+		<prop exp="cavlc_read_total_coeffs_::rst_n" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::TotalCoeff_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::TotalCoeff_3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::TrailingOnes_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::TrailingOnes_5" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::TrailingOnes_3" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::TrailingOnes_4" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="cavlc_read_total_coeffs_::len_1" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

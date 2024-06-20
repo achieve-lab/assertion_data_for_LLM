@@ -1,0 +1,46 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="RMON_CTRL_::NextState" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_CTRL_::DoutaReg" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_CTRL_::CurrentState_reg" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_CTRL_::Douta" loc="c,dt"/>
+		<prop exp="RMON_CTRL_::Reg_next_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_CTRL_::Reg_addr_0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_CTRL_::Reg_data_1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_CTRL_::CPU_rd_dout" loc="c,dt"/>
+		<prop exp="RMON_CTRL_::Reset" loc="c,dt"/>
+		<prop exp="RMON_CTRL_::CPU_rd_apply_dl1" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_CTRL_::Dina" loc="c,dt"/>
+		<prop exp="RMON_CTRL_::Clk" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_CTRL_::StepCounter" loc="c,dt"/>
+		<prop exp="RMON_CTRL_::Reg_next_0" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_CTRL_::CurrentState" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_CTRL_::CPU_rd_addr" loc="c,dt"/>
+		<prop exp="RMON_CTRL_::CPU_rd_apply_reg" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_CTRL_::Reg_addr_1" loc="c,dt"/>
+		<prop exp="RMON_CTRL_::CPU_rd_apply" loc="c,dt"/>
+		<prop exp="RMON_CTRL_::Reg_apply_0" loc="c,dt"/>
+		<prop exp="RMON_CTRL_::Pipeline" loc="c,dt"/>
+		<prop exp="RMON_CTRL_::CPU_rd_grant" loc="c,dt"/>
+		<prop exp="RMON_CTRL_::Reg_apply_1" loc="c,dt"/>
+		<prop exp="RMON_CTRL_::Wea" loc="c,dt"/>
+		<prop exp="RMON_CTRL_::Read" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_CTRL_::Addra" loc="c,dt"/>
+		<prop exp="RMON_CTRL_::Write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="RMON_CTRL_::Reg_data_0" loc="c,dt"/>
+		<prop exp="RMON_CTRL_::CPU_rd_apply_dl2" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

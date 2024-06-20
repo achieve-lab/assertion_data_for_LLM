@@ -1,0 +1,24 @@
+<harm>
+	<context name="default">
+
+		<prop exp="arb2_::state" loc="c,dt"/>
+		<prop exp="arb2_::req1" loc="c,dt"/>
+		<prop exp="arb2_::gnt2" loc="c,dt"/>
+		<prop exp="arb2_::clk" loc="c,dt"/>
+		<prop exp="arb2_::req2" loc="c,dt"/>
+		<prop exp="arb2_::rst" loc="c,dt"/>
+		<prop exp="arb2_::gnt1" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

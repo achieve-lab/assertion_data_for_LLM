@@ -1,0 +1,24 @@
+<harm>
+	<context name="default">
+
+		<prop exp="reset" loc="c,dt"/>
+		<prop exp="outputReadOut" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="outputs" loc="c,dt"/>
+		<prop exp="DEFAULT_CLOCK" loc="c,dt"/>
+		<prop exp="outputRw" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="outputRwAddr" loc="c,dt"/>
+		<prop exp="outputWriteIn" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

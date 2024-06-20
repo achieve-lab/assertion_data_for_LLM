@@ -1,0 +1,55 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="eth_txcounters_::DlyCrcCnt" loc="c,dt"/>
+		<prop exp="eth_txcounters_::StartBackoff" loc="c,dt"/>
+		<prop exp="eth_txcounters_::MaxFrame" loc="c,dt"/>
+		<prop exp="eth_txcounters_::StatePAD" loc="c,dt"/>
+		<prop exp="eth_txcounters_::StateJam" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txcounters_::MinFL" loc="c,dt"/>
+		<prop exp="eth_txcounters_::PacketFinished_q" loc="c,dt"/>
+		<prop exp="eth_txcounters_::NibCntEq7" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txcounters_::MaxFL" loc="c,dt"/>
+		<prop exp="eth_txcounters_::ExcessiveDefer" loc="c,dt"/>
+		<prop exp="eth_txcounters_::StateFCS" loc="c,dt"/>
+		<prop exp="eth_txcounters_::ExDfrEn" loc="c,dt"/>
+		<prop exp="eth_txcounters_::IncrementByteCnt" loc="c,dt"/>
+		<prop exp="eth_txcounters_::Reset" loc="c,dt"/>
+		<prop exp="eth_txcounters_::IncrementNibCnt" loc="c,dt"/>
+		<prop exp="eth_txcounters_::ByteCntMax" loc="c,dt"/>
+		<prop exp="eth_txcounters_::MTxClk" loc="c,dt"/>
+		<prop exp="eth_txcounters_::ResetNibCnt" loc="c,dt"/>
+		<prop exp="eth_txcounters_::StartDefer" loc="c,dt"/>
+		<prop exp="eth_txcounters_::StateDefer" loc="c,dt"/>
+		<prop exp="eth_txcounters_::DlyCrcEn" loc="c,dt"/>
+		<prop exp="eth_txcounters_::StartJam" loc="c,dt"/>
+		<prop exp="eth_txcounters_::ResetByteCnt" loc="c,dt"/>
+		<prop exp="eth_txcounters_::HugEn" loc="c,dt"/>
+		<prop exp="eth_txcounters_::StartFCS" loc="c,dt"/>
+		<prop exp="eth_txcounters_::StateSFD" loc="c,dt"/>
+		<prop exp="eth_txcounters_::StartIPG" loc="c,dt"/>
+		<prop exp="eth_txcounters_::NibCntEq15" loc="c,dt"/>
+		<prop exp="eth_txcounters_::StateBackOff" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txcounters_::StateData" loc="c,dt"/>
+		<prop exp="eth_txcounters_::StateIdle" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txcounters_::NibCnt" loc="c,dt"/>
+		<prop exp="eth_txcounters_::StateIPG" loc="c,dt"/>
+		<prop exp="eth_txcounters_::StatePreamble" loc="c,dt"/>
+		<prop exp="eth_txcounters_::TxStartFrm" loc="c,dt"/>
+		<prop exp="eth_txcounters_::NibbleMinFl" loc="c,dt"/>
+		<prop exp="eth_txcounters_::ExcessiveDeferCnt" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_txcounters_::ByteCnt" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+

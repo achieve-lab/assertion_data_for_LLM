@@ -1,0 +1,31 @@
+<harm>
+	<context name="default">
+
+		<numeric clsEffort="0.1" exp="eth_fifo_::cnt" loc="c,dt"/>
+		<prop exp="eth_fifo_::almost_empty" loc="c,dt"/>
+		<prop exp="eth_fifo_::almost_full" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_fifo_::write_pointer" loc="c,dt"/>
+		<prop exp="eth_fifo_::full" loc="c,dt"/>
+		<prop exp="eth_fifo_::write" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_fifo_::read_pointer" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_fifo_::data_out" loc="c,dt"/>
+		<prop exp="eth_fifo_::clk" loc="c,dt"/>
+		<prop exp="eth_fifo_::empty" loc="c,dt"/>
+		<prop exp="eth_fifo_::clear" loc="c,dt"/>
+		<prop exp="eth_fifo_::read" loc="c,dt"/>
+		<prop exp="eth_fifo_::reset" loc="c,dt"/>
+		<numeric clsEffort="0.1" exp="eth_fifo_::data_in" loc="c,dt"/>
+
+
+
+		<template dtLimits="5D,3W,15A,-0.1E,R" exp="G({..#1&..}|-> P0)" /> 
+
+
+
+		<sort name="causality" exp="1-afct/traceLength"/>
+		<sort name="frequency" exp="atct/traceLength"/>
+	</context>
+</harm>
+
+
+
