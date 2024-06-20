@@ -1,6 +1,0 @@
-assert property(@(posedge clean_rst_::clk) (clean_rst_::rsti) |-> clean_rst_::rstt);
-assert property(@(posedge clean_rst_::clk) (clean_rst_::rstt) |-> clean_rst_::rsti);
-assert property(@(posedge clean_rst_::clk) (clean_rst_::rstt) |-> clean_rst_::rsto);
-assert property(@(posedge clean_rst_::clk) (clean_rst_::rstt ##1 true) |-> clean_rst_::rsto);
-assert property(@(posedge clean_rst_::clk) (clean_rst_::rsti) |-> clean_rst_::rsto);
-assert property(@(posedge clean_rst_::clk) (clean_rst_::rsti ##1 true) |-> clean_rst_::rsto);
