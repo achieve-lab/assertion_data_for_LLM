@@ -58,9 +58,7 @@ See the paper below to know more about how the procedure is carried out in [harm
     jg -no_gui -allow_unsupported_OS -fpv FPV_arb2.tcl -proj arb2
  >Note: The flag `-allow_unsupported_OS`  is required if JasperGold is not run on RHEL (Red Hat Enterprise Linux).
 
-Due to the limit of 100MB, all the results of Goldmine, HARM, and formal verification of Jaspergold are pushed to a .tar.gz file. YOU can download using download.sh
 
-    sh download.sh
 
 ## Responses from Models
 1-shot and 5-shot learning is performed on GPT-3.5, GPT-4, LLaMA3-70B, and CodeLLaMa2-70B models, and the responses are saved in a JSON format. All the models are set to their default hyperparameters with the following changes: `max_new_tokens = 1024; temperature = 1.0; seed = 50;`
