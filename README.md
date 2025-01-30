@@ -72,7 +72,10 @@ The syntax errors are corrected using GPT-3.5. `final_data_*.json` files contain
 ## Formal Verification of generated assertions
 After correcting the errors, these assertions are formally verified using JasperGold. We've followed the same process used to verify the assertions generated from GoldMine and HARM. 
 
-
+## Publications
+- **[AssertionBench: A Benchmark to Evaluate Large-Language Models for Assertion Generation](https://arxiv.org/pdf/2406.18627)**  
+ _Vaishnavi Pulavarthi, Deeksha Nandal, Soham Dan, Debjit Pal_ 
+  Accepted at **[NAACL] (2025)**
 
 
 <!--stackedit_data:
